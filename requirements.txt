@@ -1,0 +1,12 @@
+# Install torch first from the CPU index, then this file:
+#   uv pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   uv pip install -r requirements.txt
+#
+# transformers MUST stay on 4.x. In 5.x, BertLayer.__call__ returns a bare tensor
+# instead of a (hidden_states,) tuple, which silently changes what layer[i](...)[0]
+# indexes -- no error, just wrong shapes.
+transformers<5
+scipy
+numpy
+tqdm
+ipykernel
