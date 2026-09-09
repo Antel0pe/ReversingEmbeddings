@@ -6,8 +6,8 @@ errors, not self-consistency. Runtime a few minutes.
 import time
 import torch
 from inversion import (load, embed, forward_states, sentence_embedding, ln, run_layer,
-                       undo_l2, invert_ffn, invert_attention_continued, recover_tokens,
-                       prev_layernorms, attn_delta, ffn_delta)
+                       undo_l2, invert_ffn, invert_attention, invert_attention_continued,
+                       recover_tokens, prev_layernorms, attn_delta, ffn_delta)
 
 PHRASE = "magic is real"
 tok, model = load()
@@ -74,10 +74,17 @@ for Li in (23, 20):
     replay = ln(a_rec + ffn_delta(layer, a_rec), layer.output.LayerNorm)
     print(f"  layer {Li} FFN : |F|={r1[0]:.1e}  err vs true a = {(a_rec-A[Li]).abs().max():.2e}"
           f"  replays output to {(replay-H[Li+1]).abs().max():.1e}")
-    h_rec, r2, _ = invert_attention_continued(layer, A[Li], ln_in, lnp[Li])
-    replay = ln(h_rec + attn_delta(layer, h_rec), ln_in)
-    print(f"  layer {Li} ATTN: |dh|={r2[-1]:.1e} err vs true h = {(h_rec-H[Li]).abs().max():.2e}"
-          f"  replays output to {(replay-A[Li]).abs().max():.1e}")
+    for tag, fn in (("plain SCF", lambda: invert_attention(layer, A[Li], ln_in, lnp[Li],
+                                                            ln(A[Li] - ln_in.bias, lnp[Li]))),
+                    ("continued", lambda: invert_attention_continued(layer, A[Li], ln_in, lnp[Li]))):
+        h_rec, r2, _ = fn()
+        replay = ln(h_rec + attn_delta(layer, h_rec), ln_in)
+        print(f"  layer {Li} ATTN {tag}: |dh|={r2[-1]:.1e}"
+              f"  err vs true h = {(h_rec-H[Li]).abs().max():.2e}"
+              f"  replays output to {(replay-A[Li]).abs().max():.1e}")
 print(f"  [{time.time()-t0:.0f}s]")
-print("\n  Both sublayer types invert to machine precision when the trace follows the")
-print("  right branch. demo4_branch_stats.py measures how often it does.")
+print("\n  The FFN solve is reliable and continuation is what keeps it on the true")
+print("  branch. The attention solve is the opposite: plain SCF finds the true preimage")
+print("  at layer 20, and adding continuation pushes it onto a different one. Both")
+print("  'wrong' answers still replay the observed output, so they are real preimages,")
+print("  not failures. demo4_branch_stats.py counts how often each lands on the truth.")

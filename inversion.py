@@ -160,9 +160,12 @@ def _newton_at(resid, jac, X, t, iters=25, tol=1e-11):
         if nrm < tol:
             return X, nrm.item(), True
         step = torch.linalg.solve(jac(X, t, pre, z), -F)
+        d = X.shape[0] - 2
         lam = 1.0
-        for _ in range(20):
-            if resid(X + lam * step, t)[0].norm() < nrm:
+        for _ in range(40):
+            # s is a LayerNorm standard deviation: s <= 0 solves our constraint equations
+            # but NOT the original LN(x + delta(x)) = y, so those roots must be rejected.
+            if X[d] + lam * step[d] > 0 and resid(X + lam * step, t)[0].norm() < nrm:
                 break
             lam *= 0.5
         X = X + lam * step
@@ -286,8 +289,9 @@ def invert_attention(layer, a, ln_in, ln_prev, h_init, iters=80, tol=1e-11,
             J = torch.stack([(cons(sm + 1e-7 * eye2n[j]) - r) / 1e-7 for j in range(2 * n)], 1)
             step = torch.linalg.lstsq(J, -r.unsqueeze(1)).solution.squeeze(1)
             t = 1.0
-            for _ in range(30):
-                if cons(sm + t * step).norm() < rn:
+            for _ in range(40):
+                cand = sm + t * step
+                if (cand[:n] > 0).all() and cons(cand).norm() < rn:
                     break
                 t *= 0.5
             sm = sm + t * step
@@ -326,11 +330,33 @@ def invert_attention_continued(layer, a, ln_in, ln_prev, nt=5, verbose=False):
     return h, hist, ok
 
 
+def invert_attention_best(layer, a, ln_in, ln_prev, verbose=False):
+    """Run both branch-tracing strategies and keep whichever actually solves the equation.
+
+    Neither plain SCF nor continuation is reliable on its own -- each succeeds on layers
+    where the other fails. But a candidate is CHECKABLE without knowing the answer: replay
+    it forwards and see whether it reproduces the observed output. So try both and keep
+    the one that replays. This is verification, not search: two candidates, one test.
+    """
+    best, best_rep, best_hist = None, float('inf'), [float('inf')]
+    for init, sc in ((ln(a - ln_in.bias, ln_prev), None), (None, 5)):
+        if sc is None:
+            h, hist, _ = invert_attention(layer, a, ln_in, ln_prev, init)
+        else:
+            h, hist, _ = invert_attention_continued(layer, a, ln_in, ln_prev, nt=sc)
+        rep = (ln(h + attn_delta(layer, h), ln_in) - a).abs().max().item()
+        if verbose:
+            print(f"        attn {'plain' if sc is None else 'cont '}: replay={rep:.1e}")
+        if rep < best_rep:
+            best, best_rep, best_hist = h, rep, hist
+    return best, best_hist, best_rep < 1e-8
+
+
 def invert_layer(layer, y, ln_prev, verbose=False):
     """Invert one whole encoder layer: y -> (a, h)."""
     ln_in = layer.attention.output.LayerNorm
     a, h1, ok1 = invert_ffn(layer, y, ln_in, verbose=verbose)
-    h, h2, ok2 = invert_attention_continued(layer, a, ln_in, ln_prev, verbose=verbose)
+    h, h2, ok2 = invert_attention_best(layer, a, ln_in, ln_prev, verbose=verbose)
     return a, h, (ok1, ok2), (h1, h2)
 
 

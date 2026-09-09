@@ -8,7 +8,7 @@ takes away.
 import time
 import torch
 from inversion import (load, forward_states, prev_layernorms, invert_ffn,
-                       invert_attention_continued, recover_tokens, ln, run_layer)
+                       invert_attention_best, recover_tokens, ln, run_layer)
 
 PHRASE = "magic is real"
 
@@ -28,7 +28,7 @@ for Li in range(23, -1, -1):
     layer = model.encoder.layer[Li]
     ln_in = layer.attention.output.LayerNorm
     a_rec, _, ok1 = invert_ffn(layer, y, ln_in)
-    h_rec, _, ok2 = invert_attention_continued(layer, a_rec, ln_in, lnp[Li])
+    h_rec, _, ok2 = invert_attention_best(layer, a_rec, ln_in, lnp[Li])
     # forward-check: does the recovered state actually reproduce what we were given?
     chk = (run_layer(layer, h_rec)[1] - y).abs().max()
     print(f"layer {Li:2d}  ffn ok={int(ok1)} err={(a_rec-A[Li]).abs().max():.1e}"
