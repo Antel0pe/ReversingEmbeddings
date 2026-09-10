@@ -183,7 +183,109 @@ Reading this honestly:
 So layer-by-layer inversion is *sound* and mostly *works*, but it is not yet a push-button
 24-layer chain. That is an engineering gap on top of the mathematical one below.
 
-## The real wall: CLS pooling
+## The dominant wall (found last, matters most): error amplification
+
+Every rung of the ladder **amplifies the error in its input by roughly 25x**, and this is a
+property of the map, not of the arithmetic — the numbers are the same in float32 and float64:
+
+```
+                  float32                        float64
+layer  input err  output err   amp     input err  output err   amp
+   22   4.11e-06    1.06e-04   25.8     3.81e-06    9.63e-05   25.3
+   22   4.34e-04    1.20e-02   27.7     4.27e-04    8.66e-03   20.3
+   20   3.72e-06    1.04e-04   27.9     3.68e-06    1.38e-04   37.6
+   20   3.84e-04    1.58e-02   41.2     3.66e-04    5.42e-03   14.8
+```
+
+The forward network is *contractive*: nearby inputs produce much nearer outputs. That is
+what makes it a well-behaved embedding model, and it forces its inverse to be expansive by
+the same factor. Running the numbers against the measured 0.1 tolerance of the token readout:
+
+```
+float32  start 1e-07 -> can traverse   4.3 rungs =  2.1 layers before error exceeds 0.1
+float64  start 1e-16 -> can traverse  10.7 rungs =  5.4 layers
+float128 start 1e-33 -> can traverse  22.9 rungs = 11.4 layers
+
+to traverse all 48 rungs you need ~68 decimal digits of working precision
+```
+
+This *predicts the observed behaviour exactly.* Seeded with the true hidden state at layer 23
+and run in float32, the chain gave `layer 22 err 1.8e-05`, `layer 21 err 1.4e-01`, then failed
+at layer 20 — dead after about 2 layers, as the table says it must be.
+
+So the ranking of obstacles, corrected:
+
+1. **Error amplification (~25x/rung).** Dominates everything. Not fixable by a better solver;
+   only by arbitrary-precision arithmetic (~70 digits), which is *possible in principle* and
+   would be the honest next experiment.
+2. **CLS pooling.** Fundamental information loss, but only reachable as a concern if you
+   solved (1).
+3. Multiple attention preimages, and layer 23. Real, but now clearly secondary.
+
+## Per-layer solver diagnosis (all 24 layers, exact inputs)
+
+Each sublayer fed its EXACT true input, so error accumulation is removed and what remains is
+purely solver behaviour. Three outcomes, and they are different problems:
+
+  TRUE   converged to a root, and it is the right one
+  OTHER  converged to a root at machine precision -- but a DIFFERENT one. Not
+         under-converged; more iterations change nothing.
+  STALL  never reached a root at all (replay stays far above the ~1e-6 noise floor)
+
+```
+FFN : TRUE 4, OTHER 9, STALL 11   within the 0.1 readout tolerance:  7/24
+ATTN: TRUE 13, OTHER 5, STALL 6   within the 0.1 readout tolerance: 15/24
+```
+
+The last column is the one that matters, since the token readout only needs h0 to ~0.1.
+Even handed perfect inputs, the feed-forward inverse produces a usable answer on 7 rungs of
+24. This also corrects an earlier claim in this file that the FFN was the reliable half and
+attention the weak one -- that came from sampling layers 23, 20 and 4, which happen to be
+among the FFN's good ones. Attention is the stronger of the two.
+
+Retrying the stalled FFN layers with 25 restarts instead of 3 changed nothing on 8 of them
+(all 25 starts converge to the same wrong place), so these are not under-search.
+
+## Attacking the amplification with a reachable-set prior -- does not work
+
+The idea: the inverse's error should live in directions real hidden states rarely use, so
+shrinking those directions would remove error while sparing signal. The diagnostic looked
+extremely promising -- at layer 20 the top-16 principal directions of real states hold 78.5%
+of the true signal but only 2.9% of the inverse's error:
+
+```
+       k   real states    true a_L   inverse error
+      16         0.833       0.785           0.029
+     256         0.976       0.927           0.248
+```
+
+**It does not survive contact with the numbers.** Wiener shrinkage `w_i = var_i/(var_i+lam)`,
+swept across the whole variance spectrum, never beats doing nothing:
+
+```
+layer 20, raw inverse error 1.087e-02
+      lambda   err after    change  bias on exact
+    4.65e-05   1.539e-02     0.71x      1.560e-02
+    0.000465   1.439e-01     0.08x      1.441e-01
+     0.00465   9.376e-01     0.01x      9.378e-01
+```
+
+At every lambda, `err after` tracks `bias on exact` almost exactly: the damage done to the
+true signal accounts for essentially all of the resulting error. The reason the promising
+diagnostic misleads is a matter of scale. Those percentages are *relative energy*, but the
+per-rung error is only ~1e-2 while the signal is ~20. Removing the 21.5% of signal energy
+that lives outside the top-16 directions injects an absolute error of order 10 -- three
+orders of magnitude worse than the 1e-2 it was meant to remove. Shrinkage only pays when
+noise is comparable to signal in the directions being shrunk, and here it never is.
+
+Worse, the arithmetic of stabilisation is unforgiving: to hold a 25x-per-rung growth in
+check you must remove ~96% of the error at every rung. Nothing with this signal/error
+overlap comes close.
+
+So the reachable-set prior earns its keep as a *selector* between competing roots (it
+correctly separates 0.663 from 0.823 at layer 12) but not as a *stabiliser*. Mode C stands.
+
+## The information wall: CLS pooling
 
 Degrees of freedom for a 5-token phrase, `d = 1024`:
 

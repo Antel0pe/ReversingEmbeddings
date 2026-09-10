@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Datasets (MNIST idx.gz archives, etc.)
+data/

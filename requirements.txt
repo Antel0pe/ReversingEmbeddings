@@ -8,5 +8,9 @@
 transformers<5
 scipy
 numpy
+matplotlib
 tqdm
 ipykernel
+
+# torchvision is deliberately absent: no wheel is built against torch 2.14+cpu
+# (newest on the CPU index is 0.21). mnist.py fetches the raw idx.gz files.
