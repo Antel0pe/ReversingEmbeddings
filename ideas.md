@@ -5,3 +5,10 @@ centroid/mean of some subset as a way of finding if items there are on manifold
 if you were to take two 1s that were say 1 unit away from each other and averaged the pixels, high chance that the result would be a 1 that is a "new" 1 that doesnt exist in the dataset yet. kinda cool but doesnt really tell you anything
 - if you were instead to take 1s that were say 5 units away with no path between them meaning the pixel averages dont give you a 1 and there is no path of 1s that are 1.89 units away to get from one to the other - if you "discovered" a path between them that would be a really interesting result because the 1s are new but theyre possibly a class of 1s that dont exist in the dataset in the first place
     - unlikely that these would genuinely improve classification of 1s - think this is basically a 100% solved problem but in terms of the data manifold that would be ridiculously interesting
+
+something to make the points denser
+- proactively surfaces cases like is this a 1. enables finding of new 1 areas and making existing areas denser?
+
+something about getting closer to the data and seeing how it really lives
+- showing where it is locally smooth
+- showing where some attributes are similar but additional parameters?
