@@ -1,0 +1,342 @@
+<title>Walking the Ones</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F1F4F6; --panel:#FFFFFF; --sunk:#E8EDF1; --line:#D3DCE3; --ink:#111820;
+  --muted:#5D6C79; --accent:#0C7E73; --accent-soft:#D7EFEC; --warn:#A66206;
+  --warn-soft:#F8EBD7; --synth:#B5364F; --shadow:0 1px 2px rgba(17,24,32,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0E12; --panel:#141A21; --sunk:#0E1318; --line:#232C36; --ink:#C9D4DE;
+    --muted:#79899A; --accent:#4FD1C5; --accent-soft:#12312F; --warn:#E8A33D;
+    --warn-soft:#332616; --synth:#E05B6F; --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0E12; --panel:#141A21; --sunk:#0E1318; --line:#232C36; --ink:#C9D4DE;
+  --muted:#79899A; --accent:#4FD1C5; --accent-soft:#12312F; --warn:#E8A33D;
+  --warn-soft:#332616; --synth:#E05B6F; --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 14px/1.5 "IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+header{
+  padding:20px 24px 16px; border-bottom:1px solid var(--line);
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px;
+}
+h1{margin:0; font-size:19px; font-weight:700; letter-spacing:-.015em}
+.sub{color:var(--muted); font-size:13px; max-width:62ch}
+.shell{display:grid; grid-template-columns:238px minmax(0,1fr) 238px; gap:18px; padding:18px 24px 0; align-items:start}
+@media (max-width:1040px){ .shell{grid-template-columns:1fr} }
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:14px}
+.lab{
+  font-size:10px; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:0 0 10px;
+}
+.row{display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:5px 0}
+.row+.row{border-top:1px solid var(--line)}
+.k{color:var(--muted); font-size:12px}
+.v{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:14px; font-weight:500}
+.chip{
+  display:inline-flex; align-items:center; gap:6px; padding:2px 9px; border-radius:999px;
+  font-size:11px; font-weight:600; letter-spacing:.02em;
+}
+.chip.on{background:var(--accent-soft); color:var(--accent)}
+.chip.off{background:var(--warn-soft); color:var(--warn)}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.meter{height:5px; background:var(--sunk); border-radius:3px; overflow:hidden; margin-top:9px}
+.meter>i{display:block; height:100%; background:var(--accent); transition:width .35s ease, background .35s ease}
+.meter.over>i{background:var(--warn)}
+.stage{display:flex; gap:16px; justify-content:center; flex-wrap:wrap}
+.disp{background:#000; border:1px solid var(--line); border-radius:4px; display:block; image-rendering:pixelated}
+.cap{font-size:11px; color:var(--muted); text-align:center; margin-top:7px; letter-spacing:.02em}
+.tools{display:grid; gap:7px}
+button{
+  font:inherit; color:var(--ink); background:var(--panel); border:1px solid var(--line);
+  border-radius:5px; padding:8px 10px; text-align:left; cursor:pointer; line-height:1.3;
+  transition:border-color .15s, background .15s;
+}
+button:hover:not(:disabled){border-color:var(--accent); background:var(--sunk)}
+button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+button:disabled{opacity:.42; cursor:default}
+button b{display:block; font-weight:600; font-size:12.5px}
+button span{display:block; color:var(--muted); font-size:11px; margin-top:1px}
+.strip{margin:18px 24px 26px; background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:12px 14px 14px}
+.striphead{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px}
+.nav{display:flex; gap:6px}
+.nav button{padding:4px 11px; font-family:"IBM Plex Mono",monospace}
+.cards{display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:9px}
+@media (max-width:920px){ .cards{grid-template-columns:repeat(5,minmax(0,1fr))} }
+.card{
+  border:1px solid var(--line); border-radius:5px; padding:7px 5px 5px; background:var(--panel);
+  cursor:pointer; text-align:center; transition:border-color .15s, transform .15s;
+}
+.card:hover{border-color:var(--accent); transform:translateY(-2px)}
+.card.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+.card canvas{width:100%; height:auto; background:#000; border-radius:2px; image-rendering:pixelated; display:block}
+.card .d{font-family:"IBM Plex Mono",monospace; font-size:11px; margin-top:5px; font-variant-numeric:tabular-nums}
+.card .t{font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.card .t.s{color:var(--synth)}
+.legend{display:flex; gap:16px; flex-wrap:wrap; font-size:11px; color:var(--muted); margin-top:11px}
+.legend i{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:-1px}
+.boot{padding:60px 24px; text-align:center; color:var(--muted)}
+.focusbar{display:flex; gap:10px; align-items:center; padding:9px; border:1px solid var(--line);
+  border-radius:5px; background:var(--sunk); margin-bottom:11px}
+.focusbar canvas{width:52px; height:52px; background:#000; border-radius:3px; image-rendering:pixelated; flex:none}
+.scalerow{display:grid; grid-template-columns:1fr auto; gap:4px 10px; align-items:center; margin-bottom:9px}
+.scalerow input{grid-column:1/-1; width:100%; accent-color:var(--accent); margin:0}
+.pin{position:absolute; top:3px; right:3px; width:17px; height:17px; padding:0; border-radius:50%;
+  font-size:9px; line-height:1; display:grid; place-items:center; opacity:0; transition:opacity .12s}
+.card{position:relative}
+.card:hover .pin, .card.sel .pin{opacity:1}
+.card.sel .pin{border-color:var(--accent); color:var(--accent)}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }
+</style>
+
+<header>
+  <h1>Walking the Ones</h1>
+  <p class="sub">Every handwritten 1 in MNIST is a point in 784-dimensional pixel space. Step between neighbours, or leave the data entirely and watch the strokes fall apart.</p>
+</header>
+
+<div id="boot" class="boot mono">decoding 12,465 nodes&hellip;</div>
+
+<div class="shell" id="app" hidden>
+  <section class="panel">
+    <p class="lab">Position</p>
+    <div class="row"><span class="k">Status</span><span id="status"></span></div>
+    <div class="row"><span class="k">Nearest real 1</span><span class="v" id="dnear">&mdash;</span></div>
+    <div class="row"><span class="k">Threshold &theta;</span><span class="v" id="theta"></span></div>
+    <div class="row"><span class="k">Neighbours &le; &theta;</span><span class="v" id="nnb">&mdash;</span></div>
+    <div class="row"><span class="k">Steps taken</span><span class="v" id="nsteps">0</span></div>
+    <div class="meter" id="meter"><i style="width:0%"></i></div>
+    <p class="cap" style="text-align:left;margin-top:8px">Bar fills to &theta;. Amber past it means no real 1 is within reach.</p>
+  </section>
+
+  <section class="panel">
+    <p class="lab">Current image &mdash; hover a neighbour below to see the move</p>
+    <div class="stage">
+      <div>
+        <canvas class="disp" id="main" width="28" height="28" style="width:288px;height:288px"></canvas>
+        <p class="cap" id="maincap">where you are</p>
+      </div>
+      <div>
+        <canvas class="disp" id="diff" width="28" height="28" style="width:288px;height:288px"></canvas>
+        <p class="cap">what changes</p>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--accent)"></i>ink appears</span>
+      <span><i style="background:var(--warn)"></i>ink disappears</span>
+      <span><i style="background:#888"></i>unchanged</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <p class="lab">Move</p>
+    <div class="focusbar">
+      <canvas id="fcanvas" width="28" height="28"></canvas>
+      <div style="min-width:0">
+        <div class="k">Direction points at this neighbour</div>
+        <div class="v" id="fdist">&mdash;</div>
+      </div>
+    </div>
+    <label class="scalerow">
+      <span class="k">Step scale</span><span class="v" id="scaleval">1&times;</span>
+      <input type="range" id="scale" min="0" max="7" step="1" value="2">
+    </label>
+    <p class="cap" style="text-align:left; margin:0 0 11px">A move travels <b class="v" id="steplen">&mdash;</b> in pixel-space distance. &theta; is 1.89.</p>
+    <div class="tools">
+      <button id="t-rev"><b>Reverse</b><span>go the opposite way from the focused neighbour</span></button>
+      <button id="t-dbl"><b>Overshoot</b><span>twice the distance, same direction</span></button>
+      <button id="t-half"><b>Half step</b><span>stop midway &mdash; nearly always still a 1</span></button>
+      <button id="t-perp"><b>Sideways</b><span>same distance, perpendicular direction</span></button>
+      <button id="t-rand"><b>Random direction</b><span>straight off the manifold</span></button>
+    </div>
+    <p class="lab" style="margin:16px 0 10px">Recover</p>
+    <div class="tools">
+      <button id="t-snap"><b>Snap to nearest real 1</b><span>jump back onto the data</span></button>
+      <button id="t-back"><b>Step back</b><span>undo the last move</span></button>
+      <button id="t-reset"><b>New starting 1</b><span>drop into the dense core</span></button>
+    </div>
+  </section>
+</div>
+
+<section class="strip" id="strip" hidden>
+  <div class="striphead">
+    <p class="lab" style="margin:0">Where you can go next &mdash; nearest points, closest first</p>
+    <div class="nav">
+      <button id="prev" class="mono">&larr;</button>
+      <span class="v" id="page" style="align-self:center;font-size:12px"></span>
+      <button id="next" class="mono">&rarr;</button>
+    </div>
+  </div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<script>
+const M=__M__, G=__G__, THETA=__THETA__, PER=10;
+const FLAGS=Uint8Array.from(atob("__FLAGS__"),c=>c.charCodeAt(0));
+let PIX=null, NORM=null;
+const $=id=>document.getElementById(id);
+
+const img=new Image();
+img.onload=()=>{
+  const c=document.createElement("canvas"); c.width=c.height=G*28;
+  const x=c.getContext("2d",{willReadFrequently:true}); x.drawImage(img,0,0);
+  const d=x.getImageData(0,0,G*28,G*28).data;
+  PIX=new Uint8Array(M*784); NORM=new Float32Array(M);
+  for(let i=0;i<M;i++){
+    const gr=(i/G)|0, gc=i%G, base=i*784; let s=0;
+    for(let r=0;r<28;r++){
+      const off=((gr*28+r)*G*28+gc*28)*4;
+      for(let k=0;k<28;k++){ const p=d[off+k*4]; PIX[base+r*28+k]=p; const f=p/255; s+=f*f; }
+    }
+    NORM[i]=s;
+  }
+  $("boot").hidden=true; $("app").hidden=false; $("strip").hidden=false;
+  $("theta").textContent=THETA.toFixed(3);
+  start();
+};
+img.src="data:image/png;base64,__SPRITE__";
+
+function nodeVec(i){ const v=new Float32Array(784), b=i*784; for(let k=0;k<784;k++) v[k]=PIX[b+k]/255; return v; }
+function dists(v){
+  let vn=0; for(let k=0;k<784;k++) vn+=v[k]*v[k];
+  const out=new Float32Array(M);
+  for(let i=0;i<M;i++){
+    let dot=0; const b=i*784;
+    for(let k=0;k<784;k++) dot+=v[k]*PIX[b+k];
+    out[i]=Math.sqrt(Math.max(vn+NORM[i]-2*dot/255,0));
+  }
+  return out;
+}
+function paint(cv,v){
+  const x=cv.getContext("2d"), im=x.createImageData(28,28);
+  for(let k=0;k<784;k++){ const g=Math.max(0,Math.min(255,Math.round(v[k]*255)));
+    im.data[k*4]=im.data[k*4+1]=im.data[k*4+2]=g; im.data[k*4+3]=255; }
+  x.putImageData(im,0,0);
+}
+function paintDiff(cv,a,b){
+  const st=getComputedStyle(document.documentElement);
+  const hex=s=>{const h=st.getPropertyValue(s).trim().replace("#","");
+    return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];};
+  const up=hex("--accent"), dn=hex("--warn");
+  const x=cv.getContext("2d"), im=x.createImageData(28,28);
+  for(let k=0;k<784;k++){
+    const d=(b?b[k]:a[k])-a[k], m=Math.min(1,Math.abs(d)*3.2), base=a[k]*70;
+    const c=d>0?up:dn;
+    im.data[k*4]  =base+(c[0]-base)*m;
+    im.data[k*4+1]=base+(c[1]-base)*m;
+    im.data[k*4+2]=base+(c[2]-base)*m;
+    im.data[k*4+3]=255;
+  }
+  x.putImageData(im,0,0);
+}
+
+let cur=null, curNode=-1, order=[], page=0, focus=-1, hist=[], steps=0, anim=null;
+const SCALES=[0.25,0.5,1,1.5,2,3,5,8]; let scale=1;
+function setFocus(i){
+  focus=i;
+  document.querySelectorAll(".card").forEach(el=>el.classList.toggle("sel",+el.dataset.i===i));
+  paint($("fcanvas"),nodeVec(i));
+  const dl=window.__d[i];
+  $("fdist").textContent=dl.toFixed(2)+" away";
+  $("steplen").textContent=(dl*scale).toFixed(2);
+}
+
+function refresh(){
+  const d=dists(cur);
+  const idx=Array.from({length:M},(_,i)=>i);
+  idx.sort((a,b)=>d[a]-d[b]);
+  order=idx.filter(i=>!(curNode>=0&&i===curNode)&&d[i]>1e-6).slice(0,60);
+  window.__d=d;
+  const near=d[order[0]];
+  const within=order.filter(i=>d[i]<=THETA).length;
+  $("dnear").textContent=near.toFixed(3);
+  $("nnb").textContent=within;
+  $("nsteps").textContent=steps;
+  const on=near<=THETA;
+  $("status").innerHTML='<span class="chip '+(on?"on":"off")+'"><span class="dot"></span>'+
+    (on?(curNode>=0?(FLAGS[curNode]?"on a synthesised 1":"on a real MNIST 1"):"on the manifold"):"off the manifold")+'</span>';
+  const m=$("meter"); m.classList.toggle("over",!on);
+  m.firstElementChild.style.width=Math.min(100,near/THETA*100)+"%";
+  $("maincap").textContent=curNode>=0?(FLAGS[curNode]?"synthesised bridge node #"+curNode:"real MNIST 1 #"+curNode):"constructed point \u2014 not in the data";
+  page=0; draw(); setFocus(order[0]);
+  $("t-back").disabled=hist.length===0;
+}
+function draw(){
+  const pg=order.slice(page*PER,page*PER+PER);
+  $("page").textContent=(page+1)+" / "+Math.ceil(order.length/PER);
+  $("prev").disabled=page===0; $("next").disabled=(page+1)*PER>=order.length;
+  const box=$("cards"); box.textContent="";
+  pg.forEach(i=>{
+    const el=document.createElement("div"); el.className="card"+(i===focus?" sel":""); el.dataset.i=i;
+    const cv=document.createElement("canvas"); cv.width=cv.height=28; paint(cv,nodeVec(i));
+    const d=document.createElement("div"); d.className="d"; d.textContent=window.__d[i].toFixed(2);
+    const t=document.createElement("div"); t.className="t"+(FLAGS[i]?" s":""); t.textContent=FLAGS[i]?"made":"real";
+    const pin=document.createElement("button"); pin.className="pin"; pin.textContent="\u25c9";
+    pin.title="aim the Move tools at this neighbour, without going there";
+    pin.onclick=e=>{ e.stopPropagation(); setFocus(i); };
+    el.append(cv,d,t,pin);
+    el.onmouseenter=()=>{ setFocus(i); preview(i); };
+    el.onmouseleave=()=>{ stopAnim(); paint($("main"),cur); paintDiff($("diff"),cur,null); };
+    el.onclick=()=>{ go(nodeVec(i),i); };
+    box.appendChild(el);
+  });
+  paint($("main"),cur); paintDiff($("diff"),cur,null);
+}
+function stopAnim(){ if(anim){cancelAnimationFrame(anim); anim=null;} }
+function preview(i){
+  const tgt=nodeVec(i); paintDiff($("diff"),cur,tgt);
+  stopAnim(); const t0=performance.now(), tmp=new Float32Array(784);
+  const loop=t=>{
+    const u=((t-t0)%1500)/1500, w=u<.5?u*2:2-u*2;
+    for(let k=0;k<784;k++) tmp[k]=cur[k]+(tgt[k]-cur[k])*w;
+    paint($("main"),tmp); anim=requestAnimationFrame(loop);
+  };
+  anim=requestAnimationFrame(loop);
+}
+function go(v,node){ stopAnim(); hist.push([cur,curNode,steps]); cur=v; curNode=node??-1; steps++; refresh(); }
+function dirTo(i){ const t=nodeVec(i), d=new Float32Array(784); for(let k=0;k<784;k++) d[k]=t[k]-cur[k]; return d; }
+function add(v,d,s){ const o=new Float32Array(784); for(let k=0;k<784;k++) o[k]=Math.max(0,Math.min(1,v[k]+d[k]*s)); return o; }
+function norm(d){ let s=0; for(let k=0;k<784;k++) s+=d[k]*d[k]; return Math.sqrt(s); }
+
+function start(){
+  // land somewhere genuinely crowded: try a dozen candidates, keep the busiest
+  let best=-1, bestc=-1;
+  for(let t=0;t<12;t++){
+    const i=(Math.random()*M)|0, d=dists(nodeVec(i));
+    let c=0; for(let j=0;j<M;j++) if(j!==i&&d[j]<=THETA) c++;
+    if(c>bestc){ bestc=c; best=i; }
+  }
+  cur=nodeVec(best); curNode=best; hist=[]; steps=0; refresh();
+}
+$("scale").oninput=e=>{ scale=SCALES[+e.target.value];
+  $("scaleval").textContent=(scale%1?scale:scale+"")+"\u00d7";
+  if(focus>=0) $("steplen").textContent=(window.__d[focus]*scale).toFixed(2); };
+$("prev").onclick=()=>{page--;draw();};
+$("next").onclick=()=>{page++;draw();};
+$("t-rev").onclick =()=>go(add(cur,dirTo(focus),-scale));
+$("t-dbl").onclick =()=>go(add(cur,dirTo(focus),2*scale));
+$("t-half").onclick=()=>go(add(cur,dirTo(focus),.5*scale));
+$("t-perp").onclick=()=>{
+  const d=dirTo(focus), r=new Float32Array(784);
+  for(let k=0;k<784;k++) r[k]=Math.random()*2-1;
+  let dd=0,rd=0; for(let k=0;k<784;k++){dd+=d[k]*d[k]; rd+=r[k]*d[k];}
+  for(let k=0;k<784;k++) r[k]-=d[k]*rd/dd;
+  const s=scale*norm(d)/norm(r); for(let k=0;k<784;k++) r[k]*=s;
+  go(add(cur,r,1));
+};
+$("t-rand").onclick=()=>{
+  const r=new Float32Array(784); for(let k=0;k<784;k++) r[k]=Math.random()*2-1;
+  const s=scale*THETA/norm(r); for(let k=0;k<784;k++) r[k]*=s; go(add(cur,r,1));
+};
+$("t-snap").onclick=()=>{ const i=order[0]; go(nodeVec(i),i); };
+$("t-back").onclick=()=>{ const h=hist.pop(); if(!h)return; cur=h[0]; curNode=h[1]; steps=h[2]; refresh(); };
+$("t-reset").onclick=()=>start();
+</script>

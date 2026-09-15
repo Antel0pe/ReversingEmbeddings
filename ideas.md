@@ -12,3 +12,11 @@ something to make the points denser
 something about getting closer to the data and seeing how it really lives
 - showing where it is locally smooth
 - showing where some attributes are similar but additional parameters?
+
+the graph of mnist 1s is a graph - meaning it a connection of 1d lines between data points
+- we dont need methods that unfurl a donut or do anything to a torus like structure in higher dimensions
+- we just need a collection of lines that vary in higher dimensions to be visible
+- there are some cycles though which could vary from some simple loops in graph to tunnel like structures in higher dimensions
+
+test of whether data exists potentially if you can morph pixels from starting to ending point?
+- except for those with disconnected components on the image

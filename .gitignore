@@ -219,3 +219,7 @@ __marimo__/
 
 # Datasets (MNIST idx.gz archives, etc.)
 data/
+
+# viewer build intermediates
+viewer/_sprite.png
+viewer/synth3.npy
