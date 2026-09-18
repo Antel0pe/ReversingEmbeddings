@@ -30,3 +30,17 @@ look at negative area of the state space
 can experiment with core of 1 space
 - straight 1s taking say 80% of space in straight lines
     - moving sideways/vertically
+
+the space of 1s is probably smooth because the knobs of how to draw a 1 continuously change. the act of drawing a 1 is always smooth?
+- possibly an interesting shape in reality. the undersampled graph we have can make even a simple shape seem complex
+    - something about sampling areas that would reduce dimension of graph?
+- another interesting question is the area of all numbers. things like 6 and 9 are very close. but also what space does the entire order of numbers take up. what "numbers are possible"? 
+- is there any way to mine numbers in the past or make better guesses about what they might have looked like? 
+
+an equation that defines what image shows a 1 and what isnt
+- sum of various checks where each check is something interpretable like no disconnected segments
+    - each filter further reduces the state space
+    - is there someway to  uniquely prove/find the fewest number of terms that uniquely define a chunk of state space
+        - tradeoff would likely be explainability at the cost of efficiency?
+- a requirement for this might be a smooth state space first? likely cant do it with a discontinuous sample of data. 
+    - actually you probably could but there would be some OR check and less clean
