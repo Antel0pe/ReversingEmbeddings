@@ -20,3 +20,13 @@ the graph of mnist 1s is a graph - meaning it a connection of 1d lines between d
 
 test of whether data exists potentially if you can morph pixels from starting to ending point?
 - except for those with disconnected components on the image
+
+look at negative area of the state space
+- areas with high speckle across the image
+- disconnected components 
+    - there are real 1s in the dataset with disconnected components but honestly i think those shouldnt count so we can eliminate these
+- can ignore majority of space that clearly isnt 1 using some heuristics around distribution of intensity on the image, disconnected components
+
+can experiment with core of 1 space
+- straight 1s taking say 80% of space in straight lines
+    - moving sideways/vertically

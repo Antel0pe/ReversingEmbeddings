@@ -91,3 +91,64 @@ def frenet(curve, ts):
 def straight_line(A, B, k):
     """The other route: interpolate pixel values. Shorter, and further from real data."""
     return np.array([(1 - t) * A + t * B for t in np.linspace(0, 1, k)])
+
+
+# ---------------------------------------------------------------------------
+# Arcs between two fixed images.
+#
+# Three points pin a quadratic, so with A and B held fixed the whole family of
+# arcs between them is parameterised by one vector: where the halfway point sits.
+# Splitting that vector into a magnitude (how much it bulges) and a direction
+# (which way) separates two effects that look similar and are not:
+#
+#   bulge SIZE      controls how much the stroke rotates rather than cross-fades.
+#                   More bulge always removes ghosting -- monotonically, out to
+#                   20x -- but always costs distance from real data. A single arc
+#                   can buy sharpness or proximity, never both. The manifold gets
+#                   both, which is the evidence that it is not an arc at all.
+#
+#   bulge DIRECTION is a needle. The perpendicular space has 782 dimensions; of
+#                   200 random directions none came within 4x of the manifold's
+#                   own. Rotating away from it by 45 degrees already doubles the
+#                   distance to real data.
+# ---------------------------------------------------------------------------
+
+
+def arc_through(A, B, M, ts):
+    """Quadratic Bezier from A to B passing through M at t=0.5.
+
+    The control point that achieves this is 2M - (A+B)/2, so `M` is literally
+    "where the curve is halfway". M = (A+B)/2 gives the straight line.
+    """
+    P1 = 2 * np.asarray(M) - (np.asarray(A) + np.asarray(B)) / 2
+    ts = np.atleast_1d(ts)[:, None]
+    return (1 - ts) ** 2 * A + 2 * ts * (1 - ts) * P1 + ts ** 2 * B
+
+
+def bulge_of(A, B, M):
+    """Split 'where the halfway point sits' into (magnitude, unit direction).
+
+    Only the component perpendicular to the chord matters -- a component along
+    the chord just re-times the curve without changing its shape.
+    """
+    chord = np.asarray(B) - np.asarray(A)
+    e = chord / np.linalg.norm(chord)
+    dev = np.asarray(M) - (np.asarray(A) + np.asarray(B)) / 2
+    dev = dev - np.dot(dev, e) * e
+    h = np.linalg.norm(dev)
+    return h, dev / max(h, 1e-12)
+
+
+def ghosting(frames, lo=0.2, hi=0.8, ink=0.05):
+    """Fraction of the ink sitting at half strength -- the cross-fade signature.
+
+    A real stroke is mostly 0 or mostly 1. An image made by averaging two strokes
+    is full of mid-greys. Calibration: a real MNIST 1 scores ~0.34 (its own
+    anti-aliasing), the manifold route ~0.39, a straight line ~0.54.
+    """
+    frames = np.clip(np.atleast_2d(frames), 0, 1)
+    out = []
+    for f in frames:
+        v = f[f > ink]
+        out.append(0.0 if not len(v) else float(((v >= lo) & (v <= hi)).mean()))
+    return np.array(out)
