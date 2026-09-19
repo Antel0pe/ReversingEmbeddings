@@ -44,3 +44,12 @@ an equation that defines what image shows a 1 and what isnt
         - tradeoff would likely be explainability at the cost of efficiency?
 - a requirement for this might be a smooth state space first? likely cant do it with a discontinuous sample of data. 
     - actually you probably could but there would be some OR check and less clean
+
+if you draw a circle on a paper, it actually varies in 2 dimensions but can be explained in 1 dimension: a line
+- this is a very strange idea but seemingly common place
+- i wonder if there is something here
+
+some random goals that might be worth having
+- see the space of 1s in mnist. ideally in actually 784d but how tf would that be possible. even in terms of ~10 intrinsic dimensions would be cool but how. it's not about seeing how the intrinsic dimensions behave but where they are. 
+- mathematically define what a 1 is. wouldnt this just be an equation of the intrinsic dimensions?
+    - a list of pixels with coefficients does not count. needs to have something understandable about it

@@ -10,7 +10,7 @@ Used by StraightOnes.ipynb. Everything is in raw 784-d pixel space, [0, 1] per p
 """
 
 import numpy as np
-from scipy.ndimage import label, map_coordinates
+from scipy.ndimage import binary_dilation, label, map_coordinates
 from scipy.optimize import least_squares
 
 YY, XX = np.mgrid[0:28, 0:28].astype(np.float64)
@@ -79,6 +79,17 @@ def grey_frac(Q):
     return ((Q > 0.2) & (Q < 0.8)).sum(1) / np.maximum(ink.sum(1), 1)
 
 
+def ghost_ink(Q):
+    """Ink more than 2 px away from the stroke (pixels > 0.3). Real 1s have almost none;
+    a faint second stroke (the cross-fade ghost) or resampling ripple shows up here."""
+    Q = np.atleast_2d(Q)
+    out = np.empty(len(Q))
+    for i, q in enumerate(Q):
+        I = q.reshape(28, 28)
+        out[i] = I[~binary_dilation(I > 0.3, iterations=2)].sum()
+    return out
+
+
 def nearest(Q, R, Rsq=None):
     """(distance, index) of the nearest row of R for each row of Q."""
     Q = np.atleast_2d(Q)
@@ -98,7 +109,7 @@ def nearest(Q, R, Rsq=None):
 # ---------------------------------------------------------------------------
 
 class Checker:
-    """Six checks, each calibrated on real data. A candidate must pass all of them.
+    """Seven checks, each calibrated on real data. A candidate must pass all of them.
 
     1. cube      every pixel in [0, 1]   (candidates are clipped, so this is by construction)
     2. digit     at least 9 of its 10 nearest images among all 60,000 training digits are 1s
@@ -107,6 +118,8 @@ class Checker:
     5. pieces    exactly one connected piece of ink
     6. crisp     sharpness (TV/ink) and grey fraction inside the range real straight 1s span
                  (1st-99th percentile) -- rejects blur, which is what averaging produces
+    7. clean     ghost ink (ink > 2 px from the stroke) no more than real straight 1s have
+                 (99th percentile) -- rejects faint second strokes
     """
 
     def __init__(self, straight, X_all, y_all):
@@ -115,6 +128,7 @@ class Checker:
         tv, gf = tv_per_ink(straight), grey_frac(straight)
         self.tv_lo, self.tv_hi = np.percentile(tv, [1, 99])
         self.gf_hi = np.percentile(gf, 99)
+        self.ghost_hi = np.percentile(ghost_ink(straight), 99)
 
     def knn_ones(self, Q, k=10):
         Q = np.atleast_2d(Q); out = np.empty(len(Q), int)
@@ -125,27 +139,30 @@ class Checker:
             out[s:s + 500] = (self.y[nn] == 1).sum(1)
         return out
 
-    def check(self, Q):
-        """Boolean table [n, 6] and the stroke residuals. Cheap checks run first."""
+    def check(self, Q, full=False):
+        """Boolean table [n, 7] and the stroke residuals. Cheap checks run first and the
+        slow ones only on survivors, unless full=True (every check on every row --
+        for calibration tables)."""
         Q = np.atleast_2d(Q)
-        ok = np.zeros((len(Q), 6), bool)
+        ok = np.zeros((len(Q), 7), bool)
         ok[:, 0] = (Q >= 0).all(1) & (Q <= 1).all(1)
         ok[:, 2] = nearest(Q, self.S, self.Ssq)[0] <= THETA
         tv = tv_per_ink(Q)
         ok[:, 5] = (tv >= self.tv_lo) & (tv <= self.tv_hi) & (grey_frac(Q) <= self.gf_hi)
         ok[:, 4] = [n_pieces(q) == 1 for q in Q]
+        ok[:, 6] = ghost_ink(Q) <= self.ghost_hi
         res = np.full(len(Q), np.nan)
-        live = np.where(ok[:, [0, 2, 4, 5]].all(1))[0]
+        live = np.arange(len(Q)) if full else np.where(ok[:, [0, 2, 4, 5, 6]].all(1))[0]
         if len(live):
             ok[live, 1] = self.knn_ones(Q[live]) >= 9
-            live = live[ok[live, 1]]
+            live = live if full else live[ok[live, 1]]
             for i in live:
                 res[i] = stroke_fit(Q[i])[1]
             ok[live, 3] = res[live] < STRAIGHT_CUT
         return ok, res
 
 
-CHECK_NAMES = ["in cube", "kNN says 1", "near real", "straight", "1 piece", "crisp"]
+CHECK_NAMES = ["in cube", "kNN says 1", "near real", "straight", "1 piece", "crisp", "clean"]
 
 
 # ---------------------------------------------------------------------------
@@ -173,14 +190,15 @@ def pca_stats(Z):
 
 def affine(img, rot=0.0, dx=0.0, dy=0.0, sy=1.0, sx=1.0):
     """Rotate (degrees) / shift (px) / stretch a 28x28 image about its ink centroid.
-    Cubic resampling, clipped to [0, 1] -- the same operation that made MNIST's greys."""
+    Bilinear resampling: it cannot overshoot, so unlike cubic it leaves no faint ripple
+    of ink around the stroke (which real MNIST never has)."""
     I = img.reshape(28, 28); m = I.sum()
     cx, cy = (XX * I).sum() / m, (YY * I).sum() / m
     a = np.radians(rot); c, s = np.cos(a), np.sin(a)
     X0, Y0 = XX - cx - dx, YY - cy - dy                  # output -> source (inverse map)
     xs = (c * X0 + s * Y0) / sx + cx
     ys = (-s * X0 + c * Y0) / sy + cy
-    return np.clip(map_coordinates(I, [ys, xs], order=3, mode="constant"), 0, 1).ravel()
+    return np.clip(map_coordinates(I, [ys, xs], order=1, mode="constant"), 0, 1).ravel()
 
 
 WARPS = ([("rotate", dict(rot=r)) for r in (-4, -2, 2, 4)]
@@ -228,7 +246,7 @@ def tail_share(w, k):
 
 
 def augment(real, pool, checker, min_sep, batch=100, max_rounds=60, patience=6,
-            targeted=True, seed=0, log=print):
+            targeted=True, seed=0, n_check=1500, log=print):
     """Add valid straight 1s, `batch` per round, to shrink the 95% PC count.
 
     pool      dict with Q, kind, frm: a fixed set of candidates (warps), pre-checked valid
@@ -254,20 +272,30 @@ def augment(real, pool, checker, min_sep, batch=100, max_rounds=60, patience=6,
         k = n_for(w, 0.95) - 1                   # the target: one fewer PC
         n = len(cur)
         # fresh PCA-guided candidates from the REAL points (never from added ones)
-        Qp, kp, _ = pca_pool(real, mu, V, k)
-        okp, _ = (checker.check(Qp) if targeted else (np.zeros((len(Qp), 6), bool), None))
-        vp = okp.all(1)
-        CQ = np.vstack([pool["Q"][~used], Qp[vp]])
-        CK = np.concatenate([pool["kind"][~used], kp[vp]])
-        CI = np.concatenate([np.where(~used)[0], -np.ones(vp.sum(), int)])
-        if not len(CQ):
-            break
-        Z = CQ - mu
-        top = Z @ V[:, :k]
-        z2 = (Z ** 2).sum(1); t2 = z2 - (top ** 2).sum(1)
         share_now = tail_share(w, k)
         tot = w.sum() * (n - 1)
-        new_share = (share_now * tot + t2) / (tot + z2)     # first-order effect of adding one
+
+        def gain(Q):                                        # first-order effect of adding one
+            Z = Q - mu
+            z2 = (Z ** 2).sum(1); t2 = z2 - ((Z @ V[:, :k]) ** 2).sum(1)
+            return (share_now * tot + t2) / (tot + z2)
+
+        if targeted:
+            # checking is the slow part, so only check the most promising n_check
+            Qp, kp, _ = pca_pool(real, mu, V, k)
+            gp = gain(Qp)
+            shortlist = np.argsort(gp)[:n_check]
+            shortlist = shortlist[gp[shortlist] < share_now]
+            vp = shortlist[checker.check(Qp[shortlist])[0].all(1)]
+        else:
+            Qp, kp, vp = np.zeros((0, 784)), np.array([], str), np.array([], int)
+        n_pca_valid = len(vp)
+        CQ = np.vstack([pool["Q"][~used], Qp[vp]])
+        CK = np.concatenate([pool["kind"][~used], kp[vp]])
+        CI = np.concatenate([np.where(~used)[0], -np.ones(len(vp), int)])
+        if not len(CQ):
+            break
+        new_share = gain(CQ)
         if targeted:
             order = np.argsort(new_share)
             order = order[new_share[order] < share_now]
@@ -292,7 +320,7 @@ def augment(real, pool, checker, min_sep, batch=100, max_rounds=60, patience=6,
         counts, w = pca_stats(cur)
         kinds = {kk: int((CK[pick] == kk).sum()) for kk in np.unique(CK[pick])}
         hist.append(dict(n_added=len(added), **{f"k{int(f*100)}": counts[f] for f in FRACS},
-                         share=tail_share(w, k), kinds=kinds))
+                         share=tail_share(w, k), kinds=kinds, pca_valid=n_pca_valid))
         log(f"round {rnd:2d}: +{len(pick):3d} (total {len(added):5d})  "
             f"PCs 90/95/99 = {counts[0.9]}/{counts[0.95]}/{counts[0.99]}  {kinds}")
         if counts[0.95] < best_k:
