@@ -12,12 +12,13 @@ E(x), which is a count of violations. That is a mixed-integer program: one
 continuous coefficient per candidate monomial, one yes/no switch saying whether
 it is used, minimise the number of switches that are on.
 
-On a 4x4 grid all 65,536 images go in as constraints directly. On 5x5 (33.5M
-images) the search solves on a subset, checks the answer against every image,
-adds whatever it got wrong, and repeats until nothing is wrong.
+The pixels outside the band split off exactly (see sparsest_split for the
+proof): minimum = minimum for the band alone + one monomial per outside pixel.
+The band is small enough that every one of its images goes into the solver at
+once -- 256 for 4x4, 32,768 for 5x5 -- so both answers are proven minima.
 
-Run:  python sparsest_equation.py          (4x4 search + figure, ~2 min)
-      python sparsest_equation.py --big    (also the 5x5 search, can take an hour)
+Run:  python sparsest_equation.py          (4x4 search + figure)
+      python sparsest_equation.py --big    (also the 5x5 search)
 Writes figures/equation_sparsest.png and figures/sparsest_solutions.json.
 """
 
@@ -126,6 +127,10 @@ def sparsest(H, W, band, wd, deg=2, M=64.0, tlim=1200, seed=0, verbose=True):
         if r.x is None:
             return None, False
         n_min = int(round(r.x[K:2 * K].sum()))
+        count_proven = r.status == 0                          # the COUNT is what must be proven
+        if verbose:
+            print(f"  stage 1: {n_min} monomials, "
+                  f"{'proven' if count_proven else f'lower bound {r.mip_dual_bound:.2f}'}", flush=True)
         r2 = _milp(Fv, Fo, K, M, tlim, max_used=n_min)        # stage 2: tidiest among them
         if r2.x is not None:
             r = r2
@@ -145,9 +150,36 @@ def sparsest(H, W, band, wd, deg=2, M=64.0, tlim=1200, seed=0, verbose=True):
             print(f"  {H}x{W} iter {it}: {len(S):6d} constraints -> {len(terms)} monomials, "
                   f"{len(bad)} images wrong ({time.time() - t0:.0f}s)", flush=True)
         if len(bad) == 0:
-            return terms, r.status == 0
+            return terms, count_proven
         S = np.unique(np.vstack([S, bad[rng.permutation(len(bad))[:1500]]]), axis=0)
     return None, False
+
+
+def sparsest_split(H, W, band, wd, **kw):
+    """Exact minimum by splitting off the pixels outside the band.
+
+    Why nothing is lost:
+      * every outside pixel o needs a monomial of its own. Light o on top of a
+        valid bar and E must rise from 0, so some monomial containing o must
+        switch on -- and a monomial containing a SECOND outside pixel stays 0
+        when only o is lit. So there are at least as many such monomials as
+        there are outside pixels, all distinct, none of them band-only.
+      * blank the outside rows of any full solution and what is left is a valid
+        equation for the band on its own, so the band-only monomials number at
+        least the band minimum.
+      * conversely the best band equation is >= 0 everywhere (0 on bars, >= 1
+        elsewhere), so adding +1 per outside pixel is a full solution.
+    Hence  minimum = band minimum + number of outside pixels,  and the band
+    alone is small enough to put EVERY image into the solver at once.
+    """
+    Hb = len(band)
+    sub, opt = sparsest(Hb, W, list(range(Hb)), wd, **kw)
+    if sub is None:
+        return None, False
+    remap = lambda i: band[i // W] * W + i % W
+    terms = [(tuple(remap(i) for i in m), c) for m, c in sub]
+    terms += [((r * W + c,), 1.0) for r in range(H) if r not in band for c in range(W)]
+    return terms, opt
 
 
 # ---------------------------------------------------------------------------
@@ -175,6 +207,7 @@ def draw_equation(ax, H, W, band, terms, title, colour):
     # only label lines where a colour carries more than one value
     label_sign = {sg for sg in (1, -1)
                   if len({round(c, 3) for _, c in pairs if np.sign(c) == sg}) > 1}
+    placed = []                                   # label positions so far, to avoid collisions
     for (i, j), c in pairs:
         p1 = np.array(divmod(i, W)[::-1], float); p2 = np.array(divmod(j, W)[::-1], float)
         col = RED if c > 0 else BLUE
@@ -185,15 +218,20 @@ def draw_equation(ax, H, W, band, terms, title, colour):
             perp = np.array([d[1], -d[0]]) / L
             if perp[1] > 0 or (perp[1] == 0 and perp[0] < 0):
                 perp = -perp
-            ctrl = (p1 + p2) / 2 + perp * 0.30 * L
+            ctrl = (p1 + p2) / 2 + perp * min(0.30 * L, 0.62)
         t = np.linspace(0, 1, 40)[:, None]
         curve = (1 - t) ** 2 * p1 + 2 * t * (1 - t) * ctrl + t ** 2 * p2
         ax.plot(curve[:, 0], curve[:, 1], color=col, lw=1.5 + 0.3 * min(abs(c), 8), alpha=.85,
                 zorder=3, solid_capstyle="round")
         ax.plot(*np.c_[p1, p2], "o", ms=5, color=col, zorder=4)
-        mid = 0.25 * p1 + 0.5 * ctrl + 0.25 * p2
         if np.sign(c) not in label_sign:
             continue
+        # slide the label along its own curve to the spot furthest from other labels
+        B = lambda u: (1 - u) ** 2 * p1 + 2 * u * (1 - u) * ctrl + u ** 2 * p2
+        cands = [B(u) for u in (0.5, 0.4, 0.6, 0.3, 0.7, 0.22, 0.78)]
+        gap = lambda q: min([np.hypot(*(q - o) * [1.0, 1.9]) for o in placed] + [9.0])
+        mid = next((q for q in cands if gap(q) > 0.48), max(cands, key=gap))
+        placed.append(mid)
         ax.text(mid[0], mid[1], _fmt(c), ha="center", va="center", fontsize=9, color=col,
                 weight="bold", zorder=7,
                 bbox=dict(boxstyle="round,pad=0.15", fc="white", ec=col, lw=0.8, alpha=.95))
@@ -218,7 +256,7 @@ def main():
         if key in cache and not (big and key != "4x4" and "--rerun" in sys.argv):
             sp = [(tuple(m), c) for m, c in cache[key]["sparsest"]]; opt = cache[key]["optimal"]
         else:
-            sp, opt = sparsest(H, W, band, wd)
+            sp, opt = sparsest_split(H, W, band, wd, tlim=10800 if H * W > 16 else 1200)
         res[key] = (H, W, band, wd, hb, sp, opt)
         cache[key] = {"sparsest": [(list(m), c) for m, c in sp], "optimal": bool(opt),
                       "hand_built": [(list(m), c) for m, c in hb]}
@@ -239,7 +277,7 @@ def main():
     z = V[1].reshape(H, W).copy(); z[3, 0] = 1; ex.append(("stray dot", z.ravel()))
 
     grids = list(res.keys())
-    FW, GRID, BLOCK = 17.0, 5.0, 8.3          # inches: figure width, grid side, one grid-size block
+    FW, GRID, BLOCK = 17.0, 5.0, 8.7          # inches: figure width, grid side, one grid-size block
     FH = 1.9 + BLOCK * len(grids) + 3.1
     fig = plt.figure(figsize=(FW, FH))
     fy = lambda i: 1 - i / FH
@@ -254,11 +292,17 @@ def main():
     fig.text(0.5, fy(1.55), "Red = adds when lit (a penalty).   Blue = subtracts when lit (a reward).   "
              "A line joins the two pixels of a pair term; it only counts when BOTH are on.",
              ha="center", fontsize=11, color=GREY)
-    readings = [("Thinks in ROWS: rows copy each other (B), then one row\nis counted (C) and checked "
-                 "for gaps (D). Squaring C and B\nis what multiplies the number of terms."),
-                ("Thinks in COLUMNS:  start at 2,  -1 for every complete column,\n+1 for any ink "
-                 "outside the band,  +1 for a top pixel and a\nbottom pixel lit 2+ columns apart "
-                 "(a diagonal too long to be one bar).")]
+    rows_txt = ("Thinks in ROWS: rows copy each other (B), then one row\nis counted (C) and checked "
+                "for gaps (D). Squaring C and B\nis what multiplies the number of terms.")
+    readings = {
+        "4x4": [rows_txt,
+                "Thinks in COLUMNS:  start at 2,  -1 for every complete column,\n+1 for any ink "
+                "outside the band,  +1 for a top pixel and a\nbottom pixel lit 2+ columns apart "
+                "(a diagonal too long to be one bar)."],
+        "5x5": [rows_txt,
+                "Still columns -- but a PAIR can't see a whole 3-pixel column.\nSo each column is "
+                "checked on just two of its three rows (-2),\nand each bar position gets one -1 link "
+                "between its columns.\nEvery valid bar collects 2 + 2 + 1 = 5.  Start at 5."]}
     y = 1.9
     for key in grids:
         H, W, band, wd, hb, sp, opt = res[key]
@@ -274,7 +318,7 @@ def main():
             if uniform:
                 fig.text(cx, fy(gtop + GRID + 0.60), uniform, ha="center", va="top", fontsize=10.5,
                          color=GREY)
-            fig.text(cx, fy(gtop + GRID + 1.05), readings[k], ha="center", va="top", fontsize=11.5,
+            fig.text(cx, fy(gtop + GRID + 1.05), readings[key][k], ha="center", va="top", fontsize=11.5,
                      color="#222", linespacing=1.55)
         y += BLOCK
 
