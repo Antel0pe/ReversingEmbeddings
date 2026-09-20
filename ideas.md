@@ -53,3 +53,5 @@ some random goals that might be worth having
 - see the space of 1s in mnist. ideally in actually 784d but how tf would that be possible. even in terms of ~10 intrinsic dimensions would be cool but how. it's not about seeing how the intrinsic dimensions behave but where they are. 
 - mathematically define what a 1 is. wouldnt this just be an equation of the intrinsic dimensions?
     - a list of pixels with coefficients does not count. needs to have something understandable about it
+
+really want to be able to describe the unique manifold of 1s from my generator that this is the state space this generator carves out
