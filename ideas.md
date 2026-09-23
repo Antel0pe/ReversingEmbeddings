@@ -55,3 +55,7 @@ some random goals that might be worth having
     - a list of pixels with coefficients does not count. needs to have something understandable about it
 
 really want to be able to describe the unique manifold of 1s from my generator that this is the state space this generator carves out
+
+intrinsic dimensions compress a lot of individual axes together
+- leaning 1 does not move individual pixels but identifies multiple pixels moving in tandem as 1 movement
+- leaning as an intrinsic dimension is curved because no single pixel linearly increases or decreases. depending on where the 1 is CURRENTLY is what affects where it leans. this means that sometimes the 1 will affect a changing combination of linear dimensions
