@@ -59,3 +59,7 @@ really want to be able to describe the unique manifold of 1s from my generator t
 intrinsic dimensions compress a lot of individual axes together
 - leaning 1 does not move individual pixels but identifies multiple pixels moving in tandem as 1 movement
 - leaning as an intrinsic dimension is curved because no single pixel linearly increases or decreases. depending on where the 1 is CURRENTLY is what affects where it leans. this means that sometimes the 1 will affect a changing combination of linear dimensions
+
+this idea is very wrong but i keep coming back to it. either there is some fundamentally incorrect understanding or something possible
+- dimensions are the ways that data varies. you cannot take something in 10d and figure out a 3d representation because you cannot show how 7 things vary in their original forms by showing how only 3 things vary. but how do you reduce the ways something varies?
+- how would you take a 3d shape like a globe and make it vary in 1 less dimension so you can show it in 2d
