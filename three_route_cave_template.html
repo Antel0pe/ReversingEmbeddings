@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A three-route cave: a manifold that lives in 3D</title>
+<style>
+:root{color-scheme:light;--ink:#21363e;--muted:#576b73;--line:#d5e2e5;--blue:#4a98a7}
+*{box-sizing:border-box}body{margin:0;background:#f1f6f7;color:var(--ink);font:15px/1.42 system-ui,sans-serif}
+header{background:white;border-bottom:1px solid var(--line);padding:16px 22px}h1{font-size:23px;line-height:1.2;margin:0 0 5px}
+header p{margin:0;max-width:1150px;color:var(--muted)}main{display:grid;grid-template-columns:minmax(430px,1fr) 340px;gap:12px;padding:12px}
+.viewer,.panel{background:white;border:1px solid var(--line);border-radius:9px;overflow:hidden}.viewer{position:relative}
+#world{display:block;width:100%;height:calc(100vh - 117px);min-height:540px;cursor:grab;touch-action:none}#world.dragging{cursor:grabbing}
+.overlay{position:absolute;left:13px;bottom:12px;background:#ffffffdc;border:1px solid var(--line);border-radius:6px;padding:7px 9px;font-size:12px;pointer-events:none}
+#fallback{display:none;position:absolute;inset:0;background:white;align-items:center;justify-content:center;padding:20px;text-align:center}#fallback img{max-width:100%;max-height:70vh}
+.panel{padding:16px;max-height:calc(100vh - 117px);overflow:auto}h2{font-size:15px;margin:0 0 8px}h3{font-size:13px;margin:17px 0 6px}
+.small{font-size:12px;color:var(--muted);margin:6px 0}.control{margin:11px 0 14px}.control label{display:flex;justify-content:space-between;font-size:13px;font-weight:600}
+input[type=range]{width:100%;accent-color:#2c8b9b}.check{font-size:13px;display:flex;gap:7px;align-items:center;margin:8px 0}
+.metric{background:#e9f2f4;padding:9px;border-radius:5px;font-size:12px}.slice-wrap{display:flex;align-items:center;gap:12px}
+#slice{height:176px;width:176px;image-rendering:pixelated;border:1px solid var(--line);background:#f3f6f7}
+.axis{font-size:12px;color:var(--muted)}.inside{font-weight:700;color:#127d80}.outside{font-weight:700;color:#ae4c40}
+summary{cursor:pointer}.equation{overflow-wrap:anywhere;background:#f4f7f8;padding:7px;border-radius:5px}
+@media(max-width:850px){main{grid-template-columns:1fr}.panel{max-height:none}#world{height:58vh;min-height:380px}}
+</style></head><body>
+<header><h1>Three-route cave: a manifold that really lives in 3D</h1>
+<p>Imagine two chambers joined by three winding passages. Every point of air inside is a state <i>(x, y, z)</i>; points in the surrounding rock are outside. The cave has two independent loops. Drag to rotate the actual 3D coordinates, scroll to zoom, and move the cut to inspect its filled interior.</p></header>
+<main><div class="viewer"><canvas id="world" aria-label="Rotatable three-dimensional cave volume boundary"></canvas>
+<div id="fallback"><div><p>This device could not start the 3D canvas. The static overview is below.</p><img src="three_route_cave_manifold.png" alt="Three-route cave overview"></div></div>
+<div class="overlay">Wall = boundary of the 3D volume · Blue is left, ochre is right · The selected point is drawn on top</div></div>
+<aside class="panel">
+<h2>What is the manifold?</h2>
+<p class="small"><strong>Inside:</strong> a location where an explorer could stand in the cave. <strong>Outside:</strong> surrounding rock. The shaded wall is only the boundary; all the air it encloses belongs to the 3D manifold.</p>
+<p id="topology" class="metric"></p>
+<h3>Cut through it</h3>
+<div class="control"><label for="cut">x position <output id="cut-out">0.00</output></label><input id="cut" type="range" min="-2.7" max="2.7" step="0.01" value="0"></div>
+<label class="check"><input id="clip" type="checkbox">Remove wall to the right of the cut</label>
+<div class="slice-wrap"><canvas id="slice" width="160" height="160" aria-label="Filled y-z cross section at the chosen x"></canvas><div class="axis"><strong>Cross-section</strong><br>cyan = inside<br>white = outside<br><br>y → sideways<br>z ↑ height<br><span id="slice-count"></span></div></div>
+<p class="small">At the middle, the cut passes through three separate corridors. Near either chamber, they join into one region. The corridors stay connected through the chambers in the full 3D volume.</p>
+<h3>Choose a real 3D point</h3>
+<div class="control"><label for="point-x">x <output id="point-x-out">0.00</output></label><input id="point-x" type="range" min="-2.8" max="2.8" step="0.01" value="0"></div>
+<div class="control"><label for="point-y">y <output id="point-y-out">1.18</output></label><input id="point-y" type="range" min="-2.2" max="2.2" step="0.01" value="1.18"></div>
+<div class="control"><label for="point-z">z <output id="point-z-out">0.00</output></label><input id="point-z" type="range" min="-1" max="2.2" step="0.01" value="0"></div>
+<p id="membership" class="metric"></p>
+<h3>Why this one is exact 3D</h3>
+<p class="small">The state is already the point <i>(x,y,z)</i> in ordinary space. There is no dimensional reduction: Euclidean distances and angles between states are exactly their 3D distances and angles. The equation below defines membership continuously. The triangles only approximate the visible wall to draw it.</p>
+<details><summary class="small">Mathematical definition and mesh accuracy</summary>
+<p class="small equation"><i>M</i> = { (x,y,z) ∈ ℝ³ : S(x,y,z) ≥ 0 }, where S = 0.015 log[∑<sub>j=1</sub><sup>5</sup> exp(s<sub>j</sub>/0.015)].</p>
+<p class="small">Let q = π(x+2.05)/4.1. Three scores describe winding tubes: s<sub>j</sub> = r<sub>j</sub>(x)² − [y−y<sub>j</sub>(x)]² − [z−z<sub>j</sub>(x)]² − 0.12(x/2.2)<sup>10</sup>.</p>
+<p class="small equation">(y₁,z₁) = (1.30 sin q + 0.12 sin 3q, 0.35 sin 2q + 0.12 sin 4q)<br>
+(y₂,z₂) = (−1.25 sin q + 0.10 sin 2q, −0.35 sin 2q + 0.11 sin 3q)<br>
+(y₃,z₃) = (0.25 sin 2q + 0.10 sin 4q, 1.42 sin q − 0.13 sin 3q).</p>
+<p class="small equation">r₁ = 0.36 + 0.04 sin²(4q) + 0.11 exp[−((x+0.55)/0.45)²]<br>
+r₂ = 0.36 + 0.06 sin²(3q+0.4) + 0.09 exp[−((x−0.35)/0.4)²]<br>
+r₃ = 0.35 + 0.04 cos²(4q) + 0.10 exp[−((x+0.15)/0.4)²].</p>
+<p class="small">The chamber scores are s₄ = 0.66² − (x+2.05)² − y² − z² and s₅ = 0.70² − (x−2.05)² − y² − z². The smooth maximum S joins these five regions.</p>
+<p id="accuracy" class="small"></p>
+</details>
+<p class="small">Question to explore: from one chamber to the other, which passage gives the shortest route that stays inside? How does that answer change if a corridor narrows?</p>
+</aside></main>
+<script id="positions" type="application/octet-stream">__POSITIONS__</script>
+<script id="normals" type="application/octet-stream">__NORMALS__</script>
+<script id="indices" type="application/octet-stream">__INDICES__</script>
+<script>
+const summary=__SUMMARY__, $=id=>document.getElementById(id);
+let yaw=-0.7,pitch=0.34,zoom=1,drag=null,drawQueued=false;
+const world=$('world'),gl=world.getContext('webgl',{antialias:true,alpha:false});
+function score(x,y,z){
+  const q=Math.PI*(x+2.05)/4.1,s=Math.sin(q),penalty=.12*(x/2.2)**10;
+  const cy=[1.30*s+.12*Math.sin(3*q),-1.25*s+.10*Math.sin(2*q),.25*Math.sin(2*q)+.10*Math.sin(4*q)];
+  const cz=[.35*Math.sin(2*q)+.12*Math.sin(4*q),-.35*Math.sin(2*q)+.11*Math.sin(3*q),1.42*s-.13*Math.sin(3*q)];
+  const r=[.36+.04*Math.sin(4*q)**2+.11*Math.exp(-(((x+.55)/.45)**2)),
+           .36+.06*Math.sin(3*q+.4)**2+.09*Math.exp(-(((x-.35)/.4)**2)),
+           .35+.04*Math.cos(4*q)**2+.10*Math.exp(-(((x+.15)/.4)**2))];
+  const values=r.map((radius,i)=>radius*radius-(y-cy[i])**2-(z-cz[i])**2-penalty);
+  values.push(.66**2-(x+2.05)**2-y*y-z*z,.70**2-(x-2.05)**2-y*y-z*z);
+  const maximum=Math.max(...values),total=values.reduce((sum,value)=>sum+Math.exp((value-maximum)/.015),0);
+  return maximum+.015*Math.log(total);
+}
+function selected(){return [+$('point-x').value,+$('point-y').value,+$('point-z').value]}
+function updatePoint(){
+  const p=selected(),value=score(...p),inside=value>=0;
+  for(const [name,v] of [['point-x',p[0]],['point-y',p[1]],['point-z',p[2]]])$(name+'-out').textContent=v.toFixed(2);
+  $('membership').innerHTML=`<span class="${inside?'inside':'outside'}">${inside?'INSIDE the cave':'OUTSIDE the cave'}</span><br>Point (${p.map(x=>x.toFixed(2)).join(', ')}) · equation score ${value.toFixed(3)}. A positive score means inside; it is not a distance.`;
+  drawSlice();queueDraw();
+}
+const slice=$('slice'),sliceCtx=slice.getContext('2d');
+function countRegions(mask,width,height){
+  const seen=new Uint8Array(mask.length),queue=new Int32Array(mask.length);let regions=0;
+  for(let start=0;start<mask.length;start++){
+    if(!mask[start]||seen[start])continue;regions++;let head=0,tail=0;queue[tail++]=start;seen[start]=1;
+    while(head<tail){const id=queue[head++],row=(id/width)|0,col=id%width;
+      for(const next of [col? id-1:-1,col+1<width?id+1:-1,row?id-width:-1,row+1<height?id+width:-1]){
+        if(next>=0&&mask[next]&&!seen[next]){seen[next]=1;queue[tail++]=next}
+      }
+    }
+  }return regions;
+}
+function drawSlice(){
+  const x=+$('cut').value,n=160,bytes=sliceCtx.createImageData(n,n),mask=new Uint8Array(n*n);
+  $('cut-out').textContent=x.toFixed(2);
+  for(let row=0;row<n;row++)for(let col=0;col<n;col++){
+    const y=-2.2+(col+.5)*4.4/n,z=2.2-(row+.5)*3.2/n,s=score(x,y,z),i=row*n+col,offset=4*i;
+    if(s>=0){mask[i]=1;const brightness=Math.min(1,Math.max(0,s/.25));bytes.data[offset]=Math.round(92-26*brightness);bytes.data[offset+1]=Math.round(178-22*brightness);bytes.data[offset+2]=Math.round(186-19*brightness)}
+    else{bytes.data[offset]=243;bytes.data[offset+1]=247;bytes.data[offset+2]=248}
+    bytes.data[offset+3]=255;
+  }
+  sliceCtx.putImageData(bytes,0,0);
+  const p=selected();if(Math.abs(p[0]-x)<.04){const px=(p[1]+2.2)/4.4*n,py=(2.2-p[2])/3.2*n;sliceCtx.beginPath();sliceCtx.arc(px,py,3,0,2*Math.PI);sliceCtx.fillStyle='#1e3038';sliceCtx.fill();sliceCtx.strokeStyle='white';sliceCtx.lineWidth=1;sliceCtx.stroke()}
+  const regions=countRegions(mask,n,n);$('slice-count').textContent=`${regions} filled ${regions===1?'region':'regions'} here`;
+}
+function decode(id,Type){
+  const binary=atob($(id).textContent.trim()),array=new Uint8Array(binary.length);
+  for(let i=0;i<binary.length;i++)array[i]=binary.charCodeAt(i);
+  return new Type(array.buffer);
+}
+function compile(kind,source){const shader=gl.createShader(kind);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(shader));return shader}
+function program(vertex,fragment){const value=gl.createProgram();gl.attachShader(value,compile(gl.VERTEX_SHADER,vertex));gl.attachShader(value,compile(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(value);if(!gl.getProgramParameter(value,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(value));return value}
+let meshProgram,markerProgram,positionBuffer,normalBuffer,indexBuffer,indexCount;
+const vertexShader=`attribute vec3 aPosition;attribute vec3 aNormal;uniform float uYaw,uPitch,uZoom,uAspect;varying vec3 vWorld,vNormal;
+vec3 rotatePoint(vec3 p){float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);vec3 a=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);return vec3(a.x,cp*a.y-sp*a.z,sp*a.y+cp*a.z);}
+void main(){vWorld=aPosition;vNormal=rotatePoint(aNormal);vec3 p=rotatePoint(aPosition-vec3(0.0,0.0,0.6));gl_Position=vec4(p.x*uZoom/(3.4*uAspect),p.y*uZoom/3.4,-p.z/4.0,1.0);}`;
+const fragmentShader=`precision mediump float;varying vec3 vWorld,vNormal;uniform float uClip,uCut;
+void main(){if(uClip>.5&&vWorld.x>uCut)discard;float lambert=max(dot(normalize(vNormal),normalize(vec3(.35,.45,.83))),0.0);float blend=clamp((vWorld.x+2.7)/5.4,0.0,1.0);vec3 base=mix(vec3(.18,.54,.65),vec3(.77,.55,.31),blend);gl_FragColor=vec4(base*(.46+.54*lambert),1.0);}`;
+const markerVertex=`uniform vec3 uPoint;uniform float uYaw,uPitch,uZoom,uAspect,uPointSize;
+void main(){float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);vec3 p=uPoint-vec3(0.0,0.0,0.6);vec3 a=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);vec3 b=vec3(a.x,cp*a.y-sp*a.z,sp*a.y+cp*a.z);gl_Position=vec4(b.x*uZoom/(3.4*uAspect),b.y*uZoom/3.4,-b.z/4.0,1.0);gl_PointSize=uPointSize;}`;
+const markerFragment=`precision mediump float;uniform vec3 uColor;void main(){vec2 p=gl_PointCoord*2.0-1.0;float r=length(p);if(r>1.0)discard;gl_FragColor=vec4(r>.72?vec3(1.0):uColor,1.0);}`;
+function bindAttribute(programValue,name,buffer){const loc=gl.getAttribLocation(programValue,name);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0)}
+function commonUniforms(programValue){gl.uniform1f(gl.getUniformLocation(programValue,'uYaw'),yaw);gl.uniform1f(gl.getUniformLocation(programValue,'uPitch'),pitch);gl.uniform1f(gl.getUniformLocation(programValue,'uZoom'),zoom);gl.uniform1f(gl.getUniformLocation(programValue,'uAspect'),world.width/world.height)}
+function resize(){
+  if(!gl)return;const rect=world.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),width=Math.round(rect.width*dpr),height=Math.round(rect.height*dpr);
+  if(world.width!==width||world.height!==height){world.width=width;world.height=height}gl.viewport(0,0,width,height);queueDraw();
+}
+function draw(){
+  drawQueued=false;if(!gl||!meshProgram)return;gl.clearColor(.97,.985,.99,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);
+  gl.useProgram(meshProgram);commonUniforms(meshProgram);
+  gl.uniform1f(gl.getUniformLocation(meshProgram,'uClip'),$('clip').checked?1:0);
+  gl.uniform1f(gl.getUniformLocation(meshProgram,'uCut'),+$('cut').value);
+  bindAttribute(meshProgram,'aPosition',positionBuffer);bindAttribute(meshProgram,'aNormal',normalBuffer);
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
+  const p=selected();if($('clip').checked&&p[0]>+$('cut').value)return;
+  gl.disable(gl.DEPTH_TEST);gl.useProgram(markerProgram);commonUniforms(markerProgram);
+  gl.uniform3fv(gl.getUniformLocation(markerProgram,'uPoint'),new Float32Array(p));
+  gl.uniform1f(gl.getUniformLocation(markerProgram,'uPointSize'),15*Math.min(devicePixelRatio||1,2));
+  gl.uniform3fv(gl.getUniformLocation(markerProgram,'uColor'),score(...p)>=0?new Float32Array([.05,.55,.4]):new Float32Array([.78,.22,.15]));
+  gl.drawArrays(gl.POINTS,0,1);
+}
+function queueDraw(){if(!drawQueued){drawQueued=true;requestAnimationFrame(draw)}}
+function initializeWebGL(){
+  if(!gl){$('fallback').style.display='flex';return}
+  try{
+    const positions=decode('positions',Float32Array),normals=decode('normals',Float32Array),indices=decode('indices',Uint16Array);
+    meshProgram=program(vertexShader,fragmentShader);markerProgram=program(markerVertex,markerFragment);
+    positionBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,positionBuffer);gl.bufferData(gl.ARRAY_BUFFER,positions,gl.STATIC_DRAW);
+    normalBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,normalBuffer);gl.bufferData(gl.ARRAY_BUFFER,normals,gl.STATIC_DRAW);
+    indexBuffer=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,indices,gl.STATIC_DRAW);indexCount=indices.length;
+    resize();
+  }catch(error){$('fallback').style.display='flex';console.error('3D display failed:',error)}
+}
+world.addEventListener('pointerdown',event=>{drag=[event.clientX,event.clientY];world.setPointerCapture(event.pointerId);world.classList.add('dragging')});
+world.addEventListener('pointermove',event=>{if(!drag)return;yaw+=(event.clientX-drag[0])*.008;pitch=Math.max(-1.5,Math.min(1.5,pitch+(event.clientY-drag[1])*.008));drag=[event.clientX,event.clientY];queueDraw()});
+for(const name of ['pointerup','pointercancel'])world.addEventListener(name,()=>{drag=null;world.classList.remove('dragging')});
+world.addEventListener('wheel',event=>{event.preventDefault();zoom=Math.max(.55,Math.min(3.5,zoom*Math.exp(-event.deltaY*.001)));queueDraw()},{passive:false});
+for(const name of ['point-x','point-y','point-z'])$(name).addEventListener('input',updatePoint);
+$('cut').addEventListener('input',()=>{drawSlice();queueDraw()});$('clip').addEventListener('change',queueDraw);
+window.addEventListener('resize',resize);
+$('topology').textContent=`Measured wall mesh: ${summary.mesh_components} connected component, ${summary.mesh_boundary_edges} open edges, genus ${summary.mesh_boundary_genus}. A genus-two wall has two independent tunnels; the volume it encloses has three spatial degrees of freedom.`;
+$('accuracy').textContent=`The visible wall uses ${summary.triangles.toLocaleString()} triangles on a ${summary.grid.join('×')} sampling grid. The exact equation decides membership at arbitrary points; mesh-vertex equation residual: median ${summary.mesh_median_field_residual.toExponential(2)}, maximum ${summary.mesh_max_field_residual.toExponential(2)}. The smallest sampled boundary gradient was ${summary.mesh_min_gradient_norm.toFixed(2)}, away from a zero-gradient singularity. Residuals are score differences, not distances.`;
+initializeWebGL();updatePoint();
+</script></body></html>

@@ -7,15 +7,18 @@ The 28x28 renderer is defined in make_three_dimensional_ones.py. The displayed
 import json
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import numpy as np
+from scipy.interpolate import RegularGridInterpolator
 
 from make_three_dimensional_ones import (
-    BOW, LEAN, WIDTH, manifold_view, sample_family,
+    BOW, LEAN, WIDTH, manifold_view, render, sample_family,
 )
-from three_dimensional_ones_volume import model_interpolators
+from three_control_distance_fit import fit_view, five_image_witness
 
 
 OUTPUT = Path("figures/three_control_ones_volume_light.html")
+PREVIEW = Path("figures/three_control_ones_volume_fit.png")
 FINE_W = np.linspace(float(WIDTH[0]), float(WIDTH[-1]), 9)
 FINE_B = np.linspace(float(BOW[0]), float(BOW[-1]), 21)
 FINE_A = np.linspace(float(LEAN[0]), float(LEAN[-1]), 21)
@@ -27,17 +30,77 @@ def chart(interpolator):
     return np.round(xyz.reshape(9, 21, 21, 3), 4).tolist()
 
 
+def preview_figure(charts, diagnostics):
+    colors = {"lean": "#3f77aa", "bow": "#318590", "width": "#c69243"}
+    fig = plt.figure(figsize=(13.5, 6.1), facecolor="white")
+    fig.suptitle("One exact three-knob image family, two three-dimensional views",
+                 fontsize=16, fontweight="bold", y=.975)
+    image_ax = fig.add_axes((.025, .28, .16, .52))
+    image_ax.imshow(render(0, 0, 3), cmap="gray_r", vmin=0, vmax=1,
+                    interpolation="nearest")
+    image_ax.set_title("One member\nlean 0 · bow 0 · width 3", fontsize=10)
+    image_ax.axis("off")
+    fig.text(.105, .22, "Black = full ink\nWhite = no ink",
+             ha="center", fontsize=8, color="#596b77")
+    for slot, name in enumerate(("fit", "coords")):
+        ax = fig.add_axes((.21 + slot * .39, .22, .35, .63), projection="3d")
+        grid = np.asarray(charts[name])
+        for side in (0, -1):
+            for sheet, color in ((grid[side], colors["width"]),
+                                 (grid[:, side], colors["bow"]),
+                                 (grid[:, :, side], colors["lean"])):
+                ax.plot_surface(sheet[..., 0], sheet[..., 1], sheet[..., 2],
+                                color=color, alpha=.28, linewidth=0,
+                                shade=False)
+        ax.set_box_aspect(np.ptp(grid.reshape(-1, 3), axis=0))
+        ax.view_init(elev=19, azim=-55)
+        ax.tick_params(labelsize=7)
+        if name == "fit":
+            ax.set_title("Distance-shaped fit · approximate", fontsize=11,
+                         pad=11)
+            ax.set(xlabel="display x", ylabel="display y", zlabel="display z")
+        else:
+            ax.set_title("Exact knob coordinates · rectangular box",
+                         fontsize=11, pad=11)
+            ax.set(xlabel="lean", ylabel="bow", zlabel="width")
+    fig.text(.5, .13,
+             "Blue: lean limits   ·   teal: bow limits   ·   gold: width limits. "
+             "These transparent faces show the six parameter-boundary families.",
+             ha="center", fontsize=9.5)
+    fig.text(.5, .075,
+             f"Fit: {diagnostics['global_median']:.0%} median random-pair and "
+             f"{diagnostics['local_median']:.0%} small-move distance error on "
+             "unseen images. The coordinate box is exact for knob settings, "
+             "not pixel distances.", ha="center", fontsize=9)
+    fig.savefig(PREVIEW, dpi=140, facecolor="white")
+    plt.close(fig)
+
+
 def main():
+    np.random.seed(9)  # Fix Isomap's eigensolver start for a repeatable fit.
     settings, images = sample_family()
-    views, errors = manifold_view(settings, images)
-    interpolators = model_interpolators(views, LEAN, BOW, WIDTH)
+    original_views, _ = manifold_view(settings, images)
+    fitted, diagnostics = fit_view(original_views["local"], images)
+    views = {"fit": fitted, "coords": settings}
+    interpolators = {
+        name: RegularGridInterpolator(
+            (WIDTH, BOW, LEAN),
+            view.reshape(len(WIDTH), len(BOW), len(LEAN), 3),
+            method="linear",
+        )
+        for name, view in views.items()
+    }
     data = json.dumps({
         "charts": {name: chart(ip) for name, ip in interpolators.items()},
-        "errors": errors,
+        "diagnostics": diagnostics,
+        "witness": five_image_witness(),
     }, separators=(",", ":"))
     OUTPUT.parent.mkdir(exist_ok=True)
     OUTPUT.write_text(TEMPLATE.replace("__DATA__", data), encoding="utf-8")
+    preview_figure({name: chart(ip) for name, ip in interpolators.items()},
+                   diagnostics)
     print(f"Wrote {OUTPUT} ({OUTPUT.stat().st_size:,} bytes)")
+    print("Held-out distance errors and mesh diagnostic:", diagnostics)
 
 
 TEMPLATE = r'''<!doctype html>
@@ -57,15 +120,16 @@ header p{max-width:1000px;margin:0;color:var(--muted)}main{display:grid;grid-tem
 input[type=range]{width:100%;accent-color:#d85c4e}select{width:100%;padding:6px;border:1px solid var(--line);border-radius:5px;background:white}
 .check{display:flex;gap:7px;align-items:center;font-size:13px;margin:10px 0}#image{width:140px;height:140px;image-rendering:pixelated;border:1px solid var(--line)}
 .image-row{display:flex;gap:12px;align-items:center}.metric{padding:8px;background:#eef3f5;border-radius:5px;font-size:12px}
+.equation{overflow-wrap:anywhere;background:#f4f7f8;padding:7px;border-radius:5px}
 .dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 3px 0 8px;vertical-align:middle}
 @media(max-width:850px){main{grid-template-columns:1fr}.panel{max-height:none}#shape{height:57vh;min-height:380px}}
 </style></head><body>
-<header><h1>Where the generated “1” family exists</h1>
-<p>Imagine a solid block of allowed lean, bow, and width settings: every point inside selects one 28×28 image. This drawing shows its transparent outside skin, with an optional sheet cut through the interior. Drag to turn; scroll to zoom.</p></header>
+<header><h1>The generated “1” manifold in three dimensions</h1>
+<p>Every allowed lean, bow, and width gives one exact 28×28 image. The colored faces show the six limits of those settings. The default shape is fitted to pixel distances; “Exact knob coordinates” shows the guaranteed parameter domain. Drag to turn; scroll to zoom.</p></header>
 <main><div class="viewer"><canvas id="shape" aria-label="Rotatable three-dimensional view of the generated 1 family"></canvas>
 <div class="view-note">Blue faces: lean limits <span class="dot" style="background:#318590"></span>bow limits
 <span class="dot" style="background:#c69243"></span>width limits <span class="dot" style="background:#d85c4e"></span>optional interior cut</div></div>
-<aside class="panel"><h2>Shape view</h2><div class="row"><button id="local" class="active" type="button">Nearby changes</button><button id="global" type="button">Overall distances</button></div>
+<aside class="panel"><h2>Shape view</h2><div class="row"><button id="fit" class="active" type="button">Distance-shaped fit</button><button id="coords" type="button">Exact knob coordinates</button></div>
 <p id="error" class="small"></p>
 <div class="control"><label for="alpha">Skin opacity <output id="alpha-out">35%</output></label><input id="alpha" type="range" min="0.1" max="0.8" step="0.01" value="0.35"></div>
 <label class="check"><input id="cut-on" type="checkbox">Show an interior sheet</label>
@@ -77,19 +141,28 @@ input[type=range]{width:100%;accent-color:#d85c4e}select{width:100%;padding:6px;
 <div class="control"><label for="width">Width <output id="width-out">3.00 px</output></label><input id="width" type="range" min="1.8" max="4.2" step="0.01" value="3"></div>
 <div class="image-row"><canvas id="image" width="28" height="28" aria-label="Exact generated 1"></canvas><div class="small">The dark marker in the shape view is this image. Black pixels have full ink coverage.</div></div>
 <p id="distance" class="metric"></p>
+<p id="local-moves" class="metric"></p>
+<details><summary class="small">Local pixel-distance rule</summary><p class="small">For a tiny knob move <i>dq</i>, the squared pixel distance is approximately <i>dq</i>ᵀ<i>G</i>(<i>q</i>)<i>dq</i>. This metric is estimated numerically from the exact image generator at the selected 1. At a pixel-boundary kink, the two one-sided directions can differ.</p><pre id="metric" class="small"></pre></details>
 <h3>How to read the shape</h3>
-<p class="small">The colored faces are six continuous parameter-boundary families, not six separate layers or a finite point cloud. The interior contains all allowed combinations. The red sheet, when shown, fixes one knob and varies the other two.</p>
-<p class="small">The image is generated exactly by the stroke-coverage equation. Its location in this 3D drawing is a smooth fit to sampled images; this view cannot preserve every 784-pixel distance. Transparent faces can overlap when seen through one another.</p>
+<p class="small">The colored faces are six continuous parameter-boundary families, not six separate layers or a finite point cloud. The exact parameter box contains all allowed combinations. The red sheet, when shown, fixes one knob and varies the other two.</p>
+<p class="small">The fitted view uses exact images at 405 anchor settings, optimizes image distances and small mixed knob moves, and joins anchors continuously without smoothing across them. This avoids the false folds created by the earlier smooth interpolation. The coordinate view maps each setting to its literal (lean, bow, width) coordinate.</p>
+<details><summary class="small">Exact image-family equation</summary>
+<p class="small">Let a = lean, b = bow, w = width, y<sub>r,k</sub> = r + (k + 0.5)/16, z(y) = (y − 14.5)/9.875, and x(y) = 14.5 − a z(y) + b(1 − z(y)²).</p>
+<p class="small equation">F<sub>r,c</sub>(a,b,w) = (1/16) ∑<sub>k=0</sub><sup>15</sup> v<sub>r,k</sub> max{0, min[c+1, x(y<sub>r,k</sub>)+w/2] − max[c, x(y<sub>r,k</sub>)−w/2]}.</p>
+<p class="small">Here v<sub>r,k</sub> is the fraction of subrow [r+k/16, r+(k+1)/16] inside the fixed vertical stroke interval [4.625,24.375]. This defines all 784 pixel values for every allowed setting.</p></details>
+<h3>Why the fit cannot be 100%</h3>
+<p class="small">Intrinsic dimension three means three numbers identify an image. It does not mean all 784-pixel distances fit in ordinary 3D. Even five legal images at the same width need four independent pixel-space directions: their fourth measured spread is <span id="witness"></span>. No optimization can preserve all pairwise distances exactly in three Euclidean coordinates.</p>
 </aside></main>
 <script>
 const data=__DATA__, $=id=>document.getElementById(id), canvas=$('shape'), ctx=canvas.getContext('2d',{alpha:false});
-let layout='local',yaw=-0.65,pitch=0.37,zoom=1,drag=null,pending=false,dpr=1,W=0,H=0;
+let layout='fit',yaw=-0.65,pitch=0.37,zoom=1,drag=null,pending=false,dpr=1,W=0,H=0;
 let faces=[],edges=[],cutFaces=[],center=[0,0,0],radius=1;
 const colors={lean:[63,119,170],bow:[48,144,151],width:[198,151,68],cut:[215,82,69]};
 const dims={w:9,b:21,a:21};
 function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
 function bracket(x,low,high,n){let t=clamp((x-low)*(n-1)/(high-low),0,n-1),i=Math.min(n-2,Math.floor(t));return [i,t-i]}
 function point(q){
+  if(layout==='coords')return q;
   const chart=data.charts[layout], [wi,wt]=bracket(q[2],1.8,4.2,dims.w),[bi,bt]=bracket(q[1],-2,2,dims.b),[ai,at]=bracket(q[0],-3,3,dims.a);
   let out=[0,0,0];for(let dw=0;dw<2;dw++)for(let db=0;db<2;db++)for(let da=0;da<2;da++){
     const f=(dw?wt:1-wt)*(db?bt:1-bt)*(da?at:1-at),p=chart[wi+dw][bi+db][ai+da];
@@ -157,27 +230,47 @@ function image784(q){
   }return out;
 }
 const base=image784([0,0,3]);function selectedQ(){return [+$('lean').value,+$('bow').value,+$('width').value]}
+function localMetric(q){
+  const limits=[[-3,3],[-2,2],[1.8,4.2]],h=0.0001,columns=[];
+  for(let k=0;k<3;k++){
+    const plus=q.slice(),minus=q.slice();plus[k]=Math.min(limits[k][1],q[k]+h);minus[k]=Math.max(limits[k][0],q[k]-h);
+    const a=image784(plus),b=image784(minus),step=plus[k]-minus[k],column=new Float64Array(784);
+    for(let i=0;i<784;i++)column[i]=(a[i]-b[i])/step;columns.push(column);
+  }
+  const G=Array.from({length:3},()=>[0,0,0]);
+  for(let j=0;j<3;j++)for(let k=0;k<3;k++)for(let i=0;i<784;i++)G[j][k]+=columns[j][i]*columns[k][i];
+  return G;
+}
 function updateImage(){
   const q=selectedQ(),pixels=image784(q),im=$('image').getContext('2d'),bytes=im.createImageData(28,28);let dist=0;
   for(let i=0;i<784;i++){const gray=Math.round(255*(1-pixels[i]));bytes.data.set([gray,gray,gray,255],4*i);dist+=(pixels[i]-base[i])**2}im.putImageData(bytes,0,0);
   for(const [key,val] of [['lean',q[0]],['bow',q[1]],['width',q[2]]])$(key+'-out').textContent=val.toFixed(2)+' px';
   const p=point(q),zero=point([0,0,3]),shown=Math.hypot(...p.map((x,k)=>x-zero[k]));
   $('distance').textContent=`From the central 1: pixel-space distance ${Math.sqrt(dist).toFixed(2)}; drawn 3D distance ${shown.toFixed(2)}.`;drawSoon();
+  const G=localMetric(q),rate=G.map((row,k)=>(0.1*Math.sqrt(row[k])).toFixed(2));
+  $('local-moves').textContent=`Near this 1, a 0.1 px move changes the 784-pixel image by about: lean ${rate[0]}, bow ${rate[1]}, width ${rate[2]} in pixel distance.`;
+  $('metric').textContent='G =\n'+G.map(row=>'  '+row.map(x=>x.toFixed(2).padStart(7)).join(' ')).join('\n')+'\nrows/columns: lean, bow, width';
 }
-function setLayout(which){layout=which;$('local').classList.toggle('active',which==='local');$('global').classList.toggle('active',which==='global');
-  const e=data.errors[which];$('error').textContent=(which==='local'?'Preserves nearby changes better. ':'Preserves overall distances better. ')+
-    `Median distance error: nearby ${Math.round(100*e.local_median)}%; all pairs ${Math.round(100*e.all_median)}%.`;
+function setLayout(which){layout=which;
+  $('fit').classList.toggle('active',which==='fit');$('coords').classList.toggle('active',which==='coords');
+  if(which==='fit'){
+    const e=data.diagnostics;
+    $('error').textContent=`On unseen generated images: median distance error ${Math.round(100*e.global_median)}% for random pairs, ${Math.round(100*e.local_median)}% for small moves. Reversal found in ${e.reversed_fine_cells} of ${e.fine_cell_count} displayed cells (${e.jacobian_samples_per_cell} checks per cell). This does not prove a perfect global embedding.`;
+  }else{
+    $('error').textContent='Exact lean, bow, and width coordinates: every allowed setting has its proper location in this box. Its ruler is knob units, not 784-pixel distance.';
+  }
   rebuild();updateImage();
 }
 for(const name of ['lean','bow','width'])$(name).addEventListener('input',updateImage);
-$('local').addEventListener('click',()=>setLayout('local'));$('global').addEventListener('click',()=>setLayout('global'));
+$('fit').addEventListener('click',()=>setLayout('fit'));$('coords').addEventListener('click',()=>setLayout('coords'));
 $('alpha').addEventListener('input',()=>{$('alpha-out').textContent=Math.round(100*(+$('alpha').value))+'%';drawSoon()});
 $('cut-on').addEventListener('change',()=>{$('cut-kind').disabled=!$('cut-on').checked;$('cut-value').disabled=!$('cut-on').checked;rebuildCut()});
 $('cut-kind').addEventListener('change',()=>{const kind=$('cut-kind').value,range=$('cut-value');
   const bounds=kind==='width'?[1.8,4.2]:kind==='lean'?[-3,3]:[-2,2];range.min=bounds[0];range.max=bounds[1];range.value=kind==='width'?3:0;updateCut()});
 function updateCut(){$('cut-out').textContent=$('cut-kind').value+' '+(+$('cut-value').value).toFixed(2)+' px';rebuildCut()}
 $('cut-value').addEventListener('input',updateCut);
-window.addEventListener('resize',resize);resize();setLayout('local');
+$('witness').textContent=data.witness[3].toFixed(2)+' (the third is '+data.witness[2].toFixed(2)+')';
+window.addEventListener('resize',resize);resize();setLayout('fit');
 </script></body></html>'''
 
 
