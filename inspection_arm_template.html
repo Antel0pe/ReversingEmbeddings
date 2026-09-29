@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The inspection arm: valid states in three dimensions</title>
+<style>
+:root{color-scheme:light;--ink:#24383e;--muted:#536b71;--line:#d4e1e3;--teal:#218d8c;--red:#b64e43}
+*{box-sizing:border-box}body{margin:0;background:#f1f6f6;color:var(--ink);font:14px/1.4 system-ui,sans-serif}
+header{background:white;border-bottom:1px solid var(--line);padding:15px 20px}h1{font-size:23px;line-height:1.18;margin:0 0 5px}
+header p{margin:0;max-width:1120px;color:var(--muted)}main{display:grid;grid-template-columns:minmax(460px,1fr) 400px;gap:12px;padding:12px}
+.viewer,.panel{background:white;border:1px solid var(--line);border-radius:9px;overflow:hidden}.viewer{position:relative}
+#world{display:block;width:100%;height:calc(100vh - 111px);min-height:600px;cursor:crosshair;touch-action:none}#world.dragging{cursor:grabbing}
+#fallback{display:none;position:absolute;inset:0;background:white;align-items:center;justify-content:center;padding:18px;text-align:center}#fallback img{max-width:100%;max-height:70vh}
+.overlay{position:absolute;top:12px;left:12px;max-width:265px;background:#fffffff0;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:12px}
+.overlay strong{display:block;margin-bottom:3px}.overlay .key{display:block}.u{color:#b46b2f}.v{color:#546eac}.h{color:#18847a}
+#triad{position:absolute;left:10px;bottom:10px;width:105px;height:94px;pointer-events:none}
+.panel{padding:14px;max-height:calc(100vh - 111px);overflow:auto}h2{font-size:15px;margin:0 0 7px}h3{font-size:13px;margin:15px 0 6px}
+.small{font-size:12px;color:var(--muted);margin:5px 0 8px}.result{background:#eaf3f3;border-radius:6px;padding:8px;font-size:12px;margin:7px 0}
+.bad{color:var(--red);font-weight:700}.good{color:#127e74;font-weight:700}.controls{display:grid;gap:9px}.control label{display:flex;justify-content:space-between;font-weight:600;font-size:12px}
+input[type=range]{width:100%;accent-color:#278c90}.button-row{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
+button{border:1px solid #b7ced0;border-radius:5px;background:#f5faf9;color:var(--ink);padding:5px 8px;font:12px system-ui,sans-serif;cursor:pointer}
+button:hover{background:#e4f2f0}button.active{background:#d5eae7;border-color:#54a59d;font-weight:700}
+.view-small{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:#f6f9f9}
+#arm{height:210px}#slice{height:205px}.check{display:flex;gap:6px;align-items:center;font-size:12px;margin:5px 0}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.columns p{margin:3px 0}.tag{font-size:11px;font-weight:700;color:#566d73;text-transform:uppercase;letter-spacing:.04em}
+details{border-top:1px solid var(--line);margin-top:12px;padding-top:9px}summary{cursor:pointer;font-size:12px;font-weight:600}
+.equation{font-family:ui-monospace,monospace;background:#f4f7f7;padding:7px;border-radius:5px;overflow-wrap:anywhere}
+@media(max-width:950px){main{grid-template-columns:1fr}.panel{max-height:none}#world{height:55vh;min-height:370px}}
+</style></head><body>
+<header><h1>An inspection arm: the valid-pose manifold in its own 3D space</h1>
+<p>A two-link arm has exactly three controls: shoulder angle, relative elbow angle, and lift. Two low poses can reach the same probe location, but cannot switch between them without rising over an obstacle. The 3D region shows the safe route.</p></header>
+<main><section class="viewer" aria-label="Rotatable 3D valid-state region">
+<canvas id="world" aria-label="Three-dimensional region of valid arm controls"></canvas>
+<div id="fallback"><div><p>3D graphics did not start here. The static overview is below.</p><img src="inspection_arm_manifold.png" alt="Inspection arm valid-state overview"></div></div>
+<div class="overlay"><strong>Every point is one arm state</strong><span class="key u">x = shoulder angle / 95°</span><span class="key v">y = elbow angle / 150°</span><span class="key h">z = lift, 0 to 1</span><span>Click the colored wall to select an arm pose. Drag to rotate; scroll to zoom. Magenta = safe route; dot = selected state.</span></div>
+<canvas id="triad" width="105" height="94" aria-label="Rotating orientation axes for shoulder, elbow, and lift"></canvas>
+</section>
+<aside class="panel"><h2>Can the arm switch elbow postures safely?</h2>
+<p class="small">The route begins and ends at lift 0.35 with the probe at (1.15, 0.70). Both poses are valid, but the low-lift slice has two separate regions. The route lifts, changes both angles at lift 0.80, then lowers.</p>
+<div class="control"><label for="route-progress">Follow the magenta route <output id="route-stage">start</output></label><input id="route-progress" type="range" min="0" max="1" step="0.001" value="0"></div>
+<h3>Another collision example: same tip, three states</h3>
+<div class="button-row"><button id="preset-blocked" type="button">Elbow above, low</button><button id="preset-raised" type="button">Same pose, raised</button><button id="preset-other" type="button">Elbow below, low</button></div>
+<p class="small">The first pose hits the low post. Raising it changes only lift. Folding the elbow the other way reaches the <em>same probe tip</em> while clearing the post at low lift.</p>
+<div class="controls">
+<div class="control"><label for="shoulder">Shoulder angle <output id="shoulder-out"></output></label><input id="shoulder" type="range" min="-95" max="95" step="any"></div>
+<div class="control"><label for="elbow">Relative elbow angle <output id="elbow-out"></output></label><input id="elbow" type="range" min="-150" max="150" step="any"></div>
+<div class="control"><label for="lift">Lift <output id="lift-out"></output></label><input id="lift" type="range" min="0" max="1" step="any"></div>
+</div>
+<p id="pick-status" class="small" aria-live="polite">Click a point on the visible 3D wall to set these three controls and see its arm pose below.</p>
+<p id="status" class="result" aria-live="polite"></p>
+<h3>What that point does on the workbench</h3>
+<canvas id="arm" class="view-small" width="360" height="210" aria-label="Overhead arm pose and circular obstacles"></canvas>
+<p class="small">Green band = required probe target. Gray center = protected area where the probe cannot go. Orange = rounded low post: it narrows above lift 0.55 and ends at 0.72.</p>
+<h3>Slice through the 3D valid region</h3>
+<label class="check"><input id="clip" type="checkbox">Hide the 3D wall above the selected lift</label>
+<canvas id="slice" class="view-small" width="360" height="205" aria-label="Valid shoulder and elbow angles at the current lift"></canvas>
+<p class="small">Cyan = valid angle pairs at this lift; pale = invalid. The black dot is the selected pose. As lift changes, the map changes because the low post can be cleared.</p>
+<p id="topology" class="result"></p>
+<details><summary>Exact rules and what is approximated</summary>
+<p class="small">Let u = shoulder angle / 95°, v = elbow angle / 150°, and h = lift. The state is (u,v,h), with −1 ≤ u,v ≤ 1 and 0 ≤ h ≤ 1. Arm lengths are 1 and 0.8 workbench units.</p>
+<p class="small equation">E = (cos 95°u, sin 95°u)<br>P = E + 0.8(cos(95°u+150°v), sin(95°u+150°v))</p>
+<p class="small">The probe P must be 0.20 to 0.65 units from target center (1.30, 0.40). The low post is a vertical radius-0.17 shaft up to lift 0.55, with a rounded cap ending at 0.72. For each finite arm link, let d be its exact shortest overhead distance to (0.65, 0.50). Clearance requires d² + max(0,h−0.55)² ≥ 0.17². A link touching the boundary is allowed. Only the probe is forbidden from the gray center; it is a target rule, not a physical obstacle to the links.</p>
+<p class="small">These inequalities define every valid point, including between mesh triangles. The colored 3D wall is sampled from them. Its genus and smooth appearance are numerical mesh observations; the exact rule boundary has some corners where conditions meet.</p>
+<p class="small">The magenta route is three straight segments in control space: lift from 0.35 to 0.80, change both angles, and lower to 0.35. A conservative bound on how fast each rule score can change between sampled route points certifies that every point of these continuous segments is valid.</p>
+<p id="accuracy" class="small"></p>
+</details>
+</aside></main>
+<script id="positions" type="application/octet-stream">__POSITIONS__</script>
+<script id="normals" type="application/octet-stream">__NORMALS__</script>
+<script id="indices" type="application/octet-stream">__INDICES__</script>
+<script>
+const summary=__SUMMARY__, $=id=>document.getElementById(id),D=Math.PI/180;
+let yaw=-.64,pitch=.30,zoom=1.16,drag=null,drawQueued=false;
+const world=$('world'),gl=world.getContext('webgl',{antialias:true,alpha:false});
+function armPoints(u,v){const a=95*u*D,b=150*v*D,e=[Math.cos(a),Math.sin(a)];return [[0,0],e,[e[0]+.8*Math.cos(a+b),e[1]+.8*Math.sin(a+b)]]}
+function segDistance(start,end,point){const dx=end[0]-start[0],dy=end[1]-start[1],t=Math.max(0,Math.min(1,((point[0]-start[0])*dx+(point[1]-start[1])*dy)/(dx*dx+dy*dy)));return Math.hypot(point[0]-start[0]-t*dx,point[1]-start[1]-t*dy)}
+function rules(u,v,h){
+  const points=armPoints(u,v),tip=points[2],r=Math.hypot(tip[0]-1.3,tip[1]-.4),distance1=segDistance(points[0],points[1],[.65,.5]),distance2=segDistance(points[1],points[2],[.65,.5]),vertical=Math.max(0,h-.55);
+  const joint=Math.abs(u)<=1&&Math.abs(v)<=1&&h>=0&&h<=1;
+  const target=r>=.2&&r<=.65;
+  const link1=Math.hypot(distance1,vertical)>=.17,link2=Math.hypot(distance2,vertical)>=.17;
+  return {valid:joint&&target&&link1&&link2,joint,target,link1,link2,r,points,distance1,distance2};
+}
+function chosen(){return [+$('shoulder').value/95,+$('elbow').value/150,+$('lift').value]}
+function inverse(tip,sign){const [x,y]=tip,c=(x*x+y*y-1-.8**2)/1.6,b=sign*Math.acos(c),a=Math.atan2(y,x)-Math.atan2(.8*Math.sin(b),1+.8*Math.cos(b));return [a/D,b/D]}
+const targetTip=[1.55,.45],above=inverse(targetTip,-1),below=inverse(targetTip,1);
+const presets={blocked:[above[0],above[1],.35],raised:[above[0],above[1],.8],other:[below[0],below[1],.35]};
+const routeTip=[1.15,.70],routeAbove=inverse(routeTip,-1),routeBelow=inverse(routeTip,1);
+const route=[
+  [routeAbove[0]/95,routeAbove[1]/150,.35],
+  [routeAbove[0]/95,routeAbove[1]/150,.80],
+  [routeBelow[0]/95,routeBelow[1]/150,.80],
+  [routeBelow[0]/95,routeBelow[1]/150,.35]
+];
+function routeAt(t){const index=Math.min(2,Math.floor(t*3)),part=Math.max(0,Math.min(1,t*3-index));return route[index].map((x,k)=>x*(1-part)+route[index+1][k]*part)}
+function selectRoute(t){const p=routeAt(t);$('shoulder').value=95*p[0];$('elbow').value=150*p[1];$('lift').value=p[2];update()}
+function setPreset(name){const p=presets[name];$('shoulder').value=p[0];$('elbow').value=p[1];$('lift').value=p[2];update()}
+function update(){
+  const [u,v,h]=chosen(),r=rules(u,v,h);
+  $('shoulder-out').textContent=(95*u).toFixed(1)+'°';$('elbow-out').textContent=(150*v).toFixed(1)+'°';$('lift-out').textContent=h.toFixed(3);
+  let failure=[];if(!r.target)failure.push(r.r<.2?'probe enters protected center':'probe misses target ring');if(!r.link1||!r.link2)failure.push('arm hits low post');
+  $('status').innerHTML=`<span class="${r.valid?'good':'bad'}">${r.valid?'VALID pose':'INVALID pose'}</span> · probe at (${r.points[2][0].toFixed(2)}, ${r.points[2][1].toFixed(2)}) · ${r.valid?'target and clearance rules satisfied':failure.join('; ')}`;
+  for(const [name,values] of Object.entries(presets))$('preset-'+name).classList.toggle('active',Math.abs(95*u-values[0])<.06&&Math.abs(150*v-values[1])<.06&&Math.abs(h-values[2])<.003);
+  const t=+$('route-progress').value,onRoute=routeAt(t).every((value,k)=>Math.abs(value-[u,v,h][k])<.003);
+  $('route-stage').textContent=onRoute?(t<1/3?'lifting':t<2/3?'turning':'lowering'):'manual pose';
+  drawArm(r,h);drawSlice(h,u,v);queueDraw();
+}
+function drawArm(r,h){
+  const canvas=$('arm'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+  const px=x=>22+(x+.1)*150,py=y=>H-18-(y+.65)*112;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#f8fbfb';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='#d9e4e5';ctx.lineWidth=1;
+  for(const x of [0,.5,1,1.5,2]){ctx.beginPath();ctx.moveTo(px(x),0);ctx.lineTo(px(x),H);ctx.stroke()}
+  for(const y of [-.5,0,.5,1]){ctx.beginPath();ctx.moveTo(0,py(y));ctx.lineTo(W,py(y));ctx.stroke()}
+  function circle(c,rad,fill,stroke){ctx.beginPath();ctx.arc(px(c[0]),py(c[1]),rad*150,0,2*Math.PI);ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle=stroke;ctx.lineWidth=1.5;ctx.stroke()}
+  circle([1.3,.4],.65,'#e0f2e8','#419b79');circle([1.3,.4],.2,'#667983','#344d55');circle([.65,.5],.17,'#e4aa83','#b6603f');
+  ctx.lineWidth=6;ctx.lineCap='round';for(let i=0;i<2;i++){const start=r.points[i],end=r.points[i+1];ctx.beginPath();ctx.moveTo(px(start[0]),py(start[1]));ctx.lineTo(px(end[0]),py(end[1]));ctx.strokeStyle=(!r['link'+(i+1)])?'#bf5347':'#227f8f';ctx.stroke()}
+  for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(px(r.points[i][0]),py(r.points[i][1]),i===2?5:4,0,2*Math.PI);ctx.fillStyle=i===2?(r.target?'#135e55':'#bf5347'):'#26464d';ctx.fill();ctx.strokeStyle='white';ctx.lineWidth=1;ctx.stroke()}
+  ctx.font='11px system-ui';ctx.fillStyle='#25434a';ctx.fillText('base',px(0)-12,py(0)+18);ctx.fillText('probe',px(r.points[2][0])+7,py(r.points[2][1])-5);
+  ctx.fillStyle='#a75737';ctx.fillText('rounded post · cap 0.72',px(.65)-64,py(.5)-29);
+  ctx.fillStyle='#4d6a70';ctx.fillText('overhead view · arm lift '+h.toFixed(2),9,16);
+}
+let sliceGeometry=null;
+function drawSlice(h,u,v){
+  const canvas=$('slice'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,left=42,top=12,plotW=W-52,plotH=H-36;
+  if(!sliceGeometry){
+    const target=new Uint8Array(plotW*plotH),d1=new Float32Array(target.length),d2=new Float32Array(target.length);
+    for(let row=0;row<plotH;row++)for(let col=0;col<plotW;col++){
+      const su=-1+(col+.5)*2/plotW,sv=1-(row+.5)*2/plotH,i=row*plotW+col,r=rules(su,sv,0);
+      target[i]=r.target?1:0;d1[i]=r.distance1;d2[i]=r.distance2;
+    }
+    sliceGeometry={target,d1,d2};
+  }
+  const image=ctx.createImageData(plotW,plotH),vertical=Math.max(0,h-.55),needed=.17**2-vertical**2;
+  for(let i=0;i<plotW*plotH;i++){
+    const good=sliceGeometry.target[i]&&(needed<=0||(sliceGeometry.d1[i]**2>=needed&&sliceGeometry.d2[i]**2>=needed)),offset=4*i;
+    const color=good?[95,175,177]:[243,247,247];for(let k=0;k<3;k++)image.data[offset+k]=color[k];image.data[offset+3]=255;
+  }
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.putImageData(image,left,top);
+  ctx.strokeStyle='#40575d';ctx.lineWidth=1;ctx.strokeRect(left,top,plotW,plotH);
+  const dotX=left+(u+1)*plotW/2,dotY=top+(1-v)*plotH/2;
+  ctx.beginPath();ctx.arc(dotX,dotY,5,0,2*Math.PI);ctx.fillStyle='#26393f';ctx.fill();ctx.strokeStyle='white';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.fillStyle='#4f666d';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('shoulder −95°',left+45,H-4);ctx.fillText('+95°',left+plotW-18,H-4);
+  ctx.save();ctx.translate(12,top+plotH/2);ctx.rotate(-Math.PI/2);ctx.fillText('relative elbow angle: −150° to +150°',0,0);ctx.restore();ctx.textAlign='left';
+}
+function decode(id,Type){const binary=atob($(id).textContent.trim()),array=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)array[i]=binary.charCodeAt(i);return new Type(array.buffer)}
+function compile(kind,source){const shader=gl.createShader(kind);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(shader));return shader}
+function program(vertex,fragment){const value=gl.createProgram();gl.attachShader(value,compile(gl.VERTEX_SHADER,vertex));gl.attachShader(value,compile(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(value);if(!gl.getProgramParameter(value,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(value));return value}
+let meshProgram,markerProgram,routeProgram,positionBuffer,normalBuffer,indexBuffer,routeBuffer,indexCount;
+let meshPositions,meshNormals,meshIndices;
+const vertexShader=`attribute vec3 aPosition;attribute vec3 aNormal;uniform float uYaw,uPitch,uZoom,uAspect;varying vec3 vWorld,vNormal;
+vec3 rotatePoint(vec3 p){float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);vec3 a=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);return vec3(a.x,cp*a.y-sp*a.z,sp*a.y+cp*a.z);}
+void main(){vWorld=aPosition;vNormal=rotatePoint(vec3(aNormal.x,aNormal.z,aNormal.y));vec3 p=rotatePoint(vec3(aPosition.x,aPosition.z-.5,aPosition.y));gl_Position=vec4(p.x*uZoom/(1.65*uAspect),p.y*uZoom/1.65,-p.z/3.2,1.0);}`;
+const fragmentShader=`precision mediump float;varying vec3 vWorld,vNormal;uniform float uClip,uCut;
+void main(){if(uClip>.5&&vWorld.z>uCut)discard;float lit=max(dot(normalize(vNormal),normalize(vec3(.35,.55,.78))),0.0);float blend=clamp((vWorld.z-.1)/.8,0.0,1.0);vec3 base=mix(vec3(.25,.55,.64),vec3(.62,.75,.45),blend);gl_FragColor=vec4(base*(.48+.52*lit),1.0);}`;
+const markerVertex=`uniform vec3 uPoint;uniform float uYaw,uPitch,uZoom,uAspect,uPointSize;
+void main(){float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);vec3 p=vec3(uPoint.x,uPoint.z-.5,uPoint.y);vec3 a=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);vec3 b=vec3(a.x,cp*a.y-sp*a.z,sp*a.y+cp*a.z);gl_Position=vec4(b.x*uZoom/(1.65*uAspect),b.y*uZoom/1.65,-b.z/3.2,1.0);gl_PointSize=uPointSize;}`;
+const markerFragment=`precision mediump float;uniform vec3 uColor;void main(){vec2 p=gl_PointCoord*2.0-1.0;float r=length(p);if(r>1.0)discard;gl_FragColor=vec4(r>.72?vec3(1.0):uColor,1.0);}`;
+const routeVertex=`attribute vec3 aPosition;uniform float uYaw,uPitch,uZoom,uAspect;
+void main(){float cy=cos(uYaw),sy=sin(uYaw),cp=cos(uPitch),sp=sin(uPitch);vec3 p=vec3(aPosition.x,aPosition.z-.5,aPosition.y);vec3 a=vec3(cy*p.x+sy*p.z,p.y,-sy*p.x+cy*p.z);vec3 b=vec3(a.x,cp*a.y-sp*a.z,sp*a.y+cp*a.z);gl_Position=vec4(b.x*uZoom/(1.65*uAspect),b.y*uZoom/1.65,-b.z/3.2,1.0);}`;
+const routeFragment=`precision mediump float;void main(){gl_FragColor=vec4(.83,.20,.46,1.0);}`;
+function bindAttribute(programValue,name,buffer){const loc=gl.getAttribLocation(programValue,name);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0)}
+function commonUniforms(programValue){gl.uniform1f(gl.getUniformLocation(programValue,'uYaw'),yaw);gl.uniform1f(gl.getUniformLocation(programValue,'uPitch'),pitch);gl.uniform1f(gl.getUniformLocation(programValue,'uZoom'),zoom);gl.uniform1f(gl.getUniformLocation(programValue,'uAspect'),world.width/world.height)}
+function resize(){if(!gl)return;const rect=world.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),width=Math.round(rect.width*dpr),height=Math.round(rect.height*dpr);if(world.width!==width||world.height!==height){world.width=width;world.height=height}gl.viewport(0,0,width,height);queueDraw()}
+function validPointNearWall(point,normal){
+  if(rules(...point).valid)return point;
+  const length=Math.hypot(...normal)||1,unit=normal.map(value=>value/length);
+  const directions=[unit,unit.map(value=>-value),[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
+  for(const distance of [.001,.003,.007,.015,.03,.06])for(const direction of directions){
+    const candidate=point.map((value,k)=>value+distance*direction[k]);
+    if(rules(...candidate).valid)return candidate;
+  }
+  return point;
+}
+function pickSurface(event){
+  if(!meshPositions||!meshIndices)return;
+  const rect=world.getBoundingClientRect(),x=2*(event.clientX-rect.left)/rect.width-1,y=1-2*(event.clientY-rect.top)/rect.height;
+  if(x<-1||x>1||y<-1||y>1)return;
+  const projected=new Float32Array(meshPositions.length),cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch),aspect=world.width/world.height;
+  for(let i=0;i<meshPositions.length;i+=3){
+    const u=meshPositions[i],v=meshPositions[i+1],h=meshPositions[i+2],turnedX=cy*u+sy*v,turnedZ=-sy*u+cy*v;
+    projected[i]=turnedX*zoom/(1.65*aspect);
+    projected[i+1]=(cp*(h-.5)-sp*turnedZ)*zoom/1.65;
+    projected[i+2]=sp*(h-.5)+cp*turnedZ;
+  }
+  let hit=null;
+  for(let i=0;i<meshIndices.length;i+=3){
+    const a=3*meshIndices[i],b=3*meshIndices[i+1],c=3*meshIndices[i+2];
+    const x0=projected[a],y0=projected[a+1],x1=projected[b],y1=projected[b+1],x2=projected[c],y2=projected[c+1];
+    if(x<Math.min(x0,x1,x2)||x>Math.max(x0,x1,x2)||y<Math.min(y0,y1,y2)||y>Math.max(y0,y1,y2))continue;
+    const denominator=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2);
+    if(Math.abs(denominator)<1e-12)continue;
+    const w0=((y1-y2)*(x-x2)+(x2-x1)*(y-y2))/denominator;
+    const w1=((y2-y0)*(x-x2)+(x0-x2)*(y-y2))/denominator,w2=1-w0-w1;
+    if(w0<0||w1<0||w2<0)continue;
+    const weights=[w0,w1,w2],offsets=[a,b,c],depth=w0*projected[a+2]+w1*projected[b+2]+w2*projected[c+2];
+    if(hit&&depth<=hit.depth)continue;
+    const point=[0,0,0],normal=[0,0,0];
+    for(let j=0;j<3;j++)for(let k=0;k<3;k++){
+      point[k]+=weights[j]*meshPositions[offsets[j]+k];
+      normal[k]+=weights[j]*meshNormals[offsets[j]+k];
+    }
+    if($('clip').checked&&point[2]>+$('lift').value)continue;
+    hit={point,normal,depth};
+  }
+  if(!hit){$('pick-status').textContent='No visible wall at that spot. Click the shaded 3D surface.';return}
+  const selected=validPointNearWall(hit.point,hit.normal);
+  $('shoulder').value=95*selected[0];$('elbow').value=150*selected[1];$('lift').value=selected[2];
+  const adjusted=Math.hypot(...selected.map((value,k)=>value-hit.point[k]))>1e-6;
+  $('pick-status').textContent=!rules(...selected).valid?'Selected the nearest drawn wall point, but the exact rules classify it as invalid. This is a mesh approximation; try a nearby point.':adjusted?'Selected a visible surface point. The controls were placed just inside the valid region because the drawn wall is approximate.':'Selected a visible surface point. Its shoulder, elbow, and lift now control the arm below.';
+  update();
+}
+function axisTriad(){
+  const canvas=$('triad'),ctx=canvas.getContext('2d');ctx.clearRect(0,0,105,94);ctx.fillStyle='#ffffffe6';ctx.strokeStyle='#d2dfe1';ctx.lineWidth=1;ctx.beginPath();ctx.roundRect(0,0,105,94,6);ctx.fill();ctx.stroke();
+  function project([u,v,h]){let x=u,y=h,z=v,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch),a=cy*x+sy*z,b=-sy*x+cy*z;return [43+27*a,56-27*(cp*y-sp*b)]}
+  const origin=project([0,0,0]);for(const [vector,label,color] of [[[1,0,0],'x','#b46b2f'],[[0,1,0],'y','#546eac'],[[0,0,1],'z','#18847a']]){const end=project(vector);ctx.beginPath();ctx.moveTo(...origin);ctx.lineTo(...end);ctx.strokeStyle=color;ctx.lineWidth=2.5;ctx.stroke();ctx.fillStyle=color;ctx.font='bold 12px system-ui';ctx.fillText(label,end[0]+3,end[1]-3)}
+}
+function draw(){
+  drawQueued=false;axisTriad();if(!gl||!meshProgram)return;gl.clearColor(.97,.985,.99,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);
+  gl.useProgram(meshProgram);commonUniforms(meshProgram);gl.uniform1f(gl.getUniformLocation(meshProgram,'uClip'),$('clip').checked?1:0);gl.uniform1f(gl.getUniformLocation(meshProgram,'uCut'),+$('lift').value);
+  bindAttribute(meshProgram,'aPosition',positionBuffer);bindAttribute(meshProgram,'aNormal',normalBuffer);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
+  const p=chosen();gl.disable(gl.DEPTH_TEST);gl.useProgram(routeProgram);commonUniforms(routeProgram);bindAttribute(routeProgram,'aPosition',routeBuffer);gl.lineWidth(2);gl.drawArrays(gl.LINE_STRIP,0,4);
+  gl.useProgram(markerProgram);commonUniforms(markerProgram);gl.uniform3fv(gl.getUniformLocation(markerProgram,'uPoint'),new Float32Array(p));gl.uniform1f(gl.getUniformLocation(markerProgram,'uPointSize'),17*Math.min(devicePixelRatio||1,2));gl.uniform3fv(gl.getUniformLocation(markerProgram,'uColor'),rules(...p).valid?new Float32Array([.03,.55,.35]):new Float32Array([.80,.23,.16]));gl.drawArrays(gl.POINTS,0,1);
+}
+function queueDraw(){if(!drawQueued){drawQueued=true;requestAnimationFrame(draw)}}
+function initializeWebGL(){if(!gl){$('fallback').style.display='flex';return}try{meshPositions=decode('positions',Float32Array);meshNormals=decode('normals',Float32Array);meshIndices=decode('indices',Uint16Array);meshProgram=program(vertexShader,fragmentShader);markerProgram=program(markerVertex,markerFragment);routeProgram=program(routeVertex,routeFragment);positionBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,positionBuffer);gl.bufferData(gl.ARRAY_BUFFER,meshPositions,gl.STATIC_DRAW);normalBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,normalBuffer);gl.bufferData(gl.ARRAY_BUFFER,meshNormals,gl.STATIC_DRAW);indexBuffer=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,meshIndices,gl.STATIC_DRAW);indexCount=meshIndices.length;routeBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,routeBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(route.flat()),gl.STATIC_DRAW);resize()}catch(error){$('fallback').style.display='flex';console.error('3D display failed:',error)}}
+world.addEventListener('pointerdown',event=>{
+  if(event.pointerType==='mouse'&&event.button!==0)return;
+  drag={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,x:event.clientX,y:event.clientY,moved:false};
+  world.setPointerCapture(event.pointerId);
+});
+world.addEventListener('pointermove',event=>{
+  if(!drag||drag.pointerId!==event.pointerId)return;
+  if(!drag.moved){
+    if(Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<4)return;
+    drag.moved=true;world.classList.add('dragging');
+  }
+  yaw+=(event.clientX-drag.x)*.008;
+  pitch=Math.max(-1.5,Math.min(1.5,pitch+(event.clientY-drag.y)*.008));
+  drag.x=event.clientX;drag.y=event.clientY;queueDraw();
+});
+world.addEventListener('pointerup',event=>{
+  if(!drag||drag.pointerId!==event.pointerId)return;
+  if(!drag.moved&&Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<4)pickSurface(event);
+  drag=null;world.classList.remove('dragging');
+});
+world.addEventListener('pointercancel',event=>{if(drag&&drag.pointerId===event.pointerId){drag=null;world.classList.remove('dragging')}});
+world.addEventListener('wheel',event=>{event.preventDefault();zoom=Math.max(.55,Math.min(3.6,zoom*Math.exp(-event.deltaY*.001)));queueDraw()},{passive:false});
+for(const name of ['shoulder','elbow','lift'])$(name).addEventListener('input',update);
+for(const name of Object.keys(presets))$('preset-'+name).addEventListener('click',()=>setPreset(name));
+$('route-progress').addEventListener('input',event=>selectRoute(+event.target.value));
+$('clip').addEventListener('change',queueDraw);window.addEventListener('resize',resize);
+$('topology').textContent=`At lift 0.35, the valid angle map has ${summary.low_slice_regions} separate regions; at 0.80 it has ${summary.high_slice_regions}. The full sampled wall is connected with genus ${summary.boundary_genus}. The continuous magenta route has certified rule score above ${summary.route_certified_lower_score.toFixed(3)}; a direct low-lift angle change reaches ${summary.low_straight_min_score.toFixed(3)} (invalid).`;
+$('accuracy').textContent=`Displayed mesh: ${summary.triangles.toLocaleString()} triangles from a ${summary.grid.join('×')} control grid. At mesh vertices, the absolute rule-score residual has median ${summary.mesh_median_score_residual.toExponential(2)} and maximum ${summary.mesh_max_score_residual.toExponential(2)}. These are score values, not workbench distances.`;
+initializeWebGL();selectRoute(0);
+</script></body></html>

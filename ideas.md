@@ -63,3 +63,7 @@ intrinsic dimensions compress a lot of individual axes together
 this idea is very wrong but i keep coming back to it. either there is some fundamentally incorrect understanding or something possible
 - dimensions are the ways that data varies. you cannot take something in 10d and figure out a 3d representation because you cannot show how 7 things vary in their original forms by showing how only 3 things vary. but how do you reduce the ways something varies?
 - how would you take a 3d shape like a globe and make it vary in 1 less dimension so you can show it in 2d
+
+we care about relative ordering not absolute ordering. things that are closer in real dimension are closer in reduced dimension. 
+- the points that are 1st, 2nd,3rd closest should still be that order afterwards
+- this likely doesnt reduce actual dimension as much as "wasted" dimensions that dont really add anything
