@@ -67,3 +67,14 @@ this idea is very wrong but i keep coming back to it. either there is some funda
 we care about relative ordering not absolute ordering. things that are closer in real dimension are closer in reduced dimension. 
 - the points that are 1st, 2nd,3rd closest should still be that order afterwards
 - this likely doesnt reduce actual dimension as much as "wasted" dimensions that dont really add anything
+
+learn and actually understand stuff like umap, isomap, etc
+
+what is that i actually want from this?
+- visualizing the manifold shape 6.5/10
+- traveling along the manifold and seeing variation 4/10
+- faithful low dimensional representation 5/10
+- filling in gaps for undersampled regions on the manifold 6/10? maybe more
+- filling in gaps to reconstruct things
+- compact rule to describe the manifold that is pure and correct
+- 

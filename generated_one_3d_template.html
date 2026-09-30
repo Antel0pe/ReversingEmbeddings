@@ -29,10 +29,12 @@ input[type=range]{accent-color:#237b89}.control-head{display:flex;justify-conten
 .image-tile span{display:block;font-size:10.5px;color:var(--muted);line-height:1.25;min-height:28px}
 #diff{display:block;width:180px;height:180px;image-rendering:pixelated;margin:8px auto;border:1px solid var(--line)}
 .difference-label{text-align:center;font-size:11px;color:var(--muted)}.red{color:var(--red);font-weight:700}.blue{color:#326da6;font-weight:700}
+.comparison-section{margin:0 13px 20px;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:17px;box-shadow:0 2px 14px #24414b08}.comparison-section h2{font-size:19px;margin-bottom:5px}.comparison-intro{max-width:1050px;color:var(--muted);font-size:13px;margin:0 0 15px}.comparison-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.comparison-card{border:1px solid var(--line);border-radius:9px;background:#fbfdfd;padding:11px;min-width:0}.comparison-card h3{font-size:14px;margin:0 0 5px}.comparison-card p{font-size:11px;color:var(--muted);min-height:48px;margin:0 0 7px}.comparison-card canvas{display:block;width:100%;height:220px;background:#f9fcfc;border:1px solid #e6edef;border-radius:5px;touch-action:none;cursor:grab}.comparison-card canvas.dragging{cursor:grabbing}.comparison-card .compare-scores{display:flex;justify-content:space-between;gap:5px;font-size:11px;margin:9px 0;color:var(--ink)}.comparison-card .compare-scores span{white-space:nowrap}.comparison-card button{width:100%}
 table{border-collapse:collapse;width:100%;font-size:11px}th,td{padding:5px 4px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}tr.active{background:#eaf4f2}th{font-weight:700;color:#465f66}
 details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-size:12px}summary{cursor:pointer;font-weight:700}details p{color:var(--muted);margin:7px 0}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+@media(max-width:1200px){.comparison-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:990px){main{grid-template-columns:1fr}.world{height:57vh;min-height:390px}.panel{max-height:none}.viewer-note{max-width:245px}}
-@media(max-width:520px){header{padding:14px}main{padding:8px;gap:8px}.panel{padding:12px}.viewer-note{font-size:11px;max-width:195px}.world{min-height:345px}}
+@media(max-width:520px){header{padding:14px}main{padding:8px;gap:8px}.panel{padding:12px}.viewer-note{font-size:11px;max-width:195px}.world{min-height:345px}.comparison-section{margin:0 8px 14px;padding:12px}.comparison-grid{grid-template-columns:1fr}.comparison-card p{min-height:0}}
 </style>
 </head>
 <body>
@@ -95,6 +97,40 @@ details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-si
     </details>
   </aside>
 </main>
+<section class="comparison-section" aria-label="Side-by-side comparison of three-dimensional layouts">
+  <h2>Same images, four different priorities</h2>
+  <p class="comparison-intro">Each dot represents the same generated 28×28 “1” in every panel. Drag any cloud to rotate all four together; the selected image and color setting are shared. Axes are learned separately, so matching camera angles do not mean matching coordinate directions. Percentages show true pixel-space neighbors retained in 3D; global order is a correlation over sampled image pairs.</p>
+  <div class="comparison-grid">
+    <article class="comparison-card" data-method="TSNE-p2">
+      <h3>Closest image first</h3>
+      <p>Very local t-SNE prioritizes the single nearest image. Wider neighborhoods can separate.</p>
+      <canvas class="compare-canvas" data-method="TSNE-p2" aria-label="Three-dimensional layout prioritizing the closest image"></canvas>
+      <div class="compare-scores" aria-label="Measured neighbor retention"></div>
+      <button class="compare-open" type="button" data-method="TSNE-p2">Explore this structure</button>
+    </article>
+    <article class="comparison-card" data-method="MultiTSNE-p5-50-w0.5">
+      <h3>Close and medium scale</h3>
+      <p>Multi-scale t-SNE combines very close relationships with a broader neighborhood.</p>
+      <canvas class="compare-canvas" data-method="MultiTSNE-p5-50-w0.5" aria-label="Three-dimensional layout balancing near and medium-scale neighbors"></canvas>
+      <div class="compare-scores" aria-label="Measured neighbor retention"></div>
+      <button class="compare-open" type="button" data-method="MultiTSNE-p5-50-w0.5">Explore this structure</button>
+    </article>
+    <article class="comparison-card" data-method="Rank-refined Isomap">
+      <h3>Broader neighborhoods</h3>
+      <p>Refined Isomap favors groups of 15–30 nearby images and broader graph relationships.</p>
+      <canvas class="compare-canvas" data-method="Rank-refined Isomap" aria-label="Three-dimensional layout prioritizing broader neighborhoods"></canvas>
+      <div class="compare-scores" aria-label="Measured neighbor retention"></div>
+      <button class="compare-open" type="button" data-method="Rank-refined Isomap">Explore this structure</button>
+    </article>
+    <article class="comparison-card" data-method="PCA">
+      <h3>Reconstruct pixel images</h3>
+      <p>PCA keeps the three linear pixel directions that best reconstruct the images. Nearest neighbors may overlap.</p>
+      <canvas class="compare-canvas" data-method="PCA" aria-label="Three-dimensional PCA layout prioritizing linear image reconstruction"></canvas>
+      <div class="compare-scores" aria-label="Measured neighbor retention"></div>
+      <button class="compare-open" type="button" data-method="PCA">Explore this structure</button>
+    </article>
+  </div>
+</section>
 <script id="embedding-data" type="application/json">__DATA__</script>
 <script>
 (() => {
@@ -102,6 +138,7 @@ details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-si
 const data=JSON.parse(document.getElementById("embedding-data").textContent);
 const $=id=>document.getElementById(id),world=$("world"),ctx=world.getContext("2d",{alpha:false});
 const methods=Object.keys(data.embeddings),knobIndex={cx:0,cy:1,height:2,width:3,lean:4};
+const compareCanvases=Array.from(document.querySelectorAll(".compare-canvas"));
 const methodLabels={"TSNE-p2":"t-SNE · 2","TSNE-p5":"t-SNE · 5","TSNE-p15":"t-SNE · 15","MultiTSNE-p5-50-w0.5":"Multi-scale · 5+50","Rank-refined Isomap":"Refined Isomap"};
 const descriptions={
   Isomap:"Isomap connects nearby images using all 784 pixels, estimates distances along that neighbor graph, then fits those distances into 3D. It balances local continuity with broad ordering in this sample.",
@@ -129,13 +166,27 @@ function drawImage(canvas,index){const target=canvas.getContext("2d"),out=target
 function drawDifference(a,b){const target=$("diff").getContext("2d"),out=target.createImageData(28,28),first=imagePixels(a),second=imagePixels(b);for(let i=0;i<784;i++){const delta=(second[i]-first[i])/255,k=4*i,s=Math.min(1,Math.abs(delta));let color;if(delta>=0)color=[255-70*s,255-180*s,255-188*s];else color=[255-185*s,255-140*s,255-55*s];out.data[k]=color[0];out.data[k+1]=color[1];out.data[k+2]=color[2];out.data[k+3]=255}target.putImageData(out,0,0)}
 function hexColor(t){t=Math.max(0,Math.min(1,t));const low=[188,84,76],mid=[238,213,153],high=[41,139,130],a=t<.5?low:mid,b=t<.5?mid:high,u=t<.5?t*2:(t-.5)*2;return `rgb(${Math.round(a[0]+u*(b[0]-a[0]))},${Math.round(a[1]+u*(b[1]-a[1]))},${Math.round(a[2]+u*(b[2]-a[2]))})`}
 const colorCache={};
-function colors(){const choice=$("color").value,method=$("method").value,k=$("neighbor-count").value,key=choice+":"+method+":"+k;if(colorCache[key])return colorCache[key];let array;if(choice==="recall")array=data.embeddings[method].local_recall[k];else{const j=knobIndex[choice],range=data.ranges[j];array=data.settings.map(q=>(q[j]-range[0])/(range[1]-range[0]))}return colorCache[key]=array.map(hexColor)}
+function colors(method=$("method").value){const choice=$("color").value,k=$("neighbor-count").value,key=choice+":"+method+":"+k;if(colorCache[key])return colorCache[key];let array;if(choice==="recall")array=data.embeddings[method].local_recall[k];else{const j=knobIndex[choice],range=data.ranges[j];array=data.settings.map(q=>(q[j]-range[0])/(range[1]-range[0]))}return colorCache[key]=array.map(hexColor)}
 function updateLegend(){const choice=$("color").value;if(choice==="recall"){$("legend-low").textContent="0% kept";$("legend-high").textContent="100% kept"}else{const j=knobIndex[choice],range=data.ranges[j],unit=choice==="lean"?"°":" px";$("legend-low").textContent=range[0].toFixed(choice==="lean"?0:1)+unit;$("legend-high").textContent=range[1].toFixed(choice==="lean"?0:1)+unit}}
 
 let yaw=-.55,pitch=.30,zoom=1.0,selected=data.center_index,drag=null,moved=false,queued=false,screen=[];
 function project(p,w,h){const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch),x=cy*p[0]+sy*p[2],z=-sy*p[0]+cy*p[2],y=cp*p[1]-sp*z,depth=sp*p[1]+cp*z,scale=(Math.min(w,h)*.36*zoom)*3.2/(4.0-depth);return [w/2+x*scale,h/2-y*scale,depth,scale]}
 function line(a,b,color,width){ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()}
 function axisLabel(point,text,color,w,h){const origin=project([0,0,0],w,h),end=project(point,w,h);line(origin,end,color,1.4);ctx.fillStyle=color;ctx.font="bold 12px system-ui";ctx.fillText(text,end[0]+4,end[1]-4)}
+function drawCompareViews(){
+  for(const canvas of compareCanvases){
+    const method=canvas.dataset.method,embedding=data.embeddings[method];if(!embedding)continue;
+    const bounds=canvas.getBoundingClientRect(),w=bounds.width,h=bounds.height;if(w<1||h<1)continue;
+    const dpr=Math.min(devicePixelRatio||1,2),width=Math.round(w*dpr),height=Math.round(h*dpr);
+    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height}
+    const mini=canvas.getContext("2d",{alpha:false});mini.setTransform(dpr,0,0,dpr,0,0);mini.fillStyle="#f9fcfc";mini.fillRect(0,0,w,h);
+    const positions=embedding.positions,palette=colors(method),points=positions.map(p=>project(p,w,h));
+    const order=positions.map((_,i)=>i).sort((a,b)=>points[a][2]-points[b][2]);
+    mini.globalAlpha=.72;
+    for(const i of order){const p=points[i];mini.beginPath();mini.arc(p[0],p[1],1.55,0,Math.PI*2);mini.fillStyle=palette[i];mini.fill()}
+    mini.globalAlpha=1;const picked=points[selected];mini.beginPath();mini.arc(picked[0],picked[1],5,0,Math.PI*2);mini.fillStyle="#1e3440";mini.fill();mini.strokeStyle="#fff";mini.lineWidth=1.6;mini.stroke();
+  }
+}
 function draw(){queued=false;const bounds=world.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=bounds.width,h=bounds.height;
   if(world.width!==Math.round(w*dpr)||world.height!==Math.round(h*dpr)){world.width=Math.round(w*dpr);world.height=Math.round(h*dpr)}
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle="#f9fcfc";ctx.fillRect(0,0,w,h);
@@ -151,6 +202,7 @@ function draw(){queued=false;const bounds=world.getBoundingClientRect(),dpr=Math
   ctx.beginPath();ctx.arc(anchorPoint[0],anchorPoint[1],7.5,0,Math.PI*2);ctx.fillStyle="#1e3440";ctx.fill();ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.stroke();
   axisLabel([1.2,0,0],"X","#9c6738",w,h);axisLabel([0,1.2,0],"Y","#417d8c",w,h);axisLabel([0,0,1.2],"Z","#84619d",w,h);
   ctx.fillStyle="#657a80";ctx.font="12px system-ui";ctx.fillText(`${shown.length.toLocaleString()} displayed · learned 3D positions`,13,h-15);
+  drawCompareViews();
 }
 function queueDraw(){if(!queued){queued=true;requestAnimationFrame(draw)}}
 function updateSelection(){const emb=data.embeddings[$("method").value],original=data.nearest_pixel[selected],closest3=emb.nearest_3d[selected],k=$("neighbor-count").value;drawImage($("selected-image"),selected);drawImage($("pixel-neighbor-image"),original);drawImage($("display-neighbor-image"),closest3);drawDifference(selected,closest3);$("selected-caption").textContent=`Lean ${data.settings[selected][4].toFixed(1)}° · width ${data.settings[selected][3].toFixed(2)} px`;$("pixel-neighbor-caption").textContent=`Pixel distance ${data.nearest_pixel_distance[selected].toFixed(2)}`;
@@ -168,6 +220,18 @@ $("method").addEventListener("change",updateMethod);$("neighbor-count").addEvent
 $("slice").addEventListener("input",()=>{$("slice-value").textContent=+$("slice").value===100?"all points":`${$("slice").value}% band`;queueDraw()});
 $("reset").addEventListener("click",()=>{yaw=-.55;pitch=.30;zoom=1;$("slice").value=100;$("slice-value").textContent="all points";queueDraw()});
 $("center-point").addEventListener("click",()=>{selected=data.center_index;updateSelection()});window.addEventListener("resize",queueDraw);
+for(const card of document.querySelectorAll(".comparison-card")){
+  const method=card.dataset.method,embedding=data.embeddings[method];if(!embedding){card.hidden=true;continue}
+  const scores=card.querySelector(".compare-scores"),stats=embedding.stats;
+  for(const [label,value] of [["K=1",Math.round(100*stats.neighbor_recall_1)+"%"],["K=15",Math.round(100*stats.neighbor_recall_15)+"%"],["global",stats.global_pair_rank_correlation.toFixed(3)]]){
+    const item=document.createElement("span");item.textContent=`${label}: ${value}`;scores.append(item)
+  }
+  card.querySelector(".compare-open").addEventListener("click",()=>{$("method").value=method;updateMethod();world.scrollIntoView({behavior:"smooth",block:"center"})});
+  const canvas=card.querySelector(".compare-canvas");let last=null;
+  canvas.addEventListener("pointerdown",event=>{last=[event.clientX,event.clientY];canvas.setPointerCapture(event.pointerId);canvas.classList.add("dragging")});
+  canvas.addEventListener("pointermove",event=>{if(!last)return;const dx=event.clientX-last[0],dy=event.clientY-last[1];yaw+=dx*.007;pitch=Math.max(-1.45,Math.min(1.45,pitch+dy*.007));last=[event.clientX,event.clientY];queueDraw()});
+  for(const type of ["pointerup","pointercancel"]){canvas.addEventListener(type,()=>{last=null;canvas.classList.remove("dragging")})}
+}
 updateMethod();
 })();
 </script>

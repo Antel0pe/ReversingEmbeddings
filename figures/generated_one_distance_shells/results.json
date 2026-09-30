@@ -1,0 +1,145 @@
+{
+  "generator": "grey_ones.render; 28x28 coverage, five continuous knobs",
+  "pixel_distance": "sqrt(sum over 784 pixels of squared coverage difference)",
+  "seed_rng": 20260930,
+  "sampled_ray_method": "scrambled Sobol directions mapped to a 5D sphere, intersected with knob box",
+  "radius": 4.5,
+  "seeds": [
+    {
+      "seed": 1,
+      "seed_knobs": [
+        14.417368358369831,
+        14.366594129583373,
+        19.454511919789013,
+        2.7230292799466964,
+        -2.9233148527098143
+      ],
+      "radius": 4.5,
+      "figure": "figures/generated_one_distance_shells/seed_01_radius_4p5.png",
+      "displayed": 20,
+      "minimum_displayed_pair_distance": 2.40045720545243,
+      "midpoint_fit_median": 1.0925131424586418,
+      "direct_knob_path_to_chord_median": 1.308341280901217,
+      "rays": 2048,
+      "crossings": 619,
+      "fraction_with_crossing": 0.30224609375,
+      "nonmonotone_grid_rays": 0,
+      "max_distance_error": 3.3587100150000992e-06
+    },
+    {
+      "seed": 2,
+      "seed_knobs": [
+        14.387450338218649,
+        14.692047920438181,
+        20.121299668342807,
+        4.076589080709049,
+        16.682628383864042
+      ],
+      "radius": 4.5,
+      "figure": "figures/generated_one_distance_shells/seed_02_radius_4p5.png",
+      "displayed": 20,
+      "minimum_displayed_pair_distance": 2.4233298597936197,
+      "midpoint_fit_median": 1.2896737703522656,
+      "direct_knob_path_to_chord_median": 1.2482189416210012,
+      "rays": 2048,
+      "crossings": 1067,
+      "fraction_with_crossing": 0.52099609375,
+      "nonmonotone_grid_rays": 0,
+      "max_distance_error": 2.211865376189337e-06
+    },
+    {
+      "seed": 3,
+      "seed_knobs": [
+        14.251161493520803,
+        14.961008333840008,
+        20.349438317204765,
+        2.3621133493926987,
+        21.574571051563588
+      ],
+      "radius": 4.5,
+      "figure": "figures/generated_one_distance_shells/seed_03_radius_4p5.png",
+      "displayed": 20,
+      "minimum_displayed_pair_distance": 2.3555678082287197,
+      "midpoint_fit_median": 1.2223789217238887,
+      "direct_knob_path_to_chord_median": 1.230475632038158,
+      "rays": 2048,
+      "crossings": 561,
+      "fraction_with_crossing": 0.27392578125,
+      "nonmonotone_grid_rays": 7,
+      "max_distance_error": 2.845527080630461e-06
+    },
+    {
+      "seed": 4,
+      "seed_knobs": [
+        14.145643362488189,
+        14.194612029287242,
+        19.723818378697374,
+        1.8173694842169261,
+        -2.124853512068988
+      ],
+      "radius": 4.5,
+      "figure": "figures/generated_one_distance_shells/seed_04_radius_4p5.png",
+      "displayed": 20,
+      "minimum_displayed_pair_distance": 2.0789524452495036,
+      "midpoint_fit_median": 1.0540243375521097,
+      "direct_knob_path_to_chord_median": 1.2987715710067498,
+      "rays": 2048,
+      "crossings": 332,
+      "fraction_with_crossing": 0.162109375,
+      "nonmonotone_grid_rays": 0,
+      "max_distance_error": 2.8187992437977982e-06
+    },
+    {
+      "seed": 5,
+      "seed_knobs": [
+        14.776297443249497,
+        14.422758043295522,
+        19.809389092552944,
+        3.145629588656413,
+        27.705341108921544
+      ],
+      "radius": 4.5,
+      "figure": "figures/generated_one_distance_shells/seed_05_radius_4p5.png",
+      "displayed": 20,
+      "minimum_displayed_pair_distance": 2.5275906276869784,
+      "midpoint_fit_median": 1.2107101815309547,
+      "direct_knob_path_to_chord_median": 1.222513032572357,
+      "rays": 2048,
+      "crossings": 1282,
+      "fraction_with_crossing": 0.6259765625,
+      "nonmonotone_grid_rays": 7,
+      "max_distance_error": 3.4540526057114107e-06
+    }
+  ],
+  "midpoint_diagnostic": {
+    "pairs": 60,
+    "radius_4p5_median_distance_to_fitted_generated_image": 1.2090431449763086,
+    "radius_4p5_p90_distance_to_fitted_generated_image": 1.3055038849481728,
+    "radius_4p5_direct_knob_path_to_chord_median": 1.251201505426794,
+    "radius_4p5_fit_successes": 60,
+    "radius_2p5_seed1_pairs": 12,
+    "radius_2p5_seed1_median_distance_to_fitted_generated_image": 0.5301848930076829,
+    "radius_2p5_seed1_direct_knob_path_to_chord_median": 1.2087959769223608,
+    "radius_2p5_fit_successes": 12,
+    "radius_1p0_seed1_pairs": 12,
+    "radius_1p0_seed1_median_distance_to_fitted_generated_image": 0.07824527818075094,
+    "radius_1p0_seed1_direct_knob_path_to_chord_median": 1.0222528750208717,
+    "radius_1p0_fit_successes": 12
+  },
+  "comparison": {
+    "rays": 2048,
+    "crossings": 1866,
+    "fraction_with_crossing": 0.9111328125,
+    "nonmonotone_grid_rays": 0,
+    "max_distance_error": 3.430466045895031e-06,
+    "figure": "figures/generated_one_distance_shells/seed_01_radius_2p5_comparison.png"
+  },
+  "local_comparison": {
+    "rays": 2048,
+    "crossings": 2040,
+    "fraction_with_crossing": 0.99609375,
+    "nonmonotone_grid_rays": 0,
+    "max_distance_error": 4.938837755541492e-06,
+    "figure": "figures/generated_one_distance_shells/seed_01_radius_1p0_comparison.png"
+  }
+}
