@@ -3,8 +3,8 @@
 Run: python make_generated_one_3d.py
 
 The reducers see only the 784 coverage values. Generator settings are retained
-solely for diagnostic coloring and five reference paths in the viewer. UMAP is
-optional; when installed, it is included as a comparison to Isomap and PCA.
+solely for diagnostic coloring and five reference paths in the viewer. Run the
+neighbor benchmark and refinement first to include their precomputed layouts.
 """
 
 from __future__ import annotations
@@ -30,6 +30,7 @@ SEED = 41
 SOBOL_POWER = 12
 PATH_STEPS = 41
 NEIGHBORS = 15
+NEIGHBOR_SCALES = (1, 5, 15, 30)
 
 
 def make_samples():
@@ -75,11 +76,19 @@ def make_model_data(name, model, pixels, pixel_distances, pixel_neighbors, pairs
 
     reduced_distances = pairwise_distances(embedded)
     display_neighbors = sorted_neighbors(reduced_distances, 60)
-    recall = np.asarray(
-        [len(set(a[:NEIGHBORS]) & set(b[:NEIGHBORS])) / NEIGHBORS
-         for a, b in zip(pixel_neighbors, display_neighbors)],
-        dtype=float,
+    local_recall = {
+        k: np.asarray([
+            len(set(a[:k]) & set(b[:k])) / k
+            for a, b in zip(pixel_neighbors, display_neighbors)
+        ], dtype=float)
+        for k in NEIGHBOR_SCALES
+    }
+    local_distances = np.linalg.norm(
+        embedded[:, None, :] - embedded[pixel_neighbors[:, :30]], axis=2
     )
+    local_ranks = np.argsort(np.argsort(local_distances, axis=1), axis=1) + 1
+    original_ranks = np.arange(1, 31)
+    local_order = 1 - 6 * np.sum((local_ranks - original_ranks) ** 2, axis=1) / (30 * (30**2 - 1))
     false_neighbor = []
     for source, candidates in enumerate(display_neighbors):
         true_set = set(pixel_neighbors[source, :30])
@@ -92,15 +101,18 @@ def make_model_data(name, model, pixels, pixel_distances, pixel_neighbors, pairs
     stress = float(np.linalg.norm(original - scale * reduced) / np.linalg.norm(original))
     rank_agreement = float(spearmanr(original, reduced).statistic)
     stats = {
-        "neighbor_recall_15": round(float(recall.mean()), 4),
+        **{f"neighbor_recall_{k}": round(float(local_recall[k].mean()), 4)
+           for k in NEIGHBOR_SCALES},
+        "local_rank_agreement_30": round(float(local_order.mean()), 4),
         "global_pair_rank_correlation": round(rank_agreement, 4),
         "scaled_pair_distance_error": round(stress, 4),
     }
     print(name, stats, flush=True)
     return {
         "name": name,
-        "positions": np.round(display, 5).tolist(),
-        "local_recall": np.round(recall, 3).tolist(),
+        "positions": np.round(display, 8).tolist(),
+        "local_recall": {str(k): np.round(local_recall[k], 3).tolist()
+                         for k in NEIGHBOR_SCALES},
         "nearest_3d": display_neighbors[:, 0].tolist(),
         "nearest_3d_pixel_distance": np.round(
             pixel_distances[np.arange(len(pixels)), display_neighbors[:, 0]], 5
@@ -134,7 +146,10 @@ def make_overview(settings, embeddings):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    order = [name for name in ("Isomap", "UMAP", "PCA") if name in embeddings]
+    order = [name for name in ("TSNE-p2", "MultiTSNE-p5-50-w0.5", "Rank-refined Isomap")
+             if name in embeddings]
+    if not order:
+        order = [name for name in ("Isomap", "UMAP", "PCA") if name in embeddings]
     figure = plt.figure(figsize=(5.4 * len(order), 6), facecolor="white")
     lean = settings[:, 4]
     for panel, name in enumerate(order, 1):
@@ -146,10 +161,16 @@ def make_overview(settings, embeddings):
             alpha=0.6, rasterized=True,
         )
         ax.view_init(elev=18, azim=-65)
-        recall = embeddings[name]["stats"]["neighbor_recall_15"]
+        labels = {
+            "TSNE-p2": ("Closest-image focus", 1),
+            "MultiTSNE-p5-50-w0.5": ("Balanced local view", 5),
+            "Rank-refined Isomap": ("Broader-neighbor focus", 15),
+        }
+        label, k = labels.get(name, (name, 5))
+        recall = embeddings[name]["stats"][f"neighbor_recall_{k}"]
         ax.set(
             xlabel="learned X", ylabel="learned Y", zlabel="learned Z",
-            title=f"{name} · {100 * recall:.1f}% of 15 neighbors kept",
+            title=f"{label} · {100 * recall:.1f}% kept at K={k}",
         )
         ax.tick_params(labelsize=7)
     figure.suptitle(
@@ -158,7 +179,7 @@ def make_overview(settings, embeddings):
     )
     figure.text(
         0.5, 0.035,
-        "Color shows the known lean for diagnosis only. Each view compresses a sampled 5D family; its axes have arbitrary orientation and scale.",
+        "Color shows known lean for diagnosis only. Dots are 784-pixel generated images; these are sampled 3D projections of a 5D family.",
         ha="center", fontsize=9.4, color="#526670",
     )
     figure.subplots_adjust(top=0.87, bottom=0.28, left=0.02, right=0.98, wspace=0.06)
@@ -183,24 +204,45 @@ def main():
     keep = a != b
     pairs = a[keep], b[keep]
 
-    models = [
-        ("Isomap", Isomap(n_neighbors=70, n_components=3, eigen_solver="arpack", n_jobs=1)),
-        ("PCA", PCA(n_components=3, random_state=SEED)),
-    ]
-    try:
-        import umap
-    except ImportError:
-        print("UMAP not installed; building Isomap and PCA views", flush=True)
-    else:
-        models.append(("UMAP", umap.UMAP(
-            n_neighbors=40, n_components=3, min_dist=0.12,
-            metric="euclidean", random_state=SEED, n_epochs=400,
-        )))
+    class FixedEmbedding:
+        def __init__(self, positions):
+            self.positions = positions
+
+        def fit_transform(self, images):
+            if len(images) != len(self.positions):
+                raise ValueError("Cached layout does not match the image sample")
+            return self.positions
+
+    candidate_file = ROOT / "figures" / "generated_one_neighbor_candidates.npz"
+    refined_file = ROOT / "figures" / "generated_one_refined_candidates.npz"
+    cached = {}
+    for path in (candidate_file, refined_file):
+        if path.exists():
+            with np.load(path) as saved:
+                cached.update({name: saved[name] for name in saved.files})
+    preferred = (
+        "TSNE-p2", "TSNE-p5", "TSNE-p15", "MultiTSNE-p5-50-w0.5",
+        "Rank-refined Isomap", "Isomap", "UMAP", "PCA",
+    )
+    models = [(name, FixedEmbedding(cached[name])) for name in preferred if name in cached]
+    if not models:
+        models = [
+            ("Isomap", Isomap(n_neighbors=70, n_components=3, eigen_solver="arpack", n_jobs=1)),
+            ("PCA", PCA(n_components=3, random_state=SEED)),
+        ]
 
     embeddings = {
         name: make_model_data(name, model, pixels, pixel_distances, pixel_neighbors, pairs)
         for name, model in models
     }
+    neighbor_weights = {1: 0.35, 5: 0.30, 15: 0.25, 30: 0.10}
+    default_method = max(
+        embeddings,
+        key=lambda name: sum(
+            weight * embeddings[name]["stats"][f"neighbor_recall_{k}"]
+            for k, weight in neighbor_weights.items()
+        ),
+    )
     data = {
         "count": len(pixels),
         "image_size": 28,
@@ -216,6 +258,8 @@ def main():
             pixel_distances[np.arange(len(pixels)), pixel_neighbors[:, 0]], 5
         ).tolist(),
         "embeddings": embeddings,
+        "default_method": default_method,
+        "neighbor_weights": neighbor_weights,
         "pair_count": len(pairs[0]),
         "ink": encoded_ink(pixels),
     }

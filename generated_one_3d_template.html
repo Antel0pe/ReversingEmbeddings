@@ -22,7 +22,7 @@ select,input[type=range]{width:100%}select{border:1px solid #bfced2;border-radiu
 input[type=range]{accent-color:#237b89}.control-head{display:flex;justify-content:space-between;align-items:baseline}
 .button-row{display:flex;gap:7px;margin:10px 0 0}button{border:1px solid #b9cdd0;background:#f5faf9;color:var(--ink);border-radius:6px;padding:6px 10px;font:12px system-ui,sans-serif;cursor:pointer}button:hover{background:#e7f2f2}
 .result{background:#edf4f5;border-radius:7px;padding:10px 11px;margin:10px 0;font-size:12px}
-.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:9px 0}.metric{border:1px solid var(--line);border-radius:6px;padding:7px;background:#fafcfc}.metric strong{font-size:17px;display:block;line-height:1.2}.metric span{font-size:10px;color:var(--muted);display:block;margin-top:3px}
+.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:9px 0}.metric{border:1px solid var(--line);border-radius:6px;padding:7px;background:#fafcfc}.metric strong{font-size:17px;display:block;line-height:1.2}.metric span{font-size:10px;color:var(--muted);display:block;margin-top:3px}
 .legend{height:8px;border-radius:5px;background:linear-gradient(90deg,#bd554c,#f2d59a,#2b8a82);margin-top:6px}.legend-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
 .image-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}.image-tile{border:1px solid var(--line);border-radius:7px;padding:7px;text-align:center;background:#fcfdfd;min-width:0}
 .image-tile strong{display:block;font-size:11px;line-height:1.2;min-height:26px}.image-tile canvas{display:block;width:min(100%,112px);aspect-ratio:1;height:auto;margin:4px auto;image-rendering:pixelated;border:1px solid #e3e9ea;background:#fff}
@@ -32,13 +32,13 @@ input[type=range]{accent-color:#237b89}.control-head{display:flex;justify-conten
 table{border-collapse:collapse;width:100%;font-size:11px}th,td{padding:5px 4px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}tr.active{background:#eaf4f2}th{font-weight:700;color:#465f66}
 details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-size:12px}summary{cursor:pointer;font-weight:700}details p{color:var(--muted);margin:7px 0}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
 @media(max-width:990px){main{grid-template-columns:1fr}.world{height:57vh;min-height:390px}.panel{max-height:none}.viewer-note{max-width:245px}}
-@media(max-width:520px){header{padding:14px}main{padding:8px;gap:8px}.panel{padding:12px}.metric-row{grid-template-columns:repeat(3,1fr)}.viewer-note{font-size:11px;max-width:195px}.world{min-height:345px}}
+@media(max-width:520px){header{padding:14px}main{padding:8px;gap:8px}.panel{padding:12px}.viewer-note{font-size:11px;max-width:195px}.world{min-height:345px}}
 </style>
 </head>
 <body>
 <header>
   <h1>Generated “1” images, compressed into a 3D structure</h1>
-  <p>Each point below is one 28×28 generated image. Its 3D position was learned from all 784 pixel coverages. Rotate the cloud, choose a point, and compare what looks close here with what is close in the original images.</p>
+  <p>Each point is one 28×28 generated image. A pixel value measures how much of that square contains ink. Layouts use all 784 pixel values to try to keep nearby images nearby in 3D. Rotate the cloud and inspect where that succeeds or fails.</p>
 </header>
 <main>
   <section class="viewer" aria-label="Rotatable three-dimensional image embedding">
@@ -54,14 +54,18 @@ details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-si
     <h2>Explore the compression</h2>
     <div class="control"><label for="method">3D layout method</label><select id="method"></select></div>
     <p id="method-description" class="small"></p>
+    <p class="small">The default is the best tested compromise under 35% weight on K=1, 30% on K=5, 25% on K=15, and 10% on K=30. Choose another layout if a different neighborhood size matters most.</p>
+    <div class="control"><label for="neighbor-count">How many closest images matter to you?</label><select id="neighbor-count"><option value="1">1 nearest image</option><option value="5" selected>5 nearest images</option><option value="15">15 nearest images</option><option value="30">30 nearest images</option></select></div>
     <div class="metric-row" aria-label="Measured quality on sampled images">
-      <div class="metric"><strong id="neighbor-score"></strong><span>15-neighbor overlap<br>larger is better</span></div>
-      <div class="metric"><strong id="rank-score"></strong><span>global distance-order agreement<br>larger is better</span></div>
-      <div class="metric"><strong id="stress-score"></strong><span>rescaled pair-distance error<br>smaller is better</span></div>
+      <div class="metric"><strong id="neighbor-1"></strong><span>closest image stays closest in 3D</span></div>
+      <div class="metric"><strong id="neighbor-5"></strong><span>of 5 closest images retained in 3D</span></div>
+      <div class="metric"><strong id="neighbor-15"></strong><span>of 15 closest images retained in 3D</span></div>
+      <div class="metric"><strong id="neighbor-30"></strong><span>of 30 closest images retained in 3D</span></div>
     </div>
-    <p class="small">Measured on the displayed sample, using the full 784-pixel Euclidean distance as reference. The 3D layout cannot preserve every 5D relationship.</p>
+    <p class="small">Each score compares the same number of nearest images in 784-pixel distance and 3D distance, averaged across all displayed images. Larger is better. All methods use the same sample.</p>
+    <p id="local-order" class="small"></p>
     <div class="control"><label for="color">Color dots by</label><select id="color">
-      <option value="lean">Lean</option><option value="recall">How well 15 pixel-neighbors stay nearby</option>
+      <option value="lean">Lean</option><option value="recall">How well the selected nearest images stay nearby</option>
       <option value="width">Width</option><option value="height">Height</option>
       <option value="cx">Horizontal center</option><option value="cy">Vertical center</option>
     </select><div class="legend" aria-hidden="true"></div><div class="legend-labels"><span id="legend-low"></span><span id="legend-high"></span></div></div>
@@ -76,17 +80,17 @@ details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-si
     <div class="image-grid">
       <div class="image-tile"><strong>Selected image</strong><canvas id="selected-image" width="28" height="28" aria-label="Selected generated 1 image"></canvas><span id="selected-caption"></span></div>
       <div class="image-tile"><strong>Closest in 784 pixels</strong><canvas id="pixel-neighbor-image" width="28" height="28" aria-label="True nearest generated 1 image"></canvas><span id="pixel-neighbor-caption"></span></div>
-      <div class="image-tile"><strong>3D false neighbor</strong><canvas id="false-neighbor-image" width="28" height="28" aria-label="Image close in 3D but not among 30 closest in pixel space"></canvas><span id="false-neighbor-caption"></span></div>
+      <div class="image-tile"><strong>Closest in 3D</strong><canvas id="display-neighbor-image" width="28" height="28" aria-label="Closest image in the 3D layout"></canvas><span id="display-neighbor-caption"></span></div>
     </div>
-    <h3>Pixel change to the false neighbor</h3>
-    <canvas id="diff" width="28" height="28" aria-label="Red and blue pixel differences between selected and misleading 3D neighbor"></canvas>
-    <p class="difference-label"><span class="red">Red: more ink</span> in the false neighbor · <span class="blue">Blue: less ink</span></p>
-    <p class="small">In the cloud, the teal line goes to the closest image in 784-pixel distance. The red line goes to the closest displayed point outside the original 30 nearest images.</p>
+    <h3>Pixel change to the closest 3D image</h3>
+    <canvas id="diff" width="28" height="28" aria-label="Red and blue pixel differences between selected and closest 3D image"></canvas>
+    <p class="difference-label"><span class="red">Red: more ink</span> in the 3D neighbor · <span class="blue">Blue: less ink</span></p>
+    <p class="small">In the cloud, the teal line goes to the true closest image in 784 pixels. The red line goes to the closest image in 3D. When they match, only the teal line appears.</p>
     <h3>Compare the layout methods</h3>
-    <table aria-label="Embedding quality comparison"><thead><tr><th>Method</th><th>Neighbors</th><th>Global order</th><th>Distance error</th></tr></thead><tbody id="comparison"></tbody></table>
+    <table aria-label="Nearest-neighbor quality comparison"><thead><tr><th>Method</th><th>1</th><th>5</th><th>15</th><th>30</th></tr></thead><tbody id="comparison"></tbody></table>
     <details><summary>What is preserved, and what is not?</summary>
       <p>Inputs: a Sobol sample across all five allowed generated controls, five reference paths, and the 32 corner states. The algorithms receive only the resulting 784-pixel images. This is the controlled renderer, not the real MNIST dataset.</p>
-      <p>Neighbor overlap is the fraction of each point’s 15 nearest images in 784-pixel distance that remain in its 15 nearest displayed points. Global order is Spearman correlation for <span id="pair-count"></span> sampled image pairs. Distance error is <code>sqrt(sum((pixel distance − a × 3D distance)²) / sum(pixel distance²))</code>, using the best single scale <code>a</code>.</p>
+      <p>For each number K, neighbor overlap is the fraction of an image’s K nearest images in 784-pixel Euclidean distance that remain among its K nearest 3D points. For K=1 it is the percentage whose exact closest image stays closest. The score does not require those K images to keep their internal order. A separate local rank measure is included in the benchmark report. Global distance order uses <span id="pair-count"></span> sampled image pairs.</p>
       <p>No method shown is a continuous injective representation of the full five-dimensional family in three Euclidean coordinates. The images and local scores are retained so apparent contacts and separation in 3D can be checked against the original pixels. The cloud is a finite sample, not a reconstructed 3D boundary surface. Thumbnail pixels are rounded to 8-bit for display only; the embeddings and measurements used the renderer's full pixel values.</p>
     </details>
   </aside>
@@ -98,13 +102,23 @@ details{border-top:1px solid var(--line);padding-top:9px;margin-top:13px;font-si
 const data=JSON.parse(document.getElementById("embedding-data").textContent);
 const $=id=>document.getElementById(id),world=$("world"),ctx=world.getContext("2d",{alpha:false});
 const methods=Object.keys(data.embeddings),knobIndex={cx:0,cy:1,height:2,width:3,lean:4};
+const methodLabels={"TSNE-p2":"t-SNE · 2","TSNE-p5":"t-SNE · 5","TSNE-p15":"t-SNE · 15","MultiTSNE-p5-50-w0.5":"Multi-scale · 5+50","Rank-refined Isomap":"Refined Isomap"};
 const descriptions={
   Isomap:"Isomap connects nearby images using all 784 pixels, estimates distances along that neighbor graph, then fits those distances into 3D. It balances local continuity with broad ordering in this sample.",
   PCA:"PCA finds the three straight pixel-space directions that minimize squared image reconstruction error. It preserves broad Euclidean distances well here, but overlaps more original neighbors.",
-  UMAP:"UMAP builds a fuzzy graph of nearby images and fits it in 3D. It favors local neighborhoods; its global spacing is less directly tied to pixel distances."
+  UMAP:"UMAP builds a fuzzy graph of nearby images and fits it in 3D. It favors local neighborhoods; its global spacing is less directly tied to pixel distances.",
+  "TSNE-p2":"t-SNE with a tiny pixel neighborhood. It prioritizes the single closest match, with substantial loss of larger neighborhoods.",
+  "TSNE-p5":"t-SNE with a very small pixel neighborhood. It prioritizes the very closest matches; check the larger-neighborhood scores for the cost.",
+  "TSNE-p10":"t-SNE with a small pixel neighborhood, between the closest-match and wider-neighborhood layouts.",
+  "TSNE-p15":"t-SNE with a medium pixel neighborhood. It trades some exact closest matches for wider neighborhood overlap.",
+  "MultiTSNE-p5-25-w0.5":"Multi-scale t-SNE fits a mixture of 5-neighbor and 25-neighbor pixel affinities to 3D.",
+  "MultiTSNE-p5-50-w0.5":"Multi-scale t-SNE fits a mixture of 5-neighbor and 50-neighbor pixel affinities to 3D.",
+  "MultiTSNE-p10-50-w0.5":"Multi-scale t-SNE fits a mixture of 10-neighbor and 50-neighbor pixel affinities to 3D.",
+  "MultiTSNE-p5-25-w0.75":"Multi-scale t-SNE gives 75% weight to 5-neighbor affinities and 25% to 25-neighbor affinities.",
+  "Rank-refined Isomap":"Starts from Isomap, then moves sampled 3D points to improve the order of original pixel neighbors. This layout is fitted to these sampled points."
 };
-for(const name of methods){const option=document.createElement("option");option.value=name;option.textContent=name;$("method").append(option)}
-$("method").value=methods.includes("Isomap")?"Isomap":methods[0];
+for(const name of methods){const option=document.createElement("option");option.value=name;option.textContent=methodLabels[name]||name;$("method").append(option)}
+$("method").value=methods.includes(data.default_method)?data.default_method:methods[0];
 $("dot-count").textContent=data.count.toLocaleString();$("pair-count").textContent=data.pair_count.toLocaleString();
 
 function decode(raw,Type){const binary=atob(raw),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);return new Type(bytes.buffer)}
@@ -115,7 +129,7 @@ function drawImage(canvas,index){const target=canvas.getContext("2d"),out=target
 function drawDifference(a,b){const target=$("diff").getContext("2d"),out=target.createImageData(28,28),first=imagePixels(a),second=imagePixels(b);for(let i=0;i<784;i++){const delta=(second[i]-first[i])/255,k=4*i,s=Math.min(1,Math.abs(delta));let color;if(delta>=0)color=[255-70*s,255-180*s,255-188*s];else color=[255-185*s,255-140*s,255-55*s];out.data[k]=color[0];out.data[k+1]=color[1];out.data[k+2]=color[2];out.data[k+3]=255}target.putImageData(out,0,0)}
 function hexColor(t){t=Math.max(0,Math.min(1,t));const low=[188,84,76],mid=[238,213,153],high=[41,139,130],a=t<.5?low:mid,b=t<.5?mid:high,u=t<.5?t*2:(t-.5)*2;return `rgb(${Math.round(a[0]+u*(b[0]-a[0]))},${Math.round(a[1]+u*(b[1]-a[1]))},${Math.round(a[2]+u*(b[2]-a[2]))})`}
 const colorCache={};
-function colors(){const choice=$("color").value,method=$("method").value,key=choice+":"+method;if(colorCache[key])return colorCache[key];let array;if(choice==="recall")array=data.embeddings[method].local_recall;else{const j=knobIndex[choice],range=data.ranges[j];array=data.settings.map(q=>(q[j]-range[0])/(range[1]-range[0]))}return colorCache[key]=array.map(hexColor)}
+function colors(){const choice=$("color").value,method=$("method").value,k=$("neighbor-count").value,key=choice+":"+method+":"+k;if(colorCache[key])return colorCache[key];let array;if(choice==="recall")array=data.embeddings[method].local_recall[k];else{const j=knobIndex[choice],range=data.ranges[j];array=data.settings.map(q=>(q[j]-range[0])/(range[1]-range[0]))}return colorCache[key]=array.map(hexColor)}
 function updateLegend(){const choice=$("color").value;if(choice==="recall"){$("legend-low").textContent="0% kept";$("legend-high").textContent="100% kept"}else{const j=knobIndex[choice],range=data.ranges[j],unit=choice==="lean"?"°":" px";$("legend-low").textContent=range[0].toFixed(choice==="lean"?0:1)+unit;$("legend-high").textContent=range[1].toFixed(choice==="lean"?0:1)+unit}}
 
 let yaw=-.55,pitch=.30,zoom=1.0,selected=data.center_index,drag=null,moved=false,queued=false,screen=[];
@@ -131,27 +145,26 @@ function draw(){queued=false;const bounds=world.getBoundingClientRect(),dpr=Math
   for(const i of shown){const p=screen[i],radius=Math.max(1.7,Math.min(4.2,2.5*p[3]/(Math.min(w,h)*.36*zoom)));ctx.beginPath();ctx.arc(p[0],p[1],radius,0,Math.PI*2);ctx.fillStyle=palette[i];ctx.globalAlpha=.82;ctx.fill()}
   ctx.globalAlpha=1;
   const pathName=$("path").value;if(pathName!=="none"){const j=knobIndex[pathName],ids=data.paths[j],pathColor="#772f8b";ctx.beginPath();let began=false;for(const i of ids){const p=screen[i];if(!p){began=false;continue}if(!began){ctx.moveTo(p[0],p[1]);began=true}else ctx.lineTo(p[0],p[1])}ctx.lineWidth=3;ctx.strokeStyle="#ffffff";ctx.stroke();ctx.lineWidth=1.8;ctx.strokeStyle=pathColor;ctx.stroke();for(const i of [ids[0],ids[Math.floor(ids.length/2)],ids[ids.length-1]]){const p=screen[i];if(p){ctx.beginPath();ctx.arc(p[0],p[1],4,0,Math.PI*2);ctx.fillStyle=pathColor;ctx.fill();ctx.strokeStyle="#fff";ctx.lineWidth=1.2;ctx.stroke()}}}
-  const anchorPoint=project(positions[selected],w,h),pixelNeighbor=data.nearest_pixel[selected],falseNeighbor=emb.false_3d[selected];
+  const anchorPoint=project(positions[selected],w,h),pixelNeighbor=data.nearest_pixel[selected],displayNeighbor=emb.nearest_3d[selected];
+  if(displayNeighbor!==pixelNeighbor)line(anchorPoint,project(positions[displayNeighbor],w,h),"#bd554c",2.1);
   line(anchorPoint,project(positions[pixelNeighbor],w,h),"#14766d",2.1);
-  if(falseNeighbor>=0)line(anchorPoint,project(positions[falseNeighbor],w,h),"#bd554c",2.1);
   ctx.beginPath();ctx.arc(anchorPoint[0],anchorPoint[1],7.5,0,Math.PI*2);ctx.fillStyle="#1e3440";ctx.fill();ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.stroke();
   axisLabel([1.2,0,0],"X","#9c6738",w,h);axisLabel([0,1.2,0],"Y","#417d8c",w,h);axisLabel([0,0,1.2],"Z","#84619d",w,h);
   ctx.fillStyle="#657a80";ctx.font="12px system-ui";ctx.fillText(`${shown.length.toLocaleString()} displayed · learned 3D positions`,13,h-15);
 }
 function queueDraw(){if(!queued){queued=true;requestAnimationFrame(draw)}}
-function updateSelection(){const emb=data.embeddings[$("method").value],original=data.nearest_pixel[selected],bad=emb.false_3d[selected],closest3=emb.nearest_3d[selected];drawImage($("selected-image"),selected);drawImage($("pixel-neighbor-image"),original);$("selected-caption").textContent=`Lean ${data.settings[selected][4].toFixed(1)}° · width ${data.settings[selected][3].toFixed(2)} px`;$("pixel-neighbor-caption").textContent=`Pixel distance ${data.nearest_pixel_distance[selected].toFixed(2)}`;
-  if(bad>=0){drawImage($("false-neighbor-image"),bad);drawDifference(selected,bad);const ratio=emb.false_3d_pixel_distance[selected]/data.nearest_pixel_distance[selected];$("false-neighbor-caption").textContent=`Pixel distance ${emb.false_3d_pixel_distance[selected].toFixed(2)} · ${ratio.toFixed(1)}× nearest`}
-  else{drawImage($("false-neighbor-image"),closest3);drawDifference(selected,closest3);$("false-neighbor-caption").textContent="No false neighbor in the 30 closest display points"}
-  const retention=Math.round(100*emb.local_recall[selected]),nearestDistance=emb.nearest_3d_pixel_distance[selected];$("selection-status").textContent=`Selected point ${selected.toLocaleString()}: ${retention}% of its 15 true pixel-neighbors remain among its 15 nearest in this 3D layout. Its closest 3D dot is ${nearestDistance.toFixed(2)} away in the original 784-pixel image space.`;
+function updateSelection(){const emb=data.embeddings[$("method").value],original=data.nearest_pixel[selected],closest3=emb.nearest_3d[selected],k=$("neighbor-count").value;drawImage($("selected-image"),selected);drawImage($("pixel-neighbor-image"),original);drawImage($("display-neighbor-image"),closest3);drawDifference(selected,closest3);$("selected-caption").textContent=`Lean ${data.settings[selected][4].toFixed(1)}° · width ${data.settings[selected][3].toFixed(2)} px`;$("pixel-neighbor-caption").textContent=`Pixel distance ${data.nearest_pixel_distance[selected].toFixed(2)}`;
+  const nearestDistance=emb.nearest_3d_pixel_distance[selected],ratio=nearestDistance/data.nearest_pixel_distance[selected];$("display-neighbor-caption").textContent=`Pixel distance ${nearestDistance.toFixed(2)} · ${ratio.toFixed(2)}× true nearest`;
+  const retention=Math.round(100*emb.local_recall[k][selected]),match=closest3===original?"The exact closest image matches.":"The exact closest image differs.";$("selection-status").textContent=`Selected point ${selected.toLocaleString()}: ${retention}% of its ${k} closest pixel images remain among its ${k} closest 3D points. ${match}`;
   queueDraw()}
-function updateMethod(){const name=$("method").value,s=data.embeddings[name].stats;$("method-description").textContent=descriptions[name]||"Three-dimensional image embedding";$("neighbor-score").textContent=Math.round(100*s.neighbor_recall_15)+"%";$("rank-score").textContent=s.global_pair_rank_correlation.toFixed(3);$("stress-score").textContent=s.scaled_pair_distance_error.toFixed(3);
-  const rows=$("comparison");rows.innerHTML="";for(const other of methods){const t=data.embeddings[other].stats,tr=document.createElement("tr");if(other===name)tr.className="active";for(const v of [other,Math.round(100*t.neighbor_recall_15)+"%",t.global_pair_rank_correlation.toFixed(3),t.scaled_pair_distance_error.toFixed(3)]){const cell=document.createElement("td");cell.textContent=v;tr.append(cell)}rows.append(tr)}updateLegend();updateSelection()}
+function updateMethod(){const name=$("method").value,s=data.embeddings[name].stats;$("method-description").textContent=descriptions[name]||"Three-dimensional image embedding";for(const k of [1,5,15,30])$("neighbor-"+k).textContent=Math.round(100*s["neighbor_recall_"+k])+"%";$("local-order").textContent=`Near-to-far order among each image’s 30 true closest images: ${s.local_rank_agreement_30.toFixed(3)} correlation (1 means exact order).`;
+  const rows=$("comparison");rows.innerHTML="";for(const other of methods){const t=data.embeddings[other].stats,tr=document.createElement("tr");if(other===name)tr.className="active";for(const v of [methodLabels[other]||other,...[1,5,15,30].map(k=>Math.round(100*t["neighbor_recall_"+k])+"%")]){const cell=document.createElement("td");cell.textContent=v;tr.append(cell)}rows.append(tr)}updateLegend();updateSelection()}
 world.addEventListener("pointerdown",event=>{drag=[event.clientX,event.clientY];moved=false;world.setPointerCapture(event.pointerId);world.classList.add("dragging")});
 world.addEventListener("pointermove",event=>{if(!drag)return;const dx=event.clientX-drag[0],dy=event.clientY-drag[1];if(Math.abs(dx)+Math.abs(dy)>1)moved=true;yaw+=dx*.007;pitch=Math.max(-1.45,Math.min(1.45,pitch+dy*.007));drag=[event.clientX,event.clientY];queueDraw()});
 world.addEventListener("pointerup",event=>{if(!drag)return;drag=null;world.classList.remove("dragging");if(moved)return;const rect=world.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;let best=-1,dist=11*11;for(let i=0;i<screen.length;i++){const p=screen[i];if(!p)continue;const d=(p[0]-x)**2+(p[1]-y)**2;if(d<dist){dist=d;best=i}}if(best>=0){selected=best;updateSelection()}});
 world.addEventListener("pointercancel",()=>{drag=null;world.classList.remove("dragging")});
 world.addEventListener("wheel",event=>{event.preventDefault();zoom=Math.max(.45,Math.min(4.2,zoom*Math.exp(-event.deltaY*.001)));queueDraw()},{passive:false});
-$("method").addEventListener("change",updateMethod);$("color").addEventListener("change",()=>{updateLegend();queueDraw()});$("path").addEventListener("change",queueDraw);
+$("method").addEventListener("change",updateMethod);$("neighbor-count").addEventListener("change",()=>{updateSelection();queueDraw()});$("color").addEventListener("change",()=>{updateLegend();queueDraw()});$("path").addEventListener("change",queueDraw);
 $("slice").addEventListener("input",()=>{$("slice-value").textContent=+$("slice").value===100?"all points":`${$("slice").value}% band`;queueDraw()});
 $("reset").addEventListener("click",()=>{yaw=-.55;pitch=.30;zoom=1;$("slice").value=100;$("slice-value").textContent="all points";queueDraw()});
 $("center-point").addEventListener("click",()=>{selected=data.center_index;updateSelection()});window.addEventListener("resize",queueDraw);

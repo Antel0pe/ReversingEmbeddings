@@ -1,0 +1,47 @@
+{
+  "Rank-refined Isomap": {
+    "recall_1": 0.48695,
+    "p10_recall_1": 0.0,
+    "recall_5": 0.58503,
+    "p10_recall_5": 0.4,
+    "recall_15": 0.6657,
+    "p10_recall_15": 0.46667,
+    "recall_30": 0.71867,
+    "p10_recall_30": 0.56667,
+    "local_rank_spearman_30": 0.65904,
+    "true_closest_median_3d_rank": 2.0,
+    "true_closest_within_15": 0.99908,
+    "nearest_3d_pixel_distance_ratio_median": 1.0076,
+    "nearest_3d_pixel_distance_ratio_p90": 1.8572
+  },
+  "Rank-refined TSNE-p10": {
+    "recall_1": 0.73989,
+    "p10_recall_1": 0.0,
+    "recall_5": 0.63751,
+    "p10_recall_5": 0.4,
+    "recall_15": 0.57246,
+    "p10_recall_15": 0.33333,
+    "recall_30": 0.58502,
+    "p10_recall_30": 0.4,
+    "local_rank_spearman_30": 0.50745,
+    "true_closest_median_3d_rank": 1.0,
+    "true_closest_within_15": 0.98198,
+    "nearest_3d_pixel_distance_ratio_median": 1.0,
+    "nearest_3d_pixel_distance_ratio_p90": 1.1049
+  },
+  "Rank-refined TSNE-p25": {
+    "recall_1": 0.59228,
+    "p10_recall_1": 0.0,
+    "recall_5": 0.62781,
+    "p10_recall_5": 0.4,
+    "recall_15": 0.61743,
+    "p10_recall_15": 0.4,
+    "recall_30": 0.64154,
+    "p10_recall_30": 0.43333,
+    "local_rank_spearman_30": 0.55399,
+    "true_closest_median_3d_rank": 1.0,
+    "true_closest_within_15": 0.96928,
+    "nearest_3d_pixel_distance_ratio_median": 1.0,
+    "nearest_3d_pixel_distance_ratio_p90": 1.3095
+  }
+}
