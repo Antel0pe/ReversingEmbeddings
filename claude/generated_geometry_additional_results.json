@@ -1,0 +1,83 @@
+{
+  "individualKnobs": [
+    {
+      "knob": "cx",
+      "halfStep": 0.0001,
+      "midpointResidual": 1.4043376731095275e-15,
+      "normalAccelerationResidual": 2.783101208692316e-15,
+      "directionAngle": 0,
+      "relativeSpeedChange": 0
+    },
+    {
+      "knob": "cy",
+      "halfStep": 0.0001,
+      "midpointResidual": 6.229306223626424e-9,
+      "normalAccelerationResidual": 1.2365161262395496e-8,
+      "directionAngle": 0.004641132703471673,
+      "relativeSpeedChange": 0.000009977690488049973
+    },
+    {
+      "knob": "height",
+      "halfStep": 0.00015000000000000001,
+      "midpointResidual": 0,
+      "normalAccelerationResidual": 1.0274840570522619e-16,
+      "directionAngle": 0,
+      "relativeSpeedChange": 0
+    },
+    {
+      "knob": "width",
+      "halfStep": 0.00028,
+      "midpointResidual": 3.537175609256238e-15,
+      "normalAccelerationResidual": 6.5537421593190406e-15,
+      "directionAngle": 0.0000012074182697257333,
+      "relativeSpeedChange": 0
+    },
+    {
+      "knob": "lean",
+      "halfStep": 0.0045000000000000005,
+      "midpointResidual": 6.887092833273623e-8,
+      "normalAccelerationResidual": 4.039953686948952e-15,
+      "directionAngle": 0,
+      "relativeSpeedChange": 0.00009785450250521244
+    }
+  ],
+  "pathRefinement": {
+    "restrictedUniform": [
+      {
+        "segments": 4096,
+        "length": 25.997651799174292
+      },
+      {
+        "segments": 16384,
+        "length": 25.997998019853
+      },
+      {
+        "segments": 65536,
+        "length": 25.99808198162717
+      }
+    ],
+    "fullPiecewise": [
+      {
+        "samplesPerSegment": 64,
+        "totalSegments": 4096,
+        "length": 25.625371197957822
+      },
+      {
+        "samplesPerSegment": 256,
+        "totalSegments": 16384,
+        "length": 25.625685770494027
+      },
+      {
+        "samplesPerSegment": 1024,
+        "totalSegments": 65536,
+        "length": 25.625769246500248
+      },
+      {
+        "samplesPerSegment": 4096,
+        "totalSegments": 262144,
+        "length": 25.62578909170531
+      }
+    ],
+    "improvementPercent": 1.4320013691200728
+  }
+}

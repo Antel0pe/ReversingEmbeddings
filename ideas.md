@@ -78,3 +78,9 @@ what is that i actually want from this?
 - filling in gaps to reconstruct things
 - compact rule to describe the manifold that is pure and correct
 - 
+
+maybe try a more complex dataset with unclear implications to find how it works
+- theres probably a limit of complex to un-understandable. with mnist 1 the understanding of dimensions is pretty much solved. im not sure how much the actual dimensions are
+- doing something like cancer genes would probably be significantly harder where both the dimensions aren't understood and it's a highly complex dataset. 
+- to some extent with most tractable datasets like traffic by day, there will likely be a "known" dimension that uses logic but might not be 100% right. a hypothesis will always exist, but unless the answer is genuinely unknown it will probably be mostly correct. 
+- rubiks cube?

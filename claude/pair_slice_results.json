@@ -1,0 +1,122 @@
+{
+  "fixed_settings": [
+    14.43,
+    14.62,
+    19.77,
+    3.2,
+    17.3
+  ],
+  "sampling": "61-by-61 parameter grid, 2000 random points, 9 near-edge points per pair",
+  "records": [
+    {
+      "knobs": [
+        "cx",
+        "cy"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 112,
+      "numerical_affine_rank": 74,
+      "last_nonzero_singular": 5.068529747935678e-05,
+      "next_singular": 9.968119322624443e-14
+    },
+    {
+      "knobs": [
+        "cx",
+        "height"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 99,
+      "numerical_affine_rank": 60,
+      "last_nonzero_singular": 4.4832283283089166e-05,
+      "next_singular": 8.795668124013685e-14
+    },
+    {
+      "knobs": [
+        "cx",
+        "width"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 144,
+      "numerical_affine_rank": 116,
+      "last_nonzero_singular": 0.00015283968831868524,
+      "next_singular": 6.429533953668059e-14
+    },
+    {
+      "knobs": [
+        "cx",
+        "lean"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 214,
+      "numerical_affine_rank": 192,
+      "last_nonzero_singular": 0.00010616687247254794,
+      "next_singular": 2.2168949671426483e-13
+    },
+    {
+      "knobs": [
+        "cy",
+        "height"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 83,
+      "numerical_affine_rank": 40,
+      "last_nonzero_singular": 7.718739919553674e-05,
+      "next_singular": 4.7853062816041376e-14
+    },
+    {
+      "knobs": [
+        "cy",
+        "width"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 125,
+      "numerical_affine_rank": 92,
+      "last_nonzero_singular": 9.610648174504658e-05,
+      "next_singular": 6.535316880091247e-14
+    },
+    {
+      "knobs": [
+        "cy",
+        "lean"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 198,
+      "numerical_affine_rank": 178,
+      "last_nonzero_singular": 0.00014496340389118104,
+      "next_singular": 2.2423531181942633e-13
+    },
+    {
+      "knobs": [
+        "height",
+        "width"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 114,
+      "numerical_affine_rank": 77,
+      "last_nonzero_singular": 4.023972348082224e-05,
+      "next_singular": 8.924090951510307e-14
+    },
+    {
+      "knobs": [
+        "height",
+        "lean"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 189,
+      "numerical_affine_rank": 166,
+      "last_nonzero_singular": 4.256654214691521e-05,
+      "next_singular": 5.280682465637942e-14
+    },
+    {
+      "knobs": [
+        "width",
+        "lean"
+      ],
+      "samples": 5730,
+      "sampled_variable_pixels": 222,
+      "numerical_affine_rank": 200,
+      "last_nonzero_singular": 0.00019959206318122125,
+      "next_singular": 1.0705430908037207e-13
+    }
+  ]
+}

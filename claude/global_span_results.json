@@ -1,0 +1,68 @@
+{
+  "settings": 7368,
+  "settings_by_design": {
+    "random": 4000,
+    "lattice": 3125,
+    "near_edges": 243
+  },
+  "certified_possible_ink_pixels": 283,
+  "certified_constant_zero_pixels": 501,
+  "sampled_variable_pixels": 283,
+  "fully_covered_rows": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "equal_full_row_mass_constraints": 16,
+  "max_full_row_mass_error": 3.552713678800501e-15,
+  "analytic_affine_upper_bound": 267,
+  "numerical_affine_rank": 267,
+  "sampled_affine_rank_by_relative_singular_threshold": {
+    "1e-06": 265,
+    "1e-08": 267,
+    "1e-10": 267,
+    "1e-12": 267
+  },
+  "last_nonzero_singular_value": 0.00024922545741654426,
+  "first_numerical_zero_singular_value": 1.9622710166077274e-13,
+  "heldout_count": 1000,
+  "heldout_max_pixel_l2_residual": 2.8473425963724666e-14,
+  "singular_values_first_ten": [
+    441.86415095972427,
+    190.69026851118576,
+    126.13458023817351,
+    106.90661872835825,
+    90.81386453537874,
+    76.93410926169098,
+    65.20792704110333,
+    52.706338897338355,
+    51.4842024157956,
+    46.49694294308358
+  ],
+  "singular_values_last_ten": [
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14,
+    3.264727609234729e-14
+  ]
+}

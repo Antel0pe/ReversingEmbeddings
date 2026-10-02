@@ -1,0 +1,9 @@
+{
+  "variable_pixels": 283,
+  "numerical_affine_rank": 267,
+  "numerical_linear_constraint_count": 16,
+  "equal_row_mass_constraints": 16,
+  "max_equal_row_mass_residual": 2.7606449924089228e-14,
+  "null_space_after_known_row_constraints_max_singular": 5.513061174690858e-12,
+  "additional_numerical_constraints": 0
+}
