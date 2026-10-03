@@ -84,3 +84,11 @@ maybe try a more complex dataset with unclear implications to find how it works
 - doing something like cancer genes would probably be significantly harder where both the dimensions aren't understood and it's a highly complex dataset. 
 - to some extent with most tractable datasets like traffic by day, there will likely be a "known" dimension that uses logic but might not be 100% right. a hypothesis will always exist, but unless the answer is genuinely unknown it will probably be mostly correct. 
 - rubiks cube?
+
+manifold can be represented as
+- graph with a root node and standard ordered list of nodes for each knob like lean
+    - however the order for the knob changes based on current state
+    - need families of list with this representation to represent a single node
+    - can imagine a root node like standard 1, reaches to 5 nodes that are the 1 unit of movement along each knob, then each of those combines to form pair with another 1 unit node, then multiple combine for 3,4,5 1 unit moves in each direction, etc
+- combinatorial view like lean: 1, height: 0, width: 0 as state inputs
+    - how do you get the direction to go changing based on state

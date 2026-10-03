@@ -223,3 +223,6 @@ data/
 # viewer build intermediates
 viewer/_sprite.png
 viewer/synth3.npy
+
+# Local command runner troubleshooting notes
+/LOCAL_COMMAND_RUNNER_GUIDE.md
