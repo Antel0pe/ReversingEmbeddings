@@ -1,0 +1,341 @@
+{
+  "experiment": "Knob composition and local pixel-only quadratic charts",
+  "date": "2026-10-02",
+  "implementation": "JavaScript float64 mirror of the previously read 16-subrow renderer",
+  "validation": {
+    "randomStates": 100,
+    "parameterBoxCorners": 32,
+    "independentDenseMaximumPixelDifference": 0,
+    "float32PixelMismatches": 0,
+    "maximumTotalInkIdentityError": 5.684341886080802e-14,
+    "maximumFullRowWidthIdentityError": 2.886579864025407e-15,
+    "repositoryPythonExecuted": false
+  },
+  "interactions": {
+    "base": [
+      14.43,
+      14.62,
+      19.73,
+      3.17,
+      17.3
+    ],
+    "leanWidth": [
+      {
+        "factor": 1,
+        "widthStep": 0.2,
+        "leanStepDegrees": 5,
+        "jointPixelL2": 2.9539227347262385,
+        "frozenSumResidualL2": 0.5245580961618558,
+        "residualOverJoint": 0.17758016822686812,
+        "leanChangeDirectionAngleDegrees": 10.307422748386273,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 0.10000000000000053
+      },
+      {
+        "factor": 0.5,
+        "widthStep": 0.1,
+        "leanStepDegrees": 2.5,
+        "jointPixelL2": 1.5359678689571414,
+        "frozenSumResidualL2": 0.17025396323592387,
+        "residualOverJoint": 0.11084474270384266,
+        "leanChangeDirectionAngleDegrees": 6.419456530247724,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 0.046810878438865444
+      },
+      {
+        "factor": 0.1,
+        "widthStep": 0.020000000000000004,
+        "leanStepDegrees": 0.5,
+        "jointPixelL2": 0.31407822324509477,
+        "frozenSumResidualL2": 0.008833981434939199,
+        "residualOverJoint": 0.028126691954843026,
+        "leanChangeDirectionAngleDegrees": 1.6104915887900721,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 0.002913863110711512
+      },
+      {
+        "factor": 0.01,
+        "widthStep": 0.002,
+        "leanStepDegrees": 0.05,
+        "jointPixelL2": 0.031739762223963346,
+        "frozenSumResidualL2": 0.00015991143775471146,
+        "residualOverJoint": 0.005038205284158657,
+        "leanChangeDirectionAngleDegrees": 0.2917892128853499,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 0.0000625000000001874
+      },
+      {
+        "factor": 0.001,
+        "widthStep": 0.0002,
+        "leanStepDegrees": 0.005,
+        "jointPixelL2": 0.0031738716501947518,
+        "frozenSumResidualL2": 4.3021491945439485e-16,
+        "residualOverJoint": 1.3554893419461258e-13,
+        "leanChangeDirectionAngleDegrees": 0,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 1.1102230246251565e-16
+      },
+      {
+        "factor": 0.0001,
+        "widthStep": 0.00002,
+        "leanStepDegrees": 0.0005,
+        "jointPixelL2": 0.0003173796198232115,
+        "frozenSumResidualL2": 7.551608150142992e-16,
+        "residualOverJoint": 2.379361395148633e-12,
+        "leanChangeDirectionAngleDegrees": 0,
+        "updatedOrderResidualL2": 0,
+        "mixedPixelMax": 2.220446049250313e-16
+      }
+    ],
+    "widthHeight": [
+      {
+        "factor": 1,
+        "widthStep": 0.2,
+        "heightStep": 0.3,
+        "mixedPixelL2": 0.028776913447408924,
+        "mixedOverStepProduct": 0.47961522412348206
+      },
+      {
+        "factor": 0.1,
+        "widthStep": 0.020000000000000004,
+        "heightStep": 0.03,
+        "mixedPixelL2": 0.0002999999999999869,
+        "mixedOverStepProduct": 0.49999999999997813
+      },
+      {
+        "factor": 0.01,
+        "widthStep": 0.002,
+        "heightStep": 0.003,
+        "mixedPixelL2": 0.000003000000000000398,
+        "mixedOverStepProduct": 0.5000000000000664
+      },
+      {
+        "factor": 0.001,
+        "widthStep": 0.0002,
+        "heightStep": 0.0003,
+        "mixedPixelL2": 3.000000001283226e-8,
+        "mixedOverStepProduct": 0.500000000213871
+      },
+      {
+        "factor": 0.0001,
+        "widthStep": 0.00002,
+        "heightStep": 0.00003,
+        "mixedPixelL2": 3.000000109443238e-10,
+        "mixedOverStepProduct": 0.5000000182405396
+      }
+    ],
+    "loop": {
+      "ordinaryKnobLoopPixelL2": 0,
+      "rescaledTangentLoopPixelL2": 0.2609526376481691,
+      "rescaledTangentLoopWidthDrift": 0.08888888888888857
+    }
+  },
+  "localCharts": {
+    "trainingImagesPerPatch": 256,
+    "testImagesPerPatch": 128,
+    "trainingUsesKnobValues": false,
+    "dimensionFiveSupplied": true,
+    "patchesProvidedRatherThanDiscovered": true,
+    "results": [
+      {
+        "radiusFraction": 0.03,
+        "activePixelCount": 73,
+        "eigenvalueRatios": [
+          1,
+          0.09077568544666581,
+          0.04827916458182802,
+          0.01580765461372607,
+          0.0068240346252876755,
+          0.004337085439636753,
+          0.0028632778981890522,
+          0.0014443571073440482,
+          0.0006291417486304492
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.08836975998709,
+          "rmsPixelL2": 0.048536201710945845,
+          "worstPixelL2": 0.09529631825331343,
+          "worstAbsolutePixelError": 0.05029692833173094
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 99.95937690530644,
+          "rmsPixelL2": 0.010245730495096366,
+          "worstPixelL2": 0.02257383413676738,
+          "worstAbsolutePixelError": 0.014050714728949532
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.3417026164681,
+          "rmsPixelL2": 0.04124463739716844,
+          "worstPixelL2": 0.1231746597088642,
+          "worstAbsolutePixelError": 0.056297888953202646
+        }
+      },
+      {
+        "radiusFraction": 0.01,
+        "activePixelCount": 62,
+        "eigenvalueRatios": [
+          1,
+          0.08996017694183994,
+          0.04770656555847869,
+          0.0066621362377379985,
+          0.004285441410832486,
+          0.002677017149187101,
+          0.0004929220455340808,
+          0.00021641794612369677,
+          0.00007374497990842506
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.71565066995024,
+          "rmsPixelL2": 0.009162459943022696,
+          "worstPixelL2": 0.02432243984728974,
+          "worstAbsolutePixelError": 0.011696114686507114
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 99.99158777503672,
+          "rmsPixelL2": 0.0015759463308677335,
+          "worstPixelL2": 0.005264756957620335,
+          "worstAbsolutePixelError": 0.002771467940391273
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.58399738638907,
+          "rmsPixelL2": 0.011082404916657768,
+          "worstPixelL2": 0.024731649613869033,
+          "worstAbsolutePixelError": 0.011866838167722549
+        }
+      },
+      {
+        "radiusFraction": 0.003,
+        "activePixelCount": 60,
+        "eigenvalueRatios": [
+          1,
+          0.0898591222658795,
+          0.04762089457633754,
+          0.006595562087291627,
+          0.004375289266134926,
+          0.00027725470134379326,
+          0.000050998316189512956,
+          0.000024208376808378542,
+          0.0000047780386448618304
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.9696922715496,
+          "rmsPixelL2": 0.000898752132209926,
+          "worstPixelL2": 0.00238110958510624,
+          "worstAbsolutePixelError": 0.0010918951859267556
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 99.99820836158858,
+          "rmsPixelL2": 0.0002185186065391562,
+          "worstPixelL2": 0.0005428094051068224,
+          "worstAbsolutePixelError": 0.000242257717282565
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.59486872837235,
+          "rmsPixelL2": 0.0032859513074395,
+          "worstPixelL2": 0.007524747513057765,
+          "worstAbsolutePixelError": 0.00352211392798768
+        }
+      },
+      {
+        "radiusFraction": 0.001,
+        "activePixelCount": 60,
+        "eigenvalueRatios": [
+          1,
+          0.09000803378484011,
+          0.047685961375408786,
+          0.006604827132911599,
+          0.004441728102563513,
+          0.000053374542619277474,
+          0.000011248658794305636,
+          0.000005378140523416917,
+          0.0000035193293306166326
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.99360198225693,
+          "rmsPixelL2": 0.00013760518389222074,
+          "worstPixelL2": 0.0003448436356846074,
+          "worstAbsolutePixelError": 0.00022261311139178922
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 99.99873893865264,
+          "rmsPixelL2": 0.00006109141468853952,
+          "worstPixelL2": 0.00016157207277049196,
+          "worstAbsolutePixelError": 0.00009130712802706345
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.59748128902082,
+          "rmsPixelL2": 0.0010914531826438448,
+          "worstPixelL2": 0.0024614849708365365,
+          "worstAbsolutePixelError": 0.0011659490847821252
+        }
+      },
+      {
+        "radiusFraction": 0.0001,
+        "activePixelCount": 60,
+        "eigenvalueRatios": [
+          1,
+          0.09022296216850308,
+          0.047787068037662236,
+          0.006616559166473435,
+          0.004455882813822724,
+          1.0693623589858407e-9,
+          5.559553329091378e-10,
+          3.204369861999065e-11,
+          1.6877128675227832e-11
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.99999984786234,
+          "rmsPixelL2": 6.70513011187846e-8,
+          "worstPixelL2": 2.1588869740923398e-7,
+          "worstAbsolutePixelError": 1.7400680567269955e-7
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 100,
+          "rmsPixelL2": 5.575794761676542e-12,
+          "worstPixelL2": 3.4737493131707376e-11,
+          "worstAbsolutePixelError": 2.3746851707251437e-11
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.59755164969408,
+          "rmsPixelL2": 0.00010905458360368391,
+          "worstPixelL2": 0.00024809971864589415,
+          "worstAbsolutePixelError": 0.00011592560215389902
+        }
+      },
+      {
+        "radiusFraction": 0.00001,
+        "activePixelCount": 60,
+        "eigenvalueRatios": [
+          1,
+          0.09022322822164305,
+          0.04778726929360645,
+          0.00661661370710761,
+          0.0044558974184525915,
+          1.0693539315366798e-11,
+          5.55931955563686e-12,
+          3.1687656598666397e-13,
+          1.6772547199868364e-13
+        ],
+        "linear5": {
+          "reconstructedVariancePercent": 99.99999999847859,
+          "rmsPixelL2": 6.705232987334809e-10,
+          "worstPixelL2": 2.1590384590746275e-9,
+          "worstAbsolutePixelError": 1.740176808207039e-9
+        },
+        "quadratic5": {
+          "reconstructedVariancePercent": 100,
+          "rmsPixelL2": 5.98252349062122e-15,
+          "worstPixelL2": 3.4925604210854964e-14,
+          "worstAbsolutePixelError": 2.3897550605056495e-14
+        },
+        "quadratic4": {
+          "reconstructedVariancePercent": 99.59755658150308,
+          "rmsPixelL2": 0.000010905398492272212,
+          "worstPixelL2": 0.000024807361255360016,
+          "worstAbsolutePixelError": 0.000011593774203233487
+        }
+      }
+    ]
+  }
+}
+

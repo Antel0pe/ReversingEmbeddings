@@ -1,0 +1,23 @@
+{
+  "status": "Synthetic numerical experiment; repository renderer was inaccessible.",
+  "renderer": "28x28 scanline bar. Rows y=4..23. Center x=13.5+lean*(y-13.5). Pixel intensity is overlap of [x-0.5,x+0.5] with [center-width/2,center+width/2]. Other pixels zero.",
+  "domain": {"width": [1.5, 5.5], "lean": [-0.4, 0.4]},
+  "evaluation": "Mean and 95th percentile of per-image RMSE across all 784 pixels in [0,1]. 1000 seeded independent uniform test parameter pairs. Seed 20261002; LCG state=(1664525*state+1013904223) modulo 2^32. PCA initializes two vectors using 784 random values each, before generating test pairs.",
+  "baselines": {
+    "pca_2": {"training": "21x21 uniform parameter grid; mean-centered pixel covariance; two orthogonal power-iteration components, 70 iterations each", "mean_rmse": 0.09729425966095956, "p95_rmse": 0.13642717722200295},
+    "additive_curves": {"prediction": "F(width,0.07)+F(3.4,lean)-F(3.4,0.07); exact isolated curves", "mean_rmse": 0.0973697771274413, "p95_rmse": 0.20521099061285727},
+    "bilinear_5x5": {"mean_rmse": 0.04156677278065918, "p95_rmse": 0.06273831881135376},
+    "bilinear_9x9": {"mean_rmse": 0.015992338043102867, "p95_rmse": 0.025267464881153345},
+    "bilinear_17x17": {"mean_rmse": 0.005336051295131351, "p95_rmse": 0.010425330259340204},
+    "bilinear_33x33": {"mean_rmse": 0.0017561775456562193, "p95_rmse": 0.004123260416422309},
+    "bilinear_65x65": {"mean_rmse": 0.0005563741845539089, "p95_rmse": 0.0016191383608361793}
+  },
+  "limitations": [
+    "Two varying controls in a synthetic renderer, not the actual five-control generator.",
+    "Bilinear interpolation is supplied with the true parameter coordinates; it does not discover coordinates from images.",
+    "The additive baseline is also supplied with true parameters and exact one-control sweeps.",
+    "Mean errors include background pixels; they are not foreground-only or worst-pixel errors.",
+    "No principal-curve, principal-manifold, UMAP, autoencoder, or learned inverse model was fitted.",
+    "This checks interpolation and interaction, not global injectivity or rank across the domain."
+  ]
+}
