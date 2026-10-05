@@ -1,0 +1,281 @@
+{
+  "finite_difference_checks": [
+    {
+      "step_degrees": 0.05,
+      "fitted_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.01003972713813383,
+          "median": 0.01000867720847695,
+          "p95": 0.020759022899165078,
+          "max": 0.12231047478314905
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.006511085469019344,
+          "median": 0.006337495585096001,
+          "p95": 0.014248611690424054,
+          "max": 0.07159284169034372
+        },
+        "direction_angle_degrees": {
+          "mean": 0.568692731335483,
+          "median": 0.5690653593465992,
+          "p95": 1.1645954766907531,
+          "max": 6.813751873499455
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      },
+      "analytic_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.010025592832759488,
+          "median": 0.010009088309236873,
+          "p95": 0.020787875588689147,
+          "max": 0.12234535728905714
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.006502463045943839,
+          "median": 0.00633745021941339,
+          "p95": 0.01425003740149449,
+          "max": 0.0716132597103675
+        },
+        "direction_angle_degrees": {
+          "mean": 0.5686927312701655,
+          "median": 0.5690653593459588,
+          "p95": 1.1645954766910025,
+          "max": 6.813751873499347
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      }
+    },
+    {
+      "step_degrees": 0.025,
+      "fitted_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.006529330230379756,
+          "median": 0.005823439079468508,
+          "p95": 0.016570508744398093,
+          "max": 0.04751731241565601
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.004204869387274262,
+          "median": 0.003678172961481127,
+          "p95": 0.01106165665516806,
+          "max": 0.028216994682175166
+        },
+        "direction_angle_degrees": {
+          "mean": 0.3689287497195478,
+          "median": 0.3318813973688433,
+          "p95": 0.9316974117462982,
+          "max": 2.6727171164609067
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      },
+      "analytic_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.006495320242052383,
+          "median": 0.005810676359164202,
+          "p95": 0.01657294164381645,
+          "max": 0.04754464986820255
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.00418346721418477,
+          "median": 0.003689886063333198,
+          "p95": 0.011069417872861231,
+          "max": 0.02823322836025827
+        },
+        "direction_angle_degrees": {
+          "mean": 0.3689287497401683,
+          "median": 0.3318813973699415,
+          "p95": 0.9316974117462982,
+          "max": 2.6727171164607704
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      }
+    },
+    {
+      "step_degrees": 0.0125,
+      "fitted_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.0037472837385647893,
+          "median": 0.000575982435860466,
+          "p95": 0.013360537757711836,
+          "max": 0.019787007312433835
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.0024018580320393666,
+          "median": 0.00039084575092182333,
+          "p95": 0.008592775646848197,
+          "max": 0.013767486097023166
+        },
+        "direction_angle_degrees": {
+          "mean": 0.20929061139824387,
+          "median": 0.03167645493574198,
+          "p95": 0.7646805127497706,
+          "max": 1.1196678966980311
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      },
+      "analytic_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.0036831297196645036,
+          "median": 0.0005532792867504135,
+          "p95": 0.013350213269229251,
+          "max": 0.01976553546336587
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.002360999161215342,
+          "median": 0.0003754400218409487,
+          "p95": 0.008607342925013698,
+          "max": 0.013763379000907272
+        },
+        "direction_angle_degrees": {
+          "mean": 0.2092906113737015,
+          "median": 0.03167645492423612,
+          "p95": 0.7646805127492468,
+          "max": 1.1196678966983566
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      }
+    },
+    {
+      "step_degrees": 0.00625,
+      "fitted_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.001988720762030367,
+          "median": 0.00014338784783627447,
+          "p95": 0.010588271429831772,
+          "max": 0.01682225430245632
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.001277794089037765,
+          "median": 9.28378559561416e-05,
+          "p95": 0.006947917985384511,
+          "max": 0.01164917723025924
+        },
+        "direction_angle_degrees": {
+          "mean": 0.1081466196061416,
+          "median": 0.0009683780565813164,
+          "p95": 0.6028184166825404,
+          "max": 0.9471293175176546
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      },
+      "analytic_coefficient": {
+        "relative_arrow_error": {
+          "mean": 0.0019028207528611206,
+          "median": 1.7286452899109617e-05,
+          "p95": 0.010570095384870993,
+          "max": 0.016796903816160242
+        },
+        "absolute_arrow_error_per_degree": {
+          "mean": 0.0012230229898822645,
+          "median": 1.1126237584385396e-05,
+          "p95": 0.006951828724537533,
+          "max": 0.01163754758895981
+        },
+        "direction_angle_degrees": {
+          "mean": 0.10814661958403796,
+          "median": 0.0009683776802150947,
+          "p95": 0.6028184166837496,
+          "max": 0.9471293175168849
+        },
+        "zero_observed_arrow_count": 0,
+        "undefined_angle_count": 0
+      }
+    }
+  ],
+  "integration_checks": [
+    {
+      "step_degrees": 0.05000000000000071,
+      "sample_count": 901,
+      "fitted_coefficient": {
+        "image_l2_error": {
+          "mean": 0.007373231131334085,
+          "median": 0.008193134959928182,
+          "p95": 0.010175762445563943,
+          "max": 0.010707196756187125
+        },
+        "endpoint_image_l2_error": 0.010707196756187125,
+        "largest_absolute_pixel_error": 0.0028324335958868074,
+        "largest_absolute_value_outside_target_ink": 0.0026159888774147312,
+        "largest_violation_of_zero_one_bounds": 0.0026159888774147312
+      },
+      "analytic_coefficient": {
+        "image_l2_error": {
+          "mean": 0.007430556217503902,
+          "median": 0.008282435108878048,
+          "p95": 0.01016701369024731,
+          "max": 0.010713155418351253
+        },
+        "endpoint_image_l2_error": 0.010713155418351253,
+        "largest_absolute_pixel_error": 0.002693606338491028,
+        "largest_absolute_value_outside_target_ink": 0.002616355145404727,
+        "largest_violation_of_zero_one_bounds": 0.002616355145404727
+      }
+    },
+    {
+      "step_degrees": 0.025000000000000355,
+      "sample_count": 1801,
+      "fitted_coefficient": {
+        "image_l2_error": {
+          "mean": 0.002789028304907305,
+          "median": 0.002825728216979153,
+          "p95": 0.004563587303527323,
+          "max": 0.004915573393034576
+        },
+        "endpoint_image_l2_error": 0.00489308125500099,
+        "largest_absolute_pixel_error": 0.0016397000763046787,
+        "largest_absolute_value_outside_target_ink": 0.0010840168535998726,
+        "largest_violation_of_zero_one_bounds": 0.0007221510607338111
+      },
+      "analytic_coefficient": {
+        "image_l2_error": {
+          "mean": 0.002799783042854458,
+          "median": 0.0029438895773717375,
+          "p95": 0.004514186492063327,
+          "max": 0.004893441239660227
+        },
+        "endpoint_image_l2_error": 0.004880002773149264,
+        "largest_absolute_pixel_error": 0.001615869232136996,
+        "largest_absolute_value_outside_target_ink": 0.0010841686282025216,
+        "largest_violation_of_zero_one_bounds": 0.0008622634648551841
+      }
+    },
+    {
+      "step_degrees": 0.01249999999999929,
+      "sample_count": 3601,
+      "fitted_coefficient": {
+        "image_l2_error": {
+          "mean": 0.0012287257167987748,
+          "median": 0.0011911609829715188,
+          "p95": 0.0018928585988658572,
+          "max": 0.0020597543254678966
+        },
+        "endpoint_image_l2_error": 0.0020456021763135806,
+        "largest_absolute_pixel_error": 0.0004786351042914694,
+        "largest_absolute_value_outside_target_ink": 0.00040964759499440316,
+        "largest_violation_of_zero_one_bounds": 0.00040964759499440316
+      },
+      "analytic_coefficient": {
+        "image_l2_error": {
+          "mean": 0.0010126541825398814,
+          "median": 0.0009095622109469662,
+          "p95": 0.0016702438446464438,
+          "max": 0.0018027718860156527
+        },
+        "endpoint_image_l2_error": 0.0017930830665637365,
+        "largest_absolute_pixel_error": 0.0005300891315487277,
+        "largest_absolute_value_outside_target_ink": 0.0004097049502829577,
+        "largest_violation_of_zero_one_bounds": 0.000499909967753398
+      }
+    }
+  ],
+  "scope": "The same 707 evaluation states; one integration path at width 2.7324 px",
+  "fitted_coefficient_relative_difference_from_pi_over_180": -0.00013999169439704584,
+  "limits": "The analytic coefficient uses known geometry; decreasing numerical steps does not establish exact image membership."
+}

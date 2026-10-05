@@ -92,3 +92,17 @@ manifold can be represented as
     - can imagine a root node like standard 1, reaches to 5 nodes that are the 1 unit of movement along each knob, then each of those combines to form pair with another 1 unit node, then multiple combine for 3,4,5 1 unit moves in each direction, etc
 - combinatorial view like lean: 1, height: 0, width: 0 as state inputs
     - how do you get the direction to go changing based on state
+    - what if things like lean:1, height: 1 are equivalent to offset: 1, width: 1 hypothethically
+        - is this possible if all the knobs do separate transformations? 
+- vector fields
+- principal curves
+
+following the lean vector across varying widths
+- the lean vectors never cross and there is generally a standard relationship
+```
+width_step(lean) = image at width 3.3 − image at width 3.2
+
+image at width 3.35 ≈
+    image at width 3.2 + 1.5 × width_step(lean)
+```
+- the 1.5 number generally changes as width step changes but a given offset does generally work which is interesting

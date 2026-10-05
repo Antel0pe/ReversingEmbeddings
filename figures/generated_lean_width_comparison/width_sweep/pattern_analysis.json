@@ -1,0 +1,46 @@
+{
+  "model": "distance(increase, lean) approximately equals increase times shared_profile(lean)",
+  "training_offsets": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "held_out_offsets": [
+    0.15,
+    0.35,
+    0.55,
+    0.75,
+    0.95
+  ],
+  "held_out_lean": "midpoints of training grid; 0.025-degree shift",
+  "metrics": {
+    "same_lean_gap": {
+      "relative_frobenius_error": 0.01588327464173691,
+      "pairwise_pearson_min": 0.7459432763329922,
+      "pairwise_pearson_median": 0.9267043517902115,
+      "pairwise_pearson_max": 0.9933695826316512,
+      "held_out_width_and_lean_relative_error": 0.015406860780073509
+    },
+    "aligned_mismatch": {
+      "relative_frobenius_error": 0.035326571515253626,
+      "pairwise_pearson_min": 0.9296383428662478,
+      "pairwise_pearson_median": 0.9886821625809695,
+      "pairwise_pearson_max": 0.9997070800094192,
+      "held_out_width_and_lean_relative_error": 0.03499814732755439
+    },
+    "direction_angle": {
+      "relative_frobenius_error": 0.1685155777957772,
+      "pairwise_pearson_min": -0.025551343547534622,
+      "pairwise_pearson_median": 0.7309549795097542,
+      "pairwise_pearson_max": 0.9885481227011209
+    }
+  },
+  "limits": "Scalar distance profiles only; does not establish parallel 784D tangents, vector separability, or a decoder of the five-knob family."
+}

@@ -1,0 +1,12 @@
+{
+  "combinations_checked": 36,
+  "selected_pixel_after_click": [
+    "10",
+    "10"
+  ],
+  "loading_status": "Measured paths loaded. Choose a model, width, and lean to compare.",
+  "image_stats": "L2 error 0.008325 · 36 pixels outside [0, 1]",
+  "arrow_stats": "Relative arrow error 0.82%",
+  "errors": [],
+  "mobile_horizontal_overflow": false
+}
