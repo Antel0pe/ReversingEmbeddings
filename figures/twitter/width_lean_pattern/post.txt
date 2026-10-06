@@ -1,0 +1,2 @@
+Same tilt, different pixels.
+In my generated "1" experiments, the distance curves share a pattern across widths. Near upright, local lean directions align; at some tilts, adding just 1 pixel of width turns the pixel-change direction by 81 degrees.

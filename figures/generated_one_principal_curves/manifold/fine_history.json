@@ -1,0 +1,198 @@
+[
+  {
+    "penalty": 0.001,
+    "cycle": 1,
+    "metrics": {
+      "explained_percent": 99.91732275980915,
+      "rms_image_L2": 0.1358667704705091,
+      "median_image_L2": 0.1217113418202189,
+      "p95_image_L2": 0.21171620584400652,
+      "max_image_L2": 0.3942433929823469,
+      "max_pixel_error": 0.20493393202059834,
+      "rms_pixel_error": 0.00485238465966104,
+      "outside_coverage_range_fraction": 0.1502510066504884
+    },
+    "solver": {
+      "iterations": 160,
+      "max_relative_normal_equation_residual": 0.0006112870378014721,
+      "pixel_columns_not_converged": 283
+    },
+    "before_coordinate_update_sse": 0.019808548656194296,
+    "projection_history": [
+      0.019808548656194296,
+      0.01849127037883175,
+      0.018462369055668688,
+      0.018460308901395838,
+      0.018459909651444773,
+      0.018459779318086005
+    ]
+  },
+  {
+    "penalty": 0.001,
+    "cycle": 2,
+    "metrics": {
+      "explained_percent": 99.9189766341677,
+      "rms_image_L2": 0.13450096709806625,
+      "median_image_L2": 0.12047458151862903,
+      "p95_image_L2": 0.2100292441455681,
+      "max_image_L2": 0.3820888449962284,
+      "max_pixel_error": 0.20410986518953997,
+      "rms_pixel_error": 0.0048036059677880796,
+      "outside_coverage_range_fraction": 0.15056605031337714
+    },
+    "solver": {
+      "iterations": 160,
+      "max_relative_normal_equation_residual": 0.0001326711667844509,
+      "pixel_columns_not_converged": 179
+    },
+    "before_coordinate_update_sse": 0.018473795274731454,
+    "projection_history": [
+      0.018473795274731454,
+      0.018105739427931346,
+      0.0180922977513621,
+      0.01809109000408197,
+      0.01809069538425516,
+      0.018090510150315098
+    ]
+  },
+  {
+    "penalty": 0.0001,
+    "cycle": 1,
+    "metrics": {
+      "explained_percent": 99.9472361985232,
+      "rms_image_L2": 0.10853962221459708,
+      "median_image_L2": 0.08837986157859126,
+      "p95_image_L2": 0.187548606487601,
+      "max_image_L2": 0.380528530399681,
+      "max_pixel_error": 0.20085889743689891,
+      "rms_pixel_error": 0.003876415079092753,
+      "outside_coverage_range_fraction": 0.14873810563908654
+    },
+    "solver": {
+      "iterations": 160,
+      "max_relative_normal_equation_residual": 1.124047648252099e-05,
+      "pixel_columns_not_converged": 14
+    },
+    "before_coordinate_update_sse": 0.012176875404359033,
+    "projection_history": [
+      0.012176875404359033,
+      0.01179640807835682,
+      0.011783060954220938,
+      0.011781318079143071,
+      0.011780966427767084,
+      0.011780849590487457
+    ]
+  },
+  {
+    "penalty": 0.0001,
+    "cycle": 2,
+    "metrics": {
+      "explained_percent": 99.95022103932416,
+      "rms_image_L2": 0.10542489550499483,
+      "median_image_L2": 0.08584599962359846,
+      "p95_image_L2": 0.1825525482547628,
+      "max_image_L2": 0.3789209263635889,
+      "max_pixel_error": 0.20021361593817,
+      "rms_pixel_error": 0.003765174839464101,
+      "outside_coverage_range_fraction": 0.14845860854592724
+    },
+    "solver": {
+      "iterations": 152,
+      "max_relative_normal_equation_residual": 2.9988704985668583e-06,
+      "pixel_columns_not_converged": 0
+    },
+    "before_coordinate_update_sse": 0.01133532270748795,
+    "projection_history": [
+      0.01133532270748795,
+      0.011127570430983677,
+      0.011116368157566116,
+      0.011115100601648284,
+      0.011114559808379018,
+      0.011114408592239078
+    ]
+  },
+  {
+    "penalty": 0.0001,
+    "cycle": 3,
+    "metrics": {
+      "explained_percent": 99.95229841335532,
+      "rms_image_L2": 0.10320165909630137,
+      "median_image_L2": 0.08451333260468379,
+      "p95_image_L2": 0.17886073568453878,
+      "max_image_L2": 0.380226885745402,
+      "max_pixel_error": 0.1999152832504978,
+      "rms_pixel_error": 0.00368577353915362,
+      "outside_coverage_range_fraction": 0.14857101016791455
+    },
+    "solver": {
+      "iterations": 150,
+      "max_relative_normal_equation_residual": 2.9993400865901776e-06,
+      "pixel_columns_not_converged": 0
+    },
+    "before_coordinate_update_sse": 0.0108222295086543,
+    "projection_history": [
+      0.0108222295086543,
+      0.010663356109216123,
+      0.010653414875829216,
+      0.010651362842318267,
+      0.010650802601129227,
+      0.010650582440229203
+    ]
+  },
+  {
+    "penalty": 0.0001,
+    "cycle": 4,
+    "metrics": {
+      "explained_percent": 99.95398685115842,
+      "rms_image_L2": 0.10135874955641551,
+      "median_image_L2": 0.08330816923219622,
+      "p95_image_L2": 0.17445335304990203,
+      "max_image_L2": 0.3853434946784953,
+      "max_pixel_error": 0.19977930894778165,
+      "rms_pixel_error": 0.003619955341300554,
+      "outside_coverage_range_fraction": 0.14885103912994763
+    },
+    "solver": {
+      "iterations": 145,
+      "max_relative_normal_equation_residual": 2.9991705873431315e-06,
+      "pixel_columns_not_converged": 0
+    },
+    "before_coordinate_update_sse": 0.010419769133205397,
+    "projection_history": [
+      0.010419769133205397,
+      0.010286157518570501,
+      0.0102759388477621,
+      0.010274434046742924,
+      0.010273848756836491,
+      0.01027359611164016
+    ]
+  },
+  {
+    "penalty": 0.0001,
+    "cycle": 5,
+    "metrics": {
+      "explained_percent": 99.95544574663656,
+      "rms_image_L2": 0.09973896378575778,
+      "median_image_L2": 0.08237301784093982,
+      "p95_image_L2": 0.17116826609278574,
+      "max_image_L2": 0.3842710369259399,
+      "max_pixel_error": 0.19977253531211522,
+      "rms_pixel_error": 0.0035621058494913495,
+      "outside_coverage_range_fraction": 0.14832431165530358
+    },
+    "solver": {
+      "iterations": 139,
+      "max_relative_normal_equation_residual": 2.999566520803574e-06,
+      "pixel_columns_not_converged": 0
+    },
+    "before_coordinate_update_sse": 0.010079318852457955,
+    "projection_history": [
+      0.010079318852457955,
+      0.00996210861981052,
+      0.009950259298677985,
+      0.00994874304464463,
+      0.009948109068790748,
+      0.009947860897056703
+    ]
+  }
+]

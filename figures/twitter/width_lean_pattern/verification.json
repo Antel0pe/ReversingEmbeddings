@@ -1,0 +1,54 @@
+{
+  "first_image": {
+    "lean_start": 0.0,
+    "lean_end": 20.0,
+    "widths": [
+      1.8,
+      10.0
+    ],
+    "exaggeration": "10-pixel width is outside the default 1.8 to 4.6 range; graph remains 3.2 to 4.2",
+    "frame_clipping": false,
+    "pixel_change_angle_degrees": 89.99515941587775
+  },
+  "second_image": {
+    "layout": "Distance plus angle",
+    "local_angle_peak_degrees": 80.56677078225286,
+    "local_angle_peak_lean": -3.5,
+    "local_angle_step_degrees": 0.1,
+    "reference": "Difference of tilt-change vectors, subtracting each width-specific upright image",
+    "width_increases": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "lean_samples": 901,
+    "relative_shape_error": 0.035326571515253626,
+    "fresh_error": 0.034998147327554394,
+    "fresh_offsets": [
+      0.15,
+      0.35,
+      0.55,
+      0.75,
+      0.95
+    ],
+    "fresh_lean_samples": 900
+  },
+  "text_overlaps": {
+    "01_pixels.png": [],
+    "02_pattern.png": []
+  },
+  "understanding_check": {
+    "object": "Actual coverage images and their signed pixel changes, then norms of differences of full 784D displacement vectors",
+    "axes_and_colors": "Lean degrees, pixel-L2 mismatch, and local pixel-direction angles if selected; width colors explicitly keyed",
+    "starting_case": "First row width 1.8, upright; same 20-degree tilt at widths 1.8 and 10; line curves separately anchored at each width upright",
+    "evidence": "Distinct change maps and similarly shaped scalar distance curves; optional local angle graph shows aligned directions near upright and strong turning elsewhere",
+    "scope": "Exaggerated demonstration widths 1.8 and 10, with fixed center and height; graph width 3.2 to 4.2; signed pixels unprojected"
+  }
+}

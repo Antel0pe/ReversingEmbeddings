@@ -106,3 +106,9 @@ image at width 3.35 ≈
     image at width 3.2 + 1.5 × width_step(lean)
 ```
 - the 1.5 number generally changes as width step changes but a given offset does generally work which is interesting
+
+we know pca takes some n dimensions to appropriately represent some data
+- what if we look at those dimensions and try to reason what kind of way it varies and inform us for principal curves of principal manifold methods?
+
+kernel pca
+- Nonlinearly transform the data into a different feature space, then perform ordinary PCA there.

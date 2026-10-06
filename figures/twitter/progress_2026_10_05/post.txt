@@ -1,0 +1,5 @@
+Progress on my generated-1 experiments:
+1) Shorten, tilt, regrow: 5% less pixel change.
+2) Width + tilt isn't the sum of separate changes.
+3) An edge-aware rule predicts tilt response with 0.65% error vs 55.62% for a polynomial fit.
+Tiny strokes, rich geometry.

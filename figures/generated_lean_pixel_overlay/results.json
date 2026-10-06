@@ -1,0 +1,36 @@
+{
+  "norms": [
+    2.552179898470378,
+    2.804684380201685,
+    2.682799492283208
+  ],
+  "changed_pixels": [
+    60,
+    60,
+    62
+  ],
+  "union_pixels": 110,
+  "shared_pixels": 60,
+  "triple_pixels": 12,
+  "opposite_sign_pixels": 0,
+  "max_pixel_change": 0.7873979434370995,
+  "widths_px": [
+    1.8,
+    3.2,
+    4.6
+  ],
+  "start_lean_deg": 0,
+  "end_lean_deg": 5,
+  "fixed_center_px": [
+    14.5,
+    14.5
+  ],
+  "height_px": 19.75,
+  "renderer": "grey_ones.render, float32, 16 subrows; subtraction in float64",
+  "validation": {
+    "rendered_frames": 455,
+    "sparse_roundtrip": "exact",
+    "endpoint_reconstruction": "exact",
+    "no_canvas_clipping": true
+  }
+}

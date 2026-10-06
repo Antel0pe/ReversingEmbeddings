@@ -26,6 +26,7 @@
 <p class="note">Score = 100 × (1 − squared reconstruction error / squared distance to the training-mean image). One flexible curve has many more shape parameters than one PCA line. Five curves capture 97.3% here, but 92.0% at all 32 range-box corners. The curves are summaries, not exact five-knob coordinates.</p>
 <p><a href="README.md">Full analysis and method</a> · <a href="results.json">Measured results</a></p></section>
 
+<!-- joint-curve-result --><section id="joint-curves"><h2>Optimize the five curves together</h2><p>The new experiment revisits all five learned curves and maximizes their combined reconstruction. <a href="joint/">Open the joint-fit comparison and inspect the curves</a>.</p></section>
 <!-- curve-followup-start -->
 <section id="curve-definition"><h2>What exactly are curves 1–5?</h2><p>Each stores 65 nodes. One node is 784 pixel values, not a selected source image. Between neighboring nodes, the point is (1 − fraction) × left node + fraction × right node.</p>
 <div class="controls"><label for="literalCurve">Curve</label><select id="literalCurve"><option value="0">1 — image-minus-mean contribution</option><option value="1">2 — residual contribution</option><option value="2">3 — residual contribution</option><option value="3">4 — residual contribution</option><option value="4">5 — residual contribution</option></select><label for="literalPosition">Path position</label><input id="literalPosition" type="range" min="0" max="1000" value="500"></div>

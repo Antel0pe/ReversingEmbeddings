@@ -1,0 +1,410 @@
+{
+  "method": "One continuous five-dimensional elastic principal grid with multilinear cell interpolation",
+  "reference_method": "Elastic principal manifolds, Gorban and Zinovyev; continuous-cell projection variant",
+  "reference_url": "https://arxiv.org/abs/cond-mat/0405648",
+  "coordinate_dimension": 5,
+  "manifold_count": 1,
+  "coverage_points": 14389,
+  "knob_order": [
+    "cx",
+    "cy",
+    "height",
+    "width",
+    "lean"
+  ],
+  "ranges": [
+    [
+      14.0,
+      15.0
+    ],
+    [
+      14.0,
+      15.0
+    ],
+    [
+      19.0,
+      20.5
+    ],
+    [
+      1.8,
+      4.6
+    ],
+    [
+      -10.0,
+      35.0
+    ]
+  ],
+  "metric": "Squared Euclidean distance over all 784 coverage pixels",
+  "generator_use": "Images and initial coordinate labels only; absent from learned decoder and projection",
+  "candidates": {
+    "uniform": {
+      "shape": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "node_count": 3125,
+      "metrics": {
+        "explained_percent": 99.62916413126224,
+        "rms_image_L2": 0.2877472182944838,
+        "median_image_L2": 0.2592570233238866,
+        "p95_image_L2": 0.4491707040507446,
+        "max_image_L2": 0.9119738967058321,
+        "max_pixel_error": 0.38693099526738284,
+        "rms_pixel_error": 0.010276686367660137,
+        "outside_coverage_range_fraction": 0.14873234372628752
+      },
+      "known_coordinate_metrics": {
+        "explained_percent": 83.46822742793164,
+        "rms_image_L2": 1.921232735277127,
+        "median_image_L2": 1.0590523838277246,
+        "p95_image_L2": 4.0555667640752215,
+        "max_image_L2": 15.30649314466046,
+        "max_pixel_error": 5.770286253172699,
+        "rms_pixel_error": 0.06861545483132597,
+        "outside_coverage_range_fraction": 0.15316024074512702
+      },
+      "coordinate_knob_spearman": [
+        [
+          0.9879459488495307,
+          0.0014479910706803362,
+          0.0024458966340436565,
+          0.002754922484436581,
+          -0.0037538982394758613
+        ],
+        [
+          0.002376459126807802,
+          0.9595362963335248,
+          0.004901449299252009,
+          0.0020084218150521194,
+          -0.011888826705409751
+        ],
+        [
+          0.0016426430966601621,
+          -0.0034208147298367673,
+          0.9292287762318064,
+          -0.007801754724390415,
+          0.0029015557122405397
+        ],
+        [
+          0.0007593193524089804,
+          0.0009223636397868701,
+          -0.003598617244570236,
+          0.9971493259183469,
+          -0.0003610333301402195
+        ],
+        [
+          0.0004443228959025481,
+          -0.0010065006820389035,
+          0.00036244707706633666,
+          0.0004940436674185335,
+          0.9992073818145453
+        ]
+      ],
+      "coordinate_rms_shift_from_initial": [
+        0.04513109601991271,
+        0.08871594940641225,
+        0.11821032855685994,
+        0.019343307215697454,
+        0.008831420026719633
+      ],
+      "local_rank": {
+        "points": 514,
+        "smallest_singular_value_min": 1.1132909662251926,
+        "smallest_singular_value_median": 4.035839787344317,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "iterations": 13,
+      "max_cg_iterations": 200
+    },
+    "guided": {
+      "shape": [
+        3,
+        3,
+        3,
+        5,
+        33
+      ],
+      "node_count": 4455,
+      "metrics": {
+        "explained_percent": 99.91491747188368,
+        "rms_image_L2": 0.13782895384598595,
+        "median_image_L2": 0.12164966685438103,
+        "p95_image_L2": 0.22272897606726555,
+        "max_image_L2": 0.40177159246269806,
+        "max_pixel_error": 0.2060906351737284,
+        "rms_pixel_error": 0.004922462637356641,
+        "outside_coverage_range_fraction": 0.1524697863021781
+      },
+      "known_coordinate_metrics": {
+        "explained_percent": 99.2639691861964,
+        "rms_image_L2": 0.40538555077403143,
+        "median_image_L2": 0.29835143701530453,
+        "p95_image_L2": 0.7484439176100204,
+        "max_image_L2": 3.5949245776936074,
+        "max_pixel_error": 1.4363994714520576,
+        "rms_pixel_error": 0.014478055384786836,
+        "outside_coverage_range_fraction": 0.15656836784334974
+      },
+      "coordinate_knob_spearman": [
+        [
+          0.9949686225954131,
+          0.010000706334795082,
+          0.003543317769777919,
+          0.0033464812515461894,
+          0.00790996352599273
+        ],
+        [
+          0.08125290694333745,
+          0.9800855991462873,
+          0.00229186103250458,
+          0.0028051493657976815,
+          -0.018862902808423464
+        ],
+        [
+          0.008273021114825597,
+          0.0036334097510441477,
+          0.9663857046763848,
+          -0.011463494612547278,
+          0.01321853709094489
+        ],
+        [
+          0.002537462542077787,
+          0.000260229358661743,
+          -0.0011171347510794748,
+          0.9980210287309145,
+          0.002913911981220955
+        ],
+        [
+          0.0008517973339438668,
+          -0.0005115582949149478,
+          0.0019693222202308695,
+          0.0019034517639896168,
+          0.9995450933833175
+        ]
+      ],
+      "coordinate_rms_shift_from_initial": [
+        0.028872277341720994,
+        0.0598792664307868,
+        0.09311362769521363,
+        0.014520179058134783,
+        0.003436367078953178
+      ],
+      "local_rank": {
+        "points": 514,
+        "smallest_singular_value_min": 0.8000313971226968,
+        "smallest_singular_value_median": 1.6584988700153214,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "iterations": 17,
+      "max_cg_iterations": 200
+    },
+    "fine": {
+      "shape": [
+        3,
+        3,
+        3,
+        9,
+        65
+      ],
+      "node_count": 15795,
+      "metrics": {
+        "explained_percent": 99.95544745456392,
+        "rms_image_L2": 0.09973705208794806,
+        "median_image_L2": 0.08237301784093982,
+        "p95_image_L2": 0.17116826609278574,
+        "max_image_L2": 0.38020798887211144,
+        "max_pixel_error": 0.19977253531211522,
+        "rms_pixel_error": 0.0035620375745695734,
+        "outside_coverage_range_fraction": 0.14832440030011587
+      },
+      "known_coordinate_metrics": {
+        "explained_percent": 99.07526697817119,
+        "rms_image_L2": 0.45438967036076117,
+        "median_image_L2": 0.32166602517406817,
+        "p95_image_L2": 0.8394008103266959,
+        "max_image_L2": 3.9922083264722277,
+        "max_pixel_error": 1.711088245791177,
+        "rms_pixel_error": 0.016228202512884326,
+        "outside_coverage_range_fraction": 0.15270965916424253
+      },
+      "coordinate_knob_spearman": [
+        [
+          0.9941344179304656,
+          0.010148574326691818,
+          0.0037646229996039352,
+          0.003456036013412387,
+          0.008288041598114778
+        ],
+        [
+          0.09942512056578869,
+          0.9732258753800483,
+          0.0008582903254117623,
+          0.004489982588639763,
+          -0.01942811951206982
+        ],
+        [
+          0.008044989092420901,
+          0.002768491683165306,
+          0.9575904278963762,
+          -0.011777490942415184,
+          0.014597519341984019
+        ],
+        [
+          0.0021973129487902754,
+          0.00031845806226636164,
+          -0.001154449365664235,
+          0.9978621101571769,
+          0.003113631446173629
+        ],
+        [
+          0.0004728791083412395,
+          -0.00055275245754807,
+          0.002058242461978523,
+          0.001631600015183153,
+          0.9994701529562084
+        ]
+      ],
+      "coordinate_rms_shift_from_initial": [
+        0.03139281092642434,
+        0.06980075611182211,
+        0.10445559182109349,
+        0.01527414772439808,
+        0.003908372182561873
+      ],
+      "local_rank": {
+        "points": 514,
+        "smallest_singular_value_min": 0.6468687332328009,
+        "smallest_singular_value_median": 1.7543970917633034,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "iterations": 7,
+      "max_cg_iterations": 160,
+      "penalty_schedule": [
+        [
+          0.001,
+          2
+        ],
+        [
+          0.0001,
+          5
+        ]
+      ],
+      "projection_refinement": {
+        "difficult_images": 2,
+        "improved_images": 1
+      }
+    }
+  },
+  "best_candidate": "fine",
+  "sampling_checks": {
+    "dense_uniform": {
+      "count": 16384,
+      "pixel_only_projection": {
+        "explained_percent": 99.87929328402953,
+        "rms_image_L2": 0.15963589698162323,
+        "median_image_L2": 0.1319950802652215,
+        "p95_image_L2": 0.2748453872323409,
+        "max_image_L2": 0.5911975838456336,
+        "max_pixel_error": 0.2515570326197668,
+        "rms_pixel_error": 0.0057012820350579715,
+        "outside_coverage_range_fraction": 0.14884894234793528
+      },
+      "known_coordinates_without_projection": {
+        "explained_percent": 99.28682860551385,
+        "rms_image_L2": 0.3880268670527419,
+        "median_image_L2": 0.32632587573677235,
+        "p95_image_L2": 0.6368271998009888,
+        "max_image_L2": 2.011325488383355,
+        "max_pixel_error": 1.007300062314708,
+        "rms_pixel_error": 0.013858102394740782,
+        "outside_coverage_range_fraction": 0.15153768111248406
+      },
+      "local_rank": {
+        "points": 512,
+        "smallest_singular_value_min": 0.7300894828877293,
+        "smallest_singular_value_median": 1.9081900139491288,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "projection_refinement": {
+        "difficult_images": 279,
+        "improved_images": 207
+      }
+    },
+    "all_32_corners": {
+      "count": 32,
+      "pixel_only_projection": {
+        "explained_percent": 99.96550778445481,
+        "rms_image_L2": 0.09960486262234966,
+        "median_image_L2": 0.07445022258649217,
+        "p95_image_L2": 0.17981163114395313,
+        "max_image_L2": 0.21650661658665135,
+        "max_pixel_error": 0.14173192746156282,
+        "rms_pixel_error": 0.0035573165222267736,
+        "outside_coverage_range_fraction": 0.13356983418367346
+      },
+      "known_coordinates_without_projection": {
+        "explained_percent": 98.083481608326,
+        "rms_image_L2": 0.742465863427227,
+        "median_image_L2": 0.43269470399831667,
+        "p95_image_L2": 1.3685033694894273,
+        "max_image_L2": 1.4255971915150072,
+        "max_pixel_error": 0.6230900484606771,
+        "rms_pixel_error": 0.02651663797954382,
+        "outside_coverage_range_fraction": 0.14791932397959184
+      },
+      "local_rank": {
+        "points": 32,
+        "smallest_singular_value_min": 0.7247336515942921,
+        "smallest_singular_value_median": 1.5933276821702815,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "projection_refinement": {
+        "difficult_images": 0,
+        "improved_images": 0
+      }
+    },
+    "joint_midpoints": {
+      "count": 2048,
+      "pixel_only_projection": {
+        "explained_percent": 99.87292545501846,
+        "rms_image_L2": 0.1373282649425173,
+        "median_image_L2": 0.12087618924820953,
+        "p95_image_L2": 0.22213110029722716,
+        "max_image_L2": 0.41759129209789364,
+        "max_pixel_error": 0.1371220359135198,
+        "rms_pixel_error": 0.004904580890804189,
+        "outside_coverage_range_fraction": 0.15202362683354592
+      },
+      "known_coordinates_without_projection": {
+        "explained_percent": 99.11098252831736,
+        "rms_image_L2": 0.3632334197362,
+        "median_image_L2": 0.3147292325669689,
+        "p95_image_L2": 0.5833299685508626,
+        "max_image_L2": 1.15560885130829,
+        "max_pixel_error": 0.413737420260911,
+        "rms_pixel_error": 0.012972622133435713,
+        "outside_coverage_range_fraction": 0.15419224330357142
+      },
+      "local_rank": {
+        "points": 512,
+        "smallest_singular_value_min": 0.6583819888445505,
+        "smallest_singular_value_median": 2.2518359469264944,
+        "full_local_rank_fraction_at_relative_tolerance_1e_6": 1.0
+      },
+      "projection_refinement": {
+        "difficult_images": 4,
+        "improved_images": 3
+      }
+    }
+  },
+  "display_diagnostics": {
+    "out_of_range_pixel_fraction_at_tolerance_1e_3": 0.03605410517478476,
+    "maximum_coverage_violation": 0.13393223311272284,
+    "browser_float32_max_node_difference": 1.0880759804265949e-07,
+    "fraction_of_squared_error_on_fractional_coverage_pixels": 0.7146256232753442
+  },
+  "encoder": "Two nearest pixel-image starts, twenty steps each; if image L2 residual exceeds 0.35, eight nearest-image starts and sixty steps, retaining only improvement"
+}

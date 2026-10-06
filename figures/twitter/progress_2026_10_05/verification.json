@@ -1,0 +1,31 @@
+{
+  "interval": "2026-09-28 through 2026-10-05",
+  "renderer": "grey_ones.render",
+  "path_steps": 8192,
+  "path_lengths_float32": [
+    30.728491108997062,
+    29.17624615826346
+  ],
+  "height_dip_px": 1.4718082595433946,
+  "saving_percent": 5.0514844520924695,
+  "joint_L2_mismatch": 3.4600997003378717,
+  "joint_out_of_range_pixels": 26,
+  "heldout_response_mean_error_percent": {
+    "degree_5": 55.62352278117045,
+    "edge_rule": 0.6529330230379756
+  },
+  "text_overlaps": {
+    "01_shortcut.png": [],
+    "02_interaction.png": [],
+    "03_edge_rule.png": []
+  },
+  "images": [
+    "01_shortcut.png",
+    "02_interaction.png",
+    "03_edge_rule.png"
+  ],
+  "figure_pixels": [
+    1800,
+    1200
+  ]
+}

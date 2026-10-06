@@ -1,0 +1,135 @@
+{
+  "method": "Direct knob coordinates; additive pixel-space curves; global conditional-mean construction on complete product grids",
+  "knob_order": [
+    "cx",
+    "cy",
+    "height",
+    "width",
+    "lean"
+  ],
+  "original_covering_points": 14389,
+  "finite_cloud_fits": [
+    {
+      "nodes_per_curve": 65,
+      "metrics": {
+        "explained_percent": 80.4644038546411,
+        "rms_image_L2": 2.088495775455015,
+        "median_image_L2": 2.014725126582029,
+        "p95_image_L2": 2.8589815130760794,
+        "max_image_L2": 3.9152128077830497,
+        "max_pixel_error": 0.8706913215441389
+      },
+      "note": "Global least squares in this fixed-coordinate linear-spline basis, up to the tiny numerical ridge"
+    },
+    {
+      "nodes_per_curve": 129,
+      "metrics": {
+        "explained_percent": 80.7350839724947,
+        "rms_image_L2": 2.0739764801377207,
+        "median_image_L2": 1.9942995056973436,
+        "p95_image_L2": 2.846570206762678,
+        "max_image_L2": 3.9120476633384498,
+        "max_pixel_error": 0.8685949174206092
+      },
+      "note": "Global least squares in this fixed-coordinate linear-spline basis, up to the tiny numerical ridge"
+    },
+    {
+      "nodes_per_curve": 257,
+      "metrics": {
+        "explained_percent": 81.6134527752987,
+        "rms_image_L2": 2.0261442320376184,
+        "median_image_L2": 1.9291534643898618,
+        "p95_image_L2": 2.8059350314976683,
+        "max_image_L2": 3.9068856535381573,
+        "max_pixel_error": 0.866666415831169
+      },
+      "note": "Global least squares in this fixed-coordinate linear-spline basis, up to the tiny numerical ridge"
+    },
+    {
+      "nodes_per_curve": 513,
+      "metrics": {
+        "explained_percent": 83.44554816031578,
+        "rms_image_L2": 1.9225501142118728,
+        "median_image_L2": 1.8031682486545588,
+        "p95_image_L2": 2.7349486369342957,
+        "max_image_L2": 3.903092951754995,
+        "max_pixel_error": 0.8655309556768864
+      },
+      "note": "Global least squares in this fixed-coordinate linear-spline basis, up to the tiny numerical ridge"
+    }
+  ],
+  "product_grid_optima": [
+    {
+      "levels_per_knob": 5,
+      "images": 3125,
+      "globally_optimal_knob_additive_capture_percent": 81.72578999479042,
+      "residual_sse_per_image": 3.7906554914280726,
+      "variance_per_image": 20.743197601140842,
+      "scope": "Exact optimum on this equal-weight Cartesian grid; convergence is a numerical estimate for the continuous uniform box"
+    },
+    {
+      "levels_per_knob": 9,
+      "images": 59049,
+      "globally_optimal_knob_additive_capture_percent": 81.4791031182824,
+      "residual_sse_per_image": 3.8895890631337053,
+      "variance_per_image": 21.001083737868036,
+      "scope": "Exact optimum on this equal-weight Cartesian grid; convergence is a numerical estimate for the continuous uniform box"
+    },
+    {
+      "levels_per_knob": 13,
+      "images": 371293,
+      "globally_optimal_knob_additive_capture_percent": 81.42173160820751,
+      "residual_sse_per_image": 3.9124040330747114,
+      "variance_per_image": 21.059034946459988,
+      "scope": "Exact optimum on this equal-weight Cartesian grid; convergence is a numerical estimate for the continuous uniform box"
+    }
+  ],
+  "interaction_witness": {
+    "knobs": [
+      [
+        14.5,
+        14.5,
+        19.75,
+        3.1999999999999997,
+        12.5
+      ],
+      [
+        14.5,
+        14.5,
+        19.75,
+        4.199999999999999,
+        12.5
+      ],
+      [
+        14.5,
+        14.5,
+        19.75,
+        3.1999999999999997,
+        27.5
+      ],
+      [
+        14.5,
+        14.5,
+        19.75,
+        4.199999999999999,
+        27.5
+      ]
+    ],
+    "mixed_difference_L2": 3.4600997003378717,
+    "max_pixel_interaction": 0.5000000298023224,
+    "any_additive_model_four_corner_max_image_error_lower_bound": 0.8650249250844679,
+    "proof": "Every sum of five single-knob functions has zero mixed difference; the renderer does not. Triangle inequality bounds at least one corner error.",
+    "actual_direct_model_image_errors": [
+      1.1694297234358757,
+      1.6232792050775147,
+      0.8543073446208426,
+      1.9383212770968496
+    ],
+    "actual_free_model_image_errors": [
+      0.14650598293629383,
+      0.2779967102965501,
+      0.2085138437458026,
+      0.2934980129655625
+    ]
+  }
+}

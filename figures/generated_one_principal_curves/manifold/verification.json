@@ -1,0 +1,12 @@
+{
+  "examples": 14,
+  "coordinates": 5,
+  "positions": 5,
+  "canvasDraws": 446,
+  "pythonDecoderMaxDifference": 5.941391911790106e-08,
+  "headline": "99.9554% of covering-cloud variation captured; 99.8793% on additional uniform points.",
+  "mode": "Offline JavaScript DOM simulation and independent Python numerical comparison",
+  "interpolation_checks": "Partition of unity, five analytic derivatives, shared-face continuity",
+  "figure_check": "Both final PNGs visually inspected against repository understanding checklist",
+  "local_http_artifacts_status": 200
+}
