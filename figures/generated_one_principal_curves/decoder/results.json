@@ -1,0 +1,137 @@
+{
+  "method": "Fixed saved curves and positions; clip only the final pixel sum to [0,1]; no refitting or re-encoding for clipping scores",
+  "score_definition": "100 * (1 - sum over images and pixels of (source - prediction)^2 / sum over images and pixels of (source - dataset mean image)^2)",
+  "freely_fitted_cloud": {
+    "images": 14389,
+    "raw_capture_percent": 99.73361962291698,
+    "clipped_capture_percent": 99.7846626289317,
+    "denominator_squared_distance_to_mean": 321270.7197226285,
+    "raw_squared_error": 855.802154654505,
+    "clipped_squared_error": 691.8159218629148,
+    "residual_squared_error_reduction_percent": 19.161698986115884
+  },
+  "additional_uniform_cloud": {
+    "images": 16384,
+    "raw_capture_percent": 99.46610694088754,
+    "clipped_capture_percent": 99.56346097079461,
+    "denominator_squared_distance_to_mean": 345899.24864872993,
+    "raw_squared_error": 1846.732080057688,
+    "clipped_squared_error": 1509.9852220798684,
+    "residual_squared_error_reduction_percent": 18.234743502549666
+  },
+  "fixed_knob_cloud": {
+    "images": 14389,
+    "raw_capture_percent": 83.44554816031578,
+    "clipped_capture_percent": 85.75998098849553,
+    "denominator_squared_distance_to_mean": 321270.7197226285,
+    "raw_squared_error": 53184.606571489414,
+    "clipped_squared_error": 45749.01156689954,
+    "residual_squared_error_reduction_percent": 13.980727665241133
+  },
+  "active_pixels_per_curve": [
+    283,
+    283,
+    283,
+    283,
+    283
+  ],
+  "active_pixels_shared_by_all_curves": 283,
+  "support_threshold": 1e-08,
+  "example_knobs": [
+    [
+      14.5,
+      14.5,
+      19.75,
+      3.2,
+      12.5
+    ],
+    [
+      14.5,
+      14.5,
+      19.75,
+      4.2,
+      12.5
+    ],
+    [
+      14.5,
+      14.5,
+      19.75,
+      3.2,
+      27.5
+    ],
+    [
+      14.5,
+      14.5,
+      19.75,
+      4.2,
+      27.5
+    ]
+  ],
+  "example_coordinates": [
+    [
+      0.48567803242088403,
+      0.22188934988840323,
+      0.814067495952124,
+      0.023212231686654077,
+      0.649964320115781
+    ],
+    [
+      0.41043186810354276,
+      0.24364253271767997,
+      0.4631589001182174,
+      0.4951245526212815,
+      0.6462041236346423
+    ],
+    [
+      0.7644817047185074,
+      0.4166034057440206,
+      0.26057892842268476,
+      0.3056364503583662,
+      0.13897902718813074
+    ],
+    [
+      0.7723689382932482,
+      0.9300034200397617,
+      0.2131535540897025,
+      0.2893904072689469,
+      0.39857813765853295
+    ]
+  ],
+  "curve_coordinate_knob_spearman": [
+    [
+      -0.030225531367179873,
+      -0.00809360437402186,
+      0.0010858201440489582,
+      -0.002446072608992298,
+      0.9884276374852446
+    ],
+    [
+      -0.06647201556294868,
+      -0.10778672758381432,
+      -0.016931156065543428,
+      -0.35734593289488414,
+      0.4108648065769611
+    ],
+    [
+      -0.038006380438119026,
+      -0.01862314478203641,
+      0.13815817646286277,
+      -0.031051487763832233,
+      -0.16806491589427666
+    ],
+    [
+      -0.006537634810872535,
+      -0.03821084108369544,
+      0.08045929359523263,
+      -0.0965017905454461,
+      -0.3481975720447672
+    ],
+    [
+      0.04629563154917913,
+      -0.08346914617521198,
+      0.03866601642944699,
+      -0.0019678092793131968,
+      0.23826417527517305
+    ]
+  ]
+}

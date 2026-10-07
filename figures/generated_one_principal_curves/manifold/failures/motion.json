@@ -1,0 +1,945 @@
+{
+  "points": 128,
+  "base_range_fractions": [
+    0.15,
+    0.75
+  ],
+  "seed": 948,
+  "true_tangent_difference_step": 0.001,
+  "meanings": "True tangents use central finite differences of rendered images. Learned tangents use exact within-cell decoder derivatives. Calibration G is an oracle local diagnostic, not a learned physical knob controller.",
+  "median_coordinate_calibration": [
+    [
+      0.9850931685046143,
+      0.010114112127084537,
+      0.003803974481217637,
+      -0.005014820790649334,
+      0.032096514161709666
+    ],
+    [
+      0.19759984677681797,
+      0.8907959807432166,
+      -0.005544725423994673,
+      -0.02103757489721239,
+      -0.13458155922877307
+    ],
+    [
+      -0.016396113250806164,
+      0.09016527051206397,
+      0.555971119523583,
+      -0.0040432466396829805,
+      -0.015970704055110245
+    ],
+    [
+      0.004873274170793194,
+      -0.00044735118678999137,
+      0.0034402669187746163,
+      0.983085000757226,
+      0.031940353241686904
+    ],
+    [
+      -0.0006370659426600256,
+      -0.0002454970563062703,
+      -9.169556206167664e-05,
+      0.00021948938835634883,
+      0.990141330003873
+    ]
+  ],
+  "median_abs_coordinate_calibration": [
+    [
+      0.9850931685046143,
+      0.03150372686490194,
+      0.021714333748135264,
+      0.0677897293686055,
+      0.2171160203832797
+    ],
+    [
+      0.20109388116792187,
+      0.8907959807432166,
+      0.06905159777845188,
+      0.12835776467332388,
+      0.39041325212564193
+    ],
+    [
+      0.08786224523216113,
+      0.26059963340611636,
+      0.555971119523583,
+      0.116770405080622,
+      0.42625877667623735
+    ],
+    [
+      0.02665503833751495,
+      0.013847545351255191,
+      0.009470255193241281,
+      0.983085000757226,
+      0.13241440228511975
+    ],
+    [
+      0.009042263604811397,
+      0.0033034350737862457,
+      0.002604932244382194,
+      0.010686250518923916,
+      0.990141330003873
+    ]
+  ],
+  "local_tangents": {
+    "raw": {
+      "per_knob": {
+        "cx": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.3364406771328575,
+            "median_cosine": 0.9483724893995062,
+            "p10_cosine": 0.8894421712040314,
+            "median_change_gain": 0.8994103826677213,
+            "p10_change_gain": 0.7911081696159825,
+            "p90_change_gain": 0.9685700004647121,
+            "pooled_change_gain": 0.8868076707703845,
+            "error_parallel_to_actual_change_percent": 15.444684180586954,
+            "error_orthogonal_to_actual_change_percent": 84.55531581941304,
+            "rms_pixel_error": 0.07223747679646873,
+            "error_on_unchanged_pixels_percent": 20.936142627264932
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.2446897170856875,
+            "median_cosine": 0.9735446552552005,
+            "p10_cosine": 0.9355077747418131,
+            "median_change_gain": 0.9477892607264513,
+            "p10_change_gain": 0.8751750201066514,
+            "p90_change_gain": 0.9862433229697798,
+            "pooled_change_gain": 0.9401269423525264,
+            "error_parallel_to_actual_change_percent": 9.083903585505603,
+            "error_orthogonal_to_actual_change_percent": 90.91609641449438,
+            "rms_pixel_error": 0.05253754662172387,
+            "error_on_unchanged_pixels_percent": 33.14369836116633
+          }
+        },
+        "cy": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.4073229073215384,
+            "median_cosine": 0.9139908423684249,
+            "p10_cosine": 0.8138183122394407,
+            "median_change_gain": 0.8353792891149139,
+            "p10_change_gain": 0.6623012157618807,
+            "p90_change_gain": 0.9639171060436617,
+            "pooled_change_gain": 0.8340880491711294,
+            "error_parallel_to_actual_change_percent": 24.4312722431175,
+            "error_orthogonal_to_actual_change_percent": 75.5687277568825,
+            "rms_pixel_error": 0.039226734260901425,
+            "error_on_unchanged_pixels_percent": 5.333064400350065
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.2487649308515921,
+            "median_cosine": 0.9884105243902345,
+            "p10_cosine": 0.8947658051430486,
+            "median_change_gain": 0.9769553905776824,
+            "p10_change_gain": 0.8006250238411948,
+            "p90_change_gain": 0.9915650674405281,
+            "pooled_change_gain": 0.9381160091784028,
+            "error_parallel_to_actual_change_percent": 17.99124477201537,
+            "error_orthogonal_to_actual_change_percent": 82.00875522798464,
+            "rms_pixel_error": 0.023957002320627713,
+            "error_on_unchanged_pixels_percent": 33.86956719426873
+          }
+        },
+        "height": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.3653619254638306,
+            "median_cosine": 0.9737727348825899,
+            "p10_cosine": 0.7945977152598499,
+            "median_change_gain": 0.9482334388678195,
+            "p10_change_gain": 0.6314524048220128,
+            "p90_change_gain": 0.9800626063384267,
+            "pooled_change_gain": 0.8665106634213623,
+            "error_parallel_to_actual_change_percent": 33.53120720258477,
+            "error_orthogonal_to_actual_change_percent": 66.4687927974152,
+            "rms_pixel_error": 0.02285222904137086,
+            "error_on_unchanged_pixels_percent": 42.09118690888668
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.2910374234231158,
+            "median_cosine": 0.9903476209929563,
+            "p10_cosine": 0.8263115901023476,
+            "median_change_gain": 0.9807884137589336,
+            "p10_change_gain": 0.6828202225521043,
+            "p90_change_gain": 0.9928016756431679,
+            "pooled_change_gain": 0.9152972181672339,
+            "error_parallel_to_actual_change_percent": 28.55972704214056,
+            "error_orthogonal_to_actual_change_percent": 71.44027295785943,
+            "rms_pixel_error": 0.018203467291322568,
+            "error_on_unchanged_pixels_percent": 48.707485996217216
+          }
+        },
+        "width": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.2790085492293067,
+            "median_cosine": 0.9645552640228919,
+            "p10_cosine": 0.9268520327428708,
+            "median_change_gain": 0.930366965279505,
+            "p10_change_gain": 0.8590592531262979,
+            "p90_change_gain": 0.9749742594607825,
+            "pooled_change_gain": 0.9221542294569574,
+            "error_parallel_to_actual_change_percent": 10.732777168920023,
+            "error_orthogonal_to_actual_change_percent": 89.26722283107995,
+            "rms_pixel_error": 0.08386862745064676,
+            "error_on_unchanged_pixels_percent": 32.71828035683135
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.2330661396615819,
+            "median_cosine": 0.974156835212082,
+            "p10_cosine": 0.9535125978596399,
+            "median_change_gain": 0.9489815397798778,
+            "p10_change_gain": 0.9091862749891468,
+            "p90_change_gain": 0.9830319198605579,
+            "pooled_change_gain": 0.9456801745432479,
+            "error_parallel_to_actual_change_percent": 8.249179134130344,
+            "error_orthogonal_to_actual_change_percent": 91.75082086586964,
+            "rms_pixel_error": 0.07005856018617095,
+            "error_on_unchanged_pixels_percent": 40.05982661319036
+          }
+        },
+        "lean": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.2533699830424638,
+            "median_cosine": 0.9723586410885136,
+            "p10_cosine": 0.944008435415828,
+            "median_change_gain": 0.9454813275351582,
+            "p10_change_gain": 0.8911521197174789,
+            "p90_change_gain": 0.9751729550665973,
+            "pooled_change_gain": 0.9358036516930616,
+            "error_parallel_to_actual_change_percent": 10.326549260585747,
+            "error_orthogonal_to_actual_change_percent": 89.67345073941424,
+            "rms_pixel_error": 0.250798789897865,
+            "error_on_unchanged_pixels_percent": 29.701492433469202
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.21686843083411983,
+            "median_cosine": 0.9810011036269355,
+            "p10_cosine": 0.9576275838704279,
+            "median_change_gain": 0.9623631933361408,
+            "p10_change_gain": 0.9170506175709637,
+            "p90_change_gain": 0.9828470415541953,
+            "pooled_change_gain": 0.9529680837075466,
+            "error_parallel_to_actual_change_percent": 8.121681803087355,
+            "error_orthogonal_to_actual_change_percent": 91.87831819691264,
+            "rms_pixel_error": 0.21466765465714419,
+            "error_on_unchanged_pixels_percent": 36.89584233541618
+          }
+        }
+      },
+      "baseline_reconstruction_error_explained_by_true_tangent_percent": 8.19987080754187,
+      "baseline_reconstruction_error_orthogonal_to_true_tangent_percent": 91.80012919245813
+    },
+    "clipped": {
+      "per_knob": {
+        "cx": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.32140258114392767,
+            "median_cosine": 0.9507855200115954,
+            "p10_cosine": 0.898770231039583,
+            "median_change_gain": 0.9039931702901733,
+            "p10_change_gain": 0.8077896027251227,
+            "p90_change_gain": 0.9701792257740527,
+            "pooled_change_gain": 0.896700380834021,
+            "error_parallel_to_actual_change_percent": 14.191918304927064,
+            "error_orthogonal_to_actual_change_percent": 85.80808169507293,
+            "rms_pixel_error": 0.06900863384168412,
+            "error_on_unchanged_pixels_percent": 15.254707447708396
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.22664276133249273,
+            "median_cosine": 0.9760488144555742,
+            "p10_cosine": 0.9477449565626562,
+            "median_change_gain": 0.9526713023317841,
+            "p10_change_gain": 0.8982205240480088,
+            "p90_change_gain": 0.9884840662202172,
+            "pooled_change_gain": 0.9486330587355828,
+            "error_parallel_to_actual_change_percent": 7.529031760849405,
+            "error_orthogonal_to_actual_change_percent": 92.47096823915061,
+            "rms_pixel_error": 0.048662668712851104,
+            "error_on_unchanged_pixels_percent": 24.363442207229838
+          }
+        },
+        "cy": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.40242245649934055,
+            "median_cosine": 0.9167668059655991,
+            "p10_cosine": 0.8145527894619398,
+            "median_change_gain": 0.8404617091657032,
+            "p10_change_gain": 0.6634969069549221,
+            "p90_change_gain": 0.9655347178200865,
+            "pooled_change_gain": 0.8380561665050363,
+            "error_parallel_to_actual_change_percent": 24.165239551360486,
+            "error_orthogonal_to_actual_change_percent": 75.83476044863951,
+            "rms_pixel_error": 0.03875480233979976,
+            "error_on_unchanged_pixels_percent": 3.115833887474256
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.23707914147875808,
+            "median_cosine": 0.9909011919108026,
+            "p10_cosine": 0.8989918876555871,
+            "median_change_gain": 0.9818851749268949,
+            "p10_change_gain": 0.8082010460053776,
+            "p90_change_gain": 0.9937523319210125,
+            "pooled_change_gain": 0.943793480675695,
+            "error_parallel_to_actual_change_percent": 18.604821697575527,
+            "error_orthogonal_to_actual_change_percent": 81.39517830242447,
+            "rms_pixel_error": 0.022831616671754373,
+            "error_on_unchanged_pixels_percent": 27.796031121310428
+          }
+        },
+        "height": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.3544996089301372,
+            "median_cosine": 0.9750470391783542,
+            "p10_cosine": 0.801291329543133,
+            "median_change_gain": 0.950716730460517,
+            "p10_change_gain": 0.6420829655177588,
+            "p90_change_gain": 0.9811569765016507,
+            "pooled_change_gain": 0.8743300272683798,
+            "error_parallel_to_actual_change_percent": 31.57849083202761,
+            "error_orthogonal_to_actual_change_percent": 68.42150916797239,
+            "rms_pixel_error": 0.022172825611380984,
+            "error_on_unchanged_pixels_percent": 40.28110825881322
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.27834317355378935,
+            "median_cosine": 0.9931140323085126,
+            "p10_cosine": 0.8337468606422778,
+            "median_change_gain": 0.9862756103916073,
+            "p10_change_gain": 0.6951340406779637,
+            "p90_change_gain": 0.9952415114761137,
+            "pooled_change_gain": 0.9225250777360049,
+            "error_parallel_to_actual_change_percent": 28.324295329499606,
+            "error_orthogonal_to_actual_change_percent": 71.6757046705004,
+            "rms_pixel_error": 0.017409482244429775,
+            "error_on_unchanged_pixels_percent": 46.5158696314959
+          }
+        },
+        "width": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.26244453390288847,
+            "median_cosine": 0.9694223895425215,
+            "p10_cosine": 0.9366740449183047,
+            "median_change_gain": 0.939779790017806,
+            "p10_change_gain": 0.8773609078480068,
+            "p90_change_gain": 0.9800174194303924,
+            "pooled_change_gain": 0.9311228666244954,
+            "error_parallel_to_actual_change_percent": 9.316049947023453,
+            "error_orthogonal_to_actual_change_percent": 90.68395005297651,
+            "rms_pixel_error": 0.07888956414116932,
+            "error_on_unchanged_pixels_percent": 25.18845894180756
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.21009513459552195,
+            "median_cosine": 0.9789402675241411,
+            "p10_cosine": 0.958499471772766,
+            "median_change_gain": 0.9583240512413657,
+            "p10_change_gain": 0.9187212686493531,
+            "p90_change_gain": 0.9871199909074339,
+            "pooled_change_gain": 0.9558600344192896,
+            "error_parallel_to_actual_change_percent": 6.271529974524843,
+            "error_orthogonal_to_actual_change_percent": 93.72847002547515,
+            "rms_pixel_error": 0.0631535865881435,
+            "error_on_unchanged_pixels_percent": 28.946106886393974
+          }
+        },
+        "lean": {
+          "best_single_corresponding_axis": {
+            "relative_L2_error": 0.23926329498694243,
+            "median_cosine": 0.9755638854736958,
+            "p10_cosine": 0.9464127954248334,
+            "median_change_gain": 0.9517251276308878,
+            "p10_change_gain": 0.8956972517508046,
+            "p90_change_gain": 0.9776976575198728,
+            "pooled_change_gain": 0.9427530756719915,
+            "error_parallel_to_actual_change_percent": 9.286838411614172,
+            "error_orthogonal_to_actual_change_percent": 90.7131615883858,
+            "rms_pixel_error": 0.23683525620966772,
+            "error_on_unchanged_pixels_percent": 21.799920900816076
+          },
+          "best_combination_of_five_axes": {
+            "relative_L2_error": 0.19813461947309277,
+            "median_cosine": 0.9853969666980957,
+            "p10_cosine": 0.9618518731007677,
+            "median_change_gain": 0.9710071837445796,
+            "p10_change_gain": 0.9251597255904281,
+            "p90_change_gain": 0.9860047966226048,
+            "pooled_change_gain": 0.9607426725662528,
+            "error_parallel_to_actual_change_percent": 6.734649960054795,
+            "error_orthogonal_to_actual_change_percent": 93.26535003994519,
+            "rms_pixel_error": 0.19612395361133786,
+            "error_on_unchanged_pixels_percent": 25.866922524639918
+          }
+        }
+      },
+      "baseline_reconstruction_error_explained_by_true_tangent_percent": 9.947179842058278,
+      "baseline_reconstruction_error_orthogonal_to_true_tangent_percent": 90.05282015794172
+    }
+  },
+  "finite_moves": {
+    "0.025": {
+      "cx": {
+        "physical_step": 0.025,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.2569844355712377,
+          "median_cosine": 0.9757225914842653,
+          "p10_cosine": 0.9330320147615746,
+          "median_change_gain": 0.9521310117594123,
+          "p10_change_gain": 0.8833555674584272,
+          "p90_change_gain": 0.9876920484031952,
+          "pooled_change_gain": 0.9425516320667977,
+          "error_parallel_to_actual_change_percent": 7.59960655320845,
+          "error_orthogonal_to_actual_change_percent": 92.40039344679154,
+          "rms_pixel_error": 0.0013781938615762613,
+          "error_on_unchanged_pixels_percent": 28.017273246342235
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.23999813550481858,
+          "median_cosine": 0.9779719994230964,
+          "p10_cosine": 0.9489073745176193,
+          "median_change_gain": 0.9519905018008838,
+          "p10_change_gain": 0.8815167196812868,
+          "p90_change_gain": 0.9876796235903689,
+          "pooled_change_gain": 0.9419400768988533,
+          "error_parallel_to_actual_change_percent": 8.971605200808046,
+          "error_orthogonal_to_actual_change_percent": 91.02839479919196,
+          "rms_pixel_error": 0.0012870972376488495,
+          "error_on_unchanged_pixels_percent": 19.768548321441724
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.2869777810752561,
+          "median_cosine": 0.9750465495089591,
+          "p10_cosine": 0.9358000168975484,
+          "median_change_gain": 0.9537995543470674,
+          "p10_change_gain": 0.8853873847838741,
+          "p90_change_gain": 0.9904627824442518,
+          "pooled_change_gain": 0.9657435713672049,
+          "error_parallel_to_actual_change_percent": 17.707607373581162,
+          "error_orthogonal_to_actual_change_percent": 82.29239262641885,
+          "rms_pixel_error": 0.0015390465784728665,
+          "error_on_unchanged_pixels_percent": 29.609141047823567
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.2666978732943893,
+          "median_cosine": 0.9776769568408497,
+          "p10_cosine": 0.9492871748564427,
+          "median_change_gain": 0.9537379260868232,
+          "p10_change_gain": 0.8848993537192001,
+          "p90_change_gain": 0.9904299952420542,
+          "pooled_change_gain": 0.9648566679985308,
+          "error_parallel_to_actual_change_percent": 19.931439124560146,
+          "error_orthogonal_to_actual_change_percent": 80.06856087543986,
+          "rms_pixel_error": 0.0014302865115264172,
+          "error_on_unchanged_pixels_percent": 22.14154240092076
+        }
+      },
+      "cy": {
+        "physical_step": 0.025,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.25614733687407515,
+          "median_cosine": 0.9873454280798886,
+          "p10_cosine": 0.8862228337100855,
+          "median_change_gain": 0.9770828210268443,
+          "p10_change_gain": 0.8262975572202221,
+          "p90_change_gain": 0.995254964251935,
+          "pooled_change_gain": 0.9465191032248002,
+          "error_parallel_to_actual_change_percent": 14.916806440959569,
+          "error_orthogonal_to_actual_change_percent": 85.08319355904041,
+          "rms_pixel_error": 0.0006149438008458556,
+          "error_on_unchanged_pixels_percent": 25.090995508094043
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.24436371436736515,
+          "median_cosine": 0.9898405202531958,
+          "p10_cosine": 0.8950491082477587,
+          "median_change_gain": 0.9770828210268443,
+          "p10_change_gain": 0.8262975572202221,
+          "p90_change_gain": 0.9952532516132906,
+          "pooled_change_gain": 0.94618006395662,
+          "error_parallel_to_actual_change_percent": 16.398988723037462,
+          "error_orthogonal_to_actual_change_percent": 83.60101127696252,
+          "rms_pixel_error": 0.0005866543573543101,
+          "error_on_unchanged_pixels_percent": 17.995256609988513
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.3068303281790167,
+          "median_cosine": 0.9869484163757741,
+          "p10_cosine": 0.9088640173092816,
+          "median_change_gain": 0.9809214304409504,
+          "p10_change_gain": 0.7794079675355317,
+          "p90_change_gain": 1.002638211152623,
+          "pooled_change_gain": 0.9750354583401545,
+          "error_parallel_to_actual_change_percent": 41.33296903770855,
+          "error_orthogonal_to_actual_change_percent": 58.66703096229144,
+          "rms_pixel_error": 0.0007366206126825538,
+          "error_on_unchanged_pixels_percent": 16.691371673778153
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.2955881841257589,
+          "median_cosine": 0.9896151037705363,
+          "p10_cosine": 0.9139472376503066,
+          "median_change_gain": 0.9807870348244115,
+          "p10_change_gain": 0.779365622967974,
+          "p90_change_gain": 1.002638211152623,
+          "pooled_change_gain": 0.9746883398739752,
+          "error_parallel_to_actual_change_percent": 44.467176767876396,
+          "error_orthogonal_to_actual_change_percent": 55.53282323212362,
+          "rms_pixel_error": 0.0007096311195332822,
+          "error_on_unchanged_pixels_percent": 10.513488044649085
+        }
+      },
+      "height": {
+        "physical_step": 0.037500000000000006,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.3506142587634113,
+          "median_cosine": 0.9902618284125639,
+          "p10_cosine": 0.8456896452883564,
+          "median_change_gain": 0.9793007353200601,
+          "p10_change_gain": 0.7128669597626162,
+          "p90_change_gain": 0.9940912259632233,
+          "pooled_change_gain": 0.9593732178125367,
+          "error_parallel_to_actual_change_percent": 43.19141856980592,
+          "error_orthogonal_to_actual_change_percent": 56.808581430194096,
+          "rms_pixel_error": 0.0005465292681674767,
+          "error_on_unchanged_pixels_percent": 33.79348449279386
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.34043115822128517,
+          "median_cosine": 0.9927176384672427,
+          "p10_cosine": 0.8614495994705125,
+          "median_change_gain": 0.9793007353200601,
+          "p10_change_gain": 0.7128669597626162,
+          "p90_change_gain": 0.9940912259632233,
+          "pooled_change_gain": 0.9592082762196181,
+          "error_parallel_to_actual_change_percent": 45.88334810644522,
+          "error_orthogonal_to_actual_change_percent": 54.1166518935548,
+          "rms_pixel_error": 0.0005306560903150055,
+          "error_on_unchanged_pixels_percent": 29.609365360404503
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.5901874647136877,
+          "median_cosine": 0.990017102657182,
+          "p10_cosine": 0.8378048283963235,
+          "median_change_gain": 0.9832295063458447,
+          "p10_change_gain": 0.7018951826712312,
+          "p90_change_gain": 0.9964303106656835,
+          "pooled_change_gain": 0.9461597396191266,
+          "error_parallel_to_actual_change_percent": 12.233535965050788,
+          "error_orthogonal_to_actual_change_percent": 87.76646403494921,
+          "rms_pixel_error": 0.0009199703523445259,
+          "error_on_unchanged_pixels_percent": 53.56426800083756
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.5713747236315331,
+          "median_cosine": 0.9921674034268395,
+          "p10_cosine": 0.8356814730870522,
+          "median_change_gain": 0.9832295063458447,
+          "p10_change_gain": 0.7018951826712312,
+          "p90_change_gain": 0.9964303106656835,
+          "pooled_change_gain": 0.9451647297142489,
+          "error_parallel_to_actual_change_percent": 13.186566012459188,
+          "error_orthogonal_to_actual_change_percent": 86.8134339875408,
+          "rms_pixel_error": 0.0008906454935891606,
+          "error_on_unchanged_pixels_percent": 50.342023258253334
+        }
+      },
+      "width": {
+        "physical_step": 0.06999999999999999,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.2350637551196184,
+          "median_cosine": 0.9751110598372996,
+          "p10_cosine": 0.951535834111073,
+          "median_change_gain": 0.9517256813990844,
+          "p10_change_gain": 0.9007664755352044,
+          "p90_change_gain": 0.9859789232398838,
+          "pooled_change_gain": 0.9469959210432044,
+          "error_parallel_to_actual_change_percent": 9.262420489665029,
+          "error_orthogonal_to_actual_change_percent": 90.73757951033497,
+          "rms_pixel_error": 0.0017647118305676348,
+          "error_on_unchanged_pixels_percent": 32.12763924838475
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.2155654961640755,
+          "median_cosine": 0.9793154295736701,
+          "p10_cosine": 0.9592003641623428,
+          "median_change_gain": 0.9517256813990844,
+          "p10_change_gain": 0.8991349127563532,
+          "p90_change_gain": 0.9859789232398838,
+          "pooled_change_gain": 0.9462092884670397,
+          "error_parallel_to_actual_change_percent": 11.27190721110006,
+          "error_orthogonal_to_actual_change_percent": 88.72809278889994,
+          "rms_pixel_error": 0.0016183310827709017,
+          "error_on_unchanged_pixels_percent": 22.06022667533357
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.2575884381119309,
+          "median_cosine": 0.9766122626912781,
+          "p10_cosine": 0.955265755805775,
+          "median_change_gain": 0.953499898567047,
+          "p10_change_gain": 0.8856798322541231,
+          "p90_change_gain": 0.996671418191067,
+          "pooled_change_gain": 0.9560756307558077,
+          "error_parallel_to_actual_change_percent": 10.434464749255156,
+          "error_orthogonal_to_actual_change_percent": 89.56553525074484,
+          "rms_pixel_error": 0.0019338130794441014,
+          "error_on_unchanged_pixels_percent": 34.04367021938545
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.23792832687179247,
+          "median_cosine": 0.9800704620539229,
+          "p10_cosine": 0.9612347350244682,
+          "median_change_gain": 0.953499898567047,
+          "p10_change_gain": 0.8856798322541231,
+          "p90_change_gain": 0.996671418191067,
+          "pooled_change_gain": 0.9552364300509214,
+          "error_parallel_to_actual_change_percent": 12.175671086160762,
+          "error_orthogonal_to_actual_change_percent": 87.82432891383924,
+          "rms_pixel_error": 0.001786217245802744,
+          "error_on_unchanged_pixels_percent": 25.38356094928788
+        }
+      },
+      "lean": {
+        "physical_step": 1.125,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.1932163721883198,
+          "median_cosine": 0.9848111497034,
+          "p10_cosine": 0.9650018205067378,
+          "median_change_gain": 0.9668994332516325,
+          "p10_change_gain": 0.9155059049354173,
+          "p90_change_gain": 1.0158748750779842,
+          "pooled_change_gain": 0.962163705506312,
+          "error_parallel_to_actual_change_percent": 11.054344563293489,
+          "error_orthogonal_to_actual_change_percent": 88.94565543670649,
+          "rms_pixel_error": 0.004738482796051258,
+          "error_on_unchanged_pixels_percent": 22.41834080806761
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.17670321058740318,
+          "median_cosine": 0.9878221162642993,
+          "p10_cosine": 0.9717086904920467,
+          "median_change_gain": 0.966304324579744,
+          "p10_change_gain": 0.9117671871680401,
+          "p90_change_gain": 1.0141331983115247,
+          "pooled_change_gain": 0.9602380789957898,
+          "error_parallel_to_actual_change_percent": 13.853923810699973,
+          "error_orthogonal_to_actual_change_percent": 86.14607618930002,
+          "rms_pixel_error": 0.0043335102190995844,
+          "error_on_unchanged_pixels_percent": 14.461828730585886
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.17097285377708413,
+          "median_cosine": 0.9889720773675007,
+          "p10_cosine": 0.9745539694225668,
+          "median_change_gain": 0.9672632954545293,
+          "p10_change_gain": 0.9272232950967552,
+          "p90_change_gain": 1.0132601452060277,
+          "pooled_change_gain": 0.9688613596733459,
+          "error_parallel_to_actual_change_percent": 7.811707648921702,
+          "error_orthogonal_to_actual_change_percent": 92.1882923510783,
+          "rms_pixel_error": 0.004192977629374387,
+          "error_on_unchanged_pixels_percent": 23.717135430932483
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.15196067837816127,
+          "median_cosine": 0.9910927252651807,
+          "p10_cosine": 0.9801453155385176,
+          "median_change_gain": 0.9665709513000222,
+          "p10_change_gain": 0.9270720721924437,
+          "p90_change_gain": 1.0104161087924635,
+          "pooled_change_gain": 0.966817754725549,
+          "error_parallel_to_actual_change_percent": 9.855054384870652,
+          "error_orthogonal_to_actual_change_percent": 90.14494561512933,
+          "rms_pixel_error": 0.003726718662688588,
+          "error_on_unchanged_pixels_percent": 14.09017157491731
+        }
+      }
+    },
+    "0.1": {
+      "cx": {
+        "physical_step": 0.1,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.2630403969919426,
+          "median_cosine": 0.9791117548191512,
+          "p10_cosine": 0.9390231723272193,
+          "median_change_gain": 0.9600843473163594,
+          "p10_change_gain": 0.8875138364758609,
+          "p90_change_gain": 0.9920579749866694,
+          "pooled_change_gain": 0.9504892102020422,
+          "error_parallel_to_actual_change_percent": 6.718429433988569,
+          "error_orthogonal_to_actual_change_percent": 93.28157056601142,
+          "rms_pixel_error": 0.005609180093232643,
+          "error_on_unchanged_pixels_percent": 19.410516123873606
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.24324793204340422,
+          "median_cosine": 0.9817502471979889,
+          "p10_cosine": 0.9554536596719899,
+          "median_change_gain": 0.9600157402888507,
+          "p10_change_gain": 0.8836347239087479,
+          "p90_change_gain": 0.992052503778096,
+          "pooled_change_gain": 0.9485746044951722,
+          "error_parallel_to_actual_change_percent": 8.441395733285702,
+          "error_orthogonal_to_actual_change_percent": 91.55860426671431,
+          "rms_pixel_error": 0.005187117544457115,
+          "error_on_unchanged_pixels_percent": 13.801194891275276
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.2144527962510427,
+          "median_cosine": 0.9808477134841881,
+          "p10_cosine": 0.956686299552264,
+          "median_change_gain": 0.9624597372860545,
+          "p10_change_gain": 0.9161964813110871,
+          "p90_change_gain": 1.0110367390287474,
+          "pooled_change_gain": 0.9670248520671022,
+          "error_parallel_to_actual_change_percent": 6.768847700942858,
+          "error_orthogonal_to_actual_change_percent": 93.23115229905713,
+          "rms_pixel_error": 0.004573078391857323,
+          "error_on_unchanged_pixels_percent": 22.307905709184226
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.19007482887743932,
+          "median_cosine": 0.983693103325734,
+          "p10_cosine": 0.9678501910308192,
+          "median_change_gain": 0.96230891704273,
+          "p10_change_gain": 0.9150250284899174,
+          "p90_change_gain": 1.0102250706143885,
+          "pooled_change_gain": 0.965294047006005,
+          "error_parallel_to_actual_change_percent": 8.650044732074276,
+          "error_orthogonal_to_actual_change_percent": 91.34995526792572,
+          "rms_pixel_error": 0.004053232729863134,
+          "error_on_unchanged_pixels_percent": 13.836632275904382
+        }
+      },
+      "cy": {
+        "physical_step": 0.1,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.27764814090545614,
+          "median_cosine": 0.9810105235597397,
+          "p10_cosine": 0.9141309501025049,
+          "median_change_gain": 0.9798378829075698,
+          "p10_change_gain": 0.8650951534312472,
+          "p90_change_gain": 1.0186561444807614,
+          "pooled_change_gain": 0.9672164080066596,
+          "error_parallel_to_actual_change_percent": 10.76979259793851,
+          "error_orthogonal_to_actual_change_percent": 89.23020740206148,
+          "rms_pixel_error": 0.0026457436398268793,
+          "error_on_unchanged_pixels_percent": 12.989381788814278
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.26675842313236364,
+          "median_cosine": 0.9858100276338693,
+          "p10_cosine": 0.9158954571956137,
+          "median_change_gain": 0.9793648325323465,
+          "p10_change_gain": 0.8650951534312472,
+          "p90_change_gain": 1.0185534737125819,
+          "pooled_change_gain": 0.9667165893538024,
+          "error_parallel_to_actual_change_percent": 11.601280999892326,
+          "error_orthogonal_to_actual_change_percent": 88.39871900010766,
+          "rms_pixel_error": 0.0025419741658310856,
+          "error_on_unchanged_pixels_percent": 6.499304399518471
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.215935230055637,
+          "median_cosine": 0.9881193291492798,
+          "p10_cosine": 0.944416406388955,
+          "median_change_gain": 0.9819032413719587,
+          "p10_change_gain": 0.8778947260787665,
+          "p90_change_gain": 1.02765896805199,
+          "pooled_change_gain": 0.96513825621638,
+          "error_parallel_to_actual_change_percent": 12.169035539501262,
+          "error_orthogonal_to_actual_change_percent": 87.83096446049873,
+          "rms_pixel_error": 0.0020576736428744758,
+          "error_on_unchanged_pixels_percent": 24.111125596799862
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.1995457143533056,
+          "median_cosine": 0.990469156245716,
+          "p10_cosine": 0.9555698010800586,
+          "median_change_gain": 0.9819032413719587,
+          "p10_change_gain": 0.8778947260787665,
+          "p90_change_gain": 1.0276322645131108,
+          "pooled_change_gain": 0.9646652538747117,
+          "error_parallel_to_actual_change_percent": 14.295991331615868,
+          "error_orthogonal_to_actual_change_percent": 85.70400866838415,
+          "rms_pixel_error": 0.0019014959109153347,
+          "error_on_unchanged_pixels_percent": 12.241959253617804
+        }
+      },
+      "height": {
+        "physical_step": 0.15000000000000002,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.3754948922259903,
+          "median_cosine": 0.9899641383068604,
+          "p10_cosine": 0.9127334160435882,
+          "median_change_gain": 0.9722587698895987,
+          "p10_change_gain": 0.8231635388733979,
+          "p90_change_gain": 1.003469964916798,
+          "pooled_change_gain": 0.986753223200759,
+          "error_parallel_to_actual_change_percent": 51.2584047471372,
+          "error_orthogonal_to_actual_change_percent": 48.74159525286279,
+          "rms_pixel_error": 0.0023339273813677832,
+          "error_on_unchanged_pixels_percent": 28.459885535549944
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.36516434281892823,
+          "median_cosine": 0.9931079038794953,
+          "p10_cosine": 0.9206053503175694,
+          "median_change_gain": 0.9720844759123671,
+          "p10_change_gain": 0.8218864922734965,
+          "p90_change_gain": 1.003469964916798,
+          "pooled_change_gain": 0.985899095876772,
+          "error_parallel_to_actual_change_percent": 54.42620050272142,
+          "error_orthogonal_to_actual_change_percent": 45.57379949727857,
+          "rms_pixel_error": 0.0022697167819032134,
+          "error_on_unchanged_pixels_percent": 24.63023120732897
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.2795559423077842,
+          "median_cosine": 0.989859994028373,
+          "p10_cosine": 0.9186235027200313,
+          "median_change_gain": 0.984905971115476,
+          "p10_change_gain": 0.8440463789079774,
+          "p90_change_gain": 0.9980841881896536,
+          "pooled_change_gain": 0.9561359453822484,
+          "error_parallel_to_actual_change_percent": 19.395776281154202,
+          "error_orthogonal_to_actual_change_percent": 80.6042237188458,
+          "rms_pixel_error": 0.0017376089046333204,
+          "error_on_unchanged_pixels_percent": 52.78729995955857
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.2644269646693508,
+          "median_cosine": 0.9928637582913493,
+          "p10_cosine": 0.9288632696215727,
+          "median_change_gain": 0.984905971115476,
+          "p10_change_gain": 0.843814664034107,
+          "p90_change_gain": 0.9980841881896536,
+          "pooled_change_gain": 0.9550943932753052,
+          "error_parallel_to_actual_change_percent": 21.97362711537351,
+          "error_orthogonal_to_actual_change_percent": 78.02637288462648,
+          "rms_pixel_error": 0.0016435731776674545,
+          "error_on_unchanged_pixels_percent": 47.436966588859356
+        }
+      },
+      "width": {
+        "physical_step": 0.27999999999999997,
+        "coordinate_box_clipped_cases": 0,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.24147355175278526,
+          "median_cosine": 0.9797290342217932,
+          "p10_cosine": 0.9470542448080732,
+          "median_change_gain": 0.9640910146381177,
+          "p10_change_gain": 0.8868734570577406,
+          "p90_change_gain": 1.0263095269353724,
+          "pooled_change_gain": 0.9590161964045189,
+          "error_parallel_to_actual_change_percent": 15.033202237812398,
+          "error_orthogonal_to_actual_change_percent": 84.9667977621876,
+          "rms_pixel_error": 0.007184890366806955,
+          "error_on_unchanged_pixels_percent": 23.390149710898392
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.227559335981476,
+          "median_cosine": 0.983911285362842,
+          "p10_cosine": 0.9573883046659848,
+          "median_change_gain": 0.9623615916126989,
+          "p10_change_gain": 0.87805016134959,
+          "p90_change_gain": 1.0257949058068034,
+          "pooled_change_gain": 0.9571518529035266,
+          "error_parallel_to_actual_change_percent": 17.46396360193217,
+          "error_orthogonal_to_actual_change_percent": 82.53603639806781,
+          "rms_pixel_error": 0.006770881817500891,
+          "error_on_unchanged_pixels_percent": 18.399476715358762
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.1736870613188036,
+          "median_cosine": 0.9871434192553432,
+          "p10_cosine": 0.9720045057246387,
+          "median_change_gain": 0.9698949598874471,
+          "p10_change_gain": 0.9308359747449458,
+          "p90_change_gain": 1.0010054016049004,
+          "pooled_change_gain": 0.9713566889327815,
+          "error_parallel_to_actual_change_percent": 8.149370602390709,
+          "error_orthogonal_to_actual_change_percent": 91.8506293976093,
+          "rms_pixel_error": 0.00516794690205275,
+          "error_on_unchanged_pixels_percent": 24.288253095030914
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.1542263898821946,
+          "median_cosine": 0.9899798835144515,
+          "p10_cosine": 0.9796992060035365,
+          "median_change_gain": 0.9687272540767764,
+          "p10_change_gain": 0.9305242131424163,
+          "p90_change_gain": 1.0010054016049004,
+          "pooled_change_gain": 0.9694576218597709,
+          "error_parallel_to_actual_change_percent": 10.137554024193893,
+          "error_orthogonal_to_actual_change_percent": 89.86244597580608,
+          "rms_pixel_error": 0.0045889071284562,
+          "error_on_unchanged_pixels_percent": 14.20480450159359
+        }
+      },
+      "lean": {
+        "physical_step": 4.5,
+        "coordinate_box_clipped_cases": 1,
+        "calibrated_local_direction_raw": {
+          "relative_L2_error": 0.20206819429956074,
+          "median_cosine": 0.9882442296475558,
+          "p10_cosine": 0.9626382687116569,
+          "median_change_gain": 0.983527022759477,
+          "p10_change_gain": 0.8889354659000245,
+          "p90_change_gain": 1.0999601688816438,
+          "pooled_change_gain": 0.9826311713450779,
+          "error_parallel_to_actual_change_percent": 21.233415470283987,
+          "error_orthogonal_to_actual_change_percent": 78.76658452971603,
+          "rms_pixel_error": 0.01857695525829205,
+          "error_on_unchanged_pixels_percent": 13.651065490628048
+        },
+        "calibrated_local_direction_clipped": {
+          "relative_L2_error": 0.19847126269376034,
+          "median_cosine": 0.9886102568931701,
+          "p10_cosine": 0.9630716545461447,
+          "median_change_gain": 0.9755551280201955,
+          "p10_change_gain": 0.8811972044643097,
+          "p90_change_gain": 1.0930779771222552,
+          "pooled_change_gain": 0.9770063682977381,
+          "error_parallel_to_actual_change_percent": 22.55010255810514,
+          "error_orthogonal_to_actual_change_percent": 77.44989744189485,
+          "rms_pixel_error": 0.018246274629706672,
+          "error_on_unchanged_pixels_percent": 12.433885875492322
+        },
+        "separately_reconstructed_endpoints_raw": {
+          "relative_L2_error": 0.06444960309295154,
+          "median_cosine": 0.9983225369985179,
+          "p10_cosine": 0.9966561387839338,
+          "median_change_gain": 0.9886388306909115,
+          "p10_change_gain": 0.9682063711003354,
+          "p90_change_gain": 1.0159280971767455,
+          "pooled_change_gain": 0.990621406703712,
+          "error_parallel_to_actual_change_percent": 11.034874640121142,
+          "error_orthogonal_to_actual_change_percent": 88.96512535987881,
+          "rms_pixel_error": 0.0059251155147034655,
+          "error_on_unchanged_pixels_percent": 18.318083512107027
+        },
+        "separately_reconstructed_endpoints_clipped": {
+          "relative_L2_error": 0.057678406715175504,
+          "median_cosine": 0.998660417837236,
+          "p10_cosine": 0.997346947384189,
+          "median_change_gain": 0.9842617834595477,
+          "p10_change_gain": 0.9661883889767391,
+          "p90_change_gain": 1.0063622692062986,
+          "pooled_change_gain": 0.9854548108333353,
+          "error_parallel_to_actual_change_percent": 14.365646918612354,
+          "error_orthogonal_to_actual_change_percent": 85.63435308138753,
+          "rms_pixel_error": 0.005302611747640663,
+          "error_on_unchanged_pixels_percent": 9.319168782286875
+        }
+      }
+    }
+  },
+  "interpretation_limits": "Local calibration uses the true tangent at the starting image only. Larger transported moves also test curvature and chart variation. Independently reconstructed endpoints are a best-case representation diagnostic; they are not a prediction of the new image from the knob alone. Tangent-normal residuals can include curvature, not only invalid pixels."
+}

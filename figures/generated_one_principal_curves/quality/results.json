@@ -1,0 +1,475 @@
+{
+  "scope": "Audit of saved joint_513 model without refitting; scores use unclipped pixels",
+  "points": 16384,
+  "capture_percent": 99.46610694088754,
+  "pixel_RMSE": 0.011990407574337718,
+  "max_pixel_error": 0.3488420298308055,
+  "image_L2_quantiles": {
+    "0.5": 0.31538667172087376,
+    "0.95": 0.47784701270552893,
+    "1": 1.0388780179548305
+  },
+  "artifact_thresholds": {
+    "0.01": {
+      "mean_extra_pixels_on_exact_white": 10.74700927734375,
+      "p95_extra_pixels_on_exact_white": 22.0,
+      "percent_images_with_detached_ink": 23.5595703125,
+      "mean_detached_pixels": 0.38720703125,
+      "max_detached_pixels": 14,
+      "mean_detached_ink_percent_of_source": 0.01264637698885162,
+      "percent_pixels_outside_range_by_at_least_threshold": 2.5934102583904655
+    },
+    "0.05": {
+      "mean_extra_pixels_on_exact_white": 1.00311279296875,
+      "p95_extra_pixels_on_exact_white": 4.0,
+      "percent_images_with_detached_ink": 1.275634765625,
+      "mean_detached_pixels": 0.01507568359375,
+      "max_detached_pixels": 5,
+      "mean_detached_ink_percent_of_source": 0.0020392811914499306,
+      "percent_pixels_outside_range_by_at_least_threshold": 0.21114738620057397
+    },
+    "0.1": {
+      "mean_extra_pixels_on_exact_white": 0.14056396484375,
+      "p95_extra_pixels_on_exact_white": 1.0,
+      "percent_images_with_detached_ink": 0.067138671875,
+      "mean_detached_pixels": 0.00067138671875,
+      "max_detached_pixels": 1,
+      "mean_detached_ink_percent_of_source": 0.00017781723109701537,
+      "percent_pixels_outside_range_by_at_least_threshold": 0.01680802325813138
+    }
+  },
+  "out_of_range_pixel_percent": 14.937451420998087,
+  "local_moves": {
+    "anchors_normalized": [
+      [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      [
+        0.5623561472073197,
+        0.6632895907759666,
+        0.6802454681694508,
+        0.26683858372271063,
+        0.38303134810179473
+      ],
+      [
+        0.14329009369015694,
+        0.193624096699059,
+        0.16100978557020426,
+        0.5767650401219726,
+        0.763884322680533
+      ],
+      [
+        0.38414073146879674,
+        0.7197239010035992,
+        0.8336343313753605,
+        0.47336724832654,
+        0.5428050809726119
+      ],
+      [
+        0.720058747343719,
+        0.4222458672896028,
+        0.31305427197366953,
+        0.7840131546929479,
+        0.1617663924768567
+      ],
+      [
+        0.8461738273501396,
+        0.8230332815647126,
+        0.24008263006806374,
+        0.8594697249680757,
+        0.2830137690156698
+      ],
+      [
+        0.4235820250585675,
+        0.31894880820065735,
+        0.5744552779570222,
+        0.36260440554469825,
+        0.6620098677277565
+      ],
+      [
+        0.2903701600059867,
+        0.5528366555273533,
+        0.41879875496029856,
+        0.6882003997266293,
+        0.7853052664548159
+      ],
+      [
+        0.6298139303177596,
+        0.30406471047550443,
+        0.7546100026741623,
+        0.19061636079102756,
+        0.40612344816327095
+      ]
+    ],
+    "definition": "Move one knob from -10% to +10% of its allowed range around each of nine starts; subtract each reconstructed starting image before measuring change error. 9 samples per sweep, 45 sweeps; coordinates inferred from pixels.",
+    "global_image_capture_percent": 99.41325495507736,
+    "sequential_start_global_capture_percent": 98.9037670268088,
+    "sweeps": [
+      {
+        "anchor": 0,
+        "knob": "cx",
+        "anchored_change_capture_percent": 76.99944381761512,
+        "continuation_change_capture_percent": 75.23137239283977,
+        "rms_change_L2": 0.1838617579949187,
+        "rms_actual_change_L2": 0.38337363204570807
+      },
+      {
+        "anchor": 0,
+        "knob": "cy",
+        "anchored_change_capture_percent": 58.24967684036039,
+        "continuation_change_capture_percent": 62.36646387735695,
+        "rms_change_L2": 0.11644667661151713,
+        "rms_actual_change_L2": 0.18021758995444284
+      },
+      {
+        "anchor": 0,
+        "knob": "height",
+        "anchored_change_capture_percent": 38.567574416188535,
+        "continuation_change_capture_percent": 50.59743398476313,
+        "rms_change_L2": 0.09159272702388348,
+        "rms_actual_change_L2": 0.11685899795666169
+      },
+      {
+        "anchor": 0,
+        "knob": "width",
+        "anchored_change_capture_percent": 81.7330889549168,
+        "continuation_change_capture_percent": 82.77102523520978,
+        "rms_change_L2": 0.2287689060731141,
+        "rms_actual_change_L2": 0.5352595671312277
+      },
+      {
+        "anchor": 0,
+        "knob": "lean",
+        "anchored_change_capture_percent": 94.526691552879,
+        "continuation_change_capture_percent": 85.43498764246974,
+        "rms_change_L2": 0.3943990962213463,
+        "rms_actual_change_L2": 1.685819019911613
+      },
+      {
+        "anchor": 1,
+        "knob": "cx",
+        "anchored_change_capture_percent": 37.113639324827595,
+        "continuation_change_capture_percent": 53.090497776319864,
+        "rms_change_L2": 0.31170798516230036,
+        "rms_actual_change_L2": 0.3930698172594037
+      },
+      {
+        "anchor": 1,
+        "knob": "cy",
+        "anchored_change_capture_percent": -152.97235133430317,
+        "continuation_change_capture_percent": 39.466908028345095,
+        "rms_change_L2": 0.23078768540513594,
+        "rms_actual_change_L2": 0.14510290354361532
+      },
+      {
+        "anchor": 1,
+        "knob": "height",
+        "anchored_change_capture_percent": -299.9915315098451,
+        "continuation_change_capture_percent": -35.78913702708291,
+        "rms_change_L2": 0.20514472531379965,
+        "rms_actual_change_L2": 0.10257344846544494
+      },
+      {
+        "anchor": 1,
+        "knob": "width",
+        "anchored_change_capture_percent": 60.65988735019037,
+        "continuation_change_capture_percent": 66.67096603305626,
+        "rms_change_L2": 0.3439898908458163,
+        "rms_actual_change_L2": 0.5484384315440372
+      },
+      {
+        "anchor": 1,
+        "knob": "lean",
+        "anchored_change_capture_percent": 95.31609463254442,
+        "continuation_change_capture_percent": 89.79530793139394,
+        "rms_change_L2": 0.36075898186569305,
+        "rms_actual_change_L2": 1.6669136253973147
+      },
+      {
+        "anchor": 2,
+        "knob": "cx",
+        "anchored_change_capture_percent": -114.34896130251859,
+        "continuation_change_capture_percent": 32.70157371354706,
+        "rms_change_L2": 0.5317844737753801,
+        "rms_actual_change_L2": 0.3632243553471311
+      },
+      {
+        "anchor": 2,
+        "knob": "cy",
+        "anchored_change_capture_percent": -327.8787928360736,
+        "continuation_change_capture_percent": 5.040768504415938,
+        "rms_change_L2": 0.4693751330735354,
+        "rms_actual_change_L2": 0.2269131666301512
+      },
+      {
+        "anchor": 2,
+        "knob": "height",
+        "anchored_change_capture_percent": -2218.488666326531,
+        "continuation_change_capture_percent": 40.046907345810155,
+        "rms_change_L2": 0.5795556630314013,
+        "rms_actual_change_L2": 0.12036290615379844
+      },
+      {
+        "anchor": 2,
+        "knob": "width",
+        "anchored_change_capture_percent": 7.1931905425958504,
+        "continuation_change_capture_percent": 59.311004744414554,
+        "rms_change_L2": 0.48983073622502427,
+        "rms_actual_change_L2": 0.5084592022515204
+      },
+      {
+        "anchor": 2,
+        "knob": "lean",
+        "anchored_change_capture_percent": 91.45005819647744,
+        "continuation_change_capture_percent": 87.0744136051321,
+        "rms_change_L2": 0.521177934411716,
+        "rms_actual_change_L2": 1.782396993683213
+      },
+      {
+        "anchor": 3,
+        "knob": "cx",
+        "anchored_change_capture_percent": 56.82220699229402,
+        "continuation_change_capture_percent": 52.118381658105115,
+        "rms_change_L2": 0.25541290547553946,
+        "rms_actual_change_L2": 0.3886982787374679
+      },
+      {
+        "anchor": 3,
+        "knob": "cy",
+        "anchored_change_capture_percent": -34.40234439954324,
+        "continuation_change_capture_percent": 3.926619935065845,
+        "rms_change_L2": 0.20608845326734923,
+        "rms_actual_change_L2": 0.17776662929761416
+      },
+      {
+        "anchor": 3,
+        "knob": "height",
+        "anchored_change_capture_percent": -299.50296984035225,
+        "continuation_change_capture_percent": -51.9943159852849,
+        "rms_change_L2": 0.22411664210659263,
+        "rms_actual_change_L2": 0.11212800645855653
+      },
+      {
+        "anchor": 3,
+        "knob": "width",
+        "anchored_change_capture_percent": 64.50315163604905,
+        "continuation_change_capture_percent": 69.3836210295144,
+        "rms_change_L2": 0.32352078419973695,
+        "rms_actual_change_L2": 0.543009326550276
+      },
+      {
+        "anchor": 3,
+        "knob": "lean",
+        "anchored_change_capture_percent": 94.8605576728024,
+        "continuation_change_capture_percent": 86.57841869198523,
+        "rms_change_L2": 0.3959873063191631,
+        "rms_actual_change_L2": 1.7467198916856406
+      },
+      {
+        "anchor": 4,
+        "knob": "cx",
+        "anchored_change_capture_percent": 50.91078033629518,
+        "continuation_change_capture_percent": 77.61034975005002,
+        "rms_change_L2": 0.2747325879706036,
+        "rms_actual_change_L2": 0.3921183016683338
+      },
+      {
+        "anchor": 4,
+        "knob": "cy",
+        "anchored_change_capture_percent": -36.87522692057663,
+        "continuation_change_capture_percent": 46.35652098698528,
+        "rms_change_L2": 0.20528271743144688,
+        "rms_actual_change_L2": 0.17546478232180407
+      },
+      {
+        "anchor": 4,
+        "knob": "height",
+        "anchored_change_capture_percent": -151.9572095672857,
+        "continuation_change_capture_percent": 42.06223446315691,
+        "rms_change_L2": 0.20776156052850256,
+        "rms_actual_change_L2": 0.13088859435758166
+      },
+      {
+        "anchor": 4,
+        "knob": "width",
+        "anchored_change_capture_percent": 63.49845167771394,
+        "continuation_change_capture_percent": 74.5736625463804,
+        "rms_change_L2": 0.3297523354890281,
+        "rms_actual_change_L2": 0.5457983730591524
+      },
+      {
+        "anchor": 4,
+        "knob": "lean",
+        "anchored_change_capture_percent": 96.19105430186552,
+        "continuation_change_capture_percent": 90.21348625495114,
+        "rms_change_L2": 0.3141947430703552,
+        "rms_actual_change_L2": 1.6098911901241006
+      },
+      {
+        "anchor": 5,
+        "knob": "cx",
+        "anchored_change_capture_percent": -17.843531819944847,
+        "continuation_change_capture_percent": 63.47280332640619,
+        "rms_change_L2": 0.42414799859432234,
+        "rms_actual_change_L2": 0.3907190146742961
+      },
+      {
+        "anchor": 5,
+        "knob": "cy",
+        "anchored_change_capture_percent": -149.62390730925898,
+        "continuation_change_capture_percent": -7.437813412859784,
+        "rms_change_L2": 0.28227757954018196,
+        "rms_actual_change_L2": 0.17866245461597488
+      },
+      {
+        "anchor": 5,
+        "knob": "height",
+        "anchored_change_capture_percent": -159.27893424349583,
+        "continuation_change_capture_percent": -28.680166401386753,
+        "rms_change_L2": 0.2142815222218787,
+        "rms_actual_change_L2": 0.1330764192025386
+      },
+      {
+        "anchor": 5,
+        "knob": "width",
+        "anchored_change_capture_percent": 50.89630680947849,
+        "continuation_change_capture_percent": 65.20378505741355,
+        "rms_change_L2": 0.38109270657838074,
+        "rms_actual_change_L2": 0.5438430194496192
+      },
+      {
+        "anchor": 5,
+        "knob": "lean",
+        "anchored_change_capture_percent": 92.49776924544588,
+        "continuation_change_capture_percent": 87.02086938435716,
+        "rms_change_L2": 0.4293848101899923,
+        "rms_actual_change_L2": 1.5676585225148272
+      },
+      {
+        "anchor": 6,
+        "knob": "cx",
+        "anchored_change_capture_percent": -33.904302040023126,
+        "continuation_change_capture_percent": 49.45228677601376,
+        "rms_change_L2": 0.43620290413578017,
+        "rms_actual_change_L2": 0.3769565444450404
+      },
+      {
+        "anchor": 6,
+        "knob": "cy",
+        "anchored_change_capture_percent": -770.5928760777292,
+        "continuation_change_capture_percent": 43.5362483770005,
+        "rms_change_L2": 0.5741935761326972,
+        "rms_actual_change_L2": 0.19460355735989307
+      },
+      {
+        "anchor": 6,
+        "knob": "height",
+        "anchored_change_capture_percent": -2128.346660397877,
+        "continuation_change_capture_percent": 9.71494279409998,
+        "rms_change_L2": 0.49598615444371064,
+        "rms_actual_change_L2": 0.1050698654484561
+      },
+      {
+        "anchor": 6,
+        "knob": "width",
+        "anchored_change_capture_percent": 53.97630891318413,
+        "continuation_change_capture_percent": 73.45292119655645,
+        "rms_change_L2": 0.35738717387973007,
+        "rms_actual_change_L2": 0.5268029996815936
+      },
+      {
+        "anchor": 6,
+        "knob": "lean",
+        "anchored_change_capture_percent": 92.66369837582705,
+        "continuation_change_capture_percent": 87.11761554019267,
+        "rms_change_L2": 0.47967194860702067,
+        "rms_actual_change_L2": 1.7709476857794955
+      },
+      {
+        "anchor": 7,
+        "knob": "cx",
+        "anchored_change_capture_percent": 36.41269068077069,
+        "continuation_change_capture_percent": 51.42053726573121,
+        "rms_change_L2": 0.29254748836419214,
+        "rms_actual_change_L2": 0.36686911301422415
+      },
+      {
+        "anchor": 7,
+        "knob": "cy",
+        "anchored_change_capture_percent": -62.42129137943031,
+        "continuation_change_capture_percent": 59.505848655808165,
+        "rms_change_L2": 0.30892331046764926,
+        "rms_actual_change_L2": 0.2423980939825688
+      },
+      {
+        "anchor": 7,
+        "knob": "height",
+        "anchored_change_capture_percent": -189.4099161879516,
+        "continuation_change_capture_percent": 32.155215137413286,
+        "rms_change_L2": 0.21484795724070668,
+        "rms_actual_change_L2": 0.12629161734895408
+      },
+      {
+        "anchor": 7,
+        "knob": "width",
+        "anchored_change_capture_percent": 72.74860584763043,
+        "continuation_change_capture_percent": 64.7590585072496,
+        "rms_change_L2": 0.26772552485728446,
+        "rms_actual_change_L2": 0.5128559707792292
+      },
+      {
+        "anchor": 7,
+        "knob": "lean",
+        "anchored_change_capture_percent": 96.61337548697175,
+        "continuation_change_capture_percent": 89.72089911445767,
+        "rms_change_L2": 0.3402848556111712,
+        "rms_actual_change_L2": 1.8490944601284527
+      },
+      {
+        "anchor": 8,
+        "knob": "cx",
+        "anchored_change_capture_percent": 46.95748283716367,
+        "continuation_change_capture_percent": 59.122375076115254,
+        "rms_change_L2": 0.2876214230419674,
+        "rms_actual_change_L2": 0.39492003596004177
+      },
+      {
+        "anchor": 8,
+        "knob": "cy",
+        "anchored_change_capture_percent": -174.08120895311436,
+        "continuation_change_capture_percent": 19.865637277293168,
+        "rms_change_L2": 0.2359295851358502,
+        "rms_actual_change_L2": 0.142509157766617
+      },
+      {
+        "anchor": 8,
+        "knob": "height",
+        "anchored_change_capture_percent": -81.26929112921184,
+        "continuation_change_capture_percent": -26.748661363404725,
+        "rms_change_L2": 0.1332622742101684,
+        "rms_actual_change_L2": 0.09897946506184738
+      },
+      {
+        "anchor": 8,
+        "knob": "width",
+        "anchored_change_capture_percent": 57.5586255354954,
+        "continuation_change_capture_percent": 63.144634194636055,
+        "rms_change_L2": 0.35866574473203017,
+        "rms_actual_change_L2": 0.5505479885103169
+      },
+      {
+        "anchor": 8,
+        "knob": "lean",
+        "anchored_change_capture_percent": 95.77375487992994,
+        "continuation_change_capture_percent": 87.24613206012968,
+        "rms_change_L2": 0.3469873476204382,
+        "rms_actual_change_L2": 1.6878595216192787
+      }
+    ],
+    "continuation_global_image_capture_percent": 98.97496299902821
+  }
+}

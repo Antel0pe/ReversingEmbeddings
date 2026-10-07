@@ -1,0 +1,14 @@
+{
+  "mode": "Offline DOM simulation",
+  "pixelExamples": 16,
+  "models": 2,
+  "corrections": 4,
+  "connectivityThresholds": 4,
+  "motionExamples": 11,
+  "motionModes": 4,
+  "canvasDraws": 889,
+  "allControlsPassed": true,
+  "numeric_checks": "Clipping monotonicity; source pixel SSE partitions; bounds connectivity counts; tangent error and valid-family decomposition identities",
+  "figures": "Both final plots visually inspected against the repository understanding checklist",
+  "served_artifacts_status": 200
+}

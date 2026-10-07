@@ -1,0 +1,59 @@
+{
+  "images": [
+    {
+      "example": "Typical error after clipping",
+      "original_raw_L2": 0.12398981543211889,
+      "wider_search_raw_L2": 0.12398981543198746,
+      "best_start": "true normalized knobs",
+      "best_coordinates": [
+        0.2876197076214553,
+        0.4075519772529634,
+        0.5919489198280767,
+        0.6400656960989125,
+        0.7991429296728525
+      ]
+    },
+    {
+      "example": "Largest clipping benefit",
+      "original_raw_L2": 0.4884293501207745,
+      "wider_search_raw_L2": 0.48829537391437733,
+      "best_start": "nearest fitted image",
+      "best_coordinates": [
+        0.9789668582403518,
+        0.986064788265154,
+        1.0,
+        0.2854737082010661,
+        0.6740168380444191
+      ]
+    },
+    {
+      "example": "Largest error after clipping",
+      "original_raw_L2": 0.5911975838456336,
+      "wider_search_raw_L2": 0.5888098293458933,
+      "best_start": "nearest fitted image",
+      "best_coordinates": [
+        0.0,
+        0.006698702314750882,
+        0.7126777074599522,
+        0.7416653313931205,
+        0.8686713719299037
+      ]
+    },
+    {
+      "example": "Largest extra-ink error",
+      "original_raw_L2": 0.43049020939309235,
+      "wider_search_raw_L2": 0.42447494145505316,
+      "best_start": "nearest fitted image",
+      "best_coordinates": [
+        1.0,
+        0.0,
+        0.9989163205401544,
+        0.71132346980256,
+        0.46418248355011255
+      ]
+    }
+  ],
+  "starts_per_image": 65,
+  "steps_per_start": 100,
+  "notes": "Focused diagnostic on four selected cases. No model or stored projection result is replaced. The true-knob start is diagnostic initialization; the other 64 starts use pixels or the coordinate box. This still does not certify global nearest points."
+}

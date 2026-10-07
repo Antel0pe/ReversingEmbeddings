@@ -1,36 +1,87 @@
 {
-  "norms": [
-    2.552179898470378,
-    2.804684380201685,
-    2.682799492283208
-  ],
-  "changed_pixels": [
-    60,
-    60,
-    62
-  ],
-  "union_pixels": 110,
-  "shared_pixels": 60,
-  "triple_pixels": 12,
-  "opposite_sign_pixels": 0,
-  "max_pixel_change": 0.7873979434370995,
-  "widths_px": [
-    1.8,
+  "default_widths_px": [
     3.2,
-    4.6
+    11.2,
+    19.2
   ],
-  "start_lean_deg": 0,
-  "end_lean_deg": 5,
-  "fixed_center_px": [
-    14.5,
-    14.5
+  "default_width_offsets_px": [
+    0,
+    8,
+    16
   ],
-  "height_px": 19.75,
-  "renderer": "grey_ones.render, float32, 16 subrows; subtraction in float64",
-  "validation": {
-    "rendered_frames": 455,
-    "sparse_roundtrip": "exact",
-    "endpoint_reconstruction": "exact",
-    "no_canvas_clipping": true
+  "default_lean_deg": 5,
+  "lean_grid_deg": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0
+  ],
+  "width_gaps_px": [
+    6.0,
+    7.0,
+    8.0,
+    9.0,
+    10.0
+  ],
+  "rendered_frames": 231,
+  "max_shared_changed_pixels": 0,
+  "no_canvas_clipping": true,
+  "sparse_roundtrip": "exact",
+  "endpoint_reconstruction": "exact",
+  "renderer": "grey_ones.render; float32 images, float64 subtraction",
+  "scope": "Fixed center and height. Expanded width range for physical separation.",
+  "viewer_default": {
+    "knobs": [
+      [
+        14.5,
+        14.5,
+        6.25,
+        3.2,
+        0.0
+      ],
+      [
+        14.5,
+        14.5,
+        6.25,
+        3.2,
+        0.0
+      ],
+      [
+        14.5,
+        14.5,
+        11.0,
+        3.2,
+        0.0
+      ],
+      [
+        14.5,
+        14.5,
+        15.75,
+        3.2,
+        0.0
+      ]
+    ],
+    "change_knob": "height",
+    "amount": 1,
+    "spacing_px": 4.75,
+    "shared_pixels": 0,
+    "clear_pixel_gap": 1
   }
 }

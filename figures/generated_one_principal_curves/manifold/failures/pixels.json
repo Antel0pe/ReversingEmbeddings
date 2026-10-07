@@ -1,0 +1,849 @@
+{
+  "count": 16384,
+  "connectivity": "8-neighbor pixels. Bounds anomaly connection uses reference ink (>1e-6) union anomaly pixels. Clipped foreground uses a stated positive threshold; main component is the one with greatest overlap with true ink.",
+  "thresholds": [
+    1e-06,
+    0.001,
+    0.01,
+    0.05
+  ],
+  "effort": {
+    "curve_path_iterations": {
+      "lean_seeded_65": 72,
+      "joint_129": 120,
+      "joint_257": 150,
+      "joint_513": 143
+    },
+    "curve_winning_path_total_iterations": 485,
+    "grid_iterations": {
+      "uniform": 13,
+      "guided": 17,
+      "fine": 7
+    },
+    "grid_winning_path_total_iterations": 24,
+    "curve_logged_optimization_seconds": {
+      "lean_seeded_65": 70.0,
+      "joint_129": 124.9,
+      "joint_257": 229.2,
+      "joint_513_first": 197.8,
+      "joint_513_polish": 248.3
+    },
+    "grid_logged_optimization_seconds": {
+      "uniform": 125.6,
+      "guided": 153.2,
+      "fine": 320.6
+    },
+    "curve_winning_path_logged_seconds": 870.2,
+    "grid_winning_path_logged_seconds": 473.8,
+    "guided_cycles_to_exceed_best_five_curves": 4,
+    "grid_nodes": 15795,
+    "curve_nodes": 2565,
+    "notes": "Logged loop times omit sampling, encoding checks, initialization overhead, and discarded search runs. One grid cycle includes a sparse node solve with many conjugate-gradient iterations; curve and grid cycles are not equivalent units."
+  },
+  "models": {
+    "manifold": {
+      "raw": {
+        "explained_percent": 99.87929328402953,
+        "rms_image_L2": 0.15963589698162323,
+        "median_image_L2": 0.1319950802652215,
+        "p95_image_L2": 0.2748453872323409,
+        "max_image_L2": 0.5911975838456336,
+        "max_pixel_error": 0.2515570326197668,
+        "rms_pixel_error": 0.0057012820350579715,
+        "outside_coverage_range_fraction": 0.14884894234793528
+      },
+      "clipped": {
+        "explained_percent": 99.9016779764844,
+        "rms_image_L2": 0.14407553590455702,
+        "median_image_L2": 0.11909476318180576,
+        "p95_image_L2": 0.24963592012590646,
+        "max_image_L2": 0.5819101849384635,
+        "max_pixel_error": 0.2515570326197668,
+        "rms_pixel_error": 0.00514555485373418,
+        "outside_coverage_range_fraction": 0.0
+      },
+      "raw_sse": 417.5236236104076,
+      "clipped_sse": 340.09514059669993,
+      "clipping_removed_error_percent": 18.544695110702612,
+      "error_at_out_of_range_pixels_percent": 20.125872864731914,
+      "negative_count": 893118,
+      "above_one_count": 321033,
+      "maximum_negative_violation": 0.11326263306360711,
+      "maximum_above_one_violation": 0.13393223311272284,
+      "source_pixel_classes": {
+        "empty": {
+          "pixel_count": 3126011,
+          "raw_sse": 66.79110000829824,
+          "clipped_sse": 28.719105943855556,
+          "clipped_error_percent": 8.444432900001932
+        },
+        "partially_covered": {
+          "pixel_count": 913763,
+          "raw_sse": 298.3730797547677,
+          "clipped_sse": 291.542775370042,
+          "clipped_error_percent": 85.72388739766397
+        },
+        "full_ink": {
+          "pixel_count": 596898,
+          "raw_sse": 52.35944384734164,
+          "clipped_sse": 19.833259282802388,
+          "clipped_error_percent": 5.831679702334105
+        }
+      },
+      "images_with_out_of_range_above_0p01_percent": 83.251953125,
+      "connectivity": {
+        "1e-06": {
+          "negative_pixels": 893118,
+          "above_one_pixels": 321033,
+          "bounds_connected_pixels": 1172320,
+          "bounds_disconnected_pixels": 41831,
+          "foreground_pixels": 2349532,
+          "foreground_disconnected_pixels": 45853,
+          "foreground_disconnected_mass": 2.126304522128655,
+          "extra_ink_connected_pixels": 804563,
+          "extra_ink_disconnected_pixels": 45853,
+          "extra_ink_connected_sse": 28.71668493077363,
+          "extra_ink_disconnected_sse": 0.002420963378790521,
+          "bounds_connected_raw_sse": 84.0286392782536,
+          "bounds_disconnected_raw_sse": 0.0016311303646082216,
+          "bounds_connected_clipping_removed_sse": 77.42685183084717,
+          "bounds_disconnected_clipping_removed_sse": 0.0016311303646082216,
+          "images_with_disconnected_ink": 11890,
+          "bounds_connected_count_percent": 96.55471189333123,
+          "bounds_connected_raw_error_percent": 20.125481416270944,
+          "bounds_disconnected_raw_error_percent": 0.00039066780233978655,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.0007118488592759425,
+          "connected_ghost_share_of_clipped_error_percent": 8.443721036528176,
+          "mean_bounds_pixels_per_image": 74.10589599609375,
+          "p95_bounds_pixels_per_image": 98.0,
+          "mean_disconnected_foreground_pixels_per_image": 2.79864501953125,
+          "images_with_disconnected_ink_percent": 72.57080078125,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.9016786764022,
+            "rms_image_L2": 0.14407502309365267,
+            "median_image_L2": 0.11909476297497898,
+            "p95_image_L2": 0.2496359068280657,
+            "max_image_L2": 0.5819101496326946,
+            "max_pixel_error": 0.2515570326197668,
+            "rms_pixel_error": 0.005145536539059023,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.001": {
+          "negative_pixels": 277310,
+          "above_one_pixels": 185807,
+          "bounds_connected_pixels": 462128,
+          "bounds_disconnected_pixels": 989,
+          "foreground_pixels": 1732620,
+          "foreground_disconnected_pixels": 1286,
+          "foreground_disconnected_mass": 2.38850947938235,
+          "extra_ink_connected_pixels": 233370,
+          "extra_ink_disconnected_pixels": 1286,
+          "extra_ink_connected_sse": 28.66579250554822,
+          "extra_ink_disconnected_sse": 0.0061335996544102855,
+          "bounds_connected_raw_sse": 83.3774472807003,
+          "bounds_disconnected_raw_sse": 0.004477928772159848,
+          "bounds_connected_clipping_removed_sse": 77.34002167977135,
+          "bounds_disconnected_clipping_removed_sse": 0.004477928772159848,
+          "images_with_disconnected_ink": 725,
+          "bounds_connected_count_percent": 99.78644705333642,
+          "bounds_connected_raw_error_percent": 19.969516110183026,
+          "bounds_disconnected_raw_error_percent": 0.00107249710410116,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.0018034952347889565,
+          "connected_ghost_share_of_clipped_error_percent": 8.428756863521729,
+          "mean_bounds_pixels_per_image": 28.26641845703125,
+          "p95_bounds_pixels_per_image": 45.0,
+          "mean_disconnected_foreground_pixels_per_image": 0.0784912109375,
+          "images_with_disconnected_ink_percent": 4.425048828125,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.90169059350592,
+            "rms_image_L2": 0.14406629147287944,
+            "median_image_L2": 0.11907859240490051,
+            "p95_image_L2": 0.2496304291964329,
+            "max_image_L2": 0.5819400393480799,
+            "max_pixel_error": 0.2515570326197668,
+            "rms_pixel_error": 0.00514522469545998,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.01": {
+          "negative_pixels": 69406,
+          "above_one_pixels": 57163,
+          "bounds_connected_pixels": 126563,
+          "bounds_disconnected_pixels": 6,
+          "foreground_pixels": 1529031,
+          "foreground_disconnected_pixels": 25,
+          "foreground_disconnected_mass": 0.36499630598995103,
+          "extra_ink_connected_pixels": 44050,
+          "extra_ink_disconnected_pixels": 25,
+          "extra_ink_connected_sse": 25.32846297286971,
+          "extra_ink_disconnected_sse": 0.005657822558632245,
+          "bounds_connected_raw_sse": 71.71813202450913,
+          "bounds_disconnected_raw_sse": 0.0006613622086010984,
+          "bounds_connected_clipping_removed_sse": 69.13337348654821,
+          "bounds_disconnected_clipping_removed_sse": 0.0006613622086010984,
+          "images_with_disconnected_ink": 13,
+          "bounds_connected_count_percent": 99.99525950272184,
+          "bounds_connected_raw_error_percent": 17.17702375840403,
+          "bounds_disconnected_raw_error_percent": 0.00015840114695359544,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.0016635999410945846,
+          "connected_ghost_share_of_clipped_error_percent": 7.447463944480563,
+          "mean_bounds_pixels_per_image": 7.72515869140625,
+          "p95_bounds_pixels_per_image": 20.0,
+          "mean_disconnected_foreground_pixels_per_image": 0.00152587890625,
+          "images_with_disconnected_ink_percent": 0.079345703125,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.90237353482071,
+            "rms_image_L2": 0.14356501547403258,
+            "median_image_L2": 0.1182833211678822,
+            "p95_image_L2": 0.2497727936620008,
+            "max_image_L2": 0.5820900304284347,
+            "max_pixel_error": 0.2515570326197668,
+            "rms_pixel_error": 0.005127321981215449,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.05": {
+          "negative_pixels": 1691,
+          "above_one_pixels": 1561,
+          "bounds_connected_pixels": 3252,
+          "bounds_disconnected_pixels": 0,
+          "foreground_pixels": 1416945,
+          "foreground_disconnected_pixels": 0,
+          "foreground_disconnected_mass": 0.0,
+          "extra_ink_connected_pixels": 1329,
+          "extra_ink_disconnected_pixels": 0,
+          "extra_ink_connected_sse": 5.796285125549841,
+          "extra_ink_disconnected_sse": 0.0,
+          "bounds_connected_raw_sse": 12.598433209589427,
+          "bounds_disconnected_raw_sse": 0.0,
+          "bounds_connected_clipping_removed_sse": 12.52426191572593,
+          "bounds_disconnected_clipping_removed_sse": 0.0,
+          "images_with_disconnected_ink": 0,
+          "bounds_connected_count_percent": 100.0,
+          "bounds_connected_raw_error_percent": 3.017418056647511,
+          "bounds_disconnected_raw_error_percent": 0.0,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.0,
+          "connected_ghost_share_of_clipped_error_percent": 1.7043128329855604,
+          "mean_bounds_pixels_per_image": 0.198486328125,
+          "p95_bounds_pixels_per_image": 1.0,
+          "mean_disconnected_foreground_pixels_per_image": 0.0,
+          "images_with_disconnected_ink_percent": 0.0,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.89748628931021,
+            "rms_image_L2": 0.1471146140193949,
+            "median_image_L2": 0.11934611920725527,
+            "p95_image_L2": 0.2552278123360454,
+            "max_image_L2": 0.5970087636300242,
+            "max_pixel_error": 0.27615782618522644,
+            "rms_pixel_error": 0.0052540933578355325,
+            "outside_coverage_range_fraction": 0.0
+          }
+        }
+      }
+    },
+    "curves": {
+      "raw": {
+        "explained_percent": 99.46610694088754,
+        "rms_image_L2": 0.3357314120814561,
+        "median_image_L2": 0.31538667172087376,
+        "p95_image_L2": 0.47784701270552893,
+        "max_image_L2": 1.0388780179548305,
+        "max_pixel_error": 0.3488420298308055,
+        "rms_pixel_error": 0.011990407574337718,
+        "outside_coverage_range_fraction": 0.14937451420998088
+      },
+      "clipped": {
+        "explained_percent": 99.56346097079461,
+        "rms_image_L2": 0.3035822523877767,
+        "median_image_L2": 0.28254989392961516,
+        "p95_image_L2": 0.43978656690549783,
+        "max_image_L2": 0.96723746628537,
+        "max_pixel_error": 0.3488420298308055,
+        "rms_pixel_error": 0.010842223299563452,
+        "outside_coverage_range_fraction": 0.0
+      },
+      "raw_sse": 1846.732080057688,
+      "clipped_sse": 1509.9852220798684,
+      "clipping_removed_error_percent": 18.234743502549666,
+      "error_at_out_of_range_pixels_percent": 19.004207134815374,
+      "negative_count": 1499328,
+      "above_one_count": 322852,
+      "maximum_negative_violation": 0.2593792227033258,
+      "maximum_above_one_violation": 0.19785260038677266,
+      "source_pixel_classes": {
+        "empty": {
+          "pixel_count": 3126011,
+          "raw_sse": 386.3922799054093,
+          "clipped_sse": 197.5245221715598,
+          "clipped_error_percent": 13.081222205571494
+        },
+        "partially_covered": {
+          "pixel_count": 913763,
+          "raw_sse": 1237.3384674516287,
+          "clipped_sse": 1202.2088843736497,
+          "clipped_error_percent": 79.61726159927018
+        },
+        "full_ink": {
+          "pixel_count": 596898,
+          "raw_sse": 223.00133270064993,
+          "clipped_sse": 110.2518155346591,
+          "clipped_error_percent": 7.3015161951583325
+        }
+      },
+      "images_with_out_of_range_above_0p01_percent": 100.0,
+      "connectivity": {
+        "1e-06": {
+          "negative_pixels": 1499328,
+          "above_one_pixels": 322852,
+          "bounds_connected_pixels": 1677090,
+          "bounds_disconnected_pixels": 145090,
+          "foreground_pixels": 2943056,
+          "foreground_disconnected_pixels": 163547,
+          "foreground_disconnected_mass": 79.26088379383603,
+          "extra_ink_connected_pixels": 1286827,
+          "extra_ink_disconnected_pixels": 163547,
+          "extra_ink_connected_sse": 197.02690294017103,
+          "extra_ink_disconnected_sse": 0.49761921344552423,
+          "bounds_connected_raw_sse": 350.5022519287733,
+          "bounds_disconnected_raw_sse": 0.4544358958525937,
+          "bounds_connected_clipping_removed_sse": 336.29242205074274,
+          "bounds_disconnected_clipping_removed_sse": 0.4544358958525937,
+          "images_with_disconnected_ink": 14894,
+          "bounds_connected_count_percent": 92.0375594068643,
+          "bounds_connected_raw_error_percent": 18.97959404689739,
+          "bounds_disconnected_raw_error_percent": 0.02460757035413594,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.03295523732080627,
+          "connected_ghost_share_of_clipped_error_percent": 13.048266967062382,
+          "mean_bounds_pixels_per_image": 111.217041015625,
+          "p95_bounds_pixels_per_image": 133.0,
+          "mean_disconnected_foreground_pixels_per_image": 9.98211669921875,
+          "images_with_disconnected_ink_percent": 90.90576171875,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.5636048332727,
+            "rms_image_L2": 0.3035322251381737,
+            "median_image_L2": 0.2824811053635744,
+            "p95_image_L2": 0.4397568890759927,
+            "max_image_L2": 0.9672374421016044,
+            "max_pixel_error": 0.3488420298308055,
+            "rms_pixel_error": 0.010840436612077632,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.001": {
+          "negative_pixels": 653244,
+          "above_one_pixels": 290479,
+          "bounds_connected_pixels": 902026,
+          "bounds_disconnected_pixels": 41697,
+          "foreground_pixels": 2093855,
+          "foreground_disconnected_pixels": 48505,
+          "foreground_disconnected_mass": 144.06439658914283,
+          "extra_ink_connected_pixels": 553732,
+          "extra_ink_disconnected_pixels": 48505,
+          "extra_ink_connected_sse": 196.4083976860109,
+          "extra_ink_disconnected_sse": 1.019619015032553,
+          "bounds_connected_raw_sse": 349.02428574170483,
+          "bounds_disconnected_raw_sse": 0.896322924763843,
+          "bounds_connected_clipping_removed_sse": 335.7215383612335,
+          "bounds_disconnected_clipping_removed_sse": 0.896322924763843,
+          "images_with_disconnected_ink": 12428,
+          "bounds_connected_count_percent": 95.5816484286173,
+          "bounds_connected_raw_error_percent": 18.899562611746152,
+          "bounds_disconnected_raw_error_percent": 0.048535623247300916,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.06752509892965176,
+          "connected_ghost_share_of_clipped_error_percent": 13.007305953330858,
+          "mean_bounds_pixels_per_image": 57.60028076171875,
+          "p95_bounds_pixels_per_image": 77.0,
+          "mean_disconnected_foreground_pixels_per_image": 2.96051025390625,
+          "images_with_disconnected_ink_percent": 75.8544921875,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.56377951894096,
+            "rms_image_L2": 0.3034714682361288,
+            "median_image_L2": 0.2824254099310549,
+            "p95_image_L2": 0.4397409889965237,
+            "max_image_L2": 0.9672516896582911,
+            "max_pixel_error": 0.3488420298308055,
+            "rms_pixel_error": 0.010838266722718886,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.01": {
+          "negative_pixels": 195705,
+          "above_one_pixels": 137420,
+          "bounds_connected_pixels": 326962,
+          "bounds_disconnected_pixels": 6163,
+          "foreground_pixels": 1656169,
+          "foreground_disconnected_pixels": 6344,
+          "foreground_disconnected_mass": 102.71954141315878,
+          "extra_ink_connected_pixels": 169735,
+          "extra_ink_disconnected_pixels": 6344,
+          "extra_ink_connected_sse": 187.06130313167978,
+          "extra_ink_disconnected_sse": 2.0495051750449216,
+          "bounds_connected_raw_sse": 326.98604519608136,
+          "bounds_disconnected_raw_sse": 1.8988073390574634,
+          "bounds_connected_clipping_removed_sse": 319.57431462505474,
+          "bounds_disconnected_clipping_removed_sse": 1.8988073390574634,
+          "images_with_disconnected_ink": 3860,
+          "bounds_connected_count_percent": 98.14994371482176,
+          "bounds_connected_raw_error_percent": 17.706198355847427,
+          "bounds_disconnected_raw_error_percent": 0.1028198599873864,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.13573014788991863,
+          "connected_ghost_share_of_clipped_error_percent": 12.388287010784099,
+          "mean_bounds_pixels_per_image": 20.33233642578125,
+          "p95_bounds_pixels_per_image": 34.0,
+          "mean_disconnected_foreground_pixels_per_image": 0.38720703125,
+          "images_with_disconnected_ink_percent": 23.5595703125,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.56599723255376,
+            "rms_image_L2": 0.3026990717027756,
+            "median_image_L2": 0.2816824685337146,
+            "p95_image_L2": 0.43933518682009964,
+            "max_image_L2": 0.9675022410575924,
+            "max_pixel_error": 0.3488420298308055,
+            "rms_pixel_error": 0.010810681132241986,
+            "outside_coverage_range_fraction": 0.0
+          }
+        },
+        "0.05": {
+          "negative_pixels": 17634,
+          "above_one_pixels": 9488,
+          "bounds_connected_pixels": 26912,
+          "bounds_disconnected_pixels": 210,
+          "foreground_pixels": 1436703,
+          "foreground_disconnected_pixels": 247,
+          "foreground_disconnected_mass": 15.36486098187428,
+          "extra_ink_connected_pixels": 16188,
+          "extra_ink_disconnected_pixels": 247,
+          "extra_ink_connected_sse": 102.28530573153601,
+          "extra_ink_disconnected_sse": 1.0007640296466862,
+          "bounds_connected_raw_sse": 145.4883576391999,
+          "bounds_disconnected_raw_sse": 0.8572480965885988,
+          "bounds_connected_clipping_removed_sse": 144.52332372217148,
+          "bounds_disconnected_clipping_removed_sse": 0.8572480965885988,
+          "images_with_disconnected_ink": 209,
+          "bounds_connected_count_percent": 99.2257208170489,
+          "bounds_connected_raw_error_percent": 7.878151855934357,
+          "bounds_disconnected_raw_error_percent": 0.04641973277259689,
+          "disconnected_ghost_share_of_clipped_error_percent": 0.0662764121802612,
+          "connected_ghost_share_of_clipped_error_percent": 6.773927601135542,
+          "mean_bounds_pixels_per_image": 1.6553955078125,
+          "p95_bounds_pixels_per_image": 6.0,
+          "mean_disconnected_foreground_pixels_per_image": 0.01507568359375,
+          "images_with_disconnected_ink_percent": 1.275634765625,
+          "clip_threshold_and_keep_main_component": {
+            "explained_percent": 99.57736958906222,
+            "rms_image_L2": 0.2987068704152601,
+            "median_image_L2": 0.2767158976620717,
+            "p95_image_L2": 0.4380366637180531,
+            "max_image_L2": 0.9685345918561522,
+            "max_pixel_error": 0.3488420298308055,
+            "rms_pixel_error": 0.01066810251483072,
+            "outside_coverage_range_fraction": 0.0
+          }
+        }
+      }
+    }
+  },
+  "node_clipping_ablation": {
+    "metrics": {
+      "explained_percent": 99.65879692531338,
+      "rms_image_L2": 0.2683930759983587,
+      "median_image_L2": 0.2543962343352544,
+      "p95_image_L2": 0.38642855977889684,
+      "max_image_L2": 0.7104966451166036,
+      "max_pixel_error": 0.36576380006074793,
+      "rms_pixel_error": 0.009585466999941384,
+      "outside_coverage_range_fraction": 4.67105787627551e-07
+    },
+    "meaning": "Clamp stored full-image grid nodes to [0,1], then interpolate at unchanged fitted coordinates. No refit or reprojection. Convex interpolation guarantees bounds, but it can change in-range pixels through lost cancellation."
+  },
+  "covering_cloud": {
+    "manifold": {
+      "raw": {
+        "explained_percent": 99.95544745456392,
+        "rms_image_L2": 0.09973705208794806,
+        "median_image_L2": 0.08237301784093982,
+        "p95_image_L2": 0.17116826609278574,
+        "max_image_L2": 0.38020798887211144,
+        "max_pixel_error": 0.19977253531211522,
+        "rms_pixel_error": 0.0035620375745695734,
+        "outside_coverage_range_fraction": 0.14832440030011587
+      },
+      "clipped": {
+        "explained_percent": 99.96351268587348,
+        "rms_image_L2": 0.09025914486882469,
+        "median_image_L2": 0.07200749082209469,
+        "p95_image_L2": 0.1594694241303999,
+        "max_image_L2": 0.34577947631782263,
+        "max_pixel_error": 0.19977253531211522,
+        "rms_pixel_error": 0.0032235408881723104,
+        "outside_coverage_range_fraction": 0.0
+      },
+      "raw_sse": 143.13428337724338,
+      "clipped_sse": 117.22305670174438,
+      "clipping_removed_error_percent": 18.10273965406849,
+      "error_at_out_of_range_pixels_percent": 18.375046522641874,
+      "negative_count": 753039,
+      "above_one_count": 277887,
+      "maximum_negative_violation": 0.07618349521609201,
+      "maximum_above_one_violation": 0.07272394451836872,
+      "source_pixel_classes": {
+        "empty": {
+          "pixel_count": 2743079,
+          "raw_sse": 26.25704888154323,
+          "clipped_sse": 12.547956217173898,
+          "clipped_error_percent": 10.70434142414508
+        },
+        "partially_covered": {
+          "pixel_count": 806881,
+          "raw_sse": 98.67524418337919,
+          "clipped_sse": 97.396536764008,
+          "clipped_error_percent": 83.08650149928964
+        },
+        "full_ink": {
+          "pixel_count": 522127,
+          "raw_sse": 18.201990312320945,
+          "clipped_sse": 7.278563720562495,
+          "clipped_error_percent": 6.209157076565282
+        }
+      },
+      "images_with_out_of_range_above_0p01_percent": 69.76162346236708
+    },
+    "curves": {
+      "raw": {
+        "explained_percent": 99.73361962291698,
+        "rms_image_L2": 0.24387730182527612,
+        "median_image_L2": 0.23201012208306313,
+        "p95_image_L2": 0.34175325033227616,
+        "max_image_L2": 0.5379084695234143,
+        "max_pixel_error": 0.2630040516199419,
+        "rms_pixel_error": 0.008709903636617005,
+        "outside_coverage_range_fraction": 0.14860841827870214
+      },
+      "clipped": {
+        "explained_percent": 99.7846626289317,
+        "rms_image_L2": 0.21927038046036118,
+        "median_image_L2": 0.2067597536995828,
+        "p95_image_L2": 0.31209910806704827,
+        "max_image_L2": 0.4807347434862117,
+        "max_pixel_error": 0.2630040516199419,
+        "rms_pixel_error": 0.007831085016441471,
+        "outside_coverage_range_fraction": 0.0
+      },
+      "raw_sse": 855.802154654505,
+      "clipped_sse": 691.8159218629147,
+      "clipping_removed_error_percent": 19.161698986115894,
+      "error_at_out_of_range_pixels_percent": 19.639803572361565,
+      "negative_count": 1299282,
+      "above_one_count": 281084,
+      "maximum_negative_violation": 0.19137954840521368,
+      "maximum_above_one_violation": 0.15613742565827504,
+      "source_pixel_classes": {
+        "empty": {
+          "pixel_count": 2743079,
+          "raw_sse": 200.24485279218172,
+          "clipped_sse": 102.62868651106001,
+          "clipped_error_percent": 14.83468120171368
+        },
+        "partially_covered": {
+          "pixel_count": 806881,
+          "raw_sse": 551.4774774313362,
+          "clipped_sse": 537.8050628250624,
+          "clipped_error_percent": 77.73817367152616
+        },
+        "full_ink": {
+          "pixel_count": 522127,
+          "raw_sse": 104.07982443098705,
+          "clipped_sse": 51.38217252679246,
+          "clipped_error_percent": 7.427145126760176
+        }
+      },
+      "images_with_out_of_range_above_0p01_percent": 99.596914309542
+    }
+  },
+  "clipped_error_by_knob": {
+    "cx": [
+      {
+        "count": 2048,
+        "rms_image_L2": 0.173909155544959
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1360463945151853
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14329097114125555
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.12301976055673876
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.11865061163320571
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14536775116791956
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13456131588422293
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.16830449243990228
+      }
+    ],
+    "cy": [
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1668228109085109
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14220917841774125
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13429185296845803
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13003215581607075
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1331776850363435
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1349925279681991
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14295539502092328
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.16331133769419398
+      }
+    ],
+    "height": [
+      {
+        "count": 2048,
+        "rms_image_L2": 0.15281205017935093
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13809361848830654
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1370017947287218
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13727726179132665
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1350581622402235
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1325724204458914
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1446616026587899
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.17112287609802018
+      }
+    ],
+    "width": [
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13779255562378306
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1358143707110799
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13504073437735736
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13591750230724312
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14493684333470178
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14837258368459
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.15050983288333533
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.1620057387201111
+      }
+    ],
+    "lean": [
+      {
+        "count": 2048,
+        "rms_image_L2": 0.17369224856691504
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.12725756690309203
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.15905684323640149
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.16067206429467465
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.14820666978216132
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.13350052810045832
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.11928983699881249
+      },
+      {
+        "count": 2048,
+        "rms_image_L2": 0.12069105192967726
+      }
+    ]
+  },
+  "clipped_error_by_cell_phase": {
+    "cx": [
+      {
+        "count": 3333,
+        "rms_image_L2": 0.16013654583868642
+      },
+      {
+        "count": 3384,
+        "rms_image_L2": 0.13083736867468407
+      },
+      {
+        "count": 3226,
+        "rms_image_L2": 0.14897722574257305
+      },
+      {
+        "count": 3405,
+        "rms_image_L2": 0.13137520691074614
+      },
+      {
+        "count": 3036,
+        "rms_image_L2": 0.14780896157565604
+      }
+    ],
+    "cy": [
+      {
+        "count": 3239,
+        "rms_image_L2": 0.15347068598288355
+      },
+      {
+        "count": 3458,
+        "rms_image_L2": 0.1424790657922355
+      },
+      {
+        "count": 3481,
+        "rms_image_L2": 0.13976025240902254
+      },
+      {
+        "count": 3413,
+        "rms_image_L2": 0.14348959807722994
+      },
+      {
+        "count": 2793,
+        "rms_image_L2": 0.1407647427942319
+      }
+    ],
+    "height": [
+      {
+        "count": 3182,
+        "rms_image_L2": 0.14344486739117954
+      },
+      {
+        "count": 3628,
+        "rms_image_L2": 0.13944327344228685
+      },
+      {
+        "count": 4093,
+        "rms_image_L2": 0.14334519764791978
+      },
+      {
+        "count": 3393,
+        "rms_image_L2": 0.14946797178168555
+      },
+      {
+        "count": 2088,
+        "rms_image_L2": 0.14544870417860495
+      }
+    ],
+    "width": [
+      {
+        "count": 3196,
+        "rms_image_L2": 0.14144967235495148
+      },
+      {
+        "count": 3375,
+        "rms_image_L2": 0.1432619151875028
+      },
+      {
+        "count": 3312,
+        "rms_image_L2": 0.1449079294002851
+      },
+      {
+        "count": 3376,
+        "rms_image_L2": 0.1475935486502235
+      },
+      {
+        "count": 3125,
+        "rms_image_L2": 0.142876090053277
+      }
+    ],
+    "lean": [
+      {
+        "count": 3205,
+        "rms_image_L2": 0.14192130053552476
+      },
+      {
+        "count": 3322,
+        "rms_image_L2": 0.14682779752789882
+      },
+      {
+        "count": 3274,
+        "rms_image_L2": 0.14456019405035636
+      },
+      {
+        "count": 3344,
+        "rms_image_L2": 0.14277223276177992
+      },
+      {
+        "count": 3239,
+        "rms_image_L2": 0.14419017346941243
+      }
+    ]
+  },
+  "notes": "Clipping fixes scalar bounds only. A bounded connected image may still have incorrect width, lean, edge coverage, or cap geometry. Bounds violations are not the same as total distance from the renderer family."
+}

@@ -24,4 +24,4 @@ $('probeRows').innerHTML=D.probes.map(r=>'<tr><td>'+r.name+'</td><td>'+r.old.toF
 $('example').innerHTML=D.labels.map((v,i)=>'<option value="'+i+'">'+v+'</option>').join('');
 $('model').innerHTML=Object.keys(D.models).map(k=>'<option value="'+k+'">'+D.models[k].label+'</option>').join('');$('model').value=D.best;
 ['example','model','curve','position'].forEach(id=>$(id).addEventListener('input',update));update();
-</script></body></html>
+</script><!-- reconstruction-quality-link --><p><a href="../quality/">Image quality and different starting strokes</a></p></body></html>
