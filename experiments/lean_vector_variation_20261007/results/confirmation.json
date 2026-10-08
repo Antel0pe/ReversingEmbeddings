@@ -1,0 +1,15 @@
+{
+  "fixed_rank": 16,
+  "new_random_states": 1000,
+  "new_transition_states": 1001,
+  "random": {
+    "mean_relative_error": 6.1197056028256376e-06,
+    "p95_relative_error": 1.1767348963327411e-05,
+    "max_relative_error": 0.0006646224592112825
+  },
+  "transition_stress": {
+    "mean_relative_error": 0.00015770216438849686,
+    "p95_relative_error": 0.0007180061201604729,
+    "max_relative_error": 0.0037547198280816103
+  }
+}

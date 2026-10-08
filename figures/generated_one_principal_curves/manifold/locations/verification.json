@@ -1,0 +1,9 @@
+{
+  "cached_renderer_agreement": "exact",
+  "sample_prediction_agreement": "exact",
+  "full_cloud_metrics_verified": true,
+  "all_knob_pair_bins_sum_to_cloud": true,
+  "curvature_stencil_independently_recomputed": true,
+  "all_symmetric_probes_in_allowed_box": true,
+  "private_path_scan": "passed"
+}

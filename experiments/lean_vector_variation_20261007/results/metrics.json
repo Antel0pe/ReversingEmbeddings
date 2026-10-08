@@ -1,0 +1,223 @@
+{
+  "scope": "Pixel vector observations only; no subrow, edge, or inverse geometry in predictor",
+  "base_settings_for_observation": [
+    14.5,
+    14.5,
+    19.75,
+    3.1999999999999997,
+    0.0
+  ],
+  "measured_arrow_half_step_degrees": 0.02,
+  "width_model": {
+    "training_images": 322,
+    "heldout_uniform_random": 1000,
+    "heldout_transition_stress": 301,
+    "refinement_interval_discovered_from_vectors": [
+      2.98125,
+      3.025
+    ],
+    "equation": "V_hat(x) = v0 + alpha(<a, x-x0>) * b",
+    "random": {
+      "mean_relative_error": 0.00039315614538161156,
+      "p95_relative_error": 8.69275767240107e-06,
+      "max_relative_error": 0.12877788279375446
+    },
+    "transition_stress": {
+      "mean_relative_error": 0.02713715590637389,
+      "p95_relative_error": 0.14200297414781632,
+      "max_relative_error": 0.14702838653334757
+    },
+    "all": {
+      "mean_relative_error": 0.006580661086241469,
+      "p95_relative_error": 0.05969272940848777,
+      "max_relative_error": 0.14702838653334757
+    },
+    "best_possible_one_change_vector": {
+      "mean_relative_error": 0.006580276237260026,
+      "p95_relative_error": 0.05969243690971153,
+      "max_relative_error": 0.14702833437180998
+    }
+  },
+  "width_variation_dictionary": {
+    "1": {
+      "random": {
+        "mean_relative_error": 0.00378078916092673,
+        "p95_relative_error": 0.008059248336693955,
+        "max_relative_error": 0.13186270842195838
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.0287253593635659,
+        "p95_relative_error": 0.13761530068592548,
+        "max_relative_error": 0.1492881504508304
+      }
+    },
+    "2": {
+      "random": {
+        "mean_relative_error": 0.0007913289121720554,
+        "p95_relative_error": 0.001468046067953929,
+        "max_relative_error": 0.048344032629964
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.009691415841798806,
+        "p95_relative_error": 0.042104629496319095,
+        "max_relative_error": 0.05009493396638556
+      }
+    },
+    "4": {
+      "random": {
+        "mean_relative_error": 0.00014949349395870743,
+        "p95_relative_error": 0.0002443559287586432,
+        "max_relative_error": 0.011951319508951458
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.002976693602527147,
+        "p95_relative_error": 0.011846264000106214,
+        "max_relative_error": 0.01611825616881323
+      }
+    },
+    "8": {
+      "random": {
+        "mean_relative_error": 3.526959567640644e-05,
+        "p95_relative_error": 4.824809530792068e-05,
+        "max_relative_error": 0.0037978935262718092
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.0006430356373467887,
+        "p95_relative_error": 0.0028730681286326175,
+        "max_relative_error": 0.003830270939384984
+      }
+    },
+    "16": {
+      "random": {
+        "mean_relative_error": 7.710129933604038e-06,
+        "p95_relative_error": 1.1966466154525357e-05,
+        "max_relative_error": 0.0008369979058390232
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.0001556280710062699,
+        "p95_relative_error": 0.0007250735953837267,
+        "max_relative_error": 0.0023611961189205517
+      }
+    },
+    "32": {
+      "random": {
+        "mean_relative_error": 7.727403396044107e-06,
+        "p95_relative_error": 1.1963920336401284e-05,
+        "max_relative_error": 0.0008370003150895411
+      },
+      "transition_stress": {
+        "mean_relative_error": 0.00015563498277060094,
+        "p95_relative_error": 0.0007250746653517033,
+        "max_relative_error": 0.002361196717118002
+      }
+    }
+  },
+  "single_axis_training_observations": 583,
+  "joint_tests": {
+    "width_height": {
+      "n": 512,
+      "additive_with_known_applied_move_labels": {
+        "mean_relative_error": 0.05978253268311497,
+        "p95_relative_error": 0.25248979680024647,
+        "max_relative_error": 0.29913688678307626
+      },
+      "additive_from_image_only_learned_coordinates": {
+        "mean_relative_error": 0.05706156786752086,
+        "p95_relative_error": 0.22316901595529695,
+        "max_relative_error": 0.2728290600575789
+      },
+      "mean_absolute_coordinate_error": [
+        8.036057990896632e-17,
+        3.2276836317747396e-16,
+        0.027597683412314597,
+        0.0006741054330393013,
+        0.00016700543324341065
+      ]
+    },
+    "width_horizontal": {
+      "n": 512,
+      "additive_with_known_applied_move_labels": {
+        "mean_relative_error": 0.7204749749471939,
+        "p95_relative_error": 1.414214262302539,
+        "max_relative_error": 1.7320513821477665
+      },
+      "additive_from_image_only_learned_coordinates": {
+        "mean_relative_error": 0.7205143934793341,
+        "p95_relative_error": 1.4142496677802872,
+        "max_relative_error": 1.7322928955370445
+      },
+      "mean_absolute_coordinate_error": [
+        0.0028496153568995006,
+        2.247605101912838e-16,
+        0.002955960884330148,
+        0.0018372776717613276,
+        0.00016535388525870472
+      ]
+    },
+    "all_five": {
+      "n": 512,
+      "additive_with_known_applied_move_labels": {
+        "mean_relative_error": 1.5446267261312552,
+        "p95_relative_error": 2.561513966359367,
+        "max_relative_error": 2.894938098084522
+      },
+      "additive_from_image_only_learned_coordinates": {
+        "mean_relative_error": 1.3246919059702553,
+        "p95_relative_error": 2.5131569666414157,
+        "max_relative_error": 2.772916621602124
+      },
+      "mean_absolute_coordinate_error": [
+        0.14394300593882414,
+        0.1729286831500871,
+        0.16008496111019513,
+        0.07704491706656494,
+        0.03484511058538658
+      ],
+      "variation_dictionary_predictions": {
+        "8": {
+          "mean_relative_error": 1.5187009533631348,
+          "p95_relative_error": 2.532760941902697,
+          "max_relative_error": 2.857150503589831
+        },
+        "32": {
+          "mean_relative_error": 1.5441999528207804,
+          "p95_relative_error": 2.5607024886455734,
+          "max_relative_error": 2.895248122758033
+        },
+        "64": {
+          "mean_relative_error": 1.5446272378161818,
+          "p95_relative_error": 2.5615177276675745,
+          "max_relative_error": 2.8949544566147525
+        },
+        "128": {
+          "mean_relative_error": 1.544626726131255,
+          "p95_relative_error": 2.5615139663593673,
+          "max_relative_error": 2.894938098084523
+        }
+      }
+    }
+  },
+  "width_only_model_full_space_control": {
+    "n": 512,
+    "mean_relative_error": 1.2215070524066465,
+    "p95_relative_error": 1.4817335554799063,
+    "max_relative_error": 1.6047638852650883
+  },
+  "width_sixteen_vector_model_full_space_control": {
+    "n": 512,
+    "mean_relative_error": 1.221545791647186,
+    "p95_relative_error": 1.4817335072662985,
+    "max_relative_error": 1.6047641786258884
+  },
+  "width_model_frozen_vector_point_one_degree_move": {
+    "mean_relative_error": 0.13704566971226934,
+    "p95_relative_error": 0.7554846304056944,
+    "max_relative_error": 0.8154035077071816
+  },
+  "limitations": [
+    "Finite differences estimate a local field and smooth switching events.",
+    "One-axis observations do not determine arbitrary unseen joint interactions.",
+    "The learned linear image encoder is approximate and its failures are scored separately.",
+    "No assertion of exact all-state flow integration or exact manifold coverage is made."
+  ]
+}

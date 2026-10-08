@@ -1,0 +1,23 @@
+{
+  "browser": "local headless Chromium",
+  "checks": [
+    {
+      "viewport_width": 1200,
+      "viewport_height": 1050,
+      "passed": true,
+      "renderedStates": 1008,
+      "canvasCount": 4,
+      "horizontalOverflow": false,
+      "initialIndex": 58
+    },
+    {
+      "viewport_width": 390,
+      "viewport_height": 2200,
+      "passed": true,
+      "renderedStates": 1008,
+      "canvasCount": 4,
+      "horizontalOverflow": false,
+      "initialIndex": 58
+    }
+  ]
+}

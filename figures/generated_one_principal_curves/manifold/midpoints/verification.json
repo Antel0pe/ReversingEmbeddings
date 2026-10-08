@@ -1,0 +1,30 @@
+{
+  "endpoint_renderer_agreement": "exact",
+  "true_midpoint_renderer_agreement": "exact",
+  "decoder_agreement_max_abs": 0.0,
+  "all_pair_group_metrics_verified": true,
+  "controlled_spacing_average_matches_original": true,
+  "private_path_scan": "passed",
+  "sample_count": 952,
+  "page_controls": {
+    "mode": "Offline DOM simulation; no actual browser rendering check",
+    "pairs": 952,
+    "selectedExamples": 9,
+    "pairGroups": 11,
+    "clipModes": 2,
+    "errorScales": 4,
+    "canvasDraws": 13993,
+    "allControlsPassed": true
+  },
+  "http": {
+    "index.html": 200,
+    "results.json": 200,
+    "midpoint_examples.png": 200,
+    "midpoint_distance.png": 200,
+    "pairs.npz": 200,
+    "controlled_spacing.npz": 200,
+    "README.md": 200
+  },
+  "figures_inspected": true,
+  "figure_understanding_check": "Source images and coverage meaning, midpoint operation, L2 units, common signed error scale, finite scope and unchanged model are visible. First-row title spacing was corrected after inspection."
+}

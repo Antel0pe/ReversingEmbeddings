@@ -1,0 +1,421 @@
+{
+  "baseline": [
+    14.5,
+    14.5,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "source": "grey_ones.render",
+  "scope": "Controlled straight generated ones; all 784 pixels; float32 source rendering",
+  "field_units": "coverage change per degree; unnormalized magnitude retained",
+  "construction": "Analytic edge transport, using known renderer geometry; no learned model or per-state lookup table",
+  "width_slice": {
+    "n": 1404,
+    "range": [
+      1.8,
+      4.6
+    ],
+    "extra_outside_box_width": 1.0,
+    "frozen_base_arrow": {
+      "mean_relative_error": 0.6065162872318107,
+      "p95_relative_error": 1.4142135623730951,
+      "max_relative_error": 1.4142135623730951,
+      "mean_angle_degrees": 38.585174625801855,
+      "undefined_angle_count": 0
+    },
+    "best_scalar_times_base_arrow": {
+      "mean_relative_error": 0.42887177960170114,
+      "p95_relative_error": 1.0,
+      "max_relative_error": 1.0,
+      "mean_angle_degrees": 0.056109725685785546,
+      "undefined_angle_count": 601
+    },
+    "event_width_at_upright": 3.0,
+    "distinct_upright_open_interval_patterns": 2
+  },
+  "raster_arrow_information_loss": {
+    "widths": [
+      3.1,
+      3.3
+    ],
+    "upright_arrow_l2_difference": 0.0,
+    "arrow_l2_difference_at_2_degrees": 0.16790735103940863
+  },
+  "independent_axis_combinations": {
+    "width_height": {
+      "count": 512,
+      "add_separate_axis_changes": {
+        "mean_relative_error": 0.07562216013470334,
+        "p95_relative_error": 0.2753817232584694,
+        "max_relative_error": 0.2983903036292144,
+        "mean_angle_degrees": 4.291469683116361,
+        "undefined_angle_count": 0
+      },
+      "average_separate_axis_arrows": {
+        "mean_relative_error": 0.3611588239049601,
+        "p95_relative_error": 0.7333078901618966,
+        "max_relative_error": 0.7423586993257444,
+        "mean_angle_degrees": 22.81132084739245,
+        "undefined_angle_count": 0
+      }
+    },
+    "width_cx": {
+      "count": 512,
+      "add_separate_axis_changes": {
+        "mean_relative_error": 0.7393803962952763,
+        "p95_relative_error": 1.4142135623730951,
+        "max_relative_error": 1.7320508075688776,
+        "mean_angle_degrees": 34.03400831531643,
+        "undefined_angle_count": 0
+      },
+      "average_separate_axis_arrows": {
+        "mean_relative_error": 0.5101789852096317,
+        "p95_relative_error": 1.118033988749895,
+        "max_relative_error": 1.118033988749895,
+        "mean_angle_degrees": 31.22954244931122,
+        "undefined_angle_count": 0
+      }
+    },
+    "all_other_knobs_upright": {
+      "count": 512,
+      "add_separate_axis_changes": {
+        "mean_relative_error": 0.8147913538996869,
+        "p95_relative_error": 1.4544098603509823,
+        "max_relative_error": 1.7988114956327155,
+        "mean_angle_degrees": 38.51640818544359,
+        "undefined_angle_count": 0
+      },
+      "average_separate_axis_arrows": {
+        "mean_relative_error": 0.6184403024002662,
+        "p95_relative_error": 1.0571344712113544,
+        "max_relative_error": 1.1555550829336894,
+        "mean_angle_degrees": 39.0117925429667,
+        "undefined_angle_count": 0
+      }
+    },
+    "full_five_knob_box": {
+      "count": 512,
+      "add_separate_axis_changes": {
+        "mean_relative_error": 0.6945478352671804,
+        "p95_relative_error": 1.3348701229767332,
+        "max_relative_error": 1.7259836787080185,
+        "mean_angle_degrees": 36.26817532075509,
+        "undefined_angle_count": 0
+      },
+      "average_separate_axis_arrows": {
+        "mean_relative_error": 0.641376936598777,
+        "p95_relative_error": 0.8933095050380435,
+        "max_relative_error": 1.0448680725412052,
+        "mean_angle_degrees": 39.41121478815303,
+        "undefined_angle_count": 0
+      }
+    }
+  },
+  "forward_transport_validation": {
+    "random": 1024,
+    "lattice": 243,
+    "near_events": 15,
+    "mean_l2_error": 9.281665036511344e-08,
+    "max_l2_error": 1.4171205617427918e-07,
+    "max_absolute_pixel_error": 2.9800767187282418e-08
+  },
+  "finite_lean_moves_known_settings": {
+    "n": 1282,
+    "mean_l2_error": 1.3022362084273212e-07,
+    "max_l2_error": 1.8948747268634984e-07,
+    "max_absolute_pixel_error": 5.945962533449034e-08
+  },
+  "finite_lean_moves_image_only": {
+    "n": 1282,
+    "mean_l2_error": 2.0809045256153486e-07,
+    "max_l2_error": 3.98938890191217e-07,
+    "max_absolute_pixel_error": 1.0238998748857142e-07,
+    "max_absolute_recovered_knob_errors": [
+      3.925984870534194e-08,
+      2.3664835424597186e-08,
+      7.3935360944688e-08,
+      6.946977926247655e-08,
+      1.4899177980254308e-07
+    ]
+  },
+  "learn_separate_geometry_transforms": {
+    "one_axis_training_images": 95,
+    "baseline_images": 1,
+    "stored_scalars": 30,
+    "descriptor_order": [
+      "cx",
+      "cy",
+      "height",
+      "width",
+      "tan(lean)"
+    ],
+    "baseline_descriptor": [
+      14.5,
+      14.5,
+      19.750000001164153,
+      3.2000000029802322,
+      -0.0
+    ],
+    "transformation_coefficients": [
+      [
+        1.0000000118947867,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.9999999853663895,
+        5.804776228442302e-25,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.9999999909386661,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.6470751913566744e-09,
+        0.999999995341053,
+        0.0
+      ],
+      [
+        3.7209896643097656e-08,
+        0.0,
+        -1.6288498440135736e-08,
+        6.885222430350698e-08,
+        1.0000000000350684
+      ]
+    ],
+    "supplied_structure": "Image geometry recovery, tan(angle) coordinate, and continuous edge-to-pixel template",
+    "heldout_count": 1281,
+    "excluded_training_overlaps": 1,
+    "mean_l2_error": 1.7792835643020184e-07,
+    "max_l2_error": 3.943719434826214e-07,
+    "max_absolute_pixel_error": 1.0545366557757063e-07,
+    "random_state_arrow_prediction": {
+      "mean_relative_error": 2.819797217118471e-09,
+      "p95_relative_error": 4.8365501606981505e-09,
+      "max_relative_error": 6.474151660699027e-09,
+      "mean_angle_degrees": 2.8415343465685137e-07,
+      "undefined_angle_count": 0
+    }
+  },
+  "boundary_left": {
+    "fd_step_degrees": 0.001,
+    "mean_relative_error": 0.00014645361139722853,
+    "p95_relative_error": 0.00014645361139722853,
+    "max_relative_error": 0.00014645361139722853,
+    "mean_angle_degrees": 0.008367513241474757,
+    "undefined_angle_count": 0
+  },
+  "boundary_right": {
+    "fd_step_degrees": 0.001,
+    "mean_relative_error": 0.0001464536113972285,
+    "p95_relative_error": 0.0001464536113972285,
+    "max_relative_error": 0.0001464536113972285,
+    "mean_angle_degrees": 0.008367513241474757,
+    "undefined_angle_count": 0
+  },
+  "boundary_turn_degrees": 90.00300203780661,
+  "finite_difference_checks": {
+    "0.1": {
+      "mean_relative_error": 0.015572770946476187,
+      "p95_relative_error": 0.024224571275958635,
+      "max_relative_error": 0.20906938073456427,
+      "mean_angle_degrees": 0.886451878610182,
+      "undefined_angle_count": 0
+    },
+    "0.025": {
+      "mean_relative_error": 0.008372053550752302,
+      "p95_relative_error": 0.014813773791603608,
+      "max_relative_error": 0.08843035048697581,
+      "mean_angle_degrees": 0.4775666111728796,
+      "undefined_angle_count": 0
+    },
+    "0.00625": {
+      "mean_relative_error": 0.003096291386221391,
+      "p95_relative_error": 0.010703962331207375,
+      "max_relative_error": 0.016390972899252364,
+      "mean_angle_degrees": 0.1767394860695575,
+      "undefined_angle_count": 0
+    }
+  },
+  "paths": [
+    {
+      "geometry": [
+        14.5,
+        14.5,
+        19.75,
+        3.2,
+        0.0
+      ],
+      "frames": 181,
+      "event_intervals": 2909,
+      "transport_event_integral": {
+        "mean_l2_error": 1.0499202357602868e-07,
+        "max_l2_error": 1.4302114158675524e-07,
+        "max_absolute_pixel_error": 4.535830222529569e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 13.843196819458043,
+        "max_l2_error": 28.548773302176304,
+        "max_absolute_pixel_error": 7.801411414439174
+      }
+    },
+    {
+      "geometry": [
+        14.212796182064896,
+        14.38462082636571,
+        19.674898331635696,
+        4.194465158202848,
+        14.642897909282162
+      ],
+      "frames": 181,
+      "event_intervals": 2917,
+      "transport_event_integral": {
+        "mean_l2_error": 1.34983342400658e-07,
+        "max_l2_error": 1.5700440656767302e-07,
+        "max_absolute_pixel_error": 5.648506851141377e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 13.697128737560316,
+        "max_l2_error": 28.73909382877944,
+        "max_absolute_pixel_error": 7.9383485860144685
+      }
+    },
+    {
+      "geometry": [
+        14.479647443220154,
+        14.28567706308622,
+        19.422594073338654,
+        4.4932194277871895,
+        22.33034850464533
+      ],
+      "frames": 181,
+      "event_intervals": 2819,
+      "transport_event_integral": {
+        "mean_l2_error": 1.3286470475892318e-07,
+        "max_l2_error": 1.6316068682136919e-07,
+        "max_absolute_pixel_error": 5.8713870099147414e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 13.345257916467789,
+        "max_l2_error": 28.358290046869076,
+        "max_absolute_pixel_error": 7.580237231649795
+      }
+    },
+    {
+      "geometry": [
+        14.356186216042774,
+        14.38545930528245,
+        19.552877519781116,
+        3.2918740475169983,
+        2.4420019482919884
+      ],
+      "frames": 181,
+      "event_intervals": 2896,
+      "transport_event_integral": {
+        "mean_l2_error": 1.3649197420184828e-07,
+        "max_l2_error": 1.6549892572225378e-07,
+        "max_absolute_pixel_error": 5.6100018186455713e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 13.687776691004698,
+        "max_l2_error": 28.294619925478973,
+        "max_absolute_pixel_error": 8.063722605968042
+      }
+    },
+    {
+      "geometry": [
+        14.516041675282063,
+        14.086403451473307,
+        19.483289396784105,
+        3.500347711744946,
+        3.01113900965251
+      ],
+      "frames": 181,
+      "event_intervals": 2853,
+      "transport_event_integral": {
+        "mean_l2_error": 1.2631922652160763e-07,
+        "max_l2_error": 1.4882227071998855e-07,
+        "max_absolute_pixel_error": 5.6294911288112814e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 13.654345406756633,
+        "max_l2_error": 28.384244703157268,
+        "max_absolute_pixel_error": 7.705617630032685
+      }
+    },
+    {
+      "geometry": [
+        14.549984108516261,
+        14.100025287586815,
+        20.197801389632666,
+        3.9905438756414338,
+        -1.5288310283365583
+      ],
+      "frames": 181,
+      "event_intervals": 3046,
+      "transport_event_integral": {
+        "mean_l2_error": 1.355331039555703e-07,
+        "max_l2_error": 1.622301017969047e-07,
+        "max_absolute_pixel_error": 5.643250178266612e-08
+      },
+      "frozen_start_arrow": {
+        "mean_l2_error": 14.263954297249136,
+        "max_l2_error": 29.597526777000983,
+        "max_absolute_pixel_error": 8.616742004599203
+      }
+    }
+  ],
+  "width_slice_at_other_leans": [
+    {
+      "lean_degrees": 0.0,
+      "best_scalar_times_base": {
+        "mean_relative_error": 0.42887177960170114,
+        "p95_relative_error": 1.0,
+        "max_relative_error": 1.0,
+        "mean_angle_degrees": 0.056109725685785546,
+        "undefined_angle_count": 601
+      }
+    },
+    {
+      "lean_degrees": 5.0,
+      "best_scalar_times_base": {
+        "mean_relative_error": 0.5760495936509761,
+        "p95_relative_error": 0.9811367997416947,
+        "max_relative_error": 0.9963388943538318,
+        "mean_angle_degrees": 39.739569807730575,
+        "undefined_angle_count": 0
+      }
+    },
+    {
+      "lean_degrees": 12.5,
+      "best_scalar_times_base": {
+        "mean_relative_error": 0.6672322567270613,
+        "p95_relative_error": 0.9407541759643576,
+        "max_relative_error": 0.9590100190556374,
+        "mean_angle_degrees": 44.61051902360075,
+        "undefined_angle_count": 0
+      }
+    },
+    {
+      "lean_degrees": 30.0,
+      "best_scalar_times_base": {
+        "mean_relative_error": 0.5648484151367817,
+        "p95_relative_error": 0.9144728783250355,
+        "max_relative_error": 0.9325048555115265,
+        "mean_angle_degrees": 36.87216856407551,
+        "undefined_angle_count": 0
+      }
+    }
+  ]
+}
