@@ -1,0 +1,49 @@
+{
+  "baseline_knobs": [
+    14.0,
+    14.0,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "width_range_px": [
+    1.7,
+    4.7
+  ],
+  "width_step_px": 0.1,
+  "width_samples": 31,
+  "tilt_range_degrees": [
+    -10,
+    10
+  ],
+  "tilt_step_degrees": 0.5,
+  "tilt_samples": 41,
+  "grid_max_pixel_error_continuous_area": 8.599878854487208e-05,
+  "held_out_joint_samples": 1024,
+  "continuous_area_held_out_max_pixel_error": 8.31680174762095e-05,
+  "continuous_area_held_out_max_784D_error": 0.00025849050977371543,
+  "continuous_area_held_out_pixel_rmse": 2.5272342066543667e-06,
+  "pixel_155_local_fit_constant_dw_slope_dw_times_slope": [
+    0.5999999996081358,
+    0.4999999998453167,
+    8.49999993307721,
+    -2.2975863939602102e-07
+  ],
+  "local_held_out_samples": 1024,
+  "pixel_155_local_held_out_max_error": 2.9793533196098565e-08,
+  "best_rank_one_relative_image_errors_at_width_3p2_by_tilt_degrees": {
+    "0": 1.0097727877887045e-08,
+    "5": 0.3371521314513432,
+    "10": 0.5390849156272481
+  },
+  "mirror_symmetry_exact_on_grid": true,
+  "scope": "Center (14,14), height 19.75 fixed; width horizontal; slope=tan(tilt)",
+  "precision_note": "Continuous area is exact for the ideal stroke. Renderer uses 16 midpoint subrows; agreement is approximate, not float32-exact globally.",
+  "understanding_check": {
+    "object": "Untilting/tilting and widening the same stroke; one marked pixel's joint coefficient surface",
+    "axes_colors": "Heatmap axes are width and tilt; color is absolute pixel coverage 0-1",
+    "baseline": "Normal root first; all source images labeled; baseline point marked on heatmap",
+    "evidence": "Pixel heatmap shows coupled inputs; local equation and held-out numerical errors shown",
+    "scope": "Center and height fixed; local affine region explicitly bounded; global continuous model precision stated"
+  }
+}

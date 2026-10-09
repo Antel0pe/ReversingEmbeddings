@@ -1,0 +1,29 @@
+{
+  "baseline_knobs": {
+    "cx": 14.0,
+    "cy": 14.0,
+    "height": 19.75,
+    "width": 3.2,
+    "lean": 0.0
+  },
+  "width_samples": 31,
+  "height_samples": 31,
+  "step_px": 0.1,
+  "x": "Signed height change from 19.75px",
+  "line": "Fixed width",
+  "height_change": "image(width, base_height+x) - image(width, base_height)",
+  "y": "Euclidean distance between that height change and the height change at reference width 3.2px, at the same x",
+  "reference": "Normal-width root; no averaging or vector normalization",
+  "verification": {
+    "all_widths_at_zero_height_change": 0,
+    "reference_curve_all_heights": 0,
+    "maximum_distance_error_vs_rectangle_coverage": 1.8713315042863388e-07
+  },
+  "understanding_check": {
+    "object": "Each mark compares two finite 784D height-change vectors at the same signed height offset",
+    "axes_colors": "Height offset in pixels; raw L2 vector difference; colors identify width; all stated on figure",
+    "baseline": "Reference image shown first; reference width is black at zero; all curves zero at x=0",
+    "visible_evidence": "Curve separation shows a width-dependent difference in height changes; two panels use identical axes",
+    "scope": "Fixed center and lean; sampled height/width slice; scalar distance hides direction; overlapping equal distances stated"
+  }
+}

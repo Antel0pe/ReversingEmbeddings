@@ -1,0 +1,23 @@
+{
+  "source_samples": "figures/generated_one_height_change_comparison/samples.npz",
+  "baseline_knobs": [
+    14.0,
+    14.0,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "formula": "norm(image(width, height) - image(3.2, same_height))",
+  "x": "Height change from 19.75px",
+  "line": "Fixed width",
+  "width_samples": 31,
+  "height_samples": 31,
+  "maximum_error_vs_exact_rectangle_coverage": 3.0271649825719393e-07,
+  "understanding_check": {
+    "object": "Each mark compares two 784D images with equal height and different widths",
+    "axes_and_colors": "Height offset in pixels; raw L2 coverage distance; color identifies width",
+    "reference": "Normal-width source image shown first; same-height reference curve black at zero",
+    "evidence": "Nonreference curves remain above zero at base height and vary modestly across height",
+    "scope": "Fixed center and lean; sampled slice; distance hides pixel pattern; overlap stated"
+  }
+}

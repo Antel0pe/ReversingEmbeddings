@@ -1,0 +1,32 @@
+{
+  "baseline_knobs": {
+    "cx": 14.0,
+    "cy": 14.0,
+    "height": 19.75,
+    "width": 3.2,
+    "lean": 0.0
+  },
+  "x_axis": "width change from original, in pixels",
+  "line_per": "height",
+  "step_px": 0.1,
+  "width_range_px": [
+    1.7000000000000002,
+    4.7
+  ],
+  "height_range_px": [
+    18.25,
+    21.25
+  ],
+  "width_samples": 31,
+  "height_samples": 31,
+  "total_images": 961,
+  "distance": "Euclidean over 784 coverage values; float64 subtraction of float32 render outputs",
+  "verification": "Baseline exact; finite coverage in [0, 1]; requested spacing; integrated coverage agrees with rectangle area",
+  "understanding_check": {
+    "object": "Each sampled point measures one directly rendered 784D image against the fixed original",
+    "axes_and_color": "Signed knob change in pixels; Euclidean coverage distance; color names the fixed knob in pixels",
+    "starting_case": "Original image shown first; black curve and zero-distance marker identify the baseline",
+    "visible_result": "Only the unchanged baseline has zero distance; curves show distances through the sampled sweep",
+    "scope": "Center and lean fixed; height and width sampled; distance hides pixel direction; experimental ranges stated"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Center (14,14), lean 0; width 1.7-4.7px, height 18.25-21.25px",
+  "max_pixel_error_measured_profile_product": 6.020069065471034e-08,
+  "max_pixel_error_position_formula_on_grid": 2.8610229740877458e-08,
+  "max_pixel_error_bilinear_fit_in_one_region": 2.948207822317528e-08,
+  "pixel_124_fitted_coefficients_constant_dh_dw_dhdw": [
+    0.525000000400558,
+    0.300000000316164,
+    0.43750000087086216,
+    0.25000000074641715
+  ],
+  "held_out_joint_samples": 1024,
+  "held_out_max_pixel_error": 2.979655810975146e-08,
+  "held_out_max_784D_error": 1.9417338334709575e-07,
+  "seed": 20261008,
+  "understanding_check": {
+    "object": "One untilted generated image, its one-dimensional factors, and one pixel's coefficient",
+    "axes": "Width and height in pixels; factors are fractional coverage in [0,1]; curves identify pixel columns/rows",
+    "baseline": "Normal image first; baseline settings shown and dashed on both factor plots",
+    "evidence": "Row/column factors multiply; worked pixel product shown; joint held-out error stated",
+    "scope": "Fixed center, zero tilt, explicit bilinear region; whole formula clips; no claim about all five knobs"
+  }
+}

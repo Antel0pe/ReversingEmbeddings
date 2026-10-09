@@ -1,0 +1,39 @@
+{
+  "indexing": "zero-based, row-major",
+  "selected_pixels": [
+    5,
+    32,
+    234,
+    423,
+    664
+  ],
+  "knob_settings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "nonzero_pixels_at_each_positive_setting": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "other_pixels_max_absolute_value": 0.0,
+  "other_pixels_max_absolute_increment": 0.0,
+  "exact_integer_tenths_increment_check": "passed for all 5 pixels and all 10 steps",
+  "float64_max_absolute_increment_error": 8.326672684688674e-17
+}

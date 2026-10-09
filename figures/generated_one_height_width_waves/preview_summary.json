@@ -1,0 +1,24 @@
+{
+  "status": "Computed preview; original Python renderer run remains unverified because the process launcher fails",
+  "source": "Historical grey_ones.py source recovered from a previous repository run; lean=0 specialization of its 16-subrow coverage formula",
+  "reference": [
+    14.5,
+    14.5,
+    19.75,
+    3.2,
+    0
+  ],
+  "width_step_px": 0.01,
+  "height_step_px": 0.01,
+  "samples": 15251,
+  "max_width_interpolation_vector_error": 7.450580596923828e-8,
+  "max_width_interpolation_pixel_error": 3.725290298461914e-8,
+  "understanding_check": {
+    "object": "Controlled straight generated-one slice, with the source image shown",
+    "axes": "Width increase in pixels; Euclidean distances of 784 coverage values",
+    "colors": "Height in pixels; black curve is reference height",
+    "fixed": "cx=cy=14.5, lean=0; height and width vary over the labelled ranges",
+    "scope": "Recovered-source computational preview, not a verified current-repository Python run"
+  }
+}
+

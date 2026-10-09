@@ -5,5 +5,28 @@
   "all_knob_pair_bins_sum_to_cloud": true,
   "curvature_stencil_independently_recomputed": true,
   "all_symmetric_probes_in_allowed_box": true,
-  "private_path_scan": "passed"
+  "private_path_scan": "passed",
+  "http": {
+    "index.html": 200,
+    "results.json": 200,
+    "error_locations.png": 200,
+    "knob_error_profiles.png": 200,
+    "curvature_samples.npz": 200,
+    "image_examples.npz": 200,
+    "README.md": 200
+  },
+  "figures_inspected": true,
+  "figure_understanding_check": "Objects and source coverage defined; axes, error units, color scales and physical knob operations labelled; full-cloud maps separated from interior bending probes; selected examples labelled; no claim of global curvature or causal attribution.",
+  "page_controls": {
+    "mode": "Offline DOM simulation; no actual browser rendering check",
+    "knobPairMaps": 10,
+    "curvatureSamples": 1024,
+    "probeScales": 2,
+    "curvatureFeatures": 4,
+    "clipModes": 2,
+    "imageExamples": 6,
+    "canvasImageDraws": 93,
+    "canvasPlotDraws": 4686,
+    "allControlsPassed": true
+  }
 }
