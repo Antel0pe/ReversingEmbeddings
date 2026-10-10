@@ -33,10 +33,10 @@ VISIBLE = 0.5
 SUB = 16                       # sub-rows per pixel row; x-coverage is exact
 
 
-def render(P):
-    """P: (n, 5) knob settings -> (n, 28, 28) coverage images in [0, 1]."""
+def render(P, *, dtype=np.float32):
+    """P: (n, 5) settings -> coverage images; dtype controls output storage only."""
     P = np.atleast_2d(np.asarray(P, np.float64))
-    out = np.empty((len(P), N_PIX, N_PIX), np.float32)
+    out = np.empty((len(P), N_PIX, N_PIX), dtype=dtype)
     ys_lo = np.arange(N_PIX * SUB) / SUB                   # sub-row [lo, lo + 1/SUB]
     ys_mid = ys_lo + 0.5 / SUB
     cols = np.arange(N_PIX)

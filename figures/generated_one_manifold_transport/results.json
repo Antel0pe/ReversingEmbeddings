@@ -1,0 +1,448 @@
+{
+  "scope": "Known-five-knob analytic geometry; no claim of unsupervised identification",
+  "overlap": [
+    {
+      "name": "root",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        0.0
+      ],
+      "cosine_gram": [
+        [
+          1.0000000000000002,
+          0.0,
+          -3.1375468166557717e-18,
+          4.1078251911130813e-19,
+          1.6653345369377348e-16
+        ],
+        [
+          0.0,
+          1.0000000000000002,
+          0.0,
+          0.0,
+          2.9477378211079326e-18
+        ],
+        [
+          -3.1375468166557717e-18,
+          0.0,
+          1.0000000000000002,
+          0.1440588115197074,
+          6.035070538115561e-19
+        ],
+        [
+          4.1078251911130813e-19,
+          0.0,
+          0.1440588115197074,
+          1.0000000000000002,
+          1.028017593310854e-17
+        ],
+        [
+          1.6653345369377348e-16,
+          2.9477378211079326e-18,
+          6.035070538115561e-19,
+          1.028017593310854e-17,
+          0.9999999999999999
+        ]
+      ],
+      "cx_cy_cosine": 0.0,
+      "height_width_cosine": 0.1440588115197074,
+      "physical_jacobian_rank": 5
+    },
+    {
+      "name": "lean_minus7",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        -7.0
+      ],
+      "cosine_gram": [
+        [
+          1.0000000000000002,
+          -0.25896185036306024,
+          -1.0755285551056204e-16,
+          -2.1732743247099214e-18,
+          1.1102230246251565e-16
+        ],
+        [
+          -0.25896185036306024,
+          0.9999999999999998,
+          2.7755575615628914e-16,
+          1.1102230246251565e-16,
+          1.4224732503009818e-16
+        ],
+        [
+          -1.0755285551056204e-16,
+          2.7755575615628914e-16,
+          0.9999999999999998,
+          0.14392983590023542,
+          -0.08463541234915967
+        ],
+        [
+          -2.1732743247099214e-18,
+          1.1102230246251565e-16,
+          0.14392983590023542,
+          1.0000000000000002,
+          0.0022317943307209828
+        ],
+        [
+          1.1102230246251565e-16,
+          1.4224732503009818e-16,
+          -0.08463541234915967,
+          0.0022317943307209828,
+          0.9999999999999996
+        ]
+      ],
+      "cx_cy_cosine": -0.25896185036306024,
+      "height_width_cosine": 0.14392983590023542,
+      "physical_jacobian_rank": 5
+    },
+    {
+      "name": "lean_12p5",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        12.5
+      ],
+      "cosine_gram": [
+        [
+          1.0,
+          0.4598460849655797,
+          -3.3306690738754696e-16,
+          -4.563674105136864e-19,
+          -1.5265566588595902e-16
+        ],
+        [
+          0.4598460849655797,
+          1.000000000000001,
+          -1.6653345369377348e-16,
+          -9.71445146547012e-17,
+          3.7535079211448164e-16
+        ],
+        [
+          -3.3306690738754696e-16,
+          -1.6653345369377348e-16,
+          1.0,
+          0.14786733595131984,
+          0.07745793330067255
+        ],
+        [
+          -4.563674105136864e-19,
+          -9.71445146547012e-17,
+          0.14786733595131984,
+          1.0,
+          0.0009229557272539282
+        ],
+        [
+          -1.5265566588595902e-16,
+          3.7535079211448164e-16,
+          0.07745793330067255,
+          0.0009229557272539282,
+          0.9999999999999996
+        ]
+      ],
+      "cx_cy_cosine": 0.4598460849655797,
+      "height_width_cosine": 0.14786733595131984,
+      "physical_jacobian_rank": 5
+    },
+    {
+      "name": "lean_30",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        30.0
+      ],
+      "cosine_gram": [
+        [
+          1.0000000000000002,
+          0.7888792096384062,
+          -3.469446951953614e-18,
+          -6.071532165918825e-18,
+          -2.2898349882893854e-16
+        ],
+        [
+          0.7888792096384062,
+          0.9999999999999993,
+          -5.551115123125783e-16,
+          -4.85722573273506e-17,
+          -8.847089727481716e-17
+        ],
+        [
+          -3.469446951953614e-18,
+          -5.551115123125783e-16,
+          1.0,
+          0.10356634346815623,
+          0.08648155916691892
+        ],
+        [
+          -6.071532165918825e-18,
+          -4.85722573273506e-17,
+          0.10356634346815623,
+          1.0000000000000002,
+          -0.022630332686876864
+        ],
+        [
+          -2.2898349882893854e-16,
+          -8.847089727481716e-17,
+          0.08648155916691892,
+          -0.022630332686876864,
+          1.0
+        ]
+      ],
+      "cx_cy_cosine": 0.7888792096384062,
+      "height_width_cosine": 0.10356634346815623,
+      "physical_jacobian_rank": 5
+    }
+  ],
+  "residuals": {
+    "tangent_rank": 5,
+    "mixed_normal_rank": 4,
+    "tangent_plus_mixed_rank": 9,
+    "heldout_max_absolute_L2_error": 2.6931677286351467e-15,
+    "trailing_vectors_distance_to_mixed_normal_span": [
+      1.8777125500513126e-09,
+      2.1571861466621042e-09,
+      6.367838647443012e-09,
+      4.340013150551385e-09
+    ],
+    "trailing_vectors_tangent_fraction": [
+      6.051320242580671e-06,
+      4.638478242624832e-06,
+      6.793721351583653e-06,
+      5.208644935884748e-06
+    ],
+    "mixed_normal_singular_values": [
+      44.09200790328532,
+      7.803007775803296,
+      0.8574929257125444,
+      0.8318703418527937,
+      5.195271780686495e-16,
+      2.64838509038473e-16,
+      2.228942932216938e-16,
+      1.5979904303300334e-16,
+      1.350190887359528e-16,
+      7.786570968208677e-17,
+      4.7064020784686714e-17,
+      4.4735055138916394e-17,
+      1.4844000567151143e-31,
+      2.219416611155484e-32,
+      7.94987643884871e-33,
+      5.601692701751784e-36,
+      7.016278779675083e-49,
+      6.955166360598324e-50,
+      2.5327481038719597e-65,
+      2.532884188935541e-66,
+      1.5593933908668956e-82,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "exact_cell": {
+    "settings": [
+      14.43,
+      14.62,
+      19.73,
+      3.17,
+      17.3
+    ],
+    "coordinate_names": [
+      "top",
+      "bottom",
+      "intercept",
+      "width",
+      "slope"
+    ],
+    "heldout_joint_points": 1024,
+    "all_formula_signatures_identical": true,
+    "all_32_box_corners_share_formula_signature": true,
+    "maximum_quadratic_image_L2_error": 1.5447267634668937e-14,
+    "maximum_quadratic_pixel_error": 4.440892098500626e-15,
+    "maximum_linear_image_L2_error": 2.854344933917467e-07,
+    "cell_half_spans": [
+      0.00025,
+      0.00025,
+      0.00025,
+      0.00025,
+      2.5e-05
+    ]
+  },
+  "affine_height_width": {
+    "width_range": [
+      2.1,
+      3.9
+    ],
+    "width_spacing": 0.05,
+    "heights": [
+      19.0,
+      19.3,
+      19.75,
+      19.9
+    ],
+    "max_height_field_width_slope_difference": 3.552713678800501e-14,
+    "slope_norm": 0.49999999999997335,
+    "max_height_field_change_for_equal_width_step": 0.025000000000000355,
+    "finite_interaction_steps": {
+      "height": 0.03,
+      "width": 0.02
+    },
+    "finite_interaction_L2": 0.00029999999999996696,
+    "finite_interaction_prediction_error_L2": 1.702197410802242e-17,
+    "slope_change_outside_patch_at_height_20p1": 0.7071067811865337,
+    "statement": "J_height(w+dw)-J_height(w) = dw*D, D constant while 2<w<4 and 18<h<20; fixed center, zero lean"
+  },
+  "ambiguity": {
+    "beta": 2.0,
+    "coordinates": "z_cx=cx; z_width=width+2*(cx-14)^2; other coordinates unchanged",
+    "inverse": "cx=z_cx; width=z_width-2*(z_cx-14)^2",
+    "root_coordinate_jacobian_is_identity": true,
+    "example_settings": [
+      14.3,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "alternative_cx_field_cosine_to_true_cx": 0.8574929257125438,
+    "image_roundtrip_max_L2": 0.0,
+    "coordinate_roundtrip_max_error": 0.0,
+    "two_orders_endpoint_max_error": 0.0,
+    "bracket_statement": "All five alternative coordinate fields commute, but the cx-like field mixes cx and width away from the root"
+  },
+  "metric_transport": {
+    "start": [
+      14.43,
+      14.62,
+      19.73,
+      3.17,
+      17.3
+    ],
+    "end": [
+      14.43,
+      14.62,
+      19.73,
+      3.1725,
+      17.3
+    ],
+    "width_step": 0.0025,
+    "all_in_one_formula_cell": true,
+    "method": "Successive orthogonal Procrustes maps between exact tangent frames; converges to induced-metric parallel transport on smooth paths",
+    "true_knob_unit_gram_change": 0.0003212649037631632,
+    "resolutions": [
+      {
+        "steps": 16,
+        "cosine_to_true_knob": [
+          1.0000000000000002,
+          0.9999999730915857,
+          0.999999971436321,
+          1.000000000000001,
+          1.0000000000000022
+        ],
+        "max_gram_preservation_error": 4.218847493575595e-15,
+        "difference_from_previous_resolution": null
+      },
+      {
+        "steps": 64,
+        "cosine_to_true_knob": [
+          1.0,
+          0.9999999730915883,
+          0.9999999714363281,
+          1.0000000000000044,
+          1.0000000000000073
+        ],
+        "max_gram_preservation_error": 1.7541523789077473e-14,
+        "difference_from_previous_resolution": 3.2984700738531865e-14
+      },
+      {
+        "steps": 256,
+        "cosine_to_true_knob": [
+          0.9999999999999999,
+          0.999999973091615,
+          0.999999971436351,
+          1.0000000000000253,
+          1.000000000000028
+        ],
+        "max_gram_preservation_error": 6.328271240363392e-14,
+        "difference_from_previous_resolution": 9.214044391708882e-14
+      }
+    ]
+  },
+  "coordinate_transport": {
+    "method": "Known-coordinate transport J(target) pinv(J(source)); no image observables or SVD-axis assignment",
+    "starts_checked": 14,
+    "results": [
+      {
+        "name": "root",
+        "max_relative_family_transport_error": 2.2348869710855725e-15
+      },
+      {
+        "name": "right_0p3",
+        "max_relative_family_transport_error": 2.2420646958693333e-15
+      },
+      {
+        "name": "down_0p3",
+        "max_relative_family_transport_error": 2.235133707886336e-15
+      },
+      {
+        "name": "height_20p1",
+        "max_relative_family_transport_error": 2.2353818034110008e-15
+      },
+      {
+        "name": "width_2p2",
+        "max_relative_family_transport_error": 2.24182672588283e-15
+      },
+      {
+        "name": "width_4p2",
+        "max_relative_family_transport_error": 2.2367052666011424e-15
+      },
+      {
+        "name": "spread_01",
+        "max_relative_family_transport_error": 1.9464249601789808e-15
+      },
+      {
+        "name": "spread_02",
+        "max_relative_family_transport_error": 1.3341535118786239e-15
+      },
+      {
+        "name": "spread_03",
+        "max_relative_family_transport_error": 1.5073809509650884e-15
+      },
+      {
+        "name": "spread_04",
+        "max_relative_family_transport_error": 2.2033943736857523e-15
+      },
+      {
+        "name": "spread_05",
+        "max_relative_family_transport_error": 2.1876370287688535e-15
+      },
+      {
+        "name": "spread_06",
+        "max_relative_family_transport_error": 1.7822063833621903e-15
+      },
+      {
+        "name": "spread_07",
+        "max_relative_family_transport_error": 1.6891538298810101e-15
+      },
+      {
+        "name": "spread_08",
+        "max_relative_family_transport_error": 2.1959549812254327e-15
+      }
+    ],
+    "excluded_cap_kinks": [
+      "lean_minus7",
+      "lean_12p5",
+      "lean_30"
+    ],
+    "max_relative_family_transport_error": 2.2420646958693333e-15,
+    "two_routes_max_absolute_difference": 9.081277396738585e-16
+  }
+}
