@@ -114,3 +114,5 @@ kernel pca
 - Nonlinearly transform the data into a different feature space, then perform ordinary PCA there.
 
 go step by step for each transformation of lean/height as you vary width and ask about it
+
+finding minimum dimension of data

@@ -1,0 +1,56 @@
+{
+  "training": "31 labeled width images, 1.7-4.7px every 0.1; other knobs fixed",
+  "prediction_inputs": "Current image and width change, plus learned fixed model parameters",
+  "knots_detected_from_image_secants": [
+    2.0,
+    4.0
+  ],
+  "observed_total_ink_vs_width_intercept_slope": [
+    -1.6920019020593778e-08,
+    19.750000010575018
+  ],
+  "active_columns_in_three_segments": [
+    [
+      13,
+      14
+    ],
+    [
+      12,
+      15
+    ],
+    [
+      11,
+      16
+    ]
+  ],
+  "held_out_moves": 1024,
+  "held_out_max_pixel_error": 5.74177865253489e-08,
+  "held_out_max_image_l2_error": 3.4467034864108675e-07,
+  "returned_loop_max_pixel_error": 1.82702009077218e-09,
+  "frozen_model_controls": {
+    "same slice": {
+      "maximum_pixel_error": 4.743917847438439e-08,
+      "image_l2_error": 3.000341787591333e-07
+    },
+    "tilt changed to 10 degrees": {
+      "maximum_pixel_error": 0.05000001187581443,
+      "image_l2_error": 0.36329189225717734
+    },
+    "height changed to 20.5": {
+      "maximum_pixel_error": 0.012499988079071045,
+      "image_l2_error": 0.027950785527158555
+    },
+    "horizontal center changed to 14.5": {
+      "maximum_pixel_error": 0.050000004425233835,
+      "image_l2_error": 0.3125000108698118
+    }
+  },
+  "scope": "One fixed width curve, center (14,14), height19.75, tilt0. Not a field over all other settings.",
+  "understanding_check": {
+    "object": "Source image followed by three learned width direction vectors displayed as +0.1px changes",
+    "axes_colors": "Pixel rows and columns; common signed coverage scale; red gains ink and blue loses ink",
+    "start": "Root image first; active width intervals labeled on each movement panel",
+    "evidence": "Active columns move outward at learned switches; held-out coefficient error stated",
+    "scope": "Single fixed slice; phase crossings handled; frozen rule does not generalize to other tilts/positions"
+  }
+}
