@@ -96,6 +96,26 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   to check physical-direction overlap, the root's four mixed normal directions,
   local invariants, metric transport, coordinate ambiguity, and an exact
   piecewise-quadratic five-coordinate decoder. Known controls are supplied.
+- **Smaller-radius separation:** `analyze_generated_one_scale_separation.py`
+  and `figures/generated_one_scale_separation/README.md` check radii 0.0001
+  and 0.00001 at five selected starts, normalized spectral slopes, and
+  float32 storage limits. The spectral test estimates first-order dimension,
+  not uniquely labeled physical knobs.
+- **Nearest-direction continuation:** `analyze_generated_one_nearest_direction.py`
+  and `figures/generated_one_nearest_direction/README.md` test matching a
+  direction to the nearest direction at a neighboring image, including moves
+  along estimated SVD vectors and changes of other knobs. Small sampled steps
+  succeed; larger steps and renderer boundaries can switch the association.
+  Known controls generate valid moves and evaluate categories; the matcher
+  itself uses only absolute pixel cosine. This does not identify unique knobs.
+- **Direction-change history and count consistency:**
+  `analyze_generated_one_direction_history.py` and
+  `figures/generated_one_direction_history/README.md` test eight-hop tracking,
+  a two-step direction predictor, a four-image bilinear decoder, and the
+  order dependence of equal-image-distance ticks. Ordinary SVD fields also
+  have measured nonzero Lie brackets outside a direction pair at smooth
+  starts (`check_generated_one_direction_commutators.py`); matching labels
+  alone does not turn accumulated counts into independent coordinates.
 
 ### Geometry conventions
 

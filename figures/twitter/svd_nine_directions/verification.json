@@ -1,0 +1,56 @@
+{
+  "radius_pixel_L2": 0.001,
+  "training_images": 512,
+  "heldout_images": 256,
+  "root_settings_cx_cy_height_width_lean": [
+    14.0,
+    14.0,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "energy_percent_by_vector": [
+    66.65474040533016,
+    18.47631016428987,
+    11.546809088245448,
+    2.0475305351283395,
+    1.2746097100868996,
+    5.760560550437479e-08,
+    2.8386505490514532e-08,
+    6.6491570788771756e-09,
+    4.278060968658394e-09
+  ],
+  "closest_knob_order": [
+    "Tilt",
+    "Width",
+    "Sideways",
+    "Up / down",
+    "Height"
+  ],
+  "absolute_knob_cosines": [
+    0.9999972480628067,
+    0.9999711311445334,
+    0.9999677637492702,
+    0.9986627785323656,
+    0.9883631214554017
+  ],
+  "extra_normal_span_errors": [
+    2.1430566750051203e-09,
+    2.4689123645031684e-09,
+    6.844042767364459e-09,
+    4.343302745002686e-09
+  ],
+  "heldout_worst_relative_error": {
+    "5": 0.00011884379555834103,
+    "9": 4.890065034910595e-12
+  },
+  "common_unit_vector_color_limit": 0.488573366402851,
+  "text_overlaps": [],
+  "understanding_check": {
+    "object": "Starting 28x28 synthetic coverage image, followed by nine full pixel-space SVD directions.",
+    "encoding": "Blue negative, white zero, red positive; percentages are uncentered displacement energy shares.",
+    "baseline_operation": "Subtract the root from 512 generated neighbors at pixel L2 distance 0.001, then SVD.",
+    "visible_result": "Five dominant knob-like directions; four very small interaction directions, all shown at unit length.",
+    "scope": "One controlled root neighborhood. Labels checked afterward; first five are approximate knob associations. Last four span normal interaction effects, not four new independent knobs."
+  }
+}

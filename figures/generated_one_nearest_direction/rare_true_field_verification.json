@@ -1,0 +1,161 @@
+{
+  "rare_oracle_comparisons": 7,
+  "finite_difference_step": 1e-06,
+  "maximum_derivative_error": 4.810353865177898e-09,
+  "svd_followup": [
+    {
+      "name": "additional_76",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.03824097162666812
+    },
+    {
+      "name": "additional_76",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.03823924607807383
+    },
+    {
+      "name": "additional_76",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.03917240306922837
+    },
+    {
+      "name": "additional_76",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.03917033223430344
+    },
+    {
+      "name": "additional_76",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.04096814513057079
+    },
+    {
+      "name": "additional_76",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.040965532105420754
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.052002176137769196
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.05199701031001136
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.05961608690118164
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "cy",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.05960905289999485
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.0529299711267035
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "cy",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": false,
+      "svd_chosen_knob": "height",
+      "svd_margin": -0.05292440480835231
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 0.001,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.06061528205012057
+    },
+    {
+      "name": "additional_128",
+      "moved_knob": "height",
+      "sign": -1,
+      "expected_knob": "height",
+      "local_radius": 1e-05,
+      "true_field_correct": false,
+      "svd_match_correct": true,
+      "svd_chosen_knob": "height",
+      "svd_margin": 0.06060775894682263
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "spread_02",
+    "radius": 0.0001,
+    "neighbors_crossing_base_formula_cell": 0,
+    "neighbors": 768
+  },
+  {
+    "name": "spread_02",
+    "radius": 1e-05,
+    "neighbors_crossing_base_formula_cell": 0,
+    "neighbors": 768
+  },
+  {
+    "name": "spread_03",
+    "radius": 0.0001,
+    "neighbors_crossing_base_formula_cell": 240,
+    "neighbors": 768
+  },
+  {
+    "name": "spread_03",
+    "radius": 1e-05,
+    "neighbors_crossing_base_formula_cell": 0,
+    "neighbors": 768
+  },
+  {
+    "name": "spread_04",
+    "radius": 0.0001,
+    "neighbors_crossing_base_formula_cell": 0,
+    "neighbors": 768
+  },
+  {
+    "name": "spread_04",
+    "radius": 1e-05,
+    "neighbors_crossing_base_formula_cell": 0,
+    "neighbors": 768
+  }
+]

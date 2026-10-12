@@ -1,0 +1,69 @@
+{
+  "maximum_step_distance_error": 1.5343282200319663e-13,
+  "stationary_fresh_sample_control": [
+    {
+      "mode": "rollout",
+      "method": "nearest",
+      "step": 0,
+      "scope": "after_bootstrap",
+      "correct": 665,
+      "count": 665
+    },
+    {
+      "mode": "rollout",
+      "method": "nearest",
+      "step": 0,
+      "scope": "hop8",
+      "correct": 95,
+      "count": 95
+    },
+    {
+      "mode": "rollout",
+      "method": "trend",
+      "step": 0,
+      "scope": "after_bootstrap",
+      "correct": 665,
+      "count": 665
+    },
+    {
+      "mode": "rollout",
+      "method": "trend",
+      "step": 0,
+      "scope": "hop8",
+      "correct": 95,
+      "count": 95
+    },
+    {
+      "mode": "correct_past_diagnostic",
+      "method": "nearest",
+      "step": 0,
+      "scope": "after_bootstrap",
+      "correct": 665,
+      "count": 665
+    },
+    {
+      "mode": "correct_past_diagnostic",
+      "method": "nearest",
+      "step": 0,
+      "scope": "hop8",
+      "correct": 95,
+      "count": 95
+    },
+    {
+      "mode": "correct_past_diagnostic",
+      "method": "trend",
+      "step": 0,
+      "scope": "after_bootstrap",
+      "correct": 665,
+      "count": 665
+    },
+    {
+      "mode": "correct_past_diagnostic",
+      "method": "trend",
+      "step": 0,
+      "scope": "hop8",
+      "correct": 95,
+      "count": 95
+    }
+  ]
+}

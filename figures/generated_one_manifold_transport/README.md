@@ -186,6 +186,27 @@ decoder and consistent joins.
 
 ## Reproduce
 
+### Alternate bases checked on the same root samples
+
+`check_generated_one_alternate_bases.py` constructs two additional bases:
+
+1. Mix the five true tangent directions into five orthonormal directions,
+   while retaining four separate normal directions. Each of the five new
+   tangent vectors has nonzero coefficients on **all five** physical knob
+   derivatives. None is a pure original knob direction.
+2. Mix all nine directions. Every resulting vector has a nonzero normal
+   component, so no individual vector is any pure tangent knob direction.
+
+Both retain the same complete local span and reconstruct the same 256
+held-out changes below `1e-13` absolute image distance. Thus a basis can omit
+every original knob **as an individual vector**, while retaining every knob
+**as a reconstructible combination**. These are deliberately constructed
+bases, not the unique unweighted SVD axes of an unchanged covariance matrix.
+
+Run `OPENBLAS_NUM_THREADS=1 .venv/bin/python check_generated_one_alternate_bases.py`.
+Measurements and coefficients are in `alternate_basis_check.json` and
+`alternate_basis_check.npz`.
+
 ```bash
 OPENBLAS_NUM_THREADS=1 .venv/bin/python analyze_generated_one_manifold_transport.py
 ```

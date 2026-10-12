@@ -117,4 +117,7 @@ go step by step for each transformation of lean/height as you vary width and ask
 
 finding minimum dimension of data
 - identifying SOME knobs and what makes it a knob
-- coming up with math manifold representation of the knob and how it varies as other knobs vary/
+- coming up with math manifold representation of the knob and how it varies as other knobs vary
+
+identifying knobs in mnist connected group of 1s then trying if any combination of those knobs get to the disconnected segments
+- interpolation change vs pixel translation type changes for connecting disconnected segmentsa sim
