@@ -1,0 +1,47 @@
+{
+  "scope": "Two selected states, actual finite width changes; no SVD or family discovery.",
+  "adjustment_fraction_of_default_range": 0.1,
+  "other_knob_adjustments": {
+    "cx": 0.1,
+    "cy": 0.1,
+    "height": 0.15000000000000002,
+    "width": 0.0,
+    "lean": 4.5
+  },
+  "panels": [
+    {
+      "start": {
+        "cx": 14.0,
+        "cy": 14.0,
+        "height": 19.75,
+        "width": 3.2,
+        "lean": 0.0
+      },
+      "width_increase": 0.27999999999999997,
+      "image_change_l2": 0.8749999189376836,
+      "gaining_pixels": 40,
+      "losing_pixels": 0,
+      "ink_increase": 5.529999494552612,
+      "maximum_pixel_gain": 0.13999998569488525
+    },
+    {
+      "start": {
+        "cx": 14.1,
+        "cy": 14.1,
+        "height": 19.9,
+        "width": 3.2,
+        "lean": 4.5
+      },
+      "width_increase": 0.27999999999999997,
+      "image_change_l2": 0.8517414920727342,
+      "gaining_pixels": 53,
+      "losing_pixels": 0,
+      "ink_increase": 5.572000031357447,
+      "maximum_pixel_gain": 0.14000004529953003
+    }
+  ],
+  "width_change_vector_angle_degrees": 48.582662308893774,
+  "pixel_count_tolerance": 1e-07,
+  "color_scale_absolute_pixel_change": 0.14000004529953003,
+  "render_storage": "float32"
+}

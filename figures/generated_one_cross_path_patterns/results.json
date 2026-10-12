@@ -1,0 +1,554 @@
+{
+  "method": {
+    "root": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "radius": 0.0001,
+    "neighborhood_samples": 256,
+    "seed": 20261012,
+    "precision": "float64 renderer coverage",
+    "branch_offsets": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "unseen_offsets": [
+      0.3,
+      0.7
+    ],
+    "path_ticks": [
+      -2.4,
+      -2.25,
+      -2.1,
+      -1.95,
+      -1.7999999999999998,
+      -1.65,
+      -1.5,
+      -1.3499999999999999,
+      -1.2,
+      -1.05,
+      -0.8999999999999999,
+      -0.75,
+      -0.6000000000000001,
+      -0.44999999999999996,
+      -0.2999999999999998,
+      -0.1499999999999999,
+      0.0,
+      0.1499999999999999,
+      0.2999999999999998,
+      0.4500000000000002,
+      0.6000000000000001,
+      0.75,
+      0.8999999999999999,
+      1.0499999999999998,
+      1.1999999999999997,
+      1.35,
+      1.5,
+      1.65,
+      1.8000000000000003,
+      1.9499999999999997,
+      2.1,
+      2.2499999999999996,
+      2.4
+    ],
+    "offset_units": "amount along a root SVD ray with initial pixel speed 1; finite distances are measured, not fixed",
+    "path_units": "amount along each candidate local SVD ray, with initial pixel speed 1",
+    "graph": "one root; five context rays, four observed offsets each; five local candidate path rays per offset",
+    "profiles": [
+      "distance between offset and base path at corresponding ticks",
+      "difference between their pixel-displacement vectors after subtracting their own starts",
+      "angle between those displacement vectors; undefined zero tick excluded"
+    ],
+    "amplitude": "divide all three profiles by observed start-image gap; angle first divided by 90 degrees",
+    "objective": "sum of equally weighted squared differences of normalized profiles across offsets, anchored at nearest offset",
+    "optimization": "enumerate 120 nearest-offset permutations; solve each other offset by Hungarian assignment; select global minimum for this anchored objective",
+    "sign_rule": "orientation with least mean squared displacement-vector mismatch to root path over all 33 ticks",
+    "unseen": "freeze mean selected normalized profiles; Hungarian selection at two new context offsets",
+    "oracle": "known renderer/Jacobian supply neighborhoods and valid parameter-ray moves; matcher receives only rendered curves, not knob settings or labels",
+    "limitations": [
+      "fixed local parameter-ray probes, not adaptively tracked paths",
+      "corresponding ticks use local pixel-speed calibration, not recovered common knob numbers",
+      "SVD axes only, no mixtures fitted",
+      "root context rays and default-range-shaped sampling are generator-assisted",
+      "same root only; default box extended, strokes stay positive and unclipped",
+      "profile scaling proportional to start gap is a tested assumption, not guaranteed manifold structure"
+    ]
+  },
+  "root": {
+    "labels": [
+      "lean",
+      "width",
+      "cx",
+      "cy",
+      "height"
+    ],
+    "signs": [
+      1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    "matching_cosines": [
+      0.9999083891229008,
+      0.9995094766581845,
+      0.9995685061567027,
+      0.9993121113512535,
+      0.9881542663382882
+    ]
+  },
+  "phases": {
+    "discovery": {
+      "comparisons": 100,
+      "correct": 100,
+      "correct_family_and_sign": 100
+    },
+    "unseen": {
+      "comparisons": 50,
+      "correct": 50,
+      "correct_family_and_sign": 50
+    }
+  },
+  "confusion": {},
+  "contexts": [
+    {
+      "context_family": 1,
+      "context_knob": "lean",
+      "selected_loss": 0.06855948598274048,
+      "pure_control_loss": 0.07076992319682479,
+      "correct_svd_label_loss": 0.06855948598274048,
+      "selected_family_losses": [
+        0.020616183223701387,
+        0.023929176742360315,
+        0.02400283378653775,
+        5.520027839514176e-06,
+        5.77220230151436e-06
+      ],
+      "pure_control_family_losses": [
+        0.020715598462901996,
+        0.025292725726684916,
+        0.024746137343573893,
+        5.5304404614625975e-06,
+        9.931223202512573e-06
+      ],
+      "correct_svd_label_family_losses": [
+        0.020616183223701387,
+        0.023929176742360315,
+        0.02400283378653775,
+        5.520027839514176e-06,
+        5.77220230151436e-06
+      ],
+      "selected_orders": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "second_best_anchor_loss": 95.53844022833057,
+      "near_optimal_anchor_assignments": 1
+    },
+    {
+      "context_family": 2,
+      "context_knob": "width",
+      "selected_loss": 0.08153685338653907,
+      "pure_control_loss": 0.0847971816280894,
+      "correct_svd_label_loss": 0.08153685338653907,
+      "selected_family_losses": [
+        0.003961573757467918,
+        0.039761979817649146,
+        0.03754799355814735,
+        0.00018766705425615976,
+        7.76391990184991e-05
+      ],
+      "pure_control_family_losses": [
+        0.003968389442715466,
+        0.04168773686969503,
+        0.03884937733819986,
+        0.00013657690021600177,
+        0.00015510107726304388
+      ],
+      "correct_svd_label_family_losses": [
+        0.003961573757467918,
+        0.039761979817649146,
+        0.03754799355814735,
+        0.00018766705425615976,
+        7.76391990184991e-05
+      ],
+      "selected_orders": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "second_best_anchor_loss": 96.08701106954193,
+      "near_optimal_anchor_assignments": 1
+    },
+    {
+      "context_family": 3,
+      "context_knob": "cx",
+      "selected_loss": 0.040800645998047586,
+      "pure_control_loss": 0.042467040020196876,
+      "correct_svd_label_loss": 0.04080064599804757,
+      "selected_family_losses": [
+        0.0016569862806848773,
+        0.019805833592343232,
+        0.019335431322107417,
+        1.0426707240615353e-06,
+        1.3521321879865593e-06
+      ],
+      "pure_control_family_losses": [
+        0.0016679478053680506,
+        0.020397968647708303,
+        0.020398221120140926,
+        1.1967785120353006e-06,
+        1.7056684675667088e-06
+      ],
+      "correct_svd_label_family_losses": [
+        0.0016569862806848773,
+        0.019805833592343232,
+        0.019335431322107417,
+        1.0426707240615353e-06,
+        1.3521321879865593e-06
+      ],
+      "selected_orders": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "second_best_anchor_loss": 95.30397258081427,
+      "near_optimal_anchor_assignments": 1
+    },
+    {
+      "context_family": 4,
+      "context_knob": "cy",
+      "selected_loss": 0.7372957319942333,
+      "pure_control_loss": 0.7189510224041922,
+      "correct_svd_label_loss": 0.7372957319942333,
+      "selected_family_losses": [
+        0.0001291338174287809,
+        0.00036324910749308546,
+        0.0006977677834935263,
+        0.26328976777625834,
+        0.4728158135095596
+      ],
+      "pure_control_family_losses": [
+        0.0001079189680044067,
+        1.3713545110220912e-07,
+        1.0072534373668685e-07,
+        0.2649654016678482,
+        0.4538774639075447
+      ],
+      "correct_svd_label_family_losses": [
+        0.0001291338174287809,
+        0.00036324910749308546,
+        0.0006977677834935263,
+        0.26328976777625834,
+        0.4728158135095596
+      ],
+      "selected_orders": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "second_best_anchor_loss": 82.66364436072763,
+      "near_optimal_anchor_assignments": 1
+    },
+    {
+      "context_family": 5,
+      "context_knob": "height",
+      "selected_loss": 1.4146671562226705,
+      "pure_control_loss": 1.3544093498117482,
+      "correct_svd_label_loss": 1.414667156222671,
+      "selected_family_losses": [
+        0.00028769517781933383,
+        0.003665701716943076,
+        0.0023959390387833335,
+        0.2041176376751641,
+        1.204200182613961
+      ],
+      "pure_control_family_losses": [
+        0.0002838771317921544,
+        5.748447372008081e-06,
+        4.449242860567508e-06,
+        0.2039225506754708,
+        1.1501927243142527
+      ],
+      "correct_svd_label_family_losses": [
+        0.00028769517781933383,
+        0.003665701716943076,
+        0.0023959390387833335,
+        0.2041176376751641,
+        1.204200182613961
+      ],
+      "selected_orders": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "second_best_anchor_loss": 67.33540113221079,
+      "near_optimal_anchor_assignments": 1
+    }
+  ],
+  "minimum_selected_control_cosine": 0.984308328411911,
+  "state_count": 31,
+  "max_projection_error": 3.4025025060382753e-06,
+  "max_tail_energy": 1.0243941765827413e-11,
+  "max_shell_error": 1.989166690474775e-06,
+  "outside_default_box_states": 30,
+  "seconds": 2.474569816957228,
+  "verification": {
+    "random_candidate_order_and_sign_invariance": true,
+    "selections_checked": 150
+  },
+  "walks": {
+    "first_six": {
+      "comparisons": 150,
+      "correct_family": 150,
+      "correct_family_and_sign": 150,
+      "executed_moves": 30,
+      "executed_moves_with_correct_source_family_and_sign": 30
+    },
+    "last_three": {
+      "comparisons": 75,
+      "correct_family": 75,
+      "correct_family_and_sign": 75,
+      "executed_moves": 15,
+      "executed_moves_with_correct_source_family_and_sign": 15
+    },
+    "paths": [
+      {
+        "family": 1,
+        "knob": "lean",
+        "endpoint_pixel_error": 0.033410618565029984,
+        "endpoint_settings": [
+          14.005570897262729,
+          13.99655835906052,
+          19.750938493411898,
+          3.2011432245006426,
+          4.425150639859318
+        ],
+        "reference_endpoint_settings": [
+          14.0,
+          14.0,
+          19.75,
+          3.2,
+          4.426329067213144
+        ]
+      },
+      {
+        "family": 2,
+        "knob": "width",
+        "endpoint_pixel_error": 0.1017506646943316,
+        "endpoint_settings": [
+          14.00564911798489,
+          13.96870974810746,
+          19.774035344343666,
+          4.061268908818176,
+          -0.01077025756482782
+        ],
+        "reference_endpoint_settings": [
+          14.0,
+          14.0,
+          19.75,
+          4.064000000000001,
+          0.0
+        ]
+      },
+      {
+        "family": 3,
+        "knob": "cx",
+        "endpoint_pixel_error": 0.08773977738172542,
+        "endpoint_settings": [
+          13.568532265911607,
+          13.973353635640322,
+          19.768773933275114,
+          3.2079326752910635,
+          0.07337681316391859
+        ],
+        "reference_endpoint_settings": [
+          13.568,
+          14.0,
+          19.75,
+          3.2,
+          0.0
+        ]
+      },
+      {
+        "family": 4,
+        "knob": "cy",
+        "endpoint_pixel_error": 0.11555289300604174,
+        "endpoint_settings": [
+          13.98990485777738,
+          15.152872372402548,
+          19.761894268710144,
+          3.229904773216289,
+          0.009264187069784631
+        ],
+        "reference_endpoint_settings": [
+          14.0,
+          15.157615449711932,
+          19.75,
+          3.2,
+          0.0
+        ]
+      },
+      {
+        "family": 5,
+        "knob": "height",
+        "endpoint_pixel_error": 0.24332210024800338,
+        "endpoint_settings": [
+          14.001865756537276,
+          13.99710800115449,
+          22.08905321449929,
+          3.1271882371245447,
+          -0.0017435542739640863
+        ],
+        "reference_endpoint_settings": [
+          14.0,
+          14.0,
+          22.065230899423863,
+          3.2,
+          0.0
+        ]
+      }
+    ],
+    "probe_rule": "At each hop, fit four offset bundles along the moved family, select five axes jointly at the fresh 0.3 endpoint, reorient the frame, and repeat.",
+    "continuation": "Last three hops use the unchanged rule; new local templates are fitted at every hop, including these. Not frozen-template prediction.",
+    "observation_count": 225
+  },
+  "displayed_context_families": [
+    2,
+    1,
+    1,
+    5,
+    4
+  ]
+}
