@@ -1,0 +1,232 @@
+{
+  "method": {
+    "root": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "knob_order": [
+      "cx",
+      "cy",
+      "height",
+      "width",
+      "lean"
+    ],
+    "state_spans": [
+      0.1,
+      0.1,
+      0.15000000000000002,
+      0.27999999999999997,
+      4.5
+    ],
+    "state_span_definition": "10 percent of each default range width, centered at canonical root; position bounds explicitly extended",
+    "width_increment": 0.28,
+    "train_states": 51,
+    "training_maximum_changed_coordinates": 2,
+    "target": "finite width effect render(state + 0.28 width) - render(state)",
+    "model": "quadratic function of five normalized current state coordinates, including current width",
+    "coefficient_arrays": 21,
+    "training_images": 102,
+    "test_states_per_scale": 128,
+    "test_scales": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "seed": 20261014,
+    "precision": "float64 renderer coverage",
+    "fit": "symmetric axis and pair finite-difference stencil; no joint holdout data used for coefficients",
+    "comparisons": "one quadratic transport model, with its additive truncation and fixed-root ablations",
+    "scope": "known coordinates and true finite-width patterns; no learned coordinates, no SVD purity or tracking test",
+    "clipping": "none; signed and negative predictions are retained and measured"
+  },
+  "metrics": {
+    "0.25": {
+      "frozen": {
+        "pooled_error_fraction": 0.005773406460737108,
+        "median_state_error_fraction": 0.005485760980477951,
+        "worst_state_error_fraction": 0.00982921985683587,
+        "worst_pixel_absolute_error": 0.006013364030048152,
+        "states_with_negative_predicted_ink_change": 0,
+        "negative_prediction_L2": 0.0,
+        "minimum_prediction": 0.0,
+        "maximum_prediction": 0.14000000000000057
+      },
+      "additive": {
+        "pooled_error_fraction": 0.0723472550240706,
+        "median_state_error_fraction": 0.06283886068135228,
+        "worst_state_error_fraction": 0.12532219960283714,
+        "worst_pixel_absolute_error": 0.01749938357155778,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 0.4014040414753089,
+        "minimum_prediction": -0.01749938357155777,
+        "maximum_prediction": 0.15749938357155835
+      },
+      "interaction": {
+        "pooled_error_fraction": 0.07471558337285465,
+        "median_state_error_fraction": 0.06391829054819267,
+        "worst_state_error_fraction": 0.13183434796738364,
+        "worst_pixel_absolute_error": 0.02312734489061373,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 0.3285883875134348,
+        "minimum_prediction": -0.014987496158953317,
+        "maximum_prediction": 0.15499958461675156
+      }
+    },
+    "0.5": {
+      "frozen": {
+        "pooled_error_fraction": 0.120147478491401,
+        "median_state_error_fraction": 0.014250220288252298,
+        "worst_state_error_fraction": 0.4710867136982428,
+        "worst_pixel_absolute_error": 0.14000000000000057,
+        "states_with_negative_predicted_ink_change": 0,
+        "negative_prediction_L2": 0.0,
+        "minimum_prediction": 0.0,
+        "maximum_prediction": 0.14000000000000057
+      },
+      "additive": {
+        "pooled_error_fraction": 0.16545961647463098,
+        "median_state_error_fraction": 0.12568637992780968,
+        "worst_state_error_fraction": 0.41556127274920807,
+        "worst_pixel_absolute_error": 0.12684225905778815,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 0.8028080829506178,
+        "minimum_prediction": -0.03499876714311554,
+        "maximum_prediction": 0.1749987671431161
+      },
+      "interaction": {
+        "pooled_error_fraction": 0.16026614750682186,
+        "median_state_error_fraction": 0.13330261293921297,
+        "worst_state_error_fraction": 0.3343046099921957,
+        "worst_pixel_absolute_error": 0.09256552547248408,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 0.5261790024815944,
+        "minimum_prediction": -0.02654478990541325,
+        "maximum_prediction": 0.16654478990541347
+      }
+    },
+    "1.0": {
+      "frozen": {
+        "pooled_error_fraction": 0.4749476772726957,
+        "median_state_error_fraction": 0.35491074792767974,
+        "worst_state_error_fraction": 0.8544475296879229,
+        "worst_pixel_absolute_error": 0.14000000000000057,
+        "states_with_negative_predicted_ink_change": 0,
+        "negative_prediction_L2": 0.0,
+        "minimum_prediction": 0.0,
+        "maximum_prediction": 0.14000000000000057
+      },
+      "additive": {
+        "pooled_error_fraction": 0.41158696312654747,
+        "median_state_error_fraction": 0.3719047668373834,
+        "worst_state_error_fraction": 0.7607912822296766,
+        "worst_pixel_absolute_error": 0.2046707314209441,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 1.6056161659012356,
+        "minimum_prediction": -0.06999753428623108,
+        "maximum_prediction": 0.20999753428623164
+      },
+      "interaction": {
+        "pooled_error_fraction": 0.26350655739592177,
+        "median_state_error_fraction": 0.2802751057681046,
+        "worst_state_error_fraction": 0.435777561036572,
+        "worst_pixel_absolute_error": 0.11711669244293621,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 0.7205816755307805,
+        "minimum_prediction": -0.06575879917557345,
+        "maximum_prediction": 0.2010469722971728
+      }
+    },
+    "2.0": {
+      "frozen": {
+        "pooled_error_fraction": 0.8453172709270399,
+        "median_state_error_fraction": 0.9024289699524422,
+        "worst_state_error_fraction": 1.175904001186967,
+        "worst_pixel_absolute_error": 0.14000000000000057,
+        "states_with_negative_predicted_ink_change": 0,
+        "negative_prediction_L2": 0.0,
+        "minimum_prediction": 0.0,
+        "maximum_prediction": 0.14000000000000057
+      },
+      "additive": {
+        "pooled_error_fraction": 0.8410503110396816,
+        "median_state_error_fraction": 0.8007766706610295,
+        "worst_state_error_fraction": 1.3742705973274314,
+        "worst_pixel_absolute_error": 0.2799950685724627,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 3.211232331802471,
+        "minimum_prediction": -0.13999506857246216,
+        "maximum_prediction": 0.2799950685724627
+      },
+      "interaction": {
+        "pooled_error_fraction": 0.9289315203762061,
+        "median_state_error_fraction": 0.5548193779207538,
+        "worst_state_error_fraction": 2.3943647800239467,
+        "worst_pixel_absolute_error": 0.5536006839145575,
+        "states_with_negative_predicted_ink_change": 128,
+        "negative_prediction_L2": 5.601426022670308,
+        "minimum_prediction": -0.5536006839145575,
+        "maximum_prediction": 0.5327696742634298
+      }
+    }
+  },
+  "order_consistency": {
+    "states": 16,
+    "orders_per_state": 120,
+    "maximum_sequential_vs_direct_pixel_L2": 1.4446119491493816e-16,
+    "interpretation": "Internal order consistency of the learned quadratic rule; not evidence that its prediction matches the renderer."
+  },
+  "height_example": {
+    "height_step": 0.125,
+    "maximum_turn_degrees": 90.0,
+    "height_at_largest_turn": 20.0,
+    "minimum_turn_degrees": 0.0
+  },
+  "pictured_cases": {
+    "median_case_index": 104,
+    "worst_case_index": 42,
+    "image_scale": 0.1818409922852364,
+    "error_scale": 0.11711669244293621,
+    "pictured_coordinate_offsets": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.15000000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        -0.08827664237469435,
+        0.007137581333518029,
+        0.14052696973085405,
+        0.10982233062386512,
+        1.5313957370817661
+      ],
+      [
+        0.09922450911253691,
+        0.03295762985944748,
+        -0.06376809608191253,
+        -0.27106755726039405,
+        4.329708200879395
+      ]
+    ]
+  },
+  "verification": {
+    "train_shape": [
+      51,
+      5
+    ],
+    "all_test_arrays_finite": true,
+    "true_width_change_minimum": 0.0
+  }
+}

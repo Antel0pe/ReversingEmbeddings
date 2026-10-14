@@ -1,0 +1,1029 @@
+{
+  "method": {
+    "root": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "states": 5,
+    "neighbors": 256,
+    "seed": 20261012,
+    "windows": {
+      "larger": [
+        0.001,
+        0.0003,
+        0.0001
+      ],
+      "smaller": [
+        0.0001,
+        3e-05,
+        1e-05
+      ],
+      "finest": [
+        1e-05,
+        3e-06,
+        1e-06
+      ]
+    },
+    "heldout_radii": {
+      "larger": 3e-05,
+      "smaller": 3e-06,
+      "finest": 3e-07
+    },
+    "data_matrix": "seed-relative displacements normalized by their measured image length; fixed four radial refinements at each scale",
+    "second_moment": "C(r) = normalized_displacements.T @ normalized_displacements / 256; uncentered",
+    "extrapolation": "quadratic in radius for each second-moment entry; evaluate at zero; diagonalize",
+    "fitting": "only the three finite-radius matrices in each window",
+    "analytic_limit": "known exact directional derivatives on same fixed sampling rays; evaluation only",
+    "neighborhood": "same default-range-shaped rays, scaled to equal pixel-L2 shells; root position bounds extended on both sides",
+    "axis_metric": "maximum unit-vector difference to analytic limiting axes after sign/permutation alignment",
+    "subspace_metric": "worst relative projection error of true unit knob derivatives, checking both one-sided directions",
+    "caveats": [
+      "finite extrapolation requires a stable small-radius expansion; no unconditional proof from finite measurements",
+      "individual axes require eigenvalue separation; a convergent subspace need not have uniquely convergent axes",
+      "analytic evaluation does not make limiting SVD axes physical knobs",
+      "finite fixed ray sampling and its population limit are different objects"
+    ]
+  },
+  "analytic_limits": [
+    {
+      "name": "root",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        0.0
+      ],
+      "limiting_rank": 5,
+      "kink": false,
+      "top_eigenvalues": [
+        0.6683039169848866,
+        0.18523140692517037,
+        0.11247703894310035,
+        0.022764197347901922,
+        0.011223439798940943,
+        1.8783056789095504e-16,
+        1.3519034082840608e-16,
+        1.192615683342247e-16,
+        1.0018396861137182e-16,
+        9.635729371022666e-17
+      ],
+      "smallest_axis_eigenvalue_gap": 0.011223439798940756,
+      "knob_to_assigned_axis_cosines": {
+        "cx": 0.9995685059469755,
+        "cy": 0.9993121092057542,
+        "height": 0.9881542640543274,
+        "width": 0.9995094766720215,
+        "lean": 0.9999083892755445
+      },
+      "best_single_knob_errors": {
+        "cx": 0.02937349007065838,
+        "cy": 0.03708515059625287,
+        "height": 0.15346384079401462,
+        "width": 0.03131782308561199,
+        "lean": 0.013535621758391611
+      },
+      "worst_five_span_true_error": 5.31364425481376e-15,
+      "worst_full_limit_span_true_error": 5.31364425481376e-15
+    },
+    {
+      "name": "spread_02",
+      "settings": [
+        14.319654080271722,
+        14.458282725512982,
+        19.613157633319496,
+        3.2443996477127075,
+        30.47140932828188
+      ],
+      "limiting_rank": 5,
+      "kink": false,
+      "top_eigenvalues": [
+        0.7186711214163553,
+        0.14497567745977433,
+        0.11093810189770087,
+        0.014518649744701156,
+        0.010896449481468529,
+        2.1043594538966846e-16,
+        1.4315581622947365e-16,
+        1.0662598985901427e-16,
+        1.0229501490199827e-16,
+        8.741391667120452e-17
+      ],
+      "smallest_axis_eigenvalue_gap": 0.0036222002632326274,
+      "knob_to_assigned_axis_cosines": {
+        "cx": 0.9526856786395856,
+        "cy": 0.41309756933833097,
+        "height": 0.9614739396558029,
+        "width": 0.9703324995554234,
+        "lean": 0.9999540754407363
+      },
+      "best_single_knob_errors": {
+        "cx": 0.3039572300752726,
+        "cy": 0.4803292440277065,
+        "height": 0.274896095575673,
+        "width": 0.24177435824860366,
+        "lean": 0.009583684545214698
+      },
+      "worst_five_span_true_error": 7.354379472829089e-15,
+      "worst_full_limit_span_true_error": 7.354379472829089e-15
+    },
+    {
+      "name": "spread_03",
+      "settings": [
+        14.144182012975216,
+        14.543817611038685,
+        20.125158774480223,
+        2.4142609736323357,
+        20.35931628569961
+      ],
+      "limiting_rank": 5,
+      "kink": false,
+      "top_eigenvalues": [
+        0.6970924579981388,
+        0.1673378571648345,
+        0.11310589785071197,
+        0.013877656398284118,
+        0.008586130588030861,
+        2.0049420503862829e-16,
+        1.4880286673381433e-16,
+        1.0817011220726405e-16,
+        1.0547002995847464e-16,
+        1.0025284279914656e-16
+      ],
+      "smallest_axis_eigenvalue_gap": 0.005291525810253257,
+      "knob_to_assigned_axis_cosines": {
+        "cx": 0.9827000481764347,
+        "cy": 0.5865418494819099,
+        "height": 0.9909506690779757,
+        "width": 0.9927600903267924,
+        "lean": 0.9999370362103887
+      },
+      "best_single_knob_errors": {
+        "cx": 0.18520425295881526,
+        "cy": 0.5940302709937353,
+        "height": 0.13422656761577545,
+        "width": 0.12011412512414639,
+        "lean": 0.011221569176542032
+      },
+      "worst_five_span_true_error": 1.2558165950361713e-14,
+      "worst_full_limit_span_true_error": 1.2558165950361713e-14
+    },
+    {
+      "name": "lean_30",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        30.0
+      ],
+      "limiting_rank": 7,
+      "kink": true,
+      "top_eigenvalues": [
+        0.7197871447278976,
+        0.14540762311987296,
+        0.10931720029432979,
+        0.014626054077748056,
+        0.010856134584342937,
+        4.806180461909776e-06,
+        1.0370153467936618e-06,
+        1.9294372887555124e-16,
+        1.3294577927905488e-16,
+        9.554353254467414e-17
+      ],
+      "smallest_axis_eigenvalue_gap": 1.037015346600718e-06,
+      "knob_to_assigned_axis_cosines": {
+        "cx": 0.9556844897809766,
+        "cy": 0.4442173900080141,
+        "height": 0.9855381978814921,
+        "width": 0.9744297217689557,
+        "lean": 0.9999495445210782
+      },
+      "best_single_knob_errors": {
+        "cx": 0.29439285995430375,
+        "cy": 0.49019358728330525,
+        "height": 0.169453416951388,
+        "width": 0.2246924950532963,
+        "lean": 0.010045317918722511
+      },
+      "worst_five_span_true_error": 0.01475676680836284,
+      "worst_full_limit_span_true_error": 3.373712382017764e-13
+    },
+    {
+      "name": "smooth_generic",
+      "settings": [
+        14.43,
+        14.62,
+        19.73,
+        3.17,
+        17.3
+      ],
+      "limiting_rank": 5,
+      "kink": false,
+      "top_eigenvalues": [
+        0.6817015524463572,
+        0.17111728988476033,
+        0.11383971165385509,
+        0.020651804144274866,
+        0.012689641870752928,
+        3.327846813372708e-16,
+        1.5632160860096164e-16,
+        1.3480960561999284e-16,
+        1.1925642079770156e-16,
+        9.989510581646199e-17
+      ],
+      "smallest_axis_eigenvalue_gap": 0.007962162273521938,
+      "knob_to_assigned_axis_cosines": {
+        "cx": 0.9859327178897,
+        "cy": 0.6974927499737957,
+        "height": 0.9994911218363796,
+        "width": 0.996342857329028,
+        "lean": 0.9999298002249535
+      },
+      "best_single_knob_errors": {
+        "cx": 0.16714268094843132,
+        "cy": 0.6995305598191294,
+        "height": 0.031898234594652276,
+        "width": 0.08544536645967446,
+        "lean": 0.011848823658262207
+      },
+      "worst_five_span_true_error": 1.098469759022617e-14,
+      "worst_full_limit_span_true_error": 1.098469759022617e-14
+    }
+  ],
+  "measurements": [
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.001,
+      "max_axis_error": 3.210695557177724e-05,
+      "max_leading_five_axis_error": 3.210695557177724e-05,
+      "shell_relative_error": 9.493739128174639e-12,
+      "covariance_relative_error": 1.5412787972058352e-06,
+      "worst_five_span_true_error": 3.138618646179281e-05,
+      "worst_limit_rank_span_true_error": 3.138618646179281e-05
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0003,
+      "max_axis_error": 9.632102168288778e-06,
+      "max_leading_five_axis_error": 9.632102168288778e-06,
+      "shell_relative_error": 3.0649038862406996e-11,
+      "covariance_relative_error": 4.6242138414501805e-07,
+      "worst_five_span_true_error": 9.415873898266064e-06,
+      "worst_limit_rank_span_true_error": 9.415873898266064e-06
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0001,
+      "max_axis_error": 3.2107008796610422e-06,
+      "max_leading_five_axis_error": 3.2107008796610422e-06,
+      "shell_relative_error": 8.44364578256318e-11,
+      "covariance_relative_error": 1.5414381495442131e-07,
+      "worst_five_span_true_error": 3.1386266876931824e-06,
+      "worst_limit_rank_span_true_error": 3.1386266876931824e-06
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-05,
+      "max_axis_error": 9.6320152892469e-07,
+      "max_leading_five_axis_error": 9.6320152892469e-07,
+      "shell_relative_error": 3.059191788779003e-10,
+      "covariance_relative_error": 4.6247185606947705e-08,
+      "worst_five_span_true_error": 9.415850898846895e-07,
+      "worst_limit_rank_span_true_error": 9.415850898846895e-07
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-05,
+      "max_axis_error": 3.210086960514368e-07,
+      "max_leading_five_axis_error": 3.210086960514368e-07,
+      "shell_relative_error": 8.020646369288897e-10,
+      "covariance_relative_error": 1.5416255631281584e-08,
+      "worst_five_span_true_error": 3.138507083391014e-07,
+      "worst_limit_rank_span_true_error": 3.138507083391014e-07
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-06,
+      "max_axis_error": 9.624237248127865e-08,
+      "max_leading_five_axis_error": 9.624237248127865e-08,
+      "shell_relative_error": 2.4376245466584123e-09,
+      "covariance_relative_error": 4.6724227603701875e-09,
+      "worst_five_span_true_error": 9.414987469589577e-08,
+      "worst_limit_rank_span_true_error": 9.414987469589577e-08
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-06,
+      "max_axis_error": 3.246732622980955e-08,
+      "max_leading_five_axis_error": 3.246732622980955e-08,
+      "shell_relative_error": 8.378090332605836e-09,
+      "covariance_relative_error": 1.7867610314630285e-09,
+      "worst_five_span_true_error": 3.156930226598692e-08,
+      "worst_limit_rank_span_true_error": 3.156930226598692e-08
+    },
+    {
+      "state": "root",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-07,
+      "max_axis_error": 1.0721332218113162e-08,
+      "max_leading_five_axis_error": 1.0721332218113162e-08,
+      "shell_relative_error": 2.6240431272306353e-08,
+      "covariance_relative_error": 1.8284434418306212e-09,
+      "worst_five_span_true_error": 9.423519061920039e-09,
+      "worst_limit_rank_span_true_error": 9.423519061920039e-09
+    },
+    {
+      "state": "root",
+      "kind": "extrapolated_zero",
+      "window": "larger",
+      "radius": 0.0,
+      "max_axis_error": 4.380907101632646e-11,
+      "max_leading_five_axis_error": 4.380907101632646e-11,
+      "covariance_relative_error": 1.159576562312996e-11,
+      "worst_five_span_true_error": 5.61177680586781e-12,
+      "worst_limit_rank_span_true_error": 5.61177680586781e-12,
+      "heldout_radius": 3e-05,
+      "heldout_covariance_prediction_relative_error": 2.7301645661954744e-11,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.6666666666666667
+      ],
+      "min_eigenvalue": -2.397012533665017e-16
+    },
+    {
+      "state": "root",
+      "kind": "extrapolated_zero",
+      "window": "smaller",
+      "radius": 0.0,
+      "max_axis_error": 5.216632948343035e-10,
+      "max_leading_five_axis_error": 5.216632948343035e-10,
+      "covariance_relative_error": 1.355972541488633e-10,
+      "worst_five_span_true_error": 8.942195096591169e-11,
+      "worst_limit_rank_span_true_error": 8.942195096591169e-11,
+      "heldout_radius": 3e-06,
+      "heldout_covariance_prediction_relative_error": 3.275178166856453e-10,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.666666666666667
+      ],
+      "min_eigenvalue": -2.2041249989881435e-16
+    },
+    {
+      "state": "root",
+      "kind": "extrapolated_zero",
+      "window": "finest",
+      "radius": 0.0,
+      "max_axis_error": 6.073054921782862e-09,
+      "max_leading_five_axis_error": 6.073054921782862e-09,
+      "covariance_relative_error": 1.6247864375099146e-09,
+      "worst_five_span_true_error": 7.197832565690686e-10,
+      "worst_limit_rank_span_true_error": 7.197832565690686e-10,
+      "heldout_radius": 3e-07,
+      "heldout_covariance_prediction_relative_error": 2.1194470990148606e-09,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857142,
+        1.6666666666666665
+      ],
+      "min_eigenvalue": -2.4661779470490755e-16
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.001,
+      "max_axis_error": 3.233236238190686e-05,
+      "max_leading_five_axis_error": 3.233236238190686e-05,
+      "shell_relative_error": 1.0422107621366195e-11,
+      "covariance_relative_error": 1.4131260986255682e-06,
+      "worst_five_span_true_error": 2.862577523275812e-05,
+      "worst_limit_rank_span_true_error": 2.862577523275812e-05
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0003,
+      "max_axis_error": 9.699841437419876e-06,
+      "max_leading_five_axis_error": 9.699841437419876e-06,
+      "shell_relative_error": 2.2428503498872487e-11,
+      "covariance_relative_error": 4.239654712934213e-07,
+      "worst_five_span_true_error": 8.58788354391335e-06,
+      "worst_limit_rank_span_true_error": 8.58788354391335e-06
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0001,
+      "max_axis_error": 3.2333033796356437e-06,
+      "max_leading_five_axis_error": 3.2333033796356437e-06,
+      "shell_relative_error": 8.648393112764552e-11,
+      "covariance_relative_error": 1.4132458120986416e-07,
+      "worst_five_span_true_error": 2.8626445237948275e-06,
+      "worst_limit_rank_span_true_error": 2.8626445237948275e-06
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-05,
+      "max_axis_error": 9.699792616313287e-07,
+      "max_leading_five_axis_error": 9.699792616313287e-07,
+      "shell_relative_error": 2.7604429853056445e-10,
+      "covariance_relative_error": 4.2396520044369946e-08,
+      "worst_five_span_true_error": 8.588023703606295e-07,
+      "worst_limit_rank_span_true_error": 8.588023703606295e-07
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-05,
+      "max_axis_error": 3.23987002652474e-07,
+      "max_leading_five_axis_error": 3.23987002652474e-07,
+      "shell_relative_error": 9.409936163606858e-10,
+      "covariance_relative_error": 1.4130207027546075e-08,
+      "worst_five_span_true_error": 2.86290513075726e-07,
+      "worst_limit_rank_span_true_error": 2.86290513075726e-07
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-06,
+      "max_axis_error": 9.70799882395113e-08,
+      "max_leading_five_axis_error": 9.70799882395113e-08,
+      "shell_relative_error": 2.5724073982047457e-09,
+      "covariance_relative_error": 4.2443945308816134e-09,
+      "worst_five_span_true_error": 8.578435626471875e-08,
+      "worst_limit_rank_span_true_error": 8.578435626471875e-08
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-06,
+      "max_axis_error": 3.29610711313094e-08,
+      "max_leading_five_axis_error": 3.29610711313094e-08,
+      "shell_relative_error": 9.284318203128805e-09,
+      "covariance_relative_error": 1.7832496291943044e-09,
+      "worst_five_span_true_error": 2.8509319794261752e-08,
+      "worst_limit_rank_span_true_error": 2.8509319794261752e-08
+    },
+    {
+      "state": "spread_02",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-07,
+      "max_axis_error": 1.7410209404988275e-08,
+      "max_leading_five_axis_error": 1.7410209404988275e-08,
+      "shell_relative_error": 3.6003972692100206e-08,
+      "covariance_relative_error": 2.8663667318213673e-09,
+      "worst_five_span_true_error": 1.0536846444253222e-08,
+      "worst_limit_rank_span_true_error": 1.0536846444253222e-08
+    },
+    {
+      "state": "spread_02",
+      "kind": "extrapolated_zero",
+      "window": "larger",
+      "radius": 0.0,
+      "max_axis_error": 4.286374113015875e-11,
+      "max_leading_five_axis_error": 4.286374113015875e-11,
+      "covariance_relative_error": 1.4808666451185126e-11,
+      "worst_five_span_true_error": 3.0626639834183795e-11,
+      "worst_limit_rank_span_true_error": 3.0626639834183795e-11,
+      "heldout_radius": 3e-05,
+      "heldout_covariance_prediction_relative_error": 3.804867994440171e-11,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.6666666666666667
+      ],
+      "min_eigenvalue": -2.8096808182887566e-16
+    },
+    {
+      "state": "spread_02",
+      "kind": "extrapolated_zero",
+      "window": "smaller",
+      "radius": 0.0,
+      "max_axis_error": 2.541792712258956e-09,
+      "max_leading_five_axis_error": 2.541792712258956e-09,
+      "covariance_relative_error": 9.533312363472977e-11,
+      "worst_five_span_true_error": 1.6631795996177592e-10,
+      "worst_limit_rank_span_true_error": 1.6631795996177592e-10,
+      "heldout_radius": 3e-06,
+      "heldout_covariance_prediction_relative_error": 1.7812509975442866e-10,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.666666666666667
+      ],
+      "min_eigenvalue": -2.0882926594544892e-16
+    },
+    {
+      "state": "spread_02",
+      "kind": "extrapolated_zero",
+      "window": "finest",
+      "radius": 0.0,
+      "max_axis_error": 5.810623487161964e-09,
+      "max_leading_five_axis_error": 5.810623487161964e-09,
+      "covariance_relative_error": 1.7747356087283003e-09,
+      "worst_five_span_true_error": 4.133637181493568e-09,
+      "worst_limit_rank_span_true_error": 4.133637181493568e-09,
+      "heldout_radius": 3e-07,
+      "heldout_covariance_prediction_relative_error": 2.0072190085059616e-09,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857142,
+        1.6666666666666665
+      ],
+      "min_eigenvalue": -3.0896857264404746e-16
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.001,
+      "max_axis_error": 0.008781421915611856,
+      "max_leading_five_axis_error": 0.008781421915611856,
+      "shell_relative_error": 7.193134976546389e-12,
+      "covariance_relative_error": 0.012215455618632094,
+      "worst_five_span_true_error": 0.008674741453242657,
+      "worst_limit_rank_span_true_error": 0.008674741453242657
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0003,
+      "max_axis_error": 0.00689357887767993,
+      "max_leading_five_axis_error": 0.00689357887767993,
+      "shell_relative_error": 2.372790852689377e-11,
+      "covariance_relative_error": 0.009629827918845969,
+      "worst_five_span_true_error": 0.006802824226390718,
+      "worst_limit_rank_span_true_error": 0.006802824226390718
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0001,
+      "max_axis_error": 0.0032362318897025274,
+      "max_leading_five_axis_error": 0.0032362318897025274,
+      "shell_relative_error": 1.0667577932110817e-10,
+      "covariance_relative_error": 0.0029612075550314878,
+      "worst_five_span_true_error": 0.003002019101438247,
+      "worst_limit_rank_span_true_error": 0.003002019101438247
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-05,
+      "max_axis_error": 1.2533679948767232e-06,
+      "max_leading_five_axis_error": 1.2533679948767232e-06,
+      "shell_relative_error": 3.011527693885796e-10,
+      "covariance_relative_error": 4.763294496719929e-08,
+      "worst_five_span_true_error": 1.1547335738697157e-06,
+      "worst_limit_rank_span_true_error": 1.1547335738697157e-06
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-05,
+      "max_axis_error": 4.177750052125163e-07,
+      "max_leading_five_axis_error": 4.177750052125163e-07,
+      "shell_relative_error": 9.270422207663387e-10,
+      "covariance_relative_error": 1.5872461914911037e-08,
+      "worst_five_span_true_error": 3.8492317876648903e-07,
+      "worst_limit_rank_span_true_error": 3.8492317876648903e-07
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-06,
+      "max_axis_error": 1.2526379502019427e-07,
+      "max_leading_five_axis_error": 1.2526379502019427e-07,
+      "shell_relative_error": 2.804571130887723e-09,
+      "covariance_relative_error": 4.788486073111343e-09,
+      "worst_five_span_true_error": 1.1564930554918738e-07,
+      "worst_limit_rank_span_true_error": 1.1564930554918738e-07
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-06,
+      "max_axis_error": 4.101920635978783e-08,
+      "max_leading_five_axis_error": 4.101920635978783e-08,
+      "shell_relative_error": 1.0698402830300324e-08,
+      "covariance_relative_error": 1.6947181767955053e-09,
+      "worst_five_span_true_error": 3.836503621387265e-08,
+      "worst_limit_rank_span_true_error": 3.836503621387265e-08
+    },
+    {
+      "state": "spread_03",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-07,
+      "max_axis_error": 1.351993788442865e-08,
+      "max_leading_five_axis_error": 1.351993788442865e-08,
+      "shell_relative_error": 3.6426321292637454e-08,
+      "covariance_relative_error": 1.710585182329899e-09,
+      "worst_five_span_true_error": 1.1709717313618274e-08,
+      "worst_limit_rank_span_true_error": 1.1709717313618274e-08
+    },
+    {
+      "state": "spread_03",
+      "kind": "extrapolated_zero",
+      "window": "larger",
+      "radius": 0.0,
+      "max_axis_error": 0.0024361138495750632,
+      "max_leading_five_axis_error": 0.0024361138495750632,
+      "covariance_relative_error": 0.0015372100619716765,
+      "worst_five_span_true_error": 0.0023734147434919047,
+      "worst_limit_rank_span_true_error": 0.0023734147434919047,
+      "heldout_radius": 3e-05,
+      "heldout_covariance_prediction_relative_error": 0.0005518512852128018,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.6666666666666667
+      ],
+      "min_eigenvalue": -3.524334929140162e-05
+    },
+    {
+      "state": "spread_03",
+      "kind": "extrapolated_zero",
+      "window": "smaller",
+      "radius": 0.0,
+      "max_axis_error": 0.00015410053798856367,
+      "max_leading_five_axis_error": 0.00015410053798856367,
+      "covariance_relative_error": 0.00014100986126043883,
+      "worst_five_span_true_error": 0.0001428846210252319,
+      "worst_limit_rank_span_true_error": 0.0001428846210252319,
+      "heldout_radius": 3e-06,
+      "heldout_covariance_prediction_relative_error": 8.883621201492265e-05,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.666666666666667
+      ],
+      "min_eigenvalue": -1.7941912075298164e-15
+    },
+    {
+      "state": "spread_03",
+      "kind": "extrapolated_zero",
+      "window": "finest",
+      "radius": 0.0,
+      "max_axis_error": 4.842054528317736e-09,
+      "max_leading_five_axis_error": 4.842054528317736e-09,
+      "covariance_relative_error": 9.653371272222714e-10,
+      "worst_five_span_true_error": 4.12165177197532e-09,
+      "worst_limit_rank_span_true_error": 4.12165177197532e-09,
+      "heldout_radius": 3e-07,
+      "heldout_covariance_prediction_relative_error": 1.3112296175296265e-09,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857142,
+        1.6666666666666665
+      ],
+      "min_eigenvalue": -2.4155269032830937e-16
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.001,
+      "max_axis_error": 0.0013580611256814345,
+      "max_leading_five_axis_error": 4.475848317626943e-05,
+      "shell_relative_error": 6.412204101025054e-12,
+      "covariance_relative_error": 1.4950638801078624e-06,
+      "worst_five_span_true_error": 0.01473827911592855,
+      "worst_limit_rank_span_true_error": 1.2657559509121267e-05
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0003,
+      "max_axis_error": 0.00040764091257959,
+      "max_leading_five_axis_error": 1.3426541746712067e-05,
+      "shell_relative_error": 2.326228099036598e-11,
+      "covariance_relative_error": 4.4852031191259156e-07,
+      "worst_five_span_true_error": 0.014751219681596747,
+      "worst_limit_rank_span_true_error": 3.799652669516067e-06
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0001,
+      "max_axis_error": 0.00013589062956128575,
+      "max_leading_five_axis_error": 4.475302457087027e-06,
+      "shell_relative_error": 9.034084591519331e-11,
+      "covariance_relative_error": 1.4950530499104774e-07,
+      "worst_five_span_true_error": 0.014754917688553446,
+      "worst_limit_rank_span_true_error": 1.2667615108531716e-06
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-05,
+      "max_axis_error": 4.076600271662856e-05,
+      "max_leading_five_axis_error": 1.342653067564212e-06,
+      "shell_relative_error": 2.8520341643911706e-10,
+      "covariance_relative_error": 4.48525092373747e-08,
+      "worst_five_span_true_error": 0.014756212058718337,
+      "worst_limit_rank_span_true_error": 3.79993093259713e-07
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-05,
+      "max_axis_error": 1.3584118183772011e-05,
+      "max_leading_five_axis_error": 4.478727510631848e-07,
+      "shell_relative_error": 1.4028367356644367e-09,
+      "covariance_relative_error": 1.4956548588159477e-08,
+      "worst_five_span_true_error": 0.014756581885962575,
+      "worst_limit_rank_span_true_error": 1.2652156006619808e-07
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-06,
+      "max_axis_error": 4.058455083882787e-06,
+      "max_leading_five_axis_error": 1.351849614745321e-07,
+      "shell_relative_error": 2.5147297577632344e-09,
+      "covariance_relative_error": 4.4837093554244335e-09,
+      "worst_five_span_true_error": 0.014756711368232454,
+      "worst_limit_rank_span_true_error": 3.79143745075916e-08
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-06,
+      "max_axis_error": 1.4868504763219187e-06,
+      "max_leading_five_axis_error": 4.855260205652294e-08,
+      "shell_relative_error": 8.605979928688612e-09,
+      "covariance_relative_error": 1.5214121374822682e-09,
+      "worst_five_span_true_error": 0.014756748210045611,
+      "worst_limit_rank_span_true_error": 2.252058990791484e-08
+    },
+    {
+      "state": "lean_30",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-07,
+      "max_axis_error": 4.6348469087325086e-06,
+      "max_leading_five_axis_error": 1.0760617168631331e-08,
+      "shell_relative_error": 3.1665112976142495e-08,
+      "covariance_relative_error": 2.077407604260886e-09,
+      "worst_five_span_true_error": 0.014756761153869142,
+      "worst_limit_rank_span_true_error": 6.799276998519575e-08
+    },
+    {
+      "state": "lean_30",
+      "kind": "extrapolated_zero",
+      "window": "larger",
+      "radius": 0.0,
+      "max_axis_error": 2.2242005525696225e-08,
+      "max_leading_five_axis_error": 2.605351836599981e-10,
+      "covariance_relative_error": 1.3102558880755158e-11,
+      "worst_five_span_true_error": 0.014756766808651655,
+      "worst_limit_rank_span_true_error": 4.130431623903877e-10,
+      "heldout_radius": 3e-05,
+      "heldout_covariance_prediction_relative_error": 1.764052128196552e-11,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.6666666666666667
+      ],
+      "min_eigenvalue": -2.384274672128593e-16
+    },
+    {
+      "state": "lean_30",
+      "kind": "extrapolated_zero",
+      "window": "smaller",
+      "radius": 0.0,
+      "max_axis_error": 2.2806745178108282e-07,
+      "max_leading_five_axis_error": 7.571888828600105e-10,
+      "covariance_relative_error": 1.2015703893429568e-10,
+      "worst_five_span_true_error": 0.014756766800773813,
+      "worst_limit_rank_span_true_error": 3.1966906168981868e-09,
+      "heldout_radius": 3e-06,
+      "heldout_covariance_prediction_relative_error": 1.860376805902643e-10,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.666666666666667
+      ],
+      "min_eigenvalue": -2.231315986076581e-16
+    },
+    {
+      "state": "lean_30",
+      "kind": "extrapolated_zero",
+      "window": "finest",
+      "radius": 0.0,
+      "max_axis_error": 2.103096611596752e-06,
+      "max_leading_five_axis_error": 7.258339281443573e-09,
+      "covariance_relative_error": 1.0212214714898861e-09,
+      "worst_five_span_true_error": 0.014756766605439522,
+      "worst_limit_rank_span_true_error": 3.069619912005052e-08,
+      "heldout_radius": 3e-07,
+      "heldout_covariance_prediction_relative_error": 2.089396835812253e-09,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857142,
+        1.6666666666666665
+      ],
+      "min_eigenvalue": -2.9909169497717804e-16
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.001,
+      "max_axis_error": 3.193989534550981e-05,
+      "max_leading_five_axis_error": 3.193989534550981e-05,
+      "shell_relative_error": 1.1036727087798681e-11,
+      "covariance_relative_error": 1.5980503938486943e-06,
+      "worst_five_span_true_error": 3.08165708432687e-05,
+      "worst_limit_rank_span_true_error": 3.08165708432687e-05
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0003,
+      "max_axis_error": 9.582532305706896e-06,
+      "max_leading_five_axis_error": 9.582532305706896e-06,
+      "shell_relative_error": 4.001532438735467e-11,
+      "covariance_relative_error": 4.794535263071844e-07,
+      "worst_five_span_true_error": 9.245358120743742e-06,
+      "worst_limit_rank_span_true_error": 9.245358120743742e-06
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 0.0001,
+      "max_axis_error": 3.1942416713180693e-06,
+      "max_leading_five_axis_error": 3.1942416713180693e-06,
+      "shell_relative_error": 8.825762343178667e-11,
+      "covariance_relative_error": 1.5982131847220152e-07,
+      "worst_five_span_true_error": 3.0818238588781206e-06,
+      "worst_limit_rank_span_true_error": 3.0818238588781206e-06
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-05,
+      "max_axis_error": 9.582584982812806e-07,
+      "max_leading_five_axis_error": 9.582584982812806e-07,
+      "shell_relative_error": 5.082805287770498e-10,
+      "covariance_relative_error": 4.7947106356018635e-08,
+      "worst_five_span_true_error": 9.245491433000988e-07,
+      "worst_limit_rank_span_true_error": 9.245491433000988e-07
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-05,
+      "max_axis_error": 3.194703960628272e-07,
+      "max_leading_five_axis_error": 3.194703960628272e-07,
+      "shell_relative_error": 1.043775954556736e-09,
+      "covariance_relative_error": 1.5993774248739902e-08,
+      "worst_five_span_true_error": 3.081838127053674e-07,
+      "worst_limit_rank_span_true_error": 3.081838127053674e-07
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-06,
+      "max_axis_error": 9.599056651211986e-08,
+      "max_leading_five_axis_error": 9.599056651211986e-08,
+      "shell_relative_error": 3.3724153469805174e-09,
+      "covariance_relative_error": 4.811801899918327e-09,
+      "worst_five_span_true_error": 9.244888812270348e-08,
+      "worst_limit_rank_span_true_error": 9.244888812270348e-08
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 1e-06,
+      "max_axis_error": 3.1795785381305794e-08,
+      "max_leading_five_axis_error": 3.1795785381305794e-08,
+      "shell_relative_error": 7.529658119231897e-09,
+      "covariance_relative_error": 1.6364903199076337e-09,
+      "worst_five_span_true_error": 3.09070112530066e-08,
+      "worst_limit_rank_span_true_error": 3.09070112530066e-08
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "measured",
+      "window": "shared",
+      "radius": 3e-07,
+      "max_axis_error": 2.1480430395583503e-08,
+      "max_leading_five_axis_error": 2.1480430395583503e-08,
+      "shell_relative_error": 2.9743759455413965e-08,
+      "covariance_relative_error": 1.8585227604482612e-09,
+      "worst_five_span_true_error": 1.0909216279629501e-08,
+      "worst_limit_rank_span_true_error": 1.0909216279629501e-08
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "extrapolated_zero",
+      "window": "larger",
+      "radius": 0.0,
+      "max_axis_error": 6.36742358970022e-11,
+      "max_leading_five_axis_error": 6.36742358970022e-11,
+      "covariance_relative_error": 1.1000548701204773e-11,
+      "worst_five_span_true_error": 1.6546942613276206e-11,
+      "worst_limit_rank_span_true_error": 1.6546942613276206e-11,
+      "heldout_radius": 3e-05,
+      "heldout_covariance_prediction_relative_error": 2.109616829957083e-11,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.6666666666666667
+      ],
+      "min_eigenvalue": -3.4220156438012827e-16
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "extrapolated_zero",
+      "window": "smaller",
+      "radius": 0.0,
+      "max_axis_error": 3.53085054683295e-10,
+      "max_leading_five_axis_error": 3.53085054683295e-10,
+      "covariance_relative_error": 1.0622209667733557e-10,
+      "worst_five_span_true_error": 1.3610599794037316e-10,
+      "worst_limit_rank_span_true_error": 1.3610599794037316e-10,
+      "heldout_radius": 3e-06,
+      "heldout_covariance_prediction_relative_error": 2.297080582643124e-10,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857143,
+        1.666666666666667
+      ],
+      "min_eigenvalue": -1.9835408746999658e-16
+    },
+    {
+      "state": "smooth_generic",
+      "kind": "extrapolated_zero",
+      "window": "finest",
+      "radius": 0.0,
+      "max_axis_error": 4.63084998258835e-09,
+      "max_leading_five_axis_error": 4.63084998258835e-09,
+      "covariance_relative_error": 1.015563994054251e-09,
+      "worst_five_span_true_error": 1.1670549769880975e-09,
+      "worst_limit_rank_span_true_error": 1.1670549769880975e-09,
+      "heldout_radius": 3e-07,
+      "heldout_covariance_prediction_relative_error": 2.115425771309024e-09,
+      "lagrange_weights": [
+        0.047619047619047616,
+        -0.7142857142857142,
+        1.6666666666666665
+      ],
+      "min_eigenvalue": -2.324600447101859e-16
+    }
+  ],
+  "root_seed_sensitivity": {
+    "other_seed": 20261013,
+    "maximum_axis_difference": 0.05528426524960031,
+    "maximum_other_axis_outside_reference_span": 9.167154046154964e-15
+  }
+}

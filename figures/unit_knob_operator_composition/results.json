@@ -1,0 +1,165 @@
+{
+  "method": {
+    "root": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "knob_order": [
+      "cx",
+      "cy",
+      "height",
+      "width",
+      "lean"
+    ],
+    "unit": [
+      0.05,
+      0.05,
+      0.07500000000000001,
+      0.13999999999999999,
+      2.25
+    ],
+    "unit_definition": "5 percent of each default knob range width; original control units, not equal image distances",
+    "requested_width_increment": 0.28,
+    "seed": 20261015,
+    "geometry": "two finite widening parallelogram bands, four vertices each; current five control values retained",
+    "operator_count": 5,
+    "operator_class": "two-channel homogeneous 3x3 affine maps, recomputed using the current state",
+    "source": "known renderer geometry supplied by hand; not learned from axis observations or pixels",
+    "continuous_update": "transform current band vertices and update only the changed state coordinate",
+    "raster_comparison": "same maps repeatedly bilinearly resample two 28x28 band maps; band labels and state supplied",
+    "rasterizer": "independent band coverage routine, matching the original 16-subrow convention; no render calls in updates",
+    "targets": "64 Sobol integer-count combinations; every knob changes by 1 to 4 signed units",
+    "default_box": "position bounds explicitly extended around canonical root; all sampled strokes positive and unclipped",
+    "precision": "float64"
+  },
+  "geometric": {
+    "targets": 64,
+    "block_orders_per_target": 120,
+    "compared_endpoints": 7680,
+    "maximum_relative_error": 3.647052652197771e-14,
+    "maximum_pixel_absolute_error": 1.0103029524088925e-14,
+    "maximum_state_difference": 3.552713678800501e-15,
+    "maximum_order_disagreement_pixel_L2": 3.0830847917440814e-14
+  },
+  "raster_only": {
+    "forward": {
+      "pooled_error_fraction": 0.6224340581607027,
+      "median_error_fraction": 0.6425173374073156,
+      "worst_error_fraction": 0.7198413188742893,
+      "maximum_pixel_absolute_error": 0.10039162310623834
+    },
+    "reverse": {
+      "pooled_error_fraction": 0.623490386665346,
+      "median_error_fraction": 0.6437948043937249,
+      "worst_error_fraction": 0.7208485082235828,
+      "maximum_pixel_absolute_error": 0.10055890405024986
+    },
+    "interleaved": {
+      "pooled_error_fraction": 0.6227693330679089,
+      "median_error_fraction": 0.6428753301286814,
+      "worst_error_fraction": 0.7199415059727942,
+      "maximum_pixel_absolute_error": 0.10042215083676603
+    }
+  },
+  "raster_order_disagreement_fraction": 0.004223313136598735,
+  "raster_subdivision": [
+    {
+      "subdivisions": 1,
+      "pooled_error_fraction": 0.6284931493016397,
+      "median_error_fraction": 0.6504256211870261,
+      "worst_error_fraction": 0.6698442422925689,
+      "maximum_pixel_absolute_error": 0.0991667356622265
+    },
+    {
+      "subdivisions": 4,
+      "pooled_error_fraction": 0.6418946558482019,
+      "median_error_fraction": 0.6656740007149489,
+      "worst_error_fraction": 0.6915897613615068,
+      "maximum_pixel_absolute_error": 0.1039813208522285
+    },
+    {
+      "subdivisions": 16,
+      "pooled_error_fraction": 0.6447704535550101,
+      "median_error_fraction": 0.6693998427342982,
+      "worst_error_fraction": 0.696719065641764,
+      "maximum_pixel_absolute_error": 0.10496253375115971
+    }
+  ],
+  "previous_quadratic_subdivision": [
+    {
+      "subdivisions": 1,
+      "pooled_error_fraction": 0.26350655739592177,
+      "median_error_fraction": 0.28027510576810466,
+      "worst_error_fraction": 0.435777561036572,
+      "maximum_pixel_absolute_error": 0.11711669244293621,
+      "maximum_difference_from_direct": 1.723080731590396e-16
+    },
+    {
+      "subdivisions": 2,
+      "pooled_error_fraction": 0.26350655739592177,
+      "median_error_fraction": 0.28027510576810466,
+      "worst_error_fraction": 0.435777561036572,
+      "maximum_pixel_absolute_error": 0.11711669244293621,
+      "maximum_difference_from_direct": 2.7172673108246535e-16
+    },
+    {
+      "subdivisions": 4,
+      "pooled_error_fraction": 0.26350655739592177,
+      "median_error_fraction": 0.28027510576810455,
+      "worst_error_fraction": 0.435777561036572,
+      "maximum_pixel_absolute_error": 0.11711669244293621,
+      "maximum_difference_from_direct": 4.192999369869105e-16
+    },
+    {
+      "subdivisions": 8,
+      "pooled_error_fraction": 0.26350655739592177,
+      "median_error_fraction": 0.2802751057681047,
+      "worst_error_fraction": 0.43577756103657206,
+      "maximum_pixel_absolute_error": 0.11711669244293621,
+      "maximum_difference_from_direct": 8.131773896279444e-16
+    },
+    {
+      "subdivisions": 16,
+      "pooled_error_fraction": 0.2635065573959218,
+      "median_error_fraction": 0.2802751057681047,
+      "worst_error_fraction": 0.4357775610365719,
+      "maximum_pixel_absolute_error": 0.11711669244293618,
+      "maximum_difference_from_direct": 1.477780103595189e-15
+    }
+  ],
+  "visible_trace": {
+    "axes": [
+      2,
+      2,
+      4,
+      0,
+      4,
+      1,
+      3,
+      2,
+      2
+    ],
+    "endpoint": [
+      14.05,
+      14.05,
+      20.049999999999997,
+      3.3400000000000003,
+      4.5
+    ],
+    "geometric": {
+      "pooled_error_fraction": 4.6037069354660935e-15,
+      "median_error_fraction": 4.779612945870934e-15,
+      "worst_error_fraction": 6.595746497612327e-15,
+      "maximum_pixel_absolute_error": 1.9984014443252818e-15
+    },
+    "raster": {
+      "pooled_error_fraction": 0.42162413792040404,
+      "median_error_fraction": 0.44626530517391866,
+      "worst_error_fraction": 0.5797393886513196,
+      "maximum_pixel_absolute_error": 0.09308413187838156
+    }
+  }
+}
