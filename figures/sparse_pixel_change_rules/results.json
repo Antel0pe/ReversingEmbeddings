@@ -1,0 +1,122 @@
+{
+  "method": {
+    "root": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "primary": "sparse interval overlap edits; no learned model, no whole-image generation inside the update",
+    "coordinate_input": "five true coordinates; fixed other controls as declared in each slice",
+    "image_input": "784 values only; closed-form row/cumulative sums recover needed boundaries",
+    "index_convention": "zero-based row and column; flat index = 28*row + column",
+    "units": "width +1 horizontal pixel; height +1 total pixel; lean +1 degree",
+    "support_threshold_float64": 1e-10,
+    "support_threshold_float32": 1e-06,
+    "scope": "positive unclipped parallelogram strokes, width-height and width-lean slices; original 16-subrow integration",
+    "assumptions": "known stroke/coverage structure and valid source images; no general-image or membership claim",
+    "float32": "separate default-storage sensitivity check against float32 renderer outputs"
+  },
+  "width_height": {
+    "source_states": 177,
+    "routes": {
+      "coordinates64": {
+        "updates": 354,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 1.1102230246251565e-16,
+        "maximum_pixel_L2_error": 2.220446049250313e-16,
+        "support_threshold": 1e-10
+      },
+      "image64": {
+        "updates": 354,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 1.7763568394002505e-15,
+        "maximum_pixel_L2_error": 5.117423669367222e-15,
+        "support_threshold": 1e-10
+      },
+      "image32": {
+        "updates": 354,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 7.969485549264022e-08,
+        "maximum_pixel_L2_error": 2.469251374308779e-07,
+        "support_threshold": 1e-06
+      }
+    },
+    "maximum_image64_coordinate_recovery_error": [
+      0.0,
+      0.0,
+      3.552713678800501e-15,
+      1.7763568394002505e-15,
+      0.0
+    ]
+  },
+  "width_lean": {
+    "source_states": 198,
+    "routes": {
+      "coordinates64": {
+        "updates": 396,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 2.6645352591003757e-15,
+        "maximum_pixel_L2_error": 6.030054506389724e-15,
+        "support_threshold": 1e-10
+      },
+      "image64": {
+        "updates": 396,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 7.105427357601002e-15,
+        "maximum_pixel_L2_error": 2.3505285713944558e-14,
+        "support_threshold": 1e-10
+      },
+      "image32": {
+        "updates": 396,
+        "false_indices": 0,
+        "missed_indices": 0,
+        "cases_with_wrong_indices": 0,
+        "maximum_pixel_error": 1.005062264525236e-07,
+        "maximum_pixel_L2_error": 4.167476733467786e-07,
+        "support_threshold": 1e-06
+      }
+    },
+    "maximum_image64_coordinate_recovery_error": [
+      3.552713678800501e-15,
+      0.0,
+      0.0,
+      2.886579864025407e-15,
+      2.1316282072803006e-14
+    ]
+  },
+  "hidden_masks": {
+    "steps": 6,
+    "maximum_hidden_mask_pixel_error": 0.0,
+    "method": "Update the other prospective mask using an outer-product correction; refresh the changed knob own prospective edge profile."
+  },
+  "image_only_chains": {
+    "width_height": {
+      "schedules": 6,
+      "total_updates": 24,
+      "maximum_pixel_error": 1.5543122344752192e-15,
+      "false_indices": 0,
+      "missed_indices": 0,
+      "maximum_endpoint_order_disagreement": 2.4424906541753444e-15
+    },
+    "width_lean": {
+      "schedules": 66,
+      "total_updates": 792,
+      "maximum_pixel_error": 5.329070518200751e-15,
+      "false_indices": 0,
+      "missed_indices": 0,
+      "maximum_endpoint_order_disagreement": 6.661338147750939e-15
+    }
+  }
+}

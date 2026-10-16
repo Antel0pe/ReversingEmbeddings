@@ -180,9 +180,11 @@ solver stopping threshold from introducing artificial changes in the
 second-moment expansion. Maximum relative shell deviation is 3.65e-8 at the
 smallest checked scales. Float64 arithmetic is used throughout this check.
 
-Quadratic extrapolation can produce tiny negative eigenvalues outside the
-leading signal block. Their values are saved; they are not additional physical
-directions or negative variances in a measured covariance.
+Quadratic extrapolation need not preserve positive semidefiniteness. In the
+stable windows, negative eigenvalues are about 1e-16 from roundoff. The bad
+larger Spread 03 window instead produces a negative eigenvalue of -3.52e-5,
+an additional warning that its extrapolated matrix is unsuitable. All values
+are saved; they are not negative variances in a measured second moment.
 
 ## Tilted boundary exception
 

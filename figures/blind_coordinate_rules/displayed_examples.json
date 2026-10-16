@@ -1,0 +1,41 @@
+[
+  {
+    "case": "height_width",
+    "evaluation_index": 481,
+    "source_numeric_coordinates": [
+      0.46593861719593405,
+      0.30064731147140267
+    ],
+    "action_numeric_control": 1,
+    "relative_change_error": 5.0208136574555526e-15,
+    "false_indices": 0,
+    "missed_indices": 0
+  },
+  {
+    "case": "width_lean",
+    "evaluation_index": 232,
+    "source_numeric_coordinates": [
+      0.2296138026751578,
+      0.5193931125104427
+    ],
+    "action_numeric_control": 0,
+    "relative_change_error": 0.013284963897082763,
+    "false_indices": 4,
+    "missed_indices": 0
+  },
+  {
+    "case": "all_five",
+    "evaluation_index": 799,
+    "source_numeric_coordinates": [
+      0.16701354794204235,
+      0.1850985936820507,
+      0.21831106524914504,
+      0.8125253789126873,
+      0.6798922578804195
+    ],
+    "action_numeric_control": 3,
+    "relative_change_error": 0.5763470980079018,
+    "false_indices": 64,
+    "missed_indices": 0
+  }
+]

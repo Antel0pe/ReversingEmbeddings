@@ -1,0 +1,14 @@
+{
+  "selection": "largest absolute false pixel change over width/lean held-out updates",
+  "evaluation_index": 253,
+  "original_output_channel": 155,
+  "true_source_value": 1.0,
+  "true_target_value": 1.0,
+  "predicted_false_change": 0.01893119294124357,
+  "cell_indices": [
+    49,
+    16
+  ],
+  "max_zoom_pixel_error": 0.021010094755000264,
+  "zoom_points": 16641
+}

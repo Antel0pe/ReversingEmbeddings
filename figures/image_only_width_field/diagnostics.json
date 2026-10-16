@@ -1,0 +1,44 @@
+{
+  "tiny_tilted_patch": {
+    "maximum_width_pattern_difference_from_first": 3.394356428648328e-05,
+    "prediction": {
+      "pooled_relative_L2": 9.872227876037374e-14,
+      "median_relative_L2": 9.349056605052588e-14,
+      "worst_relative_L2": 1.6718960785776478e-13,
+      "worst_pixel_absolute_error": 2.4450927393893096e-15,
+      "worst_image_L2_error": 4.911441031705238e-15,
+      "states_under_1e_12_pixel_error": 101,
+      "test_states": 101
+    }
+  },
+  "narrow_lean": {
+    "maximum_width_pattern_difference_from_first": 0.0,
+    "prediction": {
+      "pooled_relative_L2": 1.6715441654825622e-13,
+      "median_relative_L2": 1.6715097891435824e-13,
+      "worst_relative_L2": 1.6723471437453322e-13,
+      "worst_pixel_absolute_error": 8.448103328007051e-16,
+      "worst_image_L2_error": 5.22608482420498e-15,
+      "states_under_1e_12_pixel_error": 101,
+      "test_states": 101
+    }
+  },
+  "dense_lean_sweep": {
+    "fixed_settings": [
+      14.0,
+      14.0,
+      19.75,
+      3.8,
+      0.0
+    ],
+    "lean_bounds": [
+      0.0,
+      5.0
+    ],
+    "step_degrees": 0.001,
+    "first_failed_sample_degrees": 0.553,
+    "previous_passing_sample_degrees": 0.552,
+    "first_changed_update_index_set_degrees": 0.553,
+    "extrapolation_beyond_training_lean": 0.5
+  }
+}
