@@ -1,0 +1,337 @@
+{
+  "reference": [
+    14.5,
+    14.5,
+    19.75,
+    3.2,
+    20.0
+  ],
+  "actions": [
+    {
+      "row": "original",
+      "title": "Reference",
+      "physical_settings": [
+        14.5,
+        14.5,
+        19.75,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        19.777568396859934,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "original",
+      "title": "Horizontal center +0.40 px",
+      "physical_settings": [
+        14.9,
+        14.5,
+        19.75,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        20.177568396859932,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.40000000000000036,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "original",
+      "title": "Vertical center +0.40 px",
+      "physical_settings": [
+        14.5,
+        14.9,
+        19.75,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        5.025,
+        24.775,
+        19.923156490566413,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.40000000000000036,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "original",
+      "title": "Height +0.70 px",
+      "physical_settings": [
+        14.5,
+        14.5,
+        20.45,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.275,
+        24.725,
+        19.777568396859934,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.6999999999999993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "original",
+      "title": "Width +1.20 px",
+      "physical_settings": [
+        14.5,
+        14.5,
+        19.75,
+        4.4,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        19.777568396859934,
+        4.4,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.0,
+        1.2000000000000002,
+        0.0
+      ]
+    },
+    {
+      "row": "original",
+      "title": "Lean +12 degrees",
+      "physical_settings": [
+        14.5,
+        14.5,
+        19.75,
+        3.2,
+        32.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        23.56060560268525,
+        3.2,
+        0.6248693519093275
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        12.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Reference",
+      "physical_settings": [
+        14.5,
+        14.5,
+        19.75,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        19.777568396859934,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Line anchor +0.40 px",
+      "physical_settings": [
+        14.899999999999999,
+        14.5,
+        19.75,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        20.177568396859932,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.3999999999999986,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Top moves down 0.70 px",
+      "physical_settings": [
+        14.372610418006829,
+        14.85,
+        19.05,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        5.324999999999999,
+        24.375,
+        19.777568396859934,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        -0.12738958199317096,
+        0.34999999999999964,
+        -0.6999999999999993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Bottom moves down 0.70 px",
+      "physical_settings": [
+        14.372610418006829,
+        14.85,
+        20.45,
+        3.2,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        25.075,
+        19.777568396859934,
+        3.2,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        -0.12738958199317096,
+        0.34999999999999964,
+        0.6999999999999993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Width +1.20 px",
+      "physical_settings": [
+        14.5,
+        14.5,
+        19.75,
+        4.4,
+        20.0
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        19.777568396859934,
+        4.4,
+        0.36397023426620234
+      ],
+      "physical_change": [
+        0.0,
+        0.0,
+        0.0,
+        1.2000000000000002,
+        0.0
+      ]
+    },
+    {
+      "row": "derived",
+      "title": "Slope increases",
+      "physical_settings": [
+        14.1,
+        14.5,
+        19.75,
+        3.2,
+        21.383147123523194
+      ],
+      "derived_settings": [
+        4.625,
+        24.375,
+        19.777568396859934,
+        3.2,
+        0.3915564411627541
+      ],
+      "physical_change": [
+        -0.40000000000000036,
+        0.0,
+        0.0,
+        0.0,
+        1.3831471235231945
+      ]
+    }
+  ],
+  "saddle": {
+    "height_range": [
+      19.1,
+      19.9
+    ],
+    "width_range": [
+      2.2,
+      3.8
+    ],
+    "fixed_center": [
+      14.0,
+      14.0
+    ],
+    "fixed_lean": 0.0,
+    "test_states": 1024,
+    "independent_pixel_patterns": 3,
+    "singular_values": [
+      4.8814102371935535,
+      0.8097010993893026,
+      0.6217863184967806
+    ],
+    "largest_image_L2_error": 1.028380596404813e-14,
+    "largest_pixel_error": 4.218847493575595e-15,
+    "missing_corner_pattern_norm": 0.6400000000000026,
+    "pattern_weight_equation": "third weight = first weight times second weight"
+  }
+}

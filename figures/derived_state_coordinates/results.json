@@ -1,0 +1,299 @@
+{
+  "states": 24972,
+  "counts": {
+    "canonical_root": 1,
+    "cap_boundary_-1e-09": 2016,
+    "cap_boundary_0.0": 2016,
+    "cap_boundary_1e-09": 2016,
+    "cumulative_boundary_tie": 1501,
+    "five_level_lattice": 3125,
+    "near_box_faces": 1024,
+    "side_boundary_-1e-09": 3059,
+    "side_boundary_0.0": 3059,
+    "side_boundary_1e-09": 3059,
+    "sobol": 4096
+  },
+  "knob_order": [
+    "cx",
+    "cy",
+    "height",
+    "width",
+    "lean"
+  ],
+  "parameter_units": [
+    "px",
+    "px",
+    "px",
+    "px",
+    "degrees"
+  ],
+  "float64_recovery_worst_absolute": [
+    5.329070518200751e-15,
+    1.7763568394002505e-15,
+    3.552713678800501e-15,
+    2.886579864025407e-15,
+    2.842170943040401e-14
+  ],
+  "float64_image_roundtrip": {
+    "worst_pixel": 8.548717289613705e-15,
+    "worst_image_L2": 2.57179410363891e-14
+  },
+  "examples": [
+    {
+      "name": "root",
+      "settings": [
+        14.0,
+        14.0,
+        19.75,
+        3.2,
+        0.0
+      ],
+      "width": 3.1999999999999993,
+      "upper_ink": 5.999999999999998,
+      "lower_ink": 2.7999999999999994,
+      "recovered_center": 14.0,
+      "ordinary_centroid": 13.999999999999998,
+      "row_centers": [
+        14.0,
+        14.0
+      ],
+      "chosen_boundaries": [
+        14,
+        14
+      ]
+    },
+    {
+      "name": "tilted",
+      "settings": [
+        14.8,
+        14.63,
+        20.2,
+        2.1,
+        33.0
+      ],
+      "width": 2.1000000000000014,
+      "upper_ink": 3.0869999999999997,
+      "lower_ink": 3.633000000000002,
+      "recovered_center": 14.63,
+      "ordinary_centroid": 14.628712871287126,
+      "row_centers": [
+        17.48205335990572,
+        12.286792614325636
+      ],
+      "chosen_boundaries": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "thin_corner",
+      "settings": [
+        15.0,
+        14.0,
+        19.0,
+        1.8,
+        35.0
+      ],
+      "width": 1.7999999999999972,
+      "upper_ink": 2.6999999999999957,
+      "lower_ink": 0.9000000000000004,
+      "recovered_center": 14.0,
+      "ordinary_centroid": 14.000000000000007,
+      "row_centers": [
+        17.450726383733983,
+        11.849066078056305
+      ],
+      "chosen_boundaries": [
+        17,
+        12
+      ]
+    }
+  ],
+  "ordinary_vertical_centroid_worst_error": 0.006404158197733878,
+  "measured_min_chosen_boundary_clearance": 0.09589567907293317,
+  "proven_common_interval_half_width_lower_bound": 0.5717777164641986,
+  "single_knob_updates": {
+    "cx": {
+      "states": 2048,
+      "worst_pixel": 1.176836406102666e-14,
+      "worst_image_L2": 4.387732513980024e-14,
+      "recovered_other_knob_drift": 3.907985046680551e-14
+    },
+    "cy": {
+      "states": 2048,
+      "worst_pixel": 9.769962616701378e-15,
+      "worst_image_L2": 4.182729560698536e-14,
+      "recovered_other_knob_drift": 4.973799150320701e-14
+    },
+    "height": {
+      "states": 2048,
+      "worst_pixel": 1.0436096431476471e-14,
+      "worst_image_L2": 4.200592088073989e-14,
+      "recovered_other_knob_drift": 4.263256414560601e-14
+    },
+    "width": {
+      "states": 2048,
+      "worst_pixel": 9.992007221626409e-15,
+      "worst_image_L2": 4.3724749371605304e-14,
+      "recovered_other_knob_drift": 3.552713678800501e-14
+    },
+    "lean": {
+      "states": 2048,
+      "worst_pixel": 9.992007221626409e-15,
+      "worst_image_L2": 3.763113609470189e-14,
+      "recovered_other_knob_drift": 8.881784197001252e-15
+    }
+  },
+  "joint_updates": {
+    "states": 2048,
+    "worst_pixel": 9.992007221626409e-15,
+    "worst_image_L2": 3.9212135792083754e-14
+  },
+  "five_step_order_checks": [
+    {
+      "order": [
+        "cx",
+        "cy",
+        "height",
+        "width",
+        "lean"
+      ],
+      "worst_pixel": 1.2878587085651816e-14,
+      "worst_image_L2": 6.40362033632451e-14
+    },
+    {
+      "order": [
+        "lean",
+        "width",
+        "height",
+        "cy",
+        "cx"
+      ],
+      "worst_pixel": 1.2545520178264269e-14,
+      "worst_image_L2": 5.5733340972220955e-14
+    },
+    {
+      "order": [
+        "lean",
+        "height",
+        "cx",
+        "width",
+        "cy"
+      ],
+      "worst_pixel": 1.7985612998927536e-14,
+      "worst_image_L2": 8.656225396791004e-14
+    },
+    {
+      "order": [
+        "cy",
+        "width",
+        "cx",
+        "height",
+        "lean"
+      ],
+      "worst_pixel": 1.4765966227514582e-14,
+      "worst_image_L2": 4.740867627225273e-14
+    }
+  ],
+  "identity": {
+    "worst_pixel": 1.0436096431476471e-14,
+    "worst_image_L2": 4.18792272406215e-14
+  },
+  "inverse": {
+    "worst_pixel": 1.3655743202889425e-14,
+    "worst_image_L2": 5.357253196269514e-14
+  },
+  "physical_coordinate_alignment": {
+    "max_abs_error_after_joint_action": 3.197442310920451e-14
+  },
+  "float32_recovery_worst_absolute": [
+    4.907058581693491e-08,
+    3.193016873126453e-08,
+    1.2293966378251753e-07,
+    6.929039964020944e-08,
+    4.218595570648631e-07
+  ],
+  "float32_image_roundtrip": {
+    "worst_pixel": 1.444714143872261e-07,
+    "worst_image_L2": 4.092254532393576e-07
+  },
+  "float32_joint_updates": {
+    "worst_pixel": 1.2397187032497925e-07,
+    "worst_image_L2": 3.5574003321788445e-07
+  },
+  "float32_nonidentifiability_example": {
+    "first_settings": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "second_settings": [
+      14.0,
+      14.000000001,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "images_bitwise_identical": true,
+    "mathematical_vertical_center_difference": 1.000000082740371e-09,
+    "common_vertical_increment": 0.125,
+    "target_images_bitwise_identical": false,
+    "largest_target_pixel_difference": 1.000000082740371e-09
+  },
+  "coordinate_response_columns": {
+    "q_order": [
+      "top",
+      "bottom",
+      "intercept",
+      "width",
+      "slope"
+    ],
+    "physical_knob_order": [
+      "cx",
+      "cy",
+      "height",
+      "width",
+      "lean"
+    ],
+    "root_jacobian": [
+      [
+        0,
+        1,
+        -0.5,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0.5,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0.24434609527920614
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0.017453292519943295
+      ]
+    ]
+  },
+  "elapsed_seconds": 13.76996285887435
+}

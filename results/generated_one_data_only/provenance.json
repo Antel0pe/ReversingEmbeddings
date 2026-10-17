@@ -1,0 +1,16 @@
+{
+  "python": "3.12.3",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "source_sha256": {
+    "experiments/generated_one_data_only/HINGE_PROTOCOL.md": "87ffa79cbe6dff51304370779da15737b95400e55b478e2d52624cad32294bf7",
+    "experiments/generated_one_data_only/PROTOCOL.md": "d85a4de3172ec5cabb478c84f2ab461015fd1a817d8b4693313ea2cb0b6be00c",
+    "experiments/generated_one_data_only/README.md": "a8ead8f0af07280eabf899b14d3d8a1384373a0a78c49e4ab911baee6d6a558b",
+    "experiments/generated_one_data_only/check.py": "6adc45f3a5d06da158504504c1b1770238ac42f7e0da721812a8ba35858e5028",
+    "experiments/generated_one_data_only/crease.py": "5708d66aba4ddf3f1cf61ad621e1d9177493aefaeda979439732313f3d723e4b",
+    "experiments/generated_one_data_only/figure.py": "9b6889e26868e00d921cc5526f69a02b580a1eb06bcd19cbe9d7d8e61002904b",
+    "experiments/generated_one_data_only/hinge_run.py": "c77132659bb16d17c08c4f127473c981408e7ff4d6de92cdd5b78836fbb42560",
+    "experiments/generated_one_data_only/learn.py": "d83bcf7020353f9198f5afaead796f7caa7e506790c1ddb2de6930d27c276c22",
+    "experiments/generated_one_data_only/run.py": "fff993b8d227f4e89ef43d01fec635360d42e90c2bcb21188cc22c0415e8d4ad"
+  }
+}

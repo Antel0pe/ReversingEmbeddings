@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "model_sha256": "f2ff9e2cc9b1e23eb36acd55c7384c925c2f9a46ccff554cfdbabc00cdb8af74",
+  "checks": {
+    "float64": {
+      "n": 11908,
+      "max_pixel": 1.2212453270876722e-14,
+      "max_image_l2": 4.9894571484034335e-14,
+      "worst_l2_index": 5691,
+      "coordinate_errors_in_evaluation_order": [
+        3.552713678800501e-15,
+        3.552713678800501e-15,
+        6.661338147750939e-16,
+        1.0658141036401503e-14,
+        3.552713678800501e-15
+      ],
+      "intervention_copies": [
+        {
+          "max_pixel": 7.105427357601002e-15,
+          "max_image_l2": 3.25491612707854e-14,
+          "worst_l2_index": 354
+        },
+        {
+          "max_pixel": 9.992007221626409e-15,
+          "max_image_l2": 4.076295377309454e-14,
+          "worst_l2_index": 123
+        },
+        {
+          "max_pixel": 1.0880185641326534e-14,
+          "max_image_l2": 4.6422227037616216e-14,
+          "worst_l2_index": 123
+        },
+        {
+          "max_pixel": 8.215650382226158e-15,
+          "max_image_l2": 4.0842407324473625e-14,
+          "worst_l2_index": 32
+        },
+        {
+          "max_pixel": 7.549516567451064e-15,
+          "max_image_l2": 3.781509373483638e-14,
+          "worst_l2_index": 32
+        }
+      ]
+    },
+    "float32": {
+      "n": 11908,
+      "max_pixel": 9.230441433416559e-08,
+      "max_image_l2": 3.216895922506213e-07,
+      "worst_l2_index": 10331,
+      "coordinate_errors_in_evaluation_order": [
+        2.6616303827609045e-08,
+        5.364417798858767e-08,
+        3.8779834898861054e-09,
+        4.22920418685635e-08,
+        5.587935447692871e-08
+      ],
+      "intervention_copies": [
+        {
+          "max_pixel": 7.481905139883338e-08,
+          "max_image_l2": 2.3149155176763764e-07,
+          "worst_l2_index": 476
+        },
+        {
+          "max_pixel": 7.630041798378784e-08,
+          "max_image_l2": 2.6050296237121826e-07,
+          "worst_l2_index": 321
+        },
+        {
+          "max_pixel": 6.589222689701302e-08,
+          "max_image_l2": 2.049972199880879e-07,
+          "worst_l2_index": 488
+        },
+        {
+          "max_pixel": 6.165484434106361e-08,
+          "max_image_l2": 2.09446760071117e-07,
+          "worst_l2_index": 488
+        },
+        {
+          "max_pixel": 6.44344820832643e-08,
+          "max_image_l2": 2.3065655070765345e-07,
+          "worst_l2_index": 42
+        }
+      ]
+    },
+    "invalid_average_residual": {
+      "max_pixel": 0.5869428217411041,
+      "max_image_l2": 2.9920653357349685,
+      "worst_l2_index": 0
+    },
+    "fresh_oracle": {
+      "max_pixel": 8.881784197001252e-15,
+      "max_image_l2": 3.759699106104592e-14,
+      "worst_l2_index": 349
+    },
+    "fresh_decoded_domain": {
+      "max_pixel": 1.354472090042691e-14,
+      "max_image_l2": 5.4372755278684315e-14,
+      "worst_l2_index": 906
+    }
+  }
+}

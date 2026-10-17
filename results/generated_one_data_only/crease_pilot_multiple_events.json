@@ -1,0 +1,150 @@
+{
+  "local_radius_fraction": 0.0001,
+  "training_images": 512,
+  "test_images": 1024,
+  "crease": {
+    "max_pixel": 4.708054998414646e-06,
+    "max_image_l2": 6.658508534457556e-06,
+    "median_image_l2": 5.614060668030565e-07,
+    "mean_image_l2": 7.675265241857845e-07,
+    "worst_pixel_index": 386,
+    "worst_l2_index": 386,
+    "out_of_coverage_pixels": 35319
+  },
+  "ordinary_cubic": {
+    "max_pixel": 9.065261324936458e-06,
+    "max_image_l2": 1.2905878533143362e-05,
+    "median_image_l2": 2.228731219353805e-06,
+    "mean_image_l2": 2.6197409163424947e-06,
+    "worst_pixel_index": 653,
+    "worst_l2_index": 653,
+    "out_of_coverage_pixels": 36926
+  },
+  "normal_standardized": [
+    0.12234141863714962,
+    0.038451092771062685,
+    -3.0024863646354484e-05,
+    0.16638078450897273,
+    0.9776868232697253
+  ],
+  "offset_standardized": 0.039829152067584625,
+  "normal_in_supplied_units": [
+    2090.7993559707697,
+    654.2724108072948,
+    -0.3493166954037337,
+    1043.6652124573175,
+    382.74436074167664
+  ],
+  "offset_in_supplied_units": 49655.417998975056,
+  "training_plane_loss": 0.17102902659326183,
+  "optimization": [
+    {
+      "loss": 20.936170445357202,
+      "evaluations": 38
+    },
+    {
+      "loss": 21.686403539288698,
+      "evaluations": 46
+    },
+    {
+      "loss": 21.954967060645835,
+      "evaluations": 26
+    },
+    {
+      "loss": 0.17102904727439663,
+      "evaluations": 33
+    },
+    {
+      "loss": 0.17102902659326183,
+      "evaluations": 26
+    },
+    {
+      "loss": 0.17400652930706564,
+      "evaluations": 37
+    },
+    {
+      "loss": 0.17102902659335767,
+      "evaluations": 24
+    },
+    {
+      "loss": 21.411531565966342,
+      "evaluations": 120
+    },
+    {
+      "loss": 21.791933309405213,
+      "evaluations": 120
+    },
+    {
+      "loss": 0.17103303882444687,
+      "evaluations": 32
+    },
+    {
+      "loss": 21.809420003830294,
+      "evaluations": 120
+    },
+    {
+      "loss": 21.72315610679687,
+      "evaluations": 33
+    },
+    {
+      "loss": 1.5444785743309015,
+      "evaluations": 46
+    },
+    {
+      "loss": 21.6384031366727,
+      "evaluations": 66
+    },
+    {
+      "loss": 0.17105092399380722,
+      "evaluations": 32
+    },
+    {
+      "loss": 21.800453755553253,
+      "evaluations": 120
+    },
+    {
+      "loss": 0.17216406717863797,
+      "evaluations": 54
+    },
+    {
+      "loss": 21.638446399712336,
+      "evaluations": 120
+    },
+    {
+      "loss": 22.033038216806244,
+      "evaluations": 55
+    },
+    {
+      "loss": 0.2250879774005957,
+      "evaluations": 49
+    },
+    {
+      "loss": 0.1710308462566362,
+      "evaluations": 31
+    }
+  ],
+  "model_sha256": "c0c6fe092ad4d13b84934c1760144a960d77050b07d7d891e68fd4cc273f6bf5",
+  "coefficient_count": 60368,
+  "source_sha256": {
+    "experiments/generated_one_data_only/hinge_run.py": "e51838daedcd7f17e69bae2968b09494d021a49d328c50bc753c61b548de3b6d",
+    "experiments/generated_one_data_only/crease.py": "5708d66aba4ddf3f1cf61ad621e1d9177493aefaeda979439732313f3d723e4b",
+    "experiments/generated_one_data_only/HINGE_PROTOCOL.md": "a2c197d58572362ee8402674c8e82d61495c00f7184b8c109f7b9a1434f54790"
+  },
+  "elapsed_seconds": 2.6934193619526923,
+  "historical_replay_configuration": {
+    "seed": 2901,
+    "center": [
+      14.43,
+      14.615,
+      19.73,
+      3.17,
+      17.3
+    ],
+    "radius_fraction": 0.0001,
+    "training_count": 512,
+    "test_count": 1024,
+    "dtype": "float64",
+    "learner": "crease.fit_crease",
+    "note": "Historical pilot source hashes are retained as history; current crease.py is the same learner."
+  }
+}

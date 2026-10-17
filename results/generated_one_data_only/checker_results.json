@@ -1,0 +1,60 @@
+{
+  "reproduction_pass": true,
+  "full_family_explanation_recovered": false,
+  "information_audit": {
+    "learn.py": [
+      "itertools",
+      "numpy",
+      "scipy"
+    ],
+    "crease.py": [
+      "numpy",
+      "scipy",
+      "learn"
+    ]
+  },
+  "checks": {
+    "images_only": {
+      "recomputed_states": 66,
+      "prediction_agreement": {
+        "max_pixel": 9.829359548518823e-13,
+        "max_image_l2": 2.7817599424657825e-12
+      },
+      "full_stored_errors": {
+        "max_pixel": 1.2473147933068534,
+        "max_image_l2": 3.9872165883641473
+      },
+      "scientific_accuracy_goal_met": false
+    },
+    "supplied_coordinates": {
+      "recomputed_states": 66,
+      "prediction_agreement": {
+        "max_pixel": 2.3647750424515834e-14,
+        "max_image_l2": 9.508764226363146e-14
+      },
+      "full_stored_errors": {
+        "max_pixel": 2.3857225141422944,
+        "max_image_l2": 8.587423648973035
+      },
+      "scientific_accuracy_goal_met": false
+    },
+    "local_crease": {
+      "supplied_coordinates_float64": {
+        "max_pixel": 1.021405182655144e-14,
+        "max_image_l2": 6.875397695758517e-14
+      },
+      "images_only_float64": {
+        "max_pixel": 2.785388586445947e-10,
+        "max_image_l2": 4.489366160876932e-10
+      },
+      "supplied_coordinates_float32": {
+        "max_pixel": 7.705850768591205e-08,
+        "max_image_l2": 1.712393305050221e-07
+      },
+      "images_only_float32": {
+        "max_pixel": 6.291328402685537e-08,
+        "max_image_l2": 1.586520744341213e-07
+      }
+    }
+  }
+}
