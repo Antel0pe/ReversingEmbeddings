@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+<defs>
+ <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#708091"/></marker>
+ <marker id="p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#e56035"/></marker>
+ <pattern id="right" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 12 30 H 44" fill="none" stroke="#708091" stroke-width="2" marker-end="url(#a)"/></pattern>
+ <pattern id="up" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 30 48 V 16" fill="none" stroke="#708091" stroke-width="2" marker-end="url(#a)"/></pattern>
+</defs>
+<rect width="1100" height="620" fill="#faf9f6"/>
+<g font-family="Arial, sans-serif" fill="#243343">
+<text x="40" y="48" font-size="28" font-weight="700">Vector fields can have exact corners</text>
+<text x="40" y="79" font-size="17">Small arrows: local movement rule. Orange line: one path following that rule.</text>
+<text x="40" y="126" font-size="21" font-weight="700">1. A sharp turn</text>
+<text x="580" y="126" font-size="21" font-weight="700">2. A rectangular diversion</text>
+<rect x="40" y="150" width="480" height="330" rx="8" fill="#edf1f5"/>
+<rect x="280" y="150" width="240" height="330" fill="#e4eee9"/>
+<rect x="40" y="150" width="240" height="330" fill="url(#right)"/>
+<rect x="280" y="150" width="240" height="330" fill="url(#up)"/>
+<path d="M 280 150 V 480" stroke="#9ea9b2" stroke-width="2" stroke-dasharray="5 6"/>
+<path d="M 85 420 H 280 V 200" fill="none" stroke="#e56035" stroke-width="7" stroke-linejoin="miter" marker-end="url(#p)"/>
+<circle cx="85" cy="420" r="7" fill="#e56035"/>
+<circle cx="280" cy="420" r="8" fill="#faf9f6" stroke="#e56035" stroke-width="3"/>
+<text x="70" y="183" font-size="16">x &lt; 0: move right</text>
+<text x="299" y="183" font-size="16">x ≥ 0: move up</text>
+<text x="42" y="515" font-size="17">The direction jumps at x = 0.</text>
+<text x="42" y="542" font-size="17">The orange path has a precise 90° corner.</text>
+<rect x="580" y="150" width="480" height="330" rx="8" fill="#edf1f5"/>
+<rect x="580" y="150" width="480" height="330" fill="url(#right)"/>
+<rect x="700" y="270" width="120" height="210" fill="#e4eee9"/>
+<rect x="700" y="270" width="120" height="210" fill="url(#up)"/>
+<path d="M 700 270 H 820 V 480 M 700 270 V 480" fill="none" stroke="#9ea9b2" stroke-width="2" stroke-dasharray="5 6"/>
+<rect x="840" y="315" width="150" height="115" rx="5" fill="#d9d3c8" stroke="#aaa291"/>
+<text x="865" y="379" font-size="18">obstacle</text>
+<path d="M 615 420 H 700 V 270 H 1020" fill="none" stroke="#e56035" stroke-width="7" stroke-linejoin="miter" marker-end="url(#p)"/>
+<circle cx="615" cy="420" r="7" fill="#e56035"/>
+<circle cx="700" cy="420" r="8" fill="#faf9f6" stroke="#e56035" stroke-width="3"/>
+<circle cx="700" cy="270" r="8" fill="#faf9f6" stroke="#e56035" stroke-width="3"/>
+<text x="582" y="515" font-size="17">Inside the green region: move up.</text>
+<text x="582" y="542" font-size="17">At its top edge and elsewhere: move right.</text>
+<text x="40" y="591" font-size="15" fill="#647282">At a corner, velocity switches abruptly; the path solves the movement rule on each open segment.</text>
+</g>
+</svg>
