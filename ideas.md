@@ -121,3 +121,7 @@ finding minimum dimension of data
 
 identifying knobs in mnist connected group of 1s then trying if any combination of those knobs get to the disconnected segments
 - interpolation change vs pixel translation type changes for connecting disconnected segmentsa sim
+
+similar distances + angles for same knob families from root
+- can we use this to find missing data?
+- is this a consistent quality in real data?

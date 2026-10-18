@@ -1,0 +1,12 @@
+{
+  "all_frozen_hashes_match": true,
+  "forbidden_read_checks": [
+    "grey_ones.py",
+    "derived_state_coordinates.py",
+    "svd_blind_intermediates_labels.npz"
+  ],
+  "approved_archive_contains_no_settings_or_derivatives": true,
+  "maximum_relative_finite_difference_error": 1.3600376994615491e-08,
+  "maximum_relative_response_spectrum_error": 4.788441770083647e-15,
+  "explicit_pixel_mask_formula_matches_saved_coordinates": true
+}

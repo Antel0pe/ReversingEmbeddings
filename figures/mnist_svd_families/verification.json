@@ -1,0 +1,16 @@
+{
+  "Generated cloud": {
+    "test_images_reconstructed": 1135,
+    "maximum_metric_discrepancy": 4.440892098500626e-16,
+    "minimum_refit_subspace_cosine": 0.9999999999999987,
+    "saved_nearest_anchor_assignments_verified": true,
+    "orthonormal_bases_verified": true
+  },
+  "MNIST": {
+    "test_images_reconstructed": 1135,
+    "maximum_metric_discrepancy": 8.881784197001252e-16,
+    "minimum_refit_subspace_cosine": 0.9999999999999986,
+    "saved_nearest_anchor_assignments_verified": true,
+    "orthonormal_bases_verified": true
+  }
+}

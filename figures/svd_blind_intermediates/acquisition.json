@@ -1,0 +1,11 @@
+{
+  "seed": 2026101801,
+  "frame_neighbors": 192,
+  "image_shell_radius": 0.0001,
+  "maximum_relative_shell_error": 1.4509082824076813e-10,
+  "initial_families": "Existing distance/angle assignments; copied images and bases only",
+  "simulation_prior": "Sampling rays use the simulator control scaling; no analytic derivatives used",
+  "local_scope": "Independent small joint perturbations around the 66 existing branch states",
+  "broad_scope": "Independent full-range samples, plus corners/faces and joint paths",
+  "labels": "Kept outside the approved discovery input archive"
+}

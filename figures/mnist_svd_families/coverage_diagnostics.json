@@ -1,0 +1,90 @@
+{
+  "Generated cloud": {
+    "inside_count": 971,
+    "outside_count": 164,
+    "inside_median_relative": [
+      0.8861803283853752,
+      0.6974844155782157,
+      0.5085017288502843,
+      0.2681986587957241,
+      0.13292190830478734,
+      0.056273677643354426,
+      0.02756985237439446
+    ],
+    "outside_median_relative": [
+      0.9020764021410048,
+      0.7024864515668742,
+      0.550593716729671,
+      0.35436449102669093,
+      0.16801182194104303,
+      0.08785968967708341,
+      0.04804962526189961
+    ],
+    "confidence_filter": [
+      {
+        "minimum_all_axis_cosine": 0.6,
+        "edges": 55,
+        "triangles": 8,
+        "axis_closure": 0.7
+      },
+      {
+        "minimum_all_axis_cosine": 0.7,
+        "edges": 11,
+        "triangles": 0,
+        "axis_closure": null
+      },
+      {
+        "minimum_all_axis_cosine": 0.8,
+        "edges": 1,
+        "triangles": 0,
+        "axis_closure": null
+      }
+    ],
+    "entire_frame_triangle_closures": 53,
+    "descriptor_anchor_count": 64
+  },
+  "MNIST": {
+    "inside_count": 725,
+    "outside_count": 410,
+    "inside_median_relative": [
+      0.7412693959166137,
+      0.6610670353237307,
+      0.5906187482278648,
+      0.5027831362073557,
+      0.4157103758788046,
+      0.3344086711679595,
+      0.2854089082661392
+    ],
+    "outside_median_relative": [
+      0.9072071659917762,
+      0.8237329019944828,
+      0.7312006804586126,
+      0.6114502884531916,
+      0.5054914452591001,
+      0.41807418259746737,
+      0.3572401056604525
+    ],
+    "confidence_filter": [
+      {
+        "minimum_all_axis_cosine": 0.6,
+        "edges": 11,
+        "triangles": 2,
+        "axis_closure": 0.8
+      },
+      {
+        "minimum_all_axis_cosine": 0.7,
+        "edges": 0,
+        "triangles": 0,
+        "axis_closure": null
+      },
+      {
+        "minimum_all_axis_cosine": 0.8,
+        "edges": 0,
+        "triangles": 0,
+        "axis_closure": null
+      }
+    ],
+    "entire_frame_triangle_closures": 44,
+    "descriptor_anchor_count": 64
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "image_size": [
+    1600,
+    1200
+  ],
+  "cards": 2,
+  "generated_displayed_start_contexts": [
+    "root",
+    "width walk hop 6",
+    "width walk hop 9"
+  ],
+  "mnist_displayed_anchors": [
+    0,
+    44
+  ],
+  "generated_width_walk_correct_steps": 9,
+  "card2_display": {
+    "generated_families": [
+      "lean",
+      "width",
+      "height"
+    ],
+    "mnist_families": [
+      "F1",
+      "F2",
+      "F3"
+    ],
+    "rows": [
+      "root",
+      "changed start"
+    ]
+  },
+  "root_relative_curves": {
+    "widths": [
+      2.4,
+      3.2,
+      4.6
+    ],
+    "lean_range_degrees": [
+      -10,
+      35
+    ],
+    "samples": 361,
+    "distance": "L2 from each width own zero-lean image",
+    "angle": "acute angle of root-to-image displacement to that width zero-lean derivative; undefined at zero lean",
+    "purpose": "illustration of consistency; original matcher uses cross-path profiles"
+  },
+  "larger_examples": {
+    "lean": [
+      -10,
+      35
+    ],
+    "width": [
+      1.8,
+      4.6
+    ],
+    "cx": [
+      9,
+      19
+    ],
+    "cy": [
+      10,
+      18
+    ],
+    "height": [
+      12,
+      25
+    ],
+    "purpose": "known-control illustrations only, not scored family continuation; some extend default ranges"
+  },
+  "sources": [
+    "figures/generated_one_cross_path_patterns",
+    "figures/mnist_svd_families"
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "reading": 2,
+    "physical_column": 3,
+    "constant": 3.186121985865866,
+    "slope": 0.8024311655127924,
+    "test_rmse": 0.08371003959172518,
+    "test_max_error": 0.4151978807265335
+  },
+  {
+    "reading": 3,
+    "physical_column": 0,
+    "constant": 14.505967623702464,
+    "slope": 0.2615850478010919,
+    "test_rmse": 0.13216997195297656,
+    "test_max_error": 0.4375753306067871
+  }
+]

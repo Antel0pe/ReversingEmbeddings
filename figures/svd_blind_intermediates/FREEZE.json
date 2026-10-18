@@ -1,0 +1,10 @@
+{
+  "physical_evaluation_has_run": false,
+  "sha256": {
+    "experiments/svd_blind_intermediates/discover.py": "3fa6f6ca948107a40ccf122ba14c8115a21d248fef918ba374b7e611dc6f2d43",
+    "experiments/svd_blind_intermediates/PROTOCOL.md": "d1d2a2bc678813347833bf496ced56770f535f7e57f69c6f7b1c28aceca5b3c1",
+    "figures/svd_blind_intermediates/observations.npz": "1eb02040015e3661c544cbd1976b7b48d92144769b60815fe58dc8d7e6688afb",
+    "figures/svd_blind_intermediates/discovered_models.npz": "88ad1a7bacd616b14955b104a06b9b3ca37b7a64e42ab5cb0e1b564146a91840",
+    "figures/svd_blind_intermediates/blind_results.json": "57bea7f40dd8be07f239d27cd6186bef1d84946b0c13bf913166c355c5c5a7b3"
+  }
+}

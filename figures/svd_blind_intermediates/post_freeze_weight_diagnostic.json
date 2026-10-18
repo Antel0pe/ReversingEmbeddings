@@ -1,0 +1,11 @@
+{
+  "criterion": "Pixel has positive ink in fewer than 1 percent of training images",
+  "squared_pixel_weight_share": [
+    0.9999975370524492,
+    0.9999961501513468,
+    0.9999526835170641,
+    0.9996387776963571,
+    0.9997949318046542
+  ],
+  "not_used_for_discovery": true
+}
