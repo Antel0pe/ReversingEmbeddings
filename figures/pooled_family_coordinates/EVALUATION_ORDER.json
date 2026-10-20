@@ -1,0 +1,15 @@
+{
+  "sequence": [
+    "protocol",
+    "primary blind fit",
+    "primary freeze",
+    "blind rotation and acquisition-quality diagnostics",
+    "balanced blind fit",
+    "balanced freeze",
+    "both freezes verified",
+    "physical labels opened",
+    "physical readouts and geometric benchmarks evaluated",
+    "both freezes verified again"
+  ],
+  "physical_results_used_to_refit_discovery": false
+}

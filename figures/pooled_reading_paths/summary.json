@@ -1,0 +1,447 @@
+{
+  "192_random_source_0": {
+    "shared_reading_ticks": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 2.430528792184058e-05,
+        "max_distance_error": 0.001817527800179972,
+        "median_shape_error": 4.4106451946576755e-09,
+        "max_shape_error": 1.2009038188404787e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 5.3756612274569005e-09
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 2.430594572070366e-05,
+        "max_distance_error": 0.001817319465275737,
+        "median_shape_error": 4.4106729345989343e-08,
+        "max_shape_error": 9.234564655237652e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 1.663390801896885e-07
+      },
+      "0.25": {
+        "complete": 40,
+        "total": 45,
+        "comparisons": 35,
+        "median_distance_error": 1.6578728931992396e-05,
+        "max_distance_error": 0.0018169897565448582,
+        "median_shape_error": 1.1932996580169514e-07,
+        "max_shape_error": 3.845841065201914e-05,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 4.078260618348435e-06
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 6.069123193201652e-06,
+        "max_distance_error": 9.502768939344082e-05,
+        "median_shape_error": 3.344432295204916e-07,
+        "max_shape_error": 3.0812584235703557e-06,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 3.1275555771246327e-07
+      }
+    },
+    "unit_initial_speed": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 4.410655709834478e-09,
+        "max_distance_error": 1.85209376835697e-06,
+        "median_shape_error": 4.410655512293183e-09,
+        "max_shape_error": 1.2002993128480223e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 5.3756612274569005e-09
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 4.410412960986425e-08,
+        "max_distance_error": 9.231903763212919e-06,
+        "median_shape_error": 4.4104127984070953e-08,
+        "max_shape_error": 9.231717121036363e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 1.663390801896885e-07
+      },
+      "0.25": {
+        "complete": 40,
+        "total": 45,
+        "comparisons": 35,
+        "median_distance_error": 1.2052521386834428e-07,
+        "max_distance_error": 3.852954251446038e-05,
+        "median_shape_error": 1.1932923289792098e-07,
+        "max_shape_error": 3.839537046175242e-05,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 4.078260618348435e-06
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 3.369310958737197e-07,
+        "max_distance_error": 3.100695004668114e-06,
+        "median_shape_error": 3.3444252754369243e-07,
+        "max_shape_error": 3.0811793029730616e-06,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 3.1275555771246327e-07
+      }
+    },
+    "other_source_rank": 3,
+    "other_source_scaled_singular_values": [
+      108.05997417421798,
+      21.08552150908727,
+      3.7337796777777585,
+      1.9853344605594e-15,
+      3.853285955789229e-17
+    ]
+  },
+  "192_random_source_1": {
+    "shared_reading_ticks": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.0027433306294029963,
+        "max_distance_error": 0.011415376033757904,
+        "median_shape_error": 1.0795443218447494e-05,
+        "max_shape_error": 0.0007199438801275642,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 2.6819274692359586e-05
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.002655817025638988,
+        "max_distance_error": 0.011103950783046686,
+        "median_shape_error": 0.0001658242096649669,
+        "max_shape_error": 0.0013892191191108767,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.0001207465413729646
+      },
+      "0.25": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.0027644399868122374,
+        "max_distance_error": 0.012216750742836109,
+        "median_shape_error": 0.000664697687270117,
+        "max_shape_error": 0.005441620663989945,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.001163476560560052
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 0.009262405759306015,
+        "max_distance_error": 0.02109224975890619,
+        "median_shape_error": 0.004722544235765399,
+        "max_shape_error": 0.01883766156846094,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 0.006496621791991593
+      }
+    },
+    "unit_initial_speed": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 1.6611970246192766e-05,
+        "max_distance_error": 0.000922542452896708,
+        "median_shape_error": 1.0795417880738938e-05,
+        "max_shape_error": 0.0007159845872652609,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 2.6819274692359586e-05
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.00028349630746515614,
+        "max_distance_error": 0.001978838677604749,
+        "median_shape_error": 0.00016451907430460616,
+        "max_shape_error": 0.0013821155872994519,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.0001207465413729646
+      },
+      "0.25": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.0007123482546504927,
+        "max_distance_error": 0.0057728264358894435,
+        "median_shape_error": 0.0006629658454846755,
+        "max_shape_error": 0.005408889684496271,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.001163476560560052
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 0.004675138954373519,
+        "max_distance_error": 0.01877226597192564,
+        "median_shape_error": 0.0046669677185183995,
+        "max_shape_error": 0.0187640212124285,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 0.006496621791991593
+      }
+    },
+    "other_source_rank": 4,
+    "other_source_scaled_singular_values": [
+      66.57767609981939,
+      9.066169163034488,
+      3.799760672653715,
+      0.01724758901047969,
+      8.287077782021081e-17
+    ]
+  },
+  "512_balanced_source_0": {
+    "shared_reading_ticks": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 2.3424860580134157e-05,
+        "max_distance_error": 0.0018727770177389218,
+        "median_shape_error": 1.9794644618657775e-09,
+        "max_shape_error": 1.207612628007524e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 7.418502560636227e-08
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 2.3425529786153326e-05,
+        "max_distance_error": 0.0018741943282335016,
+        "median_shape_error": 1.9790509806469546e-08,
+        "max_shape_error": 9.279463350038173e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 7.609961145731134e-07
+      },
+      "0.25": {
+        "complete": 41,
+        "total": 45,
+        "comparisons": 36,
+        "median_distance_error": 1.5065133833133077e-05,
+        "max_distance_error": 0.00187388732331746,
+        "median_shape_error": 8.012689452917849e-08,
+        "max_shape_error": 4.681803765952504e-05,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 5.649683635922981e-06
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 5.760595218127161e-06,
+        "max_distance_error": 8.364377969125729e-05,
+        "median_shape_error": 1.2452181585885184e-07,
+        "max_shape_error": 3.042421039588882e-06,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 1.0936338867054227e-07
+      }
+    },
+    "unit_initial_speed": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 1.9792098785847706e-09,
+        "max_distance_error": 1.901360614342448e-06,
+        "median_shape_error": 1.9792098324129145e-09,
+        "max_shape_error": 1.208605006925843e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 7.418502560636227e-08
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 1.9790368202135233e-08,
+        "max_distance_error": 9.277452687118342e-06,
+        "median_shape_error": 1.9790228840288736e-08,
+        "max_shape_error": 9.277270683755258e-06,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 7.609961145731134e-07
+      },
+      "0.25": {
+        "complete": 41,
+        "total": 45,
+        "comparisons": 36,
+        "median_distance_error": 8.012270732289338e-08,
+        "max_distance_error": 4.680893297675548e-05,
+        "median_shape_error": 8.012270039497037e-08,
+        "max_shape_error": 4.680704054625421e-05,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 5.649683635922981e-06
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 1.2451888366500287e-07,
+        "max_distance_error": 3.061597223667525e-06,
+        "median_shape_error": 1.2451863317060638e-07,
+        "max_shape_error": 3.0423487742971817e-06,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 1.0936338867054227e-07
+      }
+    },
+    "other_source_rank": 3,
+    "other_source_scaled_singular_values": [
+      106.2869892957672,
+      21.157271220758638,
+      3.719861868537033,
+      3.11900707061328e-15,
+      8.54114153672293e-17
+    ]
+  },
+  "512_balanced_source_1": {
+    "shared_reading_ticks": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.003784879177878794,
+        "max_distance_error": 0.011885225237755107,
+        "median_shape_error": 2.6181476035980036e-05,
+        "max_shape_error": 0.0004756419533237678,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 3.9113467093419915e-05
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.0037998588317623393,
+        "max_distance_error": 0.013177082950077471,
+        "median_shape_error": 0.00022896974249780628,
+        "max_shape_error": 0.001482831615526635,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.0002684326870146433
+      },
+      "0.25": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.004178394086511634,
+        "max_distance_error": 0.013759470345436918,
+        "median_shape_error": 0.000633901581245967,
+        "max_shape_error": 0.006017959277247802,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.0012152892631901095
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 0.006562063317167043,
+        "max_distance_error": 0.02198411637573547,
+        "median_shape_error": 0.004768660995526817,
+        "max_shape_error": 0.020406105141562172,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 0.008284931968845631
+      }
+    },
+    "unit_initial_speed": {
+      "0.005": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 3.413463746310444e-05,
+        "max_distance_error": 0.00047912959887865317,
+        "median_shape_error": 2.6191851438511777e-05,
+        "max_shape_error": 0.00047273756585839935,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 3.9113467093419915e-05
+      },
+      "0.05": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.00048571757422925907,
+        "max_distance_error": 0.002824929573618575,
+        "median_shape_error": 0.00022859655373478108,
+        "max_shape_error": 0.0014765118013137235,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.00026843268719093326
+      },
+      "0.25": {
+        "complete": 45,
+        "total": 45,
+        "comparisons": 40,
+        "median_distance_error": 0.001016652600725057,
+        "max_distance_error": 0.0064933453376501745,
+        "median_shape_error": 0.0006323426610389713,
+        "max_shape_error": 0.00597898582479516,
+        "cross_family_complete_pairs": 10,
+        "cross_family_pairs_within_1_percent": 10,
+        "max_cross_family_shape_error": 0.0012152892631901095
+      },
+      "1.0": {
+        "complete": 27,
+        "total": 45,
+        "comparisons": 24,
+        "median_distance_error": 0.004868758650261653,
+        "max_distance_error": 0.020257180680706748,
+        "median_shape_error": 0.004754374092238082,
+        "max_shape_error": 0.020249993465258062,
+        "cross_family_complete_pairs": 3,
+        "cross_family_pairs_within_1_percent": 3,
+        "max_cross_family_shape_error": 0.00828493196884656
+      }
+    },
+    "other_source_rank": 4,
+    "other_source_scaled_singular_values": [
+      70.12150791696546,
+      9.654377146795937,
+      4.555495142440881,
+      0.7091880547653059,
+      2.7071371703159795e-16
+    ]
+  },
+  "verification": {
+    "valid_path_max_off_reading_error": 1.773121397813321e-10,
+    "valid_path_max_linearity_error": 1.206448274615468e-10,
+    "frozen_files_unchanged": true
+  }
+}

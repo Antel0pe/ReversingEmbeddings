@@ -1,0 +1,86 @@
+{
+  "0": {
+    "svd": {
+      "gaussian_192": {
+        "off_rms": 0.09494688992719826,
+        "median_angle_degrees": 7.194378100947517,
+        "p95_angle_degrees": 25.891181853505067,
+        "mean_subspace_residual": 1.4789588889884357e-06
+      },
+      "sobol_512": {
+        "off_rms": 0.017828330985787726,
+        "median_angle_degrees": 0.8741195300938289,
+        "p95_angle_degrees": 5.14941589451332,
+        "mean_subspace_residual": 3.721020795854178e-07
+      },
+      "sobol_2048": {
+        "off_rms": 0.003567977944356706,
+        "median_angle_degrees": 0.3109747626407049,
+        "p95_angle_degrees": 0.7711998292948965,
+        "mean_subspace_residual": 1.767832560167739e-07
+      }
+    },
+    "pca": {
+      "gaussian_192": {
+        "off_rms": 0.09543027436274393,
+        "median_angle_degrees": 7.135634705506222,
+        "p95_angle_degrees": 25.903513084534,
+        "mean_subspace_residual": 1.4719073037157464e-06
+      },
+      "sobol_512": {
+        "off_rms": 0.017797043890291592,
+        "median_angle_degrees": 0.8741118434643018,
+        "p95_angle_degrees": 5.149459521139821,
+        "mean_subspace_residual": 3.719173863530209e-07
+      },
+      "sobol_2048": {
+        "off_rms": 0.0035672641968802453,
+        "median_angle_degrees": 0.3110000259197248,
+        "p95_angle_degrees": 0.7708633562745657,
+        "mean_subspace_residual": 1.7676402675385408e-07
+      }
+    }
+  },
+  "1": {
+    "svd": {
+      "gaussian_192": {
+        "off_rms": 0.139712979258469,
+        "median_angle_degrees": 9.61389283792617,
+        "p95_angle_degrees": 39.01147556051666,
+        "mean_subspace_residual": 1.954787687241814e-06
+      },
+      "sobol_512": {
+        "off_rms": 0.041205882273394126,
+        "median_angle_degrees": 1.8412164123445327,
+        "p95_angle_degrees": 11.096701956775938,
+        "mean_subspace_residual": 5.256668932317704e-07
+      },
+      "sobol_2048": {
+        "off_rms": 0.011461877413763788,
+        "median_angle_degrees": 0.4940033141102561,
+        "p95_angle_degrees": 3.113365762999882,
+        "mean_subspace_residual": 2.524989470201292e-07
+      }
+    },
+    "pca": {
+      "gaussian_192": {
+        "off_rms": 0.1388810788915125,
+        "median_angle_degrees": 9.968521240586636,
+        "p95_angle_degrees": 39.28172824524841,
+        "mean_subspace_residual": 1.935765671123219e-06
+      },
+      "sobol_512": {
+        "off_rms": 0.04116992538837767,
+        "median_angle_degrees": 1.8409209671869502,
+        "p95_angle_degrees": 11.062177771781387,
+        "mean_subspace_residual": 5.260917799608708e-07
+      },
+      "sobol_2048": {
+        "off_rms": 0.011460726315555267,
+        "median_angle_degrees": 0.4941091252277355,
+        "p95_angle_degrees": 3.113003574538011,
+        "mean_subspace_residual": 2.5245862896636287e-07
+      }
+    }
+  }
+}

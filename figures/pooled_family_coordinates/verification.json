@@ -1,0 +1,829 @@
+{
+  "frozen_hashes_match": true,
+  "forbidden_reads_blocked": [
+    "grey_ones.py",
+    "derived_state_coordinates.py",
+    "pooled_family_coordinates_labels.npz"
+  ],
+  "maximum_saved_value_relative_error": 0.0,
+  "maximum_response_spectrum_relative_error": 1.0794061699533373e-15,
+  "finite_difference_checks": [
+    {
+      "run": "primary",
+      "model": "local_svd_fixed_joint",
+      "best_finite_difference_relative_error": 1.139148743105506e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 8.703518463220728e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_svd_quadratic",
+      "best_finite_difference_relative_error": 1.0329919424533707e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_svd_cubic",
+      "best_finite_difference_relative_error": 1.7037856384128687e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_svd_kernel",
+      "best_finite_difference_relative_error": 1.891291634747034e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_svd_global_pc",
+      "best_finite_difference_relative_error": 8.727478505533173e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_fixed_joint",
+      "best_finite_difference_relative_error": 1.1832756200248835e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 9.735508246966247e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_quadratic",
+      "best_finite_difference_relative_error": 9.799741431872495e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_cubic",
+      "best_finite_difference_relative_error": 1.5992656421313546e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_kernel",
+      "best_finite_difference_relative_error": 1.4654110101995372e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "local_pca_global_pc",
+      "best_finite_difference_relative_error": 9.500910181100648e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_fixed_joint",
+      "best_finite_difference_relative_error": 8.242600791654567e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 8.172516881071219e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_quadratic",
+      "best_finite_difference_relative_error": 3.6569359107844105e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_cubic",
+      "best_finite_difference_relative_error": 1.330750538150996e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_kernel",
+      "best_finite_difference_relative_error": 7.277239544795412e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_svd_global_pc",
+      "best_finite_difference_relative_error": 7.507728711173294e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.956677854768494e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 8.948604975181359e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_quadratic",
+      "best_finite_difference_relative_error": 3.5671936680704576e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_cubic",
+      "best_finite_difference_relative_error": 1.2205936335421426e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_kernel",
+      "best_finite_difference_relative_error": 7.65923411523609e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "broad_pca_global_pc",
+      "best_finite_difference_relative_error": 6.077826939057618e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_fixed_joint",
+      "best_finite_difference_relative_error": 7.830157283879396e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 7.830180931218144e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_quadratic",
+      "best_finite_difference_relative_error": 7.838969161378278e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_cubic",
+      "best_finite_difference_relative_error": 6.37904879345746e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_kernel",
+      "best_finite_difference_relative_error": 4.096238648453173e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_svd_global_pc",
+      "best_finite_difference_relative_error": 7.830535471963991e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_fixed_joint",
+      "best_finite_difference_relative_error": 7.580058351884176e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 7.580142342715874e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_quadratic",
+      "best_finite_difference_relative_error": 7.438286836773052e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_cubic",
+      "best_finite_difference_relative_error": 8.83179404815022e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_kernel",
+      "best_finite_difference_relative_error": 3.977534288791871e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_0_pca_global_pc",
+      "best_finite_difference_relative_error": 7.578540423464244e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_fixed_joint",
+      "best_finite_difference_relative_error": 7.912664238862567e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 7.915409333386706e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_quadratic",
+      "best_finite_difference_relative_error": 7.774966399087256e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_cubic",
+      "best_finite_difference_relative_error": 1.7982075271615493e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_kernel",
+      "best_finite_difference_relative_error": 8.653565822747744e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_svd_global_pc",
+      "best_finite_difference_relative_error": 7.940733962275839e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.516459908037544e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 8.515511171209778e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_quadratic",
+      "best_finite_difference_relative_error": 8.479540359986563e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_cubic",
+      "best_finite_difference_relative_error": 4.988164447548999e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_kernel",
+      "best_finite_difference_relative_error": 8.874761639956992e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_1_pca_global_pc",
+      "best_finite_difference_relative_error": 8.541919643566768e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_fixed_joint",
+      "best_finite_difference_relative_error": 8.808522820489985e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 8.807825499794948e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_quadratic",
+      "best_finite_difference_relative_error": 8.809060184342905e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_cubic",
+      "best_finite_difference_relative_error": 8.388916014917927e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_kernel",
+      "best_finite_difference_relative_error": 8.406999919010021e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_svd_global_pc",
+      "best_finite_difference_relative_error": 8.819186528353845e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.574984406215008e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 8.591813150402311e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_quadratic",
+      "best_finite_difference_relative_error": 8.599430341079367e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_cubic",
+      "best_finite_difference_relative_error": 7.920928630053675e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_kernel",
+      "best_finite_difference_relative_error": 7.97720359828414e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_2_pca_global_pc",
+      "best_finite_difference_relative_error": 8.602030470533363e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_fixed_joint",
+      "best_finite_difference_relative_error": 9.319194914401158e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 7.763730547741015e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_quadratic",
+      "best_finite_difference_relative_error": 7.725159570457986e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_cubic",
+      "best_finite_difference_relative_error": 8.330333620088287e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_kernel",
+      "best_finite_difference_relative_error": 7.415464287755837e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_svd_global_pc",
+      "best_finite_difference_relative_error": 7.644594425937321e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.826170724077286e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 8.372107843001234e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_quadratic",
+      "best_finite_difference_relative_error": 8.661164193684732e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_cubic",
+      "best_finite_difference_relative_error": 9.878249131580066e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_kernel",
+      "best_finite_difference_relative_error": 8.689180801143088e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_0_3_pca_global_pc",
+      "best_finite_difference_relative_error": 8.257468520975041e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_fixed_joint",
+      "best_finite_difference_relative_error": 5.082069650037401e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 5.082801473250445e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_quadratic",
+      "best_finite_difference_relative_error": 1.284505113697427e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_cubic",
+      "best_finite_difference_relative_error": 2.745373988866635e-09,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_kernel",
+      "best_finite_difference_relative_error": 5.5675865437860664e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_svd_global_pc",
+      "best_finite_difference_relative_error": 5.022503111323807e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_fixed_joint",
+      "best_finite_difference_relative_error": 5.141658097365288e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 5.141250232841546e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_quadratic",
+      "best_finite_difference_relative_error": 1.6791730867364507e-12,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_cubic",
+      "best_finite_difference_relative_error": 2.852462797885485e-09,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_kernel",
+      "best_finite_difference_relative_error": 5.516472830818923e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_0_pca_global_pc",
+      "best_finite_difference_relative_error": 4.967646368375389e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_fixed_joint",
+      "best_finite_difference_relative_error": 5.908765319740174e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 5.902154721410262e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_quadratic",
+      "best_finite_difference_relative_error": 5.999999767300168e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_cubic",
+      "best_finite_difference_relative_error": 3.564875301676783e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_kernel",
+      "best_finite_difference_relative_error": 5.962017055759025e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_svd_global_pc",
+      "best_finite_difference_relative_error": 5.805421998063466e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_fixed_joint",
+      "best_finite_difference_relative_error": 5.262255080242857e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 5.260209720237036e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_quadratic",
+      "best_finite_difference_relative_error": 5.43935627219405e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_cubic",
+      "best_finite_difference_relative_error": 2.951054734679587e-10,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_kernel",
+      "best_finite_difference_relative_error": 6.124808764503806e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_1_pca_global_pc",
+      "best_finite_difference_relative_error": 5.213957760003568e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_fixed_joint",
+      "best_finite_difference_relative_error": 5.727824014517184e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 5.726524335210213e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_quadratic",
+      "best_finite_difference_relative_error": 6.020224408633191e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_cubic",
+      "best_finite_difference_relative_error": 5.987551738606305e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_kernel",
+      "best_finite_difference_relative_error": 5.8145260529695055e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_svd_global_pc",
+      "best_finite_difference_relative_error": 5.723014746858955e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_fixed_joint",
+      "best_finite_difference_relative_error": 6.156310328188917e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 6.152240122834469e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_quadratic",
+      "best_finite_difference_relative_error": 6.413583298188336e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_cubic",
+      "best_finite_difference_relative_error": 5.600001665117674e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_kernel",
+      "best_finite_difference_relative_error": 5.02873337648538e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_2_pca_global_pc",
+      "best_finite_difference_relative_error": 6.163363439081794e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_fixed_joint",
+      "best_finite_difference_relative_error": 5.893607020882546e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_pooled_constrained",
+      "best_finite_difference_relative_error": 5.84626961622998e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_quadratic",
+      "best_finite_difference_relative_error": 6.274751565740854e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_cubic",
+      "best_finite_difference_relative_error": 6.541287141075215e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_kernel",
+      "best_finite_difference_relative_error": 6.259240903841608e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_svd_global_pc",
+      "best_finite_difference_relative_error": 5.868730869588646e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_fixed_joint",
+      "best_finite_difference_relative_error": 6.679513859549439e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_pooled_constrained",
+      "best_finite_difference_relative_error": 6.645581644709742e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_quadratic",
+      "best_finite_difference_relative_error": 6.955546938000851e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_cubic",
+      "best_finite_difference_relative_error": 6.903145594305309e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_kernel",
+      "best_finite_difference_relative_error": 6.671574353369173e-11,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "primary",
+      "model": "patch_1_3_pca_global_pc",
+      "best_finite_difference_relative_error": 6.661116892142139e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_0_svd_fixed_joint",
+      "best_finite_difference_relative_error": 8.449753419801509e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_0_svd_quadratic",
+      "best_finite_difference_relative_error": 8.445137104778764e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_0_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.631685419462726e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_0_pca_quadratic",
+      "best_finite_difference_relative_error": 8.62964150611754e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_2_svd_fixed_joint",
+      "best_finite_difference_relative_error": 8.457400160135847e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_2_svd_quadratic",
+      "best_finite_difference_relative_error": 8.463543123766812e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_2_pca_fixed_joint",
+      "best_finite_difference_relative_error": 8.494325539232417e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_0_2_pca_quadratic",
+      "best_finite_difference_relative_error": 8.477124571732199e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_0_svd_fixed_joint",
+      "best_finite_difference_relative_error": 5.862477661962211e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_0_svd_quadratic",
+      "best_finite_difference_relative_error": 5.881288997421104e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_0_pca_fixed_joint",
+      "best_finite_difference_relative_error": 5.254171562144223e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_0_pca_quadratic",
+      "best_finite_difference_relative_error": 5.231729872811618e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_2_svd_fixed_joint",
+      "best_finite_difference_relative_error": 6.711013984435437e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_2_svd_quadratic",
+      "best_finite_difference_relative_error": 6.729140821664695e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_2_pca_fixed_joint",
+      "best_finite_difference_relative_error": 5.383397793209401e-13,
+      "derivative_check_pass": true
+    },
+    {
+      "run": "balanced",
+      "model": "patch_1_2_pca_quadratic",
+      "best_finite_difference_relative_error": 5.568522089497085e-13,
+      "derivative_check_pass": true
+    }
+  ],
+  "finite_difference_failures": []
+}

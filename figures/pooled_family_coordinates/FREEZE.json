@@ -1,0 +1,12 @@
+{
+  "physical_labels_opened": false,
+  "sha256": {
+    "figures/svd_blind_intermediates/observations.npz": "1eb02040015e3661c544cbd1976b7b48d92144769b60815fe58dc8d7e6688afb",
+    "figures/pooled_family_coordinates/patch_observations.npz": "a7b9ecd19b9eba6669da775e877e71949d9dd1bb34926ace7266080f09a17dc2",
+    "experiments/pooled_family_coordinates/PROTOCOL.md": "0d0549f28720fdf8038b5592fe1455b5b1fb1dcaa0a2efbc2d66ff168b7aff6d",
+    "experiments/pooled_family_coordinates/common.py": "7f8965fe33f67009f5732a4d712f7704888f58f59858a1f45de7d2c0703ce2f1",
+    "experiments/pooled_family_coordinates/discover.py": "8d067914d62c56549b6ed178c85fd998bdb274a891395432865ce9ae5ff07d77",
+    "figures/pooled_family_coordinates/models.npz": "0ce596c9ef7d8ba5489448be30ab500e054ccb1144646471e20ec9b16ef650e6",
+    "figures/pooled_family_coordinates/blind_results.json": "b1b4abf9227cebecf5d157b702aa9e70d40bc95d054cce95f9387cf0cf4021ad"
+  }
+}

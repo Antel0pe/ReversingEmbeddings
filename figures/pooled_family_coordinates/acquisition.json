@@ -1,0 +1,55 @@
+{
+  "patches": [
+    {
+      "scope": "patch_0_0",
+      "source_index": 0,
+      "radius": 0.005,
+      "max_ball_distance_error": 1.0331145661179875e-14
+    },
+    {
+      "scope": "patch_0_1",
+      "source_index": 0,
+      "radius": 0.05,
+      "max_ball_distance_error": 1.0672018824209317e-14
+    },
+    {
+      "scope": "patch_0_2",
+      "source_index": 0,
+      "radius": 0.25,
+      "max_ball_distance_error": 1.0380585280245214e-14
+    },
+    {
+      "scope": "patch_0_3",
+      "source_index": 0,
+      "radius": 1.0,
+      "max_ball_distance_error": 4.192757252496904e-12
+    },
+    {
+      "scope": "patch_1_0",
+      "source_index": 1,
+      "radius": 0.005,
+      "max_ball_distance_error": 9.779937276688244e-15
+    },
+    {
+      "scope": "patch_1_1",
+      "source_index": 1,
+      "radius": 0.05,
+      "max_ball_distance_error": 1.259409243559162e-14
+    },
+    {
+      "scope": "patch_1_2",
+      "source_index": 1,
+      "radius": 0.25,
+      "max_ball_distance_error": 1.176836406102666e-14
+    },
+    {
+      "scope": "patch_1_3",
+      "source_index": 1,
+      "radius": 1.0,
+      "max_ball_distance_error": 3.1041426488132018e-06
+    }
+  ],
+  "previous_input": "figures/svd_blind_intermediates/observations.npz",
+  "neighborhood": "192 observations per frame at image distance 0.0001; no analytic derivatives",
+  "physical_settings": "Private evaluation archive, not a discovery input"
+}

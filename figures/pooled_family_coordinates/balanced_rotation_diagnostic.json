@@ -1,0 +1,98 @@
+{
+  "patch_0_0_svd_fixed_joint": {
+    "median_degrees": 0.8156463601383603,
+    "p95_degrees": 4.338424128585204,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_0_svd_quadratic": {
+    "median_degrees": 0.8841904329558996,
+    "p95_degrees": 5.01930978187914,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_0_pca_fixed_joint": {
+    "median_degrees": 0.8139343083694246,
+    "p95_degrees": 4.339137328693691,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_0_pca_quadratic": {
+    "median_degrees": 0.8798226023328213,
+    "p95_degrees": 5.01786140077422,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_2_svd_fixed_joint": {
+    "median_degrees": 0.8498194321628455,
+    "p95_degrees": 4.582956794578225,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_2_svd_quadratic": {
+    "median_degrees": 0.8568715922745671,
+    "p95_degrees": 4.593309338060291,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_2_pca_fixed_joint": {
+    "median_degrees": 0.849483779529107,
+    "p95_degrees": 4.582614109248204,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_0_2_pca_quadratic": {
+    "median_degrees": 0.8567138057120999,
+    "p95_degrees": 4.5935735796755175,
+    "within_10_degrees": 1.0,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_0_svd_fixed_joint": {
+    "median_degrees": 1.0443043705735706,
+    "p95_degrees": 11.215425037171428,
+    "within_10_degrees": 0.9375,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_0_svd_quadratic": {
+    "median_degrees": 1.4006903511761433,
+    "p95_degrees": 9.358992012711537,
+    "within_10_degrees": 0.95,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_0_pca_fixed_joint": {
+    "median_degrees": 1.044739318531364,
+    "p95_degrees": 11.217650132515397,
+    "within_10_degrees": 0.9375,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_0_pca_quadratic": {
+    "median_degrees": 1.3996347664387296,
+    "p95_degrees": 9.36202508001629,
+    "within_10_degrees": 0.95,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_2_svd_fixed_joint": {
+    "median_degrees": 1.8011365938240624,
+    "p95_degrees": 10.752364906754082,
+    "within_10_degrees": 0.9375,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_2_svd_quadratic": {
+    "median_degrees": 1.3814970154714863,
+    "p95_degrees": 9.567144432386579,
+    "within_10_degrees": 0.95625,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_2_pca_fixed_joint": {
+    "median_degrees": 1.8010393132090918,
+    "p95_degrees": 10.75408528097492,
+    "within_10_degrees": 0.9375,
+    "within_20_degrees": 1.0
+  },
+  "patch_1_2_pca_quadratic": {
+    "median_degrees": 1.3789079907755406,
+    "p95_degrees": 9.57222028291179,
+    "within_10_degrees": 0.95625,
+    "within_20_degrees": 1.0
+  }
+}
