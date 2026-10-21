@@ -1,0 +1,193 @@
+{
+  "fixed": {
+    "cx": 14,
+    "cy": 14,
+    "height": 19.75
+  },
+  "root": [
+    14,
+    14,
+    19.75,
+    3.2,
+    0
+  ],
+  "mesh": {
+    "width_count": 29,
+    "lean_count": 46,
+    "vertices": 1334,
+    "width_range": [
+      1.8,
+      4.6
+    ],
+    "lean_range": [
+      -10,
+      35
+    ],
+    "coordinate_sampling": "uniform width and lean angle; not uniform surface area"
+  },
+  "pca_fit": {
+    "images": 5187,
+    "varying_pixel_coordinates": 206,
+    "centered": true,
+    "variance_cumulative": [
+      0.5096533913009821,
+      0.7153004750541005,
+      0.8129142103406711,
+      0.898600106166205,
+      0.9711724902541954
+    ]
+  },
+  "diagnosis": {
+    "width_px": 3.2,
+    "lean_range": [
+      0,
+      35
+    ],
+    "five_degree_radial_distance_increments": [
+      2.591388292698674,
+      1.9565421296109382,
+      1.5321470237073944,
+      1.169387546453649,
+      0.7892591635517165,
+      0.49186254477215563,
+      0.3317376457212031
+    ],
+    "actual_1deg_step_at_0_and_34": [
+      0.6150937568928616,
+      0.7823452987619254
+    ],
+    "chord_at_35": 8.86232434651573,
+    "arc_005deg": 23.206036210023786,
+    "arc_0025deg": 23.207141912208588,
+    "arc_relative_refinement_change": 4.764490987233952e-05,
+    "distance_squared_identity_max_error": 4.263256414560601e-14,
+    "code_uses_exponential": false,
+    "lean_code": "center = cx - tan(radians(lean)) * (subrow_midpoint - cy)",
+    "coverage_code": "clip(min(right_edge, pixel_right) - max(left_edge, pixel_left), 0, 1)",
+    "subrow_integration_control": {
+      "original_subrows": 16,
+      "control_subrows": 128,
+      "max_radial_distance_change": 0.0002841840326919254,
+      "max_1deg_step_distance_change": 0.00025284942417991285,
+      "control_1deg_step_at_0_and_34": [
+        0.6150937568928616,
+        0.782194676319705
+      ]
+    },
+    "reason": "Distance to a fixed upright reference levels off while the curve keeps moving. Equal degrees also give unequal tangent/shear increments; pixel boundary crossings change slopes."
+  },
+  "layouts": {
+    "pca2": {
+      "local_edge_distance_ratio_quantiles": [
+        0.0032050828373922685,
+        0.09352812753915202,
+        0.41679454542678757,
+        0.6993122395121246,
+        0.7594628485922001
+      ],
+      "triangle_orientation_reversal_fraction": 0.12341269841269842,
+      "nearly_zero_area_triangle_count": 0,
+      "orientation_note": "Opposite orientation triangles reveal local foldovers in this drawing; this does not count all global overlaps.",
+      "chord_stress": 0.23245969075304768,
+      "sheet_stress": 0.5846683564156103,
+      "retained_variance": 0.7153004750541005,
+      "grid_reconstruction_RMS_L2": 2.423343675487882,
+      "grid_reconstruction_max_L2": 4.228667314888672,
+      "held_out_count": 512,
+      "held_out_reconstruction_RMS_L2": 2.4177876937081457,
+      "held_out_reconstruction_max_L2": 4.127515132244192
+    },
+    "mds2": {
+      "local_edge_distance_ratio_quantiles": [
+        0.09142718746925779,
+        0.36783615549495413,
+        0.6526907009425456,
+        0.8380183375620602,
+        1.313618382883532
+      ],
+      "triangle_orientation_reversal_fraction": 0.002777777777777778,
+      "nearly_zero_area_triangle_count": 0,
+      "orientation_note": "Opposite orientation triangles reveal local foldovers in this drawing; this does not count all global overlaps.",
+      "chord_stress": 0.15812838947271535,
+      "sheet_stress": 0.5220011332716883
+    },
+    "unfold2": {
+      "local_edge_distance_ratio_quantiles": [
+        0.8882429691731542,
+        1.0007754316152802,
+        1.0400981535163198,
+        1.084143403869408,
+        1.1110522941975371
+      ],
+      "triangle_orientation_reversal_fraction": 0.0,
+      "nearly_zero_area_triangle_count": 0,
+      "orientation_note": "Opposite orientation triangles reveal local foldovers in this drawing; this does not count all global overlaps.",
+      "chord_stress": 1.0113318345399838,
+      "sheet_stress": 0.006698212213447737
+    },
+    "pca3": {
+      "local_edge_distance_ratio_quantiles": [
+        0.16841421989887306,
+        0.3317296906993558,
+        0.6405374713194867,
+        0.7234200285006654,
+        0.7777107465908174
+      ],
+      "chord_stress": 0.13695054604499662,
+      "sheet_stress": 0.557829141831284,
+      "retained_variance": 0.8129142103406711,
+      "grid_reconstruction_RMS_L2": 1.9644547928534966,
+      "grid_reconstruction_max_L2": 3.8217626431704397,
+      "held_out_count": 512,
+      "held_out_reconstruction_RMS_L2": 1.960989412906578,
+      "held_out_reconstruction_max_L2": 3.7401028938025624
+    }
+  },
+  "optimization": {
+    "mds2": {
+      "iterations": 100,
+      "relative_squared_stress": 0.025004587557234757,
+      "last_relative_improvement": 8.93565819141622e-09,
+      "monotone": true,
+      "initialization_stresses": [
+        0.15812838947271535,
+        0.1581283899356344
+      ]
+    },
+    "unfold2": {
+      "iterations": 56,
+      "relative_squared_stress": 4.486604685638044e-05,
+      "last_relative_improvement": 8.380662554101542e-09,
+      "monotone": true,
+      "initialization_stresses": [
+        0.006698212213447736,
+        0.006698212301553356
+      ]
+    }
+  },
+  "path_distance_check": {
+    "landmarks": 49,
+    "targets": 1334,
+    "relative_change_quantiles": [
+      0.0011339414161874407,
+      0.004250745070961615,
+      0.03460477685763057
+    ],
+    "rms_relative_distance_change": 0.0020512134976507714,
+    "note": "Both graphs retain a finite set of local travel directions. Refining step size tests discretization but does not remove directional graph bias or certify exact geodesics."
+  },
+  "caveats": [
+    "Known controls supply grid connectivity. These are sampled drawings, not a recovered unknown manifold.",
+    "Linear PCA optimizes reconstruction variance. MDS fits distances and is not a globally optimal guarantee.",
+    "Geodesic unfolding uses local parameter paths, including edge midpoints; it approximates along-sheet distances.",
+    "2D foldovers can create false visual neighbors. A point's image can be retrieved from stored samples, but that is not a learned decoder.",
+    "No 2D view here is claimed to preserve all 784-dimensional geometry or reconstruct every continuous image exactly."
+  ],
+  "understanding_check": {
+    "object": "Connected image samples from one width/lean sheet, not knob coordinates used as plot positions",
+    "axes": "PCA coefficients or fitted metric coordinates; colors are lean; visible edge connections retain the actual grid",
+    "reference": "Root image marked and centered at zero in all layouts",
+    "evidence": "Distance errors, local edge distortion, foldovers, and held-out PCA reconstruction quantify missing geometry",
+    "scope": "Finite fixed-center fixed-height slice; geodesic approximation and sampling distribution explicitly stated"
+  }
+}

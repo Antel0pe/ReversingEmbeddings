@@ -1,0 +1,217 @@
+{
+  "fixed": {
+    "cx": 14,
+    "cy": 14,
+    "height": 19.75
+  },
+  "root": [
+    14.0,
+    14.0,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "grid": {
+    "widths": 57,
+    "width_step_px": 0.05,
+    "leans": 91,
+    "lean_step_degrees": 0.5
+  },
+  "distance": "L2 over all 784 pixel coverage entries; no projection; float32 rendering then float64 differences",
+  "corner": {
+    "root_settings": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      0.0
+    ],
+    "width_only_settings": [
+      14.0,
+      14.0,
+      19.75,
+      4.6,
+      0.0
+    ],
+    "lean_only_settings": [
+      14.0,
+      14.0,
+      19.75,
+      3.2,
+      35.0
+    ],
+    "combined_settings": [
+      14.0,
+      14.0,
+      19.75,
+      4.6,
+      35.0
+    ],
+    "width_from_root_L2": 3.1249999380111735,
+    "lean_from_root_L2": 8.86232434651573,
+    "lean_after_max_width_L2": 10.158823405799989,
+    "width_after_max_lean_L2": 3.600170166282735,
+    "mixed_gap_L2": 4.138661705598669,
+    "joint_displacement_L2": 9.647836163023987,
+    "additive_prediction_relative_L2_error": 0.42897305008768516,
+    "width_vector_angle_before_after_lean_degrees": 75.5933163577006,
+    "lean_vector_angle_before_after_width_degrees": 23.906316200507664,
+    "parameter_endpoint_order_error_L2": 0.0,
+    "max_width_vector_change_equals_max_width_lean_vector_change": true
+  },
+  "selected": [
+    {
+      "lean_degrees": 0,
+      "lean_distance_at_width_3p2": 0.0,
+      "lean_distance_at_width_4p6": 0.0,
+      "vector_gap_max_width_vs_root_width": 0.0,
+      "width_after_lean_L2": 3.1249999380111735,
+      "width_vector_angle_degrees": 0.0,
+      "lean_vector_angle_degrees": null,
+      "same_lean_gap_between_width_extremes": 6.555055330615465
+    },
+    {
+      "lean_degrees": 1,
+      "lean_distance_at_width_3p2": 0.6150937568928616,
+      "lean_distance_at_width_4p6": 0.6150937675734466,
+      "vector_gap_max_width_vs_root_width": 0.8698739406812185,
+      "width_after_lean_L2": 3.2438103824782156,
+      "width_vector_angle_degrees": 15.55505749625654,
+      "lean_vector_angle_degrees": 90.0,
+      "same_lean_gap_between_width_extremes": 6.569147268227232
+    },
+    {
+      "lean_degrees": 5,
+      "lean_distance_at_width_3p2": 2.591388292698674,
+      "lean_distance_at_width_4p6": 2.6460328575500838,
+      "vector_gap_max_width_vs_root_width": 2.5705295689939907,
+      "width_after_lean_L2": 3.921382895866581,
+      "width_vector_angle_degrees": 40.8631968604075,
+      "lean_vector_angle_degrees": 58.77536176736965,
+      "same_lean_gap_between_width_extremes": 6.430779133979425
+    },
+    {
+      "lean_degrees": 10,
+      "lean_distance_at_width_3p2": 4.547930422309612,
+      "lean_distance_at_width_4p6": 4.620017126590611,
+      "vector_gap_max_width_vs_root_width": 3.6940061716494963,
+      "width_after_lean_L2": 3.8724626646317066,
+      "width_vector_angle_degrees": 62.65932637913247,
+      "lean_vector_angle_degrees": 47.51442597559989,
+      "same_lean_gap_between_width_extremes": 6.427288181052668
+    },
+    {
+      "lean_degrees": 15,
+      "lean_distance_at_width_3p2": 6.080077446017007,
+      "lean_distance_at_width_4p6": 6.149492288052932,
+      "vector_gap_max_width_vs_root_width": 4.125494250919991,
+      "width_after_lean_L2": 3.817618229046194,
+      "width_vector_angle_degrees": 72.13389462482306,
+      "lean_vector_angle_degrees": 39.42435190976921,
+      "same_lean_gap_between_width_extremes": 6.414362935494539
+    },
+    {
+      "lean_degrees": 20,
+      "lean_distance_at_width_3p2": 7.249464992470656,
+      "lean_distance_at_width_4p6": 7.452162269632947,
+      "vector_gap_max_width_vs_root_width": 4.0923607637865,
+      "width_after_lean_L2": 3.7718314986794925,
+      "width_vector_angle_degrees": 72.1017561605859,
+      "lean_vector_angle_degrees": 32.28721825959048,
+      "same_lean_gap_between_width_extremes": 6.390732577105273
+    },
+    {
+      "lean_degrees": 25,
+      "lean_distance_at_width_3p2": 8.038724156022372,
+      "lean_distance_at_width_4p6": 8.621341161028345,
+      "vector_gap_max_width_vs_root_width": 3.9994572791221987,
+      "width_after_lean_L2": 3.7312527339176413,
+      "width_vector_angle_degrees": 70.74032216737864,
+      "lean_vector_angle_degrees": 27.495417667467734,
+      "same_lean_gap_between_width_extremes": 6.3534914778663145
+    },
+    {
+      "lean_degrees": 30,
+      "lean_distance_at_width_3p2": 8.530586700794528,
+      "lean_distance_at_width_4p6": 9.526529948462368,
+      "vector_gap_max_width_vs_root_width": 4.06495694263559,
+      "width_after_lean_L2": 3.6807074987954116,
+      "width_vector_angle_degrees": 72.83450425994059,
+      "lean_vector_angle_degrees": 25.252235883535818,
+      "same_lean_gap_between_width_extremes": 6.304331368497667
+    },
+    {
+      "lean_degrees": 35,
+      "lean_distance_at_width_3p2": 8.86232434651573,
+      "lean_distance_at_width_4p6": 10.158823405799989,
+      "vector_gap_max_width_vs_root_width": 4.138661705598669,
+      "width_after_lean_L2": 3.600170166282735,
+      "width_vector_angle_degrees": 75.5933163577006,
+      "lean_vector_angle_degrees": 23.906316200507664,
+      "same_lean_gap_between_width_extremes": 6.242691912313372
+    }
+  ],
+  "equal_lean_step": {
+    "degrees": 1,
+    "test_count": 19293,
+    "vector_length_range": [
+      0.43490385210615334,
+      0.8075229894251225
+    ],
+    "matching_step_image_gap_decreases_with_width_fraction": 0.48638014527845036,
+    "upright_step_matching_sampled_width_interval": [
+      2.35,
+      3.65
+    ],
+    "upright_step_max_vector_gap_on_interval_float32": 3.5262583393452264e-07,
+    "upright_step_max_vector_gap_on_interval_float64": 5.502048458334071e-15,
+    "upright_step_length_width_3p2": 0.6150937568928616,
+    "upright_step_length_width_4p6": 0.6150937675734466,
+    "upright_step_angle_width_3p2_vs_4p6_degrees": 90.0
+  },
+  "proximity": {
+    "raw_width_step_px": 0.1,
+    "lean_step_degrees": 1,
+    "lean_distance_divided_by_width_distance_range": [
+      1.4663709589232266,
+      2.969330806401659
+    ],
+    "equal_fraction_width_step_px": 0.06222222222222222,
+    "equal_fraction_of_both_ranges": 0.022222222222222223,
+    "equal_fraction_ratio_range": [
+      2.3107840981237064,
+      4.7709939236778505
+    ],
+    "width_neighbor_closer_fraction": 1.0,
+    "sampled_width_bounds": [
+      1.8,
+      4.5
+    ],
+    "sampled_lean_start_bounds": [
+      -10,
+      34
+    ],
+    "refined_width_step": 0.025,
+    "refined_lean_start_step": 0.25
+  },
+  "geometric_lean": {
+    "row_shift": "(14-y) * [tan(lean+step)-tan(lean)], with angles in degrees",
+    "slope_step_0_to_1": 0.017455064928217585,
+    "slope_step_34_to_35": 0.02569902136728297
+  },
+  "checks": {
+    "refined_grid_images": 20453,
+    "matched_grid_images_identical": true,
+    "two_expressions_for_mixed_difference_max_pixel_error": 0.0,
+    "corner_mixed_float32_vs_float64_max_pixel_difference": 5.746881537316284e-08,
+    "updated_vectors_reach_exact_corner_within_float64_roundoff": true,
+    "parameter_order_endpoints_bit_identical": true
+  },
+  "understanding_check": {
+    "object": "Distances between generated coverage images and between explicit pixel-change vectors",
+    "axes": "Width or lean as labeled; lines fix the other knob; every y axis names its comparison",
+    "baseline": "Upright lean and root width 3.2; reference lines and exact zeros are marked",
+    "evidence": "Matching-setting image gaps, vector residuals, equal-step lengths, and explicit corner numbers",
+    "scope": "Fixed center and height; corresponding-point distances, not nearest-curve distances; finite increments"
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Width vectors across lean · Generated 1s</title>
+<style>
+:root {font-family:system-ui,sans-serif;color:#253345;background:#f4f5f7;color-scheme:light}
+* {box-sizing:border-box} body {margin:0} main {max-width:1320px;margin:auto;padding:36px 28px 60px}
+h1 {font-size:clamp(28px,4vw,44px);letter-spacing:-.035em;line-height:1.1;margin:12px 0 18px}
+h2 {font-size:22px;margin:0 0 12px} p {line-height:1.6;max-width:1000px} .eyebrow {text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#596b7f}
+.controls,.explain,.figure {background:white;border:1px solid #dce2e8;border-radius:14px;padding:24px;margin:24px 0}
+.controls {display:grid;grid-template-columns:repeat(3,1fr);gap:20px} label {font-size:14px;font-weight:650;display:block}
+input[type=range] {width:100%;margin:18px 0 2px;accent-color:#246a94} select,button {font:inherit;border:1px solid #acbac8;border-radius:6px;padding:8px;background:white;color:inherit}
+.control-note {font-size:12px;color:#637083;line-height:1.5} .cards {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card {padding:20px;background:white;border:1px solid #dce2e8;border-radius:12px;text-align:center}
+.card h3 {font-size:16px;margin:0 0 8px;min-height:22px} .card p {font-size:12px;margin:10px 0 0;min-height:37px}
+canvas {display:block;width:min(100%,224px);aspect-ratio:1;margin:18px auto;image-rendering:pixelated;border:1px solid #dde1e6}
+.metrics {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.metric {background:#e6edf3;border-radius:8px;padding:16px} .value {font-size:25px;font-variant-numeric:tabular-nums;display:block;margin:6px 0}
+.metric small {line-height:1.5;display:block} .legend {display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:13px;margin:22px 0}
+.bar {display:inline-block;width:150px;height:14px;vertical-align:middle;background:linear-gradient(to right,rgb(33,102,172),white,rgb(178,24,43));border:1px solid #ccc}
+.figure img {width:100%;height:auto;display:block} a {color:#195f8a} .status {padding:12px;background:#fff5da;border-radius:6px}
+@media(max-width:850px) {.controls,.cards,.metrics {grid-template-columns:repeat(2,1fr)} main{padding:20px 14px}}
+@media(max-width:540px) {.controls,.cards,.metrics {grid-template-columns:1fr}.card h3,.card p {min-height:0}}
+</style>
+<main>
+<div class="eyebrow">Generated 1s · a measured width / lean slice</div>
+<h1>Same widening operation.<br>Different pixel-change pattern.</h1>
+<p>At each lean, subtract the narrow 1 from the wide 1. That gives a <b>width vector</b>: 784 numbers saying how each pixel changes. Move the lean slider to see this vector change. Center <b>(14, 14)</b> and height <b>19.75 px</b> stay fixed.</p>
+<p class="status" id="status">Loading the measured image grid…</p>
+<div class="explain" id="distance-comparisons"><h2>Compare distances and vectors</h2><p><a href="distance_comparisons/">Open the distance plots and four-corner comparison</a>: one line per lean over width, equal +1° steps, and lean paths at different widths.</p></div>
+<div class="controls">
+ <div><label for="lean">Current lean <output id="lean-value"></output></label><input id="lean" type="range" min="0" max="90" value="50"><div class="control-note">−10° to 35° in 0.5° steps. Positive lean tilts the top right.</div><button id="play" type="button" style="margin-top:10px">Play lean sweep</button></div>
+ <div><label for="reference">Compare with lean</label><select id="reference"><option value="20">0° · upright reference</option><option value="0">−10° · minimum</option><option value="40">10°</option><option value="60">20°</option><option value="90">35° · maximum</option></select><p class="control-note">Both vectors use the same width endpoints. Angle divides out length to compare directions.</p></div>
+ <div><label for="local">Small-step starting width <output id="local-value"></output></label><input id="local" type="range" min="0" max="55" value="28"><div class="control-note">The last panel uses a 0.05 px width step. The other panels compare your selected endpoints.</div></div>
+ <div><label for="start">Starting width <output id="start-value"></output></label><input id="start" type="range" min="0" max="55" value="0"></div>
+ <div><label for="end">Ending width <output id="end-value"></output></label><input id="end" type="range" min="1" max="56" value="56"></div>
+ <div><button id="reset" type="button">Reset to full width range</button><p class="control-note">57 widths × 91 leans = 5,187 actual rendered images. Measurements use all pixels, with no projection.</p></div>
+</div>
+<div class="metrics">
+ <div class="metric">Width-vector length<span class="value" id="length"></span><small>Coverage L2: square each pixel change, sum, then take the square root.</small></div>
+ <div class="metric">Angle from reference vector<span class="value" id="angle"></span><small>0° = same direction; 90° = perpendicular. Uses all 784 entries.</small></div>
+ <div class="metric">Width path / endpoint distance<span class="value" id="ratio"></span><small>1 = straight without backtracking. Larger values show turning along the width sweep.</small></div>
+</div>
+<div class="cards">
+ <div class="card"><h3>1 · Starting image</h3><canvas id="narrow" width="28" height="28"></canvas><p id="narrow-note"></p></div>
+ <div class="card"><h3>2 · Ending image</h3><canvas id="wide" width="28" height="28"></canvas><p id="wide-note"></p></div>
+ <div class="card"><h3>3 · Width vector</h3><canvas id="vector" width="28" height="28"></canvas><p>Ending image − starting image.<br>Red adds ink; blue removes ink.</p></div>
+ <div class="card"><h3>4 · Reference width vector</h3><canvas id="reference-vector" width="28" height="28"></canvas><p id="reference-note"></p></div>
+ <div class="card"><h3>5 · How the width vector changed</h3><canvas id="difference" width="28" height="28"></canvas><p id="difference-note"></p></div>
+ <div class="card"><h3>6 · A small width-step vector</h3><canvas id="small" width="28" height="28"></canvas><p id="small-note"></p></div>
+</div>
+<div class="legend"><span>Images: white = 0 ink, black = 1 ink.</span><span>All vector maps: −1 <span class="bar"></span> +1</span><span>White = zero. Same scale; no clipping.</span></div>
+<div class="explain"><h2>Read the difference carefully</h2><p>The width vector says where widening adds ink. The <b>change in that vector</b> compares two widening responses: red means the response is larger here than at the reference lean; blue means it is smaller. Blue in that comparison does not mean widening removed ink.</p><p>The whole min-to-max vector is the sum of the small width-step vectors. Those steps can turn along the sweep, so one endpoint vector does not describe every intermediate image.</p></div>
+<div class="figure"><h2>The images and their vectors</h2><img src="01_pixel_vectors.png" alt="Narrow and wide source images, their width vectors and changes from upright at six lean settings."></div>
+<div class="figure"><h2>The whole width vector, measured across lean</h2><img src="02_whole_vector_measurements.png" alt="Full-vector length, angle from upright, direction change per one degree of lean, and widening path length compared with endpoint distance."></div>
+<div class="figure"><h2>The small width steps throughout the grid</h2><img src="03_small_width_steps.png" alt="Heatmaps of small width-step speed and angle from the same width step at upright, across width and lean."></div>
+<div class="explain"><h2>Scope and resolution</h2><p>This page explores the allowed width and lean ranges at one fixed center and height. It is a sampled two-knob slice of the five-knob family. Vectors are finite image differences, not analytic derivatives. Rendering uses 16 subrows and float32 storage; displayed measurements subtract and accumulate with higher precision.</p><p id="validation"></p><p><a href="samples.npz">All sampled images</a> · <a href="whole_vectors.csv">Whole-vector measurements</a> · <a href="small_width_steps.csv">Small-step measurements</a> · <a href="results.json">Settings and checks</a> · <a href="README.md">Explanation and reproduction</a></p></div>
+</main>
+<script id="experiment-data" type="application/json">__EXPERIMENT_DATA__</script>
+<script>
+const data=JSON.parse(document.getElementById('experiment-data').textContent);
+const $=id=>document.getElementById(id);
+let pixels, timer;
+const subtract=(a,b)=>Float64Array.from(a,(v,i)=>v-b[i]);
+const length=a=>Math.sqrt(a.reduce((s,v)=>s+v*v,0));
+function vectorAngle(a,b){let c=a.reduce((s,v,i)=>s+v*b[i],0)/(length(a)*length(b));if(Math.abs(c-1)<1e-14)c=1;return Math.acos(Math.max(-1,Math.min(1,c)))*180/Math.PI;}
+const image=(t,w)=>pixels.subarray((t*57+w)*784,(t*57+w+1)*784);
+function paint(id,values,isVector){const ctx=$(id).getContext('2d');const im=ctx.createImageData(28,28);for(let i=0;i<784;i++){const v=values[i];let rgb;if(isVector){const c=v>=0?[178,24,43]:[33,102,172];rgb=c.map(x=>Math.round(255+(x-255)*Math.abs(v)));}else rgb=[1,1,1].map(()=>Math.round(255*(1-v)));im.data.set([...rgb,255],4*i);}ctx.putImageData(im,0,0);}
+function update(){if(!pixels)return;let t=+$('lean').value,r=+$('reference').value,a=+$('start').value,b=+$('end').value,k=+$('local').value;
+if(a>=b){if(document.activeElement===$('start'))b=a+1;else a=b-1;$('start').value=a;$('end').value=b;}
+const lo=image(t,a),hi=image(t,b),v=subtract(hi,lo),rv=subtract(image(r,b),image(r,a)),dv=subtract(v,rv),small=subtract(image(t,k+1),image(t,k));let arc=0;for(let j=a;j<b;j++)arc+=length(subtract(image(t,j+1),image(t,j)));
+$('lean-value').textContent=`${data.leans[t].toFixed(1)}°`;$('start-value').textContent=`${data.widths[a].toFixed(2)} px`;$('end-value').textContent=`${data.widths[b].toFixed(2)} px`;$('local-value').textContent=`${data.widths[k].toFixed(2)} px`;
+$('length').textContent=length(v).toFixed(3);$('angle').textContent=vectorAngle(v,rv).toFixed(2)+'°';$('ratio').textContent=(arc/length(v)).toFixed(3);
+$('narrow-note').textContent=`Width ${data.widths[a].toFixed(2)} px · lean ${data.leans[t].toFixed(1)}°`;$('wide-note').textContent=`Width ${data.widths[b].toFixed(2)} px · lean ${data.leans[t].toFixed(1)}°`;
+$('reference-note').textContent=`Same width endpoints, at lean ${data.leans[r].toFixed(1)}°.`;$('difference-note').textContent=`Current vector − reference vector. Difference length: ${length(dv).toFixed(3)}. Red/blue: larger/smaller response.`;
+$('small-note').textContent=`Width ${data.widths[k].toFixed(2)} → ${data.widths[k+1].toFixed(2)} px at lean ${data.leans[t].toFixed(1)}°. Length ${length(small).toFixed(4)}; same color scale.`;
+paint('narrow',lo,false);paint('wide',hi,false);paint('vector',v,true);paint('reference-vector',rv,true);paint('difference',dv,true);paint('small',small,true);
+window.experimentState={lean:data.leans[t],widthStart:data.widths[a],widthEnd:data.widths[b],referenceLean:data.leans[r],length:length(v),angle:vectorAngle(v,rv),ratio:arc/length(v),difference:length(dv)};
+}
+for(const id of ['lean','reference','start','end','local'])$(id).addEventListener('input',update);
+$('reset').addEventListener('click',()=>{$('start').value=0;$('end').value=56;update();});
+$('play').addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null;$('play').textContent='Play lean sweep';}else{timer=setInterval(()=>{$('lean').value=(+$('lean').value+1)%91;update();},120);$('play').textContent='Pause lean sweep';}});
+(async()=>{try{const compressed=Uint8Array.from(atob(data.samples),c=>c.charCodeAt(0));const stream=new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'));const buffer=await new Response(stream).arrayBuffer();pixels=new Float32Array(buffer);if(pixels.length!==91*57*784)throw Error('Unexpected image-grid size');$('status').textContent='Ready · all 5,187 source images loaded locally. No network requests needed.';$('status').style.background='#e5f1ea';$('validation').textContent=`Checked against 20,453 images at half the width and lean spacing. All matching grid images are identical. Halving the width step changes sampled width-path lengths by at most ${(100*data.summary.checks.refined_width_path_max_relative_change).toFixed(3)}%.`;update();window.experimentReady=true;}catch(error){$('status').textContent='The image grid could not load: '+error.message;window.experimentError=error.message;}})();
+</script>
+</html>

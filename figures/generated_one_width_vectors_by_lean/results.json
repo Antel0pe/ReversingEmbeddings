@@ -1,0 +1,146 @@
+{
+  "root": [
+    14.0,
+    14.0,
+    19.75,
+    3.2,
+    0.0
+  ],
+  "fixed_knobs": {
+    "cx": 14,
+    "cy": 14,
+    "height": 19.75
+  },
+  "width_range_px": [
+    1.8,
+    4.6
+  ],
+  "lean_range_degrees": [
+    -10.0,
+    35.0
+  ],
+  "grid": {
+    "width_count": 57,
+    "lean_count": 91,
+    "width_step_px": 0.05,
+    "lean_step_degrees": 0.5,
+    "images": 5187
+  },
+  "renderer": {
+    "subrows": 16,
+    "storage": "float32; differences and measurements in float64"
+  },
+  "width_vector_definition": "render(cx,cy,h,max_width,lean) - render(cx,cy,h,min_width,lean)",
+  "angle_definition": "acos(dot(a,b)/(L2(a)*L2(b))) in degrees; all 784 coordinates, no projection",
+  "length_range": [
+    6.242691912313372,
+    6.569466602553817
+  ],
+  "one_degree_turn_range": [
+    7.299010516714806,
+    10.2717474256309
+  ],
+  "half_degree_turn_range": [
+    3.6385675523658385,
+    5.168883335381991
+  ],
+  "path_ratio_range": [
+    1.2293240315703482,
+    1.348089289723301
+  ],
+  "checks": {
+    "max_ink_mass_error": 8.821487398336103e-07,
+    "telescoping_max_pixel_error": 0.0,
+    "refined_grid_images": 20453,
+    "refined_width_path_max_relative_change": 0.0026774693631924228,
+    "refined_lean_one_degree_turn_range": [
+      7.212632715255519,
+      10.2717474256309
+    ],
+    "endpoint_vector_float32_vs_float64_max_pixel_difference": 2.98876314808183e-08,
+    "matched_refined_grid_images_identical": true,
+    "monotone_widening": true
+  },
+  "selected": [
+    {
+      "lean_degrees": -10.0,
+      "vector_length": 6.427288181052668,
+      "angle_from_upright_degrees": 58.23803598597243,
+      "vector_change_from_upright_L2": 6.3185238364004075,
+      "sampled_width_path_length": 8.497237505099122,
+      "path_length_over_endpoint_distance": 1.3220564047755885
+    },
+    {
+      "lean_degrees": 0.0,
+      "vector_length": 6.555055330615465,
+      "angle_from_upright_degrees": 0.0,
+      "vector_change_from_upright_L2": 0.0,
+      "sampled_width_path_length": 8.75000018596738,
+      "path_length_over_endpoint_distance": 1.334847647296034
+    },
+    {
+      "lean_degrees": 5.0,
+      "vector_length": 6.430779133979425,
+      "angle_from_upright_degrees": 34.930728599404375,
+      "vector_change_from_upright_L2": 3.8992308025029576,
+      "sampled_width_path_length": 8.625773748293469,
+      "path_length_over_endpoint_distance": 1.3413263880757418
+    },
+    {
+      "lean_degrees": 10.0,
+      "vector_length": 6.427288181052668,
+      "angle_from_upright_degrees": 58.23803598597243,
+      "vector_change_from_upright_L2": 6.3185238364004075,
+      "sampled_width_path_length": 8.497237505099122,
+      "path_length_over_endpoint_distance": 1.3220564047755885
+    },
+    {
+      "lean_degrees": 15.0,
+      "vector_length": 6.414362935494539,
+      "angle_from_upright_degrees": 65.49898337762987,
+      "vector_change_from_upright_L2": 7.017025180090251,
+      "sampled_width_path_length": 8.354718226416592,
+      "path_length_over_endpoint_distance": 1.3025016374088993
+    },
+    {
+      "lean_degrees": 20.0,
+      "vector_length": 6.390732577105273,
+      "angle_from_upright_degrees": 64.49700349299596,
+      "vector_change_from_upright_L2": 6.9091718895523675,
+      "sampled_width_path_length": 8.208749727456109,
+      "path_length_over_endpoint_distance": 1.284477112508801
+    },
+    {
+      "lean_degrees": 25.0,
+      "vector_length": 6.3534914778663145,
+      "angle_from_upright_degrees": 66.74837476802084,
+      "vector_change_from_upright_L2": 7.103045356143223,
+      "sampled_width_path_length": 8.04925395032857,
+      "path_length_over_endpoint_distance": 1.266902454873795
+    },
+    {
+      "lean_degrees": 30.0,
+      "vector_length": 6.304331368497667,
+      "angle_from_upright_degrees": 70.81703733270167,
+      "vector_change_from_upright_L2": 7.453560790693169,
+      "sampled_width_path_length": 7.877730184349095,
+      "path_length_over_endpoint_distance": 1.2495742567901171
+    },
+    {
+      "lean_degrees": 35.0,
+      "vector_length": 6.242691912313372,
+      "angle_from_upright_degrees": 74.12048769515236,
+      "vector_change_from_upright_L2": 7.716645938005427,
+      "sampled_width_path_length": 7.674291189496682,
+      "path_length_over_endpoint_distance": 1.2293240315703482
+    }
+  ],
+  "scope": "Sampled width/lean slice at fixed center and height, not the whole five-knob manifold.",
+  "understanding_check": {
+    "object": "Source coverage images first, then their pixel differences",
+    "axes": "Raw horizontal width pixels, lean degrees, coverage L2, and explicit angular references",
+    "baseline": "Upright at lean 0 degrees, shown first and marked",
+    "evidence": "Direct vector maps plus lengths, angles, and local grid heatmaps",
+    "limits": "Finite sampled slice; same scales; no projection; no clipped displayed values"
+  }
+}

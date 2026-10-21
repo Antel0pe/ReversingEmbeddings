@@ -1,0 +1,35 @@
+{
+  "vertices": 1334,
+  "original_coordinates_per_vertex": 784,
+  "original_scalar_values_retained": 1045856,
+  "width_count": 29,
+  "lean_count": 46,
+  "fixed": {
+    "cx": 14,
+    "cy": 14,
+    "height": 19.75
+  },
+  "varying_coordinates": 206,
+  "constant_coordinates": 578,
+  "coordinate_meaning": "coverage at one original pixel; values from 0 to 1",
+  "indexing": "zero-based row-major: coordinate index = 28*row + column",
+  "geometry": "Existing graph-distance unfolding positions; axes are addresses on the map, not individual original pixel axes.",
+  "checks": {
+    "all_stored_images_bit_identical_to_renderer": true,
+    "transport_roundtrip_bit_identical": true,
+    "distinct_map_addresses_for_all_vertices": true
+  },
+  "limitations": [
+    "A finite sampled sheet, not the full continuous surface.",
+    "Unwrapped distances can differ from original image distances.",
+    "Between sampled vertices the coordinate-field colors and contours are interpolated.",
+    "All original values are retained at vertices. This is data attachment, not a claim of a continuous learned decoder."
+  ],
+  "understanding_check": {
+    "object": "One unwrapped sheet with actual original pixel values attached at every sampled vertex",
+    "axes": "Map addresses versus original pixel-coordinate values are distinguished explicitly",
+    "baseline": "Root image and its two selected coordinate values are marked",
+    "evidence": "Two original coordinate fields on the same addresses; interactive full-vector inspection",
+    "scope": "Bit-exact source values at finite vertices; approximate map and between-vertex interpolation"
+  }
+}

@@ -125,3 +125,7 @@ identifying knobs in mnist connected group of 1s then trying if any combination 
 similar distances + angles for same knob families from root
 - can we use this to find missing data?
 - is this a consistent quality in real data?
+
+unfurl high dimension surfaces with mis-ordered real coordinates
+- a 2d surface vary in more than 2 dimensions but ultimately you can flatten the surface and show a flat 2d surface
+- what if we represented higher dimensional 2d manifolds as a surface but instead of showing ordered axis numbers like 0,1,2 we show it in actual space like 0.4, 231, 2.3, etc. does this make sense? like if we were to show it in terms of coordinates before unfurling? i think we would have to show it in terms of higher dimensional coordinate because they would vary in more than 2 numbers but in effect they can be reduced to varying in 2 numbers. the 2d coordinates will always show them smooth and orderly varying
