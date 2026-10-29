@@ -7,3 +7,7 @@ is there a set of linear transformations that completely spans the set of all po
 
 find linear transformations from image a to b? i currently look at direction vector as like add these values to a to get to b. but what about linear transformations? is there any pattern?
 
+eigenvectors of transformations / different transformations from a 1 to another 1
+
+sequence of transformations along manifold
+
