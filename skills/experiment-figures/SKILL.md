@@ -11,7 +11,7 @@ Give each figure one question and a visible reading order. Introduce the baselin
 
 For pixel changes, use a diverging palette centered at zero and say which sign gains ink. For changes *to a direction vector*, label that second difference separately: its colors describe a change in the pixel-change pattern, not direct ink gain or loss. Keep comparable panels on a common color scale, or state clearly when scales differ. Mark values hidden by clipping, occlusion, or display resolution.
 
-Reserve space for titles, panels, legends, and captions. Render the final file, inspect it at the size the user will see, and correct overlaps or illegible labels. Show the final figure inline using the available chat or artifact mechanism; do not copy Claude-only commands such as `SendUserFile` into a Codex workflow.
+Reserve space for titles, panels, legends, and captions. Render the final file, inspect it at the size the user will see by reading the rendered image back, and correct overlaps or illegible labels. Then deliver it in the message: send the final, corrected file with `SendUserFile` using `display: "render"` so it opens inline. Send every figure the request produced, not a representative one, and never leave a figure as only a path on disk.
 
 ## Understanding check before delivery
 
@@ -25,4 +25,4 @@ Read the figure as someone who has not seen the code or the conversation. Ask:
 
 If any answer is missing or requires a paragraph outside the figure, revise the figure first. Then explain it in the message from familiar object to new result, one inference at a time.
 
-For detailed layout and experimental-figure conventions, the source guidance is `.claude/skills/experiment-figures/SKILL.md`; use its applicable parts without importing Claude-specific tool calls or treating every suggested panel type as mandatory.
+For the full layout rules, baseline ordering, per-panel measurement, slice controls, clipping overlays, and the pre-delivery checklist, read `.claude/skills/experiment-figures/SKILL.md`, which is also loaded automatically as the `experiment-figures` skill. Not every panel type it suggests is mandatory; the understanding check above is.
