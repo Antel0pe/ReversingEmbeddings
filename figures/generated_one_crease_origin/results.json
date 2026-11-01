@@ -1,0 +1,67 @@
+{
+  "base_setting": [
+    14.4,
+    14.3,
+    19.9,
+    3.1,
+    8.0
+  ],
+  "lean_window_degrees": 0.2,
+  "steps": 4001,
+  "kick_threshold": 0.01,
+  "decision_flips": {
+    "predicted_events_in_window": 12,
+    "observed_creases": 12,
+    "step_size_degrees": 5e-05,
+    "worst_gap_in_steps": 0.37277518721623437,
+    "observed_creases_within_one_step_of_a_prediction": 12
+  },
+  "worst_crease_pixel": {
+    "row": 6,
+    "col": 14,
+    "value_min": 0.9926461555801164,
+    "value_max": 0.9990368592673813,
+    "ever_exactly_zero": false,
+    "rate_before": -0.018329792862425975,
+    "rate_after": -0.027390411709848905,
+    "abrupt_rate_change": 0.004530304347216685,
+    "as_percent_of_typical_rate": 100.82622782453312
+  },
+  "grid_refinement": [
+    {
+      "n_pix": 14,
+      "creases": 3,
+      "total_direction_change": 0.07988112646856971,
+      "largest_kick": 0.026066028668115658,
+      "path_speed": 0.430558248329317
+    },
+    {
+      "n_pix": 28,
+      "creases": 12,
+      "total_direction_change": 0.2153530289603137,
+      "largest_kick": 0.016440948656379885,
+      "path_speed": 0.6128810220876946
+    },
+    {
+      "n_pix": 56,
+      "creases": 17,
+      "total_direction_change": 0.4695972964706847,
+      "largest_kick": 0.016606376185392846,
+      "path_speed": 0.874112241136127
+    },
+    {
+      "n_pix": 112,
+      "creases": 24,
+      "total_direction_change": 1.501813610553611,
+      "largest_kick": 0.011944329878467368,
+      "path_speed": 1.2575225152956733
+    }
+  ],
+  "decision_free": {
+    "creases": 0,
+    "total_direction_change": 0.03696419910872521,
+    "largest_kick": 9.375479297629647e-06,
+    "relative_rms_vs_coverage_over_box": 0.146648093710166,
+    "ink_correlation_vs_coverage_over_box": 0.990541597536334
+  }
+}

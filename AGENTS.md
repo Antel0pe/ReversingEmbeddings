@@ -108,6 +108,39 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   succeed; larger steps and renderer boundaries can switch the association.
   Known controls generate valid moves and evaluate categories; the matcher
   itself uses only absolute pixel cosine. This does not identify unique knobs.
+- **Why the creases exist, and what grid fineness does:**
+  `analyze_generated_one_crease_origin.py` and
+  `figures/generated_one_crease_origin/README.md` show every crease is one of
+  the renderer's `clip/min/max` decisions flipping, predicted in closed form and
+  matched to within 0.37 of a sweep step. The worst crease sits at a pixel that
+  stays between 0.9926 and 0.9990, so creases are not pixels switching on.
+  Refining the grid adds creases without shrinking them and makes path speed
+  diverge as one over the square root of the pixel pitch. `smooth_ones.py`
+  renders the same five knobs with no decisions at all (zero creases, at a cost
+  of about 15% relative RMS against coverage); `coverage_grids.py` renders
+  `grey_ones`' coverage maths at any grid fineness.
+- **The five knobs as reweightings of two gradients:**
+  `analyze_generated_one_gradient_fields.py` and
+  `figures/generated_one_gradient_fields/README.md` express every knob direction
+  in the six affine fields built from an image's own `d/dx` and `d/dy`. Residual
+  tracks the measuring nudge squared to within 1%, so it is measurement error,
+  not a missing ingredient. The unused sixth field is vertical shear, which is
+  why there are five knobs. Borrowed-field and dropped-field controls included.
+- **Knobs from linear measurements, in closed form:**
+  `analyze_generated_one_moment_chart.py` and
+  `figures/generated_one_moment_chart/README.md` recover all five knobs from six
+  fixed linear projections of the pixels with nothing fitted; total ink equals
+  `width * height` to 4e-14, and the remaining error falls as the square of the
+  pixel pitch. A warped single template decodes held-out images to 13.65%
+  against a rank-5 linear ceiling of 44.49%, and the true-knob control shows
+  almost all of that is resampling.
+- **Warp space without assuming affine:**
+  `figures/generated_one_warp_space/README.md` (salvaged from an earlier
+  session) fits a free degree-2 polynomial warp and finds the family is a
+  5-dimensional flat subspace there, machine-zero past the fifth component,
+  while pixel space still leaves 8% at 50 directions. It also locates the
+  failure: the vertical warp coefficients are not equally visible, so a
+  pixel-fitted warp is blind to `cy` (median error 0.467).
 - **Direction-change history and count consistency:**
   `analyze_generated_one_direction_history.py` and
   `figures/generated_one_direction_history/README.md` test eight-hop tracking,
