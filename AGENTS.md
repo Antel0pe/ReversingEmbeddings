@@ -126,6 +126,19 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   tracks the measuring nudge squared to within 1%, so it is measurement error,
   not a missing ingredient. The unused sixth field is vertical shear, which is
   why there are five knobs. Borrowed-field and dropped-field controls included.
+- **The vocabulary of motions, discovered from images alone:**
+  `analyze_generated_one_motion_discovery.py` and
+  `figures/generated_one_motion_discovery/README.md` withhold the affine
+  hypothesis: forward selection over twelve generic polynomial-warp motions picks
+  the five affine ones first and then plateaus (0.667% leftover at five, 0.629%
+  at all twelve), with leftover falling in direct proportion to the step, so the
+  five-motion model is exact in the limit. Knob values build the dataset and are
+  never fitted or scored. The method does require a dense dataset -- a scattered
+  sample's nearest neighbours leave 18.192%. On coverage output the same five are
+  still selected first, but a 23.0% floor appears; running the identical
+  blur-then-`np.gradient` pipeline on crease-free `smooth_ones` leaves 16.7%, so
+  the floor is mostly gradient tooling rather than the creases. Borrowed-field,
+  dropped-motion, random-picture and no-density controls included.
 - **Knobs from linear measurements, in closed form:**
   `analyze_generated_one_moment_chart.py` and
   `figures/generated_one_moment_chart/README.md` recover all five knobs from six
@@ -141,6 +154,17 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   while pixel space still leaves 8% at 50 directions. It also locates the
   failure: the vertical warp coefficients are not equally visible, so a
   pixel-fitted warp is blind to `cy` (median error 0.467).
+- **One pixel at a time: humps and handoff:**
+  `analyze_generated_one_pixel_humps.py` and
+  `figures/generated_one_pixel_humps/README.md` describe a lean sweep in the
+  pixel basis. Every touched pixel has exactly one active episode with one
+  rise; the active span in `tan(lean)` is `(width + 1) / |row - cy|` with
+  r^2 0.9919, against a `cx` control whose spans are identical across rows to
+  4e-16. At a typical lean only 56 of 784 pixels move, 56% of the motion sits
+  in ten of them, and the move direction at leans 10 degrees apart is
+  orthogonal. Hump structure survives `smooth_ones`, so it is geometry, not
+  the grid. Faithful bookkeeping, but not a route to the knobs.
+
 - **Direction-change history and count consistency:**
   `analyze_generated_one_direction_history.py` and
   `figures/generated_one_direction_history/README.md` test eight-hop tracking,

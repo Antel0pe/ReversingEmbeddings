@@ -1,0 +1,128 @@
+{
+  "smooth": {
+    "pipeline": "smooth_ones, exact gradients",
+    "selection": [
+      {
+        "field": "y*d/dx",
+        "leftover": 0.4655435629958401,
+        "predicted": true
+      },
+      {
+        "field": "x*d/dx",
+        "leftover": 0.2601222317688052,
+        "predicted": true
+      },
+      {
+        "field": "1*d/dx",
+        "leftover": 0.0975317376935759,
+        "predicted": true
+      },
+      {
+        "field": "1*d/dy",
+        "leftover": 0.04743541550462506,
+        "predicted": true
+      },
+      {
+        "field": "y*d/dy",
+        "leftover": 0.006670728521376663,
+        "predicted": true
+      },
+      {
+        "field": "x^2*d/dy",
+        "leftover": 0.006656350000613256,
+        "predicted": false
+      },
+      {
+        "field": "y^2*d/dx",
+        "leftover": 0.006612530053559517,
+        "predicted": false
+      },
+      {
+        "field": "xy*d/dy",
+        "leftover": 0.0065188899611025326,
+        "predicted": false
+      }
+    ],
+    "five_predicted": 0.0066707285213766536,
+    "all_twelve": 0.00628877918270862,
+    "drop_lean": 0.6588240853515003,
+    "borrowed_fields": 0.9094673415585925,
+    "random_pictures": 0.9972802678144317,
+    "step_sweep": {
+      "0.02": 0.065917760206962,
+      "0.002": 0.0065933467626932175,
+      "0.0002": 0.0006591525432049792
+    },
+    "scattered_sample": 0.18192260596664273
+  },
+  "coverage": {
+    "pipeline": "grey_ones, blur 1.0 + np.gradient",
+    "selection": [
+      {
+        "field": "y*d/dx",
+        "leftover": 0.5190218386313112,
+        "predicted": true
+      },
+      {
+        "field": "x*d/dx",
+        "leftover": 0.40123316556357397,
+        "predicted": true
+      },
+      {
+        "field": "1*d/dx",
+        "leftover": 0.28785045907899925,
+        "predicted": true
+      },
+      {
+        "field": "1*d/dy",
+        "leftover": 0.260673787062778,
+        "predicted": true
+      },
+      {
+        "field": "y*d/dy",
+        "leftover": 0.23727956743407008,
+        "predicted": true
+      },
+      {
+        "field": "x^2*d/dx",
+        "leftover": 0.2337368279022583,
+        "predicted": false
+      },
+      {
+        "field": "y^2*d/dy",
+        "leftover": 0.23226203734132292,
+        "predicted": false
+      },
+      {
+        "field": "xy*d/dx",
+        "leftover": 0.22947231437652357,
+        "predicted": false
+      }
+    ],
+    "five_predicted": 0.23727956743407008,
+    "all_twelve": 0.22447941855559028,
+    "drop_lean": 0.7159103724738971,
+    "borrowed_fields": 0.7919343609601058,
+    "random_pictures": 0.9972634913494145,
+    "step_sweep": {
+      "0.02": 0.23432340601869253,
+      "0.002": 0.23132669941102096,
+      "0.0002": 0.23213259216166104
+    },
+    "scattered_sample": 0.26317340156271546
+  },
+  "tooling_isolation": {
+    "smooth_blur1.0_step0.02": 0.1730778961666904,
+    "smooth_blur1.0_step0.002": 0.16779281222521186,
+    "smooth_blur1.0_step0.0002": 0.16718782709148133,
+    "smooth_blur2.0_step0.02": 0.32768522329472183,
+    "smooth_blur2.0_step0.002": 0.3281848635289333,
+    "smooth_blur2.0_step0.0002": 0.32904348021142393,
+    "coverage_blur1.0_step0.02": 0.2284216908558322,
+    "coverage_blur1.0_step0.002": 0.22958531430907675,
+    "coverage_blur1.0_step0.0002": 0.23015270975649005,
+    "coverage_blur2.0_step0.02": 0.346416514732265,
+    "coverage_blur2.0_step0.002": 0.34778404519056794,
+    "coverage_blur2.0_step0.0002": 0.3468919026521919
+  }
+}
