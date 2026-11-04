@@ -3,6 +3,7 @@
 - Never include the user's full local filesystem path in a public or shareable artifact. Use repo-relative paths or sanitized placeholders.
 - Never use npm. Use pnpm or bun when a JavaScript package command is needed.
 - When making an explanatory experiment figure, read `skills/experiment-figures/SKILL.md` and apply its understanding check before delivery.
+- When the user gives you a research paper, read `skills/read-paper/SKILL.md`. Notes live one-file-per-paper in `literature/`, indexed by `literature/README.md`; never mirror a paper's text into the repo.
 
 ## Context shortcut: generated 1s / five-knob manifold
 
@@ -139,6 +140,50 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   blur-then-`np.gradient` pipeline on crease-free `smooth_ones` leaves 16.7%, so
   the floor is mostly gradient tooling rather than the creases. Borrowed-field,
   dropped-motion, random-picture and no-density controls included.
+- **Real MNIST 1s: the search for their knobs, and what is actually there:**
+  `analyze_mnist_one_knob_search.py` on `warp_charts.py` (eleven parts, runnable
+  separately), with `figures/mnist_one_knob_search/README.md`. Validated on the
+  generated family first: five coordinates decode held-out images to **1.06%**
+  (224^2 template, 40 rounds), saturation confirms five, and a closed-form
+  inversion recovers the generator's OWN knobs to ~0.001-0.009 units -- about
+  0.1% of each range -- once **five** labelled examples fix a five-number gauge
+  (five is exactly enough; the gauge has five degrees of freedom, and a
+  shuffled-chart control fails completely). On MNIST there is no small knob set:
+  27.65% at five coordinates and resolution/rounds move it 0.03 points, so there
+  the error is the family, not the fit. Geometry never flattens (to 14.98% at
+  ninety warp numbers) and the biggest single gain is affine->quadratic, i.e.
+  bending, not serifs. TwoNN and Levina-Bickel say twelve or more but the
+  estimate CLIMBS with sample size (9.17 to 12.16 from n=500 to 4000) while the
+  generated family's converges on 4.57, so twelve is an unconverged lower bound.
+  Do NOT ask where MNIST geometry saturates: PCA catches the warp model at 72
+  parameters and beats it at 90. Use parsimony instead -- five warp coordinates
+  match ~70 PCA components on the generated family (~14x) and ~17 on MNIST
+  (~3.4x). The generation test cuts the other way and is the sharpest
+  discriminator: NEW warp coordinates decode to images indistinguishable from
+  real MNIST 1s, matching real precision AND recall at twenty coordinates
+  (0.302/0.304 vs 0.299/0.291), while PCA samples are not 1s (overlap 0.74, 9%
+  negative ink) and get worse with more coordinates. So MNIST's warp
+  coordinates are VALID but INCOMPLETE knobs. Interpreted through the same
+  closed form, they ARE slant (57x better than chance), width (5.4x) and
+  horizontal position (4.9x), but barely determine height (1.4x) or vertical
+  position (1.7x) -- a 1 is a long uniform stroke, so vertical placement and
+  length barely move the pixels. That independently reproduces
+  `figures/generated_one_warp_space`'s finding that a pixel-fitted warp is blind
+  to `cy`. Best structured MNIST model: quadratic warp plus cubic gain field, 22
+  coordinates, 18.3%. FIVE traps the experiment records: MNIST's nearest
+  neighbour is 24.8% of an image away (9.1% for the generated family), so the
+  linearised motion-discovery method cannot be used; the decoder is capped by
+  TEMPLATE resolution, not the model, which is why it is super-resolved by
+  splatting; `fit_chart` at 7 rounds understates a chart twofold (2.93% vs 1.50%
+  at 40), so the default is now 25; whole-canvas fold counts are misleading --
+  MNIST folds up to a third of the time somewhere but only 1-2.7% ON THE INK, so
+  use `jacobian_determinants(..., ink=image)`; and a gain field must be compared
+  at MATCHED template rounds or the extra refinement is credited to the gain
+  (which made a worthless one-term darkness knob look valuable). The ten-term
+  gain is worth +4.28 points over a five-coordinate warp but only +1.34 over a
+  twelve-coordinate one, and is slightly NEGATIVE on the generated family, so
+  the genuinely appearance-only part -- ink density along the stroke, not overall
+  darkness -- is about a point.
 - **Knobs from linear measurements, in closed form:**
   `analyze_generated_one_moment_chart.py` and
   `figures/generated_one_moment_chart/README.md` recover all five knobs from six
