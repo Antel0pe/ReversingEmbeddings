@@ -210,6 +210,20 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   orthogonal. Hump structure survives `smooth_ones`, so it is geometry, not
   the grid. Faithful bookkeeping, but not a route to the knobs.
 
+- **Knob frames, stored and priced:** `knob_frames.py` is the shared API
+  (`jacobian`, `metric`, `frame`, `speeds`, `knob_cosines`), with
+  `build_generated_one_knob_atlas.py` and
+  `figures/generated_one_knob_atlas/README.md`. A dense locally-linear 5D
+  lattice would need 86 billion points (5.1 TB metric, 1.3 PB frames), so the
+  stored `atlas.npz` is slices: a 9^5 metric lattice, 81-point single-knob
+  sweeps with all five directions under both renderers, and ten 21x21 pair
+  slices, 6.98 MB. Interpolating it recovers the metric to 1.7% but a lean
+  frame only to cos 0.92, because one lattice step turns the lean direction to
+  cos 0.254. Worst degeneracy is cx-cy at |cos| 0.955 (thin and leaned);
+  condition number 66-135. Sweeping cx by one pixel makes the cx direction
+  EXACTLY orthogonal to itself (columns 12,15 -> 13,16), which is 0.38 on
+  `smooth_ones`.
+
 - **Direction-change history and count consistency:**
   `analyze_generated_one_direction_history.py` and
   `figures/generated_one_direction_history/README.md` test eight-hop tracking,
