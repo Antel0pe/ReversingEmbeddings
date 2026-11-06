@@ -192,6 +192,24 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   pixel pitch. A warped single template decodes held-out images to 13.65%
   against a rank-5 linear ceiling of 44.49%, and the true-knob control shows
   almost all of that is resampling.
+- **Adding one-knob lines, and how many lines it takes:**
+  `analyze_generated_one_line_interpolation.py` and
+  `figures/generated_one_line_interpolation/README.md` take the five lines
+  `render(root + e_k) - render(root)` and add them. At +1 on each dial two lines
+  miss the joint change by 11-61% of the move (all five at once, 63%), but the
+  miss is exactly second order (log-log slope 2.001), so the lines are an exact
+  LOCAL answer: 1.5% of the move at a twentieth of a unit. Globally they are
+  useless -- a typical setting is 80.7% of its own distance-from-root away from
+  the 5-line flat, the best five directions still leave 33.1%, and products of
+  the dials converge badly (6 lines 40.0%, 126 lines 15.8% held out) against a
+  PCA ceiling of 118 pictures for 1%. Patches of five fresh lines hold to 1%
+  only within +-1.2% of each range, so tiling the box costs ~1.3e8 patches.
+  `lean` is the whole problem (one line keeps 26% of its own sweep; 13 lines for
+  1%, against 2-3 for the others). The payoff: in WARP space, with
+  `height * tan(lean)` as the fifth dial, the same five lines add EXACTLY
+  (residual 5e-13%), and the 15.7% cost of getting back to pixels is the 28x28
+  template, falling to 0.11% at pitch 1/16 px. The root is an unusually flat
+  spot (40x better than other centres), so controls use four other centres.
 - **Warp space without assuming affine:**
   `figures/generated_one_warp_space/README.md` (salvaged from an earlier
   session) fits a free degree-2 polynomial warp and finds the family is a
@@ -209,6 +227,28 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   in ten of them, and the move direction at leans 10 degrees apart is
   orthogonal. Hump structure survives `smooth_ones`, so it is geometry, not
   the grid. Faithful bookkeeping, but not a route to the knobs.
+
+- **Making nearby pixels genuinely nearby:**
+  `analyze_pixel_metric_locality.py` and
+  `figures/pixel_metric_locality/README.md` test whether any representation can
+  separate perpendicular-because-adjacent from perpendicular-because-unrelated.
+  Every linear candidate is one frequency reweighting w(mu) in the DCT basis.
+  The pixel metric's sense of space is a STEP (cos 1 at d=0, 0 at every d>=1)
+  and its separation score is NEGATIVE (-0.149): it ranks a wrong answer above
+  the gesture continued. Blur 1-2 px scores +0.56, best when the connection
+  range matches the stroke width. The -1/2 speed law reproduces at -0.500, and
+  the 5-knob plane's twist is FLAT in pixel space (55.9, 56.5, 53.4 degrees)
+  but halves per halving under every re-encoding -- a tangent plane exists in
+  the re-encoded space. The 28x28 coverage render is already locally linear
+  below a normalised step of ~0.06, so the repo has been on F_s, not F.
+  Optimal transport is EXACT (a cx step of h costs exactly h, nothing blurred)
+  but only down to the pixel pitch; below it the 1/sqrt(h) law returns at every
+  fineness, so the sub-pixel blow-up is the SAMPLING GRID, not the edges.
+  Sharpen, white-noise, scramble, wrong-knob and wrong-place controls included.
+  Traps: an unbalanced sign scramble fakes +0.896 through its mean offset;
+  Sinkhorn under ~4000 iterations fails in a way that looks like a result; a
+  binary grid returns 90 degrees when a knob step flips no pixel. This measures
+  RULERS, not coordinates -- no decoder was run.
 
 - **Knob frames, stored and priced:** `knob_frames.py` is the shared API
   (`jacobian`, `metric`, `frame`, `speeds`, `knob_cosines`), with

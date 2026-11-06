@@ -1,0 +1,159 @@
+PART 1  the five lines from the root 1 (+1 on each dial)
+  root image length ||I0|| = 7.2887
+  knob         step  % of range  ||line||  % of ||I0||
+  cx             +1      100.0%    4.5069       61.83%
+  cy             +1      100.0%    2.0616       28.28%
+  height         +1       66.7%    0.9220       12.65%
+  width          +1       35.7%    2.5769       35.36%
+  lean           +1        2.2%    0.6151        8.44%
+
+  cosine between lines (1 = same direction, 0 = perpendicular):
+                 cx      cy  height   width    lean
+  cx          1.000   0.044  -0.027  -0.034   0.000
+  cy          0.044   1.000   0.335  -0.071  -0.000
+  height     -0.027   0.335   1.000   0.044   0.000
+  width      -0.034  -0.071   0.044   1.000  -0.000
+  lean        0.000  -0.000   0.000  -0.000   1.000
+
+  singular values of the 5 lines: [4.5094 2.5852 2.0753 0.8532 0.6151]
+  -> 5 genuinely different directions (smallest/largest = 0.136)
+
+PART 2  combining two lines, both ways, at +1 on each dial
+  CORNER  : predict render(root + e_i + e_j) by I0 + line_i + line_j
+  MIDPOINT: predict render(root + .5 e_i + .5 e_j) by (img_i + img_j)/2
+  error = |predicted - true| / |true - I0|, i.e. percent of the move you made
+
+  pair                    move len  corner err   mid err
+  cx + cy                   4.8734      26.16%    59.51%
+  cx + height               4.6249      12.33%    62.20%
+  cx + width                5.2663      60.51%    43.41%
+  cx + lean                 4.5487      19.12%    62.29%
+  cy + height               1.9558      55.78%    34.16%
+  cy + width                3.4118      21.36%    28.49%
+  cy + lean                 2.1514      14.22%    20.15%
+  height + width            2.8733      11.34%    30.80%
+  height + lean             1.1283      12.43%    39.99%
+  width + lean              2.6058      30.11%    27.75%
+
+  all five at once (+1,+1,+1,+1,+1): error 63.39% of the move
+  worst pair ['cx', 'width'] at 60.51%, best 11.34%
+
+PART 3  how the miss depends on how far you step
+  step t means knob k moves by t * 1 unit; all five moved together
+  err_abs = |pred - true| / |I0| ;  err_rel = |pred - true| / |true - I0|
+
+        t   move len    err_abs    err_rel
+    2.000    8.73165  108.3924%    90.480%
+    1.000    5.71634   49.7164%    63.392%
+    0.500    2.88626   23.2235%    58.647%
+    0.250    1.82930    4.4275%    17.641%
+    0.100    0.74581    0.8105%     7.921%
+    0.050    0.37879    0.0773%     1.487%
+    0.020    0.15125    0.0124%     0.595%
+    0.010    0.07558    0.0031%     0.298%
+    0.005    0.03778    0.0008%     0.149%
+    0.002    0.01511    0.0001%     0.059%
+
+  log-log slope of err_abs vs t over t in [0.002, 0.05]: 2.001
+
+  log-log slope of err_abs vs t over t in [0.002, 0.5]: 2.223
+  slope 2 = the miss is purely second order: halve the step, quarter the miss
+  the big steps sit above the power law, so they are past the local regime
+
+PART 4  is the whole family inside the 5-line flat from the root?
+  3000 settings drawn uniformly from the default range box.
+  distance from the 5-line flat, as % of the move from the root:
+    median 80.69%   p95 94.17%   max 95.43%
+
+  pooled residual with the 5 KNOB lines        : 85.55%
+  pooled residual with the best 5 directions   : 33.07%  (uncentred SVD of D)
+  best-possible residual vs number of directions through the root:
+       5 directions ->  33.07%
+      10 directions ->  24.46%
+      20 directions ->  16.38%
+      40 directions ->   8.14%
+      70 directions ->   3.71%
+     100 directions ->   1.85%
+
+PART 5  how many lines, if you may also use products of knobs (FITTED)
+  model                               lines    train  held-out
+  degree 1  straight lines (affine)        6   39.78%    40.02%
+  degree 2  + pair products               21   27.11%    27.16%
+  degree 3  + triple products             56   19.39%    19.64%
+  degree 4  + quadruple products         126   15.31%    15.77%
+
+  for comparison, the best possible k fixed images (PCA of the family),
+  with the k numbers read off the target image rather than from the knobs:
+       1 images ->  44.518%
+       2 images ->  35.596%
+       5 images ->  25.858%
+      10 images ->  19.520%
+      20 images ->  13.643%
+      40 images ->   6.636%
+      70 images ->   2.920%
+     100 images ->   1.424%
+  fixed images needed, best case: 5% -> 48, 1% -> 118, 0.1% -> 196
+  (a tensor-product guess from part 7, 3*2*2*3*13, would be 468)
+
+PART 6  patches: 5 fresh lines per patch, how many patches for 1%?
+  a patch is a centre plus its 5 lines, measured with step h (fraction of
+  each knob's range).  Points are drawn uniformly in the +-h box around the
+  centre.  error = |pred - true| / |true| , percent of the image.
+
+   h (frac of range)       c0       c1       c2       c3       c4   p95 all
+             0.50000 170.960% 262.511% 200.780% 161.674% 223.584%  207.599%
+             0.25000  72.573% 131.818% 111.455%  79.865%  97.653%  103.987%
+             0.12500  23.709%  59.045%  44.035%  37.063%  45.939%   45.158%
+             0.06250   1.784%  21.044%  16.577%  13.953%  18.608%   16.745%
+             0.03125   0.167%   6.533%   4.657%   4.672%   6.300%    5.382%
+             0.01562   0.038%   1.760%   1.332%   1.269%   2.354%    1.706%
+             0.00781   0.010%   0.454%   0.345%   0.329%   0.703%    0.464%
+             0.00391   0.003%   0.101%   0.086%   0.091%   0.225%    0.115%
+             0.00195   0.001%   0.031%   0.024%   0.025%   0.064%    0.034%
+             0.00098   0.000%   0.009%   0.010%   0.007%   0.017%    0.010%
+
+  fit: p95 error = 4004.010% * h^1.87   (slope 2 = second order)
+  h for 1% p95 error: 0.0119 of each range  ->  42.0 patches per knob
+  patches to tile the whole 5-knob box at 1%: 130,877,406  (654,387,028 lines)
+    tolerance  0.1%  ->  h 0.0035, 61,347,278,097 patches, 306,736,390,487 lines
+    tolerance  1.0%  ->  h 0.0119, 130,877,406 patches, 654,387,028 lines
+    tolerance  5.0%  ->  h 0.0281, 1,778,133 patches, 8,890,666 lines
+
+PART 7  one knob, swept across its whole default range, others at root
+  single line  = error of root + (one line, scaled) against the true sweep
+  lines for 1% = how many fixed images it takes to hold that one curve
+  (uncentred SVD of the sweep's moves away from the root)
+
+  knob              range  sweep len  single line  2 lines  3 lines  lines for 1%
+  cx             14 to 15     4.5069       16.32%    2.33%    0.00%             3
+  cy             14 to 15     2.0616        2.76%    0.53%    0.00%             2
+  height       19 to 20.5     0.6519        5.00%    0.00%    0.00%             2
+  width        1.8 to 4.6     3.1250        7.34%    1.20%    0.00%             3
+  lean          -10 to 35     8.8623       74.08%   23.35%   15.74%            13
+
+  a straight knob would read 0.00% on a single line; these are the
+  curvatures that break the 5-line picture once the step is big.
+
+PART 8  five lines that DO add up: warp coefficients, not pixels
+  every setting is the root stroke pushed through one affine map of the
+  canvas:   x = bx + sx*X + a12*Y ,  y = by + sy*Y   (no vertical shear)
+  so each image is described by five warp numbers (sx, a12, sy, bx, by).
+
+  5 lines in warp space, the dials as given  (cx, cy, height, width, lean):
+    residual 7.525e-01 absolute  (3.86e+00% relative)
+  5 lines in warp space, lean swapped for height*tan(lean):
+    residual 3.730e-14 absolute  (5.32e-13% relative)
+  -> with the right fifth dial the five warp lines add EXACTLY: the family
+     is a flat 5-dimensional plane in warp space, not a curved sheet.
+
+  cost of turning those five warp numbers back into 28x28 pixels, by
+  resampling the root image: median 15.74%, p95 20.75% of the image
+
+  control: is that 15% the five lines, or the 28x28 template?  Redo the
+  identical warp on a finer root template, then area-average back to 28x28.
+    root template 56x56 (pitch 0.5 px) -> median   3.74%
+    root template 112x112 (pitch 0.25 px) -> median   1.70%
+    root template 224x224 (pitch 0.125 px) -> median   0.27%
+    root template 448x448 (pitch 0.0625 px) -> median   0.11%
+  the five warp lines are unchanged throughout; only the template changes.
+

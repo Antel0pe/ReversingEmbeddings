@@ -1,0 +1,292 @@
+
+==========================================================================
+1.  What is actually the same about two widenings?
+==========================================================================
+
+Start at the root 1. Widen it, then widen it by the same amount again. Compare
+the first change with the second, three ways. The score is an angle:
+0 degrees = the very same change again, 90 degrees = nothing in common.
+
+  which pixels changed                  :  76.0 deg
+  ink to the left of here               :   8.8 deg
+  WHERE THE INK MOVED (the arrows)      :   2.7 deg
+      (the arrows explain 48.0% and 51.7% of the two changes)
+
+The arrows themselves, as six numbers. 'sideways arrow' is how far ink moves
+left or right; 'up-down arrow' is how far it moves up or down. Each is written
+as: a fixed part, plus a part proportional to how far right you are, plus a part
+proportional to how far down you are.
+
+                                 1st widening   2nd widening
+------------------------------------------------------------
+               sideways: fixed          0.000          0.000
+     sideways: x how far right          1.000          0.999
+      sideways: x how far down          0.000          0.000
+               up-down : fixed         -0.000         -0.000
+     up-down : x how far right          0.000          0.000
+      up-down : x how far down          0.014         -0.034
+
+Both widenings say the same thing: ink moves sideways, in proportion to how far
+right of the middle it already is. Which pixels that lands on is different each
+time -- that was the whole problem -- but the instruction is the same.
+
+==========================================================================
+2.  Is 'ink to the left of here' overfitted to widening?
+==========================================================================
+
+The test that matters: run the SAME recipe on all five knobs, not just the one
+it was invented for. A recipe that only works on left-right changes will fall
+over on the up-down ones.
+
+Each row: turn one knob twice by the same amount, and measure the angle between
+the first change and the second. Small is good -- it means the method sees the
+two steps as the same thing happening twice.
+
+
+A.  which pixels changed  (the baseline, no method at all)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)            62.5 deg       FAILS
+    slide up-down (cy)            82.0 deg       FAILS
+  make taller (height)            82.0 deg       FAILS
+         widen (width)            62.5 deg       FAILS
+      lean over (lean)            65.7 deg       FAILS
+     worst of the five            82.0 deg
+
+B.  ink to the left of here  (last session's trick)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)            36.0 deg       so-so
+    slide up-down (cy)            82.0 deg       FAILS
+  make taller (height)            82.0 deg       FAILS
+         widen (width)             8.0 deg        good
+      lean over (lean)            34.5 deg       so-so
+     worst of the five            82.0 deg
+
+Compare the two 'worst of the five' numbers. That is the honest score of a
+method: how it does on the knob it suits LEAST.
+
+==========================================================================
+3.  Do the arrows work on all five knobs?
+==========================================================================
+
+Same test, now describing each change by WHERE THE INK MOVED. Two ways of
+reading the arrows off a change, plus two controls.
+
+
+A.  CONTROL: one arrow for the whole picture (too weak on purpose)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)             0.0 deg        good
+    slide up-down (cy)             0.0 deg        good
+  make taller (height)             0.0 deg        good
+         widen (width)             0.5 deg        good
+      lean over (lean)             4.6 deg        good
+     worst of the five             4.6 deg
+
+B.  arrows read off by estimating how the picture shades
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)             3.1 deg        good
+    slide up-down (cy)             0.1 deg        good
+  make taller (height)             0.0 deg        good
+         widen (width)             0.4 deg        good
+      lean over (lean)            40.2 deg       so-so
+     worst of the five            40.2 deg
+
+C.  arrows read off by actually moving the ink (no shading estimate)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)             0.0 deg        good
+    slide up-down (cy)             0.0 deg        good
+  make taller (height)             0.0 deg        good
+         widen (width)             0.2 deg        good
+      lean over (lean)            18.6 deg        good
+     worst of the five            18.6 deg
+
+D.  CONTROL: twice as much freedom in the arrows (should not help)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)             3.1 deg        good
+    slide up-down (cy)             0.1 deg        good
+  make taller (height)             0.0 deg        good
+         widen (width)             0.4 deg        good
+      lean over (lean)            40.2 deg       so-so
+     worst of the five            40.2 deg
+
+E.  CEILING: the same, with a perfect shading estimate
+    (only possible because a renderer exists -- not a general method)
+                  knob    step 1 vs step 2     verdict
+------------------------------------------------------
+   slide sideways (cx)             3.0 deg        good
+    slide up-down (cy)             2.2 deg        good
+  make taller (height)             0.0 deg        good
+         widen (width)             0.0 deg        good
+      lean over (lean)            26.5 deg       so-so
+     worst of the five            26.5 deg
+
+How much of each change is actually accounted for by ink moving:
+
+                  knob   estimated shading    moving the ink   perfect shading
+------------------------------------------------------------------------------
+   slide sideways (cx)               51.7%            100.0%             29.6%
+    slide up-down (cy)               34.8%            100.0%             29.3%
+  make taller (height)               38.7%             94.5%              1.0%
+         widen (width)               78.6%             73.1%             16.8%
+      lean over (lean)               51.0%             70.2%             47.9%
+
+Two different costs are visible here, and they must not be confused.
+
+  - 'estimated shading' is low (30-50%) because reading how a picture shades
+    off 784 numbers is inaccurate at a sharp edge. Making the picture bigger
+    does NOT fix this; it was checked at 28, 56, 112, 224 and 448 across and
+    stays at 30-47%.
+  - 'perfect shading' is low HERE only because these steps are a whole pixel.
+    At a step of 0.05 px the same column reads 100.0% for every one of the five
+    knobs. Sliding-and-shading is an exact description of a TINY change; it is
+    not meant for a change this big.
+
+'moving the ink' needs neither: it does not estimate shading and it does not
+assume the change is tiny. That is why it is the only column that works on all
+five knobs at a realistic step size. What it loses (the 73% on widening) is
+resampling error when the interpolation crosses the sharp edge.
+
+==========================================================================
+4.  Do the arrows tell a real knob from junk?
+==========================================================================
+
+A method that calls everything a knob is useless. Five things are fed in. The
+first five rows are genuine knob turns. The rest are not: they are changes to
+the picture that no sliding of ink could produce.
+
+'explained by ink moving' is the key column. A real knob turn should be almost
+fully explained. Junk should not be.
+
+                               change fed in   explained by ink moving
+------------------------------------------------------------------------
+            slide sideways (cx)  [real knob]                    51.7%
+             slide up-down (cy)  [real knob]                    34.8%
+           make taller (height)  [real knob]                    38.7%
+                  widen (width)  [real knob]                    78.6%
+               lean over (lean)  [real knob]                    51.0%
+             random noise everywhere  [junk]                     0.4%
+   random noise, but only on the ink  [junk]                     3.9%
+ make the whole 1 darker  [junk: not a move]                    12.2%
+        a blob appears in the corner  [junk]                     0.0%
+
+The gap between the two groups is the detector. It needs nothing to be told in
+advance -- no list of knobs, no labels.
+
+==========================================================================
+5.  Can you get the knob values back? (the real goal)
+==========================================================================
+
+This is the thing we actually want: a handful of numbers per picture, from
+which the original knob settings can be read back precisely.
+
+Take 300 pictures whose five knobs were each nudged at random. Describe the
+change from the starting 1 each way. Then fit the simplest possible rule from
+the description to the five knob values, using HALF the pictures, and test it on
+the other half. The error is the average miss on the held-out half, written as a
+percentage of that knob's full allowed range. Under 1% is good.
+
+Each description uses a different count of numbers, shown as 'numbers used'.
+
+  --- knobs nudged by up to 5% of their range ------------------------
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed           784    0.70%    0.65%    0.03%    0.03%    0.17%
+   ink to the left of here           784    0.69%    0.65%    0.03%    0.03%    0.17%
+          arrows, degree 1             6    0.37%    0.34%    0.07%    0.01%    0.09%
+          arrows, degree 2            12    0.38%    0.35%    0.06%    0.01%    0.09%
+  MOVING THE INK, degree 1             6    0.37%    0.46%    1.07%    0.75%    0.11%
+
+  the same, but every description first squeezed to just 5 numbers
+  (this is the apples-to-apples 'minimal dimensions' test)
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed             5    0.36%    0.33%    0.07%    0.02%    0.09%
+   ink to the left of here             5    0.36%    0.34%    0.06%    0.01%    0.09%
+          arrows, degree 1             5    0.43%    0.38%    1.17%    0.02%    0.15%
+          arrows, degree 2             5    0.35%    0.34%    2.55%    0.05%    0.17%
+  MOVING THE INK, degree 1             5    0.40%    2.71%    1.00%    0.76%    0.11%
+
+  --- knobs nudged by up to 20% of their range ------------------------
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed           784    0.93%    4.54%    5.56%    0.93%    4.32%
+   ink to the left of here           784    0.93%    4.40%    5.59%    0.91%    4.23%
+          arrows, degree 1             6    1.24%    3.08%    9.19%    2.02%    1.70%
+          arrows, degree 2            12    0.59%    2.84%    9.88%    2.08%    1.84%
+  MOVING THE INK, degree 1             6    1.52%    2.45%    3.28%    1.55%    1.90%
+
+  the same, but every description first squeezed to just 5 numbers
+  (this is the apples-to-apples 'minimal dimensions' test)
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed             5    1.50%   10.30%   11.10%    1.19%    1.70%
+   ink to the left of here             5    0.89%    2.37%    3.47%    0.41%    1.94%
+          arrows, degree 1             5    2.96%    9.74%    9.18%    2.03%    1.66%
+          arrows, degree 2             5    6.95%    7.25%   11.37%    3.35%    3.85%
+  MOVING THE INK, degree 1             5    1.82%    9.27%    4.67%    1.48%    1.86%
+
+  --- knobs nudged by up to 50% of their range ------------------------
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed           784   10.46%   17.66%   14.04%    6.02%    8.10%
+   ink to the left of here           784   10.45%   16.79%   12.35%    5.96%    7.99%
+          arrows, degree 1             6   11.36%   14.26%   23.22%    8.17%    4.80%
+          arrows, degree 2            12    7.14%   13.33%   26.89%    8.64%    5.85%
+  MOVING THE INK, degree 1             6    9.23%    2.91%    6.19%    6.14%    5.98%
+
+  the same, but every description first squeezed to just 5 numbers
+  (this is the apples-to-apples 'minimal dimensions' test)
+               description  numbers used       cx       cy   height    width     lean
+-------------------------------------------------------------------------------------
+      which pixels changed             5    9.26%   25.98%   24.19%    4.79%    4.74%
+   ink to the left of here             5   22.69%    8.17%    8.76%    2.41%    5.93%
+          arrows, degree 1             5   18.43%   19.24%   23.97%    8.17%    4.68%
+          arrows, degree 2             5   24.33%   22.80%   26.01%   12.98%    8.68%
+  MOVING THE INK, degree 1             5    9.20%   10.23%    7.48%    6.14%    6.11%
+
+A column that stays small means that knob is genuinely recoverable from
+that description. A column that blows up means the description has lost that
+knob -- it cannot tell you where it was set.
+
+==========================================================================
+6.  Does it survive on a completely different dataset?
+==========================================================================
+
+Nothing above should depend on the pictures being 1s. Here is a second family
+with nothing in common with strokes: filled ellipses, five knobs -- centre
+left-right, centre up-down, width, height, and rotation. Same two tests.
+
+   knob of the ellipse    step 1 vs step 2, pixels    same, arrows
+--------------------------------------------------------------------
+     centre left-right                    42.7 deg        14.1 deg
+        centre up-down                    42.1 deg        20.4 deg
+            make wider                    56.5 deg        13.8 deg
+           make taller                    34.0 deg         4.0 deg
+                rotate                    23.7 deg        30.2 deg
+
+And the same knob-recovery test as part 5, on ellipses: nudge all five knobs at
+random, describe the change, fit the simplest rule from the description back to
+the knob values on half the pictures, score it on the other half. Error is the
+average miss on the held-out half, as a percentage of that knob's range.
+
+  --- knobs nudged by up to 5% of their range ----------------------
+               description  numbers  centre l  centre u  make wid  make tal    rotate
+-------------------------------------------------------------------------------------
+      which pixels changed      784     0.62%     0.61%     0.57%     0.89%     0.96%
+          arrows, degree 1        6     0.47%     0.37%     0.32%     0.57%     0.50%
+  MOVING THE INK, degree 1        6     0.47%     0.37%     0.40%     0.58%     0.49%
+
+  --- knobs nudged by up to 20% of their range ----------------------
+               description  numbers  centre l  centre u  make wid  make tal    rotate
+-------------------------------------------------------------------------------------
+      which pixels changed      784     3.92%     0.92%     2.01%     4.00%     2.54%
+          arrows, degree 1        6     1.69%     0.77%     2.38%     2.37%     1.34%
+  MOVING THE INK, degree 1        6     1.95%     1.12%     6.64%     3.01%     1.45%
+
+An ellipse's five knobs are a different five from a 1's five, and nothing
+was adjusted between the two families.

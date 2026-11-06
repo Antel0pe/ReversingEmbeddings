@@ -1,0 +1,283 @@
+==============================================================================
+PART 1  The step function in space
+==============================================================================
+
+One pixel of ink switched on at (row 14, col 8), against the SAME single pixel
+of ink switched on d columns to the right.  Nothing else in the picture.  As
+pictures these are near-identical gestures when d = 1 and unrelated when d = 14.
+Numbers are cos between the two one-pixel pictures, 1.00 = identical direction,
+0.00 = perpendicular.
+
+ offset       pixel  blur 0.5px    blur 1px    blur 2px    blur 4px      H^-1/2        H^-1     sharpen
+-------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+    d=0       1.000       1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    d=1      -0.000       0.242       0.698       0.935       0.983       0.525       0.937      -0.247
+    d=2       0.000       0.030       0.302       0.766       0.936       0.325       0.841       0.000
+    d=3       0.000       0.002       0.093       0.552       0.864       0.219       0.739       0.000
+    d=4       0.000       0.000       0.022       0.352       0.773       0.155       0.639       0.000
+    d=6      -0.000       0.000       0.001       0.102       0.563       0.083       0.465      -0.000
+    d=8       0.000       0.000       0.000       0.020       0.362       0.047       0.330       0.000
+   d=12       0.000       0.000       0.000       0.000       0.102       0.016       0.161      -0.000
+   d=19      -0.000      -0.000      -0.000       0.000       0.004       0.004       0.055      -0.000
+
+Read the 'pixel' column: 1.000 then 0.000 forever.  One pixel over and one
+quarter of the canvas over score IDENTICALLY.  That is the complaint, as a
+measurement: in the pixel metric spatial distance does not exist at all, there
+is only same-pixel or different-pixel.
+
+Every other column is a decaying curve instead of a step, so each of them does
+give pixel space a notion of proximity.  'Connection range' below is the offset
+at which cos first falls under 0.1 -- how far apart two patterns must be before
+that metric calls them unrelated.
+
+     metric   connection range
+-----------  -----------------
+      pixel               1 px
+ blur 0.5px               2 px
+   blur 1px               3 px
+   blur 2px               7 px
+   blur 4px              13 px
+     H^-1/2               6 px
+       H^-1              15 px
+    sharpen               1 px
+
+==============================================================================
+PART 2  Same gesture continued, against three wrong answers
+==============================================================================
+
+Binary-ink render on a 224x224 grid (a true cliff; the canvas still spans
+0..28, so the pitch is 0.1250 px).  Start at root 1.  Take the increment of
+one knob over [0, h] and compare it with four other directions:
+
+  same-knob-next   the SAME knob's increment over [h, 2h] -- the gesture
+                   continued outward, touching the first sliver but sharing no
+                   pixel with it.  This is the pair that SHOULD score high.
+  other-knob       a different knob's increment over [0, h] at the same place.
+  far-away         the first increment itself, translated 10 px sideways:
+                   right gesture, wrong place.
+  scramble         the first increment's own pixels with random signs, forced
+                   to exactly zero mean: right place, no gesture.  Controls for
+                   a metric that only measures support overlap.  (The signs MUST
+                   be balanced: a free coin flip over ~1300 pixels leaves a ~3%
+                   mean offset, and after heavy blurring almost nothing but that
+                   offset survives, which fakes a score of +0.90.)
+  white noise      standard normal over the whole canvas: no gesture, no place.
+
+A representation that captures what the user wants scores same-knob-next well
+above the other three.  A representation that cannot tell them apart scores all
+four the same.
+
+--- knob width, step h = 1.0 px ------------------------------
+        partner       pixel  blur 0.5px    blur 1px    blur 2px    blur 4px      H^-1/2        H^-1     sharpen
+---------------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+ same-knob-next      -0.000      +0.791      +0.936      +0.986      +0.999      +0.939      +0.997      -0.487
+     other-knob      +0.151      -0.174      -0.233      -0.429      -0.744      -0.345      -0.678      +0.393
+       far-away      -0.000      +0.000      +0.000      +0.031      +0.247      +0.168      +0.398      -0.000
+       scramble      +0.000      +0.016      +0.021      -0.020      -0.060      -0.001      -0.025      -0.000
+    white noise      -0.003      +0.006      +0.108      +0.227      +0.191      +0.092      +0.164      -0.006
+    overlapping pixels, increment 1 vs same-knob-next: 0
+
+--- knob lean, step h = 1.0 deg ------------------------------
+        partner       pixel  blur 0.5px    blur 1px    blur 2px    blur 4px      H^-1/2        H^-1     sharpen
+---------------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+ same-knob-next      +0.000      +0.817      +0.887      +0.889      +0.771      +0.784      +0.798      -0.357
+     other-knob      +0.151      -0.174      -0.233      -0.429      -0.744      -0.345      -0.678      +0.393
+       far-away      +0.000      +0.000      -0.000      -0.038      -0.017      -0.004      +0.122      +0.000
+       scramble      -0.075      -0.307      -0.384      -0.326      -0.168      -0.237      -0.194      -0.049
+    white noise      +0.004      +0.009      -0.008      -0.013      +0.082      +0.009      +0.077      +0.001
+    overlapping pixels, increment 1 vs same-knob-next: 0
+
+--- knob cx, step h = 1.0 px ------------------------------
+        partner       pixel  blur 0.5px    blur 1px    blur 2px    blur 4px      H^-1/2        H^-1     sharpen
+---------------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+ same-knob-next      +0.000      +0.464      +0.691      +0.857      +0.956      +0.674      +0.891      -0.474
+     other-knob      +0.145      +0.037      +0.033      +0.059      +0.062      +0.049      +0.052      +0.390
+       far-away      +0.000      -0.000      -0.000      -0.052      -0.308      -0.045      -0.098      +0.000
+       scramble      -0.022      -0.195      -0.225      -0.179      -0.157      -0.132      -0.172      +0.009
+    white noise      +0.002      +0.040      +0.062      -0.066      -0.404      -0.027      -0.279      -0.001
+    overlapping pixels, increment 1 vs same-knob-next: 0
+
+SEPARATION SCORE: the same-knob-next cosine minus the largest
+|cosine| among the four wrong answers, averaged over the three knobs.  1.00
+would be a representation that scores the continued gesture perfectly and
+everything else at zero; 0.00 cannot tell them apart at all.
+
+     metric   separation
+-----------  -----------
+   blur 2px       +0.565
+   blur 1px       +0.557
+     H^-1/2       +0.525
+ blur 0.5px       +0.465
+       H^-1       +0.351
+   blur 4px       +0.278
+      pixel       -0.149
+    sharpen       -0.831
+
+==============================================================================
+PART 3  Speed: does the derivative exist
+==============================================================================
+
+||R(root + h e_k) - R(root)|| / h, with the norm taken in each metric and then
+divided by that metric's norm of the image itself, so the numbers are comparable
+across metrics (units: fractions of an image, per pixel of knob).  A real
+derivative means these settle to a constant as h shrinks.  The paper's result is
+that on a sharp edge the pixel metric instead grows like 1/sqrt(h).
+
+'slope' is the fitted log-log slope over the whole h range:
+  -0.5  the paper's blow-up, no derivative
+   0.0  a genuine finite derivative
+
+--- knob width, binary ink, 224x224 ----------------------------------
+     metric      h=4.0      h=2.0      h=1.0      h=0.5     h=0.25    slope
+-----------  ---------  ---------  ---------  ---------  ---------  -------
+      pixel     0.2774     0.3922     0.5547     0.7845     1.1094    -0.50
+ blur 0.5px     0.2587     0.3013     0.3184     0.3233     0.3246    -0.08
+   blur 1px     0.2394     0.2541     0.2601     0.2630     0.2646    -0.03
+   blur 2px     0.2462     0.2628     0.2722     0.2771     0.2795    -0.04
+   blur 4px     0.2823     0.2918     0.2960     0.2980     0.2989    -0.02
+     H^-1/2     0.2637     0.2793     0.2882     0.2931     0.2960    -0.04
+       H^-1     0.2855     0.2928     0.2964     0.2981     0.2989    -0.02
+    sharpen     0.3433     0.6697     1.3222     2.6270     5.2366    -0.98
+
+--- knob lean, binary ink, 224x224 ----------------------------------
+     metric      h=4.0      h=2.0      h=1.0      h=0.5     h=0.25    slope
+-----------  ---------  ---------  ---------  ---------  ---------  -------
+      pixel     0.1152     0.1621     0.2272     0.2960     0.2791    -0.34
+ blur 0.5px     0.0616     0.0630     0.0656     0.0834     0.0624    -0.04
+   blur 1px     0.0461     0.0465     0.0484     0.0632     0.0384    +0.01
+   blur 2px     0.0276     0.0282     0.0305     0.0506     0.0255    -0.06
+   blur 4px     0.0131     0.0147     0.0185     0.0427     0.0207    -0.29
+     H^-1/2     0.0323     0.0337     0.0365     0.0557     0.0344    -0.09
+       H^-1     0.0152     0.0167     0.0201     0.0446     0.0215    -0.24
+    sharpen     0.3233     0.6032     1.0588     1.4083     1.3773    -0.54
+
+--- knob cx, binary ink, 224x224 ----------------------------------
+     metric      h=4.0      h=2.0      h=1.0      h=0.5     h=0.25    slope
+-----------  ---------  ---------  ---------  ---------  ---------  -------
+      pixel     0.3536     0.5547     0.7845     1.1094     1.5689    -0.53
+ blur 0.5px     0.3501     0.5154     0.6025     0.6367     0.6466    -0.21
+   blur 1px     0.3309     0.4431     0.4819     0.4925     0.4952    -0.13
+   blur 2px     0.2638     0.3031     0.3145     0.3175     0.3182    -0.06
+   blur 4px     0.1628     0.1696     0.1715     0.1719     0.1721    -0.02
+     H^-1/2     0.2476     0.3091     0.3378     0.3523     0.3603    -0.13
+       H^-1     0.1653     0.1803     0.1853     0.1867     0.1870    -0.04
+    sharpen     0.3536     0.6866     1.3394     2.6444     5.2541    -0.97
+
+--- the same, on the repo's 28x28 COVERAGE render -----------------------
+(anti-aliasing is already a regulariser, so this is not the cliff case)
+     metric      h=4.0      h=2.0      h=1.0      h=0.5     h=0.25    slope
+-----------  ---------  ---------  ---------  ---------  ---------  -------
+      pixel     0.2643     0.3092     0.3536     0.4287     0.4287    -0.19
+ blur 0.5px     0.2557     0.2872     0.3136     0.3603     0.3603    -0.13
+   blur 1px     0.2426     0.2588     0.2715     0.2882     0.2882    -0.07
+   blur 2px     0.2508     0.2675     0.2830     0.2925     0.2925    -0.06
+   blur 4px     0.2870     0.2965     0.3032     0.3066     0.3066    -0.02
+     H^-1/2     0.2676     0.2816     0.2934     0.3049     0.3049    -0.05
+       H^-1     0.2902     0.2976     0.3033     0.3066     0.3066    -0.02
+    sharpen     0.3331     0.4744     0.6361     0.8740     0.8740    -0.37
+
+==============================================================================
+PART 4  Tangent-plane twist: does the 5-knob plane settle down
+==============================================================================
+
+At root 1, build the five one-sided knob increments at step h (h is in
+NORMALISED knob units: h times each knob's allowed range), span them as a
+5-dimensional plane, and compare that plane with the plane built at h/2.
+Reported is the LARGEST principal angle between the two planes, in degrees.
+
+  angle shrinking toward 0 as h shrinks -> a tangent plane exists there
+  angle stuck at a constant             -> the paper's twisting; no tangent
+
+A binary render has a floor: once a knob step moves the edge by less than one
+pixel pitch, NO pixel flips, the increment is exactly zero, and the angle is a
+meaningless 90.  The live-direction count below guards against reading that as
+a result.
+
+--- binary ink, 448x448, pitch 0.0625 px --------------------------
+    live directions (of 5) at each h: h=0.5: 5, h=0.25: 5, h=0.125: 5, h=0.0625: 5
+     metric     0.5->0.25   0.25->0.125  0.125->0.0625
+-----------  ------------  ------------  ------------
+      pixel          55.9          56.5          53.4
+ blur 0.5px          40.0          24.8          13.9
+   blur 1px          33.2          16.8           8.3
+   blur 2px          21.3          10.1           4.9
+   blur 4px          11.7           5.5           2.7
+     H^-1/2          31.7          20.5          14.5
+       H^-1          20.7          10.8           5.6
+    sharpen          89.2          89.5          90.0
+
+--- the repo's own object: 28x28 coverage render ----------------------
+    (continuous in h, so no grid floor; already partly anti-aliased)
+    live directions (of 5) at each h: h=0.25: 5, h=0.125: 5, h=0.0625: 5, h=0.03125: 5, h=0.015625: 5, h=0.0078125: 5
+     metric   0.25->0.125  0.125->0.0625  0.0625->0.03125  0.03125->0.015625  0.015625->0.0078125
+-----------  ------------  ------------  ------------  ------------  ------------
+      pixel          38.5          26.8           3.6           0.0           0.0
+ blur 0.5px          33.4          22.6           2.8           0.0           0.0
+   blur 1px          22.0          14.7           1.4           0.0           0.0
+   blur 2px          11.8           7.7           0.7           0.0           0.0
+   blur 4px           6.0           4.0           0.4           0.0           0.0
+     H^-1/2          23.2          17.3           2.1           0.0           0.0
+       H^-1          12.5           9.6           1.0           0.0           0.0
+    sharpen          51.1          33.8           4.9           0.0           0.0
+
+==============================================================================
+PART 5  Optimal transport: distance as how far the ink walks
+==============================================================================
+
+The non-filtering answer.  Instead of re-encoding the picture, change what
+distance MEANS: the cost of carrying the first picture's ink onto the second's,
+paying ink times the distance it travels.  Proximity is then built in, because
+carrying ink one pixel over is cheap and carrying it across the canvas is dear.
+Nothing is blurred away, so unlike the metrics above this costs no detail.
+
+Computed with Sinkhorn (entropic OT, regulariser eps) on the 28x28 coverage
+render, with both images normalised to equal total ink.  The entropic term adds
+a constant floor of order sqrt(eps), which swamps small steps, so the DEBIASED
+Sinkhorn divergence S(a,b) - (S(a,a) + S(b,b))/2 is reported alongside the raw
+value.  Distances are in pixels of travel.
+
+A pure translation by h must cost exactly h: slope +1.00 and a flat speed of
+1.00, with no blur and nothing destroyed.  Compare the pixel metric's +0.50.
+
+       quantity      h=4.0      h=2.0      h=1.0      h=0.5     h=0.25    slope
+---------------  ---------  ---------  ---------  ---------  ---------  -------
+         cx raw     4.0078     2.0155     1.0306     0.7309     0.5189    +0.74
+    cx debiased     4.0000     2.0000     1.0000     0.6868     0.4553    +0.78
+       cx speed     1.0000     1.0000     1.0000     1.3736     1.8214         
+      width raw     1.2124     0.7157     0.4894     0.3599     0.3042    +0.50
+ width debiased     1.1857     0.6699     0.4198     0.2606     0.1750    +0.69
+    width speed     0.2964     0.3350     0.4198     0.5211     0.7001         
+       lean raw     0.6139     0.4463     0.3482     0.2914     0.2640    +0.31
+  lean debiased     0.5611     0.3704     0.2432     0.1510     0.0868    +0.67
+     lean speed     0.1403     0.1852     0.2432     0.3021     0.3474         
+
+'speed' is the debiased distance divided by the knob step, the same quantity
+part 3 tabulates.  Flat means the derivative exists.
+
+==============================================================================
+PART 6  Where the breakdown actually comes from: the pixel pitch
+==============================================================================
+
+Part 5 found that optimal transport gives EXACTLY the right answer for a
+translation -- cost 1.0000 per pixel of travel -- but only down to some step,
+below which the 1/sqrt(h) blow-up comes back.  This part asks what sets that
+breakpoint.  If it were the sharp edges, refining the grid would not move it.
+
+Same measurement as part 5 (debiased Sinkhorn, cx knob, coverage render), at
+three grid finenesses.  eps is held at 0.02 canvas-px^2 throughout, i.e. an
+entropic blur of 0.14 px, finer than every pitch tested.
+
+              grid        h=2        h=1      h=0.5     h=0.25    h=0.125   h=0.0625
+------------------  ---------  ---------  ---------  ---------  ---------  ---------
+    28^2 (pitch 1)     0.9999     0.9999     1.4142     1.9365     2.7386     3.8730
+  56^2 (pitch 0.5)     0.9998     0.9997     0.9995     1.4142     2.0615     2.9580
+112^2 (pitch 0.25)     1.0000     1.0000     1.0000     1.0000     1.3070     1.7181
+         1/sqrt(h)     0.7071     1.0000     1.4142     2.0000     2.8284     4.0000
+
+The flat run of 1.0000 ends at h = the pitch, at every fineness: 1.0 for the
+28x28 grid, 0.5 for 56x56, 0.25 for 112x112.  So below one pixel the blow-up is
+the SAMPLING GRID, not the sharp edges -- shifting a sampled picture by less
+than a pixel is not a translation of it at all, it is a resampling, and no
+choice of metric can make it one.  Above the pitch, optimal transport is exact
+and costs nothing in lost detail.
+

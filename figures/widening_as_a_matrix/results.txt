@@ -1,0 +1,195 @@
+
+========================================================================
+Q1 and Q2.  Widen a 1 one step at a time, in the ordinary picture
+========================================================================
+
+Start at the root 1 (width 3.2 px) and widen it by 0.5 px, again, again...
+Each 'step' is the difference between one picture and the last. Both questions
+below are about those steps.
+
+  distance  = how far the picture moved on that step
+  angle     = the angle between this step and the step before it
+              0 deg = exactly the same change again
+              90 deg = completely unrelated change (at right angles)
+
+ from width  to width   distance   angle vs previous  pixels changed  shared with prev
+--------------------------------------------------------------------------------------
+       3.20      3.70     1.5625                                  40                  
+       3.70      4.20     1.1267            33.7 deg              80                40
+       4.20      4.70     1.5625            56.3 deg              40                40
+       4.70      5.20     1.5625             0.0 deg              40                40
+       5.20      5.70     1.5625             0.0 deg              40                40
+       5.70      6.20     1.1267            33.7 deg              80                40
+       6.20      6.70     1.5625            56.3 deg              40                40
+       6.70      7.20     1.5625             0.0 deg              40                40
+       7.20      7.70     1.5625             0.0 deg              40                40
+       7.70      8.20     1.1267            33.7 deg              80                40
+       8.20      8.70     1.5625            56.3 deg              40                40
+       8.70      9.20     1.5625             0.0 deg              40                40
+
+What to look at: the distance column, and the angle column.
+
+========================================================================
+Q2 again, but with hard black-and-white ink instead of grey
+========================================================================
+
+The greys above come from the renderer sharing a pixel between 'ink' and 'no
+ink'. With hard ink a pixel is either full or empty, which is the case the user
+has in mind: each widening lights up a FRESH column and nothing else.
+
+ from width  to width   distance   angle vs previous  pixels changed  shared with prev
+--------------------------------------------------------------------------------------
+       3.20      5.20     6.3246                                  40                  
+       5.20      7.20     6.3246            90.0 deg              40                 0
+       7.20      9.20     6.3246            90.0 deg              40                 0
+       9.20     11.20     6.3246            90.0 deg              40                 0
+      11.20     13.20     6.3246            90.0 deg              40                 0
+      13.20     15.20     6.3246            90.0 deg              40                 0
+
+========================================================================
+Q3.  Does calling it a 28x28 grid instead of a list of 784 change anything?
+========================================================================
+
+Take the same two pictures. Measure the distance between them twice: once as
+two lists of 784 numbers, once as two 28x28 grids (the usual size of a grid of
+numbers, the Frobenius norm). Then the same for the angle between two steps.
+
+  distance, as a list of 784 numbers : 2.576941016011
+  distance, as a 28x28 grid          : 2.576941016011
+  difference between the two         : 0.000e+00
+
+  angle between two steps, as lists  : 75.963757 deg
+  angle between two steps, as grids  : 75.963757 deg
+
+Also check that the arrangement really is ignored: shuffle all 784 pixels of
+both pictures with the SAME random shuffle (so the grid is destroyed) and
+remeasure.
+  distance after shuffling the pixels: 2.576941016011
+
+========================================================================
+Q4.  Describe a picture by the multiplication that produces it
+========================================================================
+
+The idea: instead of storing the picture, store the matrix you multiply the
+starting picture by to get it. First, two things have to be checked before the
+idea can even be tried.
+
+(a) Which side do you multiply on?
+    A 28x28 grid of ink can be multiplied on the left or on the right, and they
+    do different things. Multiplying on the LEFT mixes ROWS together. Multiplying
+    on the RIGHT mixes COLUMNS together. Widening a 1 moves ink sideways, so it
+    is a mixing of columns.
+    Below: fit the single best matrix of each kind that widens 240 different 1s
+    by 1 px, and report what fraction of the required change it fails to make.
+    0% = it did the job perfectly, 100% = it did nothing useful.
+
+      multiply on the RIGHT (mixes columns):  21.42% of the change missed
+      multiply on the LEFT  (mixes rows)   :  85.74% of the change missed
+
+(b) Is the matrix even pinned down by ONE picture?
+    The root 1 is an upright bar: every row of ink is identical, so as a grid of
+    numbers it has only one independent row. Its rank is printed below. A grid
+    of that rank cannot pin down a 28x28 matrix -- there are endlessly many
+    matrices that do the job, so "the multiplication that makes this picture"
+    is not one well-defined thing unless you fit it on many pictures at once.
+
+      rank of the root 1 as a grid of numbers  : 1  (out of 28)
+      rank of a leaning 1                      : 12  (out of 28)
+      rank of the stack of 240 varied 1s       : 18  (out of 28)
+
+Now the real question. In the ordinary picture, widening step 2 is at right
+angles to widening step 1. In the multiplication description, "another step"
+means another matrix. If widening really is one consistent thing, the matrix
+should be the SAME every step. Two ways of stepping are compared:
+
+  equal pixel steps      width 3.2 -> 4.2 -> 5.2 -> 6.2   (+1 px each time)
+  equal percentage steps width 3.2 -> 3.84 -> 4.61 -> 5.53 (x1.2 each time)
+
+'change from doing nothing' is the matrix minus the do-nothing matrix: that is
+the step itself. The angle between consecutive ones is the number to watch.
+
+  --- equal pixel steps (+1 px) ---------------------
+      step 1: width 3.20 -> 4.20, 21.42% of the change missed
+      step 2: width 4.20 -> 5.20, 19.33% of the change missed
+      step 3: width 5.20 -> 6.20, 17.57% of the change missed
+      angle between step 1's matrix and step 2's :  93.1 deg   (they differ by 516.2% )
+      angle between step 2's matrix and step 3's :  76.2 deg   (they differ by 97.2% )
+      for comparison, the angle between the same two steps
+      measured on the ORDINARY picture: 76.0 deg
+
+  --- equal percentage steps (x1.2) -----------------
+      step 1: width 3.20 -> 3.84, 29.83% of the change missed
+      step 2: width 3.84 -> 4.61, 22.60% of the change missed
+      step 3: width 4.61 -> 5.53, 13.99% of the change missed
+      angle between step 1's matrix and step 2's :  54.7 deg   (they differ by 140.3% )
+      angle between step 2's matrix and step 3's :  84.6 deg   (they differ by 159.1% )
+      for comparison, the angle between the same two steps
+      measured on the ORDINARY picture: 75.3 deg
+
+Last check for Q4: if one matrix really is 'widen by 20%', then doing
+it twice should equal widening by 44% (1.2 x 1.2 = 1.44) in one go. Compare the
+matrix for one 44% widening against the 20% matrix multiplied by itself.
+      difference between (widen 20%) applied twice and (widen 44%) once: 153.0%
+
+========================================================================
+Q6.  Why the multiplication idea fails: a self-defeating requirement
+========================================================================
+
+Q4 showed the idea does not work. This asks why, by giving it the friendliest
+possible conditions and watching where it breaks.
+
+To widen a 1 by multiplying on the right, the matrix has to apply ONE sideways
+recipe to every row of the picture. Below, four batches of 1s. Each batch holds
+one thing fixed and varies another. For each batch two numbers:
+
+  missed   what fraction of the widening a single best matrix fails to do
+           (0% = one matrix does the whole job)
+  rank     how many independent directions the batch of pictures spans, out of
+           28. The matrix has 28 columns to pin down, so a rank below 28 means
+           the leftover directions are pure guesswork and the matrix you get
+           back is not a real description of anything.
+
+                                        batch    missed    rank
+---------------------------------------------------------------
+    upright, centred; only cy and height vary     0.00%       1
+    ...plus the 1 slides sideways (cx varies)    16.77%       8
+            ...plus the 1 leans (lean varies)    20.23%      18
+                            everything varies    21.53%      20
+
+Read the two columns together. Where one matrix CAN do the job, the pictures do
+not pin the matrix down. Where the pictures DO pin it down, one matrix can no
+longer do the job. The requirement defeats itself.
+
+========================================================================
+Q5.  Store 'ink to the left of here' instead of 'ink here'
+========================================================================
+
+Claude's suggestion, kept separate from the user's. Nothing is blurred and
+nothing is thrown away: running along each row, replace each pixel by the total
+ink in that row up to and including it. Subtracting neighbours gets the original
+picture back exactly, so this is just a different way of writing down the same
+picture.
+
+Why it might help: widening a 1 by a pixel changes only a thin sliver of ink,
+and the next widening changes a DIFFERENT thin sliver, which is why the two look
+unrelated. But 'ink to the left of here' changes over the whole right-hand half
+of the row both times, so the two steps overlap heavily.
+
+                              ordinary picture     ink-to-the-left
+------------------------------------------------------------------
+   angle, step 1 vs step 2             76.0 deg              8.8 deg
+   angle, step 2 vs step 3             14.0 deg              2.2 deg
+  pixels touched by a step                  80                 340
+
+The catch to check: does it now call EVERYTHING related? Three changes that have
+nothing to do with widening are scored against widening step 1. If these are
+also near 0 degrees, the new way of writing the picture has simply made
+everything look alike, which is no better than before.
+
+           compared with widening step 1      ordinary   ink-to-the-left
+------------------------------------------------------------------------
+       widening step 2 (should be SMALL)       76.0 deg            8.8 deg
+the same widening, 10 px to the left (should be BIG)       90.0 deg           35.8 deg
+leaning the 1 by 5 degrees (should be BIG)       93.5 deg           90.9 deg
+making the 1 taller by 2 px (should be BIG)       88.9 deg           87.7 deg
+sliding the 1 right by 1 px (should be BIG)       91.9 deg          107.6 deg

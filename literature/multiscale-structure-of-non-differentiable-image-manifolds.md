@@ -371,6 +371,34 @@ why the root is a bad place to measure. *Multiscale Newton* / *coarse-to-fine
 differential estimation* — the inversion algorithm, with a literature going
 back to Lucas-Kanade 1981. Searching these terms will find the follow-up work.
 
+**Twisting measured on the generated-1 family, and one open question closed
+[mine].** `figures/pixel_metric_locality/` reproduces the paper's behaviour on
+this repo's own object. On binary ink at 448x448 the largest principal angle
+between the five-knob span at h and at h/2 is 55.9, 56.5, 53.4 degrees --
+flat, which is the operational meaning of "no tangent plane". Under a Gaussian
+blur encoding it is 11.7, 5.5, 2.7 degrees, halving per halving, so the tangent
+plane exists on F_s. The speed law reproduces at slope **-0.500** for width.
+Note these are one-sided finite-difference angles, NOT the Thm 4.1 blur-ratio
+quantity (26.57 degrees) and NOT local PCA (~30 degrees); the three estimators
+must not be mixed.
+
+**Open question "is the repo already on F_s rather than F?" -- ANSWERED, yes,
+below a step of about 0.06 [mine].** The same twist measurement on the 28x28
+coverage render gives 38.5, 26.8, 3.6, 0.0, 0.0 degrees: exactly locally linear
+once the normalised knob step drops under ~0.06. The anti-aliased coverage
+renderer IS a regularisation, so sub-crease work in this repo has never been on
+the sharp-edge manifold F.
+
+**A cause the paper does not separate out: the sampling grid [mine].** Under
+optimal transport a cx translation costs exactly h (4.0000, 2.0000, 1.0000 at
+h = 4, 2, 1) with no blurring and nothing destroyed -- the sharp edges are not
+an obstruction to OT at all. But the flat run ends exactly at the pixel pitch
+(1.0, 0.5, 0.25 for 28^2, 56^2, 112^2 grids) and below it tracks 1/sqrt(h) to
+three decimals. So on a SAMPLED image there are two blow-ups with different
+causes: the edges, which OT removes for free, and the grid, which nothing
+removes, because a sub-pixel shift of a sampled picture is a resampling and not
+a translation. The paper works in the continuum and so never meets the second.
+
 ### Open questions
 
 - Does the 26.57°-per-halving law hold for `grey_ones` at radii above the pixel
