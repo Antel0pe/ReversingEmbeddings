@@ -212,6 +212,124 @@ exactly the user's criterion. Not yet done: integrating that frame into
 coordinates and running the held-out decoder test `AGENTS.md` requires.
 Script: `knob_discovery.py` (scratchpad, not committed).
 
+### Spin-off 2 — sorting a random pile of 1s by which knob separates each pair
+
+User's question (2026-11-06): given only a random set of generated 1s, build
+patches from nearest neighbours and sort out which pairs are related by which
+transformation. Setup: 24000 random knob draws in a **quarter box**, blurred
+σ = 0.75 px, K = 80 neighbours, 60 probes, 4800 close pairs. The pipeline reads
+pixels only; knob values render the dataset and appear again only in the
+scoring lines.
+
+Each close pair (A, B) is decoded by fitting B − A against the six affine
+fields at A, then expressed in a **global 5-D motion basis taken once from one
+reference image's neighbourhood**. 68.6% of the pair difference is explained by
+the six motions — the `np.gradient` floor again.
+
+**One fixed 5x5 map relates discovered coordinates to true knob deltas, held
+out:** r² per coordinate 0.997 / 0.996 / 0.993 / 0.992 / 0.988; median per-pair
+cosine **0.9986** against a shuffled-pairing control of **0.0177**.
+
+**Knob deltas read back off the images** (held out, gauge fitted on the other
+half): cx r² 0.999 (0.22% of range), cy 0.997 (0.81%), height 0.976 (3.17%),
+width 0.998 (0.23%), lean 0.995 (0.10%). Height is the weakest, consistent with
+the vertical knobs being the hard ones here and in
+`figures/generated_one_warp_space/`.
+
+**Labels needed to fix the gauge** — the structure is label-free, the *naming*
+is not:
+
+| labelled pairs | mean knob error |
+| --- | --- |
+| 3 | 7.17% of range |
+| 4 | 5.01% |
+| **5** | **2.48%** |
+| 6 | 2.03% |
+| 8 | 1.37% |
+| 15 | 1.09% |
+| 400 | 0.91% |
+
+The knee is at five, independently reproducing
+`figures/mnist_one_knob_search/`'s "five labelled examples fix a five-number
+gauge" from a completely different route. **[mine]**
+
+**Sorting without any labels.** Taking the 200 pairs scoring highest on each
+discovered coordinate and asking what actually changed in them, enrichment over
+the baseline mean: d1 → cy 2.31x, d2 → width 1.74x, d3 → lean 1.86x,
+d4 → cx 2.10x, d5 → height 1.97x. Each coordinate preferentially selects a
+**different** knob and all five are covered — but enrichment is only ~2x
+because the label-free basis is a mixture. Clean separation needs the gauge.
+
+**Limits.** Density is required (quarter box; the full box degrades, and this
+is why MNIST resists). These are knob **differences** between nearby pairs —
+integrating them into absolute coordinates and running the held-out decoder
+test is not done. The 0.91% floor is `np.gradient`, not the method; the moment
+chart reaches ~0.1% with exact analytics. Script: `sort_dataset.py`.
+
+### Spin-off 3 — knobs from neighbours alone, NO model of any kind
+
+Spin-off 2 still smuggled in a prior: it fitted every patch direction to six
+affine fields. User objected (2026-11-06). This run assumes nothing — no
+affine model, no motion dictionary, no gradients. Only: *look at an image's
+nearest neighbours and call the directions they spread along the tangent
+plane.* 60000 images, box fraction 0.12, blur σ = 0.75 px, K = 80 neighbours,
+300 nodes, 8-nearest node graph, patch radius 0.085 image units.
+
+The obstacle is that each patch's basis is arbitrary — local PCA fixes the
+5-D *space*, not which direction is "knob 1". The prior-free fix is a
+**connection**: between two nodes close enough that their patches coincide,
+the best orthogonal 5x5 map identifies their bases. Chain those.
+
+1. **Do neighbouring patches coincide?** Overlap per component
+   0.9998 / 0.9997 / 0.9995 / 0.9991 / 0.9979. Yes.
+2. **Loop test — the key instrument.** Transport a frame around a triangle in
+   the node graph and measure how far it is from where it started:
+   **median 0.0002, 90th pct 0.0005**, against **1.549** for a random
+   rotation. Four orders of magnitude. A globally consistent labelling exists,
+   and this is established with no knob values — it is the "prove a consistent
+   knob" test, done from pixels.
+3. **Synchronise** along a spanning tree from one root: all 300 nodes.
+4. **Score** (knobs appear here for the first time). One fixed 5x5 map from
+   true knob deltas to global-frame coordinates: held-out median cosine
+   **0.9989**, shuffled-pairing control −0.0128.
+
+**Held out by whole NODE** (gauge fitted on 200 nodes, tested on 100 unseen):
+
+| knob | r² | mean abs error | sampled span |
+| --- | --- | --- | --- |
+| cx | 0.997 | 0.00040 px | 0.120 px |
+| cy | 0.996 | 0.00111 px | 0.120 px |
+| height | 0.991 | 0.00347 px | 0.180 px |
+| width | 1.000 | 0.00016 px | 0.336 px |
+| lean | 0.997 | 0.00374 deg | 5.400 deg |
+
+0.0002-0.0037 units, i.e. the same band as the moment chart's 0.001-0.009 —
+but with **no generator model**, where the moment chart uses exact analytics.
+Better than spin-off 2 (height 3.17% → 1.96% of span) because nothing is
+forced through a 6-field bottleneck, so the ~30% `np.gradient` residual is
+gone.
+
+**Correction.** The first run of this reported loop error 1.353 vs 1.549
+control and cosine 0.083 — an apparent failure. That was a reversed
+composition order in the transport product, not a result. Fixed.
+
+**Possible resolution of an old puzzle. [mine, [check]]**
+`check_generated_one_direction_commutators.py` measured nonzero Lie brackets
+for ordinary SVD fields, and
+`figures/generated_one_direction_history/README.md` concluded that matching
+labels does not turn counts into coordinates. But a *synchronised* frame maps
+to true knob deltas through one fixed linear map everywhere, which makes those
+directions coordinate fields of a linear reparameterisation — and those
+commute. The difference is the synchronisation step: without it each point's
+patch basis is an arbitrary rotation, and arbitrary rotations do not commute.
+Worth re-running the commutator check on synchronised fields.
+
+**Limits.** Small, dense box (12% of each range, 60000 images) — density is
+the binding constraint, as always here. These are knob **differences** between
+near neighbours; integrating to absolute coordinates is still not done. The
+gauge still needs ~5 labelled pairs to *name* axes; discovery of the structure
+needs none. Script: `no_prior.py`.
+
 ### Open questions
 
 - What is the validity radius (their Fig. 4 curve) for `grey_ones`, and for

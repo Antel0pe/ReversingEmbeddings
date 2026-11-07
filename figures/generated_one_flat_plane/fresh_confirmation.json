@@ -1,0 +1,38 @@
+{
+ "five weighted sums": {
+  "lookalikes_checked": 1000,
+  "share_with_lookalike": 0.0,
+  "largest_gap": 5.3087464760034735e-14,
+  "settings_checked": 4000,
+  "share_dead": 0.0,
+  "smaller_orientation_share": 0.0,
+  "weakest_response_min": 0.06053065521902739
+ },
+ "searched: best-fit start, images A": {
+  "lookalikes_checked": 1000,
+  "share_with_lookalike": 0.0,
+  "largest_gap": 5.168210540620251e-13,
+  "settings_checked": 4000,
+  "share_dead": 0.0,
+  "smaller_orientation_share": 0.0,
+  "weakest_response_min": 0.014858803943295567
+ },
+ "searched: random start, images C": {
+  "lookalikes_checked": 1000,
+  "share_with_lookalike": 0.0,
+  "largest_gap": 0.1322499608948706,
+  "settings_checked": 4000,
+  "share_dead": 0.0,
+  "smaller_orientation_share": 0.035,
+  "weakest_response_min": 0.0020866006590538684
+ },
+ "YOURS at middle of the ranges": {
+  "lookalikes_checked": 1000,
+  "share_with_lookalike": 0.161,
+  "largest_gap": 0.9745903368088237,
+  "settings_checked": 4000,
+  "share_dead": 0.53175,
+  "smaller_orientation_share": 0.283,
+  "weakest_response_min": 0.0
+ }
+}

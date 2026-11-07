@@ -190,7 +190,13 @@ assumed not to vary with position.
     This is the formal reason `figures/mnist_one_knob_search/` needed five
     labelled examples to pin a five-number gauge: unsupervised recovery of
     the generator's own knobs is provably impossible without such an anchor.
-    **[mine]**
+    **[mine]**  The proof is CONSTRUCTIVE (Darmois 1952 / Rosenblatt 1952:
+    the conditional CDFs), and it has been run on this repo's own family in
+    `analyze_darmois_alternative_knobs.py` /
+    `figures/darmois_alternative_knobs/README.md`: an explicit second set of
+    five knobs, pixel-identical images, independence indistinguishable from
+    the true knobs, additivity unable to separate them, decoder simplicity
+    able to.
 23. **Frobenius / involutive distributions** — the named concept for
     `check_generated_one_direction_commutators.py`. A field of candidate
     tangent planes can be straightened into coordinates only if the Lie

@@ -1,0 +1,254 @@
+
+==========================================================================
+1.  Walk each knob in tiny steps. What does the turn look like?
+==========================================================================
+
+Each knob is swept across its whole allowed range in 2000 tiny steps. For every
+step the turn to the next step is measured. The question is whether the turning
+is spread evenly along the journey or bunched up.
+
+  'steps with turn under 1 deg'   how often the journey is going dead straight
+  'steps with turn over 30 deg'   how often it swerves
+  'biggest single turn'           the worst swerve
+
+    knob       range swept   under 1 deg   over 30 deg  biggest turn  total turning
+-----------------------------------------------------------------------------------
+      cx          14 to 15         99.8%          0.1%         36.6°           120°
+      cy          14 to 15         99.8%          0.1%         53.4°           120°
+  height        19 to 20.5         99.9%          0.1%         63.4°            90°
+   width        1.8 to 4.6         99.8%          0.1%         74.7°           180°
+    lean         -10 to 35         61.3%          0.0%          3.1°          1593°
+
+Read the first two columns together. If the journey were a smooth curve the
+turn would be small and similar at every step. If it is a POLYGON -- straight
+runs joined by sharp corners -- then almost every step is under 1 degree and a
+few are huge.
+
+==========================================================================
+2.  Are the corners where they should be?
+==========================================================================
+
+A guess at what a corner IS. The renderer works out, for each pixel, what
+fraction of it the stroke covers. While a stroke edge stays inside one column of
+pixels, turning the knob just darkens that one column a little more -- the same
+change again and again, so the journey runs straight. The moment the edge
+crosses into the NEXT column, a different pixel starts filling, and the journey
+turns.
+
+So corners should happen exactly when a stroke edge crosses a whole-number
+column boundary. The stroke's two edges sit at cx - width/2 and cx + width/2.
+
+PREDICTION for the width knob, starting from cx = 14.0: both edges cross a
+boundary together whenever width/2 is a whole number, i.e. at width = 2, 4, 6...
+PREDICTION for the cx knob at width = 3.2: the edges are at cx - 1.6 and
+cx + 1.6, so corners at cx = ...4, ...6 of any whole number.
+
+  --- width knob (width, every 2.0) ------------------
+      predicted corners: 2.00, 4.00, 6.00, 8.00
+      measured  corners: 2.00, 4.00, 6.00, 8.00
+      worst disagreement: 0.0018  (one sweep step is 0.0020)
+
+  --- cx knob (cx, at .4 and .6 of each whole number) 
+      predicted corners: 11.40, 11.60, 12.40, 12.60, 13.40, 13.60, 14.40, 14.60, 15.40, 15.60, 16.40, 16.60
+      measured  corners: 11.40, 11.60, 12.40, 12.60, 13.40, 13.60, 14.40, 14.60, 15.40, 15.60, 16.40, 16.60
+      worst disagreement: 0.0014  (one sweep step is 0.0015)
+
+
+==========================================================================
+3.  Is every corner the same size?
+==========================================================================
+
+If corners come at steady intervals AND each one turns by the same amount, then
+the turning really is a steady clock. Below, each corner on a width sweep and a
+cx sweep, with how far apart they are and how much each one turns.
+
+  --- width knob --------------------------------------------
+   corner at   gap from last    turn at it
+       1.999                         90.0°
+       3.999           2.000         90.0°
+       6.000           2.000         90.0°
+       8.000           2.000         90.0°
+      turns: smallest 90.0°, largest 90.0°, spread 0% of the average
+
+  --- cx knob --------------------------------------------
+   corner at   gap from last    turn at it
+      11.400                         60.0°
+      11.599           0.200         60.0°
+      12.400           0.800         60.0°
+      12.600           0.200         56.6°
+      13.400           0.800         60.0°
+      13.600           0.200         60.0°
+      14.399           0.800         60.0°
+      14.600           0.200         60.0°
+      15.400           0.800         56.6°
+      15.600           0.200         60.0°
+      16.400           0.800         60.0°
+      16.599           0.200         60.0°
+      turns: smallest 56.6°, largest 60.0°, spread 6% of the average
+
+
+==========================================================================
+4.  Does the turning add up at a steady rate?
+==========================================================================
+
+The real question behind 'a consistent amount'. Walk each knob across its range
+and keep a running total of how much the journey has turned. If that total
+climbs at a steady rate, then 'how much have I turned' is a usable clock: it
+tells you how far the knob has moved, read off the pictures alone with no labels.
+
+The test: split each knob's range into five equal quarters-of-the-way chunks and
+report the turning done in each. Equal numbers across a row = a steady rate.
+
+    knob     chunk 1     chunk 2     chunk 3     chunk 4     chunk 5    spread  corners
+---------------------------------------------------------------------------------------
+      cx          0°         60°         60°          0°          0°      250%        2
+      cy         60°          0°          0°          0°         60°      250%        2
+  height          0°          0°          0°         90°          0°      500%        1
+   width         90°          0°          0°         90°          0°      250%        2
+    lean        354°        261°        354°        364°        431°       48%        0
+
+'spread' is how much the biggest chunk beats the smallest, as a percentage of
+the average. Small spread = steady. 'corners' counts the sharp turns found in
+the whole sweep.
+
+==========================================================================
+5.  Lean: the awkward one
+==========================================================================
+
+Does any of this work for lean? Lean is different in kind. Widening moves both
+stroke edges by the same amount in every row at once, so all the rows cross a
+column boundary together and you get one big shared corner. Leaning moves the
+top rows a lot and the middle rows not at all, so every row crosses its own
+boundary at its own moment.
+
+Below, a lean sweep, counting corners and measuring how much each turns.
+
+      total turning over the whole lean range : 1826°
+      corners counted                          : 15
+      average turn at a corner                 : 2.2°
+      biggest single turn                      : 3.3°
+      share of all turning that happens at corners: 2%
+
+      for comparison, width:    180° of turning,   2 corners, 100% of turning at corners
+      for comparison,    cx:    120° of turning,   2 corners, 100% of turning at corners
+
+Then the steadiness test for lean on its own, in ten chunks across its range:
+
+      144°  220°  92°  177°  188°  175°  184°  196°  210°  240°
+      biggest chunk beats smallest by 81% of the average
+
+==========================================================================
+6.  Control: the same sweeps on a renderer with no corners at all
+==========================================================================
+
+`smooth_ones` draws the same five-knob family with soft edges and no
+whichever-is-smaller decisions anywhere, so it has no pixel-boundary crossings
+to make corners out of. If the pattern above is really made by the pixel grid,
+it should vanish here and be replaced by gentle, even turning.
+
+    knob   under 1 deg   over 30 deg  biggest turn  total turning  spread over 5 chunks
+---------------------------------------------------------------------------------------
+      cx        100.0%          0.0%         0.08°          71.6°                   57%
+      cy        100.0%          0.0%         0.08°          71.4°                   48%
+  height        100.0%          0.0%         0.06°          57.3°                   62%
+   width        100.0%          0.0%         0.32°         106.3°                   96%
+    lean        100.0%          0.0%         0.55°         480.6°                   37%
+
+Compare with part 1's table. Same five knobs, same ranges, soft edges.
+
+==========================================================================
+7.  Where 90 and 60 come from, in closed form
+==========================================================================
+
+The corner sizes were not round by accident. A guess at the rule:
+
+A knob step changes a handful of pixel columns. At a corner, some of those
+columns hand over to their neighbours and the rest carry on. If the step spreads
+itself evenly over N columns and M of them hand over, then the part of the
+change that survives the corner is (N - M) out of N, so
+
+    turn at the corner = the angle whose cosine is (N - M) / N
+
+  widening   both stroke edges move outward together, so the step touches the
+             left-edge column and the right-edge column: N = 2. At a corner
+             BOTH cross at once, M = 2, giving cosine 0, a turn of 90 degrees.
+  sliding    the step touches the same two columns, N = 2, but the left edge and
+             the right edge reach their boundaries at different moments, so only
+             M = 1 crosses, giving cosine 1/2, a turn of 60 degrees.
+
+Below the columns are actually counted on either side of each corner, so the
+rule is checked rather than asserted.
+
+    knob   corner at   columns touched   that hand over   predicted   measured
+------------------------------------------------------------------------------
+   width       1.999                 2                2       90.0°      90.0°
+   width       3.999                 2                2       90.0°      90.0°
+   width       6.000                 2                2       90.0°      90.0°
+   width       8.000                 2                2       90.0°      90.0°
+      cx      11.400                 2                1       60.0°      60.0°
+      cx      11.599                 2                1       60.0°      60.0°
+      cx      12.400                 2                1       60.0°      60.0°
+      cx      12.600                 2                1       60.0°      56.6°
+      cx      13.400                 2                1       60.0°      60.0°
+      cx      13.600                 2                1       60.0°      60.0°
+      cx      14.399                 2                1       60.0°      60.0°
+      cx      14.600                 2                1       60.0°      60.0°
+      cx      15.400                 2                1       60.0°      56.6°
+      cx      15.600                 2                1       60.0°      60.0°
+      cx      16.400                 2                1       60.0°      60.0°
+      cx      16.599                 2                1       60.0°      60.0°
+
+If predicted and measured agree, the corner size is not a measurement at all --
+it is arithmetic on how many columns are in play.
+
+==========================================================================
+8.  Is lean the same mechanism, with the corners packed too close to see?
+==========================================================================
+
+Widening moves every row's edges by the same amount, so all the rows cross a
+boundary at the same moment and you get ONE big corner. Leaning moves the top
+rows a long way and the middle rows not at all, so each row crosses its own
+boundary at its own moment. If that is right, lean should have the same corners,
+just very many of them, each tiny -- which is why the sweep looked like a smooth
+curve. Three checks.
+
+(a) ZOOM IN. If lean is really made of corners, a very fine sweep over a tiny
+    slice of lean should look spiky, not smooth.
+
+      lean -10.00 to 35.00 : biggest turn   3.286 deg, typical turn  0.0000 deg, biggest is 3848529.2x typical
+      lean  10.00 to 11.00 : biggest turn   1.777 deg, typical turn  0.0000 deg, biggest is 1777140629088.2x typical
+      lean  10.00 to 10.05 : biggest turn   1.438 deg, typical turn  0.0000 deg, biggest is 1438402218752.2x typical
+
+    For comparison, the same ratio on the width knob, which is definitely made
+    of corners, and on the crease-free renderer, which definitely is not:
+      width (corners)        : biggest is 45000000000000x typical
+      lean, soft edges       : biggest is 1.0x typical
+
+(b) MAKE THE STROKE TALLER. A row crosses a boundary once per pixel it travels,
+    and leaning moves a row by its distance from the middle, so a taller stroke
+    has rows further out, crossing more boundaries, and should turn MORE.
+
+    My guess at how much was the SQUARE of the height, counting the crossings.
+    That guess is WRONG: the measurement below follows height to the power 1.42,
+    fitted to within 3.2%, not height squared. Counting crossings alone
+    overpredicts, because the size of each corner changes with the height too,
+    and at this sweep resolution the two effects cannot be separated cleanly.
+    The direction of the prediction holds; the exponent does not.
+
+  stroke height   total turning   vs the shortest      height^1.42, vs the shortest
+-----------------------------------------------------------------------------------
+            8.0            188°             1.00x                             1.00x
+           12.0            367°             1.95x                             1.78x
+           16.0            558°             2.97x                             2.68x
+           20.0            751°             3.99x                             3.67x
+           24.0            962°             5.11x                             4.76x
+
+(c) IS THERE A CLOCK FOR LEAN? Lean's turning was uneven when measured in
+    degrees. A row's sideways travel goes with the TANGENT of the lean, not the
+    lean itself, so tangent is the natural clock. Below, the turning split into
+    ten equal chunks, measured both ways. Lower spread = steadier.
+
+      equal chunks of lean in degrees
+        141  212  92  170  184  169  177  188  204  227   -> spread 77%
+      equal chunks of tan(lean)
+        154  196  190  155  163  176  183  183  184  184   -> spread 24%

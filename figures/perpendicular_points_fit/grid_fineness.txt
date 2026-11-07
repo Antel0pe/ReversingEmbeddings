@@ -1,0 +1,3 @@
+grid  28, 64 marks: both fitted 11.09% | true ink-per-row, fitted positions 11.05% | fitted ink-per-row, true positions  2.02% | no fit  1.80%
+grid 112, 64 marks: both fitted  7.53% | true ink-per-row, fitted positions  6.18% | fitted ink-per-row, true positions  5.69% | no fit  3.72%
+grid 112, 256 marks: both fitted  6.87% | true ink-per-row, fitted positions  5.34% | fitted ink-per-row, true positions  4.28% | no fit  0.86%

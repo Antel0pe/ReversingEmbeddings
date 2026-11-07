@@ -250,6 +250,27 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   binary grid returns 90 degrees when a knob step flips no pixel. This measures
   RULERS, not coordinates -- no decoder was run.
 
+- **The turning law: knob sweeps are polygons:**
+  `analyze_turning_pattern.py` (eight parts) and
+  `figures/turning_pattern/README.md`. Sweeping cx, cy, height or width is a
+  POLYGON in pixel space: 99.8% of tiny steps turn by under 1 degree (measured
+  0.0000015 deg between corners) and all the turning happens at a few corners.
+  Corner POSITIONS are predicted exactly -- a corner is a stroke edge crossing a
+  whole-number pixel boundary: width every 2.000, cx at .4 and .6 of each pixel,
+  matched to within one sweep step (0.0018). Corner SIZE is closed form:
+  if a step spreads over N columns and M hand over, turn = arccos((N-M)/N).
+  Width N=2 M=2 -> 90.0 deg exactly; cx N=2 M=1 -> 60.0 deg exactly; predicted
+  equals measured on every corner. Lean is the SAME mechanism with the corners
+  packed too densely to resolve (each row crosses at its own moment): it looks
+  smooth over its range but zoomed 900x it is spiky, with exactly 0.0000 deg
+  between corners, against a soft-edge control whose ratio is 1.0x. Lean's
+  total turning goes as height^1.42 (fitted to 3.2%) -- a height^2 crossing
+  count was predicted and is WRONG. tan(lean), not degrees, is lean's natural
+  clock: chunk spread falls 77% -> 24%. `smooth_ones` control removes every
+  corner (biggest turn 0.06-0.55 deg vs 36-75 deg). Turning is steady PER
+  CORNER, not per unit knob (chunk spread 250-500%), so the clock is a corner
+  count, not an angle.
+
 - **Knob frames, stored and priced:** `knob_frames.py` is the shared API
   (`jacobian`, `metric`, `frame`, `speeds`, `knob_cosines`), with
   `build_generated_one_knob_atlas.py` and
@@ -272,6 +293,14 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   have measured nonzero Lie brackets outside a direction pair at smooth
   starts (`check_generated_one_direction_commutators.py`); matching labels
   alone does not turn accumulated counts into independent coordinates.
+
+- **Flat 5-D plane as an address:** `analyze_generated_one_flat_plane.py` and
+  `figures/generated_one_flat_plane/README.md` test whether projecting onto a flat
+  plane is one-to-one, with no decoder. The plane at one 1 fails: it watches only
+  44-58 pixels, and 10-18% of 1s have a clearly different look-alike with the same
+  five numbers. Five weighted pixel sums (ink, x, y, y*y, x*y) pass and have a closed
+  form back to the knobs. A search from images alone passed in one of six tries, so
+  a good plane exists but is not yet found reliably.
 
 ### Geometry conventions
 
