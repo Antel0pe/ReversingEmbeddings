@@ -1,0 +1,153 @@
+{
+ "rolled, no stretch": {
+  "squash_best_of_1000_tilts_overlap": 0.18825,
+  "unroll": {
+   "overlap": 0.0,
+   "tear": 0.0
+  },
+  "layer_room": 3.043185767690541,
+  "stretch_when_made_p5_p95": [
+   0.9973682442328323,
+   1.0000801986749976
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.6541793876328637,
+   1.368539312552167
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 5.669095861377921e-05,
+   "1000": 0.0,
+   "250": 0.0
+  },
+  "distance_from_true_square_median": 0.028008219131296135,
+  "distance_from_true_square_worst": 0.07432511381849516
+ },
+ "S-curled, no stretch": {
+  "squash_best_of_1000_tilts_overlap": 0.2005,
+  "unroll": {
+   "overlap": 0.354,
+   "tear": 0.0
+  },
+  "layer_room": 1.3811895480874659,
+  "stretch_when_made_p5_p95": [
+   0.9962471836042004,
+   1.0001505919392597
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.12291218780793176,
+   1.346366523155826
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 0.2932026611683082,
+   "1000": 0.2745756269636874,
+   "250": 0.23750973031933223
+  },
+  "distance_from_true_square_median": 0.11116672108420741,
+  "distance_from_true_square_worst": 0.8786544364867666,
+  "more_points": {
+   "4000": {
+    "overlap": 0.354,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.00105,
+    "layer_room": 1.3811895480874659,
+    "folded_share": 0.2932026611683082
+   },
+   "8000": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0,
+    "layer_room": 1.9403546101329974,
+    "folded_share": 0.0004321579784372606
+   },
+   "12000": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0,
+    "layer_room": 2.3430814921362026,
+    "folded_share": 0.00031482938384162876
+   }
+  }
+ },
+ "gently curved (bowl)": {
+  "stretch_when_made_p5_p95": [
+   1.0157927944340364,
+   1.2953892169369217
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.7245415062500389,
+   1.3843346041750684
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 0.0001324046830894703,
+   "1000": 0.0,
+   "250": 0.0
+  }
+ },
+ "rolled up": {
+  "stretch_when_made_p5_p95": [
+   2.4219789765742985,
+   6.178604022748699
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.36183657578760836,
+   1.744328286548887
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 0.002526445078108934,
+   "1000": 0.0011378497347109635,
+   "250": 0.0
+  }
+ },
+ "crumpled, layers apart": {
+  "stretch_when_made_p5_p95": [
+   0.9337863601384706,
+   3.7060767439133286
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.1550590848301114,
+   1.6977369966277032
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 0.019511690962878712,
+   "1000": 0.01773961627721394,
+   "250": 0.023532392363704767
+  }
+ },
+ "tightly rolled": {
+  "stretch_when_made_p5_p95": [
+   1.667071625868963,
+   2.8668467407875466
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.08766842476265144,
+   1.6427175736391053
+  ],
+  "outer_edge_crossings": 5,
+  "folded_share_by_dots_used": {
+   "4000": 0.4877772941033313,
+   "1000": 0.4608720987373491,
+   "250": 0.4257516873678438
+  }
+ },
+ "crumpled, layers close": {
+  "stretch_when_made_p5_p95": [
+   0.8252953848118729,
+   3.5370525939697126
+  ],
+  "unrolled_vs_sheet_area_p5_p95": [
+   0.23312610593294988,
+   1.4469593676905994
+  ],
+  "outer_edge_crossings": 0,
+  "folded_share_by_dots_used": {
+   "4000": 0.013011957630571525,
+   "1000": 0.010111283590067846,
+   "250": 0.011380550085043241
+  }
+ }
+}

@@ -1,0 +1,217 @@
+{
+ "gently curved (bowl)": {
+  "squash_at_40_random_points": {
+   "best_overlap": 0.0,
+   "median_overlap": 0.0,
+   "worst_overlap": 0.0
+  },
+  "squash_best_of_3000_tilts_overlap": 0.0,
+  "unroll": {
+   "overlap": 0.0,
+   "tear": 0.0
+  },
+  "neighbour_spacing": 0.05969314311642451,
+  "closest_approach_of_different_parts": 0.3001113681603956,
+  "unroll_share_of_steps_that_jump_layers": 0.0,
+  "unroll_by_neighbours": {
+   "4": {
+    "overlap": 0.0,
+    "tear": 0.00875,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "6": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "10": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "20": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   }
+  }
+ },
+ "rolled up": {
+  "squash_at_40_random_points": {
+   "best_overlap": 0.65425,
+   "median_overlap": 0.70325,
+   "worst_overlap": 0.7925
+  },
+  "squash_best_of_3000_tilts_overlap": 0.3185,
+  "unroll": {
+   "overlap": 0.0,
+   "tear": 0.0
+  },
+  "neighbour_spacing": 0.11416667047872933,
+  "closest_approach_of_different_parts": 0.3600175796367092,
+  "unroll_share_of_steps_that_jump_layers": 0.0,
+  "unroll_by_neighbours": {
+   "4": {
+    "pieces": 3,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "6": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "10": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "20": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   }
+  }
+ },
+ "crumpled, layers apart": {
+  "squash_at_40_random_points": {
+   "best_overlap": 0.2605,
+   "median_overlap": 0.404875,
+   "worst_overlap": 0.59825
+  },
+  "squash_best_of_3000_tilts_overlap": 0.25625,
+  "unroll": {
+   "overlap": 0.0,
+   "tear": 0.00225
+  },
+  "neighbour_spacing": 0.07172635579076142,
+  "closest_approach_of_different_parts": 0.13361626896825377,
+  "unroll_share_of_steps_that_jump_layers": 0.0,
+  "unroll_by_neighbours": {
+   "4": {
+    "overlap": 0.04725,
+    "tear": 0.0285,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "6": {
+    "overlap": 0.00625,
+    "tear": 0.0035,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "10": {
+    "overlap": 0.0,
+    "tear": 0.00225,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "20": {
+    "overlap": 0.0,
+    "tear": 0.00275,
+    "share_of_steps_that_jump_layers": 0.0010125
+   }
+  }
+ },
+ "tightly rolled": {
+  "squash_at_40_random_points": {
+   "best_overlap": 0.79725,
+   "median_overlap": 0.8685,
+   "worst_overlap": 0.92475
+  },
+  "squash_best_of_3000_tilts_overlap": 0.70175,
+  "unroll": {
+   "overlap": 0.8485,
+   "tear": 0.0015
+  },
+  "neighbour_spacing": 0.08402891568362986,
+  "closest_approach_of_different_parts": 0.0898783466937272,
+  "unroll_share_of_steps_that_jump_layers": 0.0545,
+  "unroll_by_neighbours": {
+   "4": {
+    "pieces": 2,
+    "share_of_steps_that_jump_layers": 0.003
+   },
+   "6": {
+    "overlap": 0.8575,
+    "tear": 0.006,
+    "share_of_steps_that_jump_layers": 0.011916666666666667
+   },
+   "10": {
+    "overlap": 0.8485,
+    "tear": 0.0015,
+    "share_of_steps_that_jump_layers": 0.0545
+   },
+   "20": {
+    "overlap": 0.85825,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.2223625
+   }
+  },
+  "more_points": {
+   "8000": {
+    "overlap": 0.57475,
+    "tear": 0.0,
+    "neighbour_spacing": 0.059098319245371414,
+    "closest_approach_of_different_parts": 0.08985830675867781,
+    "share_of_steps_that_jump_layers": 0.001275
+   },
+   "12000": {
+    "overlap": 0.16925,
+    "tear": 0.0,
+    "neighbour_spacing": 0.04831599650721597,
+    "closest_approach_of_different_parts": 0.0898571714709913,
+    "share_of_steps_that_jump_layers": 0.00011666666666666667
+   }
+  }
+ },
+ "crumpled, layers close": {
+  "squash_at_40_random_points": {
+   "best_overlap": 0.117,
+   "median_overlap": 0.36150000000000004,
+   "worst_overlap": 0.6555
+  },
+  "squash_best_of_3000_tilts_overlap": 0.11325,
+  "unroll": {
+   "overlap": 0.00175,
+   "tear": 0.0
+  },
+  "neighbour_spacing": 0.06979072540477455,
+  "closest_approach_of_different_parts": 0.09708481599758152,
+  "unroll_share_of_steps_that_jump_layers": 0.0,
+  "unroll_by_neighbours": {
+   "4": {
+    "overlap": 0.021,
+    "tear": 0.0165,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "6": {
+    "overlap": 0.002,
+    "tear": 0.00175,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "10": {
+    "overlap": 0.00175,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "20": {
+    "overlap": 0.00075,
+    "tear": 0.0,
+    "share_of_steps_that_jump_layers": 7.5e-05
+   }
+  },
+  "more_points": {
+   "8000": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "neighbour_spacing": 0.048653623535455326,
+    "closest_approach_of_different_parts": 0.09753916712910535,
+    "share_of_steps_that_jump_layers": 0.0
+   },
+   "12000": {
+    "overlap": 0.0,
+    "tear": 0.0,
+    "neighbour_spacing": 0.03957615830755725,
+    "closest_approach_of_different_parts": 0.09796322878040888,
+    "share_of_steps_that_jump_layers": 0.0
+   }
+  }
+ }
+}

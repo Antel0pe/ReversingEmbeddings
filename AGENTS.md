@@ -302,6 +302,18 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   form back to the knobs. A search from images alone passed in one of six tries, so
   a good plane exists but is not yet found reliably.
 
+- **Toy crumpled sheets, projection vs. walking along the sheet:**
+  `analyze_crumpled_sheet_unrolling.py` and
+  `figures/crumpled_sheet_unrolling/README.md`. Projecting onto the plane at a
+  random point overlaps 26-87% of any sheet that folds over (best of 3,000 tilts
+  still 11-70%). Walking-distance flattening (Isomap) unrolls bent-not-stretched
+  paper to the original square (median 1.4% of the side off) with no folds, and
+  fails (85%) when short steps jump between layers. More points help partly. The
+  twist-made crumples were stretched unevenly: their layouts fold over 1-2.4% of
+  the paper, which a dot-neighbour overlap test misses. Count folds with flipped
+  well-shaped interior triangles (`analyze_crumpled_sheet_followup.py`); edge
+  slivers fake folds.
+
 ### Geometry conventions
 
 - Image distance is Euclidean over all 784 coverage values. A seed-to-neighbor
