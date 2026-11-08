@@ -1,0 +1,561 @@
+{
+ "settings": {
+  "methods": [
+   "best_fit_plane",
+   "tangent_plane",
+   "isomap_k10",
+   "adaptive_tol10"
+  ],
+  "sheets": [
+   "s_curl",
+   "roll",
+   "crumple",
+   "tight_roll"
+  ],
+  "grid": 65,
+  "seeds": 1,
+  "noise": 0.0,
+  "name": "preview",
+  "against": null
+ },
+ "tests": {
+  "s_curl / best_fit_plane": {
+   "sheet": "s_curl",
+   "method": "best_fit_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 94%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.9444444444444444,
+    "fold_share": 0.4994846272924069,
+    "fine_fold_share": 0.4686279918938728,
+    "outer_edge_crossings": 2,
+    "square_error_median": 6.190699215462464,
+    "square_error_worst": 49.32623771948578,
+    "scale_to_paper": 1.1259444149695594,
+    "tear_share": 0.0,
+    "crush_share": 0.0022836538461538463,
+    "length_ratio_p5": 0.35826789017029986,
+    "length_ratio_p95": 1.0100992537267046,
+    "roughness": 0.2666830584091595,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0006189346313476562
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "47% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "s_curl / tangent_plane": {
+   "sheet": "s_curl",
+   "method": "tangent_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 94%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.9353824542626844,
+    "fold_share": 0.4994846272924069,
+    "fine_fold_share": 0.4686279918938728,
+    "outer_edge_crossings": 2,
+    "square_error_median": 6.376814937157251,
+    "square_error_worst": 49.0414059482361,
+    "scale_to_paper": 1.1303834512879516,
+    "tear_share": 0.0,
+    "crush_share": 0.005168269230769231,
+    "length_ratio_p5": 0.3782984493827454,
+    "length_ratio_p95": 1.0130779734639075,
+    "roughness": 0.2650726801355889,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0012879371643066406
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "47% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "s_curl / isomap_k10": {
+   "sheet": "s_curl",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 8%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.01539025991580736,
+    "fold_share": 0.07973962382171466,
+    "fine_fold_share": 0.08366116827328827,
+    "outer_edge_crossings": 12,
+    "square_error_median": 1.744100617367276,
+    "square_error_worst": 44.02455533525044,
+    "scale_to_paper": 0.9895281137440008,
+    "tear_share": 0.0,
+    "crush_share": 0.002764423076923077,
+    "length_ratio_p5": 0.441119452123182,
+    "length_ratio_p95": 1.3036588631410033,
+    "roughness": 0.2868336475086284,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 7.60589075088501
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "11 of 42250 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "s_curl / adaptive_tol10": {
+   "sheet": "s_curl",
+   "method": "adaptive_tol10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 78%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.780057120044222,
+    "fold_share": 0.4381779700273211,
+    "fine_fold_share": 0.42401931748445415,
+    "outer_edge_crossings": 4,
+    "square_error_median": 5.457689160842729,
+    "square_error_worst": 45.457250237062155,
+    "scale_to_paper": 1.1126153903376037,
+    "tear_share": 0.0,
+    "crush_share": 0.01826923076923077,
+    "length_ratio_p5": 0.26697863790415866,
+    "length_ratio_p95": 1.2076774529330863,
+    "roughness": 0.4540944806321632,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 8.538247346878052
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "226 of 118014 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "roll / best_fit_plane": {
+   "sheet": "roll",
+   "method": "best_fit_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 42%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.424,
+    "fold_share": 0.3122662648083912,
+    "fine_fold_share": 0.29677115336481547,
+    "outer_edge_crossings": 2,
+    "square_error_median": 15.232726682198642,
+    "square_error_worst": 45.65251203623102,
+    "scale_to_paper": 1.0848022786452267,
+    "tear_share": 0.0,
+    "crush_share": 0.004927884615384615,
+    "length_ratio_p5": 0.30342276675824026,
+    "length_ratio_p95": 1.0185590438236227,
+    "roughness": 0.22053212260667837,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.00040221214294433594
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "30% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "roll / tangent_plane": {
+   "sheet": "roll",
+   "method": "tangent_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 100%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.9968728623082185,
+    "fold_share": 0.40597316897921104,
+    "fine_fold_share": 0.38351574238136443,
+    "outer_edge_crossings": 4,
+    "square_error_median": 14.910420276122801,
+    "square_error_worst": 61.625659579638146,
+    "scale_to_paper": 1.0066860727804106,
+    "tear_share": 0.0,
+    "crush_share": 0.005649038461538461,
+    "length_ratio_p5": 0.2500418331387323,
+    "length_ratio_p95": 1.0225006019519205,
+    "roughness": 0.21688446635996178,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0018422603607177734
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "38% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "roll / isomap_k10": {
+   "sheet": "roll",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 1,
+   "seeds": 1,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.2732530045380864,
+    "square_error_worst": 0.7971251423631543,
+    "scale_to_paper": 0.9778995337523781,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9307853624587412,
+    "length_ratio_p95": 1.0599337370998363,
+    "roughness": 0.07212454484453375,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 8.853139162063599
+   },
+   "causes": []
+  },
+  "roll / adaptive_tol10": {
+   "sheet": "roll",
+   "method": "adaptive_tol10",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 1,
+   "seeds": 1,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.0875696751600202,
+    "square_error_worst": 0.588822129628884,
+    "scale_to_paper": 0.9994099223497449,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9855798919065529,
+    "length_ratio_p95": 1.0127399069082417,
+    "roughness": 0.01479964461121419,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 11.256372213363647
+   },
+   "causes": []
+  },
+  "crumple / best_fit_plane": {
+   "sheet": "crumple",
+   "method": "best_fit_plane",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 34%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.15068278953403524,
+    "fold_share": 0.3411135939551113,
+    "fine_fold_share": 0.3400165328114274,
+    "outer_edge_crossings": 3,
+    "square_error_median": 22.2009038025101,
+    "square_error_worst": 53.83812039723254,
+    "scale_to_paper": 0.6715830618237774,
+    "tear_share": 0.0,
+    "crush_share": 0.0014423076923076924,
+    "length_ratio_p5": 0.5421142503160917,
+    "length_ratio_p95": 1.098136123720635,
+    "roughness": 0.6382982147948202,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0005424022674560547
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "34% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "crumple / tangent_plane": {
+   "sheet": "crumple",
+   "method": "tangent_plane",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 43%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.15700077886286024,
+    "fold_share": 0.4308886004090316,
+    "fine_fold_share": 0.40230788568333004,
+    "outer_edge_crossings": 1,
+    "square_error_median": 27.43098316647651,
+    "square_error_worst": 73.69605329231133,
+    "scale_to_paper": 0.6001915856408339,
+    "tear_share": 0.0,
+    "crush_share": 0.002764423076923077,
+    "length_ratio_p5": 0.42102441726507805,
+    "length_ratio_p95": 1.1985297441882026,
+    "roughness": 0.5990587908960127,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0024116039276123047
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "40% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "crumple / isomap_k10": {
+   "sheet": "crumple",
+   "method": "isomap_k10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.007152240548824989,
+    "fold_share": 0.009745763974488038,
+    "fine_fold_share": 0.006023717588531332,
+    "outer_edge_crossings": 0,
+    "square_error_median": 21.0718398765936,
+    "square_error_worst": 61.41109872229905,
+    "scale_to_paper": 0.5333873830200319,
+    "tear_share": 0.0,
+    "crush_share": 0.0001201923076923077,
+    "length_ratio_p5": 0.4764286751235612,
+    "length_ratio_p95": 1.2540398972768365,
+    "roughness": 0.5237824316908544,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 5.734685659408569
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.2% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "crumple / adaptive_tol10": {
+   "sheet": "crumple",
+   "method": "adaptive_tol10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.0,
+    "fold_share": 0.009616696925372481,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 21.11323636504865,
+    "square_error_worst": 61.535968913826736,
+    "scale_to_paper": 0.5463693166185094,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.49804118192807156,
+    "length_ratio_p95": 1.1906201593330628,
+    "roughness": 0.5077735564663739,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 5.5564258098602295
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.2% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    },
+    {
+     "cause": "hops also jumped between layers",
+     "plain": "2471 of 147086 links jump between layers as well."
+    }
+   ]
+  },
+  "tight_roll / best_fit_plane": {
+   "sheet": "tight_roll",
+   "method": "best_fit_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 43%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.4268292682926829,
+    "fold_share": 0.36594528332928156,
+    "fine_fold_share": 0.3376802379631661,
+    "outer_edge_crossings": 6,
+    "square_error_median": 24.342059971041284,
+    "square_error_worst": 44.831144035284574,
+    "scale_to_paper": 1.0851150840668564,
+    "tear_share": 0.0,
+    "crush_share": 0.017427884615384616,
+    "length_ratio_p5": 0.2882920320619776,
+    "length_ratio_p95": 1.0185712573155317,
+    "roughness": 0.48810359327550595,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0004432201385498047
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "34% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "tight_roll / tangent_plane": {
+   "sheet": "tight_roll",
+   "method": "tangent_plane",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 46%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.4601126335860937,
+    "fold_share": 0.37653539338710307,
+    "fine_fold_share": 0.37563762810558987,
+    "outer_edge_crossings": 7,
+    "square_error_median": 28.813308704531277,
+    "square_error_worst": 47.97990492028466,
+    "scale_to_paper": 1.0490996583734717,
+    "tear_share": 0.0,
+    "crush_share": 0.013701923076923077,
+    "length_ratio_p5": 0.26121906832617825,
+    "length_ratio_p95": 1.0133659312029235,
+    "roughness": 0.4592625609267319,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.0012743473052978516
+   },
+   "causes": [
+    {
+     "cause": "the sheet turned past edge-on to the plane",
+     "plain": "38% of the paper faces away from the plane. Where the sheet turns past edge-on, the part beyond is dropped back over the part before it, so two layers land on the same spots."
+    }
+   ]
+  },
+  "tight_roll / isomap_k10": {
+   "sheet": "tight_roll",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 25%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.20293861669994367,
+    "fold_share": 0.25049737612436784,
+    "fine_fold_share": 0.24856355192545684,
+    "outer_edge_crossings": 10,
+    "square_error_median": 11.444505171311665,
+    "square_error_worst": 39.05016666843233,
+    "scale_to_paper": 1.0868787397909447,
+    "tear_share": 0.0,
+    "crush_share": 0.005889423076923077,
+    "length_ratio_p5": 0.7158112583497298,
+    "length_ratio_p95": 1.1293194803995343,
+    "roughness": 0.4750707325182768,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 3.141589879989624
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "8724 of 42250 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "tight_roll / adaptive_tol10": {
+   "sheet": "tight_roll",
+   "method": "adaptive_tol10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 23%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.20087314702908024,
+    "fold_share": 0.23156763836444277,
+    "fine_fold_share": 0.22867660014409977,
+    "outer_edge_crossings": 12,
+    "square_error_median": 8.183324478147764,
+    "square_error_worst": 41.64801914193988,
+    "scale_to_paper": 1.0739948159313915,
+    "tear_share": 0.0,
+    "crush_share": 0.0018028846153846155,
+    "length_ratio_p5": 0.8130617412177562,
+    "length_ratio_p95": 1.3766217872032869,
+    "roughness": 0.6274323313034862,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 4.739717721939087
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "4084 of 73968 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  }
+ }
+}

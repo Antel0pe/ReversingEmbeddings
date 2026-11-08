@@ -1,0 +1,92 @@
+{
+ "rows": {
+  "Walking, 6 neighbours": {
+   "links": 25350,
+   "links_jumping": 0,
+   "neighbours_median": 6.0,
+   "neighbours_max": 6,
+   "longest_link": 0.07315305075677604,
+   "median_link": 0.03507417423379197
+  },
+  "Walking, 10 neighbours": {
+   "links": 42250,
+   "links_jumping": 11,
+   "neighbours_median": 10.0,
+   "neighbours_max": 10,
+   "longest_link": 0.0840218740612999,
+   "median_link": 0.04164076698441059,
+   "jumping_dots": 4,
+   "neighbours_at_jumping_dots_median": 10.0,
+   "jump_link_length_median": 0.0788592199432815,
+   "curvature_at_jumping_dots_median": 8.572527594031472e-16,
+   "gap_to_other_layer_at_jumping_dots_median": 0.076231945395449
+  },
+  "Flatness hops, tolerance 0.05": {
+   "links": 61710,
+   "links_jumping": 59,
+   "neighbours_median": 10.0,
+   "neighbours_max": 40,
+   "longest_link": 0.13750851793933672,
+   "median_link": 0.05043874831441798,
+   "jumping_dots": 52,
+   "neighbours_at_jumping_dots_median": 26.0,
+   "jump_link_length_median": 0.10059532016862999,
+   "curvature_at_jumping_dots_median": 0.5595254321231053,
+   "gap_to_other_layer_at_jumping_dots_median": 0.1015909586360231
+  },
+  "Flatness hops, tolerance 0.1": {
+   "links": 118014,
+   "links_jumping": 226,
+   "neighbours_median": 26.0,
+   "neighbours_max": 40,
+   "longest_link": 0.16075631577232904,
+   "median_link": 0.06851076460401075,
+   "jumping_dots": 149,
+   "neighbours_at_jumping_dots_median": 26.0,
+   "jump_link_length_median": 0.10168419553579576,
+   "curvature_at_jumping_dots_median": 0.5685631424861891,
+   "gap_to_other_layer_at_jumping_dots_median": 0.10162123589518288
+  },
+  "Flatness hops, tolerance 0.2": {
+   "links": 156624,
+   "links_jumping": 1985,
+   "neighbours_median": 40.0,
+   "neighbours_max": 40,
+   "longest_link": 0.16075631577232904,
+   "median_link": 0.07634629427868479,
+   "jumping_dots": 393,
+   "neighbours_at_jumping_dots_median": 38.0,
+   "jump_link_length_median": 0.10648724075811221,
+   "curvature_at_jumping_dots_median": 0.6718497136184238,
+   "gap_to_other_layer_at_jumping_dots_median": 0.10343724752660806
+  }
+ },
+ "flatness_score_by_patch_size": {
+  "10": {
+   "patches_touching_another_layer": 4,
+   "score_with_other_layer_median": 0.14933364405932464,
+   "score_one_layer_median": 0.04556794363564234,
+   "score_one_layer_p95": 0.08040831936198072
+  },
+  "20": {
+   "patches_touching_another_layer": 249,
+   "score_with_other_layer_median": 0.23478111355617767,
+   "score_one_layer_median": 0.06983020417231822,
+   "score_one_layer_p95": 0.09901617395738949
+  },
+  "30": {
+   "patches_touching_another_layer": 695,
+   "score_with_other_layer_median": 0.3222983619556635,
+   "score_one_layer_median": 0.09799496034339723,
+   "score_one_layer_p95": 0.133995909659656
+  },
+  "40": {
+   "patches_touching_another_layer": 853,
+   "score_with_other_layer_median": 0.30665864784877955,
+   "score_one_layer_median": 0.1103772304937995,
+   "score_one_layer_p95": 0.14461029283027718
+  }
+ },
+ "dot_spacing": 0.02590619160252987,
+ "closest_layers": 0.07569670879702087
+}
