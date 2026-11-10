@@ -15,8 +15,8 @@ from unfolding_suite.sheets import SHEETS, make_instance
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-RUN = Path("figures/unfolding_suite/all")
-OUT = Path("figures/unfolding_suite/twitter_unwrapping.png")
+RUN = Path(__file__).resolve().parents[1] / "runs" / "explore_hops"
+OUT = Path(__file__).resolve().parents[1] / "figures" / "twitter_unwrapping.png"
 INK, MUTED, GOOD, BAD = "#0b0b0b", "#6a6963", "#008300", "#d03b3b"
 ROWS = [("s_curl", "S-curl", (16, -74)), ("roll", "Roll", (16, -74)),
         ("diagonal_roll", "Diagonal roll", (20, -35)), ("tight_roll", "Tight roll", (16, -74))]

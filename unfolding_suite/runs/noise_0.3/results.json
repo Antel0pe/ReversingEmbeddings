@@ -1,0 +1,534 @@
+{
+ "settings": {
+  "methods": [
+   "isomap_k10",
+   "check_k10",
+   "convex_edge"
+  ],
+  "sheets": [
+   "s_curl",
+   "roll",
+   "accordion",
+   "uneven_roll",
+   "dents"
+  ],
+  "grid": 65,
+  "seeds": 2,
+  "first_seed": 100,
+  "noise": 0.3,
+  "name": "noise0.3",
+  "against": null
+ },
+ "tests": {
+  "s_curl / isomap_k10": {
+   "sheet": "s_curl",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 85%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.8495010119338404,
+    "fold_share": 0.45755132542670707,
+    "fine_fold_share": 0.4549498721076536,
+    "outer_edge_crossings": 21,
+    "square_error_median": 5.333597519227834,
+    "square_error_worst": 47.9787407187468,
+    "scale_to_paper": 1.064605867210304,
+    "tear_share": 0.0,
+    "crush_share": 0.019951923076923075,
+    "length_ratio_p5": 0.30843581292387523,
+    "length_ratio_p95": 1.8123420851551046,
+    "roughness": 0.7293562786441106,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.4102981090545654
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "163 of 42250 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "s_curl / check_k10": {
+   "sheet": "s_curl",
+   "method": "check_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 59%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.585200443669783,
+    "fold_share": 0.3850635464966803,
+    "fine_fold_share": 0.4016581988538279,
+    "outer_edge_crossings": 8,
+    "square_error_median": 5.881778575751078,
+    "square_error_worst": 48.6149092942919,
+    "scale_to_paper": 1.0776375661559532,
+    "tear_share": 0.0001201923076923077,
+    "crush_share": 0.014783653846153846,
+    "length_ratio_p5": 0.31133999194001305,
+    "length_ratio_p95": 1.890082621790455,
+    "roughness": 0.796692751209464,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.5066323280334473
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "24 of 35829 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "s_curl / convex_edge": {
+   "sheet": "s_curl",
+   "method": "convex_edge",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 19%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.1731871969194157,
+    "fold_share": 0.18789899460513365,
+    "fine_fold_share": 0.22956821004119352,
+    "outer_edge_crossings": 51,
+    "square_error_median": 24.979710103331072,
+    "square_error_worst": 82.16011160550022,
+    "scale_to_paper": 1.9285959580068606,
+    "tear_share": 0.004807692307692308,
+    "crush_share": 0.06045673076923077,
+    "length_ratio_p5": 0.07113622102319599,
+    "length_ratio_p95": 6.594995902300094,
+    "roughness": 2.393099774599055,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.16531610488891602
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "24 of 35829 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "roll / isomap_k10": {
+   "sheet": "roll",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.014173110407968396,
+    "fold_share": 0.0011772404360767558,
+    "fine_fold_share": 0.05257561602577266,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.6282177240704769,
+    "square_error_worst": 2.1428662463844153,
+    "scale_to_paper": 0.9574427113274475,
+    "tear_share": 0.0,
+    "crush_share": 0.0109375,
+    "length_ratio_p5": 0.4006838166528199,
+    "length_ratio_p95": 1.6988767205187507,
+    "roughness": 0.6548334072492449,
+    "square": true,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.461444616317749
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "roll / check_k10": {
+   "sheet": "roll",
+   "method": "check_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.021622953305033353,
+    "fold_share": 0.003824160092599855,
+    "fine_fold_share": 0.05762408996976187,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.6748742983229549,
+    "square_error_worst": 3.9162522151098784,
+    "scale_to_paper": 0.9562191569140511,
+    "tear_share": 0.0,
+    "crush_share": 0.010096153846153847,
+    "length_ratio_p5": 0.41035991747784034,
+    "length_ratio_p95": 1.7426230419152327,
+    "roughness": 0.7242318637524705,
+    "square": true,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.4118592739105225
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "roll / convex_edge": {
+   "sheet": "roll",
+   "method": "convex_edge",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.022077662493413044,
+    "fold_share": 0.0029704702649139946,
+    "fine_fold_share": 0.06631526280693134,
+    "outer_edge_crossings": 4,
+    "square_error_median": 0.9390995353837629,
+    "square_error_worst": 4.128866050109592,
+    "scale_to_paper": 0.9262575785330286,
+    "tear_share": 0.0,
+    "crush_share": 0.018149038461538463,
+    "length_ratio_p5": 0.32935514412370065,
+    "length_ratio_p95": 1.9885409893896757,
+    "roughness": 0.8619432954951255,
+    "square": true,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.2551906108856201
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "accordion / isomap_k10": {
+   "sheet": "accordion",
+   "method": "isomap_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.012527881040892194,
+    "fold_share": 0.0008703916295375933,
+    "fine_fold_share": 0.04463931152880861,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.7905004860914668,
+    "square_error_worst": 3.563563316649554,
+    "scale_to_paper": 0.9639188502448649,
+    "tear_share": 0.0,
+    "crush_share": 0.011778846153846154,
+    "length_ratio_p5": 0.4005413805773256,
+    "length_ratio_p95": 1.6914990571845758,
+    "roughness": 0.6632060600237273,
+    "square": true,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.860266923904419
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "accordion / check_k10": {
+   "sheet": "accordion",
+   "method": "check_k10",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.022209145612270078,
+    "fold_share": 0.0031412160750777063,
+    "fine_fold_share": 0.05974038823364124,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.7145683163918739,
+    "square_error_worst": 5.396303323979178,
+    "scale_to_paper": 0.9601812850327269,
+    "tear_share": 0.0,
+    "crush_share": 0.01141826923076923,
+    "length_ratio_p5": 0.3896562617530068,
+    "length_ratio_p95": 1.755399882221426,
+    "roughness": 0.7370253369528242,
+    "square": true,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.3276784420013428
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "accordion / convex_edge": {
+   "sheet": "accordion",
+   "method": "convex_edge",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.024079807361541108,
+    "fold_share": 0.0058436782595419155,
+    "fine_fold_share": 0.06156676414605796,
+    "outer_edge_crossings": 2,
+    "square_error_median": 1.2236533488196393,
+    "square_error_worst": 12.180162193912121,
+    "scale_to_paper": 0.9357480848268679,
+    "tear_share": 0.0006009615384615385,
+    "crush_share": 0.01875,
+    "length_ratio_p5": 0.3186982039796377,
+    "length_ratio_p95": 2.094585426682733,
+    "roughness": 0.9506923446281944,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.2484908103942871
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "uneven_roll / isomap_k10": {
+   "sheet": "uneven_roll",
+   "method": "isomap_k10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 0%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.0037389642904203453,
+    "fold_share": 0.00046127761004136617,
+    "fine_fold_share": 0.017634037831969696,
+    "outer_edge_crossings": 0,
+    "square_error_median": 16.771198107935035,
+    "square_error_worst": 32.487768192121244,
+    "scale_to_paper": 0.32400684214398157,
+    "tear_share": 0.0,
+    "crush_share": 0.003245192307692308,
+    "length_ratio_p5": 0.5720574875452207,
+    "length_ratio_p95": 1.6944004306183775,
+    "roughness": 0.37395818687258825,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.3271195888519287
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "1% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "uneven_roll / check_k10": {
+   "sheet": "uneven_roll",
+   "method": "check_k10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 0%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.004791431792559188,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.018693981553624325,
+    "outer_edge_crossings": 0,
+    "square_error_median": 16.765624556398045,
+    "square_error_worst": 32.473259250097044,
+    "scale_to_paper": 0.32391652614396865,
+    "tear_share": 0.0,
+    "crush_share": 0.0034855769230769233,
+    "length_ratio_p5": 0.5737525359186522,
+    "length_ratio_p95": 1.7047557801632809,
+    "roughness": 0.3788108013421352,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.8895673751831055
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "1% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "uneven_roll / convex_edge": {
+   "sheet": "uneven_roll",
+   "method": "convex_edge",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 0%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.003130851161791338,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.013403000424337697,
+    "outer_edge_crossings": 0,
+    "square_error_median": 16.500995495015523,
+    "square_error_worst": 33.230041437366836,
+    "scale_to_paper": 0.3193207269192174,
+    "tear_share": 0.0,
+    "crush_share": 0.0069711538461538465,
+    "length_ratio_p5": 0.4796702348754893,
+    "length_ratio_p95": 1.7839652946576576,
+    "roughness": 0.4397234031638182,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.2648501396179199
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "1% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "dents / isomap_k10": {
+   "sheet": "dents",
+   "method": "isomap_k10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.011288771121072978,
+    "fold_share": 0.0008703916295375933,
+    "fine_fold_share": 0.040659424733491226,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.7376494492600856,
+    "square_error_worst": 5.291886954777077,
+    "scale_to_paper": 0.8884144522932492,
+    "tear_share": 0.0,
+    "crush_share": 0.00985576923076923,
+    "length_ratio_p5": 0.4178784724131088,
+    "length_ratio_p95": 1.7021525511980722,
+    "roughness": 0.6172900569906988,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 3.8646175861358643
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "dents / check_k10": {
+   "sheet": "dents",
+   "method": "check_k10",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.014608746849184008,
+    "fold_share": 0.0037728511916715404,
+    "fine_fold_share": 0.04510076468874098,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.7242975025066343,
+    "square_error_worst": 6.1109972865940705,
+    "scale_to_paper": 0.8880939170275938,
+    "tear_share": 0.0,
+    "crush_share": 0.008774038461538462,
+    "length_ratio_p5": 0.41968114476640805,
+    "length_ratio_p95": 1.7101524766019292,
+    "roughness": 0.6646465873877947,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.299602746963501
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  },
+  "dents / convex_edge": {
+   "sheet": "dents",
+   "method": "convex_edge",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 2,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.016148711691667265,
+    "fold_share": 0.0030637629732125277,
+    "fine_fold_share": 0.05082341044293963,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.546703270288508,
+    "square_error_worst": 5.711486912444668,
+    "scale_to_paper": 0.8483802358614679,
+    "tear_share": 0.0,
+    "crush_share": 0.014663461538461538,
+    "length_ratio_p5": 0.3552614153371496,
+    "length_ratio_p95": 1.9395596948837792,
+    "roughness": 0.8290636554449622,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.25249600410461426
+   },
+   "causes": [
+    {
+     "cause": "hops: unknown reason",
+     "plain": "The same layout step passes when given perfect neighbours, so the hops are what went wrong. No link jumped layers and links are not lopsided, so this is a new way for hops to fail."
+    }
+   ]
+  }
+ }
+}

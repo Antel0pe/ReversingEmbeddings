@@ -16,7 +16,7 @@ from unfolding_suite.sheets import SHEETS, make_instance
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-OUT = Path("figures/unfolding_suite/why_hops_jump")
+OUT = Path(__file__).resolve().parents[1] / "figures" / "why_hops_jump"
 OUT.mkdir(parents=True, exist_ok=True)
 FAR = 0.3
 INK, MUTED, RED = "#0b0b0b", "#52514e", "#d03b3b"

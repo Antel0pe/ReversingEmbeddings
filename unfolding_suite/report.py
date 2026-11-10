@@ -148,7 +148,8 @@ def _mark(ax, p, label, dx=0):
 
 
 # ------------------------------------------------------------------ the gallery
-PLAIN_NAMES = {"best_fit_plane": "Best-fit plane\n(projection)", "tangent_plane": "Plane at a\nrandom dot",
+PLAIN_NAMES = {"check_k10": "Walking +\nlink check", "convex_edge": "Link check +\nconvex edge",
+               "best_fit_plane": "Best-fit plane\n(projection)", "tangent_plane": "Plane at a\nrandom dot",
                "isomap_k6": "Walking,\n6 neighbours", "isomap_k10": "Walking,\n10 neighbours",
                "isomap_k20": "Walking,\n20 neighbours", "adaptive_tol05": "Flatness hops,\nstrict (0.05)",
                "adaptive_tol10": "Flatness hops,\nmedium (0.10)", "adaptive_tol20": "Flatness hops,\nloose (0.20)"}
@@ -181,8 +182,8 @@ def gallery(detail, summary, methods, sheets, family, path):
 
     fig.text(0.2 / width, 1 - 0.38 / height, FAMILY_TITLES[family], fontsize=19, fontweight="bold", color=INK, va="center")
     paper_colours = family == "stretched"     # the square is not the target here, so distance from it means little
-    fig.text(0.2 / width, 1 - 0.76 / height, ("Each row is one input; each column is one method's flat result, turned, mirrored and resized to line up. \"Lengths\": short "
-             "lengths in the result against the 3D sheet, after matching overall size (1× = unchanged). \"Folded N%\": paper flipped or overlapping."
+    fig.text(0.2 / width, 1 - 0.76 / height, ("Each row is one input; each column is one method's flat result, lined up. \"Lengths\": short distances in the result "
+             "against the 3D sheet (1× = unchanged). \"Folded N%\": paper flipped or overlapping."
              if paper_colours else
              "Each row is one input; each column is one method's flat result, turned, mirrored and resized to best "
              "match the original square, so orientation and size don't count. \"Folded N%\" = share of the paper flipped over or "

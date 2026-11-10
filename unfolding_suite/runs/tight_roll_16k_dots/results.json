@@ -1,0 +1,52 @@
+{
+ "settings": {
+  "methods": [
+   "convex_edge"
+  ],
+  "sheets": [
+   "tight_roll"
+  ],
+  "grid": 129,
+  "seeds": 1,
+  "first_seed": 0,
+  "noise": 0.0,
+  "name": "dense129",
+  "against": null
+ },
+ "tests": {
+  "tight_roll / convex_edge": {
+   "sheet": "tight_roll",
+   "method": "convex_edge",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 1,
+   "words": "folded 8%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.019727177334732424,
+    "fold_share": 0.08138877689551188,
+    "fine_fold_share": 0.08030883744029138,
+    "outer_edge_crossings": 48,
+    "square_error_median": 8.423900484031128,
+    "square_error_worst": 36.106123623007676,
+    "scale_to_paper": 1.0530726596051225,
+    "tear_share": 0.0023619186046511626,
+    "crush_share": 0.006389292635658915,
+    "length_ratio_p5": 0.22996452405678425,
+    "length_ratio_p95": 1.5332331418926899,
+    "roughness": 0.46560029519473645,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 3.1343908309936523
+   },
+   "causes": [
+    {
+     "cause": "hops jumped between layers",
+     "plain": "175 of 148425 neighbour links join parts of the sheet that are far apart on the paper but close in 3D. Every walk that uses one takes a shortcut through the air, so one bad link corrupts many distances. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  }
+ }
+}

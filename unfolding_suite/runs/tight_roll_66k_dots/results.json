@@ -1,0 +1,47 @@
+{
+ "settings": {
+  "methods": [
+   "convex_edge"
+  ],
+  "sheets": [
+   "tight_roll"
+  ],
+  "grid": 257,
+  "seeds": 1,
+  "first_seed": 0,
+  "noise": 0.0,
+  "name": "dense257",
+  "against": null
+ },
+ "tests": {
+  "tight_roll / convex_edge": {
+   "sheet": "tight_roll",
+   "method": "convex_edge",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 1,
+   "seeds": 1,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 4.9658153272869566e-05,
+    "fold_share": 0.0,
+    "fine_fold_share": 7.826566256985685e-05,
+    "outer_edge_crossings": 1,
+    "square_error_median": 0.23023601877284983,
+    "square_error_worst": 0.9768291478525225,
+    "scale_to_paper": 0.9712192911721029,
+    "tear_share": 0.0,
+    "crush_share": 7.599708171206226e-05,
+    "length_ratio_p5": 0.7363837439885281,
+    "length_ratio_p95": 1.2426721674098322,
+    "roughness": 0.26904593360142887,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 29.600295782089233
+   },
+   "causes": []
+  }
+ }
+}

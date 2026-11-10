@@ -314,15 +314,14 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   well-shaped interior triangles (`analyze_crumpled_sheet_followup.py`); edge
   slivers fake folds.
 
-- **Unfolding test suite (toy sheets):** `unfolding_suite/README.md`. Test-driven loop
-  for ideas that flatten a 2-D sheet crumpled in 3-D: 14 sheets in `sheets.py`, methods
-  in `methods.py` (a method returns one flat position per dot), a one-to-one certificate
-  in `scoring.py` (no flipped triangle at three mesh sizes and a non-crossing outer edge),
-  named causes in `diagnose.py`, and `--against NAME:METHOD` to list what a new idea
-  fixed or broke. `figures/unfolding_suite/all/` holds the current galleries. Results:
-  planes pass 3-4 of 14, walking and flatness hops 9-10. Hops longer than the gap between
-  layers jump; with perfect neighbours every bent sheet passes, the twisted crumples do not.
-  Curvature-based hop limits did not help: the jumps happen where the sheet is flat.
+- **Unfolding test suite (toy sheets):** self-contained in `unfolding_suite/`; start
+  with `unfolding_suite/README.md` (contract, scoring, outputs, workflow, results). Run
+  `.venv/bin/python -m unfolding_suite --list`. A method gets shuffled, rotated 3-D dots and
+  returns one flat position per dot; the scorer certifies one-to-one (no flipped triangle at
+  three mesh sizes, outline never crosses) and names failure causes. 14 design + 10 held-out
+  sheets; runs live in `unfolding_suite/runs/` (`current` is the reference). Best simple
+  methods (`link_check.py`) pass 11 of 14 design and 7 of 10 held-out sheets. `tight_roll`
+  needs more dots; twisted crumples stay unsolved.
 
 ### Geometry conventions
 

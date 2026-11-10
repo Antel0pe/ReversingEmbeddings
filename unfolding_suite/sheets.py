@@ -20,17 +20,20 @@ class Sheet:
     family: str
     build: Callable[[np.ndarray], np.ndarray]
     note: str
+    group: str = "design"      # "design": used while developing methods; "holdout": kept for fair checks
 
 
 SHEETS: dict[str, Sheet] = {}
 
 
-def sheet(name, family, note):
+def sheet(name, family, note, group="design"):
     if family not in ("bent", "stretched"):
         raise ValueError(f"unknown family {family!r}")
+    if group not in ("design", "holdout"):
+        raise ValueError(f"unknown group {group!r}")
 
     def register(fn):
-        SHEETS[name] = Sheet(name, family, fn, note)
+        SHEETS[name] = Sheet(name, family, fn, note, group)
         return fn
 
     return register
@@ -168,6 +171,9 @@ def crumple(uv):
 @sheet("hard_crumple", "stretched", "Eight tighter random twists.")
 def hard_crumple(uv):
     return _twisted(uv, 8, 6, 0.4)
+
+
+from . import holdout  # noqa: E402,F401 - registers the held-out sheets
 
 
 # ------------------------------------------------------------- building a test instance

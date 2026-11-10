@@ -1,10 +1,13 @@
 """Run methods against sheets, score them, explain failures, compare with a baseline.
 
-    .venv/bin/python -m unfolding_suite.run                       # default methods, all sheets
-    .venv/bin/python -m unfolding_suite.run --methods isomap_k10 --sheets s_curl roll
-    .venv/bin/python -m unfolding_suite.run --plugin my_idea.py --methods my_idea --against baseline
+    python -m unfolding_suite --list                              # every sheet and method
+    python -m unfolding_suite                                     # default methods, design sheets
+    python -m unfolding_suite --methods isomap_k10 --sheets s_curl roll
+    python -m unfolding_suite --sheets holdout --first-seed 100 --seeds 3 --name fair_check
+    python -m unfolding_suite --plugin my_idea.py --methods my_idea --against baseline:isomap_k10
 
-Writes figures/unfolding_suite/<name>/: results.json, scorecard.png, failures/*.png.
+--sheets also takes the group names design, holdout and all. Writes
+<out-root>/<name>/: results.json, layouts.npz, scorecard.png, gallery_*.png, failures/*.png.
 """
 import argparse
 import importlib.util
@@ -16,12 +19,33 @@ from pathlib import Path
 import numpy as np
 
 from .diagnose import diagnose
-from .methods import METHODS
+from .methods import METHOD_NOTES, METHODS
 from .scoring import TEAR_TOLERANCE, score_layout, to_grid_order
 from .sheets import SHEETS, make_instance
 
-ROOT = Path("figures/unfolding_suite")
-DEFAULT_METHODS = ["best_fit_plane", "tangent_plane", "isomap_k10"]
+ROOT = Path(__file__).resolve().parent / "runs"
+DEFAULT_METHODS = ["best_fit_plane", "tangent_plane", "isomap_k10", "check_k10", "convex_edge"]
+GROUPS = ("design", "holdout", "all")
+
+
+def expand_sheets(names):
+    """Sheet names, with the group words design / holdout / all expanded in registry order."""
+    out = []
+    for name in names:
+        if name in GROUPS:
+            out += [s for s, v in SHEETS.items() if name == "all" or v.group == name]
+        else:
+            out.append(name)
+    return list(dict.fromkeys(out))
+
+
+def list_everything():
+    print("SHEETS (name, family, group: note)")
+    for s in SHEETS.values():
+        print(f"  {s.name:15s} {s.family:9s} {s.group:7s}  {s.note}")
+    print("\nMETHODS (name: what it does)")
+    for name in METHODS:
+        print(f"  {name:15s} {METHOD_NOTES.get(name, '')}")
 
 
 def run_one(fn, instance, seed):
@@ -108,11 +132,14 @@ def redraw(out, gallery):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--methods", nargs="*", default=DEFAULT_METHODS)
-    ap.add_argument("--sheets", nargs="*", default=list(SHEETS))
+    ap.add_argument("--sheets", nargs="*", default=["design"], help="sheet names, or design / holdout / all")
     ap.add_argument("--grid", type=int, default=65, help="nodes per side; grid-1 must divide by 4")
     ap.add_argument("--seeds", type=int, default=2)
+    ap.add_argument("--first-seed", type=int, default=0, help="start here; use fresh seeds for a fair final check")
     ap.add_argument("--noise", type=float, default=0.0, help="3-D noise, in grid spacings")
-    ap.add_argument("--name", default="latest", help="folder under figures/unfolding_suite")
+    ap.add_argument("--name", default="latest", help="folder under --out-root for this run")
+    ap.add_argument("--out-root", type=Path, default=ROOT, help="where runs are saved (default: unfolding_suite/runs)")
+    ap.add_argument("--list", action="store_true", help="list every sheet and method, then stop")
     ap.add_argument("--plugin", help="a .py file that registers more methods or sheets")
     ap.add_argument("--redraw", action="store_true", help="redraw the galleries of run --name from its saved layouts")
     ap.add_argument("--against", help="saved run to compare with, as NAME or NAME:METHOD")
@@ -124,13 +151,16 @@ def main(argv=None):
         spec.loader.exec_module(module)
     from .report import failure_figure, gallery, scorecard  # after plugins, and only when needed
 
+    if a.list:
+        return list_everything()
     if a.redraw:
-        return redraw(ROOT / a.name, gallery)
+        return redraw(a.out_root / a.name, gallery)
+    a.sheets = expand_sheets(a.sheets)
 
     unknown = [m for m in a.methods if m not in METHODS] + [s for s in a.sheets if s not in SHEETS]
     if unknown:
         sys.exit(f"unknown: {unknown}. Methods: {sorted(METHODS)}. Sheets: {sorted(SHEETS)}.")
-    out = ROOT / a.name
+    out = a.out_root / a.name
     (out / "failures").mkdir(parents=True, exist_ok=True)
     for old in (out / "failures").glob("*.png"):
         old.unlink()
@@ -140,7 +170,7 @@ def main(argv=None):
         s = SHEETS[sheet_name]
         for method_name in a.methods:
             runs = []
-            for seed in range(a.seeds):
+            for seed in range(a.first_seed, a.first_seed + a.seeds):
                 inst = make_instance(s, a.grid, seed, a.noise)
                 runs.append({**run_one(METHODS[method_name], inst, seed), "instance": inst, "seed": seed})
             worst = worst_of(runs)
@@ -159,7 +189,7 @@ def main(argv=None):
             if not summary[test]["passed"] and worst["flat"] is not None:
                 failure_figure(test, worst, out / "failures" / f"{sheet_name}__{method_name}.png")
 
-    settings = {k: v for k, v in vars(a).items() if k not in ("plugin", "redraw")}
+    settings = {k: v for k, v in vars(a).items() if k not in ("plugin", "redraw", "list", "out_root")}
     (out / "results.json").write_text(json.dumps({"settings": settings, "tests": summary}, indent=1))
     np.savez_compressed(out / "layouts.npz", **{f"{test}|{row['seed']}": row["flat"] for test, row in detail.items()
                                                 if row["flat"] is not None})
@@ -170,7 +200,7 @@ def main(argv=None):
         print(f"{method_name:18s} {sum(r['passed'] for r in rows):2d} of {len(rows)} tests pass")
     if a.against:
         run_name, _, against_method = a.against.partition(":")
-        base = json.loads((ROOT / run_name / "results.json").read_text())["tests"]
+        base = json.loads((a.out_root / run_name / "results.json").read_text())["tests"]
         diff = compare(summary, base, against_method or None)
         print(f"\nAgainst {a.against}:")
         for label in ("fixed", "broken", "still_failing"):

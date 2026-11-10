@@ -4,8 +4,9 @@ For each point, keep adding neighbours while they still lie close to one flat pl
 as soon as they do not. A neighbourhood that reaches a second layer or a sharp bend is not
 flat, so the growth should stop before the link is made.
 
-Run: .venv/bin/python -m unfolding_suite.run --plugin unfolding_suite/experiments/adaptive_hops.py \
-         --methods adaptive_tol05 adaptive_tol10 adaptive_tol20 --name adaptive --against baseline
+Rejected: it folds the S-curl worse than plain walking (see README, Results so far).
+Run: .venv/bin/python -m unfolding_suite --plugin unfolding_suite/experiments/adaptive_hops.py \
+         --methods adaptive_tol05 adaptive_tol10 adaptive_tol20 --name adaptive --against current:isomap_k10
 """
 import numpy as np
 from scipy.spatial import cKDTree

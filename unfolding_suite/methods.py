@@ -26,6 +26,7 @@ from scipy.sparse.linalg import eigsh
 from scipy.spatial import cKDTree
 
 METHODS = {}
+METHOD_NOTES = {}
 
 
 def method(name, **fixed):
@@ -33,6 +34,9 @@ def method(name, **fixed):
 
     def register(fn):
         METHODS[name] = (lambda points, dim, rng: fn(points, dim, rng, **fixed)) if fixed else fn
+        note = (fn.__doc__ or "").strip().splitlines()
+        METHOD_NOTES[name] = (note[0] if note else "") + (f" ({', '.join(f'{k}={v}' for k, v in fixed.items())})"
+                                                         if fixed else "")
         return fn
 
     return register
@@ -65,7 +69,8 @@ def layout_from_links(points, links, dim):
         raise RuntimeError(f"the neighbour graph broke into {pieces} pieces")
     d2 = shortest_path(graph, method="D", directed=False) ** 2
     centred = -0.5 * (d2 - d2.mean(0) - d2.mean(1)[:, None] + d2.mean())
-    values, vectors = eigsh(centred, k=dim, which="LA")
+    start = np.random.default_rng(0).standard_normal(len(points))    # fixed, so results never depend on run order
+    values, vectors = eigsh(centred, k=dim, which="LA", v0=start)
     return vectors * np.sqrt(np.maximum(values, 0)), float(values.sum() / np.trace(centred))
 
 
@@ -80,3 +85,5 @@ def isomap(points, dim, rng, k=10):
 method("isomap_k6", k=6)(isomap)
 method("isomap_k10", k=10)(isomap)
 method("isomap_k20", k=20)(isomap)
+
+from . import link_check  # noqa: E402,F401 - registers check_k10 and convex_edge

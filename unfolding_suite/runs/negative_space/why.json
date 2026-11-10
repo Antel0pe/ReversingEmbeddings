@@ -1,0 +1,722 @@
+{
+ "s_curl": {
+  "10 nearest": {
+   "links": 22441,
+   "jump_links": 11,
+   "crossing_pairs": 27382
+  },
+  "link check": {
+   "links": 22428,
+   "jump_links": 0,
+   "good_links_cut_%": 0.0,
+   "crossing_pairs": 27373
+  },
+  "air probe": {
+   "links": 17790,
+   "jump_links": 0,
+   "good_links_cut_%": 20.7,
+   "stretch_of_cut_links": 1.0,
+   "stretch_of_kept_links": 1.0
+  },
+  "check + air": {
+   "links": 17788,
+   "jump_links": 0,
+   "good_links_cut_%": 20.7
+  },
+  "star": {
+   "links": 12430,
+   "jump_links": 0,
+   "good_links_cut_%": 44.6,
+   "crossing_pairs": 0
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.3,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.38,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.47,
+   "roughness": 0.276,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 2.58,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.36,
+   "roughness": 0.264,
+   "torn_%": 0.0,
+   "passed": true
+  }
+ },
+ "roll": {
+  "10 nearest": {
+   "links": 22434,
+   "jump_links": 0,
+   "crossing_pairs": 27383
+  },
+  "link check": {
+   "links": 22434,
+   "jump_links": 0,
+   "good_links_cut_%": 0.0,
+   "crossing_pairs": 27383
+  },
+  "air probe": {
+   "links": 17784,
+   "jump_links": 0,
+   "good_links_cut_%": 20.7,
+   "stretch_of_cut_links": 1.0,
+   "stretch_of_kept_links": 1.0
+  },
+  "check + air": {
+   "links": 17784,
+   "jump_links": 0,
+   "good_links_cut_%": 20.7
+  },
+  "star": {
+   "links": 12436,
+   "jump_links": 0,
+   "good_links_cut_%": 44.6,
+   "crossing_pairs": 0
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.3,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.37,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.47,
+   "roughness": 0.276,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 2.58,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.36,
+   "roughness": 0.264,
+   "torn_%": 0.0,
+   "passed": true
+  }
+ },
+ "tight_roll": {
+  "10 nearest": {
+   "links": 22792,
+   "jump_links": 5100,
+   "crossing_pairs": 13413
+  },
+  "link check": {
+   "links": 17560,
+   "jump_links": 482,
+   "good_links_cut_%": 3.5,
+   "crossing_pairs": 13076
+  },
+  "air probe": {
+   "links": 16067,
+   "jump_links": 2889,
+   "good_links_cut_%": 25.5,
+   "stretch_of_cut_links": 1.0,
+   "stretch_of_kept_links": 1.0
+  },
+  "check + air": {
+   "links": 13034,
+   "jump_links": 317,
+   "good_links_cut_%": 28.1
+  },
+  "star": {
+   "links": 11786,
+   "jump_links": 229,
+   "good_links_cut_%": 35.3,
+   "crossing_pairs": 39
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.3,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.38,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.48,
+   "roughness": 0.277,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 2.58,
+   "roughness": 0.141,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 10.5,
+   "square_err_%": 4.8,
+   "roughness": 0.462,
+   "torn_%": 0.577,
+   "passed": false
+  }
+ },
+ "accordion": {
+  "10 nearest": {
+   "links": 22431,
+   "jump_links": 0,
+   "crossing_pairs": 27353
+  },
+  "link check": {
+   "links": 22399,
+   "jump_links": 0,
+   "good_links_cut_%": 0.1,
+   "crossing_pairs": 27206
+  },
+  "air probe": {
+   "links": 17798,
+   "jump_links": 0,
+   "good_links_cut_%": 20.7,
+   "stretch_of_cut_links": 1.0,
+   "stretch_of_kept_links": 1.0
+  },
+  "check + air": {
+   "links": 17767,
+   "jump_links": 0,
+   "good_links_cut_%": 20.8
+  },
+  "star": {
+   "links": 12405,
+   "jump_links": 0,
+   "good_links_cut_%": 44.7,
+   "crossing_pairs": 1
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.3,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.38,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.47,
+   "roughness": 0.276,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 2.58,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.37,
+   "roughness": 0.264,
+   "torn_%": 0.0,
+   "passed": true
+  }
+ },
+ "uneven_roll": {
+  "10 nearest": {
+   "links": 22652,
+   "jump_links": 0,
+   "crossing_pairs": 31480
+  },
+  "link check": {
+   "links": 22652,
+   "jump_links": 0,
+   "good_links_cut_%": 0.0,
+   "crossing_pairs": 31480
+  },
+  "air probe": {
+   "links": 10500,
+   "jump_links": 0,
+   "good_links_cut_%": 53.6,
+   "stretch_of_cut_links": 2.19,
+   "stretch_of_kept_links": 1.22
+  },
+  "check + air": {
+   "links": 10500,
+   "jump_links": 0,
+   "good_links_cut_%": 53.6
+  },
+  "star": {
+   "links": 12043,
+   "jump_links": 0,
+   "good_links_cut_%": 47.6,
+   "crossing_pairs": 1
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.288,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 14.06,
+   "roughness": 0.159,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 15.97,
+   "roughness": 0.257,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 6.23,
+   "roughness": 0.173,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "wobble only",
+   "folded_%": 0.14,
+   "square_err_%": 15.92,
+   "roughness": 0.383,
+   "torn_%": 0.024,
+   "passed": true
+  }
+ },
+ "crumple": {
+  "10 nearest": {
+   "links": 22854,
+   "jump_links": 0,
+   "crossing_pairs": 32341
+  },
+  "link check": {
+   "links": 22854,
+   "jump_links": 0,
+   "good_links_cut_%": 0.0,
+   "crossing_pairs": 32341
+  },
+  "air probe": {
+   "links": 10627,
+   "jump_links": 0,
+   "good_links_cut_%": 53.5,
+   "stretch_of_cut_links": 1.17,
+   "stretch_of_kept_links": 0.8
+  },
+  "check + air": {
+   "links": 10627,
+   "jump_links": 0,
+   "good_links_cut_%": 53.5
+  },
+  "star": {
+   "links": 12197,
+   "jump_links": 0,
+   "good_links_cut_%": 46.9,
+   "crossing_pairs": 4
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.312,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "folded",
+   "folded_%": 0.58,
+   "square_err_%": 13.62,
+   "roughness": 0.384,
+   "torn_%": 0.048,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "folded",
+   "folded_%": 0.18,
+   "square_err_%": 12.82,
+   "roughness": 0.495,
+   "torn_%": 0.06,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 10.27,
+   "roughness": 0.326,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "edge dots out of order after convex_edge's edge step, %": 4.71,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 2.69,
+   "square_err_%": 19.65,
+   "roughness": 0.704,
+   "torn_%": 0.12,
+   "passed": false
+  }
+ },
+ "hard_crumple": {
+  "10 nearest": {
+   "links": 22916,
+   "jump_links": 0,
+   "crossing_pairs": 30892
+  },
+  "link check": {
+   "links": 22863,
+   "jump_links": 0,
+   "good_links_cut_%": 0.2,
+   "crossing_pairs": 30622
+  },
+  "air probe": {
+   "links": 12847,
+   "jump_links": 0,
+   "good_links_cut_%": 43.9,
+   "stretch_of_cut_links": 1.26,
+   "stretch_of_kept_links": 0.92
+  },
+  "check + air": {
+   "links": 12821,
+   "jump_links": 0,
+   "good_links_cut_%": 44.1
+  },
+  "star": {
+   "links": 12313,
+   "jump_links": 0,
+   "good_links_cut_%": 46.4,
+   "crossing_pairs": 19
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.288,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.59,
+   "roughness": 0.313,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 3.97,
+   "roughness": 0.377,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.46,
+   "roughness": 0.306,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 0.8,
+   "square_err_%": 8.51,
+   "roughness": 0.692,
+   "torn_%": 0.012,
+   "passed": false
+  }
+ },
+ "h_roll5": {
+  "10 nearest": {
+   "links": 22414,
+   "jump_links": 218,
+   "crossing_pairs": 26078
+  },
+  "link check": {
+   "links": 21963,
+   "jump_links": 4,
+   "good_links_cut_%": 1.1,
+   "crossing_pairs": 25583
+  },
+  "air probe": {
+   "links": 17554,
+   "jump_links": 0,
+   "good_links_cut_%": 20.9,
+   "stretch_of_cut_links": 1.0,
+   "stretch_of_kept_links": 1.0
+  },
+  "check + air": {
+   "links": 17357,
+   "jump_links": 0,
+   "good_links_cut_%": 21.8
+  },
+  "star": {
+   "links": 12352,
+   "jump_links": 4,
+   "good_links_cut_%": 44.4,
+   "crossing_pairs": 19
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.3,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 4.38,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 0.47,
+   "roughness": 0.276,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 2.58,
+   "roughness": 0.14,
+   "torn_%": 0.0,
+   "passed": false
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 1.18,
+   "square_err_%": 2.24,
+   "roughness": 0.317,
+   "torn_%": 0.12,
+   "passed": false
+  }
+ },
+ "h_crumple17": {
+  "10 nearest": {
+   "links": 23109,
+   "jump_links": 61,
+   "crossing_pairs": 36902
+  },
+  "link check": {
+   "links": 22566,
+   "jump_links": 0,
+   "good_links_cut_%": 2.1,
+   "crossing_pairs": 32866
+  },
+  "air probe": {
+   "links": 12023,
+   "jump_links": 0,
+   "good_links_cut_%": 47.8,
+   "stretch_of_cut_links": 1.04,
+   "stretch_of_kept_links": 0.75
+  },
+  "check + air": {
+   "links": 11812,
+   "jump_links": 0,
+   "good_links_cut_%": 48.8
+  },
+  "star": {
+   "links": 12100,
+   "jump_links": 0,
+   "good_links_cut_%": 47.7,
+   "crossing_pairs": 78
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.312,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 7.35,
+   "roughness": 0.347,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "folded",
+   "folded_%": 0.39,
+   "square_err_%": 7.54,
+   "roughness": 0.416,
+   "torn_%": 0.096,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 6.4,
+   "roughness": 0.34,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 4.56,
+   "square_err_%": 16.11,
+   "roughness": 0.853,
+   "torn_%": 0.397,
+   "passed": false
+  }
+ },
+ "h_crumple29": {
+  "10 nearest": {
+   "links": 23422,
+   "jump_links": 437,
+   "crossing_pairs": 40740
+  },
+  "link check": {
+   "links": 22128,
+   "jump_links": 26,
+   "good_links_cut_%": 3.8,
+   "crossing_pairs": 33600
+  },
+  "air probe": {
+   "links": 10933,
+   "jump_links": 0,
+   "good_links_cut_%": 52.4,
+   "stretch_of_cut_links": 1.14,
+   "stretch_of_kept_links": 0.72
+  },
+  "check + air": {
+   "links": 10693,
+   "jump_links": 0,
+   "good_links_cut_%": 53.5
+  },
+  "star": {
+   "links": 11744,
+   "jump_links": 13,
+   "good_links_cut_%": 49.2,
+   "crossing_pairs": 205
+  },
+  "ceiling: nearby_only, true links": {
+   "verdict": "wobble only",
+   "folded_%": 0.0,
+   "square_err_%": 4.26,
+   "roughness": 0.391,
+   "torn_%": 0.264,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 11.44,
+   "roughness": 0.447,
+   "torn_%": 0.012,
+   "passed": true
+  },
+  "ceiling: tutte, true 10-nearest + true edge": {
+   "verdict": "folded",
+   "folded_%": 0.01,
+   "square_err_%": 13.45,
+   "roughness": 0.525,
+   "torn_%": 0.012,
+   "passed": false
+  },
+  "ceiling: tutte, true mesh + true edge on a circle": {
+   "verdict": "certified",
+   "folded_%": 0.0,
+   "square_err_%": 10.35,
+   "roughness": 0.406,
+   "torn_%": 0.0,
+   "passed": true
+  },
+  "edge dots out of order after convex_edge's edge step, %": 0.0,
+  "star links + true edge": {
+   "verdict": "folded",
+   "folded_%": 9.77,
+   "square_err_%": 20.77,
+   "roughness": 1.103,
+   "torn_%": 0.264,
+   "passed": false
+  }
+ }
+}

@@ -150,7 +150,14 @@ def test_diagnosis_names_the_right_cause():
 
 
 def test_the_named_methods_exist():
-    assert {"tangent_plane", "best_fit_plane", "isomap_k10"} <= set(METHODS)
+    assert {"tangent_plane", "best_fit_plane", "isomap_k10", "check_k10", "convex_edge"} <= set(METHODS)
+
+
+def test_sheet_groups_are_separate():
+    from .run import expand_sheets
+    design, holdout = expand_sheets(["design"]), expand_sheets(["holdout"])
+    assert len(design) == 14 and len(holdout) == 10 and not set(design) & set(holdout)
+    assert expand_sheets(["all"]) == design + holdout
 
 
 if __name__ == "__main__":
