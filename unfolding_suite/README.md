@@ -364,6 +364,155 @@ which cross each other, it still folds three of the four. On `crumple`, `convex_
 outline step puts 4.7% of edge dots out of order. So the crumples need two things the
 dots do not give directly: links that never cross, and the outline in the right order.
 
+### Pulling the paper apart (2026-11-09)
+
+Question: would pulling a crumpled sheet apart, as you would by hand, make the hard sheets
+easier? Code: `experiments/pull_apart.py` (part 1, part 2) and `pull_apart_figure.py`.
+Results: `runs/pull_apart/*.json`. Figure: `figures/pull_apart/pull_apart.png`. The pull
+strength (1e-3) was chosen by looking at `tight_roll`, `crumple` and `h_crumple29`, so the
+held-out sheets are not a fair check for it.
+
+- **Stretching the whole cloud along one of its main axes** (eigenvectors of its spread),
+  then re-picking 10 nearest dots: fixes nothing. Along the longest axis it adds jump
+  links (`s_curl` 12 to 519 at 2x). Along the thinnest axis at 2x it removes a few
+  (`s_curl` 12 to 4, `h_crumple17` 56 to 24), but the sheet stays folded. A single stretch
+  separates layers only where the paper faces the stretch direction. Where the paper runs
+  along that direction, the stretch pulls its own dots apart.
+- **Physical pull:** strings hold linked dots at their 3-D length while every dot is
+  pushed away from the middle. The paper may pass through itself. The result is then
+  dropped onto its best plane. With the paper's true neighbours as strings (a cheat
+  control), this unrolls every roll, including `tight_roll`, which no method passes at
+  4,225 dots. The third main axis's share of the spread falls from 2.3% to 0.0%. With
+  strings chosen from the dots, any wrong string acts as a staple:
+  - `s_curl` with plain nearest links: 12 staples, 35% folded.
+  - With `checked_links`: `h_roll5` passes on 2 of 3 seeds (the third keeps 5 staples and
+    folds 5%), and `tight_roll` keeps about 700-780 staples and folds 16-21%.
+- **Crumples stall even with perfect strings:** 4-6% folded on `hard_crumple`. Pulling 3x
+  harder does not change it. These sheets were stretched unevenly: 3-D link length runs
+  from 0.4x to about 5x the paper length. No flat shape keeps those lengths, so extra paper
+  puckers, and the puckers become folds.
+- **Staples are not the tightest strings.** The two stapled layers move together, so the
+  strain lands on good strings nearby. In none of 7 cases were the most stretched strings
+  mostly staples.
+- **Re-picking nearest dots after pulling** helps only when the strings were already clean
+  (`h_roll5` 290 to 0 jump links, `h_crumple17` 56 to 0-1). With plain nearest strings it
+  makes things worse (`s_curl` 12 to 537), because staples press layers together.
+
+### Height split (2026-11-10)
+
+Idea: paper has no thickness. Fit a plane, or a bowl, to a dot's K nearest dots, measure
+each one's height above it, split the sorted heights at gaps wider than `gap` dot spacings,
+and link the dot only to its own group. A whole other layer is dropped in one decision.
+Code: `experiments/height_split.py` and `height_split_figure.py`. Scores:
+`runs/height_split/scores.json`, all 24 sheets, seeds 100-102. Figure:
+`figures/height_split/height_split.png`.
+
+- **Ceiling (uses the truth):** on `tight_roll`, a perfect height cut separates the layers
+  for 96-99% of dots in the outer turns, 71% where the bend radius is 0.09, and 0-5% in the
+  innermost turn (radius about 2 dot spacings). Smaller neighbourhoods help a little: 89%
+  separable overall at K = 12, against 61% at K = 40.
+- **On its own:** 10/14 design and 7/10 held-out, the same as plain `isomap_k10` and worse
+  than `check_k10`. It removes most jump links on `tight_roll` (8,745 down to 2,100-5,300,
+  depending on settings), but the rest still fold it 24-28%. Every surviving jump on
+  `s_curl` is at the paper's free edge, where the curl's end comes in at about 72 degrees.
+  A layer arriving at an angle spreads its heights across 0, so it never forms a separate
+  group. That case is the link check's strength.
+- **Height split plus link check** (`both_K*`, a follow-up): passes `s_curl`, `roll` and
+  `h_diag30`. `h_roll5` passes on 2 of 3 seeds, as `check_k10` does. `tight_roll` folds
+  12-13% (`check_k10` 16%) and `h_crumple29` 7-8% (`check_k10` 10%), but there are no new
+  passes. 665 of the 701 jumps left on `tight_roll` touch the paper's free end in the
+  innermost turn. There the next layer wraps around the dot instead of lying at one height.
+- **The walking layout tolerates almost no bad links:** 1 to 5 bad links fold `h_roll5` by
+  2%, and 12 fold `s_curl` by 8%.
+
+### Creased on one side, folded on the other (2026-11-10)
+
+Question: if a sheet is creased (nothing overhangs) on one side and folded on the other, and
+we flatten it by following nearby dots, where do we end up? And can that be seen from the
+dots and the flat result alone? Code: `experiments/fold_flatten.py` (registers the sheets
+below and an `lle_k10` method) and `fold_flatten_figure.py`. Results:
+`runs/fold_flatten/*.json`, seeds 100-102. Figure: `figures/fold_flatten/fold_flatten.png`.
+The sheets live in the experiment file, not `sheets.py`, so `runs/current` stays complete.
+
+- **Sheets** (bent, so the answer is the square; bent along one direction, so a side view
+  shows everything): three mild creases, then flat, then either `flap_gapXX` (a hairpin, and
+  the rest lies flat over the base at a constant gap) or `loop_gapXX` (a 270-degree loop that
+  swings past the base at its closest gap in one narrow strip, then curves away). Gaps 0.02,
+  0.05, 0.10. Dot spacing is 0.031.
+- **Pass/fail:** at gap 0.10 everything passes except `lle_k10` (its own 2-3% squareness
+  error). At 0.02 and 0.05 every method fails every seed: `isomap_k10`, `check_k10` and
+  `lle_k10` fold 44-55% on the flap and 28-47% on the loop; `convex_edge` folds 6-16% on the
+  loop and 55-100% on the flap.
+- **Where it ends up:** the creased part comes out flat and correct (0.3-0.9% off, never
+  flipped) in every failing run. The flap is NOT squashed: it comes out at the right size and
+  shape (size 1.05, 0.7% off on its own) but lies mirror-image on top of the base, i.e. the
+  sheet is flattened still folded, like ironing a folded sheet. The loop is squashed flat
+  onto itself (about 59% of it mirror-image) and its far end lands on the base.
+- **Seeing it without the truth:** for each dot, take its 10 nearest dots in the flat result
+  and ask how much closer they are there than in 3-D. Paper that was only bent can never
+  come out closer when flattened. On the four controls that flatten correctly the median is
+  1.0-1.1 and nothing is flagged above 2x. On the loop the ratio is 10-40x over the whole
+  loop (58-67% of dots flagged, one connected patch), because the squashed loop stacks parts
+  that are up to 0.34 apart in 3-D. On the flap the ratio is a flat plateau of about gap /
+  spacing: about 10x at gap 0.05 (61-66% flagged, one patch), about 2x at 0.02 (33% flagged,
+  speckled), 1.3x at 0.01 and 1.09x at 0.005 (0.1% flagged): blind. A thin flap folded flat
+  is a self-consistent flat picture of the dots; nothing in the distances contradicts it.
+  (`fold_flatten small`, `runs/fold_flatten/small_gaps.json`.)
+
+### Finding folds with topology (2026-11-10)
+
+Question: can topology, using only the dots, find the places where a dot's nearest dots are
+on another layer (close in 3-D, far along the sheet)? And can it judge whether a
+transformation of the cloud made that better? Code: `experiments/fold_topology.py` (parts
+`truths`, `blobs`, `loops`, `judge`, `flatten`) and `fold_topology_figure.py`. Results:
+`runs/fold_topology/`, detection on seed 100, flattening on seeds 100-102. Figure:
+`figures/fold_topology/fold_topology.png`. Needs `gudhi`, which is not in `.venv`. It was run
+with `uv pip install --target <dir> gudhi` and `PYTHONPATH=<dir>`.
+
+- **A better truth for stretched sheets.** "Far on the paper" (`FAR` = 0.3) misses most
+  shortcuts on the crumples. The new truth walks along the real 3-D sheet (rebuilt 4x finer,
+  16 step directions) and calls a link a real shortcut if the walk is over 2x its straight
+  length. On bent sheets the two truths agree exactly. On the crumples there are 36-2,616
+  real shortcuts among the 10-nearest links, against 0-612 paper jumps. They sit in hairpin
+  folds about as narrow as the dot spacing. (The coarse grid alone overstates walks on
+  sheared patches, so it is not used.)
+- **Loops that never fill in** (persistent homology, dimension 1; links filled with their
+  triangles): on bent sheets it is exact. There are no false loops on the 15 bent sheets
+  other than `tight_roll`. Every surviving loop on `s_curl` and `h_roll5` starts on a real
+  shortcut, and the first one appears at exactly the true gap between layers (2.90 and 2.21
+  dot spacings).
+  It fails in two ways:
+  - Where the paper is stretched, dots are too far apart for triangles to form. The hole
+    looks like a fold: 75 false loops on `crumple`, 189 on `uneven_roll`. Measuring links in
+    local dot spacing (Berry and Sauer's continuous nearest links) cuts the crumples' false
+    loops by 55-80% but makes `uneven_roll` worse (702), because its spacing differs by
+    direction.
+  - Where layers are closer than about 1.5 dot spacings, triangles form across the gap as
+    soon as along the paper, so the loop fills at once. Only 94 of `tight_roll`'s 8,745
+    shortcuts, and 0-28 of each crumple's, start a long-lived loop.
+- **Gap test on each dot's 40 nearest** (one clump or two, single linkage): on bent sheets
+  shortcut dots score 1.9-2.6, and one-layer dots never score above 1.38. On the crumples,
+  shortcut dots score 1.2-2.6, inside the 1-3.9 range that stretched one-layer dots reach.
+  Requiring the second clump to lie above or below the dot (along the sheet's normal) drops
+  those false alarms to 0-1.3%, but it also loses every `s_curl` shortcut. The curl's free
+  edge arrives edge-on, beside the dot, not over it. The crumple hairpins are lost the same way.
+- **As a judge of transformations** (`judge.json`; stretch along a main axis, or the
+  pull-apart from above): it works when the layers stay apart and the spacing stays even.
+  Pulling `s_curl` and `h_roll5` apart takes both true shortcuts and loops to 0. Stretching
+  `s_curl` along its longest axis takes shortcuts 12 to 519 and loops 4 to 144. It is fooled
+  both ways:
+  - Stretching makes spacing uneven and creates false loops. `flat` stretched 2x has 0
+    shortcuts and 15 loops.
+  - Pressing layers together hides real folds. Pulled-apart `tight_roll` still has 7,924
+    shortcuts, but local-spacing loops fall from 23 to 0.
+- **As flattening methods** (`flatten.json`, 24 sheets, seeds 100-102):
+  - `loopcut_knn`: delete the link that starts each never-filling loop, repeat, then walk.
+    10/14 design, 7/10 held-out. It passes `s_curl` and `h_roll5`, which `check_k10` fails.
+    On stretched sheets it cuts good links in thin places and folds them 11-72%.
+  - `blob_k10`: link each dot only to its own clump. 10/14 design, 8/10 held-out (fails
+    `tight_roll`, `uneven_roll` and the four crumples).
+  - Not a fair held-out check: thresholds were set while looking at all 24 sheets.
+
 ### Saved runs
 
 | Folder | What it is |
@@ -373,6 +522,8 @@ dots do not give directly: links that never cross, and the outline in the right 
 | `runs/explore_hops/` | Eight methods on the design sheets, including the rejected flatness hops |
 | `runs/tight_roll_16k_dots/`, `_66k_dots/`, `_263k_dots/` | `convex_edge` on `tight_roll` with more dots |
 | `runs/noise_0.1/`, `runs/noise_0.3/` | Five sheets with 3-D noise |
+| `runs/fold_flatten/` | Creased-then-folded sheets, four methods, the closer-than-real check |
+| `runs/fold_topology/` | Topology fold detectors against walk-along-the-sheet truth (`truth_*.npz`), the transformation judge, and five flattening methods |
 
 ## Background
 

@@ -1,0 +1,35 @@
+flat         as given                       TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+flat         thinnest axis x2               TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+flat         thinnest axis x4               TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+flat         longest axis x2                TRUE shortcuts     0 (   0 dots) | loops knn   15 local    0 | split dots  568 stacked    1
+flat         pulled apart (checked strings) TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+uneven_roll  as given                       TRUE shortcuts     2 (   2 dots) | loops knn  189 local  702 | split dots 3469 stacked   57
+uneven_roll  thinnest axis x2               TRUE shortcuts     2 (   2 dots) | loops knn  331 local  322 | split dots 4104 stacked   55
+uneven_roll  thinnest axis x4               TRUE shortcuts     2 (   2 dots) | loops knn  204 local  116 | split dots 4159 stacked  408
+uneven_roll  longest axis x2                TRUE shortcuts     2 (   2 dots) | loops knn   13 local    0 | split dots  763 stacked   61
+uneven_roll  pulled apart (checked strings) TRUE shortcuts     2 (   2 dots) | loops knn  162 local  655 | split dots 3577 stacked   13
+s_curl       as given                       TRUE shortcuts    12 (   4 dots) | loops knn    4 local   19 | split dots  514 stacked  246
+s_curl       thinnest axis x2               TRUE shortcuts     4 (   4 dots) | loops knn    8 local   28 | split dots  809 stacked  358
+s_curl       thinnest axis x4               TRUE shortcuts    26 (  15 dots) | loops knn  109 local  106 | split dots 2695 stacked  479
+s_curl       longest axis x2                TRUE shortcuts   519 ( 265 dots) | loops knn  144 local   87 | split dots 2470 stacked  451
+s_curl       pulled apart (checked strings) TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+h_roll5      as given                       TRUE shortcuts   290 ( 176 dots) | loops knn   55 local   24 | split dots 1340 stacked 1338
+h_roll5      thinnest axis x2               TRUE shortcuts   266 ( 225 dots) | loops knn  161 local   13 | split dots 1379 stacked 1150
+h_roll5      thinnest axis x4               TRUE shortcuts  2606 ( 859 dots) | loops knn  291 local  408 | split dots 3353 stacked  937
+h_roll5      longest axis x2                TRUE shortcuts  1556 ( 832 dots) | loops knn  184 local   22 | split dots 3017 stacked 1916
+h_roll5      pulled apart (checked strings) TRUE shortcuts     0 (   0 dots) | loops knn    0 local    0 | split dots    0 stacked    0
+tight_roll   as given                       TRUE shortcuts  8745 (2448 dots) | loops knn  120 local   23 | split dots 1037 stacked 1037
+tight_roll   thinnest axis x2               TRUE shortcuts  8118 (2177 dots) | loops knn  178 local    5 | split dots 1423 stacked 1315
+tight_roll   thinnest axis x4               TRUE shortcuts  9445 (2012 dots) | loops knn  287 local  161 | split dots 3427 stacked 1506
+tight_roll   longest axis x2                TRUE shortcuts 11300 (2729 dots) | loops knn  343 local   34 | split dots 2780 stacked 1509
+tight_roll   pulled apart (checked strings) TRUE shortcuts  7924 (1763 dots) | loops knn  105 local    0 | split dots  482 stacked   65
+crumple      as given                       TRUE shortcuts   956 ( 357 dots) | loops knn   75 local   28 | split dots 1430 stacked    2
+crumple      thinnest axis x2               TRUE shortcuts   924 ( 360 dots) | loops knn   87 local   56 | split dots 1642 stacked    4
+crumple      thinnest axis x4               TRUE shortcuts   835 ( 339 dots) | loops knn  113 local  145 | split dots 2029 stacked   24
+crumple      longest axis x2                TRUE shortcuts  1172 ( 369 dots) | loops knn   56 local   24 | split dots 1371 stacked    6
+crumple      pulled apart (checked strings) TRUE shortcuts   955 ( 357 dots) | loops knn   65 local   23 | split dots 1496 stacked  167
+h_crumple29  as given                       TRUE shortcuts  2616 ( 896 dots) | loops knn  101 local   38 | split dots 1451 stacked  388
+h_crumple29  thinnest axis x2               TRUE shortcuts  2759 ( 942 dots) | loops knn  107 local   42 | split dots 1251 stacked  306
+h_crumple29  thinnest axis x4               TRUE shortcuts  3107 (1043 dots) | loops knn  128 local   44 | split dots 1192 stacked  349
+h_crumple29  longest axis x2                TRUE shortcuts  2843 ( 962 dots) | loops knn  131 local  141 | split dots 2005 stacked  567
+h_crumple29  pulled apart (checked strings) TRUE shortcuts  2568 ( 811 dots) | loops knn   75 local   55 | split dots 1262 stacked   90

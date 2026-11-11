@@ -1,0 +1,360 @@
+PASS flat           loopcut_knn        100 jumps 0 pass
+PASS flat           loopcut_knn        102 jumps 0 pass
+PASS flat           loopcut_knn_local  100 jumps 0 pass
+PASS flat           loopcut_knn        101 jumps 0 pass
+PASS flat           loopcut_knn_local  101 jumps 0 pass
+PASS flat           loopcut_knn_local  102 jumps 0 pass
+PASS flat           loopcut_checked    100 jumps 0 pass
+PASS flat           loopcut_checked    101 jumps 0 pass
+PASS flat           loopcut_checked    102 jumps 0 pass
+PASS flat           blob_k10           101 jumps 0 pass
+PASS flat           blob_k10           100 jumps 0 pass
+PASS flat           blob_k10           102 jumps 0 pass
+PASS flat           blob_stacked_k10   100 jumps 0 pass
+PASS gentle_arc     loopcut_knn        100 jumps 0 pass
+PASS flat           blob_stacked_k10   102 jumps 0 pass
+PASS flat           blob_stacked_k10   101 jumps 0 pass
+PASS gentle_arc     loopcut_knn        101 jumps 0 pass
+PASS gentle_arc     loopcut_knn        102 jumps 0 pass
+PASS gentle_arc     loopcut_knn_local  100 jumps 0 pass
+PASS gentle_arc     loopcut_knn_local  101 jumps 0 pass
+PASS gentle_arc     loopcut_knn_local  102 jumps 0 pass
+PASS gentle_arc     loopcut_checked    100 jumps 0 pass
+PASS gentle_arc     loopcut_checked    101 jumps 0 pass
+PASS gentle_arc     loopcut_checked    102 jumps 0 pass
+PASS gentle_arc     blob_k10           100 jumps 0 pass
+PASS gentle_arc     blob_k10           101 jumps 0 pass
+PASS gentle_arc     blob_k10           102 jumps 0 pass
+PASS gentle_arc     blob_stacked_k10   100 jumps 0 pass
+PASS wave           loopcut_knn        101 jumps 0 pass
+PASS wave           loopcut_knn        100 jumps 0 pass
+PASS gentle_arc     blob_stacked_k10   101 jumps 0 pass
+PASS gentle_arc     blob_stacked_k10   102 jumps 0 pass
+PASS wave           loopcut_knn        102 jumps 0 pass
+PASS wave           loopcut_knn_local  101 jumps 0 pass
+PASS wave           loopcut_knn_local  100 jumps 0 pass
+PASS wave           loopcut_knn_local  102 jumps 0 pass
+PASS wave           loopcut_checked    100 jumps 0 pass
+PASS wave           loopcut_checked    101 jumps 0 pass
+PASS wave           loopcut_checked    102 jumps 0 pass
+PASS wave           blob_k10           100 jumps 0 pass
+PASS wave           blob_k10           102 jumps 0 pass
+PASS wave           blob_k10           101 jumps 0 pass
+PASS wave           blob_stacked_k10   100 jumps 0 pass
+PASS s_curl         loopcut_knn        100 jumps 0 pass
+PASS s_curl         loopcut_knn        101 jumps 0 pass
+PASS wave           blob_stacked_k10   101 jumps 0 pass
+PASS wave           blob_stacked_k10   102 jumps 0 pass
+PASS s_curl         loopcut_knn        102 jumps 0 pass
+PASS s_curl         loopcut_knn_local  100 jumps 0 pass
+PASS s_curl         loopcut_knn_local  101 jumps 0 pass
+PASS s_curl         loopcut_knn_local  102 jumps 0 pass
+PASS s_curl         loopcut_checked    101 jumps 0 pass
+PASS s_curl         loopcut_checked    100 jumps 0 pass
+PASS s_curl         loopcut_checked    102 jumps 0 pass
+PASS s_curl         blob_k10           100 jumps 0 pass
+PASS s_curl         blob_k10           102 jumps 0 pass
+PASS s_curl         blob_k10           101 jumps 0 pass
+FAIL s_curl         blob_stacked_k10   100 jumps 12 folded 8%
+PASS roll           loopcut_knn        100 jumps 0 pass
+PASS roll           loopcut_knn        101 jumps 0 pass
+FAIL s_curl         blob_stacked_k10   101 jumps 14 folded 9%
+PASS roll           loopcut_knn        102 jumps 0 pass
+FAIL s_curl         blob_stacked_k10   102 jumps 13 folded 8%
+PASS roll           loopcut_knn_local  100 jumps 0 pass
+PASS roll           loopcut_knn_local  102 jumps 0 pass
+PASS roll           loopcut_knn_local  101 jumps 0 pass
+PASS roll           loopcut_checked    100 jumps 0 pass
+PASS roll           loopcut_checked    101 jumps 0 pass
+PASS roll           loopcut_checked    102 jumps 0 pass
+PASS roll           blob_k10           100 jumps 0 pass
+PASS roll           blob_k10           101 jumps 0 pass
+PASS roll           blob_k10           102 jumps 0 pass
+PASS roll           blob_stacked_k10   100 jumps 0 pass
+FAIL tight_roll     loopcut_knn        100 jumps 3760 folded 31%
+PASS roll           blob_stacked_k10   101 jumps 0 pass
+PASS roll           blob_stacked_k10   102 jumps 0 pass
+FAIL tight_roll     loopcut_knn        101 jumps 3799 folded 32%
+FAIL tight_roll     loopcut_knn        102 jumps 3613 folded 45%
+FAIL tight_roll     loopcut_knn_local  100 jumps 4082 folded 23%
+FAIL tight_roll     loopcut_knn_local  101 jumps 4310 folded 23%
+FAIL tight_roll     loopcut_knn_local  102 jumps 3650 folded 24%
+FAIL tight_roll     loopcut_checked    100 jumps 127 folded 37%
+FAIL tight_roll     loopcut_checked    101 jumps 121 folded 39%
+FAIL tight_roll     loopcut_checked    102 jumps 128 folded 45%
+FAIL tight_roll     blob_k10           100 jumps 8514 folded 29%
+FAIL tight_roll     blob_k10           101 jumps 8515 folded 27%
+FAIL tight_roll     blob_k10           102 jumps 8554 folded 28%
+FAIL tight_roll     blob_stacked_k10   100 jumps 8514 folded 29%
+PASS diagonal_roll  loopcut_knn        100 jumps 0 pass
+PASS diagonal_roll  loopcut_knn        101 jumps 0 pass
+FAIL tight_roll     blob_stacked_k10   101 jumps 8515 folded 27%
+FAIL tight_roll     blob_stacked_k10   102 jumps 8554 folded 28%
+PASS diagonal_roll  loopcut_knn        102 jumps 0 pass
+PASS diagonal_roll  loopcut_knn_local  100 jumps 0 pass
+PASS diagonal_roll  loopcut_knn_local  101 jumps 0 pass
+PASS diagonal_roll  loopcut_knn_local  102 jumps 0 pass
+PASS diagonal_roll  loopcut_checked    100 jumps 0 pass
+PASS diagonal_roll  loopcut_checked    101 jumps 0 pass
+PASS diagonal_roll  loopcut_checked    102 jumps 0 pass
+PASS diagonal_roll  blob_k10           100 jumps 0 pass
+PASS diagonal_roll  blob_k10           101 jumps 0 pass
+PASS diagonal_roll  blob_k10           102 jumps 0 pass
+PASS diagonal_roll  blob_stacked_k10   100 jumps 0 pass
+PASS accordion      loopcut_knn        100 jumps 0 pass
+PASS accordion      loopcut_knn        101 jumps 0 pass
+PASS diagonal_roll  blob_stacked_k10   101 jumps 0 pass
+PASS diagonal_roll  blob_stacked_k10   102 jumps 0 pass
+PASS accordion      loopcut_knn        102 jumps 0 pass
+PASS accordion      loopcut_knn_local  100 jumps 0 pass
+PASS accordion      loopcut_knn_local  101 jumps 0 pass
+PASS accordion      loopcut_knn_local  102 jumps 0 pass
+PASS accordion      loopcut_checked    100 jumps 0 pass
+PASS accordion      loopcut_checked    101 jumps 0 pass
+PASS accordion      loopcut_checked    102 jumps 0 pass
+PASS accordion      blob_k10           100 jumps 0 pass
+PASS accordion      blob_k10           101 jumps 0 pass
+PASS accordion      blob_k10           102 jumps 0 pass
+PASS accordion      blob_stacked_k10   100 jumps 0 pass
+PASS cone           loopcut_knn        100 jumps 0 pass
+PASS accordion      blob_stacked_k10   101 jumps 0 pass
+PASS accordion      blob_stacked_k10   102 jumps 0 pass
+PASS cone           loopcut_knn        101 jumps 0 pass
+PASS cone           loopcut_knn        102 jumps 0 pass
+PASS cone           loopcut_knn_local  101 jumps 0 pass
+PASS cone           loopcut_knn_local  100 jumps 0 pass
+PASS cone           loopcut_knn_local  102 jumps 0 pass
+PASS cone           loopcut_checked    100 jumps 0 pass
+PASS cone           loopcut_checked    101 jumps 0 pass
+PASS cone           loopcut_checked    102 jumps 0 pass
+PASS cone           blob_k10           100 jumps 0 pass
+PASS cone           blob_k10           101 jumps 0 pass
+PASS cone           blob_k10           102 jumps 0 pass
+PASS cone           blob_stacked_k10   100 jumps 0 pass
+PASS bowl           loopcut_knn        101 jumps 0 pass
+PASS cone           blob_stacked_k10   102 jumps 0 pass
+PASS bowl           loopcut_knn        100 jumps 0 pass
+PASS cone           blob_stacked_k10   101 jumps 0 pass
+PASS bowl           loopcut_knn        102 jumps 0 pass
+PASS bowl           loopcut_knn_local  100 jumps 0 pass
+PASS bowl           loopcut_knn_local  102 jumps 0 pass
+PASS bowl           loopcut_knn_local  101 jumps 0 pass
+PASS bowl           loopcut_checked    100 jumps 0 pass
+PASS bowl           loopcut_checked    101 jumps 0 pass
+PASS bowl           loopcut_checked    102 jumps 0 pass
+PASS bowl           blob_k10           100 jumps 0 pass
+PASS bowl           blob_k10           101 jumps 0 pass
+PASS bowl           blob_k10           102 jumps 0 pass
+PASS bowl           blob_stacked_k10   100 jumps 0 pass
+PASS bowl           blob_stacked_k10   101 jumps 0 pass
+FAIL uneven_roll    loopcut_knn        100 jumps 0 folded 51%
+FAIL uneven_roll    loopcut_knn        101 jumps 0 folded 44%
+PASS bowl           blob_stacked_k10   102 jumps 0 pass
+FAIL uneven_roll    loopcut_knn        102 jumps 0 folded 57%
+FAIL uneven_roll    loopcut_knn_local  100 jumps 0 folded 48%
+FAIL uneven_roll    loopcut_knn_local  101 jumps 0 folded 49%
+FAIL uneven_roll    loopcut_knn_local  102 jumps 0 folded 49%
+FAIL uneven_roll    loopcut_checked    100 jumps 0 folded 51%
+FAIL uneven_roll    loopcut_checked    101 jumps 0 folded 44%
+FAIL uneven_roll    loopcut_checked    102 jumps 0 folded 57%
+FAIL uneven_roll    blob_k10           100 jumps 2 folded 1%
+FAIL uneven_roll    blob_k10           101 jumps 2 folded 1%
+FAIL uneven_roll    blob_k10           102 jumps 2 folded 1%
+FAIL uneven_roll    blob_stacked_k10   100 jumps 1 torn
+PASS dents          loopcut_knn        100 jumps 0 pass
+PASS dents          loopcut_knn        101 jumps 0 pass
+FAIL uneven_roll    blob_stacked_k10   101 jumps 1 torn
+PASS uneven_roll    blob_stacked_k10   102 jumps 1 pass
+PASS dents          loopcut_knn        102 jumps 0 pass
+PASS dents          loopcut_knn_local  100 jumps 0 pass
+PASS dents          loopcut_knn_local  101 jumps 0 pass
+PASS dents          loopcut_knn_local  102 jumps 0 pass
+PASS dents          loopcut_checked    100 jumps 0 pass
+PASS dents          loopcut_checked    101 jumps 0 pass
+PASS dents          loopcut_checked    102 jumps 0 pass
+PASS dents          blob_k10           100 jumps 0 pass
+PASS dents          blob_k10           101 jumps 0 pass
+PASS dents          blob_stacked_k10   100 jumps 0 pass
+PASS dents          blob_k10           102 jumps 0 pass
+PASS dents          blob_stacked_k10   101 jumps 0 pass
+FAIL crumple        loopcut_knn        100 jumps 0 folded 25%
+FAIL crumple        loopcut_knn        101 jumps 0 folded 11%
+PASS dents          blob_stacked_k10   102 jumps 0 pass
+FAIL crumple        loopcut_knn_local  100 jumps 0 folded 43%
+FAIL crumple        loopcut_knn        102 jumps 0 folded 14%
+FAIL crumple        loopcut_knn_local  101 jumps 0 folded 26%
+FAIL crumple        loopcut_knn_local  102 jumps 0 folded 23%
+FAIL crumple        loopcut_checked    100 jumps 0 folded 25%
+FAIL crumple        loopcut_checked    101 jumps 0 folded 11%
+FAIL crumple        loopcut_checked    102 jumps 0 folded 14%
+FAIL crumple        blob_k10           100 jumps 2 folded 1%
+FAIL crumple        blob_k10           101 jumps 6 folded 4%
+FAIL crumple        blob_k10           102 jumps 5 folded 3%
+FAIL crumple        blob_stacked_k10   100 jumps 0 folded 1%
+FAIL crumple        blob_stacked_k10   101 jumps 0 folded 1%
+FAIL hard_crumple   loopcut_knn        100 jumps 0 folded 47%
+FAIL crumple        blob_stacked_k10   102 jumps 0 folded 1%
+FAIL hard_crumple   loopcut_knn        101 jumps 0 folded 72%
+FAIL hard_crumple   loopcut_knn        102 jumps 0 folded 50%
+FAIL hard_crumple   loopcut_knn_local  100 jumps 0 folded 81%
+FAIL hard_crumple   loopcut_knn_local  101 jumps 0 folded 77%
+FAIL hard_crumple   loopcut_knn_local  102 jumps 0 folded 69%
+FAIL hard_crumple   loopcut_checked    100 jumps 0 folded 47%
+FAIL hard_crumple   loopcut_checked    101 jumps 0 folded 72%
+FAIL hard_crumple   loopcut_checked    102 jumps 0 folded 49%
+FAIL hard_crumple   blob_k10           101 jumps 0 folded 1%
+FAIL hard_crumple   blob_k10           100 jumps 0 folded 1%
+FAIL hard_crumple   blob_k10           102 jumps 0 folded 1%
+FAIL hard_crumple   blob_stacked_k10   100 jumps 0 folded 1%
+FAIL hard_crumple   blob_stacked_k10   101 jumps 0 folded 1%
+PASS h_roll5        loopcut_knn        100 jumps 0 pass
+FAIL hard_crumple   blob_stacked_k10   102 jumps 0 folded 1%
+PASS h_roll5        loopcut_knn        101 jumps 0 pass
+PASS h_roll5        loopcut_knn        102 jumps 0 pass
+PASS h_roll5        loopcut_knn_local  101 jumps 0 pass
+PASS h_roll5        loopcut_knn_local  100 jumps 0 pass
+PASS h_roll5        loopcut_knn_local  102 jumps 0 pass
+FAIL h_roll5        loopcut_checked    100 jumps 0 folded 0%
+FAIL h_roll5        loopcut_checked    102 jumps 0 folded 0%
+FAIL h_roll5        loopcut_checked    101 jumps 0 folded 2%
+PASS h_roll5        blob_k10           100 jumps 0 pass
+PASS h_roll5        blob_k10           101 jumps 0 pass
+PASS h_roll5        blob_k10           102 jumps 0 pass
+FAIL h_roll5        blob_stacked_k10   100 jumps 6 folded 9%
+PASS h_scurl65      loopcut_knn        100 jumps 0 pass
+FAIL h_roll5        blob_stacked_k10   101 jumps 4 folded 6%
+PASS h_scurl65      loopcut_knn        101 jumps 0 pass
+FAIL h_roll5        blob_stacked_k10   102 jumps 7 folded 6%
+PASS h_scurl65      loopcut_knn        102 jumps 0 pass
+PASS h_scurl65      loopcut_knn_local  100 jumps 0 pass
+PASS h_scurl65      loopcut_knn_local  101 jumps 0 pass
+PASS h_scurl65      loopcut_knn_local  102 jumps 0 pass
+PASS h_scurl65      loopcut_checked    100 jumps 0 pass
+PASS h_scurl65      loopcut_checked    101 jumps 0 pass
+PASS h_scurl65      loopcut_checked    102 jumps 0 pass
+PASS h_scurl65      blob_k10           101 jumps 0 pass
+PASS h_scurl65      blob_k10           100 jumps 0 pass
+PASS h_scurl65      blob_k10           102 jumps 0 pass
+PASS h_scurl65      blob_stacked_k10   100 jumps 0 pass
+PASS h_three_lobes  loopcut_knn        100 jumps 0 pass
+PASS h_three_lobes  loopcut_knn        101 jumps 0 pass
+PASS h_scurl65      blob_stacked_k10   101 jumps 0 pass
+PASS h_scurl65      blob_stacked_k10   102 jumps 0 pass
+PASS h_three_lobes  loopcut_knn        102 jumps 0 pass
+PASS h_three_lobes  loopcut_knn_local  100 jumps 0 pass
+PASS h_three_lobes  loopcut_knn_local  102 jumps 0 pass
+PASS h_three_lobes  loopcut_knn_local  101 jumps 0 pass
+PASS h_three_lobes  loopcut_checked    100 jumps 0 pass
+PASS h_three_lobes  loopcut_checked    101 jumps 0 pass
+PASS h_three_lobes  loopcut_checked    102 jumps 0 pass
+PASS h_three_lobes  blob_k10           100 jumps 0 pass
+PASS h_three_lobes  blob_k10           101 jumps 0 pass
+PASS h_three_lobes  blob_k10           102 jumps 0 pass
+PASS h_three_lobes  blob_stacked_k10   100 jumps 0 pass
+PASS h_fan3         loopcut_knn        100 jumps 0 pass
+PASS h_fan3         loopcut_knn        101 jumps 0 pass
+PASS h_three_lobes  blob_stacked_k10   101 jumps 0 pass
+PASS h_three_lobes  blob_stacked_k10   102 jumps 0 pass
+PASS h_fan3         loopcut_knn        102 jumps 0 pass
+PASS h_fan3         loopcut_knn_local  100 jumps 0 pass
+PASS h_fan3         loopcut_knn_local  101 jumps 0 pass
+PASS h_fan3         loopcut_knn_local  102 jumps 0 pass
+PASS h_fan3         loopcut_checked    100 jumps 0 pass
+PASS h_fan3         loopcut_checked    101 jumps 0 pass
+PASS h_fan3         loopcut_checked    102 jumps 0 pass
+PASS h_fan3         blob_k10           100 jumps 0 pass
+PASS h_fan3         blob_k10           101 jumps 0 pass
+PASS h_fan3         blob_k10           102 jumps 0 pass
+PASS h_fan3         blob_stacked_k10   100 jumps 0 pass
+PASS h_cone30       loopcut_knn        100 jumps 0 pass
+PASS h_cone30       loopcut_knn        101 jumps 0 pass
+PASS h_fan3         blob_stacked_k10   101 jumps 0 pass
+PASS h_fan3         blob_stacked_k10   102 jumps 0 pass
+PASS h_cone30       loopcut_knn        102 jumps 0 pass
+PASS h_cone30       loopcut_knn_local  100 jumps 0 pass
+PASS h_cone30       loopcut_knn_local  101 jumps 0 pass
+PASS h_cone30       loopcut_knn_local  102 jumps 0 pass
+PASS h_cone30       loopcut_checked    100 jumps 0 pass
+PASS h_cone30       loopcut_checked    102 jumps 0 pass
+PASS h_cone30       loopcut_checked    101 jumps 0 pass
+PASS h_cone30       blob_k10           100 jumps 0 pass
+PASS h_cone30       blob_k10           102 jumps 0 pass
+PASS h_cone30       blob_k10           101 jumps 0 pass
+PASS h_cone30       blob_stacked_k10   100 jumps 0 pass
+PASS h_diag30       loopcut_knn        101 jumps 0 pass
+PASS h_diag30       loopcut_knn        100 jumps 0 pass
+PASS h_cone30       blob_stacked_k10   101 jumps 0 pass
+PASS h_cone30       blob_stacked_k10   102 jumps 0 pass
+PASS h_diag30       loopcut_knn        102 jumps 0 pass
+PASS h_diag30       loopcut_knn_local  100 jumps 0 pass
+PASS h_diag30       loopcut_knn_local  101 jumps 0 pass
+PASS h_diag30       loopcut_knn_local  102 jumps 0 pass
+PASS h_diag30       loopcut_checked    100 jumps 0 pass
+PASS h_diag30       loopcut_checked    101 jumps 0 pass
+PASS h_diag30       loopcut_checked    102 jumps 0 pass
+PASS h_diag30       blob_k10           100 jumps 0 pass
+PASS h_diag30       blob_k10           101 jumps 0 pass
+PASS h_diag30       blob_k10           102 jumps 0 pass
+PASS h_diag30       blob_stacked_k10   100 jumps 0 pass
+PASS h_arc200       loopcut_knn        100 jumps 0 pass
+PASS h_arc200       loopcut_knn        101 jumps 0 pass
+PASS h_diag30       blob_stacked_k10   101 jumps 0 pass
+PASS h_arc200       loopcut_knn        102 jumps 0 pass
+PASS h_diag30       blob_stacked_k10   102 jumps 0 pass
+PASS h_arc200       loopcut_knn_local  100 jumps 0 pass
+PASS h_arc200       loopcut_knn_local  101 jumps 0 pass
+PASS h_arc200       loopcut_knn_local  102 jumps 0 pass
+PASS h_arc200       loopcut_checked    100 jumps 0 pass
+PASS h_arc200       loopcut_checked    101 jumps 0 pass
+PASS h_arc200       loopcut_checked    102 jumps 0 pass
+PASS h_arc200       blob_k10           100 jumps 0 pass
+PASS h_arc200       blob_k10           101 jumps 0 pass
+PASS h_arc200       blob_k10           102 jumps 0 pass
+PASS h_arc200       blob_stacked_k10   100 jumps 0 pass
+PASS h_arc200       blob_stacked_k10   101 jumps 0 pass
+PASS h_arc200       blob_stacked_k10   102 jumps 0 pass
+FAIL h_dents23      loopcut_knn        100 jumps 0 folded 4%
+FAIL h_dents23      loopcut_knn        101 jumps 0 folded 12%
+FAIL h_dents23      loopcut_knn        102 jumps 0 folded 0%
+PASS h_dents23      loopcut_knn_local  102 jumps 0 pass
+FAIL h_dents23      loopcut_knn_local  100 jumps 0 folded 0%
+FAIL h_dents23      loopcut_knn_local  101 jumps 0 folded 6%
+FAIL h_dents23      loopcut_checked    100 jumps 0 folded 4%
+FAIL h_dents23      loopcut_checked    102 jumps 0 folded 0%
+FAIL h_dents23      loopcut_checked    101 jumps 0 folded 12%
+PASS h_dents23      blob_k10           100 jumps 0 pass
+PASS h_dents23      blob_k10           101 jumps 0 pass
+PASS h_dents23      blob_k10           102 jumps 0 pass
+PASS h_dents23      blob_stacked_k10   100 jumps 0 pass
+PASS h_dents23      blob_stacked_k10   101 jumps 0 pass
+FAIL h_crumple17    loopcut_knn        100 jumps 34 folded 63%
+FAIL h_crumple17    loopcut_knn        101 jumps 28 folded 71%
+PASS h_dents23      blob_stacked_k10   102 jumps 0 pass
+FAIL h_crumple17    loopcut_knn        102 jumps 25 folded 48%
+FAIL h_crumple17    loopcut_knn_local  100 jumps 26 folded 42%
+FAIL h_crumple17    loopcut_knn_local  101 jumps 18 folded 34%
+FAIL h_crumple17    loopcut_knn_local  102 jumps 21 folded 67%
+FAIL h_crumple17    loopcut_checked    100 jumps 0 folded 64%
+FAIL h_crumple17    loopcut_checked    101 jumps 0 folded 69%
+FAIL h_crumple17    loopcut_checked    102 jumps 0 folded 47%
+FAIL h_crumple17    blob_k10           100 jumps 54 folded 5%
+FAIL h_crumple17    blob_k10           101 jumps 54 folded 6%
+FAIL h_crumple17    blob_k10           102 jumps 49 folded 6%
+FAIL h_crumple17    blob_stacked_k10   100 jumps 58 folded 6%
+FAIL h_crumple17    blob_stacked_k10   101 jumps 57 folded 5%
+FAIL h_crumple17    blob_stacked_k10   102 jumps 52 folded 6%
+FAIL h_crumple29    loopcut_knn        100 jumps 310 folded 68%
+FAIL h_crumple29    loopcut_knn        101 jumps 286 folded 63%
+FAIL h_crumple29    loopcut_knn        102 jumps 251 folded 63%
+FAIL h_crumple29    loopcut_knn_local  100 jumps 142 folded 42%
+FAIL h_crumple29    loopcut_knn_local  102 jumps 137 folded 83%
+FAIL h_crumple29    loopcut_knn_local  101 jumps 157 folded 71%
+FAIL h_crumple29    loopcut_checked    100 jumps 3 folded 49%
+FAIL h_crumple29    loopcut_checked    101 jumps 10 folded 54%
+FAIL h_crumple29    loopcut_checked    102 jumps 4 folded 67%
+FAIL h_crumple29    blob_k10           100 jumps 585 folded 12%
+FAIL h_crumple29    blob_k10           101 jumps 562 folded 13%
+FAIL h_crumple29    blob_k10           102 jumps 527 folded 12%
+FAIL h_crumple29    blob_stacked_k10   100 jumps 563 folded 14%
+FAIL h_crumple29    blob_stacked_k10   101 jumps 554 folded 13%
+FAIL h_crumple29    blob_stacked_k10   102 jumps 504 folded 12%

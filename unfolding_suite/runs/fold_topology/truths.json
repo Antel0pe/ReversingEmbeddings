@@ -1,0 +1,578 @@
+{
+ "flat": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28239,
+   12931,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "gentle_arc": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28235,
+   12935,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "wave": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28179,
+   12987,
+   1084,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "s_curl": {
+  "paper_jumps": 12,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28068,
+   13074,
+   1096,
+   0,
+   0,
+   0,
+   12
+  ],
+  "shortcuts_over_2": 12,
+  "dots_touched_over_2": 4
+ },
+ "roll": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28140,
+   13026,
+   1084,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "tight_roll": {
+  "paper_jumps": 8745,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   21883,
+   10514,
+   1108,
+   0,
+   0,
+   0,
+   8745
+  ],
+  "shortcuts_over_2": 8745,
+  "dots_touched_over_2": 2448
+ },
+ "diagonal_roll": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28197,
+   12973,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "accordion": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   27843,
+   13297,
+   1110,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "cone": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28230,
+   12940,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "bowl": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28231,
+   12909,
+   1110,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "uneven_roll": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   23463,
+   13478,
+   4889,
+   418,
+   2,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 2,
+  "dots_touched_over_2": 2
+ },
+ "dents": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28215,
+   12921,
+   1114,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "crumple": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   20144,
+   12985,
+   6112,
+   2053,
+   842,
+   114,
+   0
+  ],
+  "shortcuts_over_2": 956,
+  "dots_touched_over_2": 357
+ },
+ "hard_crumple": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   22947,
+   14302,
+   4563,
+   402,
+   36,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 36,
+  "dots_touched_over_2": 23
+ },
+ "h_roll5": {
+  "paper_jumps": 290,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   27817,
+   13051,
+   1092,
+   0,
+   0,
+   0,
+   290
+  ],
+  "shortcuts_over_2": 290,
+  "dots_touched_over_2": 176
+ },
+ "h_scurl65": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28108,
+   13052,
+   1090,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_three_lobes": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28093,
+   13067,
+   1090,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_fan3": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28076,
+   13072,
+   1102,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_cone30": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28236,
+   12934,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_diag30": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28171,
+   12997,
+   1082,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_arc200": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28228,
+   12942,
+   1080,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_dents23": {
+  "paper_jumps": 0,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   28084,
+   13016,
+   1150,
+   0,
+   0,
+   0,
+   0
+  ],
+  "shortcuts_over_2": 0,
+  "dots_touched_over_2": 0
+ },
+ "h_crumple17": {
+  "paper_jumps": 56,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   18667,
+   12832,
+   7457,
+   2141,
+   1056,
+   97,
+   0
+  ],
+  "shortcuts_over_2": 1153,
+  "dots_touched_over_2": 429
+ },
+ "h_crumple29": {
+  "paper_jumps": 612,
+  "walk_hist_edges": [
+   0,
+   1.05,
+   1.2,
+   1.5,
+   2,
+   3,
+   5,
+   11.1
+  ],
+  "walk_hist": [
+   16786,
+   11672,
+   7824,
+   3352,
+   1708,
+   559,
+   349
+  ],
+  "shortcuts_over_2": 2616,
+  "dots_touched_over_2": 896
+ }
+}

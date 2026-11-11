@@ -1,0 +1,702 @@
+[
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 6.302686520129206e-05
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 0,
+  "passed": false,
+  "words": "not square 8%",
+  "fold": 7.71390663087414e-05
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 0,
+  "passed": false,
+  "words": "not square 8%",
+  "fold": 0.0005701254275940707
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "flat",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 0,
+  "passed": false,
+  "words": "not square 6%",
+  "fold": 0.0007703817834338287
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0004694764580272902
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "wave",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0002596172935660726
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 12,
+  "passed": false,
+  "words": "folded 8%",
+  "fold": 0.08437421678795667
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 519,
+  "passed": false,
+  "words": "folded 80%",
+  "fold": 0.7985344616139318
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 2148,
+  "passed": false,
+  "words": "folded 78%",
+  "fold": 0.7794016778346436
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 22,
+  "passed": false,
+  "words": "folded 10%",
+  "fold": 0.09993569577705759
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 276,
+  "passed": false,
+  "words": "folded 79%",
+  "fold": 0.7919372961714489
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 4,
+  "passed": false,
+  "words": "folded 6%",
+  "fold": 0.06400329255923654
+ },
+ {
+  "sheet": "s_curl",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 26,
+  "passed": false,
+  "words": "folded 10%",
+  "fold": 0.09937743482015107
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 2,
+  "passed": false,
+  "words": "folded 3%",
+  "fold": 0.026268150476176613
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 1,
+  "passed": false,
+  "words": "folded 2%",
+  "fold": 0.0176945925625063
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 0,
+  "passed": true,
+  "words": "pass",
+  "fold": 0.0
+ },
+ {
+  "sheet": "roll",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 0,
+  "passed": false,
+  "words": "rough",
+  "fold": 0.0005274897516276826
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 8745,
+  "passed": false,
+  "words": "folded 25%",
+  "fold": 0.2496705893797151
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 11300,
+  "passed": false,
+  "words": "folded 29%",
+  "fold": 0.2947386739370033
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 16107,
+  "passed": false,
+  "words": "folded 37%",
+  "fold": 0.37012528107934467
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 8598,
+  "passed": false,
+  "words": "folded 25%",
+  "fold": 0.2501139089996198
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 9284,
+  "passed": false,
+  "words": "folded 28%",
+  "fold": 0.2811508420795704
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 8118,
+  "passed": false,
+  "words": "folded 26%",
+  "fold": 0.26341739856513335
+ },
+ {
+  "sheet": "tight_roll",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 9445,
+  "passed": false,
+  "words": "folded 31%",
+  "fold": 0.30542921745458324
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 290,
+  "passed": false,
+  "words": "folded 20%",
+  "fold": 0.20282854824374977
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 1556,
+  "passed": false,
+  "words": "folded 23%",
+  "fold": 0.23311970229481083
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 5862,
+  "passed": false,
+  "words": "folded 30%",
+  "fold": 0.2995529061102832
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 493,
+  "passed": false,
+  "words": "folded 21%",
+  "fold": 0.20675678259373267
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 1276,
+  "passed": false,
+  "words": "folded 23%",
+  "fold": 0.23173752929360564
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 266,
+  "passed": false,
+  "words": "folded 24%",
+  "fold": 0.23636886778880736
+ },
+ {
+  "sheet": "h_roll5",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 2606,
+  "passed": false,
+  "words": "folded 28%",
+  "fold": 0.27843243018961866
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 0,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.011916978576051023
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 36,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.007564832371058835
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 368,
+  "passed": false,
+  "words": "folded 3%",
+  "fold": 0.02593287405609068
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 0,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.012219587816888564
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 24,
+  "passed": false,
+  "words": "folded 3%",
+  "fold": 0.027752644479905244
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 1,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.011804182052177606
+ },
+ {
+  "sheet": "crumple",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 69,
+  "passed": false,
+  "words": "folded 2%",
+  "fold": 0.016669164543471383
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 0,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.009639235076337314
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 0,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.010678815481920572
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 17,
+  "passed": false,
+  "words": "folded 3%",
+  "fold": 0.025649310179367734
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 0,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.007724778888724678
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 10,
+  "passed": false,
+  "words": "folded 2%",
+  "fold": 0.021091711729734067
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 3,
+  "passed": false,
+  "words": "folded 1%",
+  "fold": 0.005846884191977149
+ },
+ {
+  "sheet": "hard_crumple",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 57,
+  "passed": false,
+  "words": "folded 2%",
+  "fold": 0.018119168931824085
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 56,
+  "passed": false,
+  "words": "folded 6%",
+  "fold": 0.058348072603914815
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 197,
+  "passed": false,
+  "words": "folded 7%",
+  "fold": 0.06622027249677954
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 436,
+  "passed": false,
+  "words": "folded 9%",
+  "fold": 0.08757580686386132
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 127,
+  "passed": false,
+  "words": "folded 6%",
+  "fold": 0.05840288320099445
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 538,
+  "passed": false,
+  "words": "folded 9%",
+  "fold": 0.09109248913718188
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 24,
+  "passed": false,
+  "words": "folded 5%",
+  "fold": 0.05240626926892292
+ },
+ {
+  "sheet": "h_crumple17",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 51,
+  "passed": false,
+  "words": "folded 7%",
+  "fold": 0.06735283002811082
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 0,
+  "factor": 1,
+  "jumps": 612,
+  "passed": false,
+  "words": "folded 14%",
+  "fold": 0.13828558827602414
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 0,
+  "factor": 2,
+  "jumps": 942,
+  "passed": false,
+  "words": "folded 18%",
+  "fold": 0.18299749769524562
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 0,
+  "factor": 4,
+  "jumps": 2186,
+  "passed": false,
+  "words": "folded 40%",
+  "fold": 0.4000639974401024
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 1,
+  "factor": 2,
+  "jumps": 1098,
+  "passed": false,
+  "words": "folded 18%",
+  "fold": 0.18302694697530666
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 1,
+  "factor": 4,
+  "jumps": 2296,
+  "passed": false,
+  "words": "folded 28%",
+  "fold": 0.28328252902695483
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 2,
+  "factor": 2,
+  "jumps": 993,
+  "passed": false,
+  "words": "folded 18%",
+  "fold": 0.17615055793038362
+ },
+ {
+  "sheet": "h_crumple29",
+  "seed": 100,
+  "axis": 2,
+  "factor": 4,
+  "jumps": 1666,
+  "passed": false,
+  "words": "folded 24%",
+  "fold": 0.23841747627337564
+ }
+]

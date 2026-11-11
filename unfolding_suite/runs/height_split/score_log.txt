@@ -1,0 +1,648 @@
+PASS flat            height_K12_g0.25_bowl  102 jumps 0 pass
+PASS flat            height_K12_g0.25_bowl  101 jumps 0 pass
+PASS flat            height_K12_g0.5_bowl   100 jumps 0 pass
+PASS flat            height_K12_g0.25_bowl  100 jumps 0 pass
+PASS flat            height_K12_g0.5_bowl   101 jumps 0 pass
+PASS flat            height_K20_g0.25_bowl  101 jumps 0 pass
+PASS flat            height_K12_g0.5_bowl   102 jumps 0 pass
+PASS flat            height_K20_g0.25_bowl  100 jumps 0 pass
+PASS flat            height_K20_g0.25_bowl  102 jumps 0 pass
+PASS flat            height_K20_g0.5_bowl   100 jumps 0 pass
+PASS flat            height_K20_g0.5_bowl   101 jumps 0 pass
+PASS flat            height_K20_g0.5_bowl   102 jumps 0 pass
+PASS flat            height_K40_g0.25_bowl  100 jumps 0 pass
+PASS flat            height_K40_g0.25_bowl  101 jumps 0 pass
+PASS flat            height_K40_g0.5_bowl   100 jumps 0 pass
+PASS flat            height_K40_g0.25_bowl  102 jumps 0 pass
+PASS flat            height_K40_g0.5_bowl   101 jumps 0 pass
+PASS flat            height_K20_g0.5_plane  100 jumps 0 pass
+PASS flat            height_K40_g0.5_bowl   102 jumps 0 pass
+PASS flat            height_K20_g0.5_plane  101 jumps 0 pass
+PASS flat            height_K20_g0.5_plane  102 jumps 0 pass
+PASS flat            isomap_k10             100 jumps 0 pass
+PASS flat            isomap_k10             101 jumps 0 pass
+PASS flat            isomap_k10             102 jumps 0 pass
+PASS flat            check_k10              100 jumps 0 pass
+PASS flat            check_k10              101 jumps 0 pass
+PASS flat            check_k10              102 jumps 0 pass
+PASS gentle_arc      height_K12_g0.25_bowl  100 jumps 0 pass
+PASS gentle_arc      height_K12_g0.25_bowl  101 jumps 0 pass
+PASS gentle_arc      height_K12_g0.25_bowl  102 jumps 0 pass
+PASS gentle_arc      height_K12_g0.5_bowl   100 jumps 0 pass
+PASS gentle_arc      height_K12_g0.5_bowl   101 jumps 0 pass
+PASS gentle_arc      height_K12_g0.5_bowl   102 jumps 0 pass
+PASS gentle_arc      height_K20_g0.25_bowl  100 jumps 0 pass
+PASS gentle_arc      height_K20_g0.25_bowl  101 jumps 0 pass
+PASS gentle_arc      height_K20_g0.25_bowl  102 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_bowl   100 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_bowl   101 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_bowl   102 jumps 0 pass
+PASS gentle_arc      height_K40_g0.25_bowl  100 jumps 0 pass
+PASS gentle_arc      height_K40_g0.25_bowl  101 jumps 0 pass
+PASS gentle_arc      height_K40_g0.5_bowl   100 jumps 0 pass
+PASS gentle_arc      height_K40_g0.25_bowl  102 jumps 0 pass
+PASS gentle_arc      height_K40_g0.5_bowl   101 jumps 0 pass
+PASS gentle_arc      height_K40_g0.5_bowl   102 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_plane  101 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_plane  100 jumps 0 pass
+PASS gentle_arc      height_K20_g0.5_plane  102 jumps 0 pass
+PASS gentle_arc      isomap_k10             100 jumps 0 pass
+PASS gentle_arc      isomap_k10             101 jumps 0 pass
+PASS gentle_arc      isomap_k10             102 jumps 0 pass
+PASS gentle_arc      check_k10              100 jumps 0 pass
+PASS gentle_arc      check_k10              101 jumps 0 pass
+PASS gentle_arc      check_k10              102 jumps 0 pass
+PASS wave            height_K12_g0.25_bowl  100 jumps 0 pass
+PASS wave            height_K12_g0.25_bowl  101 jumps 0 pass
+PASS wave            height_K12_g0.25_bowl  102 jumps 0 pass
+PASS wave            height_K12_g0.5_bowl   100 jumps 0 pass
+PASS wave            height_K12_g0.5_bowl   101 jumps 0 pass
+PASS wave            height_K12_g0.5_bowl   102 jumps 0 pass
+PASS wave            height_K20_g0.25_bowl  100 jumps 0 pass
+PASS wave            height_K20_g0.25_bowl  101 jumps 0 pass
+PASS wave            height_K20_g0.25_bowl  102 jumps 0 pass
+PASS wave            height_K20_g0.5_bowl   100 jumps 0 pass
+PASS wave            height_K20_g0.5_bowl   101 jumps 0 pass
+PASS wave            height_K20_g0.5_bowl   102 jumps 0 pass
+PASS wave            height_K40_g0.25_bowl  101 jumps 0 pass
+PASS wave            height_K40_g0.25_bowl  100 jumps 0 pass
+PASS wave            height_K40_g0.25_bowl  102 jumps 0 pass
+PASS wave            height_K40_g0.5_bowl   100 jumps 0 pass
+PASS wave            height_K40_g0.5_bowl   102 jumps 0 pass
+PASS wave            height_K40_g0.5_bowl   101 jumps 0 pass
+PASS wave            height_K20_g0.5_plane  100 jumps 0 pass
+PASS wave            height_K20_g0.5_plane  101 jumps 0 pass
+PASS wave            height_K20_g0.5_plane  102 jumps 0 pass
+PASS wave            isomap_k10             100 jumps 0 pass
+PASS wave            isomap_k10             101 jumps 0 pass
+PASS wave            isomap_k10             102 jumps 0 pass
+PASS wave            check_k10              100 jumps 0 pass
+PASS wave            check_k10              101 jumps 0 pass
+PASS wave            check_k10              102 jumps 0 pass
+FAIL s_curl          height_K12_g0.25_bowl  101 jumps 10 folded 8%
+FAIL s_curl          height_K12_g0.25_bowl  100 jumps 8 folded 8%
+FAIL s_curl          height_K12_g0.25_bowl  102 jumps 9 folded 8%
+FAIL s_curl          height_K12_g0.5_bowl   102 jumps 9 folded 8%
+FAIL s_curl          height_K12_g0.5_bowl   101 jumps 10 folded 8%
+FAIL s_curl          height_K12_g0.5_bowl   100 jumps 8 folded 8%
+FAIL s_curl          height_K20_g0.25_bowl  100 jumps 10 folded 8%
+FAIL s_curl          height_K20_g0.5_bowl   100 jumps 10 folded 8%
+FAIL s_curl          height_K20_g0.25_bowl  101 jumps 11 folded 8%
+FAIL s_curl          height_K20_g0.25_bowl  102 jumps 7 folded 8%
+FAIL s_curl          height_K20_g0.5_bowl   101 jumps 11 folded 8%
+FAIL s_curl          height_K40_g0.25_bowl  100 jumps 25 folded 9%
+FAIL s_curl          height_K20_g0.5_bowl   102 jumps 10 folded 8%
+FAIL s_curl          height_K40_g0.25_bowl  101 jumps 24 folded 9%
+FAIL s_curl          height_K40_g0.25_bowl  102 jumps 29 folded 9%
+FAIL s_curl          height_K40_g0.5_bowl   102 jumps 16 folded 8%
+FAIL s_curl          height_K40_g0.5_bowl   100 jumps 19 folded 9%
+FAIL s_curl          height_K20_g0.5_plane  100 jumps 12 folded 8%
+FAIL s_curl          height_K40_g0.5_bowl   101 jumps 14 folded 9%
+FAIL s_curl          isomap_k10             100 jumps 12 folded 8%
+FAIL s_curl          height_K20_g0.5_plane  102 jumps 13 folded 8%
+FAIL s_curl          isomap_k10             101 jumps 14 folded 9%
+FAIL s_curl          height_K20_g0.5_plane  101 jumps 14 folded 9%
+FAIL s_curl          isomap_k10             102 jumps 13 folded 8%
+PASS s_curl          check_k10              100 jumps 0 pass
+PASS s_curl          check_k10              101 jumps 0 pass
+PASS s_curl          check_k10              102 jumps 0 pass
+PASS roll            height_K12_g0.25_bowl  100 jumps 0 pass
+PASS roll            height_K12_g0.25_bowl  101 jumps 0 pass
+PASS roll            height_K12_g0.25_bowl  102 jumps 0 pass
+PASS roll            height_K12_g0.5_bowl   100 jumps 0 pass
+PASS roll            height_K12_g0.5_bowl   101 jumps 0 pass
+PASS roll            height_K20_g0.25_bowl  100 jumps 0 pass
+PASS roll            height_K12_g0.5_bowl   102 jumps 0 pass
+PASS roll            height_K20_g0.25_bowl  101 jumps 0 pass
+PASS roll            height_K20_g0.25_bowl  102 jumps 0 pass
+PASS roll            height_K20_g0.5_bowl   100 jumps 0 pass
+PASS roll            height_K20_g0.5_bowl   101 jumps 0 pass
+PASS roll            height_K20_g0.5_bowl   102 jumps 0 pass
+FAIL roll            height_K40_g0.25_bowl  100 jumps 1 folded 1%
+PASS roll            height_K40_g0.25_bowl  101 jumps 0 pass
+PASS roll            height_K40_g0.25_bowl  102 jumps 0 pass
+PASS roll            height_K40_g0.5_bowl   100 jumps 0 pass
+PASS roll            height_K40_g0.5_bowl   102 jumps 0 pass
+PASS roll            height_K40_g0.5_bowl   101 jumps 0 pass
+PASS roll            height_K20_g0.5_plane  100 jumps 0 pass
+PASS roll            height_K20_g0.5_plane  101 jumps 0 pass
+PASS roll            isomap_k10             100 jumps 0 pass
+PASS roll            height_K20_g0.5_plane  102 jumps 0 pass
+PASS roll            isomap_k10             101 jumps 0 pass
+PASS roll            isomap_k10             102 jumps 0 pass
+PASS roll            check_k10              100 jumps 0 pass
+PASS roll            check_k10              101 jumps 0 pass
+PASS roll            check_k10              102 jumps 0 pass
+FAIL tight_roll      height_K12_g0.25_bowl  100 jumps 2191 folded 26%
+FAIL tight_roll      height_K12_g0.25_bowl  101 jumps 2057 folded 26%
+FAIL tight_roll      height_K12_g0.25_bowl  102 jumps 2253 folded 28%
+FAIL tight_roll      height_K12_g0.5_bowl   100 jumps 5259 folded 27%
+FAIL tight_roll      height_K12_g0.5_bowl   101 jumps 5356 folded 26%
+FAIL tight_roll      height_K12_g0.5_bowl   102 jumps 5251 folded 28%
+FAIL tight_roll      height_K20_g0.25_bowl  100 jumps 2761 folded 25%
+FAIL tight_roll      height_K20_g0.25_bowl  101 jumps 2781 folded 26%
+FAIL tight_roll      height_K20_g0.25_bowl  102 jumps 2716 folded 25%
+FAIL tight_roll      height_K20_g0.5_bowl   100 jumps 3686 folded 27%
+FAIL tight_roll      height_K20_g0.5_bowl   101 jumps 3654 folded 28%
+FAIL tight_roll      height_K20_g0.5_bowl   102 jumps 3707 folded 26%
+FAIL tight_roll      height_K40_g0.25_bowl  100 jumps 3509 folded 24%
+FAIL tight_roll      height_K40_g0.25_bowl  101 jumps 3538 folded 23%
+FAIL tight_roll      height_K40_g0.5_bowl   100 jumps 5289 folded 24%
+FAIL tight_roll      height_K40_g0.25_bowl  102 jumps 3635 folded 24%
+FAIL tight_roll      height_K40_g0.5_bowl   101 jumps 5343 folded 24%
+FAIL tight_roll      height_K20_g0.5_plane  100 jumps 6846 folded 26%
+FAIL tight_roll      height_K40_g0.5_bowl   102 jumps 5407 folded 25%
+FAIL tight_roll      height_K20_g0.5_plane  101 jumps 6794 folded 27%
+FAIL tight_roll      height_K20_g0.5_plane  102 jumps 6901 folded 26%
+FAIL tight_roll      isomap_k10             100 jumps 8745 folded 25%
+FAIL tight_roll      isomap_k10             101 jumps 8740 folded 25%
+FAIL tight_roll      check_k10              100 jumps 706 folded 16%
+FAIL tight_roll      isomap_k10             102 jumps 8781 folded 25%
+FAIL tight_roll      check_k10              102 jumps 781 folded 16%
+FAIL tight_roll      check_k10              101 jumps 768 folded 14%
+PASS diagonal_roll   height_K12_g0.25_bowl  101 jumps 0 pass
+PASS diagonal_roll   height_K12_g0.25_bowl  100 jumps 0 pass
+PASS diagonal_roll   height_K12_g0.25_bowl  102 jumps 0 pass
+PASS diagonal_roll   height_K12_g0.5_bowl   100 jumps 0 pass
+PASS diagonal_roll   height_K12_g0.5_bowl   101 jumps 0 pass
+PASS diagonal_roll   height_K12_g0.5_bowl   102 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.25_bowl  101 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.25_bowl  102 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_bowl   100 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.25_bowl  100 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_bowl   101 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_bowl   102 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.25_bowl  101 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.25_bowl  100 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.25_bowl  102 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.5_bowl   100 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.5_bowl   101 jumps 0 pass
+PASS diagonal_roll   height_K40_g0.5_bowl   102 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_plane  101 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_plane  102 jumps 0 pass
+PASS diagonal_roll   height_K20_g0.5_plane  100 jumps 0 pass
+PASS diagonal_roll   isomap_k10             100 jumps 0 pass
+PASS diagonal_roll   check_k10              101 jumps 0 pass
+PASS diagonal_roll   isomap_k10             101 jumps 0 pass
+PASS diagonal_roll   isomap_k10             102 jumps 0 pass
+PASS diagonal_roll   check_k10              100 jumps 0 pass
+PASS diagonal_roll   check_k10              102 jumps 0 pass
+PASS accordion       height_K12_g0.25_bowl  100 jumps 0 pass
+PASS accordion       height_K12_g0.25_bowl  101 jumps 0 pass
+PASS accordion       height_K12_g0.25_bowl  102 jumps 0 pass
+PASS accordion       height_K12_g0.5_bowl   100 jumps 0 pass
+PASS accordion       height_K12_g0.5_bowl   102 jumps 0 pass
+PASS accordion       height_K12_g0.5_bowl   101 jumps 0 pass
+PASS accordion       height_K20_g0.25_bowl  100 jumps 0 pass
+PASS accordion       height_K20_g0.25_bowl  101 jumps 0 pass
+PASS accordion       height_K20_g0.5_bowl   100 jumps 0 pass
+PASS accordion       height_K20_g0.5_bowl   101 jumps 0 pass
+PASS accordion       height_K20_g0.25_bowl  102 jumps 0 pass
+PASS accordion       height_K20_g0.5_bowl   102 jumps 0 pass
+PASS accordion       height_K40_g0.25_bowl  101 jumps 0 pass
+PASS accordion       height_K40_g0.25_bowl  102 jumps 0 pass
+PASS accordion       height_K40_g0.25_bowl  100 jumps 0 pass
+PASS accordion       height_K40_g0.5_bowl   102 jumps 0 pass
+PASS accordion       height_K40_g0.5_bowl   100 jumps 0 pass
+PASS accordion       height_K40_g0.5_bowl   101 jumps 0 pass
+PASS accordion       height_K20_g0.5_plane  100 jumps 0 pass
+PASS accordion       isomap_k10             100 jumps 0 pass
+PASS accordion       height_K20_g0.5_plane  102 jumps 0 pass
+PASS accordion       height_K20_g0.5_plane  101 jumps 0 pass
+PASS accordion       isomap_k10             101 jumps 0 pass
+PASS accordion       isomap_k10             102 jumps 0 pass
+PASS accordion       check_k10              100 jumps 0 pass
+PASS accordion       check_k10              102 jumps 0 pass
+PASS accordion       check_k10              101 jumps 0 pass
+PASS cone            height_K12_g0.25_bowl  101 jumps 0 pass
+PASS cone            height_K12_g0.25_bowl  102 jumps 0 pass
+PASS cone            height_K12_g0.25_bowl  100 jumps 0 pass
+PASS cone            height_K12_g0.5_bowl   100 jumps 0 pass
+PASS cone            height_K12_g0.5_bowl   101 jumps 0 pass
+PASS cone            height_K12_g0.5_bowl   102 jumps 0 pass
+PASS cone            height_K20_g0.25_bowl  100 jumps 0 pass
+PASS cone            height_K20_g0.25_bowl  101 jumps 0 pass
+PASS cone            height_K20_g0.25_bowl  102 jumps 0 pass
+PASS cone            height_K20_g0.5_bowl   100 jumps 0 pass
+PASS cone            height_K20_g0.5_bowl   102 jumps 0 pass
+PASS cone            height_K20_g0.5_bowl   101 jumps 0 pass
+PASS cone            height_K40_g0.25_bowl  100 jumps 0 pass
+PASS cone            height_K40_g0.25_bowl  101 jumps 0 pass
+PASS cone            height_K40_g0.5_bowl   100 jumps 0 pass
+PASS cone            height_K40_g0.25_bowl  102 jumps 0 pass
+PASS cone            height_K20_g0.5_plane  100 jumps 0 pass
+PASS cone            height_K20_g0.5_plane  101 jumps 0 pass
+PASS cone            height_K40_g0.5_bowl   101 jumps 0 pass
+PASS cone            height_K40_g0.5_bowl   102 jumps 0 pass
+PASS cone            isomap_k10             100 jumps 0 pass
+PASS cone            isomap_k10             102 jumps 0 pass
+PASS cone            isomap_k10             101 jumps 0 pass
+PASS cone            height_K20_g0.5_plane  102 jumps 0 pass
+PASS cone            check_k10              100 jumps 0 pass
+PASS cone            check_k10              101 jumps 0 pass
+PASS cone            check_k10              102 jumps 0 pass
+PASS bowl            height_K12_g0.25_bowl  100 jumps 0 pass
+PASS bowl            height_K12_g0.25_bowl  101 jumps 0 pass
+PASS bowl            height_K12_g0.25_bowl  102 jumps 0 pass
+PASS bowl            height_K12_g0.5_bowl   100 jumps 0 pass
+PASS bowl            height_K12_g0.5_bowl   101 jumps 0 pass
+PASS bowl            height_K20_g0.25_bowl  100 jumps 0 pass
+PASS bowl            height_K12_g0.5_bowl   102 jumps 0 pass
+PASS bowl            height_K20_g0.25_bowl  101 jumps 0 pass
+PASS bowl            height_K20_g0.25_bowl  102 jumps 0 pass
+PASS bowl            height_K20_g0.5_bowl   100 jumps 0 pass
+PASS bowl            height_K20_g0.5_bowl   102 jumps 0 pass
+PASS bowl            height_K40_g0.25_bowl  100 jumps 0 pass
+PASS bowl            height_K20_g0.5_bowl   101 jumps 0 pass
+PASS bowl            height_K40_g0.25_bowl  101 jumps 0 pass
+PASS bowl            height_K40_g0.25_bowl  102 jumps 0 pass
+PASS bowl            height_K40_g0.5_bowl   101 jumps 0 pass
+PASS bowl            height_K40_g0.5_bowl   100 jumps 0 pass
+PASS bowl            height_K20_g0.5_plane  100 jumps 0 pass
+PASS bowl            height_K40_g0.5_bowl   102 jumps 0 pass
+PASS bowl            height_K20_g0.5_plane  101 jumps 0 pass
+PASS bowl            height_K20_g0.5_plane  102 jumps 0 pass
+PASS bowl            isomap_k10             102 jumps 0 pass
+PASS bowl            isomap_k10             100 jumps 0 pass
+PASS bowl            check_k10              100 jumps 0 pass
+PASS bowl            isomap_k10             101 jumps 0 pass
+PASS bowl            check_k10              101 jumps 0 pass
+PASS bowl            check_k10              102 jumps 0 pass
+PASS uneven_roll     height_K12_g0.25_bowl  100 jumps 0 pass
+PASS uneven_roll     height_K12_g0.25_bowl  101 jumps 0 pass
+PASS uneven_roll     height_K12_g0.5_bowl   101 jumps 0 pass
+PASS uneven_roll     height_K12_g0.25_bowl  102 jumps 0 pass
+PASS uneven_roll     height_K12_g0.5_bowl   102 jumps 0 pass
+PASS uneven_roll     height_K12_g0.5_bowl   100 jumps 0 pass
+PASS uneven_roll     height_K20_g0.25_bowl  102 jumps 0 pass
+PASS uneven_roll     height_K20_g0.25_bowl  100 jumps 0 pass
+PASS uneven_roll     height_K20_g0.25_bowl  101 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_bowl   100 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_bowl   101 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_bowl   102 jumps 0 pass
+PASS uneven_roll     height_K40_g0.25_bowl  100 jumps 0 pass
+PASS uneven_roll     height_K40_g0.25_bowl  101 jumps 0 pass
+PASS uneven_roll     height_K40_g0.25_bowl  102 jumps 0 pass
+PASS uneven_roll     height_K40_g0.5_bowl   100 jumps 0 pass
+PASS uneven_roll     height_K40_g0.5_bowl   101 jumps 0 pass
+PASS uneven_roll     height_K40_g0.5_bowl   102 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_plane  100 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_plane  101 jumps 0 pass
+PASS uneven_roll     isomap_k10             100 jumps 0 pass
+PASS uneven_roll     height_K20_g0.5_plane  102 jumps 0 pass
+PASS uneven_roll     isomap_k10             101 jumps 0 pass
+PASS uneven_roll     isomap_k10             102 jumps 0 pass
+PASS uneven_roll     check_k10              101 jumps 0 pass
+PASS uneven_roll     check_k10              100 jumps 0 pass
+PASS uneven_roll     check_k10              102 jumps 0 pass
+PASS dents           height_K12_g0.25_bowl  100 jumps 0 pass
+PASS dents           height_K12_g0.25_bowl  102 jumps 0 pass
+PASS dents           height_K12_g0.25_bowl  101 jumps 0 pass
+PASS dents           height_K12_g0.5_bowl   100 jumps 0 pass
+PASS dents           height_K12_g0.5_bowl   102 jumps 0 pass
+PASS dents           height_K20_g0.25_bowl  100 jumps 0 pass
+PASS dents           height_K12_g0.5_bowl   101 jumps 0 pass
+PASS dents           height_K20_g0.25_bowl  101 jumps 0 pass
+PASS dents           height_K20_g0.5_bowl   100 jumps 0 pass
+PASS dents           height_K20_g0.25_bowl  102 jumps 0 pass
+PASS dents           height_K20_g0.5_bowl   101 jumps 0 pass
+PASS dents           height_K20_g0.5_bowl   102 jumps 0 pass
+PASS dents           height_K40_g0.25_bowl  101 jumps 0 pass
+PASS dents           height_K40_g0.25_bowl  102 jumps 0 pass
+PASS dents           height_K40_g0.25_bowl  100 jumps 0 pass
+PASS dents           height_K20_g0.5_plane  100 jumps 0 pass
+PASS dents           height_K40_g0.5_bowl   100 jumps 0 pass
+PASS dents           height_K40_g0.5_bowl   102 jumps 0 pass
+PASS dents           height_K40_g0.5_bowl   101 jumps 0 pass
+PASS dents           height_K20_g0.5_plane  101 jumps 0 pass
+PASS dents           isomap_k10             100 jumps 0 pass
+PASS dents           isomap_k10             101 jumps 0 pass
+PASS dents           height_K20_g0.5_plane  102 jumps 0 pass
+PASS dents           check_k10              102 jumps 0 pass
+PASS dents           isomap_k10             102 jumps 0 pass
+PASS dents           check_k10              101 jumps 0 pass
+PASS dents           check_k10              100 jumps 0 pass
+FAIL crumple         height_K12_g0.25_bowl  102 jumps 0 folded 1%
+FAIL crumple         height_K12_g0.25_bowl  100 jumps 0 folded 1%
+FAIL crumple         height_K12_g0.25_bowl  101 jumps 0 folded 1%
+FAIL crumple         height_K12_g0.5_bowl   100 jumps 0 folded 1%
+FAIL crumple         height_K12_g0.5_bowl   101 jumps 0 folded 1%
+FAIL crumple         height_K12_g0.5_bowl   102 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.25_bowl  100 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.25_bowl  101 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.25_bowl  102 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_bowl   100 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_bowl   101 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_bowl   102 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.25_bowl  100 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.25_bowl  102 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.25_bowl  101 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.5_bowl   100 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_plane  100 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.5_bowl   102 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_plane  101 jumps 0 folded 1%
+FAIL crumple         height_K40_g0.5_bowl   101 jumps 0 folded 1%
+FAIL crumple         height_K20_g0.5_plane  102 jumps 0 folded 1%
+FAIL crumple         isomap_k10             100 jumps 0 folded 1%
+FAIL crumple         isomap_k10             102 jumps 0 folded 1%
+FAIL crumple         isomap_k10             101 jumps 0 folded 1%
+FAIL crumple         check_k10              100 jumps 0 folded 1%
+FAIL crumple         check_k10              102 jumps 0 folded 1%
+FAIL crumple         check_k10              101 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.25_bowl  100 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.25_bowl  101 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.25_bowl  102 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.5_bowl   100 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.5_bowl   101 jumps 0 folded 1%
+FAIL hard_crumple    height_K12_g0.5_bowl   102 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.25_bowl  100 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.25_bowl  101 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.25_bowl  102 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_bowl   102 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_bowl   100 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_bowl   101 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.25_bowl  100 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.25_bowl  101 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.5_bowl   100 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.25_bowl  102 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.5_bowl   101 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_plane  100 jumps 0 folded 1%
+FAIL hard_crumple    height_K40_g0.5_bowl   102 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_plane  101 jumps 0 folded 1%
+FAIL hard_crumple    height_K20_g0.5_plane  102 jumps 0 folded 1%
+FAIL hard_crumple    isomap_k10             101 jumps 0 folded 1%
+FAIL hard_crumple    isomap_k10             100 jumps 0 folded 1%
+FAIL hard_crumple    isomap_k10             102 jumps 0 folded 1%
+FAIL hard_crumple    check_k10              100 jumps 0 folded 1%
+FAIL hard_crumple    check_k10              102 jumps 0 folded 1%
+FAIL hard_crumple    check_k10              101 jumps 0 folded 1%
+FAIL h_roll5         height_K12_g0.25_bowl  100 jumps 114 folded 20%
+FAIL h_roll5         height_K12_g0.25_bowl  101 jumps 118 folded 19%
+FAIL h_roll5         height_K12_g0.25_bowl  102 jumps 116 folded 20%
+FAIL h_roll5         height_K12_g0.5_bowl   100 jumps 128 folded 20%
+FAIL h_roll5         height_K12_g0.5_bowl   101 jumps 138 folded 20%
+FAIL h_roll5         height_K12_g0.5_bowl   102 jumps 129 folded 21%
+FAIL h_roll5         height_K20_g0.25_bowl  100 jumps 212 folded 19%
+FAIL h_roll5         height_K20_g0.25_bowl  101 jumps 195 folded 19%
+FAIL h_roll5         height_K20_g0.25_bowl  102 jumps 202 folded 19%
+FAIL h_roll5         height_K20_g0.5_bowl   100 jumps 163 folded 19%
+FAIL h_roll5         height_K20_g0.5_bowl   102 jumps 180 folded 19%
+FAIL h_roll5         height_K40_g0.25_bowl  100 jumps 73 folded 18%
+FAIL h_roll5         height_K20_g0.5_bowl   101 jumps 167 folded 19%
+FAIL h_roll5         height_K40_g0.25_bowl  101 jumps 89 folded 18%
+FAIL h_roll5         height_K40_g0.25_bowl  102 jumps 93 folded 18%
+FAIL h_roll5         height_K40_g0.5_bowl   100 jumps 64 folded 19%
+FAIL h_roll5         height_K40_g0.5_bowl   101 jumps 78 folded 19%
+FAIL h_roll5         height_K40_g0.5_bowl   102 jumps 88 folded 19%
+FAIL h_roll5         height_K20_g0.5_plane  100 jumps 202 folded 20%
+FAIL h_roll5         height_K20_g0.5_plane  102 jumps 205 folded 20%
+FAIL h_roll5         height_K20_g0.5_plane  101 jumps 207 folded 20%
+FAIL h_roll5         isomap_k10             100 jumps 290 folded 20%
+FAIL h_roll5         isomap_k10             101 jumps 309 folded 21%
+FAIL h_roll5         isomap_k10             102 jumps 303 folded 21%
+PASS h_roll5         check_k10              100 jumps 0 pass
+FAIL h_roll5         check_k10              101 jumps 5 folded 2%
+PASS h_scurl65       height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_roll5         check_k10              102 jumps 0 pass
+PASS h_scurl65       height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_scurl65       height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_scurl65       height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_scurl65       height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_scurl65       height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_scurl65       height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_scurl65       height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_scurl65       height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_scurl65       height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_scurl65       height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_scurl65       height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_scurl65       height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_scurl65       height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_scurl65       height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_scurl65       isomap_k10             100 jumps 0 pass
+PASS h_scurl65       height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_scurl65       isomap_k10             101 jumps 0 pass
+PASS h_scurl65       isomap_k10             102 jumps 0 pass
+PASS h_scurl65       check_k10              100 jumps 0 pass
+PASS h_scurl65       check_k10              101 jumps 0 pass
+PASS h_scurl65       check_k10              102 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_three_lobes   height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_three_lobes   height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_three_lobes   isomap_k10             101 jumps 0 pass
+PASS h_three_lobes   isomap_k10             100 jumps 0 pass
+PASS h_three_lobes   height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_three_lobes   isomap_k10             102 jumps 0 pass
+PASS h_three_lobes   check_k10              100 jumps 0 pass
+PASS h_three_lobes   check_k10              101 jumps 0 pass
+PASS h_three_lobes   check_k10              102 jumps 0 pass
+PASS h_fan3          height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_fan3          height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_fan3          height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_fan3          height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_fan3          height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_fan3          height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_fan3          height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_fan3          height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_fan3          height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_fan3          height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_fan3          height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_fan3          height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_fan3          height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_fan3          height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_fan3          height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_fan3          height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_fan3          isomap_k10             100 jumps 0 pass
+PASS h_fan3          isomap_k10             101 jumps 0 pass
+PASS h_fan3          isomap_k10             102 jumps 0 pass
+PASS h_fan3          check_k10              100 jumps 0 pass
+PASS h_fan3          check_k10              101 jumps 0 pass
+PASS h_fan3          check_k10              102 jumps 0 pass
+PASS h_cone30        height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_cone30        height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_cone30        height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_cone30        height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_cone30        height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_cone30        height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_cone30        height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_cone30        height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_cone30        height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_cone30        height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_cone30        height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_cone30        height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_cone30        height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_cone30        height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_cone30        height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_cone30        height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_cone30        isomap_k10             100 jumps 0 pass
+PASS h_cone30        isomap_k10             101 jumps 0 pass
+PASS h_cone30        isomap_k10             102 jumps 0 pass
+PASS h_cone30        check_k10              100 jumps 0 pass
+PASS h_cone30        check_k10              101 jumps 0 pass
+PASS h_cone30        check_k10              102 jumps 0 pass
+PASS h_diag30        height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_diag30        height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_diag30        height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_diag30        height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_diag30        height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_diag30        height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_diag30        height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_diag30        height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_diag30        height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_diag30        height_K40_g0.25_bowl  100 jumps 0 pass
+FAIL h_diag30        height_K40_g0.25_bowl  101 jumps 2 folded 6%
+PASS h_diag30        height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_diag30        height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_diag30        height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_diag30        height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_diag30        height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_diag30        isomap_k10             100 jumps 0 pass
+PASS h_diag30        isomap_k10             101 jumps 0 pass
+PASS h_diag30        check_k10              100 jumps 0 pass
+PASS h_diag30        check_k10              101 jumps 0 pass
+PASS h_diag30        isomap_k10             102 jumps 0 pass
+PASS h_diag30        check_k10              102 jumps 0 pass
+PASS h_arc200        height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_arc200        height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_arc200        height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_arc200        height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_arc200        height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_arc200        height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_arc200        height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_arc200        height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_arc200        height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_arc200        height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_arc200        height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_arc200        height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_arc200        height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_arc200        height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_arc200        height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_arc200        isomap_k10             100 jumps 0 pass
+PASS h_arc200        height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_arc200        isomap_k10             101 jumps 0 pass
+PASS h_arc200        check_k10              101 jumps 0 pass
+PASS h_arc200        isomap_k10             102 jumps 0 pass
+PASS h_arc200        check_k10              102 jumps 0 pass
+PASS h_arc200        check_k10              100 jumps 0 pass
+PASS h_dents23       height_K12_g0.25_bowl  100 jumps 0 pass
+PASS h_dents23       height_K12_g0.5_bowl   100 jumps 0 pass
+PASS h_dents23       height_K12_g0.25_bowl  102 jumps 0 pass
+PASS h_dents23       height_K12_g0.25_bowl  101 jumps 0 pass
+PASS h_dents23       height_K12_g0.5_bowl   101 jumps 0 pass
+PASS h_dents23       height_K12_g0.5_bowl   102 jumps 0 pass
+PASS h_dents23       height_K20_g0.25_bowl  100 jumps 0 pass
+PASS h_dents23       height_K20_g0.25_bowl  101 jumps 0 pass
+PASS h_dents23       height_K20_g0.25_bowl  102 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_bowl   100 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_bowl   102 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_bowl   101 jumps 0 pass
+PASS h_dents23       height_K40_g0.25_bowl  101 jumps 0 pass
+PASS h_dents23       height_K40_g0.25_bowl  100 jumps 0 pass
+PASS h_dents23       height_K40_g0.5_bowl   100 jumps 0 pass
+PASS h_dents23       height_K40_g0.25_bowl  102 jumps 0 pass
+PASS h_dents23       height_K40_g0.5_bowl   101 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_plane  100 jumps 0 pass
+PASS h_dents23       height_K40_g0.5_bowl   102 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_plane  101 jumps 0 pass
+PASS h_dents23       height_K20_g0.5_plane  102 jumps 0 pass
+PASS h_dents23       isomap_k10             100 jumps 0 pass
+PASS h_dents23       isomap_k10             101 jumps 0 pass
+PASS h_dents23       isomap_k10             102 jumps 0 pass
+PASS h_dents23       check_k10              101 jumps 0 pass
+PASS h_dents23       check_k10              100 jumps 0 pass
+PASS h_dents23       check_k10              102 jumps 0 pass
+FAIL h_crumple17     height_K12_g0.25_bowl  100 jumps 29 folded 5%
+FAIL h_crumple17     height_K12_g0.25_bowl  102 jumps 35 folded 6%
+FAIL h_crumple17     height_K12_g0.25_bowl  101 jumps 18 folded 5%
+FAIL h_crumple17     height_K12_g0.5_bowl   100 jumps 37 folded 5%
+FAIL h_crumple17     height_K12_g0.5_bowl   101 jumps 19 folded 5%
+FAIL h_crumple17     height_K20_g0.25_bowl  101 jumps 27 folded 5%
+FAIL h_crumple17     height_K20_g0.25_bowl  100 jumps 35 folded 5%
+FAIL h_crumple17     height_K12_g0.5_bowl   102 jumps 40 folded 6%
+FAIL h_crumple17     height_K20_g0.25_bowl  102 jumps 38 folded 6%
+FAIL h_crumple17     height_K20_g0.5_bowl   102 jumps 43 folded 6%
+FAIL h_crumple17     height_K20_g0.5_bowl   100 jumps 45 folded 5%
+FAIL h_crumple17     height_K20_g0.5_bowl   101 jumps 28 folded 5%
+FAIL h_crumple17     height_K40_g0.25_bowl  100 jumps 4 folded 5%
+FAIL h_crumple17     height_K40_g0.25_bowl  102 jumps 8 folded 5%
+FAIL h_crumple17     height_K40_g0.5_bowl   100 jumps 20 folded 5%
+FAIL h_crumple17     height_K40_g0.25_bowl  101 jumps 11 folded 5%
+FAIL h_crumple17     height_K40_g0.5_bowl   101 jumps 24 folded 5%
+FAIL h_crumple17     height_K40_g0.5_bowl   102 jumps 17 folded 5%
+FAIL h_crumple17     height_K20_g0.5_plane  101 jumps 23 folded 5%
+FAIL h_crumple17     height_K20_g0.5_plane  100 jumps 32 folded 5%
+FAIL h_crumple17     height_K20_g0.5_plane  102 jumps 37 folded 5%
+FAIL h_crumple17     isomap_k10             100 jumps 56 folded 6%
+FAIL h_crumple17     isomap_k10             102 jumps 55 folded 6%
+FAIL h_crumple17     isomap_k10             101 jumps 57 folded 5%
+FAIL h_crumple17     check_k10              100 jumps 0 folded 4%
+FAIL h_crumple17     check_k10              101 jumps 0 folded 4%
+FAIL h_crumple17     check_k10              102 jumps 0 folded 5%
+FAIL h_crumple29     height_K12_g0.25_bowl  100 jumps 107 folded 12%
+FAIL h_crumple29     height_K12_g0.25_bowl  101 jumps 92 folded 12%
+FAIL h_crumple29     height_K12_g0.25_bowl  102 jumps 96 folded 13%
+FAIL h_crumple29     height_K12_g0.5_bowl   100 jumps 164 folded 14%
+FAIL h_crumple29     height_K12_g0.5_bowl   101 jumps 147 folded 14%
+FAIL h_crumple29     height_K12_g0.5_bowl   102 jumps 159 folded 14%
+FAIL h_crumple29     height_K20_g0.25_bowl  100 jumps 119 folded 17%
+FAIL h_crumple29     height_K20_g0.25_bowl  101 jumps 118 folded 18%
+FAIL h_crumple29     height_K20_g0.25_bowl  102 jumps 118 folded 18%
+FAIL h_crumple29     height_K20_g0.5_bowl   100 jumps 183 folded 17%
+FAIL h_crumple29     height_K20_g0.5_bowl   101 jumps 168 folded 16%
+FAIL h_crumple29     height_K40_g0.25_bowl  100 jumps 129 folded 19%
+FAIL h_crumple29     height_K20_g0.5_bowl   102 jumps 151 folded 17%
+FAIL h_crumple29     height_K40_g0.25_bowl  101 jumps 131 folded 19%
+FAIL h_crumple29     height_K40_g0.25_bowl  102 jumps 153 folded 22%
+FAIL h_crumple29     height_K40_g0.5_bowl   100 jumps 364 folded 16%
+FAIL h_crumple29     height_K40_g0.5_bowl   101 jumps 363 folded 17%
+FAIL h_crumple29     height_K40_g0.5_bowl   102 jumps 400 folded 21%
+FAIL h_crumple29     height_K20_g0.5_plane  100 jumps 180 folded 19%
+FAIL h_crumple29     height_K20_g0.5_plane  102 jumps 173 folded 18%
+FAIL h_crumple29     height_K20_g0.5_plane  101 jumps 171 folded 22%
+FAIL h_crumple29     isomap_k10             100 jumps 612 folded 14%
+FAIL h_crumple29     isomap_k10             101 jumps 629 folded 15%
+FAIL h_crumple29     check_k10              100 jumps 25 folded 13%
+FAIL h_crumple29     isomap_k10             102 jumps 604 folded 15%
+FAIL h_crumple29     check_k10              101 jumps 23 folded 10%
+FAIL h_crumple29     check_k10              102 jumps 32 folded 10%

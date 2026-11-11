@@ -1,0 +1,48 @@
+flat           touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.293, 1.331, 1.344] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+gentle_arc     touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.293, 1.331, 1.344] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+wave           touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.292, 1.331, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+s_curl         touched     4 in reach   857 | clean score p50/p99/p99.9/max [1.152, 1.287, 1.332, 1.343] | touched p5/p25/p50 [2.569, 2.599, 2.613]
+      1.4: found 100.0% false   0.0%  1.4_stacked: found   0.0% false   0.0%  1.6: found 100.0% false   0.0%  1.6_stacked: found   0.0% false   0.0%  2.0: found 100.0% false   0.0%  2.0_stacked: found   0.0% false   0.0%
+roll           touched     0 in reach     4 | clean score p50/p99/p99.9/max [1.153, 1.29, 1.333, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+tight_roll     touched  2448 in reach  3112 | clean score p50/p99/p99.9/max [1.155, 1.284, 1.308, 1.312] | touched p5/p25/p50 [1.075, 1.134, 1.209]
+      1.4: found  30.4% false   0.0%  1.4_stacked: found  30.4% false   0.0%  1.6: found  21.5% false   0.0%  1.6_stacked: found  21.5% false   0.0%  2.0: found   6.6% false   0.0%  2.0_stacked: found   6.6% false   0.0%
+diagonal_roll  touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.291, 1.334, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+accordion      touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.291, 1.334, 1.367] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+cone           touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.293, 1.331, 1.344] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+bowl           touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.162, 1.299, 1.343, 1.363] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+uneven_roll    touched     2 in reach   419 | clean score p50/p99/p99.9/max [2.031, 3.47, 3.711, 3.789] | touched p5/p25/p50 [2.886, 2.898, 2.912]
+      1.4: found 100.0% false  91.3%  1.4_stacked: found   0.0% false   1.3%  1.6: found 100.0% false  80.2%  1.6_stacked: found   0.0% false   1.3%  2.0: found 100.0% false  52.0%  2.0_stacked: found   0.0% false   1.3%
+dents          touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.162, 1.337, 1.394, 1.43] | touched p5/p25/p50 None
+      1.4: found   -   false   0.1%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+crumple        touched   357 in reach  1104 | clean score p50/p99/p99.9/max [1.322, 2.652, 3.307, 3.937] | touched p5/p25/p50 [1.481, 1.667, 2.003]
+      1.4: found  98.0% false  37.3%  1.4_stacked: found   0.0% false   0.1%  1.6: found  81.8% false  19.9%  1.6_stacked: found   0.0% false   0.1%  2.0: found  50.1% false   6.1%  2.0_stacked: found   0.0% false   0.1%
+hard_crumple   touched    23 in reach   357 | clean score p50/p99/p99.9/max [1.304, 2.141, 2.652, 2.968] | touched p5/p25/p50 [1.271, 1.654, 1.734]
+      1.4: found  82.6% false  31.3%  1.4_stacked: found   0.0% false   0.0%  1.6: found  82.6% false  12.5%  1.6_stacked: found   0.0% false   0.0%  2.0: found  26.1% false   2.0%  2.0_stacked: found   0.0% false   0.0%
+h_roll5        touched   176 in reach  1709 | clean score p50/p99/p99.9/max [1.15, 1.289, 1.333, 1.343] | touched p5/p25/p50 [1.93, 1.98, 2.011]
+      1.4: found 100.0% false   0.0%  1.4_stacked: found  98.9% false   0.0%  1.6: found 100.0% false   0.0%  1.6_stacked: found  98.9% false   0.0%  2.0: found  58.5% false   0.0%  2.0_stacked: found  58.0% false   0.0%
+h_scurl65      touched     0 in reach    13 | clean score p50/p99/p99.9/max [1.153, 1.291, 1.329, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_three_lobes  touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.289, 1.33, 1.342] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_fan3         touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.29, 1.328, 1.378] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_cone30       touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.293, 1.331, 1.344] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_diag30       touched     0 in reach     7 | clean score p50/p99/p99.9/max [1.153, 1.29, 1.333, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_arc200       touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.153, 1.293, 1.331, 1.343] | touched p5/p25/p50 None
+      1.4: found   -   false   0.0%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   0.0%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_dents23      touched     0 in reach     0 | clean score p50/p99/p99.9/max [1.174, 1.626, 1.899, 1.964] | touched p5/p25/p50 None
+      1.4: found   -   false   3.8%  1.4_stacked: found   -   false   0.0%  1.6: found   -   false   1.1%  1.6_stacked: found   -   false   0.0%  2.0: found   -   false   0.0%  2.0_stacked: found   -   false   0.0%
+h_crumple17    touched   429 in reach  1463 | clean score p50/p99/p99.9/max [1.301, 2.464, 2.674, 2.943] | touched p5/p25/p50 [1.299, 1.541, 1.723]
+      1.4: found  89.3% false  34.3%  1.4_stacked: found   3.5% false   0.2%  1.6: found  64.8% false  14.9%  1.6_stacked: found   3.0% false   0.1%  2.0: found  23.1% false   3.9%  2.0_stacked: found   0.5% false   0.0%
+h_crumple29    touched   896 in reach  2250 | clean score p50/p99/p99.9/max [1.29, 2.515, 2.888, 3.481] | touched p5/p25/p50 [1.157, 1.441, 1.619]
+      1.4: found  78.7% false  26.5%  1.4_stacked: found  15.3% false   0.6%  1.6: found  52.1% false  11.7%  1.6_stacked: found   9.0% false   0.1%  2.0: found  14.6% false   4.7%  2.0_stacked: found   3.5% false   0.0%
