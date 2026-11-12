@@ -1,0 +1,166 @@
+<title>{{SHORT NAME, 2-4 WORDS}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column; each of the user's questions is a section with the same labelled blocks
+   (you said / what I did / what happened / why). Copy this file, keep the style, replace the {{...}} parts. */
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --fg: #1d2330;
+  --muted: #5a6475;
+  --line: #dde2ea;
+  --accent: #2f5fb3;
+  --you: #8a5a00;
+  --you-bg: #fff6e3;
+  --good: #1f7a45;
+  --bad: #b3361f;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171d; --surface: #1c2028; --fg: #e6e9ef; --muted: #a0a9b8; --line: #2e3440;
+    --accent: #7ea6ef; --you: #f0c46a; --you-bg: #2c2516; --good: #6fcf97; --bad: #f08a75;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171d; --surface: #1c2028; --fg: #e6e9ef; --muted: #a0a9b8; --line: #2e3440;
+  --accent: #7ea6ef; --you: #f0c46a; --you-bg: #2c2516; --good: #6fcf97; --bad: #f08a75;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body);
+  font-size: 16.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+main { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1, h2, h3 { font-family: var(--font-head); text-wrap: balance; line-height: 1.25; margin: 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.45rem; padding-top: 18px; border-top: 2px solid var(--line); }
+h3 { font-size: 1.12rem; }
+p { margin: 0; }
+section { display: flex; flex-direction: column; gap: 14px; }
+.lede { color: var(--muted); font-size: 1.05rem; }
+.block { display: flex; flex-direction: column; gap: 8px; }
+.label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.you { background: var(--you-bg); border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.you .label { color: var(--you); }
+.you q { font-style: italic; }
+.result { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.verdict { font-weight: 600; }
+.verdict.no { color: var(--bad); }
+.verdict.yes { color: var(--good); }
+.verdict.partly { color: var(--you); }
+ul, ol { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+figure .scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+figure img { display: block; width: 100%; min-width: 640px; max-width: none; }
+figcaption { font-size: 0.92rem; color: var(--muted); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.num { font-variant-numeric: tabular-nums; }
+.mine { border-left: 3px solid var(--accent); padding-left: 12px; }
+.mine .label { color: var(--accent); }
+a { color: var(--accent); }
+</style>
+
+<main>
+
+<header style="display:flex;flex-direction:column;gap:10px">
+  <h1>{{Topic}}: what we tried and what happened</h1>
+  <p class="lede">A recap of the last few messages on {{topic}}. Each section takes one of your questions or ideas, reminds you what you were hoping for, says what I did, and then says what actually happened and why.</p>
+</header>
+
+<section>
+  <h2>First, a reminder of the setup</h2>
+  <p>{{What the object or test bench is. What a method is given, and what it must produce.}}</p>
+  <p>{{How a result is judged; what the failure looks like. Define the ONE shared term here, in bold, in ordinary words.}}</p>
+  <p>The test cases I mention below, described by what they look like:</p>
+  <ul>
+    <li><b>{{Plain name}}:</b> {{what it looks like / why it is hard}}</li>
+  </ul>
+  <p><b>Where things stood before these experiments:</b> {{numbers}}</p>
+</section>
+
+<section>
+  <h2>What's in this doc</h2>
+  <ol>
+    <li>Your idea: {{...}}</li>
+    <li>Your question: {{...}}</li>
+    <li>Your objection: {{...}}</li>
+  </ol>
+</section>
+
+<!-- ============ one section per user question/idea, in the order they raised them ============ -->
+<section>
+  <h2>1. {{Their idea, in their words}}</h2>
+  <div class="you">
+    <span class="label">You said</span>
+    <p><q>{{short verbatim quote}}</q></p>
+    <p>{{One or two lines restating their reasoning, guess or hope.}}</p>
+  </div>
+
+  <h3>1A. {{First way it was tested}}</h3>
+  <div class="block">
+    <span class="label">What I did</span>
+    <p>{{High-level procedure in plain English, including any control and why it was run.}}</p>
+  </div>
+  <div class="result">
+    <span class="label">What happened</span>
+    <p class="verdict no">{{One-line verdict. class = yes / no / partly}}</p>
+    <ul>
+      <li>{{One claim with its number.}}</li>
+    </ul>
+    <span class="label">Why</span>
+    <p>{{One or two sentences: the mechanism, concrete and causal.}}</p>
+  </div>
+
+  <div class="mine block">
+    <span class="label">My own extra check (not your idea)</span>
+    <p>{{What I checked on my own initiative, and what happened.}}</p>
+  </div>
+
+  <figure>
+    <div class="scroll"><img src="{{IMG_1}}" alt="{{what the figure shows}}"></div>
+    <figcaption><b>{{What this shows.}}</b> {{What one mark is, what each colour means, the baseline panel, the one thing to look at.}}</figcaption>
+  </figure>
+</section>
+
+<!-- Untested idea: keep a section for it -->
+<section>
+  <h2>2. {{Their idea}}</h2>
+  <div class="you">
+    <span class="label">You said</span>
+    <p><q>{{quote}}</q></p>
+  </div>
+  <div class="result">
+    <span class="label">Status</span>
+    <p class="verdict partly">Not tested yet.</p>
+    <p>{{Any related past attempt, and how theirs differs.}}</p>
+  </div>
+</section>
+
+<section>
+  <h2>{{N}}. Everything in one table</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Idea</th><th>Hope</th><th>What happened</th><th>Why, in a sentence</th></tr>
+    <tr><td>{{idea}} (yours)</td><td>{{hope}}</td><td>{{result}}</td><td>{{why}}</td></tr>
+    <tr><td>{{idea}} (mine)</td><td>{{hope}}</td><td>{{result}}</td><td>{{why}}</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>{{N+1}}. What this points to</h2>
+  <ul>
+    <li>{{A pattern across failures, a thing that turned out not to matter, or a thread still open. This is information for them, not a plan.}}</li>
+  </ul>
+</section>
+
+</main>

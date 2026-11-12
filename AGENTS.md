@@ -3,6 +3,7 @@
 - Never include the user's full local filesystem path in a public or shareable artifact. Use repo-relative paths or sanitized placeholders.
 - Never use npm. Use pnpm or bun when a JavaScript package command is needed.
 - When making an explanatory experiment figure, read `skills/experiment-figures/SKILL.md` and apply its understanding check before delivery.
+- When reporting experiment results back to the user (more than one experiment, a what-if chain, or they say they did not understand), read `skills/experiment-recap-doc/SKILL.md` and deliver a recap doc.
 - When the user gives you a research paper, read `skills/read-paper/SKILL.md`. Notes live one-file-per-paper in `literature/`, indexed by `literature/README.md`; never mirror a paper's text into the repo.
 
 ## Context shortcut: generated 1s / five-knob manifold

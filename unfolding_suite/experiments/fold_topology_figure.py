@@ -37,9 +37,9 @@ def paper_map(ax, name, loops, title):
             else:
                 ax.scatter(*ends.T, s=34, marker="x", c=colour, lw=1.4)
     ax.set_title(title, fontsize=12, loc="left")
-    ax.text(0.0, -0.13, f"{shortcut_dot.sum()} dots have a real shortcut among their 10 nearest (orange).\n"
-            f"{len(bars)} loops never fill in: {len(real)} start on a real shortcut (blue circles),\n"
-            f"{len(fake)} start on an ordinary link (red crosses).",
+    ax.text(0.0, -0.13, f"{shortcut_dot.sum()} dots have a wrong connection to one of their 10 nearest (orange).\n"
+            f"{len(bars)} loops never fill in: {len(real)} start on a wrong connection (blue circles),\n"
+            f"{len(fake)} start on a correct connection (red crosses).",
             transform=ax.transAxes, fontsize=9.5, va="top")
     ax.set_aspect("equal")
     ax.set_xlim(-1.05, 1.05)
@@ -53,7 +53,7 @@ def paper_map(ax, name, loops, title):
 def score_hist(ax, blobs):
     bins = np.linspace(1, 3.5, 51)
     groups = {"one layer only, bent sheets": [], "one layer only, crumples": [],
-              "real shortcut, bent sheets": [], "real shortcut, crumples": []}
+              "wrong connection, bent sheets": [], "wrong connection, crumples": []}
     for name, r in blobs.items():
         if "crumple" in name:
             kind = "crumples"
@@ -63,9 +63,9 @@ def score_hist(ax, blobs):
             continue
         score = np.array(r["score"])
         groups[f"one layer only, {kind}"].append(score[~np.array(r["in_reach_mask"])])
-        groups[f"real shortcut, {kind}"].append(score[np.array(r["touched_mask"])])
+        groups[f"wrong connection, {kind}"].append(score[np.array(r["touched_mask"])])
     style = {"one layer only, bent sheets": ("#9e9e9e", "-"), "one layer only, crumples": ("#9e9e9e", "--"),
-             "real shortcut, bent sheets": (HIT, "-"), "real shortcut, crumples": (TRUTH, "-")}
+             "wrong connection, bent sheets": (HIT, "-"), "wrong connection, crumples": (TRUTH, "-")}
     for label, arrays in groups.items():
         v = np.concatenate(arrays)
         h, _ = np.histogram(np.clip(v, bins[0], bins[-1]), bins)
@@ -76,11 +76,11 @@ def score_hist(ax, blobs):
     ax.set_ylabel("share of dots in each group", fontsize=10)
     ax.set_title("C. Gap test on each dot's 40 nearest dots", fontsize=12, loc="left")
     ax.legend(fontsize=9, frameon=False, loc="upper right", handlelength=1.5)
-    ax.text(0.0, -0.2, "Bent sheets: shortcut dots score 1.9-2.6; one-layer dots never\n"
+    ax.text(0.0, -0.2, "Bent sheets: wrong-connection dots score 1.9-2.6; one-layer dots never\n"
             "above 1.38. A clean split.\n"
-            "Crumples: shortcut dots score 1.2-2.6, inside the range of one-layer\n"
+            "Crumples: wrong-connection dots score 1.2-2.6, inside the range of one-layer\n"
             "dots where the paper is stretched (up to 3.9). No clean split.\n"
-            "(tight_roll left out: its layers are closer than the dot spacing.)",
+            "(Tight spiral left out: its layers are closer than the dot spacing.)",
             transform=ax.transAxes, fontsize=9.5, va="top")
 
 
@@ -89,13 +89,13 @@ def main():
     blobs = json.loads((OUT / "blobs.json").read_text())
     fig = plt.figure(figsize=(17, 7.6))
     gs = fig.add_gridspec(1, 3, width_ratios=[1, 1, 1.25], wspace=0.18, left=0.02, right=0.98, top=0.83, bottom=0.27)
-    paper_map(fig.add_subplot(gs[0]), "h_roll5", loops, "A. Rolled sheet (h_roll5), on the flat paper")
-    paper_map(fig.add_subplot(gs[1]), "h_crumple29", loops, "B. Crumpled sheet (h_crumple29), on the flat paper")
+    paper_map(fig.add_subplot(gs[0]), "h_roll5", loops, "A. Loosely rolled spiral, on the unfolded paper")
+    paper_map(fig.add_subplot(gs[1]), "h_crumple29", loops, "B. Randomly crumpled sheet, on the unfolded paper")
     score_hist(fig.add_subplot(gs[2]), blobs)
     fig.suptitle("Can topology find where a dot's nearest dots jump to another layer?", fontsize=15, x=0.02, ha="left")
     fig.text(0.02, 0.905, "A and B: every dot drawn at its true place on the unfolded paper (the method never sees this). "
-             "A loop that never fills in = a ring of links with no paper inside it.\nIts first link marks where the "
-             "fold is. 'Real shortcut' = walking along the actual 3-D sheet is more than twice the straight-line length.",
+             "A loop that never fills in = a ring of connections with no paper inside it.\nIts first connection marks where the "
+             "fold is. 'Wrong connection' = two dots linked as neighbours although walking along the real 3-D sheet between them is over twice the straight line.",
              fontsize=10, ha="left", va="top")
     FIG.mkdir(parents=True, exist_ok=True)
     fig.savefig(FIG / "fold_topology.png", dpi=110)

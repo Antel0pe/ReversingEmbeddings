@@ -1,0 +1,58 @@
+[
+ {
+  "sheet": "s_curl",
+  "wrong": 12,
+  "wrong_facing_opposite": 1.0,
+  "wrong_facing_median": -0.2986020255408135,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.8777350540535829
+ },
+ {
+  "sheet": "roll",
+  "wrong": 0,
+  "wrong_facing_opposite": null,
+  "wrong_facing_median": null,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.8556336554559018
+ },
+ {
+  "sheet": "h_roll5",
+  "wrong": 204,
+  "wrong_facing_opposite": 0.0,
+  "wrong_facing_median": 0.9572369471380044,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.7973478080933374
+ },
+ {
+  "sheet": "tight_roll",
+  "wrong": 5103,
+  "wrong_facing_opposite": 0.0,
+  "wrong_facing_median": 0.9837170806356994,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.7410150366454182
+ },
+ {
+  "sheet": "accordion",
+  "wrong": 0,
+  "wrong_facing_opposite": null,
+  "wrong_facing_median": null,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.5058782177829391
+ },
+ {
+  "sheet": "h_fan3",
+  "wrong": 0,
+  "wrong_facing_opposite": null,
+  "wrong_facing_median": null,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.6759448483198173
+ },
+ {
+  "sheet": "h_arc200",
+  "wrong": 0,
+  "wrong_facing_opposite": null,
+  "wrong_facing_median": null,
+  "right_facing_opposite": 0.0,
+  "right_facing_min": 0.9902832506465328
+ }
+]

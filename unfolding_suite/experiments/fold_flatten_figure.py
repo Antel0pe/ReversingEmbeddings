@@ -31,7 +31,7 @@ def main():
                  "and can we tell from the dots alone?", fontsize=17, y=0.975)
     fig.text(0.5, 0.905, f"Paper is never stretched, so the right answer is the square. Dots are 0.031 apart.\n"
              f"Gap = closest distance between two parts of the paper that are far apart on it. "
-             f"Method shown: walking along nearby dots, with the link check ({METHOD}).",
+             f"Method shown: walking along nearby dots, dropping links that point out of the paper.",
              ha="center", fontsize=11.5, color="#333")
 
     for row, (kind, title) in enumerate([("flap", "Case 1: folded flat, the whole flap equally close"),

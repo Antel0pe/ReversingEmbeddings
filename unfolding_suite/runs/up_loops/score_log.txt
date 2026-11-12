@@ -1,0 +1,288 @@
+PASS flat            up_0.0           101 jumps 0 pass
+PASS flat            up_0.0           100 jumps 0 pass
+PASS flat            up_0.0           102 jumps 0 pass
+PASS flat            up_0.5           100 jumps 0 pass
+PASS flat            up_0.5           102 jumps 0 pass
+PASS flat            up_0.0_surface   101 jumps 0 pass
+PASS flat            up_0.5           101 jumps 0 pass
+PASS flat            up_0.0_surface   100 jumps 0 pass
+PASS flat            up_0.5_surface   100 jumps 0 pass
+PASS flat            up_0.5_surface   101 jumps 0 pass
+PASS flat            up_0.0_surface   102 jumps 0 pass
+PASS flat            up_0.5_surface   102 jumps 0 pass
+PASS gentle_arc      up_0.0           100 jumps 0 pass
+PASS gentle_arc      up_0.0           101 jumps 0 pass
+PASS gentle_arc      up_0.0           102 jumps 0 pass
+PASS gentle_arc      up_0.5           100 jumps 0 pass
+PASS gentle_arc      up_0.5           102 jumps 0 pass
+PASS gentle_arc      up_0.5           101 jumps 0 pass
+PASS gentle_arc      up_0.0_surface   101 jumps 0 pass
+PASS gentle_arc      up_0.0_surface   100 jumps 0 pass
+PASS gentle_arc      up_0.5_surface   100 jumps 0 pass
+PASS gentle_arc      up_0.5_surface   101 jumps 0 pass
+PASS gentle_arc      up_0.0_surface   102 jumps 0 pass
+PASS gentle_arc      up_0.5_surface   102 jumps 0 pass
+PASS wave            up_0.0           101 jumps 0 pass
+PASS wave            up_0.0           100 jumps 0 pass
+PASS wave            up_0.5           100 jumps 0 pass
+PASS wave            up_0.0           102 jumps 0 pass
+PASS wave            up_0.5           102 jumps 0 pass
+PASS wave            up_0.5           101 jumps 0 pass
+PASS wave            up_0.0_surface   100 jumps 0 pass
+PASS wave            up_0.0_surface   101 jumps 0 pass
+PASS wave            up_0.5_surface   100 jumps 0 pass
+PASS wave            up_0.5_surface   102 jumps 0 pass
+PASS wave            up_0.5_surface   101 jumps 0 pass
+PASS wave            up_0.0_surface   102 jumps 0 pass
+PASS s_curl          up_0.0           102 jumps 0 pass
+PASS s_curl          up_0.0           101 jumps 0 pass
+PASS s_curl          up_0.5           100 jumps 0 pass
+PASS s_curl          up_0.0           100 jumps 0 pass
+PASS s_curl          up_0.0_surface   100 jumps 0 pass
+PASS s_curl          up_0.5           102 jumps 0 pass
+PASS s_curl          up_0.5           101 jumps 0 pass
+PASS s_curl          up_0.0_surface   101 jumps 0 pass
+PASS s_curl          up_0.5_surface   102 jumps 0 pass
+PASS s_curl          up_0.0_surface   102 jumps 0 pass
+PASS s_curl          up_0.5_surface   100 jumps 0 pass
+PASS s_curl          up_0.5_surface   101 jumps 0 pass
+PASS roll            up_0.0           102 jumps 0 pass
+PASS roll            up_0.0           101 jumps 0 pass
+PASS roll            up_0.5           100 jumps 0 pass
+PASS roll            up_0.0           100 jumps 0 pass
+PASS roll            up_0.0_surface   100 jumps 0 pass
+PASS roll            up_0.5           101 jumps 0 pass
+PASS roll            up_0.0_surface   101 jumps 0 pass
+PASS roll            up_0.5           102 jumps 0 pass
+PASS roll            up_0.5_surface   100 jumps 0 pass
+PASS roll            up_0.0_surface   102 jumps 0 pass
+PASS roll            up_0.5_surface   102 jumps 0 pass
+PASS roll            up_0.5_surface   101 jumps 0 pass
+FAIL tight_roll      up_0.0           100 jumps 5065 folded 25%
+FAIL tight_roll      up_0.0           101 jumps 5052 folded 25%
+FAIL tight_roll      up_0.0           102 jumps 5082 folded 25%
+FAIL tight_roll      up_0.5           100 jumps 4910 folded 25%
+FAIL tight_roll      up_0.5           102 jumps 4929 folded 26%
+FAIL tight_roll      up_0.5           101 jumps 4913 folded 25%
+FAIL tight_roll      up_0.0_surface   100 jumps 436 folded 16%
+FAIL tight_roll      up_0.0_surface   101 jumps 458 folded 14%
+FAIL tight_roll      up_0.5_surface   101 jumps 448 folded 13%
+FAIL tight_roll      up_0.5_surface   100 jumps 432 folded 14%
+FAIL tight_roll      up_0.0_surface   102 jumps 482 folded 17%
+FAIL tight_roll      up_0.5_surface   102 jumps 475 folded 12%
+PASS diagonal_roll   up_0.0           100 jumps 0 pass
+PASS diagonal_roll   up_0.0           102 jumps 0 pass
+PASS diagonal_roll   up_0.5           100 jumps 0 pass
+PASS diagonal_roll   up_0.0           101 jumps 0 pass
+PASS diagonal_roll   up_0.5           101 jumps 0 pass
+PASS diagonal_roll   up_0.5           102 jumps 0 pass
+PASS diagonal_roll   up_0.0_surface   100 jumps 0 pass
+PASS diagonal_roll   up_0.0_surface   101 jumps 0 pass
+PASS diagonal_roll   up_0.5_surface   100 jumps 0 pass
+PASS diagonal_roll   up_0.5_surface   101 jumps 0 pass
+PASS diagonal_roll   up_0.0_surface   102 jumps 0 pass
+PASS diagonal_roll   up_0.5_surface   102 jumps 0 pass
+PASS accordion       up_0.0           100 jumps 0 pass
+PASS accordion       up_0.0           102 jumps 0 pass
+PASS accordion       up_0.0           101 jumps 0 pass
+PASS accordion       up_0.5           100 jumps 0 pass
+PASS accordion       up_0.5           102 jumps 0 pass
+PASS accordion       up_0.5           101 jumps 0 pass
+PASS accordion       up_0.0_surface   100 jumps 0 pass
+PASS accordion       up_0.0_surface   101 jumps 0 pass
+PASS accordion       up_0.5_surface   100 jumps 0 pass
+PASS accordion       up_0.0_surface   102 jumps 0 pass
+PASS accordion       up_0.5_surface   101 jumps 0 pass
+PASS accordion       up_0.5_surface   102 jumps 0 pass
+PASS cone            up_0.0           100 jumps 0 pass
+PASS cone            up_0.5           100 jumps 0 pass
+PASS cone            up_0.0           102 jumps 0 pass
+PASS cone            up_0.0           101 jumps 0 pass
+PASS cone            up_0.5           102 jumps 0 pass
+PASS cone            up_0.5           101 jumps 0 pass
+PASS cone            up_0.0_surface   100 jumps 0 pass
+PASS cone            up_0.0_surface   101 jumps 0 pass
+PASS cone            up_0.0_surface   102 jumps 0 pass
+PASS cone            up_0.5_surface   100 jumps 0 pass
+PASS cone            up_0.5_surface   101 jumps 0 pass
+PASS cone            up_0.5_surface   102 jumps 0 pass
+PASS bowl            up_0.0           100 jumps 0 pass
+PASS bowl            up_0.0           102 jumps 0 pass
+PASS bowl            up_0.0           101 jumps 0 pass
+PASS bowl            up_0.5           100 jumps 0 pass
+PASS bowl            up_0.5           102 jumps 0 pass
+PASS bowl            up_0.0_surface   100 jumps 0 pass
+PASS bowl            up_0.5           101 jumps 0 pass
+PASS bowl            up_0.0_surface   101 jumps 0 pass
+PASS bowl            up_0.5_surface   100 jumps 0 pass
+PASS bowl            up_0.0_surface   102 jumps 0 pass
+PASS bowl            up_0.5_surface   101 jumps 0 pass
+PASS bowl            up_0.5_surface   102 jumps 0 pass
+PASS uneven_roll     up_0.0           100 jumps 0 pass
+PASS uneven_roll     up_0.0           101 jumps 0 pass
+PASS uneven_roll     up_0.0           102 jumps 0 pass
+PASS uneven_roll     up_0.5           100 jumps 0 pass
+PASS uneven_roll     up_0.5           102 jumps 0 pass
+PASS uneven_roll     up_0.5           101 jumps 0 pass
+PASS uneven_roll     up_0.0_surface   100 jumps 0 pass
+PASS uneven_roll     up_0.0_surface   101 jumps 0 pass
+PASS uneven_roll     up_0.5_surface   100 jumps 0 pass
+PASS uneven_roll     up_0.0_surface   102 jumps 0 pass
+PASS uneven_roll     up_0.5_surface   101 jumps 0 pass
+PASS uneven_roll     up_0.5_surface   102 jumps 0 pass
+PASS dents           up_0.0           101 jumps 0 pass
+PASS dents           up_0.0           102 jumps 0 pass
+PASS dents           up_0.0           100 jumps 0 pass
+PASS dents           up_0.5           100 jumps 0 pass
+PASS dents           up_0.0_surface   100 jumps 0 pass
+PASS dents           up_0.5           101 jumps 0 pass
+PASS dents           up_0.5           102 jumps 0 pass
+PASS dents           up_0.0_surface   101 jumps 0 pass
+PASS dents           up_0.0_surface   102 jumps 0 pass
+PASS dents           up_0.5_surface   102 jumps 0 pass
+PASS dents           up_0.5_surface   100 jumps 0 pass
+PASS dents           up_0.5_surface   101 jumps 0 pass
+FAIL crumple         up_0.0           100 jumps 0 folded 1%
+FAIL crumple         up_0.0           101 jumps 0 folded 1%
+FAIL crumple         up_0.0           102 jumps 0 folded 1%
+FAIL crumple         up_0.5           100 jumps 0 folded 1%
+FAIL crumple         up_0.0_surface   101 jumps 0 folded 1%
+FAIL crumple         up_0.0_surface   100 jumps 0 folded 1%
+FAIL crumple         up_0.5           102 jumps 0 folded 1%
+FAIL crumple         up_0.5           101 jumps 0 folded 1%
+FAIL crumple         up_0.0_surface   102 jumps 0 folded 1%
+FAIL crumple         up_0.5_surface   101 jumps 0 folded 1%
+FAIL crumple         up_0.5_surface   100 jumps 0 folded 1%
+FAIL crumple         up_0.5_surface   102 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0           100 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0           102 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0           101 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5           100 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5           102 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5           101 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0_surface   100 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0_surface   101 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5_surface   100 jumps 0 folded 1%
+FAIL hard_crumple    up_0.0_surface   102 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5_surface   102 jumps 0 folded 1%
+FAIL hard_crumple    up_0.5_surface   101 jumps 0 folded 1%
+FAIL h_roll5         up_0.0           101 jumps 211 folded 21%
+FAIL h_roll5         up_0.0           100 jumps 192 folded 20%
+FAIL h_roll5         up_0.0           102 jumps 204 folded 21%
+FAIL h_roll5         up_0.5           100 jumps 113 folded 21%
+FAIL h_roll5         up_0.5           102 jumps 116 folded 21%
+FAIL h_roll5         up_0.5           101 jumps 127 folded 21%
+PASS h_roll5         up_0.0_surface   100 jumps 0 pass
+FAIL h_roll5         up_0.0_surface   101 jumps 3 folded 2%
+PASS h_roll5         up_0.0_surface   102 jumps 0 pass
+PASS h_roll5         up_0.5_surface   100 jumps 0 pass
+FAIL h_roll5         up_0.5_surface   101 jumps 3 folded 2%
+PASS h_roll5         up_0.5_surface   102 jumps 0 pass
+PASS h_scurl65       up_0.0           100 jumps 0 pass
+PASS h_scurl65       up_0.0           101 jumps 0 pass
+PASS h_scurl65       up_0.0           102 jumps 0 pass
+PASS h_scurl65       up_0.5           100 jumps 0 pass
+PASS h_scurl65       up_0.5           102 jumps 0 pass
+PASS h_scurl65       up_0.5           101 jumps 0 pass
+PASS h_scurl65       up_0.0_surface   101 jumps 0 pass
+PASS h_scurl65       up_0.0_surface   100 jumps 0 pass
+PASS h_scurl65       up_0.5_surface   100 jumps 0 pass
+PASS h_scurl65       up_0.0_surface   102 jumps 0 pass
+PASS h_scurl65       up_0.5_surface   102 jumps 0 pass
+PASS h_scurl65       up_0.5_surface   101 jumps 0 pass
+PASS h_three_lobes   up_0.0           100 jumps 0 pass
+PASS h_three_lobes   up_0.0           101 jumps 0 pass
+PASS h_three_lobes   up_0.0           102 jumps 0 pass
+PASS h_three_lobes   up_0.5           100 jumps 0 pass
+PASS h_three_lobes   up_0.0_surface   101 jumps 0 pass
+PASS h_three_lobes   up_0.0_surface   100 jumps 0 pass
+PASS h_three_lobes   up_0.5           101 jumps 0 pass
+PASS h_three_lobes   up_0.5           102 jumps 0 pass
+PASS h_three_lobes   up_0.0_surface   102 jumps 0 pass
+PASS h_three_lobes   up_0.5_surface   100 jumps 0 pass
+PASS h_three_lobes   up_0.5_surface   101 jumps 0 pass
+PASS h_three_lobes   up_0.5_surface   102 jumps 0 pass
+PASS h_fan3          up_0.0           101 jumps 0 pass
+PASS h_fan3          up_0.0           100 jumps 0 pass
+PASS h_fan3          up_0.0           102 jumps 0 pass
+PASS h_fan3          up_0.5           100 jumps 0 pass
+PASS h_fan3          up_0.5           102 jumps 0 pass
+PASS h_fan3          up_0.5           101 jumps 0 pass
+PASS h_fan3          up_0.0_surface   100 jumps 0 pass
+PASS h_fan3          up_0.0_surface   101 jumps 0 pass
+PASS h_fan3          up_0.0_surface   102 jumps 0 pass
+PASS h_fan3          up_0.5_surface   100 jumps 0 pass
+PASS h_fan3          up_0.5_surface   101 jumps 0 pass
+PASS h_fan3          up_0.5_surface   102 jumps 0 pass
+PASS h_cone30        up_0.0           101 jumps 0 pass
+PASS h_cone30        up_0.0           100 jumps 0 pass
+PASS h_cone30        up_0.0           102 jumps 0 pass
+PASS h_cone30        up_0.5           100 jumps 0 pass
+PASS h_cone30        up_0.5           102 jumps 0 pass
+PASS h_cone30        up_0.0_surface   100 jumps 0 pass
+PASS h_cone30        up_0.5           101 jumps 0 pass
+PASS h_cone30        up_0.0_surface   101 jumps 0 pass
+PASS h_cone30        up_0.0_surface   102 jumps 0 pass
+PASS h_cone30        up_0.5_surface   100 jumps 0 pass
+PASS h_cone30        up_0.5_surface   101 jumps 0 pass
+PASS h_cone30        up_0.5_surface   102 jumps 0 pass
+PASS h_diag30        up_0.0           100 jumps 0 pass
+PASS h_diag30        up_0.0           102 jumps 0 pass
+PASS h_diag30        up_0.0           101 jumps 0 pass
+PASS h_diag30        up_0.5           100 jumps 0 pass
+PASS h_diag30        up_0.5           102 jumps 0 pass
+PASS h_diag30        up_0.5           101 jumps 0 pass
+PASS h_diag30        up_0.0_surface   101 jumps 0 pass
+PASS h_diag30        up_0.0_surface   100 jumps 0 pass
+PASS h_diag30        up_0.5_surface   100 jumps 0 pass
+PASS h_diag30        up_0.5_surface   101 jumps 0 pass
+PASS h_diag30        up_0.0_surface   102 jumps 0 pass
+PASS h_diag30        up_0.5_surface   102 jumps 0 pass
+PASS h_arc200        up_0.0           101 jumps 0 pass
+PASS h_arc200        up_0.0           102 jumps 0 pass
+PASS h_arc200        up_0.5           100 jumps 0 pass
+PASS h_arc200        up_0.0           100 jumps 0 pass
+PASS h_arc200        up_0.5           101 jumps 0 pass
+PASS h_arc200        up_0.5           102 jumps 0 pass
+PASS h_arc200        up_0.0_surface   100 jumps 0 pass
+PASS h_arc200        up_0.0_surface   101 jumps 0 pass
+PASS h_arc200        up_0.5_surface   100 jumps 0 pass
+PASS h_arc200        up_0.5_surface   101 jumps 0 pass
+PASS h_arc200        up_0.0_surface   102 jumps 0 pass
+PASS h_arc200        up_0.5_surface   102 jumps 0 pass
+PASS h_dents23       up_0.0           101 jumps 0 pass
+PASS h_dents23       up_0.0           100 jumps 0 pass
+PASS h_dents23       up_0.0           102 jumps 0 pass
+PASS h_dents23       up_0.5           100 jumps 0 pass
+PASS h_dents23       up_0.5           101 jumps 0 pass
+PASS h_dents23       up_0.5           102 jumps 0 pass
+PASS h_dents23       up_0.0_surface   100 jumps 0 pass
+PASS h_dents23       up_0.0_surface   101 jumps 0 pass
+PASS h_dents23       up_0.0_surface   102 jumps 0 pass
+PASS h_dents23       up_0.5_surface   101 jumps 0 pass
+PASS h_dents23       up_0.5_surface   102 jumps 0 pass
+PASS h_dents23       up_0.5_surface   100 jumps 0 pass
+FAIL h_crumple17     up_0.0           101 jumps 28 folded 6%
+FAIL h_crumple17     up_0.0           102 jumps 31 folded 6%
+FAIL h_crumple17     up_0.5           100 jumps 9 folded 5%
+FAIL h_crumple17     up_0.0           100 jumps 22 folded 5%
+FAIL h_crumple17     up_0.5           102 jumps 10 folded 6%
+FAIL h_crumple17     up_0.5           101 jumps 24 folded 6%
+FAIL h_crumple17     up_0.0_surface   101 jumps 0 folded 4%
+FAIL h_crumple17     up_0.0_surface   100 jumps 0 folded 4%
+FAIL h_crumple17     up_0.5_surface   100 jumps 0 folded 4%
+FAIL h_crumple17     up_0.5_surface   101 jumps 0 folded 5%
+FAIL h_crumple17     up_0.5_surface   102 jumps 7 folded 5%
+FAIL h_crumple17     up_0.0_surface   102 jumps 0 folded 6%
+FAIL h_crumple29     up_0.0           100 jumps 383 folded 15%
+FAIL h_crumple29     up_0.0           102 jumps 381 folded 17%
+FAIL h_crumple29     up_0.0           101 jumps 378 folded 14%
+FAIL h_crumple29     up_0.5           100 jumps 289 folded 20%
+FAIL h_crumple29     up_0.5           101 jumps 297 folded 18%
+FAIL h_crumple29     up_0.5           102 jumps 276 folded 18%
+FAIL h_crumple29     up_0.0_surface   100 jumps 20 folded 21%
+FAIL h_crumple29     up_0.0_surface   101 jumps 16 folded 19%
+FAIL h_crumple29     up_0.0_surface   102 jumps 25 folded 12%
+FAIL h_crumple29     up_0.5_surface   101 jumps 16 folded 37%
+FAIL h_crumple29     up_0.5_surface   100 jumps 18 folded 39%
+FAIL h_crumple29     up_0.5_surface   102 jumps 28 folded 34%

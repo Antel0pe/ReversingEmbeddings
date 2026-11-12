@@ -443,8 +443,9 @@ The sheets live in the experiment file, not `sheets.py`, so `runs/current` stays
   error). At 0.02 and 0.05 every method fails every seed: `isomap_k10`, `check_k10` and
   `lle_k10` fold 44-55% on the flap and 28-47% on the loop; `convex_edge` folds 6-16% on the
   loop and 55-100% on the flap.
-- **Where it ends up:** the creased part comes out flat and correct (0.3-0.9% off, never
-  flipped) in every failing run. The flap is NOT squashed: it comes out at the right size and
+- **Where it ends up:** with the walking methods the creased part comes out flat and correct
+  (0.3-0.7% off, never flipped). `lle_k10` leaves it 3.9-4.8% off (its own distortion) and
+  `convex_edge` on `flap_gap05`, which folds 100%, flips 2.7% of it. The flap is NOT squashed: it comes out at the right size and
   shape (size 1.05, 0.7% off on its own) but lies mirror-image on top of the base, i.e. the
   sheet is flattened still folded, like ironing a folded sheet. The loop is squashed flat
   onto itself (about 59% of it mirror-image) and its far end lands on the base.
@@ -453,8 +454,9 @@ The sheets live in the experiment file, not `sheets.py`, so `runs/current` stays
   come out closer when flattened. On the four controls that flatten correctly the median is
   1.0-1.1 and nothing is flagged above 2x. On the loop the ratio is 10-40x over the whole
   loop (58-67% of dots flagged, one connected patch), because the squashed loop stacks parts
-  that are up to 0.34 apart in 3-D. On the flap the ratio is a flat plateau of about gap /
-  spacing: about 10x at gap 0.05 (61-66% flagged, one patch), about 2x at 0.02 (33% flagged,
+  that are up to 0.34 apart in 3-D. On the flap the ratio is a flat plateau whose height is the
+  gap compared with how far apart the stacked dots land in the flat result (a fraction of a
+  dot spacing): about 10x at gap 0.05 (61-66% flagged, one patch), about 2x at 0.02 (33% flagged,
   speckled), 1.3x at 0.01 and 1.09x at 0.005 (0.1% flagged): blind. A thin flap folded flat
   is a self-consistent flat picture of the dots; nothing in the distances contradicts it.
   (`fold_flatten small`, `runs/fold_flatten/small_gaps.json`.)
@@ -512,6 +514,27 @@ with `uv pip install --target <dir> gudhi` and `PYTHONPATH=<dir>`.
   - `blob_k10`: link each dot only to its own clump. 10/14 design, 8/10 held-out (fails
     `tight_roll`, `uneven_roll` and the four crumples).
   - Not a fair held-out check: thresholds were set while looking at all 24 sheets.
+
+### Up side carried along the paper, and the height split's weak spot (2026-11-11)
+
+Code: `experiments/up_loops.py` (+ `up_loops_figure.py`) and `experiments/height_split_concern.py`.
+Results: `runs/up_loops/` and `runs/height_split/concern.json`. Figure: `figures/up_loops/up_loops.png`.
+
+- **Choosing a consistent "up" from the dots works.** Carry the perpendicular outward from one dot
+  along a maximum spanning tree of |cos| between the dots' perpendiculars, flipping each dot to
+  agree with its parent. The result matches the true up side on 99.8-100% of dots. The top
+  eigenvector of the signed agreement table gets only 68% on `s_curl`.
+- **Opposite-facing ends identify fold-backs, not wraps.** With the true up side, all 12 of
+  `s_curl`'s jump links join opposite-facing layers. On `h_roll5` and `tight_roll`, none do
+  (median cos 0.96 and 0.98).
+- **`up_0.0`** (cut a link when its ends' ups disagree) scores 11/14 design and 7/10 held-out.
+  It passes `s_curl` by cutting all 12 jumps and no good links, cuts no good links on the fans,
+  and leaves `h_roll5` at 21% and `tight_roll` at 25%. Adding the surface check
+  (`up_*_surface`) leaves `tight_roll` at 14-17% (about 480 jumps) and adds no passes.
+- **Height split versus the other layer's share of the 40 nearest dots:** split clean 84-100%
+  when the other layer makes up under a quarter, and 0-3% when it is over half. On `tight_roll`
+  that is about 1,300 dots, all in the innermost turns. Crumples are excluded because FAR
+  mislabels squashed same-layer paper as another layer there.
 
 ### Saved runs
 
