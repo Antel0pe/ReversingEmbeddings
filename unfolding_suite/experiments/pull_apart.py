@@ -25,6 +25,7 @@ from scipy.spatial import cKDTree
 from unfolding_suite.diagnose import FAR
 from unfolding_suite.link_check import checked_links
 from unfolding_suite.methods import layout_from_links
+from unfolding_suite.pull import pull, spread_shares  # the pull now lives in the suite as method pull_k10
 from unfolding_suite.run import failure_words
 from unfolding_suite.scoring import score_layout, to_grid_order
 from unfolding_suite.sheets import SHEETS, make_instance
@@ -48,12 +49,6 @@ def jump_count(inst, links):
 def score(inst, flat):
     r = score_layout(to_grid_order(flat, inst), inst.uv, inst.xyz, inst.grid, inst.sheet.family)
     return {"passed": r["passed"], "words": failure_words(r), "fold": max(r["fold_share"], r["overlap_share"])}
-
-
-def spread_shares(X):
-    """The three eigenvalues of the cloud's spread, as shares of the total."""
-    ev = np.linalg.eigvalsh(np.cov((X - X.mean(0)).T))[::-1]
-    return (ev / ev.sum()).round(4).tolist()
 
 
 # ------------------------------------------------------------------ 1. one-direction stretch
@@ -81,41 +76,6 @@ def part1(job):
 
 
 # ------------------------------------------------------------------ 2. physical pull
-def pull(points, links, push=1e-3, rounds=15, iters=400):
-    """Keep link lengths, push everything away from the middle. Returns the pulled dots.
-
-    Energy = sum over links of (squared length - original squared length)^2 / spacing^4
-             - push * sum of squared distances from the middle / spacing^2.
-    Run in rounds; each round starts from the last round's shape.
-    """
-    links = np.unique(np.sort(links, 1), axis=0)
-    i, j = links.T
-    d2 = ((points[i] - points[j]) ** 2).sum(1)
-    h2 = np.median(d2)
-    X = points - points.mean(0)
-    n = len(X)
-
-    def energy(flat_x):
-        Y = flat_x.reshape(n, 3)
-        diff = Y[i] - Y[j]
-        strain = ((diff ** 2).sum(1) - d2) / h2
-        c = Y - Y.mean(0)
-        e = (strain ** 2).sum() - push * (c ** 2).sum() / h2
-        g_link = (4 * strain / h2)[:, None] * diff
-        grad = np.zeros_like(Y)
-        np.add.at(grad, i, g_link)
-        np.add.at(grad, j, -g_link)
-        grad -= 2 * push * c / h2
-        return e, grad.ravel()
-
-    history = [spread_shares(X)]
-    for _ in range(rounds):
-        X = minimize(energy, X.ravel(), jac=True, method="L-BFGS-B", options={"maxiter": iters}).x.reshape(n, 3)
-        history.append(spread_shares(X))
-    stretch = np.sqrt(((X[i] - X[j]) ** 2).sum(1) / d2)
-    return X, history, float(np.median(np.abs(stretch - 1)))
-
-
 def part2(job):
     name, seed, which = job
     inst = make_instance(SHEETS[name], 65, seed)

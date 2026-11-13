@@ -87,3 +87,4 @@ method("isomap_k10", k=10)(isomap)
 method("isomap_k20", k=20)(isomap)
 
 from . import link_check  # noqa: E402,F401 - registers check_k10 and convex_edge
+from . import pull  # noqa: E402,F401 - registers pull_k10

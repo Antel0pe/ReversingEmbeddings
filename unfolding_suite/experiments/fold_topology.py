@@ -411,6 +411,44 @@ def flatten_one(job):
     return job, keep
 
 
+# ------------------------------------------------------------------ flat flap vs. loop that touches in one strip
+SHAPE_GAPS = (0.005, 0.01, 0.02, 0.05, 0.10)
+
+
+def shape_sheets():
+    """The flap (folded flat over the base, close everywhere) and the loop (touches the base in one
+    narrow strip) from experiments/fold_flatten.py, at more gaps."""
+    from unfolding_suite.experiments.fold_flatten import bend_with, flap_curvature, loop_curvature
+    from unfolding_suite.sheets import sheet
+    names = []
+    for g in SHAPE_GAPS:
+        for kind, curvature in (("flap", flap_curvature), ("loop", loop_curvature)):
+            name = f"{kind}_g{g}"
+            if name not in SHEETS:
+                sheet(name, "bent", "flap/loop check")(bend_with(curvature(g)))
+            names.append(name)
+    return names
+
+
+def shapes(job):
+    name, seed = job
+    shape_sheets()
+    inst = make_instance(SHEETS[name], 65, seed)
+    links = np.unique(np.sort(knn_links(inst.points), 1), axis=0)
+    wrong = jump_mask(inst, links)
+    bars, s = loop_bars(inst.points, "knn")
+    lived = long_lived(bars)
+    on_wrong = [b for b in lived if jump_mask(inst, np.array([b[2]]))[0]]
+    short = [b for b in bars if np.isfinite(b[1])]
+    links_after, cuts = cut_loop_links(inst.points, links, rounds=400)
+    return job, {"gap_spacings": float(name.split("_g")[1]) / s, "wrong": int(wrong.sum()),
+                 "lasting": len(lived), "lasting_on_wrong": len(on_wrong),
+                 "first_birth": min((b[0] for b in lived), default=None),
+                 "short_loops": len(short),
+                 "short_birth_death_median": [float(np.median([b[0] for b in short])), float(np.median([b[1] for b in short]))],
+                 "cuts": cuts, "wrong_after_cutting": int(jump_mask(inst, links_after).sum())}
+
+
 def fmt(x):
     return "  -  " if x is None else f"{100 * x:5.1f}%"
 
@@ -454,6 +492,16 @@ if __name__ == "__main__":
             old = json.loads(path.read_text()) if path.exists() else {}
             old.update(res)
             path.write_text(json.dumps(old, indent=1))
+        elif part == "shapes":
+            jobs = [(n, seed) for n in shape_sheets() for seed in (100, 101, 102)]
+            res = {}
+            for (n, seed), r in pool.imap(shapes, jobs):
+                res.setdefault(n, {})[str(seed)] = r
+                print(f"{n:12s} seed {seed} gap {r['gap_spacings']:.2f} sp | wrong {r['wrong']:5d} | lasting loops {r['lasting']:3d}"
+                      f" ({r['lasting_on_wrong']} on wrong) first born {r['first_birth']} | small loops {r['short_loops']}"
+                      f" born/filled {np.round(r['short_birth_death_median'], 2)} | cutting: {r['cuts']} cut,"
+                      f" {r['wrong_after_cutting']} wrong left", flush=True)
+            (OUT / "shapes.json").write_text(json.dumps(res, indent=1))
         elif part == "loops":
             res = {}
             for name, kind, r in pool.imap(loops, [(n, k) for n in ALL for k in KINDS]):

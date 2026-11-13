@@ -1,0 +1,16 @@
+[
+ {
+  "test": "tight_roll / convex_edge",
+  "family": "bent",
+  "seed": 0,
+  "reading": "stacked",
+  "stacked_share": 0.3518418364280993,
+  "flagged_share": 0.35785109067964666,
+  "biggest_patch_share": 0.3488372093023256,
+  "flagged_ratio": 26.319652600565075,
+  "typical_ratio": 1.5918601620639399,
+  "truth_folded": 0.08138877689551188,
+  "truth_verdict": "folded",
+  "passed": false
+ }
+]

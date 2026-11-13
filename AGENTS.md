@@ -315,6 +315,16 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   well-shaped interior triangles (`analyze_crumpled_sheet_followup.py`); edge
   slivers fake folds.
 
+- **Holes and folds in MNIST 1s (persistent homology):**
+  `analyze_mnist_one_holes_and_folds.py`, `check_shell_test_touch.py` and
+  `figures/mnist_one_holes_and_folds/README.md`. Loops (ripser, H1) find a toy curl
+  that rests on itself at 8.5x vs chance <= 2.8x, but MNIST's strongest loop (1.33x) is
+  weaker than the hole-free generated 1s' chance loops (1.70x), so nothing stands out.
+  A local shell test (split of the 8th-48th neighbours) is blind to a real touch (0%):
+  it needs dot spacing < gap < shell radius. Against a Gaussian twin it flags 95.9% of
+  fold-free generated 1s, so use generated 1s, not a smooth cloud, as the null. Cost:
+  H1 on all 6,742 MNIST 1s ~10 min; 3-D toys need a `thresh` cap.
+
 - **Unfolding test suite (toy sheets):** self-contained in `unfolding_suite/`; start
   with `unfolding_suite/README.md` (contract, scoring, outputs, workflow, results). Run
   `.venv/bin/python -m unfolding_suite --list`. A method gets shuffled, rotated 3-D dots and
@@ -323,6 +333,16 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   sheets; runs live in `unfolding_suite/runs/` (`current` is the reference). Best simple
   methods (`link_check.py`) pass 11 of 14 design and 7 of 10 held-out sheets. `tight_roll`
   needs more dots; twisted crumples stay unsolved.
+  **Always judge a flattening with `unfolding_suite/verify.py`** (the double-layer check: dots
+  plus flat result only, no truth; suite runs print it as `layers:`). It reads `stacked` when
+  part of the sheet ended up on top of another part; `unfolding_suite/VERIFY.md` explains the
+  readings, typical values and blind spots (it cannot see layers much thinner than the dot spacing).
+
+- **MNIST 1s flattened with locally linear pieces:** `analyze_mnist_one_lle_flattening.py`
+  and `figures/mnist_one_lle_flattening/README.md` run the suite's `lle_k10` (k 10/20/40,
+  2-15 numbers) on the 6,742 MNIST training 1s, with a generated-1s control. It finds only
+  slant (|r| 0.98); every further number is a bent copy of it, and it loses to the best
+  flat plane (PCA) at 5+ numbers. On the generated 1s it misses cy and height.
 
 ### Geometry conventions
 

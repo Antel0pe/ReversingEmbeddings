@@ -63,11 +63,13 @@ A full run (`--sheets all`, five default methods, three seeds) takes about 10 mi
 | `holdout.py` | 10 held-out sheets, kept out of method design for fair checks |
 | `methods.py` | The method contract, registry and baseline methods; `layout_from_links` |
 | `link_check.py` | The two methods that survived iteration: `check_k10` and `convex_edge` |
+| `pull.py` | `pull_k10`: strings to the 10 closest dots, push every dot outward, drop onto the best plane. Nothing is done about strings that join two layers |
 | `scoring.py` | The one-to-one certificate and every pass/fail threshold |
 | `diagnose.py` | Names the cause of a failure, using evidence |
 | `report.py` | Scorecard, galleries and failure pages |
 | `run.py` | Command line (`python -m unfolding_suite`) |
 | `test_scoring.py` | Tests of the scorer, built from layouts with known flaws |
+| `verify.py`, `VERIFY.md` | The double-layer check: did the flattening stack part of the sheet on another part? Dots and flat result only, no truth. **Use it on every flattening**; `VERIFY.md` says how to read it |
 | `experiments/` | One-off studies: `negative_space.py` + `negative_space_why.py` + `negative_space_score.py` (nearness-only, push-apart and air-probe methods, and why they fail; see below), `adaptive_hops.py` (an example plugin, rejected), `why_hops_jump.py` (side view of hops jumping layers), `make_twitter_graphic.py` |
 | `runs/` | Saved runs, one folder each (listed under [Saved runs](#saved-runs)) |
 | `figures/` | Pictures from `experiments/` |
@@ -205,7 +207,7 @@ Each run writes `runs/<name>/`:
 
 | File | How to read it |
 | --- | --- |
-| terminal | One line per test: PASS/FAIL, a short reason, seconds, and the first named cause |
+| terminal | One line per test: PASS/FAIL, a short reason, the double-layer check (`layers: clean / specks / mild / stacked`, see `VERIFY.md`), seconds, and the first named cause |
 | `scorecard.png` | Sheets down the side, methods across. Green passes on every seed; red shows what went wrong on the worst seed |
 | `gallery_bent.png` | Each row: the crumpled input (coloured by where each dot sits on the paper) and every method's result, lined up with the original square (grey outline). Colour = how far each patch landed from its true place, pale to dark. Red = folded over. Thin lines = graph paper printed on the sheet |
 | `gallery_stretched.png` | The same for stretched sheets, but results are coloured by the paper's own print, because the square is not their target. A smooth blend is good; speckle means parts landed together. Under each panel: the spread of short lengths against the 3-D sheet (1× = unchanged) |
@@ -213,6 +215,16 @@ Each run writes `runs/<name>/`:
 | `results.json` | `settings` (the command's options) and `tests`. Each test, keyed `"<sheet> / <method>"`, holds `passed`, `seeds_passed`, `words` (the scorecard text), `worst` (every number for the worst seed) and `causes` |
 | `layouts.npz` | The worst seed's flat result for each test, keyed `"<sheet> / <method>|<seed>"`. `--redraw` uses it to redraw galleries without rerunning |
 | `comparison.json` | Only with `--against`: the tests that were `fixed`, `broken` or `still_failing` |
+
+## The double-layer check
+
+Every test also runs `verify.py`, which uses only the dots and the flat result (no truth),
+so it is the measure to use on real data. It flags dots that the flat result puts more than
+2x closer than they really are in 3-D. Bent paper can never come out closer, so one big
+connected patch of such dots means part of the sheet lies on top of another. On the saved
+runs without heavy noise it read `stacked` for 117 of 117 truly folded results, with 3
+false alarms, all plane projections that crush part of the sheet. It cannot see a double
+layer much thinner than the dot spacing. Full guide: [VERIFY.md](VERIFY.md).
 
 ## Named causes of failure
 
@@ -366,6 +378,8 @@ dots do not give directly: links that never cross, and the outline in the right 
 
 ### Pulling the paper apart (2026-11-09)
 
+The fair version (strings to the 10 closest dots, no filtering) is the suite method `pull_k10` in `pull.py`; `experiments/pull_apart.py` imports its `pull`.
+
 Question: would pulling a crumpled sheet apart, as you would by hand, make the hard sheets
 easier? Code: `experiments/pull_apart.py` (part 1, part 2) and `pull_apart_figure.py`.
 Results: `runs/pull_apart/*.json`. Figure: `figures/pull_apart/pull_apart.png`. The pull
@@ -514,6 +528,18 @@ with `uv pip install --target <dir> gudhi` and `PYTHONPATH=<dir>`.
   - `blob_k10`: link each dot only to its own clump. 10/14 design, 8/10 held-out (fails
     `tight_roll`, `uneven_roll` and the four crumples).
   - Not a fair held-out check: thresholds were set while looking at all 24 sheets.
+- **Flap folded flat vs. loop that touches in one strip** (`fold_topology shapes`,
+  `runs/fold_topology/shapes.json`; the sheets from `fold_flatten.py` at gaps 0.005-0.10,
+  where the dot spacing is 0.031; seeds 100-102). Loop at gap 0.05 (1.6 spacings): every
+  lasting loop starts on a wrong link and is born at the gap (1.94 spacings). Cutting removes
+  exactly the 254-275 wrong links, leaving 0. Loop at gap 0.02 or less: the hole is still
+  found at the touching strip (2-21 lasting loops), but it is credited to an ordinary
+  one-dot-long link. The short wrong links enter the filtration before the paper's own
+  links, so a paper link completes the ring. Cutting then leaves 1,125-1,571 wrong links.
+  Flap at 1.6 spacings: cutting leaves 1,169-1,510 of about 2,360, because the band of
+  contact runs into the crease and closes no hole. A loop count is not a fold count: at
+  1.6 spacings the wrong links along the strip are rungs without triangles between them, so
+  the one fold gives 59-77 lasting loops.
 
 ### Up side carried along the paper, and the height split's weak spot (2026-11-11)
 

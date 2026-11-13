@@ -22,6 +22,7 @@ from .diagnose import diagnose
 from .methods import METHOD_NOTES, METHODS
 from .scoring import TEAR_TOLERANCE, score_layout, to_grid_order
 from .sheets import SHEETS, make_instance
+from .verify import summary_words, verify
 
 ROOT = Path(__file__).resolve().parent / "runs"
 DEFAULT_METHODS = ["best_fit_plane", "tangent_plane", "isomap_k10", "check_k10", "convex_edge"]
@@ -64,6 +65,11 @@ def run_one(fn, instance, seed):
     seconds = time.time() - start
     result = {**score_layout(flat, instance.uv, instance.xyz, instance.grid, instance.sheet.family),
               "seconds": seconds}
+    seen = np.empty_like(instance.points)                 # the dots the method saw, in paper order
+    seen[instance.order] = instance.points
+    layers = verify(seen, flat)                           # no truth: dots and flat result only
+    result["double_layer"] = {k: v for k, v in layers.items() if k != "per_dot"}
+    result["double_layer"]["words"] = summary_words(layers)
     return {"result": result, "flat": flat, "info": info, "diagnosis": diagnose(flat, instance, result, info)}
 
 
@@ -182,8 +188,9 @@ def main(argv=None):
                              "words": failure_words(r), "worst": r,
                              "causes": worst["diagnosis"]["causes"]}
             detail[test] = worst
+            layers = r.get("double_layer", {}).get("words", "-")
             print(f"{'PASS' if summary[test]['passed'] else 'FAIL'}  {test:42s} {failure_words(r):16s} "
-                  f"{r['seconds']:5.1f}s" + ("" if summary[test]["passed"] else
+                  f"layers: {layers:24s} {r['seconds']:5.1f}s" + ("" if summary[test]["passed"] else
                                              f"  <- {worst['diagnosis']['causes'][0]['cause']}"
                                              if worst["diagnosis"]["causes"] else ""), flush=True)
             if not summary[test]["passed"] and worst["flat"] is not None:
