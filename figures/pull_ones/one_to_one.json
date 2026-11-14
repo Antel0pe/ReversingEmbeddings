@@ -1,0 +1,290 @@
+{
+ "generated / raw / 2": {
+  "reading": "stacked",
+  "flagged_share": 0.996,
+  "stacked_share": 0.996,
+  "biggest_patch_share": 0.996,
+  "typical_ratio": 9.549891913820602,
+  "flagged_ratio": 9.57497979245734,
+  "short_lengths_10th_90th": [
+   0.3857647530157949,
+   1.6897510276913217
+  ]
+ },
+ "generated / raw / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.994,
+  "stacked_share": 0.994,
+  "biggest_patch_share": 0.994,
+  "typical_ratio": 5.786903218444191,
+  "flagged_ratio": 5.806117921795544,
+  "short_lengths_10th_90th": [
+   0.45809987064393826,
+   1.4293749328974512
+  ]
+ },
+ "generated / raw / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.395,
+  "stacked_share": 0.372,
+  "biggest_patch_share": 0.17,
+  "typical_ratio": 1.807264526766093,
+  "flagged_ratio": 2.6061092352418966,
+  "short_lengths_10th_90th": [
+   0.6108562005604473,
+   1.2511934738866222
+  ]
+ },
+ "generated / raw / 10": {
+  "reading": "stacked",
+  "flagged_share": 0.212,
+  "stacked_share": 0.171,
+  "biggest_patch_share": 0.049,
+  "typical_ratio": 1.6129578858803415,
+  "flagged_ratio": 2.306598872300037,
+  "short_lengths_10th_90th": [
+   0.6988907964154846,
+   1.184705093517293
+  ]
+ },
+ "generated / walking / 2": {
+  "reading": "stacked",
+  "flagged_share": 0.995,
+  "stacked_share": 0.995,
+  "biggest_patch_share": 0.995,
+  "typical_ratio": 7.695284413822597,
+  "flagged_ratio": 7.701786948090195,
+  "short_lengths_10th_90th": [
+   0.40267749459270497,
+   1.4808404940407154
+  ]
+ },
+ "generated / walking / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.598,
+  "stacked_share": 0.592,
+  "biggest_patch_share": 0.592,
+  "typical_ratio": 2.2307249480881444,
+  "flagged_ratio": 2.738252370066838,
+  "short_lengths_10th_90th": [
+   0.5672150778111269,
+   1.5170542325432428
+  ]
+ },
+ "generated / walking / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.382,
+  "stacked_share": 0.37,
+  "biggest_patch_share": 0.2,
+  "typical_ratio": 1.801747832799205,
+  "flagged_ratio": 2.5167907198673642,
+  "short_lengths_10th_90th": [
+   0.6642427627378298,
+   1.534961891549959
+  ]
+ },
+ "generated / walking / 10": {
+  "reading": "stacked",
+  "flagged_share": 0.254,
+  "stacked_share": 0.225,
+  "biggest_patch_share": 0.073,
+  "typical_ratio": 1.6545624962415248,
+  "flagged_ratio": 2.358362694496768,
+  "short_lengths_10th_90th": [
+   0.6869377892409424,
+   1.540782203574949
+  ]
+ },
+ "generated / pulled / 2": {
+  "reading": "stacked",
+  "flagged_share": 0.998,
+  "stacked_share": 0.998,
+  "biggest_patch_share": 0.998,
+  "typical_ratio": 7.850823918230023,
+  "flagged_ratio": 7.85363704412168,
+  "short_lengths_10th_90th": [
+   0.4490992557435292,
+   1.3657461678886789
+  ]
+ },
+ "generated / pulled / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.451,
+  "stacked_share": 0.439,
+  "biggest_patch_share": 0.439,
+  "typical_ratio": 1.9133686743530172,
+  "flagged_ratio": 2.5910551833139888,
+  "short_lengths_10th_90th": [
+   0.6554791978738235,
+   1.1944877897896649
+  ]
+ },
+ "generated / pulled / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.114,
+  "stacked_share": 0.081,
+  "biggest_patch_share": 0.02,
+  "typical_ratio": 1.4970188524919963,
+  "flagged_ratio": 2.2018442575145483,
+  "short_lengths_10th_90th": [
+   0.7783119395130372,
+   1.1285943041289992
+  ]
+ },
+ "generated / pulled / 10": {
+  "reading": "specks",
+  "flagged_share": 0.004,
+  "stacked_share": 0.0,
+  "biggest_patch_share": 0.002,
+  "typical_ratio": 1.3012449101578798,
+  "flagged_ratio": 2.2148822438920384,
+  "short_lengths_10th_90th": [
+   0.8838414571108246,
+   1.0591600206617198
+  ]
+ },
+ "mnist / raw / 2": {
+  "reading": "stacked",
+  "flagged_share": 1.0,
+  "stacked_share": 1.0,
+  "biggest_patch_share": 1.0,
+  "typical_ratio": 10.102483570145816,
+  "flagged_ratio": 10.102483570145816,
+  "short_lengths_10th_90th": [
+   0.37995148313622296,
+   1.7908967156501763
+  ]
+ },
+ "mnist / raw / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.973,
+  "stacked_share": 0.973,
+  "biggest_patch_share": 0.973,
+  "typical_ratio": 5.124951319085669,
+  "flagged_ratio": 5.234106438035468,
+  "short_lengths_10th_90th": [
+   0.4722668501634436,
+   1.5550787392183583
+  ]
+ },
+ "mnist / raw / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.737,
+  "stacked_share": 0.737,
+  "biggest_patch_share": 0.737,
+  "typical_ratio": 2.484742518464846,
+  "flagged_ratio": 2.8029245893315453,
+  "short_lengths_10th_90th": [
+   0.5887493904272584,
+   1.3580062449782162
+  ]
+ },
+ "mnist / raw / 10": {
+  "reading": "stacked",
+  "flagged_share": 0.118,
+  "stacked_share": 0.088,
+  "biggest_patch_share": 0.042,
+  "typical_ratio": 1.5523922189187576,
+  "flagged_ratio": 2.2913016833891833,
+  "short_lengths_10th_90th": [
+   0.7104321152593878,
+   1.2286680844262594
+  ]
+ },
+ "mnist / walking / 2": {
+  "reading": "stacked",
+  "flagged_share": 0.99,
+  "stacked_share": 0.99,
+  "biggest_patch_share": 0.99,
+  "typical_ratio": 8.382133882690194,
+  "flagged_ratio": 8.409773546876112,
+  "short_lengths_10th_90th": [
+   0.3611298294001937,
+   1.5928028458196424
+  ]
+ },
+ "mnist / walking / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.946,
+  "stacked_share": 0.946,
+  "biggest_patch_share": 0.946,
+  "typical_ratio": 4.332652436493376,
+  "flagged_ratio": 4.4631206612216685,
+  "short_lengths_10th_90th": [
+   0.47947852890270654,
+   1.5331664748182978
+  ]
+ },
+ "mnist / walking / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.646,
+  "stacked_share": 0.646,
+  "biggest_patch_share": 0.646,
+  "typical_ratio": 2.305252254272193,
+  "flagged_ratio": 2.7653014125315334,
+  "short_lengths_10th_90th": [
+   0.6078970061678068,
+   1.5154450219656381
+  ]
+ },
+ "mnist / walking / 10": {
+  "reading": "stacked",
+  "flagged_share": 0.308,
+  "stacked_share": 0.296,
+  "biggest_patch_share": 0.206,
+  "typical_ratio": 1.6944336381952667,
+  "flagged_ratio": 2.480435955016196,
+  "short_lengths_10th_90th": [
+   0.6818310682382808,
+   1.4921994496391433
+  ]
+ },
+ "mnist / pulled / 2": {
+  "reading": "stacked",
+  "flagged_share": 0.996,
+  "stacked_share": 0.996,
+  "biggest_patch_share": 0.996,
+  "typical_ratio": 11.604564684707253,
+  "flagged_ratio": 11.652557022762299,
+  "short_lengths_10th_90th": [
+   0.40497916197718087,
+   1.5671901771874024
+  ]
+ },
+ "mnist / pulled / 3": {
+  "reading": "stacked",
+  "flagged_share": 0.936,
+  "stacked_share": 0.936,
+  "biggest_patch_share": 0.936,
+  "typical_ratio": 4.318072827992272,
+  "flagged_ratio": 4.51247585823268,
+  "short_lengths_10th_90th": [
+   0.5476788633624381,
+   1.3518300993673966
+  ]
+ },
+ "mnist / pulled / 5": {
+  "reading": "stacked",
+  "flagged_share": 0.489,
+  "stacked_share": 0.489,
+  "biggest_patch_share": 0.489,
+  "typical_ratio": 1.9961478622511497,
+  "flagged_ratio": 2.446143047776385,
+  "short_lengths_10th_90th": [
+   0.6898304567904338,
+   1.2180771532460197
+  ]
+ },
+ "mnist / pulled / 10": {
+  "reading": "stacked",
+  "flagged_share": 0.088,
+  "stacked_share": 0.077,
+  "biggest_patch_share": 0.044,
+  "typical_ratio": 1.527856094391928,
+  "flagged_ratio": 2.268707390607544,
+  "short_lengths_10th_90th": [
+   0.8016485968402078,
+   1.127457468711561
+  ]
+ }
+}

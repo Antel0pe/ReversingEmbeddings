@@ -1,0 +1,294 @@
+{
+ "generated": {
+  "lle_k10_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.9979234648472264,
+   "stacked_share": 0.9979234648472264,
+   "biggest_patch_share": 0.9979234648472264,
+   "patches": 1,
+   "typical_ratio": 43.07850935628586,
+   "flagged_ratio": 43.188519556739124
+  },
+  "lle_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9774547611984574,
+   "stacked_share": 0.9774547611984574,
+   "biggest_patch_share": 0.9774547611984574,
+   "patches": 1,
+   "typical_ratio": 5.6206355913964705,
+   "flagged_ratio": 5.704238905997066
+  },
+  "lle_k20_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.7236725007416197,
+   "stacked_share": 0.723375852862652,
+   "biggest_patch_share": 0.7223375852862652,
+   "patches": 2,
+   "typical_ratio": 2.553697062698128,
+   "flagged_ratio": 2.9167284799368502
+  },
+  "lle_k20_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.9998516760605162,
+   "stacked_share": 0.9998516760605162,
+   "biggest_patch_share": 0.9998516760605162,
+   "patches": 1,
+   "typical_ratio": 30.531274793914346,
+   "flagged_ratio": 30.535457002882396
+  },
+  "lle_k20_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.8435182438445565,
+   "stacked_share": 0.8435182438445565,
+   "biggest_patch_share": 0.8435182438445565,
+   "patches": 1,
+   "typical_ratio": 3.0173338174642463,
+   "flagged_ratio": 3.282007540989815
+  },
+  "lle_k40_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.7104716701275586,
+   "stacked_share": 0.7080984870958172,
+   "biggest_patch_share": 0.7080984870958172,
+   "patches": 1,
+   "typical_ratio": 2.435915737513672,
+   "flagged_ratio": 2.7444814481761393
+  },
+  "lle_k40_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.9997033521210323,
+   "stacked_share": 0.9997033521210323,
+   "biggest_patch_share": 0.9997033521210323,
+   "patches": 1,
+   "typical_ratio": 19.21964831084981,
+   "flagged_ratio": 19.226203608846333
+  },
+  "lle_k40_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9322159596558884,
+   "stacked_share": 0.9322159596558884,
+   "biggest_patch_share": 0.9322159596558884,
+   "patches": 1,
+   "typical_ratio": 3.4944991710473357,
+   "flagged_ratio": 3.598988070028264
+  },
+  "plane_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.6023435182438446,
+   "stacked_share": 0.6011569267279739,
+   "biggest_patch_share": 0.6011569267279739,
+   "patches": 1,
+   "typical_ratio": 2.1379177027554848,
+   "flagged_ratio": 2.448466862275924
+  },
+  "plane_d2": {
+   "reading": "stacked",
+   "flagged_share": 1.0,
+   "stacked_share": 1.0,
+   "biggest_patch_share": 1.0,
+   "patches": 1,
+   "typical_ratio": 23.44729131172829,
+   "flagged_ratio": 23.44729131172829
+  },
+  "plane_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.7794423019875408,
+   "stacked_share": 0.7791456541085732,
+   "biggest_patch_share": 0.7791456541085732,
+   "patches": 1,
+   "typical_ratio": 2.634242442958639,
+   "flagged_ratio": 2.9465019715089875
+  },
+  "walk_k10_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.377632749925838,
+   "stacked_share": 0.3757045387125482,
+   "biggest_patch_share": 0.37051320083061406,
+   "patches": 6,
+   "typical_ratio": 1.8410589885329598,
+   "flagged_ratio": 2.3595025872019457
+  },
+  "walk_k10_d2": {
+   "reading": "stacked",
+   "flagged_share": 1.0,
+   "stacked_share": 1.0,
+   "biggest_patch_share": 1.0,
+   "patches": 1,
+   "typical_ratio": 18.045496913314608,
+   "flagged_ratio": 18.045496913314608
+  },
+  "walk_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.5723820824681104,
+   "stacked_share": 0.5723820824681104,
+   "biggest_patch_share": 0.5688223079204984,
+   "patches": 3,
+   "typical_ratio": 2.123848229871593,
+   "flagged_ratio": 2.6105136188524694
+  }
+ },
+ "mnist": {
+  "lle_k10_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.999110056363097,
+   "stacked_share": 0.999110056363097,
+   "biggest_patch_share": 0.999110056363097,
+   "patches": 1,
+   "typical_ratio": 32.328925902130884,
+   "flagged_ratio": 32.37505638854643
+  },
+  "lle_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.994660338178582,
+   "stacked_share": 0.994660338178582,
+   "biggest_patch_share": 0.994660338178582,
+   "patches": 1,
+   "typical_ratio": 6.3436889307158415,
+   "flagged_ratio": 6.363470569577633
+  },
+  "lle_k20_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.8211213289824978,
+   "stacked_share": 0.8211213289824978,
+   "biggest_patch_share": 0.8211213289824978,
+   "patches": 1,
+   "typical_ratio": 2.97481270732864,
+   "flagged_ratio": 3.3124470111795303
+  },
+  "lle_k20_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.6317116582616434,
+   "stacked_share": 0.6314150103826758,
+   "biggest_patch_share": 0.6314150103826758,
+   "patches": 1,
+   "typical_ratio": 2.287425681353488,
+   "flagged_ratio": 2.794773731872198
+  },
+  "lle_k20_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.996440225452388,
+   "stacked_share": 0.996440225452388,
+   "biggest_patch_share": 0.996440225452388,
+   "patches": 1,
+   "typical_ratio": 23.303767883166934,
+   "flagged_ratio": 23.386178106151238
+  },
+  "lle_k20_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9185701572233759,
+   "stacked_share": 0.9185701572233759,
+   "biggest_patch_share": 0.9185701572233759,
+   "patches": 1,
+   "typical_ratio": 4.305890589023935,
+   "flagged_ratio": 4.551847901951925
+  },
+  "lle_k40_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.6091664194601009,
+   "stacked_share": 0.6084247997626817,
+   "biggest_patch_share": 0.6084247997626817,
+   "patches": 1,
+   "typical_ratio": 2.4188780535061305,
+   "flagged_ratio": 3.78389701077683
+  },
+  "lle_k40_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.5369326609314743,
+   "stacked_share": 0.5360427172945713,
+   "biggest_patch_share": 0.5360427172945713,
+   "patches": 1,
+   "typical_ratio": 2.1349626817679717,
+   "flagged_ratio": 3.284050628317633
+  },
+  "lle_k40_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.9962919015129041,
+   "stacked_share": 0.9962919015129041,
+   "biggest_patch_share": 0.9962919015129041,
+   "patches": 1,
+   "typical_ratio": 20.909256912839126,
+   "flagged_ratio": 21.055899715751988
+  },
+  "lle_k40_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.8593889053693267,
+   "stacked_share": 0.8593889053693267,
+   "biggest_patch_share": 0.8593889053693267,
+   "patches": 1,
+   "typical_ratio": 3.942077380344779,
+   "flagged_ratio": 4.553355169918346
+  },
+  "plane_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.21966775437555622,
+   "stacked_share": 0.20542865618510828,
+   "biggest_patch_share": 0.10353010975971522,
+   "patches": 7,
+   "typical_ratio": 1.6615906481250495,
+   "flagged_ratio": 2.306314545184584
+  },
+  "plane_d15": {
+   "reading": "mild",
+   "flagged_share": 0.06377929397804806,
+   "stacked_share": 0.049836843666567786,
+   "biggest_patch_share": 0.032334618807475526,
+   "patches": 4,
+   "typical_ratio": 1.4121455493272694,
+   "flagged_ratio": 2.25494355722704
+  },
+  "plane_d2": {
+   "reading": "stacked",
+   "flagged_share": 1.0,
+   "stacked_share": 1.0,
+   "biggest_patch_share": 1.0,
+   "patches": 1,
+   "typical_ratio": 24.986864085813586,
+   "flagged_ratio": 24.986864085813586
+  },
+  "plane_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9455651142094335,
+   "stacked_share": 0.9455651142094335,
+   "biggest_patch_share": 0.9455651142094335,
+   "patches": 1,
+   "typical_ratio": 3.2924435106203616,
+   "flagged_ratio": 3.363735482825043
+  },
+  "walk_k10_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.3983981014535746,
+   "stacked_share": 0.39721150993770393,
+   "biggest_patch_share": 0.39721150993770393,
+   "patches": 1,
+   "typical_ratio": 1.8621475815607509,
+   "flagged_ratio": 2.41975443479885
+  },
+  "walk_k10_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.3104420053396618,
+   "stacked_share": 0.3059922871551468,
+   "biggest_patch_share": 0.3059922871551468,
+   "patches": 1,
+   "typical_ratio": 1.7434704844241944,
+   "flagged_ratio": 2.352962381726464
+  },
+  "walk_k10_d2": {
+   "reading": "stacked",
+   "flagged_share": 0.998220112726194,
+   "stacked_share": 0.998220112726194,
+   "biggest_patch_share": 0.998220112726194,
+   "patches": 1,
+   "typical_ratio": 25.096747945131042,
+   "flagged_ratio": 25.13292577045862
+  },
+  "walk_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.7781073865321863,
+   "stacked_share": 0.7781073865321863,
+   "biggest_patch_share": 0.7781073865321863,
+   "patches": 1,
+   "typical_ratio": 2.603745036297389,
+   "flagged_ratio": 2.8639078533567743
+  }
+ }
+}

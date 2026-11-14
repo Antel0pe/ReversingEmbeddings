@@ -1,0 +1,16 @@
+{
+ "against": "current:isomap_k10",
+ "fixed": [],
+ "broken": [
+  "h_dents23 / pull_k10"
+ ],
+ "still_failing": [
+  "s_curl / pull_k10",
+  "tight_roll / pull_k10",
+  "crumple / pull_k10",
+  "hard_crumple / pull_k10",
+  "h_roll5 / pull_k10",
+  "h_crumple17 / pull_k10",
+  "h_crumple29 / pull_k10"
+ ]
+}

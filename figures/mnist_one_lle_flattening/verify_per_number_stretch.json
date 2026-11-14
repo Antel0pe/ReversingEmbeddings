@@ -1,0 +1,204 @@
+{
+ "generated": {
+  "lle_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9866508454464551,
+   "stacked_share": 0.9866508454464551,
+   "biggest_patch_share": 0.9866508454464551,
+   "patches": 1,
+   "typical_ratio": 8.932852706212111,
+   "flagged_ratio": 9.044240157776553
+  },
+  "lle_k20_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.7619400771284486,
+   "stacked_share": 0.7619400771284486,
+   "biggest_patch_share": 0.7619400771284486,
+   "patches": 1,
+   "typical_ratio": 2.6254491701209144,
+   "flagged_ratio": 2.9494666363940887
+  },
+  "lle_k20_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.8022841886680511,
+   "stacked_share": 0.8022841886680511,
+   "biggest_patch_share": 0.8022841886680511,
+   "patches": 1,
+   "typical_ratio": 2.7943960651613162,
+   "flagged_ratio": 3.0937567555145113
+  },
+  "lle_k40_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.7347967962029072,
+   "stacked_share": 0.7342035004449718,
+   "biggest_patch_share": 0.7342035004449718,
+   "patches": 1,
+   "typical_ratio": 2.4837398345944823,
+   "flagged_ratio": 2.7617604023012667
+  },
+  "lle_k40_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9101156926727973,
+   "stacked_share": 0.9101156926727973,
+   "biggest_patch_share": 0.9101156926727973,
+   "patches": 1,
+   "typical_ratio": 3.146096846258075,
+   "flagged_ratio": 3.2844226742018754
+  },
+  "plane_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.495550281815485,
+   "stacked_share": 0.48991397211509935,
+   "biggest_patch_share": 0.48427766241471376,
+   "patches": 5,
+   "typical_ratio": 1.9961480526266333,
+   "flagged_ratio": 2.3842489212448923
+  },
+  "plane_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.7752892316819935,
+   "stacked_share": 0.7749925838030258,
+   "biggest_patch_share": 0.7749925838030258,
+   "patches": 1,
+   "typical_ratio": 2.614595638158212,
+   "flagged_ratio": 2.92194918482431
+  },
+  "walk_k10_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.3797092850786117,
+   "stacked_share": 0.3779293978048057,
+   "biggest_patch_share": 0.37258973598338774,
+   "patches": 5,
+   "typical_ratio": 1.8373133985557941,
+   "flagged_ratio": 2.3706758963975902
+  },
+  "walk_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.5668940967072086,
+   "stacked_share": 0.5668940967072086,
+   "biggest_patch_share": 0.5634826460990804,
+   "patches": 3,
+   "typical_ratio": 2.116146652635317,
+   "flagged_ratio": 2.607941356901878
+  }
+ },
+ "mnist": {
+  "lle_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9936220706021952,
+   "stacked_share": 0.9936220706021952,
+   "biggest_patch_share": 0.9936220706021952,
+   "patches": 1,
+   "typical_ratio": 6.32134928474288,
+   "flagged_ratio": 6.346506334946709
+  },
+  "lle_k20_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.8679916938593889,
+   "stacked_share": 0.8679916938593889,
+   "biggest_patch_share": 0.8679916938593889,
+   "patches": 1,
+   "typical_ratio": 3.0968688818338723,
+   "flagged_ratio": 3.3180596076429953
+  },
+  "lle_k20_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.6999406704242065,
+   "stacked_share": 0.6999406704242065,
+   "biggest_patch_share": 0.6999406704242065,
+   "patches": 1,
+   "typical_ratio": 2.4544210707689174,
+   "flagged_ratio": 2.83728650572964
+  },
+  "lle_k20_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9359240581429843,
+   "stacked_share": 0.9359240581429843,
+   "biggest_patch_share": 0.9359240581429843,
+   "patches": 1,
+   "typical_ratio": 4.367259463751607,
+   "flagged_ratio": 4.5548505153395595
+  },
+  "lle_k40_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.5685256600415307,
+   "stacked_share": 0.5663008009492733,
+   "biggest_patch_share": 0.5663008009492733,
+   "patches": 1,
+   "typical_ratio": 2.2747157754781364,
+   "flagged_ratio": 3.738111868857775
+  },
+  "lle_k40_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.5376742806288936,
+   "stacked_share": 0.5367843369919905,
+   "biggest_patch_share": 0.5357460694156037,
+   "patches": 2,
+   "typical_ratio": 2.0978051808203118,
+   "flagged_ratio": 3.069191684233923
+  },
+  "lle_k40_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.8352121032334618,
+   "stacked_share": 0.8352121032334618,
+   "biggest_patch_share": 0.8352121032334618,
+   "patches": 1,
+   "typical_ratio": 3.6605092670885764,
+   "flagged_ratio": 4.339818942549364
+  },
+  "plane_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.2023138534559478,
+   "stacked_share": 0.18407000889943637,
+   "biggest_patch_share": 0.09107089884307328,
+   "patches": 12,
+   "typical_ratio": 1.6460688270421713,
+   "flagged_ratio": 2.298442947172142
+  },
+  "plane_d15": {
+   "reading": "mild",
+   "flagged_share": 0.05799466033817858,
+   "stacked_share": 0.045980421239988134,
+   "biggest_patch_share": 0.029516463957282704,
+   "patches": 4,
+   "typical_ratio": 1.3941880907781825,
+   "flagged_ratio": 2.249207239659273
+  },
+  "plane_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.9467517057253041,
+   "stacked_share": 0.9467517057253041,
+   "biggest_patch_share": 0.9467517057253041,
+   "patches": 1,
+   "typical_ratio": 3.3186559712344694,
+   "flagged_ratio": 3.3820496054923384
+  },
+  "walk_k10_d10": {
+   "reading": "stacked",
+   "flagged_share": 0.4224265796499555,
+   "stacked_share": 0.42212993177098784,
+   "biggest_patch_share": 0.42212993177098784,
+   "patches": 1,
+   "typical_ratio": 1.8837655111887432,
+   "flagged_ratio": 2.4286233765003846
+  },
+  "walk_k10_d15": {
+   "reading": "stacked",
+   "flagged_share": 0.3344704835360427,
+   "stacked_share": 0.33224562444378525,
+   "biggest_patch_share": 0.3313556808068822,
+   "patches": 2,
+   "typical_ratio": 1.781207623425084,
+   "flagged_ratio": 2.3767749661544095
+  },
+  "walk_k10_d5": {
+   "reading": "stacked",
+   "flagged_share": 0.7577870068229012,
+   "stacked_share": 0.7577870068229012,
+   "biggest_patch_share": 0.7577870068229012,
+   "patches": 1,
+   "typical_ratio": 2.558707644871897,
+   "flagged_ratio": 2.8337447795207953
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "generated": {
+  "reading": "specks",
+  "flagged_share": 0.002,
+  "stacked_share": 0.0,
+  "biggest_patch_share": 0.002,
+  "patches": 0,
+  "typical_ratio": 1.2121903258900832,
+  "flagged_ratio": 2.283965954042714,
+  "squeeze_worst": 2.283965954042714,
+  "squeeze_99th": 1.7527246561826826,
+  "squeeze_median": 1.2121903258900832,
+  "close_pairs_after_over_before_10th_50th_90th_max": [
+   0.9961637546249549,
+   1.0,
+   1.0109071193094856,
+   1.2277792353307397
+  ],
+  "string_stretch_median": 0.0017499915200578364
+ },
+ "mnist": {
+  "reading": "specks",
+  "flagged_share": 0.011,
+  "stacked_share": 0.0,
+  "biggest_patch_share": 0.004,
+  "patches": 0,
+  "typical_ratio": 1.3231485214792569,
+  "flagged_ratio": 2.2321726752213205,
+  "squeeze_worst": 2.606902712661243,
+  "squeeze_99th": 2.042682607257034,
+  "squeeze_median": 1.3231485214792569,
+  "close_pairs_after_over_before_10th_50th_90th_max": [
+   0.9988377325320917,
+   1.0,
+   1.002409739917001,
+   1.0495134504722705
+  ],
+  "string_stretch_median": 0.00040112481560627966
+ }
+}

@@ -562,6 +562,72 @@ Results: `runs/up_loops/` and `runs/height_split/concern.json`. Figure: `figures
   that is about 1,300 dots, all in the innermost turns. Crumples are excluded because FAR
   mislabels squashed same-layer paper as another layer there.
 
+### Two directions carried outward from one dot (2026-11-13)
+
+Code: `experiments/carry_frame.py` (+ `carry_frame_figure.py`). Results: `runs/carry_frame/main.json`
+(24 sheets, seeds 100-102) and `smooth.json` (choosing version C's pull, design sheets only).
+Figure: `figures/carry_frame/carry_frame.png`. Also usable as suite methods via `--plugin unfolding_suite/experiments/carry_frame.py`:
+`carry_tree`, `carry_relax`, `carry_stretch`.
+
+The idea: at a start dot near the middle, the sheet's two directions (a plane through its 12
+nearest dots) are the flat page's axes. Walk outward along up_loops' tree (same "up", same
+most-parallel-first order). At each dot, turn the carried pair as little as possible into that
+dot's own plane, write the step from the parent in it, and place the dot. **A** stops there.
+**B** keeps the carried directions but lets every link vote on placement (one sparse least
+squares). **C** also gives each dot a stretch-and-turn that varies slowly and is pulled gently
+toward none; without that pull shrinking the page is free, and a crumple shrank to 3-30%.
+
+| Version | Design (14) | Held-out (10) | Notes |
+| --- | ---: | ---: | --- |
+| A one walk, turning only | 8 | 5 | Every gently bent sheet passes. Tears at sharp creases (`accordion`, `h_fan3`); folds every stretched sheet but `uneven_roll` |
+| B every link votes | 11 | 6 | Same design passes as `check_k10`; misses `h_dents23` on one seed by 0.04% flipped |
+| C plus stretch | 11 | 6 | Best of the three on crumples (2-27% folded) but still far behind `check_k10` (1-10%) and shrinks parts to 0.08-0.4x |
+
+With the paper's true neighbours (cheat control) B and C also pass `h_roll5`, which `check_k10`
+fails: its failure with fair links is 211 links across layers, not the layout.
+
+**Loop miss** (for each link the tree did not use, how far version A's placement disagrees with
+that link's own step, as a share of its length; 95th percentile, median over seeds):
+0.000-0.08 on every bent sheet except the rolls whose layers sit within a plane fit
+(`h_roll5` 0.12, `tight_roll` 1.05 with true links), 0.31-0.73 on `bowl` and the dents,
+1.1-2.8 on the crumples. `uneven_roll` is stretched but reads 0.05-0.06: its stretch varies only
+along the rolling direction, so it can be laid flat without further stretching, just not as the
+square. Loop miss measures "cannot be laid flat by turning alone", not "was stretched".
+
+### Pressing flat, and grow-flatten-join (2026-11-13)
+
+Two ideas, each with true / nearest-10 / `checked_links` strings, 14 sheets (design + `h_roll5`,
+`h_crumple17`, `h_crumple29`), **seed 100 only**. Code: `experiments/press_flat.py`,
+`experiments/patch_stitch.py`, `experiments/press_flat_figure.py`. Results:
+`runs/press_flat/main_seeds100.json`, `runs/patch_stitch/seeds100.json`. Figures:
+`figures/press_flat/`.
+
+- **Press:** two plates parallel to the cloud's best plane close on it (a dot feels a plate only
+  once outside the gap; strings as in `pull.py`; paper may pass through itself). Gap shrinks by
+  0.9 per step over 60 steps, 900 L-BFGS iterations each. Closing faster (0.75, 20 steps) folds
+  6% of `wave` even with true links (the folds sit on its steepest slopes). Slow pressing passes
+  only sheets with no overhang over the plates' plane: `flat`, `wave`, `accordion`, `bowl`,
+  `dents`. `cone` (4% of its area faces away from the plane) folds 9-10%. Every overhanging
+  sheet fails **with true links too**: `s_curl` 90-97%, `roll` 54-56%, `h_roll5` 41-48%,
+  `tight_roll` 31-46%, crumples 14-63%. A folded-flat sheet keeps every string length, so the
+  plates cannot prefer the unfolded one; a roll becomes a squashed tube.
+- **Press plus the `pull.py` outward push:** true links 10/14 (crumples 1-10%), checked 9/14
+  (`tight_roll` 18%). The pull unrolls the sheet before the plates touch it, so this is the pull.
+- **Grow-flatten-join:** 8 or 40 random seeds; every dot joins the seed nearest by walking along
+  strings; each region plus a 2-hop rim is laid out by walking inside it; pieces are joined
+  pairwise (most shared dots first) by the best turn + shift + mirror on shared dots, shared dots
+  averaged, repeated until one piece. Optional `settle` relaxes the joined piece's strings in 2-D
+  after each join. True links: every bent sheet passes, including `tight_roll`. Nearest:
+  `s_curl` 63-89% (walking with the same links: 9%), `h_roll5` 19-33%, `tight_roll` 24-36%.
+  Checked + settle: 9/14, the same passes as `check_k10` on these sheets; `tight_roll` 20%,
+  crumples much worse (3-7%, 33-73%, 45-50%, 12-65% against 1%, 1%, 5%, 10%). Rigid joins
+  fail `bowl`/`dents` slightly; settling fixes them. 8 versus 40 seeds: no consistent winner.
+- **Why it fails on `s_curl` (nearest, 8 seeds):** all 12 jump links sit on the paper's top and
+  bottom edges. The 4 pieces that hold one come out folded on their own (0.7-4.0%); the other 4
+  are 0.0%. Joining then turns or mirrors whole pieces to fit the misplaced shared dots, and each
+  round copies that up. Removing the 12 jump links makes the same run pass. Each piece's own fold
+  is therefore a per-piece warning of jump links; using it (drop or regrow those pieces) is untested.
+
 ### Saved runs
 
 | Folder | What it is |
@@ -572,7 +638,9 @@ Results: `runs/up_loops/` and `runs/height_split/concern.json`. Figure: `figures
 | `runs/tight_roll_16k_dots/`, `_66k_dots/`, `_263k_dots/` | `convex_edge` on `tight_roll` with more dots |
 | `runs/noise_0.1/`, `runs/noise_0.3/` | Five sheets with 3-D noise |
 | `runs/fold_flatten/` | Creased-then-folded sheets, four methods, the closer-than-real check |
+| `runs/carry_frame/` | Two directions carried outward from one dot: versions A/B/C, fair and true links, loop misses |
 | `runs/fold_topology/` | Topology fold detectors against walk-along-the-sheet truth (`truth_*.npz`), the transformation judge, and five flattening methods |
+| `runs/press_flat/`, `runs/patch_stitch/` | Pressing between closing plates (plus a press-and-pull variant), and grow-flatten-join, seed 100 |
 
 ## Background
 
