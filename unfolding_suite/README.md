@@ -628,6 +628,63 @@ Two ideas, each with true / nearest-10 / `checked_links` strings, 14 sheets (des
   round copies that up. Removing the 12 jump links makes the same run pass. Each piece's own fold
   is therefore a per-piece warning of jump links; using it (drop or regrow those pieces) is untested.
 
+### Finding and flipping folds after pressing (2026-11-14)
+
+Starts from the saved pressed layouts in `runs/press_flat/main_seeds100.json` (seed 100). Code:
+`experiments/press_unfold.py`, `press_unfold_figure.py`. Results: `runs/press_unfold/results.json`.
+Figures: `figures/press_unfold/`.
+
+- **Truth-free detector:** per dot, plane through the dot and its string partners; normals
+  oriented consistently along a minimum spanning tree of the strings (weight 1 - |n_i . n_j|);
+  2x2 least-squares map from the patch (in its oriented frame) to the flat result; its
+  determinant is the signed area change (+1 as-is, -1 mirror-image, ~0 squashed). Minority-sign
+  groups (specks under 0.5% absorbed) are the folded areas. Agreement with the truth's
+  mirror-image dots: 0.92-0.99 in all 33 cases (11 sheets x 3 link kinds); missed <= 2%,
+  false alarms <= 6%.
+- **Crease shape:** the area change crosses 0 within 2-4 dot spacings (sharp, ironed crease);
+  border dots have median |area change| 0.79-0.84.
+- **Unfold:** largest right-way-up group is the base; walking outward, each mirror-image group is
+  reflected, with everything beyond it, across the line fitted to its border; then the strings
+  settle in 2-D (`patch_stitch.settle_piece`, 1500 iterations). Settling without flipping changes
+  nothing (`roll` 54%, `s_curl` 92%). Passes: `cone`, `roll` (all link kinds), `s_curl` (true,
+  checked), `h_roll5` (true). Near misses, 3 stride-2 triangles at the paper's edge: `h_roll5`
+  checked, `tight_roll` true. `tight_roll` checked 31% (only 1 crease found: surviving jump links
+  merge layers). Nearest links: `s_curl` 29%, `h_roll5` 24%, `tight_roll` 33% (settling pulls
+  stapled layers back together). Crumples 6-47%: creases are short and curved (longest crease
+  3-11 dot spacings off its fitted line, against <= 2.1 over 20-48 dots on rolls, `s_curl`, `cone`).
+
+### The graphics recipe: woven triangles, Tutte, no-fold relaxation (2026-11-14)
+
+`experiments/mesh_recipe.py` registers `mesh_tutte` (steps 1-3) and `mesh_full` (1-4):
+(1) link check; (2) each dot Delaunay-triangulates its checked 16 nearest on its own fitted
+plane, a triangle is kept only if all three of its dots propose it, then cleanup to one
+orientable sheet (no edge in >2 triangles, one fan per dot, largest piece), interior holes
+closed by a fan around a temporary dot; (3) Tutte with the mesh's outer loop on a circle; (4)
+symmetric Dirichlet energy, L-BFGS with a step cap that never lets a triangle reach zero area.
+If the relaxed outline crosses itself, the relaxation is redone refusing any crossing step.
+`experiments/mesh_recipe_truth.py` runs steps 3-4 on the paper's TRUE triangles (cheat ceiling).
+Runs: `runs/mesh_recipe/` (final, `mesh_full`), `runs/mesh_recipe_v1/` (both methods, first
+version: the crossing guard was always on and stalled the relaxation at ~2% off the square on
+some seeds, e.g. `roll` 101). Developed on seed 0 design sheets; the fix to v1 came after
+seeing the fair seeds, so the held-out sheets are not a blind check for the final version.
+
+- **Fair run (seeds 100-102):** `mesh_full` passes 11/14 design and 7/10 held-out, exactly the
+  same sheets as `check_k10`. On every passed bent sheet it is 0.00-0.06% off the square (worst
+  seed), against 0.27-0.29% for `check_k10` and 0.45-0.47% for `convex_edge`. Failures are worse
+  where layers are close: `tight_roll` 56% (`check_k10` 16%), `h_roll5` 10% (`check_k10` passes
+  2 of 3 seeds), `h_crumple29` 51% (10%); `crumple`, `hard_crumple` 1% and `h_crumple17` 5%
+  equal `check_k10`. Cause on the rolls: the innermost turn's triangles conflict, the cleanup
+  keeps the largest piece, and up to 1,149 dots are left out and placed crudely.
+  1-18 s per sheet. `mesh_tutte` alone never meets the square check (corners squeezed).
+- **More dots, `tight_roll`:** 16,641 dots folds 59%; 66,049 still fails (`convex_edge` passes there).
+- **True triangles:** `mesh_full` passes all 20 non-crumpled sheets, `tight_roll` included
+  (0.07% off). On the four crumples it fails (1-5% folded, or rough), while `mesh_tutte` on true
+  triangles passes all four: copying unevenly stretched 3-D triangle shapes twists coarse
+  triangles and makes the stretch change abruptly against the paper grid. The first version
+  without any crossing guard also let the free outline cross itself on crumples.
+- **Long-side rule removed:** dropping triangles with a side over 2.5x the median spacing broke
+  stretched sheets into pieces (`uneven_roll` meshed 1,218 of 4,225 dots); it is off.
+
 ### Saved runs
 
 | Folder | What it is |
@@ -641,6 +698,7 @@ Two ideas, each with true / nearest-10 / `checked_links` strings, 14 sheets (des
 | `runs/carry_frame/` | Two directions carried outward from one dot: versions A/B/C, fair and true links, loop misses |
 | `runs/fold_topology/` | Topology fold detectors against walk-along-the-sheet truth (`truth_*.npz`), the transformation judge, and five flattening methods |
 | `runs/press_flat/`, `runs/patch_stitch/` | Pressing between closing plates (plus a press-and-pull variant), and grow-flatten-join, seed 100 |
+| `runs/mesh_recipe/`, `runs/mesh_recipe_v1/` | The graphics recipe (`mesh_full`), final and first version (with `mesh_tutte`); `truth_mesh.json` = true-triangle ceiling |
 
 ## Background
 

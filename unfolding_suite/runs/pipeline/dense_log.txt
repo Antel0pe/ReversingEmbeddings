@@ -1,0 +1,33 @@
+h_roll5|129|100|edge|own                   wrong     0 cut 0.000 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 19s
+h_roll5|129|100|edge|true_links            wrong     0 cut 0.001 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 14s
+h_roll5|129|100|edge|true_links_edge       wrong     0 cut 0.001 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 19s
+h_roll5|129|100|edge|true_mesh_edge        wrong     0 cut 0.438 | unfold not square 4%    0.0% check clean   | down found 0.000 true 0.000 | final not square 4%    0.0% clean | guarded not square 4% (unfold) 14s
+h_roll5|129|100|edge|true_mesh_circle      wrong     0 cut 0.438 | unfold not square 3%    0.0% check stacked | down found 0.000 true 0.000 | final not square 3%    0.0% stacked | guarded not square 3% (unfold) 12s
+h_roll5|129|100|walk|own                   wrong     0 cut 0.000 | unfold pass             0.0% check clean   | down found 0.000 true 0.000 | final pass             0.0% clean | guarded pass (unfold) 146s
+h_roll5|129|100|walk|true_links            wrong     0 cut 0.001 | unfold pass             0.0% check clean   | down found 0.000 true 0.000 | final pass             0.0% clean | guarded pass (unfold) 155s
+tight_roll|257|100|edge|own                wrong     0 cut 0.001 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 54s
+tight_roll|257|100|edge|true_links         wrong     0 cut 0.001 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 38s
+tight_roll|257|100|edge|true_links_edge    wrong     0 cut 0.001 | unfold pass             0.0% check specks  | down found 0.000 true 0.000 | final pass             0.0% specks | guarded pass (unfold) 40s
+tight_roll|257|100|edge|true_mesh_edge     wrong     0 cut 0.433 | unfold not square 4%    0.0% check clean   | down found 0.000 true 0.000 | final not square 4%    0.0% clean | guarded not square 4% (unfold) 33s
+tight_roll|257|100|edge|true_mesh_circle   wrong     0 cut 0.433 | unfold not square 3%    0.0% check stacked | down found 0.000 true 0.000 | final not square 3%    0.0% stacked | guarded not square 3% (unfold) 31s
+crumple|129|100|edge|own                   wrong     0 cut 0.000 | unfold folded 2%        1.6% check stacked | down found 0.006 true 0.009 | final folded 4%        3.9% stacked | guarded folded 4% (settle) 33s
+crumple|129|100|edge|true_links            wrong     0 cut 0.414 | unfold folded 0%        0.0% check stacked | down found 0.000 true 0.001 | final folded 0%        0.0% stacked | guarded folded 0% (unfold) 9s
+crumple|129|100|edge|true_links_edge       wrong     0 cut 0.414 | unfold folded 0%        0.1% check stacked | down found 0.000 true 0.000 | final folded 0%        0.1% stacked | guarded folded 0% (unfold) 7s
+crumple|129|100|edge|true_mesh_edge        wrong     0 cut 0.570 | unfold folded 0%        0.3% check stacked | down found 0.000 true 0.002 | final folded 0%        0.3% stacked | guarded folded 0% (unfold) 9s
+crumple|129|100|edge|true_mesh_circle      wrong     0 cut 0.570 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 6s
+hard_crumple|129|100|edge|own              wrong     0 cut 0.000 | unfold folded 0%        0.1% check stacked | down found 0.000 true 0.000 | final folded 0%        0.1% stacked | guarded folded 0% (unfold) 12s
+hard_crumple|129|100|edge|true_links       wrong     0 cut 0.332 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 8s
+hard_crumple|129|100|edge|true_links_edge  wrong     0 cut 0.332 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 7s
+hard_crumple|129|100|edge|true_mesh_edge   wrong     0 cut 0.544 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 7s
+hard_crumple|129|100|edge|true_mesh_circle wrong     0 cut 0.544 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 7s
+h_crumple17|129|100|edge|own               wrong     0 cut 0.005 | unfold folded 3%        2.6% check stacked | down found 0.000 true 0.003 | final folded 3%        2.6% stacked | guarded folded 3% (unfold) 8s
+h_crumple17|129|100|edge|true_links        wrong     0 cut 0.452 | unfold folded 0%        0.2% check stacked | down found 0.000 true 0.002 | final folded 0%        0.2% stacked | guarded folded 0% (unfold) 9s
+h_crumple17|129|100|edge|true_links_edge   wrong     0 cut 0.452 | unfold folded 0%        0.2% check stacked | down found 0.000 true 0.001 | final folded 0%        0.2% stacked | guarded folded 0% (unfold) 7s
+h_crumple17|129|100|edge|true_mesh_edge    wrong     0 cut 0.641 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 8s
+h_crumple17|129|100|edge|true_mesh_circle  wrong     0 cut 0.641 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 6s
+h_crumple29|129|100|edge|own               wrong     0 cut 0.014 | unfold folded 2%        2.0% check stacked | down found 0.000 true 0.002 | final folded 2%        2.0% stacked | guarded folded 2% (unfold) 7s
+h_crumple29|129|100|edge|true_links        wrong     0 cut 0.495 | unfold pass             0.0% check stacked | down found 0.000 true 0.001 | final pass             0.0% stacked | guarded pass (unfold) 7s
+h_crumple29|129|100|edge|true_links_edge   wrong     0 cut 0.495 | unfold folded 0%        0.0% check stacked | down found 0.000 true 0.000 | final folded 0%        0.0% stacked | guarded folded 0% (unfold) 7s
+h_crumple29|129|100|edge|true_mesh_edge    wrong     0 cut 0.663 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 7s
+h_crumple29|129|100|edge|true_mesh_circle  wrong     0 cut 0.663 | unfold pass             0.0% check stacked | down found 0.000 true 0.000 | final pass             0.0% stacked | guarded pass (unfold) 5s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/pipeline

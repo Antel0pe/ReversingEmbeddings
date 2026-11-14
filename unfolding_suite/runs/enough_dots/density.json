@@ -1,0 +1,458 @@
+{
+ "flat": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "gentle_arc": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "wave": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "s_curl": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 2.076043920589986,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": 4.419907696223119,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "roll": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "tight_roll": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 2295
+   },
+   "129": {
+    "gap_spacings": 1.0066116680770014,
+    "dots_too_close": 4597
+   },
+   "257": {
+    "gap_spacings": 1.9736380660914008,
+    "dots_too_close": 2
+   }
+  },
+  "enough_grid": null
+ },
+ "diagonal_roll": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "accordion": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "cone": {
+  "family": "bent",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "bowl": {
+  "family": "stretched",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "uneven_roll": {
+  "family": "stretched",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "dents": {
+  "family": "stretched",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "crumple": {
+  "family": "stretched",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 199
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 776
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 3082
+   }
+  },
+  "enough_grid": null
+ },
+ "hard_crumple": {
+  "family": "stretched",
+  "group": "design",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 28
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 127
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 436
+   }
+  },
+  "enough_grid": null
+ },
+ "h_roll5": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.6154717391374305,
+    "dots_too_close": 90
+   },
+   "129": {
+    "gap_spacings": 3.405763680320219,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 129
+ },
+ "h_scurl65": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_three_lobes": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_fan3": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_cone30": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_diag30": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 4.598367757222194,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_arc200": {
+  "family": "bent",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_dents23": {
+  "family": "stretched",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "h_crumple17": {
+  "family": "stretched",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 450
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 1449
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 6025
+   }
+  },
+  "enough_grid": null
+ },
+ "h_crumple29": {
+  "family": "stretched",
+  "group": "holdout",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 921
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 2872
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 10389
+   }
+  },
+  "enough_grid": null
+ }
+}

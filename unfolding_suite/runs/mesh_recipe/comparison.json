@@ -1,0 +1,13 @@
+{
+ "against": "current:check_k10",
+ "fixed": [],
+ "broken": [],
+ "still_failing": [
+  "tight_roll / mesh_full",
+  "crumple / mesh_full",
+  "hard_crumple / mesh_full",
+  "h_roll5 / mesh_full",
+  "h_crumple17 / mesh_full",
+  "h_crumple29 / mesh_full"
+ ]
+}

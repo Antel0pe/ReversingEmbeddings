@@ -1,0 +1,2054 @@
+{
+ "settings": {
+  "methods": [
+   "mesh_tutte",
+   "mesh_full"
+  ],
+  "sheets": [
+   "flat",
+   "gentle_arc",
+   "wave",
+   "s_curl",
+   "roll",
+   "tight_roll",
+   "diagonal_roll",
+   "accordion",
+   "cone",
+   "bowl",
+   "uneven_roll",
+   "dents",
+   "crumple",
+   "hard_crumple",
+   "h_roll5",
+   "h_scurl65",
+   "h_three_lobes",
+   "h_fan3",
+   "h_cone30",
+   "h_diag30",
+   "h_arc200",
+   "h_dents23",
+   "h_crumple17",
+   "h_crumple29"
+  ],
+  "grid": 65,
+  "seeds": 3,
+  "first_seed": 100,
+  "noise": 0.0,
+  "name": "mesh_recipe",
+  "against": "current:check_k10"
+ },
+ "tests": {
+  "flat / mesh_tutte": {
+   "sheet": "flat",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.293323528440298,
+    "square_error_worst": 14.523425868800208,
+    "scale_to_paper": 0.8828296377955807,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6965363611572316,
+    "length_ratio_p95": 1.4325192071008,
+    "roughness": 0.350110524701544,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.0065045356750488,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09846153846153846,
+     "stacked_share": 0.09088757396449704,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4138141838844447,
+     "flagged_ratio": 2.4508435988652115,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "flat / mesh_full": {
+   "sheet": "flat",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.006274929831571945,
+    "square_error_worst": 0.01906448743935893,
+    "scale_to_paper": 1.0000903579245286,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9997823775702919,
+    "length_ratio_p95": 1.0001528413575393,
+    "roughness": 0.00011726460456159121,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 3.6048731803894043,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0001477583309148,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "gentle_arc / mesh_tutte": {
+   "sheet": "gentle_arc",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.294912915287691,
+    "square_error_worst": 14.526885367284684,
+    "scale_to_paper": 0.8828253875580643,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6962380309195086,
+    "length_ratio_p95": 1.4321708918954978,
+    "roughness": 0.3501355486708885,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.658379316329956,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09846153846153846,
+     "stacked_share": 0.09088757396449704,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.413906323615758,
+     "flagged_ratio": 2.450898995658048,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "gentle_arc / mesh_full": {
+   "sheet": "gentle_arc",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.002840936074449397,
+    "square_error_worst": 0.008293375618389892,
+    "scale_to_paper": 1.0000292734560357,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9998936438714529,
+    "length_ratio_p95": 1.0001118324146634,
+    "roughness": 0.00011166977558100803,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 4.6807167530059814,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.000097781695952,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "wave / mesh_tutte": {
+   "sheet": "wave",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.00016080773341360291,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.3082963790320674,
+    "square_error_worst": 14.93171702065674,
+    "scale_to_paper": 0.8767461176656753,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6972842234136244,
+    "length_ratio_p95": 1.4327782472214041,
+    "roughness": 0.3526819404515277,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.3850431442260742,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.0970414201183432,
+     "stacked_share": 0.08994082840236686,
+     "biggest_patch_share": 0.02485207100591716,
+     "patches": 4,
+     "typical_ratio": 1.418903374990573,
+     "flagged_ratio": 2.4706114694833143,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "wave / mesh_full": {
+   "sheet": "wave",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.012302969900163403,
+    "square_error_worst": 0.024817360357318352,
+    "scale_to_paper": 1.0002672507331998,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9998460445606279,
+    "length_ratio_p95": 1.0001491045542605,
+    "roughness": 0.00030823195776876253,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 4.857292413711548,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0000961996737887,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "s_curl / mesh_tutte": {
+   "sheet": "s_curl",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0004104743638404767,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2948130734817593,
+    "square_error_worst": 14.913100603812005,
+    "scale_to_paper": 0.8769114457086136,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6971359038894216,
+    "length_ratio_p95": 1.433129230147896,
+    "roughness": 0.3528722522146046,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.3383376598358154,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09775147928994082,
+     "stacked_share": 0.09017751479289941,
+     "biggest_patch_share": 0.025088757396449703,
+     "patches": 4,
+     "typical_ratio": 1.4197406349254984,
+     "flagged_ratio": 2.4731706775752147,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "s_curl / mesh_full": {
+   "sheet": "s_curl",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.40538924468956367,
+    "square_error_worst": 2.612052055072139,
+    "scale_to_paper": 0.9822204574881958,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9608036984742959,
+    "length_ratio_p95": 1.0460967269347012,
+    "roughness": 0.03529824007420682,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 5.189014434814453,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.0021301775147928993,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0007100591715976331,
+     "patches": 0,
+     "typical_ratio": 1.0210725016847777,
+     "flagged_ratio": 2.5525753963471693,
+     "words": "specks 0.2%"
+    }
+   },
+   "causes": []
+  },
+  "roll / mesh_tutte": {
+   "sheet": "roll",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.00016080773341360291,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.3007710039131166,
+    "square_error_worst": 14.901591993953675,
+    "scale_to_paper": 0.8768007927637707,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6968269649037274,
+    "length_ratio_p95": 1.4313042142499517,
+    "roughness": 0.3546423729841652,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.4324696063995361,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09798816568047337,
+     "stacked_share": 0.08994082840236686,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4182333232218833,
+     "flagged_ratio": 2.4671795320017997,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "roll / mesh_full": {
+   "sheet": "roll",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 1.574976769092656e-05,
+    "fold_share": 0.0,
+    "fine_fold_share": 7.144444474364616e-05,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.22800971273216,
+    "square_error_worst": 5.2544310502682166,
+    "scale_to_paper": 0.8868680639253345,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.8895163967278374,
+    "length_ratio_p95": 1.1515475486178934,
+    "roughness": 0.1068187980247265,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 3.243650436401367,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.00047337278106508875,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.00047337278106508875,
+     "patches": 0,
+     "typical_ratio": 1.0989094369378998,
+     "flagged_ratio": 4.726117646709145,
+     "words": "specks 0.0%"
+    }
+   },
+   "causes": []
+  },
+  "tight_roll / mesh_tutte": {
+   "sheet": "tight_roll",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 56%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.5634515421046552,
+    "fold_share": 0.1312983045747579,
+    "fine_fold_share": 0.10425929126770814,
+    "outer_edge_crossings": 18,
+    "square_error_median": 13.083333073434536,
+    "square_error_worst": 71.50215512993252,
+    "scale_to_paper": 0.4508879719080224,
+    "tear_share": 0.020192307692307693,
+    "crush_share": 0.019831730769230768,
+    "length_ratio_p5": 0.40698691091071154,
+    "length_ratio_p95": 4.408936259268996,
+    "roughness": 3.93968239106299,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.2801446914672852,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.6776331360946746,
+     "stacked_share": 0.6724260355029585,
+     "biggest_patch_share": 0.6679289940828402,
+     "patches": 3,
+     "typical_ratio": 2.57820278187143,
+     "flagged_ratio": 4.165494631932156,
+     "words": "stacked 67% (4x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "tight_roll / mesh_full": {
+   "sheet": "tight_roll",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 56%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.5634515421046552,
+    "fold_share": 0.1312983045747579,
+    "fine_fold_share": 0.10425929126770814,
+    "outer_edge_crossings": 18,
+    "square_error_median": 13.083333073434536,
+    "square_error_worst": 71.50215512993252,
+    "scale_to_paper": 0.4508879719080224,
+    "tear_share": 0.020192307692307693,
+    "crush_share": 0.019831730769230768,
+    "length_ratio_p5": 0.40698691091071154,
+    "length_ratio_p95": 4.408936259268996,
+    "roughness": 3.93968239106299,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.2318410873413086,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.6776331360946746,
+     "stacked_share": 0.6724260355029585,
+     "biggest_patch_share": 0.6679289940828402,
+     "patches": 3,
+     "typical_ratio": 2.57820278187143,
+     "flagged_ratio": 4.165494631932156,
+     "words": "stacked 67% (4x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "diagonal_roll / mesh_tutte": {
+   "sheet": "diagonal_roll",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.00045010238186120614,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.3312438405412106,
+    "square_error_worst": 14.884130323273912,
+    "scale_to_paper": 0.869953686281294,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6961945930017356,
+    "length_ratio_p95": 1.4388088299687303,
+    "roughness": 0.3530457648433096,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.0351943969726562,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09467455621301775,
+     "stacked_share": 0.08615384615384615,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4199444827732408,
+     "flagged_ratio": 2.500875406277445,
+     "words": "stacked 9% (3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "diagonal_roll / mesh_full": {
+   "sheet": "diagonal_roll",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 6.281702969675079e-05,
+    "fold_share": 0.0,
+    "fine_fold_share": 7.144444474364616e-05,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.1503107823264935,
+    "square_error_worst": 4.977361429337892,
+    "scale_to_paper": 0.8822446916591166,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.8700390882359658,
+    "length_ratio_p95": 1.1510892561016308,
+    "roughness": 0.11131943837159246,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 2.9504780769348145,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.0007100591715976331,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0007100591715976331,
+     "patches": 0,
+     "typical_ratio": 1.1204346996943102,
+     "flagged_ratio": 4.464569598341749,
+     "words": "specks 0.1%"
+    }
+   },
+   "causes": []
+  },
+  "accordion / mesh_tutte": {
+   "sheet": "accordion",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 0%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.00038806865287259,
+    "fold_share": 0.000446810225064629,
+    "fine_fold_share": 0.0013227381884593778,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.226149064732169,
+    "square_error_worst": 15.288624864926659,
+    "scale_to_paper": 0.8466655316389071,
+    "tear_share": 0.0001201923076923077,
+    "crush_share": 0.0001201923076923077,
+    "length_ratio_p5": 0.6814742134751013,
+    "length_ratio_p95": 1.4257505093908642,
+    "roughness": 0.3820909381489769,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.2567131519317627,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.10650887573964497,
+     "stacked_share": 0.09727810650887574,
+     "biggest_patch_share": 0.024615384615384615,
+     "patches": 5,
+     "typical_ratio": 1.422322729430454,
+     "flagged_ratio": 2.4072616141993564,
+     "words": "stacked 10% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "accordion / mesh_full": {
+   "sheet": "accordion",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.0646475125522142,
+    "square_error_worst": 0.8734928024199707,
+    "scale_to_paper": 1.0013407357877215,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.999274434658404,
+    "length_ratio_p95": 1.000408023786814,
+    "roughness": 0.005568616337452109,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 5.869421482086182,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0002149391142046,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "cone / mesh_tutte": {
+   "sheet": "cone",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.292825844847242,
+    "square_error_worst": 14.51678351917534,
+    "scale_to_paper": 0.8829751788833887,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6956190458533063,
+    "length_ratio_p95": 1.4334318938009838,
+    "roughness": 0.35254576667634324,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 0.9585540294647217,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09893491124260355,
+     "stacked_share": 0.09041420118343195,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4140420757611483,
+     "flagged_ratio": 2.4489797780498916,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "cone / mesh_full": {
+   "sheet": "cone",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.009257939075416709,
+    "square_error_worst": 0.027554627851571936,
+    "scale_to_paper": 1.000288052787906,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9997460089879264,
+    "length_ratio_p95": 1.0001790385487817,
+    "roughness": 0.00014446637935944533,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 4.235203981399536,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0002570213922017,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "bowl / mesh_tutte": {
+   "sheet": "bowl",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.8452903951530948,
+    "square_error_worst": 13.128345264093069,
+    "scale_to_paper": 0.8411744433941193,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6990957301849848,
+    "length_ratio_p95": 1.459564372286061,
+    "roughness": 0.36469735488532495,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 0.8570091724395752,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.11881656804733728,
+     "stacked_share": 0.1178698224852071,
+     "biggest_patch_share": 0.0314792899408284,
+     "patches": 4,
+     "typical_ratio": 1.4120711822153484,
+     "flagged_ratio": 2.7882351949492756,
+     "words": "stacked 12% (3x)"
+    }
+   },
+   "causes": []
+  },
+  "bowl / mesh_full": {
+   "sheet": "bowl",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.0804050820486188,
+    "square_error_worst": 5.002878598228041,
+    "scale_to_paper": 0.9547286306881382,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9744455243563204,
+    "length_ratio_p95": 1.051858444374134,
+    "roughness": 0.023263444609347116,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 2.7328267097473145,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0134437625128432,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "uneven_roll / mesh_tutte": {
+   "sheet": "uneven_roll",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.021287590851503634,
+    "fold_share": 0.0026240800132267096,
+    "fine_fold_share": 0.03736176494838311,
+    "outer_edge_crossings": 0,
+    "square_error_median": 7.024205488800506,
+    "square_error_worst": 34.06150688213926,
+    "scale_to_paper": 0.3395998481476489,
+    "tear_share": 0.0002403846153846154,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.4862051952190763,
+    "length_ratio_p95": 2.866519831438532,
+    "roughness": 0.7345339732542276,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.8908860683441162,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.6357396449704142,
+     "stacked_share": 0.6352662721893491,
+     "biggest_patch_share": 0.6307692307692307,
+     "patches": 4,
+     "typical_ratio": 2.1530984021127684,
+     "flagged_ratio": 2.4215677445458788,
+     "words": "stacked 64% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "5% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "uneven_roll / mesh_full": {
+   "sheet": "uneven_roll",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 2,
+   "seeds": 3,
+   "words": "folded 0%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.0005125292626504689,
+    "fold_share": 0.0009104683364281682,
+    "fine_fold_share": 0.0001776812863079416,
+    "outer_edge_crossings": 0,
+    "square_error_median": 11.367681220295495,
+    "square_error_worst": 39.45240187077832,
+    "scale_to_paper": 0.35702122156168686,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.8408420697606438,
+    "length_ratio_p95": 1.7354072717618398,
+    "roughness": 0.18127501650126385,
+    "square": null,
+    "smooth": true,
+    "passed": false,
+    "seconds": 7.190926790237427,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.001183431952662722,
+     "stacked_share": 0.001183431952662722,
+     "biggest_patch_share": 0.001183431952662722,
+     "patches": 1,
+     "typical_ratio": 1.139766767701596,
+     "flagged_ratio": 4.871914009898478,
+     "words": "specks 0.1%"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "5% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "dents / mesh_tutte": {
+   "sheet": "dents",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0003206414403327407,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.310290105785447,
+    "square_error_worst": 16.55697542771184,
+    "scale_to_paper": 0.8302847504640918,
+    "tear_share": 0.0,
+    "crush_share": 0.0001201923076923077,
+    "length_ratio_p5": 0.6630094510937,
+    "length_ratio_p95": 1.519332283602978,
+    "roughness": 0.3728717984640923,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 1.0439016819000244,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.12994082840236687,
+     "stacked_share": 0.12284023668639053,
+     "biggest_patch_share": 0.036686390532544376,
+     "patches": 6,
+     "typical_ratio": 1.4211341838581024,
+     "flagged_ratio": 2.402355887510506,
+     "words": "stacked 12% (2x)"
+    }
+   },
+   "causes": []
+  },
+  "dents / mesh_full": {
+   "sheet": "dents",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 1.7295513472860802,
+    "square_error_worst": 6.032332201017296,
+    "scale_to_paper": 0.8949145037084567,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9345421757178527,
+    "length_ratio_p95": 1.0932350794056498,
+    "roughness": 0.07710214659453685,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 20.852701902389526,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0350206406371214,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "crumple / mesh_tutte": {
+   "sheet": "crumple",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 5%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.052660183621576505,
+    "fold_share": 0.017955578847987562,
+    "fine_fold_share": 0.05382754510955062,
+    "outer_edge_crossings": 1,
+    "square_error_median": 15.897511804666916,
+    "square_error_worst": 45.003997003919814,
+    "scale_to_paper": 0.4437967329192566,
+    "tear_share": 0.0008413461538461539,
+    "crush_share": 0.0004807692307692308,
+    "length_ratio_p5": 0.5487807200723219,
+    "length_ratio_p95": 2.1916025520566023,
+    "roughness": 0.7301333165875064,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.172584056854248,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.4068639053254438,
+     "stacked_share": 0.3988165680473373,
+     "biggest_patch_share": 0.1940828402366864,
+     "patches": 10,
+     "typical_ratio": 1.8337400982886822,
+     "flagged_ratio": 2.5740311210715316,
+     "words": "stacked 40% (3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.4% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "crumple / mesh_full": {
+   "sheet": "crumple",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.0008353443475032485,
+    "fold_share": 0.009625914639716186,
+    "fine_fold_share": 0.001052204907977749,
+    "outer_edge_crossings": 0,
+    "square_error_median": 19.562517310363138,
+    "square_error_worst": 49.92276960681482,
+    "scale_to_paper": 0.5049243035046147,
+    "tear_share": 0.0001201923076923077,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.86804968235706,
+    "length_ratio_p95": 1.2192266475744764,
+    "roughness": 0.42271418838534136,
+    "square": null,
+    "smooth": true,
+    "passed": false,
+    "seconds": 20.183289051055908,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.0028402366863905324,
+     "stacked_share": 0.0014201183431952662,
+     "biggest_patch_share": 0.0014201183431952662,
+     "patches": 1,
+     "typical_ratio": 1.0444653057402369,
+     "flagged_ratio": 2.1122599414823444,
+     "words": "specks 0.3%"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.4% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "hard_crumple / mesh_tutte": {
+   "sheet": "hard_crumple",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 2%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.01599745912874862,
+    "fold_share": 0.009833584761978292,
+    "fine_fold_share": 0.029514565217659598,
+    "outer_edge_crossings": 0,
+    "square_error_median": 7.953384205755282,
+    "square_error_worst": 23.27645471408233,
+    "scale_to_paper": 0.7216241406784746,
+    "tear_share": 0.0002403846153846154,
+    "crush_share": 0.0008413461538461539,
+    "length_ratio_p5": 0.36363319608753336,
+    "length_ratio_p95": 1.9490092906910004,
+    "roughness": 0.8478230899215607,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.0446979999542236,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.31644970414201185,
+     "stacked_share": 0.3060355029585799,
+     "biggest_patch_share": 0.13775147928994083,
+     "patches": 13,
+     "typical_ratio": 1.6374428119229167,
+     "flagged_ratio": 2.8203955232785023,
+     "words": "stacked 31% (3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.3% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "hard_crumple / mesh_full": {
+   "sheet": "hard_crumple",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 1%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.0018542775972645153,
+    "fold_share": 0.01088571825912609,
+    "fine_fold_share": 0.0030255599858622214,
+    "outer_edge_crossings": 0,
+    "square_error_median": 9.410873047580456,
+    "square_error_worst": 24.205866531035802,
+    "scale_to_paper": 0.6969498130681016,
+    "tear_share": 0.0002403846153846154,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6807209279673289,
+    "length_ratio_p95": 1.2651859597172364,
+    "roughness": 0.6002393108903326,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 17.800012588500977,
+    "double_layer": {
+     "reading": "mild",
+     "flagged_share": 0.035976331360946745,
+     "stacked_share": 0.032426035502958576,
+     "biggest_patch_share": 0.02201183431952663,
+     "patches": 2,
+     "typical_ratio": 1.0865433913684643,
+     "flagged_ratio": 2.30665900759959,
+     "words": "mild 3.2% (2.3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.2% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "h_roll5 / mesh_tutte": {
+   "sheet": "h_roll5",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 10%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.09947596999389828,
+    "fold_share": 0.055489847583153284,
+    "fine_fold_share": 0.02098010213320454,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.506143456768318,
+    "square_error_worst": 35.45999361269174,
+    "scale_to_paper": 0.7987631293771154,
+    "tear_share": 0.0037259615384615387,
+    "crush_share": 0.0014423076923076924,
+    "length_ratio_p5": 0.6751590661338389,
+    "length_ratio_p95": 1.5313807235079908,
+    "roughness": 0.43509651323372783,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.2277178764343262,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.20710059171597633,
+     "stacked_share": 0.19763313609467456,
+     "biggest_patch_share": 0.13562130177514792,
+     "patches": 3,
+     "typical_ratio": 1.4685014422340086,
+     "flagged_ratio": 3.7401957204720473,
+     "words": "stacked 20% (4x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_roll5 / mesh_full": {
+   "sheet": "h_roll5",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 11%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.10771591127021671,
+    "fold_share": 0.05336874054769868,
+    "fine_fold_share": 0.015952064038764313,
+    "outer_edge_crossings": 5,
+    "square_error_median": 2.4966632257746815,
+    "square_error_worst": 33.660057790209144,
+    "scale_to_paper": 0.8110537196656491,
+    "tear_share": 0.006370192307692308,
+    "crush_share": 0.0003605769230769231,
+    "length_ratio_p5": 0.816866422032852,
+    "length_ratio_p95": 1.2184371883018128,
+    "roughness": 0.20202583480627284,
+    "square": false,
+    "smooth": false,
+    "passed": false,
+    "seconds": 2.342466115951538,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.11053254437869822,
+     "stacked_share": 0.11053254437869822,
+     "biggest_patch_share": 0.11053254437869822,
+     "patches": 1,
+     "typical_ratio": 1.1924859906352647,
+     "flagged_ratio": 5.315967269992158,
+     "words": "stacked 11% (5x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_scurl65 / mesh_tutte": {
+   "sheet": "h_scurl65",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.00016080773341360291,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.293701174823626,
+    "square_error_worst": 14.91320445438048,
+    "scale_to_paper": 0.8769076980351831,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.696706651750783,
+    "length_ratio_p95": 1.4335741537130953,
+    "roughness": 0.3539145127196282,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 1.3913946151733398,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09775147928994082,
+     "stacked_share": 0.09017751479289941,
+     "biggest_patch_share": 0.025088757396449703,
+     "patches": 4,
+     "typical_ratio": 1.4191246602515954,
+     "flagged_ratio": 2.4715082405803392,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_scurl65 / mesh_full": {
+   "sheet": "h_scurl65",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 1.5756716300323014e-05,
+    "fold_share": 0.0,
+    "fine_fold_share": 7.144444474364616e-05,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.1200706953493675,
+    "square_error_worst": 4.998934200586337,
+    "scale_to_paper": 0.8887281525472827,
+    "tear_share": 0.0,
+    "crush_share": 0.0001201923076923077,
+    "length_ratio_p5": 0.8919377730480311,
+    "length_ratio_p95": 1.146062034078443,
+    "roughness": 0.10459683286217471,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 2.7707338333129883,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.00047337278106508875,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.00047337278106508875,
+     "patches": 0,
+     "typical_ratio": 1.0946388106626639,
+     "flagged_ratio": 5.316847553419921,
+     "words": "specks 0.0%"
+    }
+   },
+   "causes": []
+  },
+  "h_three_lobes / mesh_tutte": {
+   "sheet": "h_three_lobes",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.00012381710444857167,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0002963131192383732,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2855092369690935,
+    "square_error_worst": 14.813624208410772,
+    "scale_to_paper": 0.8704599155968613,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6963760027318744,
+    "length_ratio_p95": 1.4311317150350993,
+    "roughness": 0.35313804883189864,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 0.9812757968902588,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09727810650887574,
+     "stacked_share": 0.09017751479289941,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4157339011098176,
+     "flagged_ratio": 2.4854551497677035,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_three_lobes / mesh_full": {
+   "sheet": "h_three_lobes",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 3.152237300423976e-05,
+    "fold_share": 0.0,
+    "fine_fold_share": 7.144444474364616e-05,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2260677184688884,
+    "square_error_worst": 5.528559291376505,
+    "scale_to_paper": 0.8801931698411163,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.8795230994081183,
+    "length_ratio_p95": 1.1545530008956082,
+    "roughness": 0.10846506119575386,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 2.392245292663574,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.00047337278106508875,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.00047337278106508875,
+     "patches": 0,
+     "typical_ratio": 1.1119565130838613,
+     "flagged_ratio": 2.0167440890329362,
+     "words": "specks 0.0%"
+    }
+   },
+   "causes": []
+  },
+  "h_fan3 / mesh_tutte": {
+   "sheet": "h_fan3",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.00015844233579212367,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.00015773454776047953,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2310543875769433,
+    "square_error_worst": 14.886515234454963,
+    "scale_to_paper": 0.8773003332947156,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.687048282468684,
+    "length_ratio_p95": 1.4153208778674107,
+    "roughness": 0.36699386399304484,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 2.1393179893493652,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09893491124260355,
+     "stacked_share": 0.0906508875739645,
+     "biggest_patch_share": 0.024142011834319528,
+     "patches": 4,
+     "typical_ratio": 1.4203003546863766,
+     "flagged_ratio": 2.405892276437612,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_fan3 / mesh_full": {
+   "sheet": "h_fan3",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.03139790725155259,
+    "square_error_worst": 0.056738024622098024,
+    "scale_to_paper": 1.0006887541822798,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9996339134711869,
+    "length_ratio_p95": 1.0002142504656386,
+    "roughness": 0.0026104662797825436,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 3.1281561851501465,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.000128151129677,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "h_cone30 / mesh_tutte": {
+   "sheet": "h_cone30",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2889432734456467,
+    "square_error_worst": 14.506607931689464,
+    "scale_to_paper": 0.8829958428851346,
+    "tear_share": 0.0,
+    "crush_share": 0.0001201923076923077,
+    "length_ratio_p5": 0.6952539251798983,
+    "length_ratio_p95": 1.4327571826322245,
+    "roughness": 0.3524107935411305,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 0.791935920715332,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09751479289940829,
+     "stacked_share": 0.09041420118343195,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4141636756387381,
+     "flagged_ratio": 2.4547595222418366,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_cone30 / mesh_full": {
+   "sheet": "h_cone30",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.012087604986014218,
+    "square_error_worst": 0.03810551425098123,
+    "scale_to_paper": 0.9995499135810545,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9995259146448567,
+    "length_ratio_p95": 1.0004365169809706,
+    "roughness": 0.00026508057290327794,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 4.8767991065979,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0003150471617623,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "h_diag30 / mesh_tutte": {
+   "sheet": "h_diag30",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.000395452604408247,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.319181126376492,
+    "square_error_worst": 15.388936553898573,
+    "scale_to_paper": 0.868974455108136,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6936854337911008,
+    "length_ratio_p95": 1.4398448086727027,
+    "roughness": 0.3565774020683118,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 0.8126354217529297,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09585798816568047,
+     "stacked_share": 0.08828402366863905,
+     "biggest_patch_share": 0.02485207100591716,
+     "patches": 4,
+     "typical_ratio": 1.4221817857245374,
+     "flagged_ratio": 2.4962652721554437,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_diag30 / mesh_full": {
+   "sheet": "h_diag30",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.012075513656610734,
+    "square_error_worst": 0.049564501639559805,
+    "scale_to_paper": 1.0002061092914167,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9997943508037621,
+    "length_ratio_p95": 1.0002207750400844,
+    "roughness": 0.0003812417874597024,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 3.5007901191711426,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0001715873856503,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "h_arc200 / mesh_tutte": {
+   "sheet": "h_arc200",
+   "method": "mesh_tutte",
+   "family": "bent",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "not square 2%",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.2938511727437083,
+    "square_error_worst": 14.527503933547736,
+    "scale_to_paper": 0.8828490859288157,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.6955280143704226,
+    "length_ratio_p95": 1.432531705829686,
+    "roughness": 0.35017073937732196,
+    "square": false,
+    "smooth": true,
+    "passed": false,
+    "seconds": 0.8071444034576416,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.09940828402366864,
+     "stacked_share": 0.09088757396449704,
+     "biggest_patch_share": 0.02437869822485207,
+     "patches": 4,
+     "typical_ratio": 1.4133115679106854,
+     "flagged_ratio": 2.444478115530096,
+     "words": "stacked 9% (2x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "hops were lopsided",
+     "plain": "2% of dots link to neighbours lying nearly along one line on the paper, because the dots are spaced unevenly, so walks across the other direction take long detours. The same layout step passes when given perfect neighbours, so the hops are what went wrong."
+    }
+   ]
+  },
+  "h_arc200 / mesh_full": {
+   "sheet": "h_arc200",
+   "method": "mesh_full",
+   "family": "bent",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 0.009222103814403687,
+    "square_error_worst": 0.027513984934928442,
+    "scale_to_paper": 0.9997552607813817,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.9995978725316941,
+    "length_ratio_p95": 1.0003923368648542,
+    "roughness": 0.0002758633730651842,
+    "square": true,
+    "smooth": true,
+    "passed": true,
+    "seconds": 2.5266153812408447,
+    "double_layer": {
+     "reading": "clean",
+     "flagged_share": 0.0,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.0,
+     "patches": 0,
+     "typical_ratio": 1.0003212016584542,
+     "flagged_ratio": null,
+     "words": "clean"
+    }
+   },
+   "causes": []
+  },
+  "h_dents23 / mesh_tutte": {
+   "sheet": "h_dents23",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "wobble only",
+    "overlap_share": 0.0002463314213323011,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0005527912481273613,
+    "outer_edge_crossings": 0,
+    "square_error_median": 3.5902625865457263,
+    "square_error_worst": 15.9931582281849,
+    "scale_to_paper": 0.8300470456923235,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.633269044046735,
+    "length_ratio_p95": 1.549311516353773,
+    "roughness": 0.37774464905216437,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 0.8594541549682617,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.1093491124260355,
+     "stacked_share": 0.10319526627218935,
+     "biggest_patch_share": 0.023668639053254437,
+     "patches": 8,
+     "typical_ratio": 1.4629823736612377,
+     "flagged_ratio": 2.3540457540762936,
+     "words": "stacked 10% (2x)"
+    }
+   },
+   "causes": []
+  },
+  "h_dents23 / mesh_full": {
+   "sheet": "h_dents23",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": true,
+   "seeds_passed": 3,
+   "seeds": 3,
+   "words": "pass",
+   "worst": {
+    "verdict": "certified",
+    "overlap_share": 0.0,
+    "fold_share": 0.0,
+    "fine_fold_share": 0.0,
+    "outer_edge_crossings": 0,
+    "square_error_median": 2.355050029281262,
+    "square_error_worst": 6.7700183236550835,
+    "scale_to_paper": 0.8489107370085882,
+    "tear_share": 0.0,
+    "crush_share": 0.0,
+    "length_ratio_p5": 0.8374350723266215,
+    "length_ratio_p95": 1.1367336009099485,
+    "roughness": 0.11012679223815208,
+    "square": null,
+    "smooth": true,
+    "passed": true,
+    "seconds": 15.142147302627563,
+    "double_layer": {
+     "reading": "specks",
+     "flagged_share": 0.00047337278106508875,
+     "stacked_share": 0.0,
+     "biggest_patch_share": 0.00047337278106508875,
+     "patches": 0,
+     "typical_ratio": 1.0392675745476923,
+     "flagged_ratio": 2.5385072172379703,
+     "words": "specks 0.0%"
+    }
+   },
+   "causes": []
+  },
+  "h_crumple17 / mesh_tutte": {
+   "sheet": "h_crumple17",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 8%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.07652982525726626,
+    "fold_share": 0.05680650186656504,
+    "fine_fold_share": 0.09127194944898377,
+    "outer_edge_crossings": 1,
+    "square_error_median": 11.687853495988927,
+    "square_error_worst": 44.713840501955424,
+    "scale_to_paper": 0.471827473582132,
+    "tear_share": 0.0018028846153846155,
+    "crush_share": 0.004206730769230769,
+    "length_ratio_p5": 0.38584940002429335,
+    "length_ratio_p95": 2.8178105010456154,
+    "roughness": 1.0128450700293725,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.9920158386230469,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.5981065088757397,
+     "stacked_share": 0.5931360946745562,
+     "biggest_patch_share": 0.3050887573964497,
+     "patches": 3,
+     "typical_ratio": 2.220641362176561,
+     "flagged_ratio": 2.937458751094891,
+     "words": "stacked 59% (3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.7% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "h_crumple17 / mesh_full": {
+   "sheet": "h_crumple17",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 5%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.04970326409495549,
+    "fold_share": 0.052557911241219515,
+    "fine_fold_share": 0.031056503653442643,
+    "outer_edge_crossings": 1,
+    "square_error_median": 11.258147792017148,
+    "square_error_worst": 45.10869189623891,
+    "scale_to_paper": 0.4794597907357991,
+    "tear_share": 0.0015625,
+    "crush_share": 0.0030048076923076925,
+    "length_ratio_p5": 0.6300047211467199,
+    "length_ratio_p95": 2.389778537898681,
+    "roughness": 0.8519195625864305,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 8.37499475479126,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.15644970414201184,
+     "stacked_share": 0.1545562130177515,
+     "biggest_patch_share": 0.07928994082840236,
+     "patches": 7,
+     "typical_ratio": 1.482500439443334,
+     "flagged_ratio": 2.5702029195754905,
+     "words": "stacked 15% (3x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 0.7% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "h_crumple29 / mesh_tutte": {
+   "sheet": "h_crumple29",
+   "method": "mesh_tutte",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 51%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.5131324442634633,
+    "fold_share": 0.1127517207974548,
+    "fine_fold_share": 0.1383687989501798,
+    "outer_edge_crossings": 8,
+    "square_error_median": 23.96930915760945,
+    "square_error_worst": 76.06568607108201,
+    "scale_to_paper": 0.17340345847204994,
+    "tear_share": 0.018990384615384614,
+    "crush_share": 0.022716346153846153,
+    "length_ratio_p5": 0.2439295184936845,
+    "length_ratio_p95": 6.062536807184264,
+    "roughness": 4.476092190141377,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 1.0648267269134521,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.770887573964497,
+     "stacked_share": 0.770887573964497,
+     "biggest_patch_share": 0.770887573964497,
+     "patches": 1,
+     "typical_ratio": 4.126782158883265,
+     "flagged_ratio": 5.383513336785857,
+     "words": "stacked 77% (5x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 2.9% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  },
+  "h_crumple29 / mesh_full": {
+   "sheet": "h_crumple29",
+   "method": "mesh_full",
+   "family": "stretched",
+   "passed": false,
+   "seeds_passed": 0,
+   "seeds": 3,
+   "words": "folded 51%",
+   "worst": {
+    "verdict": "folded",
+    "overlap_share": 0.5131324442634633,
+    "fold_share": 0.1127517207974548,
+    "fine_fold_share": 0.1383687989501798,
+    "outer_edge_crossings": 8,
+    "square_error_median": 23.96930915760945,
+    "square_error_worst": 76.06568607108201,
+    "scale_to_paper": 0.17340345847204994,
+    "tear_share": 0.018990384615384614,
+    "crush_share": 0.022716346153846153,
+    "length_ratio_p5": 0.2439295184936845,
+    "length_ratio_p95": 6.062536807184264,
+    "roughness": 4.476092190141377,
+    "square": null,
+    "smooth": false,
+    "passed": false,
+    "seconds": 0.8187119960784912,
+    "double_layer": {
+     "reading": "stacked",
+     "flagged_share": 0.770887573964497,
+     "stacked_share": 0.770887573964497,
+     "biggest_patch_share": 0.770887573964497,
+     "patches": 1,
+     "typical_ratio": 4.126782158883265,
+     "flagged_ratio": 5.383513336785857,
+     "words": "stacked 77% (5x)"
+    }
+   },
+   "causes": [
+    {
+     "cause": "the layout step fails even with perfect hops",
+     "plain": "Given ideal neighbours from the true paper, the same layout still folds 2.9% of the paper or misses another check. So the hops are not the whole story: the walking distances themselves cannot all be kept on a flat surface."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,1074 @@
+{
+ "enough_sheets": [
+  "flat",
+  "gentle_arc",
+  "wave",
+  "s_curl",
+  "roll",
+  "diagonal_roll",
+  "accordion",
+  "cone",
+  "bowl",
+  "uneven_roll",
+  "dents",
+  "h_scurl65",
+  "h_three_lobes",
+  "h_fan3",
+  "h_cone30",
+  "h_diag30",
+  "h_arc200",
+  "h_dents23"
+ ],
+ "methods": {
+  "air_probe": {
+   "enough_tried": 18,
+   "enough_passed": 0,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "cone",
+    "dents",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "air_probe_check": {
+   "enough_tried": 18,
+   "enough_passed": 0,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "cone",
+    "dents",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "best_fit_plane": {
+   "enough_tried": 18,
+   "enough_passed": 5,
+   "enough_failed": [
+    "accordion",
+    "cone",
+    "diagonal_roll",
+    "h_arc200",
+    "h_cone30",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "blob_k10": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "blob_stacked_k10": {
+   "enough_tried": 18,
+   "enough_passed": 16,
+   "enough_failed": [
+    "s_curl",
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "both_K12_g0.25": {
+   "enough_tried": 4,
+   "enough_passed": 4,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "both_K40_g0.5": {
+   "enough_tried": 4,
+   "enough_passed": 4,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "carry_A_tree_up": {
+   "enough_tried": 18,
+   "enough_passed": 13,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "dents",
+    "h_dents23",
+    "h_fan3"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "carry_B_relax_up": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "h_dents23"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "carry_C_stretch_up": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "h_dents23"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "check_k10": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 4,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "convex_edge": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_checked_40_rigid": {
+   "enough_tried": 8,
+   "enough_passed": 6,
+   "enough_failed": [
+    "bowl",
+    "dents"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_checked_40_settle": {
+   "enough_tried": 8,
+   "enough_passed": 8,
+   "enough_failed": [],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_checked_8_rigid": {
+   "enough_tried": 8,
+   "enough_passed": 6,
+   "enough_failed": [
+    "bowl",
+    "dents"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_checked_8_settle": {
+   "enough_tried": 8,
+   "enough_passed": 8,
+   "enough_failed": [],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_nearest_40_rigid": {
+   "enough_tried": 8,
+   "enough_passed": 5,
+   "enough_failed": [
+    "bowl",
+    "dents",
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_nearest_40_settle": {
+   "enough_tried": 8,
+   "enough_passed": 7,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_nearest_8_rigid": {
+   "enough_tried": 8,
+   "enough_passed": 5,
+   "enough_failed": [
+    "bowl",
+    "dents",
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "grow_join_nearest_8_settle": {
+   "enough_tried": 8,
+   "enough_passed": 7,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K12_g0.25_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K12_g0.5_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K20_g0.25_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K20_g0.5_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K20_g0.5_plane": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K40_g0.25_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 15,
+   "enough_failed": [
+    "h_diag30",
+    "roll",
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "height_K40_g0.5_bowl": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "isomap_k10": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 4,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "loopcut_checked": {
+   "enough_tried": 18,
+   "enough_passed": 16,
+   "enough_failed": [
+    "h_dents23",
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "loopcut_knn": {
+   "enough_tried": 18,
+   "enough_passed": 16,
+   "enough_failed": [
+    "h_dents23",
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "loopcut_knn_local": {
+   "enough_tried": 18,
+   "enough_passed": 16,
+   "enough_failed": [
+    "h_dents23",
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": true,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "mesh_full": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "uneven_roll"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "mesh_tutte": {
+   "enough_tried": 18,
+   "enough_passed": 3,
+   "enough_failed": [
+    "accordion",
+    "cone",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "nearby_only": {
+   "enough_tried": 18,
+   "enough_passed": 0,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "cone",
+    "dents",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "press_checked": {
+   "enough_tried": 8,
+   "enough_passed": 5,
+   "enough_failed": [
+    "cone",
+    "roll",
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "press_flip_checked": {
+   "enough_tried": 5,
+   "enough_passed": 5,
+   "enough_failed": [],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "press_flip_nearest": {
+   "enough_tried": 5,
+   "enough_passed": 4,
+   "enough_failed": [
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "press_nearest": {
+   "enough_tried": 8,
+   "enough_passed": 5,
+   "enough_failed": [
+    "cone",
+    "roll",
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "pull_k10": {
+   "enough_tried": 18,
+   "enough_passed": 16,
+   "enough_failed": [
+    "h_dents23",
+    "s_curl"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "push_random": {
+   "enough_tried": 18,
+   "enough_passed": 0,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "cone",
+    "dents",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "push_random_cold": {
+   "enough_tried": 18,
+   "enough_passed": 0,
+   "enough_failed": [
+    "accordion",
+    "bowl",
+    "cone",
+    "dents",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "push_targeted": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "h_dents23"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "ring_circle": {
+   "enough_tried": 18,
+   "enough_passed": 3,
+   "enough_failed": [
+    "accordion",
+    "cone",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "ring_circle_star": {
+   "enough_tried": 18,
+   "enough_passed": 3,
+   "enough_failed": [
+    "accordion",
+    "cone",
+    "diagonal_roll",
+    "flat",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "star_tutte": {
+   "enough_tried": 18,
+   "enough_passed": 17,
+   "enough_failed": [
+    "uneven_roll"
+   ],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "tangent_plane": {
+   "enough_tried": 18,
+   "enough_passed": 3,
+   "enough_failed": [
+    "accordion",
+    "cone",
+    "diagonal_roll",
+    "gentle_arc",
+    "h_arc200",
+    "h_cone30",
+    "h_dents23",
+    "h_diag30",
+    "h_fan3",
+    "h_scurl65",
+    "h_three_lobes",
+    "roll",
+    "s_curl",
+    "uneven_roll",
+    "wave"
+   ],
+   "seeds": 1,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "up_0.0": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "up_0.0_surface": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "up_0.5": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  },
+  "up_0.5_surface": {
+   "enough_tried": 18,
+   "enough_passed": 18,
+   "enough_failed": [],
+   "seeds": 3,
+   "rolls": {
+    "h_roll5": false,
+    "tight_roll": false
+   },
+   "crumples": {
+    "crumple": false,
+    "hard_crumple": false,
+    "h_crumple17": false,
+    "h_crumple29": false
+   }
+  }
+ }
+}

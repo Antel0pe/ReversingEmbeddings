@@ -1,0 +1,36 @@
+{
+ "against": "current:check_k10",
+ "fixed": [],
+ "broken": [
+  "flat / mesh_tutte",
+  "gentle_arc / mesh_tutte",
+  "wave / mesh_tutte",
+  "s_curl / mesh_tutte",
+  "roll / mesh_tutte",
+  "diagonal_roll / mesh_tutte",
+  "accordion / mesh_tutte",
+  "cone / mesh_tutte",
+  "uneven_roll / mesh_tutte",
+  "uneven_roll / mesh_full",
+  "h_scurl65 / mesh_tutte",
+  "h_three_lobes / mesh_tutte",
+  "h_fan3 / mesh_tutte",
+  "h_cone30 / mesh_tutte",
+  "h_diag30 / mesh_tutte",
+  "h_arc200 / mesh_tutte"
+ ],
+ "still_failing": [
+  "tight_roll / mesh_tutte",
+  "tight_roll / mesh_full",
+  "crumple / mesh_tutte",
+  "crumple / mesh_full",
+  "hard_crumple / mesh_tutte",
+  "hard_crumple / mesh_full",
+  "h_roll5 / mesh_tutte",
+  "h_roll5 / mesh_full",
+  "h_crumple17 / mesh_tutte",
+  "h_crumple17 / mesh_full",
+  "h_crumple29 / mesh_tutte",
+  "h_crumple29 / mesh_full"
+ ]
+}
