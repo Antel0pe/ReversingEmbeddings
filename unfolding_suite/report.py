@@ -97,20 +97,20 @@ def failure_figure(test, row, path):
 
     # 2. the sheet in 3-D, with the cause drawn on it
     ax = fig.add_axes([0.33, 0.11, 0.32, 0.62], projection="3d")
-    ax.scatter(*xyz.T, c=colours, s=3, linewidths=0, depthshade=False, rasterized=True, alpha=0.75)
+    ax.scatter(*xyz[:, :3].T, c=colours, s=3, linewidths=0, depthshade=False, rasterized=True, alpha=0.75)
     caption = "The sheet in 3D, as given to the method (before hiding)."
     if info.get("edges") is not None:
         jumps = info["edges"][np.linalg.norm(uv[info["edges"][:, 0]] - uv[info["edges"][:, 1]], axis=1) > 0.3]
         if len(jumps):
             for a, b in jumps[:: max(1, len(jumps) // 150)]:
-                ax.plot(*np.c_[xyz[a], xyz[b]], color=MARK, lw=0.9)
+                ax.plot(*np.c_[xyz[a, :3], xyz[b, :3]], color=MARK, lw=0.9)
             caption = f"Black: neighbour links that jump between layers ({len(jumps)})."
     if example:
-        c3 = xyz[T].mean(1)
+        c3 = xyz[T].mean(1)[:, :3]
         for key, name in [("triangle_a", "A"), ("triangle_b", "B")]:
             ax.scatter(*c3[example[key]], s=70, c=MARK, depthshade=False)
             ax.text(*c3[example[key]], f"  {name}", fontsize=13, fontweight="bold", color=MARK)
-    ax.set_box_aspect(box_shape(xyz))
+    ax.set_box_aspect(box_shape(xyz[:, :3]))
     ax.set_axis_off()
     ax.view_init(elev=24, azim=-60)
     ax.set_title("The sheet", fontsize=13, loc="left", color=INK)
@@ -236,9 +236,9 @@ def gallery(detail, summary, methods, sheets, family, path):
         fig.text(0.2 / width, 1 - (y + cell_h * 0.42 + 0.22) / height, textwrap.fill(first.sheet.note, 21), fontsize=9.5,
                  color=MUTED, va="top", linespacing=1.3)
         ax = fig.add_axes(box(label_w, y, input_w, cell_h - 0.1), projection="3d")
-        ax.scatter(*first.xyz.T, c=print_colours(first.uv), s=2.2, linewidths=0, depthshade=False, rasterized=True)
+        ax.scatter(*first.xyz[:, :3].T, c=print_colours(first.uv), s=2.2, linewidths=0, depthshade=False, rasterized=True)
         ax.view_init(elev=26, azim=-58)
-        ax.set_box_aspect(box_shape(first.xyz))
+        ax.set_box_aspect(box_shape(first.xyz[:, :3]))
         ax.set_axis_off()
         for j, m in enumerate(methods):
             test = f"{name} / {m}"

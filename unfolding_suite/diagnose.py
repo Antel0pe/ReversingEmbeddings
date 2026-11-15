@@ -113,7 +113,7 @@ def diagnose(flat, instance, result, info):
             if jump.any():
                 out["causes"].append({"cause": "hops also jumped between layers", "plain":
                                       f"{int(jump.sum())} of {len(jump)} links jump between layers as well."})
-    if info.get("plane") is not None:
+    if info.get("plane") is not None and xyz.shape[1] == 3:
         hidden = np.empty_like(xyz)
         hidden[instance.order] = instance.points
         a, b, c = hidden[T[:, 0]], hidden[T[:, 1]], hidden[T[:, 2]]

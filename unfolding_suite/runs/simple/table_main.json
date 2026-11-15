@@ -1,0 +1,339 @@
+{
+ "isomap_k10|noise=0.0": {
+  "4225": {
+   "design": [
+    10,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    4,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "s_curl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    10,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    4,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "s_curl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {},
+  "median_seconds_4225": 4.11611795425415
+ },
+ "check_k10|noise=0.0": {
+  "4225": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    4,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    4,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {},
+  "median_seconds_4225": 4.064706921577454
+ },
+ "up_0.0_surface|noise=0.0": {
+  "4225": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    3,
+    8
+   ],
+   "failed": [
+    "bumps_8d",
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    3,
+    8
+   ],
+   "failed": [
+    "bumps_8d",
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {},
+  "median_seconds_4225": 4.048343896865845
+ },
+ "convex_edge|noise=0.0": {
+  "4225": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    5,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    6,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {
+   "patchy_scurl": 129
+  },
+  "median_seconds_4225": 0.7540525197982788
+ },
+ "simple_vote|noise=0.0": {
+  "4225": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    6,
+    10
+   ],
+   "audit": [
+    7,
+    8
+   ],
+   "failed": [
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_dents23",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    6,
+    10
+   ],
+   "audit": [
+    8,
+    8
+   ],
+   "failed": [
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_dents23",
+    "h_roll5",
+    "hard_crumple",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {
+   "patchy_scurl": 129
+  },
+  "median_seconds_4225": 0.6111559867858887
+ },
+ "simple_unfold|noise=0.0": {
+  "4225": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    4,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "patchy_scurl",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "enough": {
+   "design": [
+    11,
+    14
+   ],
+   "holdout": [
+    7,
+    10
+   ],
+   "audit": [
+    5,
+    8
+   ],
+   "failed": [
+    "crescent_flat",
+    "crescent_roll",
+    "crumple",
+    "h_crumple17",
+    "h_crumple29",
+    "h_roll5",
+    "hard_crumple",
+    "strip_roll",
+    "tight_roll"
+   ]
+  },
+  "dense_grids": {
+   "patchy_scurl": 129
+  },
+  "median_seconds_4225": 3.991569995880127
+ }
+}

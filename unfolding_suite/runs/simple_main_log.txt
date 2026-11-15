@@ -1,0 +1,586 @@
+PASS flat            isomap_k10            65 102 pass             3.6s
+PASS flat            isomap_k10            65 101 pass             3.6s
+PASS flat            isomap_k10            65 100 pass             3.6s
+PASS flat            check_k10             65 100 pass             3.6s
+PASS flat            up_0.0_surface        65 101 pass             3.4s
+PASS flat            up_0.0_surface        65 100 pass             3.5s
+PASS flat            check_k10             65 101 pass             3.5s
+PASS flat            check_k10             65 102 pass             3.5s
+PASS flat            convex_edge           65 102 pass             0.6s
+PASS flat            convex_edge           65 100 pass             0.6s
+PASS flat            convex_edge           65 101 pass             0.6s
+PASS flat            up_0.0_surface        65 102 pass             4.1s
+PASS flat            simple_vote           65 100 pass             0.5s
+PASS flat            simple_unfold         65 100 pass             4.1s
+PASS flat            simple_unfold         65 101 pass             4.1s
+PASS flat            simple_unfold         65 102 pass             4.2s
+PASS flat            simple_vote           65 101 pass             0.5s
+PASS flat            simple_vote           65 102 pass             0.5s
+PASS gentle_arc      isomap_k10            65 100 pass             3.7s
+PASS gentle_arc      isomap_k10            65 101 pass             3.7s
+PASS gentle_arc      isomap_k10            65 102 pass             3.6s
+PASS gentle_arc      check_k10             65 100 pass             3.5s
+PASS gentle_arc      check_k10             65 102 pass             3.4s
+PASS gentle_arc      check_k10             65 101 pass             3.5s
+PASS gentle_arc      up_0.0_surface        65 100 pass             3.4s
+PASS gentle_arc      up_0.0_surface        65 101 pass             3.4s
+PASS gentle_arc      convex_edge           65 100 pass             0.6s
+PASS gentle_arc      convex_edge           65 101 pass             0.6s
+PASS gentle_arc      convex_edge           65 102 pass             0.6s
+PASS gentle_arc      up_0.0_surface        65 102 pass             3.5s
+PASS gentle_arc      simple_vote           65 100 pass             0.5s
+PASS gentle_arc      simple_unfold         65 100 pass             3.4s
+PASS gentle_arc      simple_unfold         65 101 pass             3.4s
+PASS gentle_arc      simple_unfold         65 102 pass             3.4s
+PASS gentle_arc      simple_vote           65 101 pass             0.5s
+PASS gentle_arc      simple_vote           65 102 pass             0.5s
+PASS wave            isomap_k10            65 100 pass             3.7s
+PASS wave            isomap_k10            65 101 pass             3.6s
+PASS wave            isomap_k10            65 102 pass             3.5s
+PASS wave            check_k10             65 100 pass             3.4s
+PASS wave            check_k10             65 102 pass             3.3s
+PASS wave            check_k10             65 101 pass             3.4s
+PASS wave            up_0.0_surface        65 100 pass             3.4s
+PASS wave            up_0.0_surface        65 101 pass             3.4s
+PASS wave            convex_edge           65 100 pass             0.6s
+PASS wave            convex_edge           65 101 pass             0.6s
+PASS wave            convex_edge           65 102 pass             0.6s
+PASS wave            up_0.0_surface        65 102 pass             3.3s
+PASS wave            simple_vote           65 100 pass             0.5s
+PASS wave            simple_unfold         65 100 pass             3.4s
+PASS wave            simple_unfold         65 101 pass             3.4s
+PASS wave            simple_unfold         65 102 pass             3.4s
+PASS wave            simple_vote           65 101 pass             0.6s
+PASS wave            simple_vote           65 102 pass             0.6s
+FAIL s_curl          isomap_k10            65 100 folded 8%        3.7s
+FAIL s_curl          isomap_k10            65 101 folded 9%        3.6s
+FAIL s_curl          isomap_k10            65 102 folded 8%        3.5s
+PASS s_curl          check_k10             65 100 pass             3.5s
+PASS s_curl          check_k10             65 102 pass             3.5s
+PASS s_curl          check_k10             65 101 pass             3.5s
+PASS s_curl          up_0.0_surface        65 100 pass             3.4s
+PASS s_curl          up_0.0_surface        65 101 pass             3.4s
+PASS s_curl          convex_edge           65 100 pass             0.6s
+PASS s_curl          convex_edge           65 101 pass             0.6s
+PASS s_curl          convex_edge           65 102 pass             0.6s
+PASS s_curl          up_0.0_surface        65 102 pass             4.3s
+PASS s_curl          simple_unfold         65 100 pass             4.1s
+PASS s_curl          simple_vote           65 100 pass             0.5s
+PASS s_curl          simple_unfold         65 101 pass             4.1s
+PASS s_curl          simple_unfold         65 102 pass             3.5s
+PASS s_curl          simple_vote           65 101 pass             0.5s
+PASS s_curl          simple_vote           65 102 pass             0.5s
+PASS roll            isomap_k10            65 100 pass             3.5s
+PASS roll            isomap_k10            65 101 pass             3.4s
+PASS roll            isomap_k10            65 102 pass             3.4s
+PASS roll            check_k10             65 100 pass             3.4s
+PASS roll            check_k10             65 101 pass             3.5s
+PASS roll            check_k10             65 102 pass             3.5s
+PASS roll            up_0.0_surface        65 100 pass             3.4s
+PASS roll            up_0.0_surface        65 101 pass             3.4s
+PASS roll            convex_edge           65 100 pass             0.6s
+PASS roll            convex_edge           65 101 pass             0.6s
+PASS roll            convex_edge           65 102 pass             0.6s
+PASS roll            up_0.0_surface        65 102 pass             3.5s
+PASS roll            simple_vote           65 100 pass             0.5s
+PASS roll            simple_unfold         65 100 pass             3.3s
+PASS roll            simple_unfold         65 102 pass             3.3s
+PASS roll            simple_unfold         65 101 pass             3.4s
+PASS roll            simple_vote           65 101 pass             0.5s
+PASS roll            simple_vote           65 102 pass             0.5s
+FAIL tight_roll      isomap_k10            65 100 folded 25%       3.4s
+FAIL tight_roll      isomap_k10            65 101 folded 25%       3.5s
+FAIL tight_roll      check_k10             65 100 folded 16%       3.2s
+FAIL tight_roll      isomap_k10            65 102 folded 25%       3.3s
+FAIL tight_roll      check_k10             65 101 folded 14%       3.0s
+FAIL tight_roll      check_k10             65 102 folded 16%       3.1s
+FAIL tight_roll      up_0.0_surface        65 100 folded 16%       3.1s
+FAIL tight_roll      up_0.0_surface        65 101 folded 14%       3.1s
+FAIL tight_roll      convex_edge           65 100 folded 12%       0.6s
+FAIL tight_roll      convex_edge           65 101 folded 13%       0.6s
+FAIL tight_roll      convex_edge           65 102 folded 13%       0.6s
+FAIL tight_roll      up_0.0_surface        65 102 folded 17%       3.5s
+FAIL tight_roll      simple_vote           65 100 folded 11%       0.5s
+FAIL tight_roll      simple_unfold         65 100 folded 16%       3.5s
+FAIL tight_roll      simple_unfold         65 101 folded 14%       3.6s
+FAIL tight_roll      simple_unfold         65 102 folded 17%       3.6s
+FAIL tight_roll      simple_vote           65 101 folded 11%       0.5s
+FAIL tight_roll      simple_vote           65 102 folded 11%       0.5s
+PASS diagonal_roll   isomap_k10            65 101 pass             4.1s
+PASS diagonal_roll   isomap_k10            65 100 pass             4.1s
+PASS diagonal_roll   isomap_k10            65 102 pass             4.1s
+PASS diagonal_roll   check_k10             65 100 pass             4.2s
+PASS diagonal_roll   check_k10             65 101 pass             4.8s
+PASS diagonal_roll   check_k10             65 102 pass             4.8s
+PASS diagonal_roll   up_0.0_surface        65 100 pass             4.7s
+PASS diagonal_roll   up_0.0_surface        65 101 pass             4.6s
+PASS diagonal_roll   convex_edge           65 101 pass             0.8s
+PASS diagonal_roll   convex_edge           65 100 pass             0.8s
+PASS diagonal_roll   convex_edge           65 102 pass             0.9s
+PASS diagonal_roll   up_0.0_surface        65 102 pass             4.4s
+PASS diagonal_roll   simple_unfold         65 100 pass             4.1s
+PASS diagonal_roll   simple_vote           65 100 pass             0.7s
+PASS diagonal_roll   simple_unfold         65 101 pass             4.3s
+PASS diagonal_roll   simple_unfold         65 102 pass             4.1s
+PASS diagonal_roll   simple_vote           65 101 pass             0.6s
+PASS diagonal_roll   simple_vote           65 102 pass             0.6s
+PASS accordion       isomap_k10            65 100 pass             4.3s
+PASS accordion       isomap_k10            65 101 pass             4.0s
+PASS accordion       isomap_k10            65 102 pass             3.9s
+PASS accordion       check_k10             65 100 pass             4.0s
+PASS accordion       check_k10             65 102 pass             4.5s
+PASS accordion       check_k10             65 101 pass             4.6s
+PASS accordion       up_0.0_surface        65 100 pass             4.5s
+PASS accordion       up_0.0_surface        65 101 pass             4.5s
+PASS accordion       convex_edge           65 101 pass             0.8s
+PASS accordion       convex_edge           65 100 pass             0.8s
+PASS accordion       convex_edge           65 102 pass             0.8s
+PASS accordion       up_0.0_surface        65 102 pass             4.1s
+PASS accordion       simple_vote           65 100 pass             0.6s
+PASS accordion       simple_unfold         65 100 pass             4.1s
+PASS accordion       simple_unfold         65 102 pass             4.1s
+PASS accordion       simple_unfold         65 101 pass             4.2s
+PASS accordion       simple_vote           65 101 pass             0.6s
+PASS accordion       simple_vote           65 102 pass             0.6s
+PASS cone            isomap_k10            65 100 pass             4.2s
+PASS cone            isomap_k10            65 102 pass             4.2s
+PASS cone            isomap_k10            65 101 pass             4.5s
+PASS cone            check_k10             65 100 pass             4.3s
+PASS cone            check_k10             65 101 pass             4.0s
+PASS cone            check_k10             65 102 pass             3.9s
+PASS cone            up_0.0_surface        65 100 pass             3.8s
+PASS cone            up_0.0_surface        65 101 pass             3.8s
+PASS cone            convex_edge           65 100 pass             0.7s
+PASS cone            convex_edge           65 101 pass             0.7s
+PASS cone            convex_edge           65 102 pass             0.7s
+PASS cone            up_0.0_surface        65 102 pass             4.5s
+PASS cone            simple_vote           65 100 pass             0.6s
+PASS cone            simple_unfold         65 100 pass             4.6s
+PASS cone            simple_unfold         65 101 pass             4.6s
+PASS cone            simple_unfold         65 102 pass             4.5s
+PASS cone            simple_vote           65 101 pass             0.6s
+PASS cone            simple_vote           65 102 pass             0.6s
+PASS bowl            isomap_k10            65 100 pass             4.4s
+PASS bowl            isomap_k10            65 101 pass             4.3s
+PASS bowl            isomap_k10            65 102 pass             4.2s
+PASS bowl            check_k10             65 100 pass             4.2s
+PASS bowl            check_k10             65 102 pass             3.9s
+PASS bowl            check_k10             65 101 pass             4.0s
+PASS bowl            up_0.0_surface        65 100 pass             3.9s
+PASS bowl            up_0.0_surface        65 101 pass             3.8s
+PASS bowl            convex_edge           65 101 pass             0.7s
+PASS bowl            convex_edge           65 100 pass             0.7s
+PASS bowl            convex_edge           65 102 pass             0.7s
+PASS bowl            up_0.0_surface        65 102 pass             3.7s
+PASS bowl            simple_vote           65 100 pass             0.6s
+PASS bowl            simple_unfold         65 100 pass             3.8s
+PASS bowl            simple_unfold         65 101 pass             3.9s
+PASS bowl            simple_unfold         65 102 pass             3.8s
+PASS bowl            simple_vote           65 101 pass             0.6s
+PASS bowl            simple_vote           65 102 pass             0.6s
+PASS uneven_roll     isomap_k10            65 100 pass             4.0s
+PASS uneven_roll     isomap_k10            65 101 pass             3.9s
+PASS uneven_roll     isomap_k10            65 102 pass             3.9s
+PASS uneven_roll     check_k10             65 100 pass             3.9s
+PASS uneven_roll     check_k10             65 102 pass             4.1s
+PASS uneven_roll     check_k10             65 101 pass             4.3s
+PASS uneven_roll     up_0.0_surface        65 100 pass             4.1s
+PASS uneven_roll     up_0.0_surface        65 101 pass             4.1s
+PASS uneven_roll     convex_edge           65 100 pass             0.7s
+PASS uneven_roll     convex_edge           65 101 pass             0.7s
+PASS uneven_roll     convex_edge           65 102 pass             0.7s
+PASS uneven_roll     up_0.0_surface        65 102 pass             3.7s
+PASS uneven_roll     simple_vote           65 100 pass             0.6s
+PASS uneven_roll     simple_unfold         65 100 pass             3.7s
+PASS uneven_roll     simple_unfold         65 101 pass             3.7s
+PASS uneven_roll     simple_unfold         65 102 pass             3.6s
+PASS uneven_roll     simple_vote           65 101 pass             0.6s
+PASS uneven_roll     simple_vote           65 102 pass             0.6s
+PASS dents           isomap_k10            65 100 pass             3.8s
+PASS dents           isomap_k10            65 101 pass             3.8s
+PASS dents           isomap_k10            65 102 pass             3.8s
+PASS dents           check_k10             65 100 pass             3.7s
+PASS dents           check_k10             65 101 pass             5.3s
+PASS dents           check_k10             65 102 pass             5.2s
+PASS dents           up_0.0_surface        65 100 pass             5.1s
+PASS dents           up_0.0_surface        65 101 pass             5.0s
+PASS dents           convex_edge           65 100 pass             0.8s
+PASS dents           convex_edge           65 101 pass             0.8s
+PASS dents           convex_edge           65 102 pass             0.7s
+PASS dents           up_0.0_surface        65 102 pass             4.1s
+PASS dents           simple_unfold         65 100 pass             4.0s
+PASS dents           simple_vote           65 100 pass             0.8s
+PASS dents           simple_unfold         65 101 pass             4.1s
+PASS dents           simple_unfold         65 102 pass             4.1s
+PASS dents           simple_vote           65 101 pass             0.7s
+PASS dents           simple_vote           65 102 pass             0.7s
+FAIL crumple         isomap_k10            65 100 folded 1%        4.3s
+FAIL crumple         isomap_k10            65 101 folded 1%        4.2s
+FAIL crumple         isomap_k10            65 102 folded 1%        4.0s
+FAIL crumple         check_k10             65 100 folded 1%        3.9s
+FAIL crumple         check_k10             65 102 folded 1%        4.3s
+FAIL crumple         check_k10             65 101 folded 1%        4.3s
+FAIL crumple         up_0.0_surface        65 100 folded 1%        4.2s
+FAIL crumple         up_0.0_surface        65 101 folded 1%        4.2s
+FAIL crumple         convex_edge           65 100 folded 5%        0.7s
+FAIL crumple         convex_edge           65 101 folded 3%        0.7s
+FAIL crumple         convex_edge           65 102 folded 2%        0.7s
+FAIL crumple         up_0.0_surface        65 102 folded 1%        3.8s
+FAIL crumple         simple_vote           65 100 folded 13%       0.6s
+FAIL crumple         simple_unfold         65 100 folded 1%        3.9s
+FAIL crumple         simple_unfold         65 101 folded 1%        3.9s
+FAIL crumple         simple_unfold         65 102 folded 1%        3.9s
+FAIL crumple         simple_vote           65 101 folded 13%       0.7s
+FAIL crumple         simple_vote           65 102 folded 9%        0.8s
+FAIL hard_crumple    isomap_k10            65 100 folded 1%        4.0s
+FAIL hard_crumple    isomap_k10            65 101 folded 1%        4.0s
+FAIL hard_crumple    isomap_k10            65 102 folded 1%        3.9s
+FAIL hard_crumple    check_k10             65 100 folded 1%        3.8s
+FAIL hard_crumple    check_k10             65 102 folded 1%        3.8s
+FAIL hard_crumple    check_k10             65 101 folded 1%        3.9s
+FAIL hard_crumple    up_0.0_surface        65 100 folded 1%        3.9s
+FAIL hard_crumple    up_0.0_surface        65 101 folded 1%        3.8s
+FAIL hard_crumple    convex_edge           65 100 folded 1%        0.8s
+FAIL hard_crumple    convex_edge           65 101 folded 2%        0.8s
+FAIL hard_crumple    convex_edge           65 102 folded 1%        0.8s
+FAIL hard_crumple    up_0.0_surface        65 102 folded 1%        4.9s
+FAIL hard_crumple    simple_vote           65 100 folded 7%        0.7s
+FAIL hard_crumple    simple_unfold         65 100 folded 1%        4.8s
+FAIL hard_crumple    simple_unfold         65 101 folded 1%        4.8s
+FAIL hard_crumple    simple_unfold         65 102 folded 1%        4.7s
+FAIL hard_crumple    simple_vote           65 101 folded 6%        0.6s
+FAIL hard_crumple    simple_vote           65 102 folded 7%        0.6s
+FAIL h_roll5         isomap_k10            65 100 folded 20%       4.3s
+FAIL h_roll5         isomap_k10            65 101 folded 21%       4.2s
+FAIL h_roll5         isomap_k10            65 102 folded 21%       4.0s
+PASS h_roll5         check_k10             65 100 pass             3.9s
+PASS h_roll5         check_k10             65 102 pass             4.2s
+FAIL h_roll5         check_k10             65 101 folded 2%        4.3s
+PASS h_roll5         up_0.0_surface        65 100 pass             4.2s
+FAIL h_roll5         up_0.0_surface        65 101 folded 2%        4.2s
+FAIL h_roll5         convex_edge           65 100 torn             0.8s
+FAIL h_roll5         convex_edge           65 101 folded 1%        0.8s
+FAIL h_roll5         convex_edge           65 102 torn             0.8s
+PASS h_roll5         up_0.0_surface        65 102 pass             4.2s
+PASS h_roll5         simple_vote           65 100 pass             0.7s
+FAIL h_roll5         simple_unfold         65 101 folded 2%        4.1s
+PASS h_roll5         simple_unfold         65 100 pass             4.1s
+PASS h_roll5         simple_unfold         65 102 pass             4.1s
+FAIL h_roll5         simple_vote           65 101 folded 1%        0.7s
+PASS h_roll5         simple_vote           65 102 pass             0.7s
+PASS h_scurl65       isomap_k10            65 100 pass             6.5s
+PASS h_scurl65       isomap_k10            65 101 pass             6.6s
+PASS h_scurl65       isomap_k10            65 102 pass             6.7s
+PASS h_scurl65       check_k10             65 100 pass             6.9s
+PASS h_scurl65       check_k10             65 102 pass             5.8s
+PASS h_scurl65       check_k10             65 101 pass             6.0s
+PASS h_scurl65       up_0.0_surface        65 100 pass             5.7s
+PASS h_scurl65       up_0.0_surface        65 101 pass             5.6s
+PASS h_scurl65       convex_edge           65 100 pass             1.1s
+PASS h_scurl65       convex_edge           65 101 pass             1.1s
+PASS h_scurl65       convex_edge           65 102 pass             1.2s
+PASS h_scurl65       up_0.0_surface        65 102 pass             6.4s
+PASS h_scurl65       simple_vote           65 100 pass             1.0s
+PASS h_scurl65       simple_unfold         65 100 pass             6.3s
+PASS h_scurl65       simple_unfold         65 101 pass             6.2s
+PASS h_scurl65       simple_unfold         65 102 pass             6.3s
+PASS h_scurl65       simple_vote           65 101 pass             0.9s
+PASS h_scurl65       simple_vote           65 102 pass             0.9s
+PASS h_three_lobes   isomap_k10            65 100 pass             5.6s
+PASS h_three_lobes   isomap_k10            65 101 pass             5.5s
+PASS h_three_lobes   isomap_k10            65 102 pass             5.5s
+PASS h_three_lobes   check_k10             65 100 pass             6.1s
+PASS h_three_lobes   check_k10             65 101 pass             5.5s
+PASS h_three_lobes   up_0.0_surface        65 100 pass             5.1s
+PASS h_three_lobes   check_k10             65 102 pass             5.4s
+PASS h_three_lobes   up_0.0_surface        65 101 pass             5.3s
+PASS h_three_lobes   convex_edge           65 100 pass             1.0s
+PASS h_three_lobes   convex_edge           65 101 pass             1.0s
+PASS h_three_lobes   convex_edge           65 102 pass             1.1s
+PASS h_three_lobes   up_0.0_surface        65 102 pass             5.4s
+PASS h_three_lobes   simple_vote           65 100 pass             0.8s
+PASS h_three_lobes   simple_unfold         65 101 pass             5.3s
+PASS h_three_lobes   simple_unfold         65 100 pass             5.5s
+PASS h_three_lobes   simple_vote           65 101 pass             0.8s
+PASS h_three_lobes   simple_unfold         65 102 pass             5.3s
+PASS h_three_lobes   simple_vote           65 102 pass             0.8s
+PASS h_fan3          isomap_k10            65 100 pass             4.7s
+PASS h_fan3          isomap_k10            65 101 pass             4.5s
+PASS h_fan3          check_k10             65 100 pass             4.4s
+PASS h_fan3          isomap_k10            65 102 pass             4.5s
+PASS h_fan3          check_k10             65 101 pass             4.3s
+PASS h_fan3          check_k10             65 102 pass             4.1s
+PASS h_fan3          up_0.0_surface        65 100 pass             4.1s
+PASS h_fan3          up_0.0_surface        65 101 pass             4.1s
+PASS h_fan3          convex_edge           65 100 pass             0.8s
+PASS h_fan3          convex_edge           65 101 pass             0.8s
+PASS h_fan3          convex_edge           65 102 pass             0.8s
+PASS h_fan3          up_0.0_surface        65 102 pass             5.1s
+PASS h_fan3          simple_vote           65 100 pass             0.7s
+PASS h_fan3          simple_unfold         65 100 pass             5.0s
+PASS h_fan3          simple_unfold         65 101 pass             5.0s
+PASS h_fan3          simple_unfold         65 102 pass             5.0s
+PASS h_fan3          simple_vote           65 101 pass             0.6s
+PASS h_fan3          simple_vote           65 102 pass             0.6s
+PASS h_cone30        isomap_k10            65 100 pass             4.3s
+PASS h_cone30        isomap_k10            65 101 pass             4.2s
+PASS h_cone30        isomap_k10            65 102 pass             4.1s
+PASS h_cone30        check_k10             65 100 pass             4.1s
+PASS h_cone30        check_k10             65 102 pass             4.1s
+PASS h_cone30        check_k10             65 101 pass             4.3s
+PASS h_cone30        up_0.0_surface        65 100 pass             4.1s
+PASS h_cone30        up_0.0_surface        65 101 pass             4.2s
+PASS h_cone30        convex_edge           65 100 pass             0.8s
+PASS h_cone30        convex_edge           65 101 pass             0.8s
+PASS h_cone30        convex_edge           65 102 pass             0.7s
+PASS h_cone30        up_0.0_surface        65 102 pass             4.0s
+PASS h_cone30        simple_vote           65 100 pass             0.6s
+PASS h_cone30        simple_unfold         65 100 pass             3.9s
+PASS h_cone30        simple_unfold         65 101 pass             3.9s
+PASS h_cone30        simple_unfold         65 102 pass             3.9s
+PASS h_cone30        simple_vote           65 101 pass             0.6s
+PASS h_cone30        simple_vote           65 102 pass             0.6s
+PASS h_diag30        isomap_k10            65 100 pass             4.0s
+PASS h_diag30        isomap_k10            65 101 pass             4.0s
+PASS h_diag30        isomap_k10            65 102 pass             4.0s
+PASS h_diag30        check_k10             65 100 pass             3.9s
+PASS h_diag30        check_k10             65 101 pass             4.0s
+PASS h_diag30        check_k10             65 102 pass             4.0s
+PASS h_diag30        up_0.0_surface        65 100 pass             4.0s
+PASS h_diag30        up_0.0_surface        65 101 pass             3.9s
+PASS h_diag30        convex_edge           65 100 pass             0.7s
+PASS h_diag30        convex_edge           65 101 pass             0.7s
+PASS h_diag30        convex_edge           65 102 pass             0.7s
+PASS h_diag30        up_0.0_surface        65 102 pass             3.9s
+PASS h_diag30        simple_vote           65 100 pass             0.7s
+PASS h_diag30        simple_unfold         65 101 pass             4.0s
+PASS h_diag30        simple_unfold         65 100 pass             4.0s
+PASS h_diag30        simple_unfold         65 102 pass             4.0s
+PASS h_diag30        simple_vote           65 101 pass             0.6s
+PASS h_diag30        simple_vote           65 102 pass             0.6s
+PASS h_arc200        isomap_k10            65 100 pass             4.9s
+PASS h_arc200        isomap_k10            65 101 pass             4.9s
+PASS h_arc200        isomap_k10            65 102 pass             4.7s
+PASS h_arc200        check_k10             65 100 pass             4.7s
+PASS h_arc200        check_k10             65 102 pass             4.5s
+PASS h_arc200        check_k10             65 101 pass             4.5s
+PASS h_arc200        up_0.0_surface        65 100 pass             4.4s
+PASS h_arc200        up_0.0_surface        65 101 pass             4.4s
+PASS h_arc200        convex_edge           65 101 pass             0.8s
+PASS h_arc200        convex_edge           65 100 pass             0.9s
+PASS h_arc200        convex_edge           65 102 pass             0.8s
+PASS h_arc200        up_0.0_surface        65 102 pass             6.4s
+PASS h_arc200        simple_vote           65 100 pass             1.0s
+PASS h_arc200        simple_unfold         65 101 pass             7.1s
+PASS h_arc200        simple_unfold         65 102 pass             7.0s
+PASS h_arc200        simple_unfold         65 100 pass             7.2s
+PASS h_arc200        simple_vote           65 101 pass             0.9s
+PASS h_arc200        simple_vote           65 102 pass             0.8s
+PASS h_dents23       isomap_k10            65 100 pass             5.4s
+PASS h_dents23       isomap_k10            65 101 pass             5.6s
+PASS h_dents23       isomap_k10            65 102 pass             5.4s
+PASS h_dents23       check_k10             65 100 pass             5.2s
+PASS h_dents23       up_0.0_surface        65 100 pass             5.4s
+PASS h_dents23       check_k10             65 102 pass             5.5s
+PASS h_dents23       check_k10             65 101 pass             5.8s
+PASS h_dents23       up_0.0_surface        65 101 pass             5.3s
+PASS h_dents23       convex_edge           65 100 pass             1.1s
+PASS h_dents23       convex_edge           65 101 pass             1.1s
+PASS h_dents23       convex_edge           65 102 pass             1.1s
+PASS h_dents23       up_0.0_surface        65 102 pass             5.2s
+PASS h_dents23       simple_unfold         65 100 pass             5.6s
+PASS h_dents23       simple_vote           65 100 pass             1.6s
+PASS h_dents23       simple_unfold         65 101 pass             5.7s
+PASS h_dents23       simple_unfold         65 102 pass             5.9s
+PASS h_dents23       simple_vote           65 101 pass             0.8s
+FAIL h_dents23       simple_vote           65 102 folded 0%        0.8s
+FAIL h_crumple17     isomap_k10            65 100 folded 6%        5.1s
+FAIL h_crumple17     isomap_k10            65 101 folded 5%        5.1s
+FAIL h_crumple17     check_k10             65 100 folded 4%        4.8s
+FAIL h_crumple17     isomap_k10            65 102 folded 6%        4.9s
+FAIL h_crumple17     check_k10             65 101 folded 4%        5.1s
+FAIL h_crumple17     up_0.0_surface        65 100 folded 4%        5.1s
+FAIL h_crumple17     check_k10             65 102 folded 5%        5.3s
+FAIL h_crumple17     up_0.0_surface        65 101 folded 4%        5.2s
+FAIL h_crumple17     convex_edge           65 100 folded 6%        0.8s
+FAIL h_crumple17     convex_edge           65 101 folded 6%        0.8s
+FAIL h_crumple17     convex_edge           65 102 folded 6%        0.8s
+FAIL h_crumple17     up_0.0_surface        65 102 folded 6%        3.9s
+FAIL h_crumple17     simple_vote           65 100 folded 9%        0.6s
+FAIL h_crumple17     simple_unfold         65 101 folded 4%        3.9s
+FAIL h_crumple17     simple_unfold         65 100 folded 4%        3.9s
+FAIL h_crumple17     simple_vote           65 101 folded 10%       0.6s
+FAIL h_crumple17     simple_unfold         65 102 folded 5%        3.8s
+FAIL h_crumple17     simple_vote           65 102 folded 10%       0.6s
+FAIL h_crumple29     isomap_k10            65 101 folded 15%       3.9s
+FAIL h_crumple29     isomap_k10            65 100 folded 14%       4.0s
+FAIL h_crumple29     isomap_k10            65 102 folded 15%       3.9s
+FAIL h_crumple29     check_k10             65 100 folded 13%       3.7s
+FAIL h_crumple29     up_0.0_surface        65 100 folded 21%       4.3s
+FAIL h_crumple29     check_k10             65 101 folded 10%       4.3s
+FAIL h_crumple29     check_k10             65 102 folded 10%       4.3s
+FAIL h_crumple29     up_0.0_surface        65 101 folded 19%       4.1s
+FAIL h_crumple29     convex_edge           65 100 folded 21%       1.0s
+FAIL h_crumple29     convex_edge           65 101 folded 22%       1.0s
+FAIL h_crumple29     convex_edge           65 102 folded 29%       1.0s
+FAIL h_crumple29     up_0.0_surface        65 102 folded 12%       3.8s
+FAIL h_crumple29     simple_vote           65 100 folded 38%       0.6s
+FAIL h_crumple29     simple_unfold         65 100 folded 14%       3.7s
+FAIL h_crumple29     simple_unfold         65 101 folded 22%       3.7s
+FAIL h_crumple29     simple_unfold         65 102 folded 18%       3.7s
+FAIL h_crumple29     simple_vote           65 101 folded 24%       0.6s
+FAIL h_crumple29     simple_vote           65 102 folded 32%       0.6s
+FAIL patchy_scurl    isomap_k10            65 100 folded 63%       4.8s
+FAIL patchy_scurl    isomap_k10            65 101 folded 64%       4.8s
+FAIL patchy_scurl    isomap_k10            65 102 folded 66%       4.7s
+FAIL patchy_scurl    check_k10             65 100 folded 38%       4.7s
+FAIL patchy_scurl    check_k10             65 101 folded 34%       3.9s
+FAIL patchy_scurl    check_k10             65 102 folded 35%       3.9s
+FAIL patchy_scurl    up_0.0_surface        65 100 folded 27%       3.8s
+FAIL patchy_scurl    up_0.0_surface        65 101 folded 31%       3.7s
+FAIL patchy_scurl    convex_edge           65 100 folded 1%        0.6s
+FAIL patchy_scurl    convex_edge           65 101 folded 1%        0.6s
+FAIL patchy_scurl    convex_edge           65 102 folded 1%        0.6s
+FAIL patchy_scurl    up_0.0_surface        65 102 folded 33%       3.8s
+FAIL patchy_scurl    simple_vote           65 100 folded 10%       0.7s
+FAIL patchy_scurl    simple_unfold         65 100 folded 27%       3.9s
+FAIL patchy_scurl    simple_unfold         65 101 folded 31%       3.9s
+FAIL patchy_scurl    simple_unfold         65 102 folded 33%       3.9s
+FAIL patchy_scurl    simple_vote           65 101 folded 8%        0.6s
+FAIL patchy_scurl    simple_vote           65 102 folded 14%       0.6s
+PASS patchy_roll     isomap_k10            65 100 pass             3.9s
+PASS patchy_roll     isomap_k10            65 101 pass             3.8s
+PASS patchy_roll     isomap_k10            65 102 pass             3.8s
+PASS patchy_roll     check_k10             65 100 pass             3.7s
+PASS patchy_roll     check_k10             65 101 pass             3.9s
+PASS patchy_roll     check_k10             65 102 pass             4.0s
+PASS patchy_roll     up_0.0_surface        65 100 pass             3.8s
+PASS patchy_roll     up_0.0_surface        65 101 pass             3.8s
+PASS patchy_roll     convex_edge           65 100 pass             0.8s
+PASS patchy_roll     convex_edge           65 101 pass             0.8s
+PASS patchy_roll     convex_edge           65 102 pass             0.8s
+PASS patchy_roll     up_0.0_surface        65 102 pass             3.8s
+PASS patchy_roll     simple_vote           65 100 pass             0.6s
+PASS patchy_roll     simple_unfold         65 100 pass             3.9s
+PASS patchy_roll     simple_unfold         65 101 pass             3.8s
+PASS patchy_roll     simple_unfold         65 102 pass             3.8s
+PASS patchy_roll     simple_vote           65 101 pass             0.6s
+PASS patchy_roll     simple_vote           65 102 pass             0.6s
+FAIL crescent_flat   isomap_k10            65 100 folded 10%       4.3s
+FAIL crescent_flat   isomap_k10            65 101 folded 11%       4.3s
+FAIL crescent_flat   isomap_k10            65 102 folded 11%       4.2s
+FAIL crescent_flat   check_k10             65 100 folded 10%       4.0s
+FAIL crescent_flat   up_0.0_surface        65 100 folded 10%       4.1s
+FAIL crescent_flat   check_k10             65 102 folded 11%       4.2s
+FAIL crescent_flat   check_k10             65 101 folded 11%       4.3s
+FAIL crescent_flat   up_0.0_surface        65 101 folded 11%       4.2s
+FAIL crescent_flat   convex_edge           65 100 folded 81%       1.0s
+FAIL crescent_flat   convex_edge           65 101 folded 93%       1.0s
+FAIL crescent_flat   convex_edge           65 102 folded 96%       0.9s
+FAIL crescent_flat   up_0.0_surface        65 102 folded 11%       5.1s
+PASS crescent_flat   simple_vote           65 100 pass             0.6s
+FAIL crescent_flat   simple_unfold         65 100 folded 10%       4.8s
+FAIL crescent_flat   simple_unfold         65 102 folded 11%       4.9s
+FAIL crescent_flat   simple_unfold         65 101 folded 11%       5.0s
+PASS crescent_flat   simple_vote           65 101 pass             0.6s
+PASS crescent_flat   simple_vote           65 102 pass             0.7s
+FAIL crescent_roll   isomap_k10            65 101 folded 11%       4.1s
+FAIL crescent_roll   isomap_k10            65 100 folded 10%       4.1s
+FAIL crescent_roll   isomap_k10            65 102 folded 11%       4.0s
+FAIL crescent_roll   check_k10             65 100 folded 10%       4.0s
+FAIL crescent_roll   check_k10             65 102 folded 11%       4.0s
+FAIL crescent_roll   up_0.0_surface        65 100 folded 10%       4.0s
+FAIL crescent_roll   check_k10             65 101 folded 11%       4.1s
+FAIL crescent_roll   up_0.0_surface        65 101 folded 11%       3.9s
+FAIL crescent_roll   convex_edge           65 100 folded 78%       0.7s
+FAIL crescent_roll   convex_edge           65 101 folded 94%       0.8s
+FAIL crescent_roll   convex_edge           65 102 folded 96%       0.8s
+FAIL crescent_roll   up_0.0_surface        65 102 folded 11%       3.9s
+PASS crescent_roll   simple_vote           65 100 pass             0.6s
+FAIL crescent_roll   simple_unfold         65 100 folded 10%       4.0s
+FAIL crescent_roll   simple_unfold         65 101 folded 11%       4.0s
+FAIL crescent_roll   simple_unfold         65 102 folded 11%       4.0s
+PASS crescent_roll   simple_vote           65 101 pass             0.6s
+PASS crescent_roll   simple_vote           65 102 pass             0.6s
+FAIL strip_roll      isomap_k10            65 100 folded 0%        3.9s
+PASS strip_roll      isomap_k10            65 101 pass             3.8s
+PASS strip_roll      isomap_k10            65 102 pass             3.8s
+FAIL strip_roll      check_k10             65 100 folded 0%        3.7s
+PASS strip_roll      check_k10             65 102 pass             3.8s
+PASS strip_roll      check_k10             65 101 pass             3.8s
+FAIL strip_roll      up_0.0_surface        65 100 folded 0%        3.8s
+PASS strip_roll      up_0.0_surface        65 101 pass             3.6s
+PASS strip_roll      convex_edge           65 100 pass             0.7s
+PASS strip_roll      convex_edge           65 101 pass             0.7s
+PASS strip_roll      convex_edge           65 102 pass             0.7s
+PASS strip_roll      up_0.0_surface        65 102 pass             3.7s
+PASS strip_roll      simple_vote           65 100 pass             0.6s
+PASS strip_roll      simple_unfold         65 101 pass             3.6s
+FAIL strip_roll      simple_unfold         65 100 folded 0%        3.8s
+PASS strip_roll      simple_unfold         65 102 pass             3.7s
+PASS strip_roll      simple_vote           65 101 pass             0.6s
+PASS strip_roll      simple_vote           65 102 pass             0.6s
+PASS hairpin_flap    isomap_k10            65 100 pass             5.0s
+PASS hairpin_flap    isomap_k10            65 101 pass             5.0s
+PASS hairpin_flap    isomap_k10            65 102 pass             4.7s
+PASS hairpin_flap    check_k10             65 100 pass             4.9s
+PASS hairpin_flap    check_k10             65 102 pass             3.9s
+PASS hairpin_flap    check_k10             65 101 pass             4.0s
+PASS hairpin_flap    up_0.0_surface        65 100 pass             3.9s
+PASS hairpin_flap    up_0.0_surface        65 101 pass             3.8s
+PASS hairpin_flap    convex_edge           65 100 pass             0.7s
+PASS hairpin_flap    convex_edge           65 101 pass             0.7s
+PASS hairpin_flap    convex_edge           65 102 pass             0.7s
+PASS hairpin_flap    up_0.0_surface        65 102 pass             3.8s
+PASS hairpin_flap    simple_vote           65 100 pass             0.6s
+PASS hairpin_flap    simple_unfold         65 100 pass             3.8s
+PASS hairpin_flap    simple_unfold         65 101 pass             3.9s
+PASS hairpin_flap    simple_unfold         65 102 pass             3.9s
+PASS hairpin_flap    simple_vote           65 101 pass             0.6s
+PASS hairpin_flap    simple_vote           65 102 pass             0.6s
+PASS roll_5d         isomap_k10            65 100 pass             4.2s
+PASS roll_5d         isomap_k10            65 101 pass             4.1s
+PASS roll_5d         isomap_k10            65 102 pass             4.0s
+PASS roll_5d         check_k10             65 100 pass             3.9s
+PASS roll_5d         check_k10             65 102 pass             4.1s
+PASS roll_5d         check_k10             65 101 pass             4.2s
+PASS roll_5d         up_0.0_surface        65 100 pass             4.1s
+PASS roll_5d         up_0.0_surface        65 101 pass             4.0s
+PASS roll_5d         convex_edge           65 100 pass             0.8s
+PASS roll_5d         convex_edge           65 101 pass             0.8s
+PASS roll_5d         convex_edge           65 102 pass             0.8s
+PASS roll_5d         up_0.0_surface        65 102 pass             4.0s
+PASS roll_5d         simple_vote           65 100 pass             0.7s
+PASS roll_5d         simple_unfold         65 101 pass             4.0s
+PASS roll_5d         simple_unfold         65 100 pass             4.1s
+PASS roll_5d         simple_unfold         65 102 pass             4.1s
+PASS roll_5d         simple_vote           65 101 pass             0.7s
+PASS roll_5d         simple_vote           65 102 pass             0.6s
+PASS bumps_8d        isomap_k10            65 100 pass             4.3s
+PASS bumps_8d        isomap_k10            65 101 pass             4.3s
+PASS bumps_8d        isomap_k10            65 102 pass             4.3s
+PASS bumps_8d        check_k10             65 100 pass             4.5s
+PASS bumps_8d        check_k10             65 102 pass             4.8s
+PASS bumps_8d        check_k10             65 101 pass             5.0s
+FAIL bumps_8d        up_0.0_surface        65 100 folded 2%        4.6s
+FAIL bumps_8d        up_0.0_surface        65 101 folded 5%        4.6s
+PASS bumps_8d        convex_edge           65 100 pass             0.8s
+PASS bumps_8d        convex_edge           65 101 pass             0.8s
+PASS bumps_8d        convex_edge           65 102 pass             0.8s
+FAIL bumps_8d        up_0.0_surface        65 102 folded 2%        3.9s
+PASS bumps_8d        simple_vote           65 100 pass             0.7s
+PASS bumps_8d        simple_unfold         65 100 pass             3.9s
+PASS bumps_8d        simple_unfold         65 101 pass             3.9s
+PASS bumps_8d        simple_vote           65 101 pass             0.7s
+PASS bumps_8d        simple_unfold         65 102 pass             3.9s
+PASS bumps_8d        simple_vote           65 102 pass             0.6s
+PASS patchy_scurl    convex_edge          129 100 pass             4.1s
+PASS patchy_scurl    convex_edge          129 101 pass             4.1s
+PASS patchy_scurl    convex_edge          129 102 pass             4.1s
+PASS patchy_scurl    simple_vote          129 100 pass             2.6s
+PASS patchy_scurl    simple_unfold        129 100 pass             7.3s
+PASS patchy_scurl    simple_vote          129 101 pass             2.5s
+PASS patchy_scurl    simple_vote          129 102 pass             2.3s
+PASS patchy_scurl    simple_unfold        129 101 pass             7.1s
+PASS patchy_scurl    simple_unfold        129 102 pass             7.0s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/main.json

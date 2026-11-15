@@ -88,3 +88,4 @@ method("isomap_k20", k=20)(isomap)
 
 from . import link_check  # noqa: E402,F401 - registers check_k10 and convex_edge
 from . import pull  # noqa: E402,F401 - registers pull_k10
+from . import simple  # noqa: E402,F401 - registers simple_unfold

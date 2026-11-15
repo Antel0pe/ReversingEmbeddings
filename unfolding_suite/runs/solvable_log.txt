@@ -1,0 +1,265 @@
+PASS flat            65 100 vote_true  pass
+PASS flat            65 101 vote_true  pass
+PASS flat            65 102 vote_true  pass
+FAIL flat            65 100 tutte_true not square 3%
+FAIL flat            65 101 tutte_true not square 3%
+FAIL flat            65 102 tutte_true not square 3%
+PASS flat            65 101 walk_true  pass
+PASS flat            65 102 walk_true  pass
+PASS flat            65 100 walk_true  pass
+PASS gentle_arc      65 100 vote_true  pass
+PASS gentle_arc      65 101 vote_true  pass
+PASS gentle_arc      65 102 vote_true  pass
+FAIL gentle_arc      65 100 tutte_true not square 3%
+PASS gentle_arc      65 100 walk_true  pass
+FAIL gentle_arc      65 101 tutte_true not square 3%
+FAIL gentle_arc      65 102 tutte_true not square 3%
+PASS gentle_arc      65 102 walk_true  pass
+PASS gentle_arc      65 101 walk_true  pass
+PASS wave            65 100 vote_true  pass
+PASS wave            65 101 vote_true  pass
+PASS wave            65 102 vote_true  pass
+PASS wave            65 100 walk_true  pass
+FAIL wave            65 100 tutte_true not square 3%
+FAIL wave            65 101 tutte_true not square 3%
+FAIL wave            65 102 tutte_true not square 3%
+PASS wave            65 101 walk_true  pass
+PASS wave            65 102 walk_true  pass
+PASS s_curl          65 100 vote_true  pass
+PASS s_curl          65 101 vote_true  pass
+PASS s_curl          65 102 vote_true  pass
+FAIL s_curl          65 100 tutte_true not square 3%
+PASS s_curl          65 100 walk_true  pass
+PASS s_curl          65 101 walk_true  pass
+PASS s_curl          65 102 walk_true  pass
+FAIL s_curl          65 101 tutte_true not square 3%
+FAIL s_curl          65 102 tutte_true not square 3%
+PASS roll            65 100 vote_true  pass
+PASS roll            65 101 vote_true  pass
+PASS roll            65 102 vote_true  pass
+FAIL roll            65 100 tutte_true not square 3%
+FAIL roll            65 101 tutte_true not square 3%
+PASS roll            65 101 walk_true  pass
+PASS roll            65 102 walk_true  pass
+PASS roll            65 100 walk_true  pass
+FAIL roll            65 102 tutte_true not square 3%
+PASS diagonal_roll   65 100 walk_true  pass
+PASS diagonal_roll   65 101 walk_true  pass
+FAIL tight_roll      257 100 tutte_true not square 3%
+PASS diagonal_roll   65 100 vote_true  pass
+PASS diagonal_roll   65 102 walk_true  pass
+PASS diagonal_roll   65 101 vote_true  pass
+PASS diagonal_roll   65 102 vote_true  pass
+FAIL diagonal_roll   65 101 tutte_true not square 3%
+FAIL diagonal_roll   65 100 tutte_true not square 3%
+FAIL diagonal_roll   65 102 tutte_true not square 3%
+PASS tight_roll      257 100 vote_true  pass
+PASS accordion       65 101 walk_true  pass
+PASS accordion       65 100 walk_true  pass
+PASS accordion       65 102 walk_true  pass
+PASS accordion       65 100 vote_true  pass
+PASS accordion       65 101 vote_true  pass
+FAIL accordion       65 100 tutte_true not square 3%
+PASS accordion       65 102 vote_true  pass
+FAIL accordion       65 101 tutte_true not square 3%
+FAIL accordion       65 102 tutte_true not square 3%
+PASS cone            65 101 walk_true  pass
+PASS cone            65 100 walk_true  pass
+PASS cone            65 102 walk_true  pass
+PASS cone            65 100 vote_true  pass
+PASS cone            65 101 vote_true  pass
+FAIL cone            65 100 tutte_true not square 3%
+PASS cone            65 102 vote_true  pass
+FAIL cone            65 101 tutte_true not square 3%
+FAIL cone            65 102 tutte_true not square 3%
+PASS bowl            65 100 walk_true  pass
+PASS bowl            65 102 walk_true  pass
+PASS bowl            65 101 walk_true  pass
+PASS bowl            65 101 vote_true  pass
+PASS bowl            65 100 vote_true  pass
+PASS bowl            65 102 vote_true  pass
+PASS bowl            65 100 tutte_true pass
+PASS bowl            65 101 tutte_true pass
+PASS bowl            65 102 tutte_true pass
+PASS uneven_roll     65 100 walk_true  pass
+PASS uneven_roll     65 101 walk_true  pass
+PASS uneven_roll     65 102 walk_true  pass
+PASS uneven_roll     65 100 vote_true  pass
+PASS uneven_roll     65 101 vote_true  pass
+PASS uneven_roll     65 102 vote_true  pass
+PASS uneven_roll     65 100 tutte_true pass
+PASS uneven_roll     65 101 tutte_true pass
+PASS uneven_roll     65 102 tutte_true pass
+PASS dents           65 100 walk_true  pass
+PASS dents           65 102 walk_true  pass
+PASS dents           65 101 walk_true  pass
+PASS tight_roll      257 100 walk_true  pass
+PASS dents           65 100 vote_true  pass
+PASS dents           65 101 vote_true  pass
+PASS dents           65 102 vote_true  pass
+PASS dents           65 100 tutte_true pass
+PASS dents           65 101 tutte_true pass
+PASS dents           65 102 tutte_true pass
+FAIL crumple         65 100 vote_true  folded 12%
+FAIL crumple         65 101 vote_true  folded 11%
+FAIL crumple         65 102 vote_true  folded 14%
+PASS crumple         65 100 tutte_true pass
+PASS crumple         65 101 tutte_true pass
+PASS crumple         65 102 tutte_true pass
+FAIL crumple         65 100 walk_true  folded 1%
+FAIL crumple         65 102 walk_true  folded 1%
+FAIL crumple         65 101 walk_true  folded 2%
+FAIL hard_crumple    65 100 vote_true  folded 10%
+FAIL hard_crumple    65 101 vote_true  folded 35%
+FAIL hard_crumple    65 102 vote_true  folded 12%
+PASS hard_crumple    65 100 tutte_true pass
+PASS hard_crumple    65 101 tutte_true pass
+PASS hard_crumple    65 102 tutte_true pass
+FAIL hard_crumple    65 100 walk_true  folded 1%
+FAIL hard_crumple    65 101 walk_true  folded 0%
+FAIL hard_crumple    65 102 walk_true  folded 0%
+PASS h_roll5         129 100 vote_true  pass
+PASS h_roll5         129 101 vote_true  pass
+PASS h_roll5         129 100 walk_true  pass
+PASS h_roll5         129 101 walk_true  pass
+FAIL h_roll5         129 100 tutte_true not square 3%
+PASS h_roll5         129 102 walk_true  pass
+FAIL h_roll5         129 101 tutte_true not square 3%
+PASS h_roll5         129 102 vote_true  pass
+FAIL h_roll5         129 102 tutte_true not square 3%
+PASS h_scurl65       65 100 vote_true  pass
+PASS h_scurl65       65 101 vote_true  pass
+PASS h_scurl65       65 100 walk_true  pass
+PASS h_scurl65       65 102 vote_true  pass
+FAIL h_scurl65       65 100 tutte_true not square 3%
+FAIL h_scurl65       65 101 tutte_true not square 3%
+PASS h_scurl65       65 101 walk_true  pass
+PASS h_scurl65       65 102 walk_true  pass
+FAIL h_scurl65       65 102 tutte_true not square 3%
+PASS h_three_lobes   65 100 vote_true  pass
+PASS h_three_lobes   65 101 vote_true  pass
+PASS h_three_lobes   65 102 vote_true  pass
+FAIL h_three_lobes   65 100 tutte_true not square 3%
+FAIL h_three_lobes   65 101 tutte_true not square 3%
+FAIL h_three_lobes   65 102 tutte_true not square 3%
+PASS h_three_lobes   65 100 walk_true  pass
+PASS h_three_lobes   65 101 walk_true  pass
+PASS h_three_lobes   65 102 walk_true  pass
+PASS h_fan3          65 100 vote_true  pass
+PASS h_fan3          65 101 vote_true  pass
+PASS h_fan3          65 102 vote_true  pass
+FAIL h_fan3          65 100 tutte_true not square 3%
+FAIL h_fan3          65 101 tutte_true not square 3%
+PASS h_fan3          65 100 walk_true  pass
+FAIL h_fan3          65 102 tutte_true not square 3%
+PASS h_fan3          65 101 walk_true  pass
+PASS h_fan3          65 102 walk_true  pass
+PASS h_cone30        65 100 vote_true  pass
+PASS h_cone30        65 101 vote_true  pass
+PASS h_cone30        65 102 vote_true  pass
+FAIL h_cone30        65 100 tutte_true not square 3%
+FAIL h_cone30        65 101 tutte_true not square 3%
+PASS h_cone30        65 100 walk_true  pass
+FAIL h_cone30        65 102 tutte_true not square 3%
+PASS h_cone30        65 101 walk_true  pass
+PASS h_cone30        65 102 walk_true  pass
+PASS h_diag30        65 100 vote_true  pass
+PASS h_diag30        65 101 vote_true  pass
+PASS h_diag30        65 102 vote_true  pass
+FAIL h_diag30        65 100 tutte_true not square 3%
+FAIL h_diag30        65 101 tutte_true not square 3%
+FAIL h_diag30        65 102 tutte_true not square 3%
+PASS h_diag30        65 101 walk_true  pass
+PASS h_diag30        65 100 walk_true  pass
+PASS h_diag30        65 102 walk_true  pass
+PASS h_arc200        65 100 vote_true  pass
+PASS h_arc200        65 101 vote_true  pass
+PASS h_arc200        65 102 vote_true  pass
+FAIL h_arc200        65 100 tutte_true not square 3%
+FAIL h_arc200        65 101 tutte_true not square 3%
+FAIL h_arc200        65 102 tutte_true not square 3%
+PASS h_arc200        65 102 walk_true  pass
+PASS h_arc200        65 101 walk_true  pass
+PASS h_arc200        65 100 walk_true  pass
+PASS h_dents23       65 100 vote_true  pass
+PASS h_dents23       65 101 vote_true  pass
+FAIL h_dents23       65 102 vote_true  folded 0%
+PASS h_dents23       65 100 tutte_true pass
+PASS h_dents23       65 101 tutte_true pass
+PASS h_dents23       65 102 tutte_true pass
+PASS h_dents23       65 100 walk_true  pass
+PASS h_dents23       65 101 walk_true  pass
+PASS h_dents23       65 102 walk_true  pass
+FAIL h_crumple17     65 100 vote_true  folded 26%
+FAIL h_crumple17     65 101 vote_true  folded 21%
+FAIL h_crumple17     65 102 vote_true  folded 20%
+PASS h_crumple17     65 100 tutte_true pass
+PASS h_crumple17     65 101 tutte_true pass
+PASS h_crumple17     65 102 tutte_true pass
+FAIL h_crumple17     65 100 walk_true  folded 1%
+FAIL h_crumple17     65 102 walk_true  folded 1%
+FAIL h_crumple17     65 101 walk_true  folded 1%
+FAIL h_crumple29     65 100 vote_true  folded 26%
+FAIL h_crumple29     65 101 vote_true  folded 26%
+FAIL h_crumple29     65 102 vote_true  folded 63%
+PASS h_crumple29     65 100 tutte_true pass
+PASS h_crumple29     65 101 tutte_true pass
+PASS h_crumple29     65 102 tutte_true pass
+FAIL h_crumple29     65 101 walk_true  folded 3%
+FAIL h_crumple29     65 100 walk_true  folded 3%
+FAIL h_crumple29     65 102 walk_true  folded 3%
+PASS patchy_scurl    129 100 vote_true  pass
+PASS patchy_scurl    129 101 vote_true  pass
+PASS patchy_scurl    129 100 walk_true  pass
+PASS patchy_scurl    129 101 walk_true  pass
+PASS patchy_scurl    129 102 walk_true  pass
+FAIL patchy_scurl    129 100 tutte_true not square 3%
+PASS patchy_scurl    129 102 vote_true  pass
+FAIL patchy_scurl    129 101 tutte_true not square 3%
+FAIL patchy_scurl    129 102 tutte_true not square 3%
+PASS patchy_roll     65 100 vote_true  pass
+PASS patchy_roll     65 101 vote_true  pass
+PASS patchy_roll     65 102 vote_true  pass
+FAIL patchy_roll     65 100 tutte_true not square 3%
+FAIL patchy_roll     65 101 tutte_true not square 3%
+FAIL patchy_roll     65 102 tutte_true not square 3%
+PASS patchy_roll     65 100 walk_true  pass
+PASS patchy_roll     65 101 walk_true  pass
+PASS patchy_roll     65 102 walk_true  pass
+PASS crescent_flat   65 100 vote_true  pass
+PASS crescent_flat   65 101 vote_true  pass
+PASS crescent_flat   65 102 vote_true  pass
+PASS crescent_flat   65 100 tutte_true pass
+PASS crescent_flat   65 101 tutte_true pass
+PASS crescent_flat   65 102 tutte_true pass
+FAIL crescent_flat   65 100 walk_true  folded 2%
+FAIL crescent_flat   65 101 walk_true  folded 2%
+FAIL crescent_flat   65 102 walk_true  folded 2%
+PASS crescent_roll   65 100 vote_true  pass
+PASS crescent_roll   65 101 vote_true  pass
+PASS crescent_roll   65 102 vote_true  pass
+PASS crescent_roll   65 100 tutte_true pass
+PASS crescent_roll   65 101 tutte_true pass
+PASS crescent_roll   65 102 tutte_true pass
+FAIL crescent_roll   65 100 walk_true  folded 2%
+FAIL crescent_roll   65 101 walk_true  folded 2%
+FAIL crescent_roll   65 102 walk_true  folded 2%
+PASS strip_roll      65 100 vote_true  pass
+PASS strip_roll      65 101 vote_true  pass
+PASS strip_roll      65 102 vote_true  pass
+PASS strip_roll      65 100 tutte_true pass
+PASS strip_roll      65 101 tutte_true pass
+PASS strip_roll      65 100 walk_true  pass
+PASS strip_roll      65 102 tutte_true pass
+PASS strip_roll      65 101 walk_true  pass
+PASS strip_roll      65 102 walk_true  pass
+PASS hairpin_flap    65 100 vote_true  pass
+PASS hairpin_flap    65 101 vote_true  pass
+PASS hairpin_flap    65 100 walk_true  pass
+PASS hairpin_flap    65 101 walk_true  pass
+PASS hairpin_flap    65 102 vote_true  pass
+PASS hairpin_flap    65 102 walk_true  pass
+FAIL hairpin_flap    65 100 tutte_true not square 3%
+FAIL hairpin_flap    65 101 tutte_true not square 3%
+FAIL hairpin_flap    65 102 tutte_true not square 3%
+{}

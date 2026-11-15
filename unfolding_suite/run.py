@@ -6,7 +6,7 @@
     python -m unfolding_suite --sheets holdout --first-seed 100 --seeds 3 --name fair_check
     python -m unfolding_suite --plugin my_idea.py --methods my_idea --against baseline:isomap_k10
 
---sheets also takes the group names design, holdout and all. Writes
+--sheets also takes the group names design, holdout, audit and all. Writes
 <out-root>/<name>/: results.json, layouts.npz, scorecard.png, gallery_*.png, failures/*.png.
 """
 import argparse
@@ -26,11 +26,11 @@ from .verify import summary_words, verify
 
 ROOT = Path(__file__).resolve().parent / "runs"
 DEFAULT_METHODS = ["best_fit_plane", "tangent_plane", "isomap_k10", "check_k10", "convex_edge"]
-GROUPS = ("design", "holdout", "all")
+GROUPS = ("design", "holdout", "audit", "all")
 
 
 def expand_sheets(names):
-    """Sheet names, with the group words design / holdout / all expanded in registry order."""
+    """Sheet names, with the group words design / holdout / audit / all expanded in registry order."""
     out = []
     for name in names:
         if name in GROUPS:

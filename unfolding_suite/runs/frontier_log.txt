@@ -1,0 +1,197 @@
+PASS flat            mesh_full             65 101 pass             4.7s
+PASS flat            mesh_full             65 100 pass             4.7s
+PASS flat            mesh_full             65 102 pass             5.2s
+PASS gentle_arc      mesh_full             65 100 pass             5.3s
+PASS gentle_arc      mesh_full             65 102 pass             5.7s
+PASS gentle_arc      mesh_full             65 101 pass             5.8s
+PASS wave            mesh_full             65 101 pass             6.1s
+PASS wave            mesh_full             65 100 pass             6.5s
+PASS wave            mesh_full             65 102 pass             5.7s
+PASS s_curl          mesh_full             65 100 pass             6.9s
+PASS s_curl          mesh_full             65 101 pass             6.4s
+PASS s_curl          mesh_full             65 102 pass             6.4s
+FAIL tight_roll      mesh_full             65 100 folded 55%       2.8s
+PASS roll            mesh_full             65 100 pass             7.6s
+PASS roll            mesh_full             65 101 pass             6.7s
+PASS roll            mesh_full             65 102 pass             6.8s
+FAIL tight_roll      mesh_full             65 101 folded 56%       3.9s
+PASS diagonal_roll   mesh_full             65 100 pass             6.0s
+PASS diagonal_roll   mesh_full             65 102 pass             5.4s
+PASS diagonal_roll   mesh_full             65 101 pass             7.0s
+PASS accordion       mesh_full             65 101 pass             7.8s
+PASS accordion       mesh_full             65 100 pass             8.9s
+PASS accordion       mesh_full             65 102 pass             9.6s
+PASS cone            mesh_full             65 100 pass             6.6s
+PASS cone            mesh_full             65 102 pass             6.7s
+PASS cone            mesh_full             65 101 pass             9.0s
+PASS bowl            mesh_full             65 100 pass             5.2s
+PASS bowl            mesh_full             65 101 pass             5.0s
+PASS bowl            mesh_full             65 102 pass             5.0s
+FAIL tight_roll      mesh_full             65 102 folded 67%       35.9s
+PASS uneven_roll     mesh_full             65 100 pass             18.2s
+PASS uneven_roll     mesh_full             65 102 pass             17.0s
+PASS uneven_roll     mesh_full             65 101 pass             17.4s
+PASS dents           mesh_full             65 100 pass             24.1s
+PASS dents           mesh_full             65 101 pass             23.9s
+PASS dents           mesh_full             65 102 pass             23.6s
+FAIL crumple         mesh_full             65 100 folded 1%        23.5s
+FAIL crumple         mesh_full             65 102 folded 0%        22.5s
+FAIL hard_crumple    mesh_full             65 100 folded 1%        22.7s
+FAIL hard_crumple    mesh_full             65 101 folded 0%        22.9s
+FAIL h_roll5         mesh_full             65 100 folded 8%        9.1s
+FAIL h_roll5         mesh_full             65 101 folded 10%       9.4s
+PASS h_scurl65       mesh_full             65 100 pass             6.6s
+FAIL crumple         mesh_full             65 101 folded 1%        50.7s
+FAIL h_roll5         mesh_full             65 102 folded 8%        8.9s
+FAIL hard_crumple    mesh_full             65 102 folded 1%        20.8s
+PASS h_scurl65       mesh_full             65 101 pass             7.1s
+PASS h_scurl65       mesh_full             65 102 pass             7.0s
+PASS h_three_lobes   mesh_full             65 100 pass             7.7s
+PASS h_three_lobes   mesh_full             65 101 pass             7.3s
+PASS h_fan3          mesh_full             65 100 pass             5.3s
+PASS h_three_lobes   mesh_full             65 102 pass             6.7s
+PASS h_fan3          mesh_full             65 102 pass             5.9s
+PASS h_fan3          mesh_full             65 101 pass             7.3s
+PASS h_cone30        mesh_full             65 100 pass             8.8s
+PASS h_diag30        mesh_full             65 100 pass             6.7s
+PASS h_cone30        mesh_full             65 102 pass             8.4s
+PASS h_cone30        mesh_full             65 101 pass             12.2s
+PASS h_diag30        mesh_full             65 101 pass             6.1s
+PASS h_diag30        mesh_full             65 102 pass             6.2s
+PASS h_arc200        mesh_full             65 100 pass             5.4s
+PASS h_arc200        mesh_full             65 101 pass             5.3s
+PASS h_arc200        mesh_full             65 102 pass             4.6s
+PASS h_dents23       mesh_full             65 101 pass             22.4s
+PASS h_dents23       mesh_full             65 100 pass             22.7s
+PASS h_dents23       mesh_full             65 102 pass             22.4s
+FAIL h_crumple17     mesh_full             65 100 folded 5%        35.4s
+FAIL h_crumple29     mesh_full             65 101 folded 51%       3.1s
+FAIL h_crumple17     mesh_full             65 102 folded 5%        37.7s
+FAIL h_crumple17     mesh_full             65 101 folded 6%        40.3s
+FAIL h_crumple29     mesh_full             65 100 folded 54%       42.3s
+FAIL patchy_scurl    mesh_full             65 100 folded 6%        14.0s
+FAIL patchy_scurl    mesh_full             65 101 folded 4%        14.2s
+FAIL h_crumple29     mesh_full             65 102 folded 41%       37.8s
+FAIL patchy_scurl    mesh_full             65 102 folded 2%        15.0s
+PASS patchy_roll     mesh_full             65 100 pass             9.8s
+PASS patchy_roll     mesh_full             65 101 pass             10.1s
+PASS patchy_roll     mesh_full             65 102 pass             9.8s
+FAIL crescent_flat   mesh_full             65 102 folded 1%        24.7s
+FAIL crescent_flat   mesh_full             65 101 folded 1%        59.2s
+FAIL crescent_flat   mesh_full             65 100 folded 1%        65.9s
+FAIL crescent_roll   mesh_full             65 100 folded 1%        65.5s
+FAIL crescent_roll   mesh_full             65 101 folded 1%        46.1s
+PASS strip_roll      mesh_full             65 100 pass             18.9s
+PASS strip_roll      mesh_full             65 101 pass             23.0s
+PASS strip_roll      mesh_full             65 102 pass             22.5s
+PASS hairpin_flap    mesh_full             65 100 pass             16.3s
+PASS hairpin_flap    mesh_full             65 101 pass             11.5s
+PASS hairpin_flap    mesh_full             65 102 pass             13.9s
+FAIL crescent_roll   mesh_full             65 102 folded 1%        63.6s
+PASS h_roll5         mesh_full            129 100 pass             51.6s
+PASS h_roll5         mesh_full            129 102 pass             50.9s
+PASS h_roll5         mesh_full            129 101 pass             59.2s
+PASS patchy_scurl    mesh_full            129 100 pass             88.1s
+PASS patchy_scurl    mesh_full            129 101 pass             77.7s
+PASS patchy_scurl    mesh_full            129 102 pass             79.4s
+FAIL tight_roll      mesh_full            257 100 folded 0%        326.7s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/frontier.json
+PASS flat            mesh_full             65 101 pass             10.9s
+PASS gentle_arc      mesh_full             65 100 pass             11.2s
+PASS flat            mesh_full             65 100 pass             12.9s
+PASS flat            mesh_full             65 102 pass             13.8s
+PASS gentle_arc      mesh_full             65 102 pass             10.5s
+PASS gentle_arc      mesh_full             65 101 pass             11.3s
+PASS wave            mesh_full             65 101 pass             10.8s
+PASS wave            mesh_full             65 100 pass             12.6s
+PASS wave            mesh_full             65 102 pass             13.8s
+PASS s_curl          mesh_full             65 100 pass             15.5s
+PASS s_curl          mesh_full             65 101 pass             14.9s
+PASS s_curl          mesh_full             65 102 pass             16.1s
+PASS roll            mesh_full             65 100 pass             13.7s
+PASS roll            mesh_full             65 101 pass             13.8s
+PASS roll            mesh_full             65 102 pass             16.1s
+PASS diagonal_roll   mesh_full             65 100 pass             14.8s
+FAIL tight_roll      mesh_full             65 102 folded 52%       31.4s
+PASS diagonal_roll   mesh_full             65 101 pass             15.7s
+FAIL tight_roll      mesh_full             65 100 folded 82%       48.5s
+FAIL tight_roll      mesh_full             65 101 folded 56%       43.7s
+PASS diagonal_roll   mesh_full             65 102 pass             15.5s
+PASS accordion       mesh_full             65 100 pass             17.7s
+PASS accordion       mesh_full             65 101 pass             15.8s
+PASS accordion       mesh_full             65 102 pass             19.9s
+PASS cone            mesh_full             65 100 pass             15.5s
+PASS cone            mesh_full             65 101 pass             11.6s
+PASS cone            mesh_full             65 102 pass             12.6s
+PASS bowl            mesh_full             65 101 pass             9.6s
+PASS bowl            mesh_full             65 100 pass             12.1s
+PASS bowl            mesh_full             65 102 pass             13.1s
+PASS uneven_roll     mesh_full             65 100 pass             23.5s
+PASS dents           mesh_full             65 100 pass             13.4s
+PASS uneven_roll     mesh_full             65 101 pass             22.1s
+PASS dents           mesh_full             65 101 pass             12.2s
+PASS dents           mesh_full             65 102 pass             17.1s
+FAIL crumple         mesh_full             65 101 folded 1%        21.5s
+PASS uneven_roll     mesh_full             65 102 pass             53.2s
+FAIL crumple         mesh_full             65 100 folded 2%        32.9s
+FAIL crumple         mesh_full             65 102 folded 1%        23.1s
+FAIL hard_crumple    mesh_full             65 100 folded 1%        22.6s
+FAIL hard_crumple    mesh_full             65 102 folded 0%        21.8s
+FAIL hard_crumple    mesh_full             65 101 folded 1%        22.4s
+FAIL h_roll5         mesh_full             65 100 folded 10%       20.9s
+PASS h_scurl65       mesh_full             65 100 pass             13.7s
+PASS h_scurl65       mesh_full             65 101 pass             13.0s
+FAIL h_roll5         mesh_full             65 101 folded 12%       19.8s
+FAIL h_roll5         mesh_full             65 102 folded 7%        17.9s
+PASS h_scurl65       mesh_full             65 102 pass             14.1s
+PASS h_three_lobes   mesh_full             65 100 pass             12.6s
+PASS h_three_lobes   mesh_full             65 101 pass             13.0s
+PASS h_three_lobes   mesh_full             65 102 pass             15.3s
+PASS h_fan3          mesh_full             65 100 pass             12.3s
+PASS h_fan3          mesh_full             65 101 pass             13.5s
+PASS h_fan3          mesh_full             65 102 pass             14.6s
+PASS h_cone30        mesh_full             65 100 pass             14.8s
+PASS h_cone30        mesh_full             65 101 pass             12.3s
+PASS h_cone30        mesh_full             65 102 pass             13.1s
+PASS h_diag30        mesh_full             65 100 pass             17.3s
+PASS h_diag30        mesh_full             65 101 pass             17.1s
+PASS h_arc200        mesh_full             65 100 pass             12.9s
+PASS h_diag30        mesh_full             65 102 pass             16.1s
+PASS h_arc200        mesh_full             65 101 pass             14.8s
+PASS h_arc200        mesh_full             65 102 pass             13.5s
+PASS h_dents23       mesh_full             65 101 pass             13.7s
+PASS h_dents23       mesh_full             65 100 pass             14.3s
+PASS h_dents23       mesh_full             65 102 pass             15.0s
+FAIL h_crumple29     mesh_full             65 100 folded 56%       3.3s
+FAIL h_crumple29     mesh_full             65 101 folded 58%       2.7s
+FAIL h_crumple29     mesh_full             65 102 folded 50%       3.2s
+FAIL h_crumple17     mesh_full             65 100 folded 7%        31.1s
+FAIL h_crumple17     mesh_full             65 102 folded 9%        40.2s
+FAIL patchy_scurl    mesh_full             65 100 folded 3%        32.8s
+FAIL h_crumple17     mesh_full             65 101 folded 9%        54.5s
+FAIL patchy_scurl    mesh_full             65 101 folded 2%        42.2s
+FAIL patchy_scurl    mesh_full             65 102 folded 4%        41.1s
+FAIL patchy_roll     mesh_full             65 100 folded 1%        31.6s
+FAIL patchy_roll     mesh_full             65 101 folded 1%        36.3s
+FAIL patchy_roll     mesh_full             65 102 folded 3%        37.2s
+FAIL crescent_flat   mesh_full             65 102 folded 12%       22.3s
+FAIL crescent_roll   mesh_full             65 101 folded 16%       3.3s
+FAIL crescent_flat   mesh_full             65 101 folded 15%       58.2s
+FAIL crescent_flat   mesh_full             65 100 folded 13%       73.2s
+FAIL strip_roll      mesh_full             65 100 folded 1%        36.3s
+FAIL crescent_roll   mesh_full             65 100 folded 17%       72.3s
+FAIL strip_roll      mesh_full             65 101 folded 2%        35.3s
+PASS hairpin_flap    mesh_full             65 100 pass             20.6s
+FAIL hairpin_flap    mesh_full             65 101 folded 0%        19.6s
+FAIL crescent_roll   mesh_full             65 102 folded 12%       95.5s
+FAIL hairpin_flap    mesh_full             65 102 folded 0%        20.6s
+FAIL strip_roll      mesh_full             65 102 folded 4%        51.7s
+PASS h_roll5         mesh_full            129 100 pass             94.4s
+PASS h_roll5         mesh_full            129 101 pass             95.6s
+PASS h_roll5         mesh_full            129 102 pass             95.8s
+FAIL patchy_scurl    mesh_full            129 102 folded 1%        153.8s
+FAIL patchy_scurl    mesh_full            129 100 folded 1%        232.4s
+FAIL patchy_scurl    mesh_full            129 101 folded 1%        177.4s
+FAIL tight_roll      mesh_full            257 100 folded 0%        422.0s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/frontier_noise.json
+ALLDONE

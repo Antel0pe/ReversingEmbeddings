@@ -133,6 +133,16 @@ flat layout", so an idea about which dots to link takes a few lines (see `link_c
 
 - `design` (14 sheets): used while developing methods. This is the default.
 - `holdout` (10 sheets, names start `h_`): kept for fair checks. See [Fair checks](#fair-checks).
+- `audit` (6 sheets, added 2026-11-15, in `audit.py`): kinds of case the other 24 missed. Never tuned on.
+  `patchy_scurl`, `patchy_roll` (dots 4x denser in places), `crescent_flat`, `crescent_roll` (C-shaped
+  paper: an outline with a dent), `strip_roll` (4:1 strip), `hairpin_flap` (folded flat back over itself).
+  Crescent and strip are scored like stretched sheets (not the square). Scope (user, 2026-11-15): 2-D paper
+  in 3-D only; a 5-D and an 8-D sheet were tried and removed (`make_instance` still accepts any D). A sheet
+  may pass `warp=` to sample the paper unevenly. Still not covered (the scorer needs every grid dot):
+  holes, randomly scattered dots, stray dots.
+- **Every sheet is solvable** (`experiments/solvable.py`, `runs/solvable/`): with the true neighbours,
+  walking or carry-and-vote passes every non-crumple sheet; the four crumples pass only with the true
+  non-crossing mesh + true edge in order on a circle (Tutte). So the crumples stay in as real targets.
 
 What the design sheets test:
 
@@ -685,10 +695,68 @@ seeing the fair seeds, so the held-out sheets are not a blind check for the fina
 - **Long-side rule removed:** dropping triangles with a side over 2.5x the median spacing broke
   stretched sheets into pieces (`uneven_roll` meshed 1,218 of 4,225 dots); it is off.
 
+### Enough dots, and the best parts put together (2026-11-14)
+
+Code: `experiments/enough_dots.py` (dots each sheet needs: closest approach between layers, judged by a
+walk along the true paper mesh > 3x straight, must be >= 2 local dot spacings), `enough_dots_table.py`
+(every saved run re-scored on those sheets), `pipeline.py` (tilt check + up-side cut -> walk or
+edge-and-average -> double-layer + face-down checks -> flip + settle, with a truth-free "guarded"
+variant), `pipeline_trace.py`, `pipeline_figure.py`. Results: `runs/enough_dots/`, `runs/pipeline/`
+(`main` = 22 sheets at 4,225 dots, seeds 100-102; `dense` = h_roll5 at 129^2, tight_roll at 257^2,
+crumples at 129^2, seed 100). Figures: `figures/pipeline/`.
+
+- **Enough dots:** 18 sheets qualify at 4,225 dots (`s_curl` only just, 2.08 spacings). `h_roll5` needs
+  129^2 (1.62 -> 3.41), `tight_roll` 257^2 (1.97). On the crumples the measurement is unreliable: the mesh
+  walk calls nearest neighbours "different layers" at every density on hard-sheared paper.
+- **On the 18:** `check_k10`, `convex_edge`, `up_*` pass 18/18; `isomap_k10` 17 (misses `s_curl`, a
+  method fault); `mesh_full` 17; `pull_k10` 16; edge on a circle (`ring_circle`) 3. No saved method passes a
+  crumple.
+- **Edge-and-average vs walking:** same passes; square error 0.45% vs 0.27% on bent sheets; unfold 0.7 s vs
+  5.4 s at 4,225; pipeline 19 s vs 146 s at 16,641; walking cannot run at 66,049 (dense all-pairs), edge 54 s.
+- **Pipeline:** passes every non-crumple sheet on every seed with both unfolds, and `h_roll5` (129^2) and
+  `tight_roll` (257^2) from the dots alone. Fails all four crumples: 1-34% folded at 4,225, 0.1-2.6% at 129^2.
+- **Crumple leaks** (edge unfold, controls `true_links` -> `true_links_edge` -> `true_mesh_circle`): mean fold
+  3.5 / 1.4 / 6.2 / 32.6% -> 0.3 / 0 / 1.3 / 7.6 -> 0.3 / 0 / 0.4 / 0.0 -> 0 (3/3 pass on all four). Neighbours
+  are the biggest leak even though FAR-wrong links are 0 on three crumples; edge finder misses up to 36% and
+  adds up to 36% false edge dots at 4,225 (<= 2% / 7% at 129^2); true 10-nearest links cross, true mesh does not.
+  Walking with true links still folds crumples 0.3-3.1%.
+- **Check and flip:** rescued 0 runs. 18 of 28 folded runs had no face-down patch (sliver folds); 9 flipped
+  and still failed (creases 0.6-23 spacings off straight); settling buckles stretched paper (h_crumple17 6% ->
+  11%). With perfect inputs `h_crumple29` passes after unfolding, but the face-down check flags ~0.9% and
+  flip + settle gives 85-91%. The double-layer check reads "stacked" on every crumple result, perfect ones
+  included. The guarded variant limits damage (85% -> 0.7%) but rescues nothing.
+
+### Audit sheets, the best simple method, and the graphics recipe (2026-11-15)
+
+Code: `audit.py` (6 sheets), `simple.py` (`best_simple` and variants), `experiments/simple_score.py`,
+`simple_table.py`, `simple_figure.py`, `solvable.py`, `make_twitter_frontier.py`. Results: `runs/simple/`
+(`main`, `dense`, `ablation*`, `noise`, `best`, `best_noise`, `frontier`, `frontier_noise`, `plane`; seeds
+100-102, each sheet also at the dots it needs, `tight_roll` at 257^2). Figures: `figures/simple/`,
+`figures/twitter_frontier.png`.
+
+- **`best_simple`**: 10 closest dots; drop a link tilting more than 30 degrees out of the local surface at
+  either end; carry two directions outward from a central dot along the most parallel links, turning but
+  never mirroring; every link votes on its step, all dots placed at once (one sparse least squares).
+- **Passes on all 30 sheets, enough dots:** `best_simple` 25 (fails the four crumples, and `h_dents23`
+  on one seed by 0.04%); `convex_edge` 24; `mesh_full` (the graphics recipe) 23; `simple_unfold` (walking
+  + tilt + facing, landmark walking above 9,000 dots) 23; `isomap_k10` 19; `best_fit_plane` 6.
+  Time at 4,225 dots: 0.5 s vs 8.9 s for `mesh_full`; `tight_roll` at 66,049: 3.8-7.7 s vs 4-5.5 min
+  (and `mesh_full` misses it by 0.01%).
+- **`mesh_full` loses** both crescents (1.2-1.4%) and `tight_roll`@257; **wins** on crumples: 0.4-1% vs
+  9-13% (`crumple`), 0.4-1% vs 6-7% (`hard_crumple`), 5-6% vs 9-10% (`h_crumple17`); loses `h_crumple29`
+  41-54% vs 17-22%. Noise 0.1: `best_simple` 20, `mesh_full` 19 (0/6 audit; crescents 12-17%).
+- **Audit findings:** walking folds the perfectly flat `crescent_flat` 10% (2% with perfect hops);
+  `convex_edge` fails both crescents; `enough_dots`' mesh-walk ruler misreads squeezed paper.
+- **Ablation (vote layout):** no checks fails `s_curl` and `tight_roll`@257; facing-only fixes `s_curl`,
+  not `tight_roll`; tilt-only fixes both; tilt + facing identical, so facing was dropped as a filter.
+
 ### Saved runs
 
 | Folder | What it is |
 | --- | --- |
+| `runs/simple/` | Best simple method, variants, ablations, noise (2026-11-15) |
+| `runs/pipeline/` | The combined pipeline and its truth controls (2026-11-14) |
+| `runs/enough_dots/` | Dots each sheet needs, and every saved method re-scored on enough-dots sheets |
 | `runs/current/` | Reference: all 24 sheets, the five default methods, seeds 100-102 |
 | `runs/blind_holdout/` | The first held-out check, saved as it was. Two crashes in it led to the stranded-dot fix in `link_check.reattach_stranded` |
 | `runs/explore_hops/` | Eight methods on the design sheets, including the rejected flatness hops |

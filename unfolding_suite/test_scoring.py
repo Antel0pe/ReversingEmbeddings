@@ -155,9 +155,10 @@ def test_the_named_methods_exist():
 
 def test_sheet_groups_are_separate():
     from .run import expand_sheets
-    design, holdout = expand_sheets(["design"]), expand_sheets(["holdout"])
-    assert len(design) == 14 and len(holdout) == 10 and not set(design) & set(holdout)
-    assert expand_sheets(["all"]) == design + holdout
+    design, holdout, audit = expand_sheets(["design"]), expand_sheets(["holdout"]), expand_sheets(["audit"])
+    assert len(design) == 14 and len(holdout) == 10 and len(audit) == 6
+    assert not (set(design) & set(holdout)) and not (set(audit) & (set(design) | set(holdout)))
+    assert expand_sheets(["all"]) == design + holdout + audit
 
 
 if __name__ == "__main__":

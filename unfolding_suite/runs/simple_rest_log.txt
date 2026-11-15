@@ -1,0 +1,624 @@
+FAIL h_roll5         convex_edge           65 101 folded 1%        0.7s
+FAIL h_roll5         convex_edge           65 100 torn             0.7s
+FAIL h_roll5         convex_edge           65 102 torn             0.7s
+PASS h_roll5         simple_vote           65 100 pass             0.5s
+FAIL h_roll5         simple_vote           65 101 folded 1%        0.5s
+PASS h_roll5         simple_vote           65 102 pass             0.5s
+FAIL tight_roll      convex_edge           65 100 folded 12%       0.6s
+PASS h_roll5         simple_unfold         65 100 pass             3.6s
+FAIL tight_roll      convex_edge           65 101 folded 13%       0.6s
+FAIL tight_roll      convex_edge           65 102 folded 13%       0.6s
+PASS h_roll5         simple_unfold         65 102 pass             3.5s
+FAIL h_roll5         simple_unfold         65 101 folded 2%        3.5s
+FAIL tight_roll      simple_vote           65 100 folded 11%       0.5s
+FAIL tight_roll      simple_vote           65 101 folded 11%       0.5s
+FAIL tight_roll      simple_vote           65 102 folded 11%       0.5s
+FAIL tight_roll      simple_unfold         65 100 folded 16%       3.2s
+FAIL tight_roll      simple_unfold         65 101 folded 14%       3.3s
+FAIL tight_roll      simple_unfold         65 102 folded 17%       3.3s
+PASS h_roll5         convex_edge          129 100 pass             5.8s
+PASS h_roll5         convex_edge          129 101 pass             6.1s
+PASS h_roll5         convex_edge          129 102 pass             6.3s
+PASS h_roll5         simple_vote          129 100 pass             2.8s
+PASS h_roll5         simple_unfold        129 100 pass             9.4s
+PASS h_roll5         simple_vote          129 101 pass             3.9s
+PASS h_roll5         simple_vote          129 102 pass             4.1s
+PASS h_roll5         simple_unfold        129 101 pass             9.6s
+PASS h_roll5         simple_unfold        129 102 pass             10.0s
+PASS tight_roll      simple_vote          257 100 pass             18.4s
+PASS tight_roll      convex_edge          257 100 pass             47.3s
+PASS tight_roll      simple_unfold        257 100 pass             48.3s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/dense.json
+PASS flat            simple_vote_no_checks  65 101 pass             0.6s
+PASS flat            simple_vote_no_checks  65 102 pass             0.6s
+PASS flat            simple_vote_tilt_only  65 100 pass             0.6s
+PASS flat            simple_vote_no_checks  65 100 pass             0.6s
+PASS flat            simple_vote_tilt_only  65 101 pass             0.5s
+PASS flat            simple_vote_tilt_only  65 102 pass             0.5s
+PASS flat            simple_vote_facing_only  65 100 pass             0.5s
+PASS flat            simple_vote_facing_only  65 101 pass             0.5s
+PASS gentle_arc      simple_vote_no_checks  65 100 pass             0.6s
+PASS flat            simple_vote_facing_only  65 102 pass             0.6s
+PASS gentle_arc      simple_vote_no_checks  65 101 pass             0.6s
+PASS gentle_arc      simple_vote_no_checks  65 102 pass             0.6s
+PASS gentle_arc      simple_vote_tilt_only  65 100 pass             0.6s
+PASS gentle_arc      simple_vote_tilt_only  65 101 pass             0.6s
+PASS gentle_arc      simple_vote_tilt_only  65 102 pass             0.6s
+PASS gentle_arc      simple_vote_facing_only  65 100 pass             0.6s
+PASS wave            simple_vote_no_checks  65 100 pass             0.6s
+PASS gentle_arc      simple_vote_facing_only  65 101 pass             0.6s
+PASS wave            simple_vote_no_checks  65 101 pass             0.6s
+PASS gentle_arc      simple_vote_facing_only  65 102 pass             0.6s
+PASS wave            simple_vote_tilt_only  65 100 pass             0.6s
+PASS wave            simple_vote_no_checks  65 102 pass             0.6s
+PASS wave            simple_vote_tilt_only  65 101 pass             0.6s
+PASS wave            simple_vote_tilt_only  65 102 pass             0.6s
+PASS wave            simple_vote_facing_only  65 100 pass             0.7s
+PASS wave            simple_vote_facing_only  65 101 pass             0.7s
+PASS wave            simple_vote_facing_only  65 102 pass             0.7s
+FAIL s_curl          simple_vote_no_checks  65 100 folded 1%        0.7s
+FAIL s_curl          simple_vote_no_checks  65 101 folded 1%        0.6s
+FAIL s_curl          simple_vote_no_checks  65 102 folded 1%        0.6s
+PASS s_curl          simple_vote_tilt_only  65 100 pass             0.6s
+PASS s_curl          simple_vote_tilt_only  65 101 pass             0.6s
+PASS s_curl          simple_vote_tilt_only  65 102 pass             0.6s
+PASS s_curl          simple_vote_facing_only  65 100 pass             0.6s
+PASS s_curl          simple_vote_facing_only  65 101 pass             0.7s
+PASS s_curl          simple_vote_facing_only  65 102 pass             0.7s
+PASS roll            simple_vote_no_checks  65 100 pass             0.6s
+PASS roll            simple_vote_no_checks  65 101 pass             0.6s
+PASS roll            simple_vote_no_checks  65 102 pass             0.6s
+PASS roll            simple_vote_tilt_only  65 100 pass             0.6s
+PASS roll            simple_vote_tilt_only  65 101 pass             0.6s
+PASS roll            simple_vote_tilt_only  65 102 pass             0.6s
+PASS roll            simple_vote_facing_only  65 100 pass             0.6s
+PASS roll            simple_vote_facing_only  65 101 pass             0.7s
+PASS roll            simple_vote_facing_only  65 102 pass             0.7s
+FAIL tight_roll      simple_vote_no_checks  65 100 folded 31%       0.7s
+FAIL tight_roll      simple_vote_no_checks  65 101 folded 31%       0.6s
+FAIL tight_roll      simple_vote_no_checks  65 102 folded 27%       0.6s
+FAIL tight_roll      simple_vote_tilt_only  65 100 folded 11%       0.6s
+FAIL tight_roll      simple_vote_tilt_only  65 101 folded 11%       0.6s
+FAIL tight_roll      simple_vote_tilt_only  65 102 folded 11%       0.6s
+FAIL tight_roll      simple_vote_facing_only  65 100 folded 31%       0.6s
+FAIL tight_roll      simple_vote_facing_only  65 102 folded 28%       0.6s
+FAIL tight_roll      simple_vote_facing_only  65 101 folded 31%       0.6s
+PASS diagonal_roll   simple_vote_no_checks  65 100 pass             0.6s
+PASS diagonal_roll   simple_vote_no_checks  65 101 pass             0.6s
+PASS diagonal_roll   simple_vote_no_checks  65 102 pass             0.6s
+PASS diagonal_roll   simple_vote_tilt_only  65 100 pass             0.6s
+PASS diagonal_roll   simple_vote_tilt_only  65 101 pass             0.6s
+PASS diagonal_roll   simple_vote_tilt_only  65 102 pass             0.6s
+PASS diagonal_roll   simple_vote_facing_only  65 101 pass             0.6s
+PASS diagonal_roll   simple_vote_facing_only  65 100 pass             0.6s
+PASS accordion       simple_vote_no_checks  65 100 pass             0.6s
+PASS diagonal_roll   simple_vote_facing_only  65 102 pass             0.7s
+PASS accordion       simple_vote_no_checks  65 101 pass             0.7s
+PASS accordion       simple_vote_no_checks  65 102 pass             0.7s
+PASS accordion       simple_vote_tilt_only  65 100 pass             0.7s
+PASS accordion       simple_vote_tilt_only  65 101 pass             0.8s
+PASS accordion       simple_vote_tilt_only  65 102 pass             0.6s
+PASS accordion       simple_vote_facing_only  65 100 pass             0.6s
+PASS accordion       simple_vote_facing_only  65 101 pass             0.6s
+PASS accordion       simple_vote_facing_only  65 102 pass             0.6s
+PASS cone            simple_vote_no_checks  65 100 pass             0.6s
+PASS cone            simple_vote_no_checks  65 101 pass             0.6s
+PASS cone            simple_vote_no_checks  65 102 pass             0.6s
+PASS cone            simple_vote_tilt_only  65 100 pass             0.6s
+PASS cone            simple_vote_tilt_only  65 101 pass             0.6s
+PASS cone            simple_vote_tilt_only  65 102 pass             0.6s
+PASS cone            simple_vote_facing_only  65 100 pass             0.6s
+PASS cone            simple_vote_facing_only  65 101 pass             0.6s
+PASS cone            simple_vote_facing_only  65 102 pass             0.6s
+PASS bowl            simple_vote_no_checks  65 100 pass             1.3s
+PASS bowl            simple_vote_no_checks  65 101 pass             1.3s
+PASS bowl            simple_vote_no_checks  65 102 pass             1.3s
+PASS bowl            simple_vote_tilt_only  65 100 pass             0.6s
+PASS bowl            simple_vote_tilt_only  65 101 pass             0.6s
+PASS bowl            simple_vote_tilt_only  65 102 pass             0.6s
+PASS bowl            simple_vote_facing_only  65 100 pass             0.6s
+PASS bowl            simple_vote_facing_only  65 101 pass             0.8s
+PASS bowl            simple_vote_facing_only  65 102 pass             0.8s
+PASS uneven_roll     simple_vote_no_checks  65 100 pass             0.8s
+PASS uneven_roll     simple_vote_no_checks  65 101 pass             0.8s
+PASS uneven_roll     simple_vote_no_checks  65 102 pass             0.7s
+PASS uneven_roll     simple_vote_tilt_only  65 100 pass             0.6s
+PASS uneven_roll     simple_vote_tilt_only  65 101 pass             0.6s
+PASS uneven_roll     simple_vote_tilt_only  65 102 pass             0.6s
+PASS uneven_roll     simple_vote_facing_only  65 100 pass             0.6s
+PASS uneven_roll     simple_vote_facing_only  65 101 pass             0.6s
+PASS uneven_roll     simple_vote_facing_only  65 102 pass             0.6s
+PASS dents           simple_vote_no_checks  65 100 pass             0.6s
+PASS dents           simple_vote_no_checks  65 101 pass             0.6s
+PASS dents           simple_vote_no_checks  65 102 pass             0.6s
+PASS dents           simple_vote_tilt_only  65 100 pass             0.6s
+PASS dents           simple_vote_tilt_only  65 101 pass             0.6s
+PASS dents           simple_vote_tilt_only  65 102 pass             0.6s
+PASS dents           simple_vote_facing_only  65 100 pass             0.6s
+PASS dents           simple_vote_facing_only  65 101 pass             0.6s
+PASS dents           simple_vote_facing_only  65 102 pass             0.6s
+FAIL crumple         simple_vote_no_checks  65 100 folded 13%       0.6s
+FAIL crumple         simple_vote_no_checks  65 101 folded 13%       0.6s
+FAIL crumple         simple_vote_no_checks  65 102 folded 9%        0.6s
+FAIL crumple         simple_vote_tilt_only  65 100 folded 13%       0.6s
+FAIL crumple         simple_vote_tilt_only  65 101 folded 13%       0.6s
+FAIL crumple         simple_vote_tilt_only  65 102 folded 9%        0.6s
+FAIL crumple         simple_vote_facing_only  65 100 folded 13%       0.6s
+FAIL crumple         simple_vote_facing_only  65 101 folded 13%       0.7s
+FAIL crumple         simple_vote_facing_only  65 102 folded 9%        0.7s
+FAIL hard_crumple    simple_vote_no_checks  65 100 folded 7%        0.6s
+FAIL hard_crumple    simple_vote_no_checks  65 101 folded 6%        0.6s
+FAIL hard_crumple    simple_vote_no_checks  65 102 folded 7%        0.6s
+FAIL hard_crumple    simple_vote_tilt_only  65 100 folded 7%        0.6s
+FAIL hard_crumple    simple_vote_tilt_only  65 101 folded 6%        0.6s
+FAIL hard_crumple    simple_vote_tilt_only  65 102 folded 7%        0.6s
+FAIL hard_crumple    simple_vote_facing_only  65 100 folded 7%        0.6s
+FAIL hard_crumple    simple_vote_facing_only  65 101 folded 6%        0.7s
+FAIL hard_crumple    simple_vote_facing_only  65 102 folded 7%        0.8s
+FAIL h_roll5         simple_vote_no_checks  65 100 folded 21%       0.7s
+FAIL h_roll5         simple_vote_no_checks  65 101 folded 19%       0.7s
+FAIL h_roll5         simple_vote_no_checks  65 102 folded 22%       0.6s
+PASS h_roll5         simple_vote_tilt_only  65 100 pass             0.6s
+FAIL h_roll5         simple_vote_tilt_only  65 101 folded 1%        0.6s
+PASS h_roll5         simple_vote_tilt_only  65 102 pass             0.6s
+FAIL h_roll5         simple_vote_facing_only  65 100 folded 20%       0.6s
+FAIL h_roll5         simple_vote_facing_only  65 101 folded 19%       0.6s
+FAIL h_roll5         simple_vote_facing_only  65 102 folded 21%       0.6s
+PASS h_scurl65       simple_vote_no_checks  65 100 pass             0.6s
+PASS h_scurl65       simple_vote_no_checks  65 101 pass             0.6s
+PASS h_scurl65       simple_vote_no_checks  65 102 pass             0.6s
+PASS h_scurl65       simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_scurl65       simple_vote_tilt_only  65 101 pass             0.6s
+PASS h_scurl65       simple_vote_tilt_only  65 102 pass             0.8s
+PASS h_scurl65       simple_vote_facing_only  65 101 pass             0.8s
+PASS h_scurl65       simple_vote_facing_only  65 100 pass             0.9s
+PASS h_scurl65       simple_vote_facing_only  65 102 pass             1.0s
+PASS h_three_lobes   simple_vote_no_checks  65 100 pass             0.6s
+PASS h_three_lobes   simple_vote_no_checks  65 101 pass             0.6s
+PASS h_three_lobes   simple_vote_no_checks  65 102 pass             0.6s
+PASS h_three_lobes   simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_three_lobes   simple_vote_tilt_only  65 101 pass             0.6s
+PASS h_three_lobes   simple_vote_tilt_only  65 102 pass             0.6s
+PASS h_three_lobes   simple_vote_facing_only  65 100 pass             0.6s
+PASS h_three_lobes   simple_vote_facing_only  65 101 pass             0.6s
+PASS h_three_lobes   simple_vote_facing_only  65 102 pass             0.6s
+PASS h_fan3          simple_vote_no_checks  65 100 pass             0.5s
+PASS h_fan3          simple_vote_no_checks  65 101 pass             0.5s
+PASS h_fan3          simple_vote_no_checks  65 102 pass             0.5s
+PASS h_fan3          simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_fan3          simple_vote_tilt_only  65 101 pass             0.6s
+PASS h_fan3          simple_vote_tilt_only  65 102 pass             0.5s
+PASS h_fan3          simple_vote_facing_only  65 100 pass             0.6s
+PASS h_fan3          simple_vote_facing_only  65 101 pass             0.6s
+PASS h_cone30        simple_vote_no_checks  65 100 pass             0.5s
+PASS h_fan3          simple_vote_facing_only  65 102 pass             0.6s
+PASS h_cone30        simple_vote_no_checks  65 101 pass             0.6s
+PASS h_cone30        simple_vote_no_checks  65 102 pass             0.6s
+PASS h_cone30        simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_cone30        simple_vote_tilt_only  65 101 pass             0.5s
+PASS h_cone30        simple_vote_tilt_only  65 102 pass             0.5s
+PASS h_cone30        simple_vote_facing_only  65 100 pass             0.6s
+PASS h_cone30        simple_vote_facing_only  65 102 pass             0.6s
+PASS h_cone30        simple_vote_facing_only  65 101 pass             0.6s
+PASS h_diag30        simple_vote_no_checks  65 100 pass             0.6s
+PASS h_diag30        simple_vote_no_checks  65 101 pass             0.6s
+PASS h_diag30        simple_vote_no_checks  65 102 pass             0.6s
+PASS h_diag30        simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_diag30        simple_vote_tilt_only  65 101 pass             0.6s
+PASS h_diag30        simple_vote_tilt_only  65 102 pass             0.6s
+PASS h_diag30        simple_vote_facing_only  65 100 pass             0.6s
+PASS h_diag30        simple_vote_facing_only  65 101 pass             0.6s
+PASS h_diag30        simple_vote_facing_only  65 102 pass             0.6s
+PASS h_arc200        simple_vote_no_checks  65 100 pass             0.6s
+PASS h_arc200        simple_vote_no_checks  65 102 pass             0.6s
+PASS h_arc200        simple_vote_no_checks  65 101 pass             0.7s
+PASS h_arc200        simple_vote_tilt_only  65 100 pass             0.7s
+PASS h_arc200        simple_vote_tilt_only  65 101 pass             0.7s
+PASS h_arc200        simple_vote_tilt_only  65 102 pass             0.6s
+PASS h_arc200        simple_vote_facing_only  65 100 pass             0.7s
+PASS h_arc200        simple_vote_facing_only  65 101 pass             0.7s
+PASS h_arc200        simple_vote_facing_only  65 102 pass             0.6s
+PASS h_dents23       simple_vote_no_checks  65 100 pass             0.6s
+PASS h_dents23       simple_vote_no_checks  65 101 pass             0.6s
+FAIL h_dents23       simple_vote_no_checks  65 102 folded 0%        0.6s
+PASS h_dents23       simple_vote_tilt_only  65 100 pass             0.6s
+PASS h_dents23       simple_vote_tilt_only  65 101 pass             0.6s
+FAIL h_dents23       simple_vote_tilt_only  65 102 folded 0%        0.6s
+PASS h_dents23       simple_vote_facing_only  65 100 pass             0.7s
+PASS h_dents23       simple_vote_facing_only  65 101 pass             0.7s
+FAIL h_dents23       simple_vote_facing_only  65 102 folded 0%        0.7s
+FAIL h_crumple17     simple_vote_no_checks  65 100 folded 10%       0.6s
+FAIL h_crumple17     simple_vote_no_checks  65 101 folded 10%       0.7s
+FAIL h_crumple17     simple_vote_no_checks  65 102 folded 13%       0.6s
+FAIL h_crumple17     simple_vote_tilt_only  65 100 folded 9%        0.6s
+FAIL h_crumple17     simple_vote_tilt_only  65 101 folded 10%       0.6s
+FAIL h_crumple17     simple_vote_tilt_only  65 102 folded 10%       0.6s
+FAIL h_crumple17     simple_vote_facing_only  65 100 folded 10%       0.6s
+FAIL h_crumple17     simple_vote_facing_only  65 101 folded 11%       0.7s
+FAIL h_crumple17     simple_vote_facing_only  65 102 folded 13%       0.7s
+FAIL h_crumple29     simple_vote_no_checks  65 100 folded 38%       0.6s
+FAIL h_crumple29     simple_vote_no_checks  65 101 folded 32%       0.6s
+FAIL h_crumple29     simple_vote_no_checks  65 102 folded 38%       0.6s
+FAIL h_crumple29     simple_vote_tilt_only  65 100 folded 22%       0.6s
+FAIL h_crumple29     simple_vote_tilt_only  65 101 folded 17%       0.6s
+FAIL h_crumple29     simple_vote_tilt_only  65 102 folded 21%       0.6s
+FAIL h_crumple29     simple_vote_facing_only  65 100 folded 39%       0.7s
+FAIL h_crumple29     simple_vote_facing_only  65 101 folded 32%       0.6s
+FAIL h_crumple29     simple_vote_facing_only  65 102 folded 39%       0.6s
+FAIL patchy_scurl    simple_vote_no_checks  65 100 folded 21%       0.6s
+FAIL patchy_scurl    simple_vote_no_checks  65 101 folded 22%       0.6s
+FAIL patchy_scurl    simple_vote_no_checks  65 102 folded 23%       0.6s
+FAIL patchy_scurl    simple_vote_tilt_only  65 100 folded 11%       0.6s
+FAIL patchy_scurl    simple_vote_tilt_only  65 101 folded 9%        0.6s
+FAIL patchy_scurl    simple_vote_tilt_only  65 102 folded 14%       0.6s
+FAIL patchy_scurl    simple_vote_facing_only  65 100 folded 7%        0.6s
+FAIL patchy_scurl    simple_vote_facing_only  65 101 folded 9%        0.6s
+FAIL patchy_scurl    simple_vote_facing_only  65 102 folded 10%       0.6s
+PASS patchy_roll     simple_vote_no_checks  65 100 pass             0.6s
+PASS patchy_roll     simple_vote_no_checks  65 101 pass             0.5s
+PASS patchy_roll     simple_vote_no_checks  65 102 pass             0.5s
+PASS patchy_roll     simple_vote_tilt_only  65 100 pass             0.5s
+PASS patchy_roll     simple_vote_tilt_only  65 101 pass             0.6s
+PASS patchy_roll     simple_vote_tilt_only  65 102 pass             0.5s
+PASS patchy_roll     simple_vote_facing_only  65 100 pass             0.6s
+PASS patchy_roll     simple_vote_facing_only  65 101 pass             0.6s
+PASS crescent_flat   simple_vote_no_checks  65 100 pass             0.5s
+PASS patchy_roll     simple_vote_facing_only  65 102 pass             0.6s
+PASS crescent_flat   simple_vote_no_checks  65 101 pass             0.5s
+PASS crescent_flat   simple_vote_no_checks  65 102 pass             0.5s
+PASS crescent_flat   simple_vote_tilt_only  65 100 pass             0.5s
+PASS crescent_flat   simple_vote_tilt_only  65 101 pass             0.5s
+PASS crescent_flat   simple_vote_tilt_only  65 102 pass             0.5s
+PASS crescent_flat   simple_vote_facing_only  65 100 pass             0.6s
+PASS crescent_flat   simple_vote_facing_only  65 102 pass             0.6s
+PASS crescent_flat   simple_vote_facing_only  65 101 pass             0.6s
+PASS crescent_roll   simple_vote_no_checks  65 100 pass             0.6s
+PASS crescent_roll   simple_vote_no_checks  65 101 pass             0.6s
+PASS crescent_roll   simple_vote_no_checks  65 102 pass             0.6s
+PASS crescent_roll   simple_vote_tilt_only  65 100 pass             0.6s
+PASS crescent_roll   simple_vote_tilt_only  65 101 pass             0.5s
+PASS crescent_roll   simple_vote_tilt_only  65 102 pass             0.5s
+PASS crescent_roll   simple_vote_facing_only  65 100 pass             0.6s
+PASS crescent_roll   simple_vote_facing_only  65 101 pass             0.6s
+PASS crescent_roll   simple_vote_facing_only  65 102 pass             0.6s
+PASS strip_roll      simple_vote_no_checks  65 100 pass             0.5s
+PASS strip_roll      simple_vote_no_checks  65 101 pass             0.5s
+PASS strip_roll      simple_vote_no_checks  65 102 pass             0.5s
+PASS strip_roll      simple_vote_tilt_only  65 100 pass             0.5s
+PASS strip_roll      simple_vote_tilt_only  65 101 pass             0.5s
+PASS strip_roll      simple_vote_tilt_only  65 102 pass             0.5s
+PASS strip_roll      simple_vote_facing_only  65 100 pass             0.6s
+PASS strip_roll      simple_vote_facing_only  65 101 pass             0.6s
+PASS strip_roll      simple_vote_facing_only  65 102 pass             0.6s
+PASS hairpin_flap    simple_vote_no_checks  65 100 pass             0.5s
+PASS hairpin_flap    simple_vote_no_checks  65 101 pass             0.5s
+PASS hairpin_flap    simple_vote_no_checks  65 102 pass             0.6s
+PASS hairpin_flap    simple_vote_tilt_only  65 100 pass             0.6s
+PASS hairpin_flap    simple_vote_tilt_only  65 101 pass             0.5s
+PASS hairpin_flap    simple_vote_tilt_only  65 102 pass             0.5s
+PASS hairpin_flap    simple_vote_facing_only  65 100 pass             0.6s
+PASS hairpin_flap    simple_vote_facing_only  65 101 pass             0.6s
+PASS hairpin_flap    simple_vote_facing_only  65 102 pass             0.6s
+PASS roll_5d         simple_vote_no_checks  65 100 pass             0.6s
+PASS roll_5d         simple_vote_no_checks  65 101 pass             0.6s
+PASS roll_5d         simple_vote_no_checks  65 102 pass             0.6s
+PASS roll_5d         simple_vote_tilt_only  65 100 pass             0.6s
+PASS roll_5d         simple_vote_tilt_only  65 101 pass             0.6s
+PASS roll_5d         simple_vote_tilt_only  65 102 pass             0.6s
+PASS roll_5d         simple_vote_facing_only  65 100 pass             0.6s
+PASS roll_5d         simple_vote_facing_only  65 101 pass             0.6s
+PASS roll_5d         simple_vote_facing_only  65 102 pass             0.6s
+PASS bumps_8d        simple_vote_no_checks  65 100 pass             0.7s
+PASS bumps_8d        simple_vote_no_checks  65 101 pass             0.7s
+PASS bumps_8d        simple_vote_no_checks  65 102 pass             0.6s
+PASS bumps_8d        simple_vote_tilt_only  65 100 pass             0.7s
+PASS bumps_8d        simple_vote_tilt_only  65 101 pass             0.6s
+PASS bumps_8d        simple_vote_tilt_only  65 102 pass             1.3s
+PASS bumps_8d        simple_vote_facing_only  65 100 pass             1.3s
+PASS bumps_8d        simple_vote_facing_only  65 101 pass             1.3s
+PASS bumps_8d        simple_vote_facing_only  65 102 pass             1.3s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/ablation.json
+PASS flat            check_k10             65 102 pass             3.8s
+PASS flat            check_k10             65 101 pass             3.8s
+PASS flat            simple_unfold         65 100 pass             3.8s
+PASS flat            check_k10             65 100 pass             3.8s
+PASS flat            simple_vote           65 101 pass             0.6s
+PASS flat            simple_vote           65 100 pass             0.6s
+PASS flat            simple_vote           65 102 pass             0.6s
+PASS flat            simple_unfold         65 102 pass             3.9s
+PASS flat            simple_unfold         65 101 pass             3.9s
+PASS gentle_arc      check_k10             65 100 pass             4.0s
+PASS gentle_arc      check_k10             65 101 pass             4.0s
+PASS gentle_arc      simple_unfold         65 100 pass             4.1s
+PASS gentle_arc      check_k10             65 102 pass             4.1s
+PASS gentle_arc      simple_unfold         65 101 pass             3.9s
+PASS gentle_arc      simple_vote           65 100 pass             0.6s
+PASS gentle_arc      simple_vote           65 101 pass             0.6s
+PASS gentle_arc      simple_unfold         65 102 pass             4.0s
+PASS gentle_arc      simple_vote           65 102 pass             0.6s
+PASS wave            check_k10             65 100 pass             4.2s
+PASS wave            check_k10             65 101 pass             4.2s
+PASS wave            check_k10             65 102 pass             4.0s
+PASS wave            simple_unfold         65 100 pass             4.0s
+PASS wave            simple_vote           65 100 pass             0.6s
+PASS wave            simple_vote           65 101 pass             0.6s
+PASS wave            simple_vote           65 102 pass             0.6s
+PASS wave            simple_unfold         65 102 pass             4.1s
+PASS wave            simple_unfold         65 101 pass             4.2s
+FAIL s_curl          check_k10             65 100 folded 1%        3.9s
+FAIL s_curl          check_k10             65 101 folded 1%        3.9s
+FAIL s_curl          simple_unfold         65 100 folded 1%        4.1s
+PASS s_curl          check_k10             65 102 pass             4.2s
+PASS s_curl          simple_unfold         65 101 pass             4.0s
+FAIL s_curl          simple_vote           65 100 folded 0%        0.7s
+PASS s_curl          simple_vote           65 101 pass             0.7s
+PASS s_curl          simple_unfold         65 102 pass             4.1s
+PASS s_curl          simple_vote           65 102 pass             0.7s
+PASS roll            check_k10             65 100 pass             4.4s
+PASS roll            check_k10             65 101 pass             4.3s
+PASS roll            simple_unfold         65 100 pass             4.2s
+PASS roll            check_k10             65 102 pass             4.2s
+PASS roll            simple_vote           65 100 pass             0.6s
+PASS roll            simple_vote           65 101 pass             0.6s
+PASS roll            simple_vote           65 102 pass             1.3s
+PASS roll            simple_unfold         65 102 pass             5.1s
+PASS roll            simple_unfold         65 101 pass             5.1s
+FAIL tight_roll      check_k10             65 100 folded 26%       4.4s
+FAIL tight_roll      check_k10             65 101 folded 24%       3.7s
+FAIL tight_roll      check_k10             65 102 folded 23%       3.8s
+FAIL tight_roll      simple_unfold         65 100 folded 25%       3.8s
+FAIL tight_roll      simple_unfold         65 101 folded 23%       3.7s
+FAIL tight_roll      simple_unfold         65 102 folded 22%       3.6s
+FAIL tight_roll      simple_vote           65 100 folded 9%        0.7s
+FAIL tight_roll      simple_vote           65 101 folded 12%       0.7s
+FAIL tight_roll      simple_vote           65 102 folded 10%       0.7s
+PASS diagonal_roll   check_k10             65 100 pass             4.3s
+PASS diagonal_roll   check_k10             65 102 pass             4.2s
+PASS diagonal_roll   check_k10             65 101 pass             4.3s
+PASS diagonal_roll   simple_unfold         65 100 pass             4.2s
+PASS diagonal_roll   simple_vote           65 100 pass             0.7s
+PASS diagonal_roll   simple_vote           65 101 pass             0.6s
+PASS diagonal_roll   simple_vote           65 102 pass             0.6s
+PASS diagonal_roll   simple_unfold         65 101 pass             4.4s
+PASS diagonal_roll   simple_unfold         65 102 pass             4.4s
+PASS accordion       check_k10             65 100 pass             4.4s
+PASS accordion       check_k10             65 101 pass             4.4s
+PASS accordion       check_k10             65 102 pass             4.1s
+PASS accordion       simple_unfold         65 100 pass             4.1s
+PASS accordion       simple_vote           65 100 pass             0.6s
+PASS accordion       simple_vote           65 101 pass             0.6s
+PASS accordion       simple_unfold         65 101 pass             4.0s
+PASS accordion       simple_unfold         65 102 pass             4.0s
+PASS accordion       simple_vote           65 102 pass             0.7s
+PASS cone            check_k10             65 100 pass             4.1s
+PASS cone            check_k10             65 101 pass             4.1s
+PASS cone            check_k10             65 102 pass             4.0s
+PASS cone            simple_unfold         65 100 pass             4.0s
+PASS cone            simple_vote           65 100 pass             0.6s
+PASS cone            simple_vote           65 101 pass             0.6s
+PASS cone            simple_vote           65 102 pass             0.6s
+PASS cone            simple_unfold         65 101 pass             4.0s
+PASS cone            simple_unfold         65 102 pass             4.0s
+PASS bowl            check_k10             65 100 pass             4.0s
+PASS bowl            check_k10             65 101 pass             4.1s
+PASS bowl            check_k10             65 102 pass             5.0s
+PASS bowl            simple_unfold         65 100 pass             5.0s
+PASS bowl            simple_vote           65 100 pass             0.6s
+PASS bowl            simple_vote           65 101 pass             0.6s
+PASS bowl            simple_unfold         65 101 pass             4.8s
+PASS bowl            simple_vote           65 102 pass             0.6s
+PASS bowl            simple_unfold         65 102 pass             4.8s
+PASS uneven_roll     check_k10             65 100 pass             4.2s
+PASS uneven_roll     check_k10             65 101 pass             4.1s
+PASS uneven_roll     check_k10             65 102 pass             3.9s
+PASS uneven_roll     simple_unfold         65 100 pass             3.9s
+PASS uneven_roll     simple_vote           65 100 pass             0.6s
+PASS uneven_roll     simple_vote           65 101 pass             0.6s
+PASS uneven_roll     simple_vote           65 102 pass             0.6s
+PASS uneven_roll     simple_unfold         65 101 pass             4.1s
+PASS uneven_roll     simple_unfold         65 102 pass             4.0s
+PASS dents           check_k10             65 100 pass             4.1s
+PASS dents           check_k10             65 101 pass             4.1s
+PASS dents           simple_unfold         65 100 pass             4.1s
+PASS dents           check_k10             65 102 pass             4.2s
+PASS dents           simple_vote           65 100 pass             0.6s
+PASS dents           simple_vote           65 101 pass             0.6s
+PASS dents           simple_unfold         65 101 pass             4.0s
+PASS dents           simple_vote           65 102 pass             0.6s
+PASS dents           simple_unfold         65 102 pass             4.3s
+FAIL crumple         check_k10             65 100 folded 1%        4.0s
+FAIL crumple         check_k10             65 101 folded 1%        3.9s
+FAIL crumple         check_k10             65 102 folded 1%        4.0s
+FAIL crumple         simple_unfold         65 100 folded 1%        3.9s
+FAIL crumple         simple_vote           65 100 folded 9%        0.6s
+FAIL crumple         simple_vote           65 101 folded 12%       0.6s
+FAIL crumple         simple_vote           65 102 folded 11%       0.6s
+FAIL crumple         simple_unfold         65 101 folded 1%        4.1s
+FAIL crumple         simple_unfold         65 102 folded 1%        4.0s
+FAIL hard_crumple    check_k10             65 100 folded 1%        3.9s
+FAIL hard_crumple    check_k10             65 101 folded 1%        4.0s
+FAIL hard_crumple    check_k10             65 102 folded 1%        4.1s
+FAIL hard_crumple    simple_unfold         65 100 folded 1%        4.1s
+FAIL hard_crumple    simple_vote           65 100 folded 6%        0.6s
+FAIL hard_crumple    simple_vote           65 101 folded 7%        0.6s
+FAIL hard_crumple    simple_vote           65 102 folded 6%        0.6s
+FAIL hard_crumple    simple_unfold         65 101 folded 1%        4.0s
+FAIL hard_crumple    simple_unfold         65 102 folded 1%        3.9s
+FAIL h_roll5         check_k10             65 100 folded 12%       4.8s
+FAIL h_roll5         check_k10             65 101 folded 7%        4.7s
+FAIL h_roll5         check_k10             65 102 folded 9%        4.7s
+FAIL h_roll5         simple_unfold         65 100 folded 11%       4.7s
+FAIL h_roll5         simple_vote           65 100 folded 1%        0.6s
+FAIL h_roll5         simple_vote           65 101 folded 0%        0.6s
+FAIL h_roll5         simple_vote           65 102 folded 0%        0.6s
+FAIL h_roll5         simple_unfold         65 101 folded 7%        4.2s
+FAIL h_roll5         simple_unfold         65 102 folded 9%        4.0s
+PASS h_scurl65       check_k10             65 100 pass             4.0s
+PASS h_scurl65       check_k10             65 101 pass             4.0s
+PASS h_scurl65       check_k10             65 102 pass             4.3s
+PASS h_scurl65       simple_unfold         65 100 pass             4.2s
+PASS h_scurl65       simple_vote           65 100 pass             0.6s
+PASS h_scurl65       simple_vote           65 101 pass             0.6s
+PASS h_scurl65       simple_unfold         65 101 pass             4.2s
+PASS h_scurl65       simple_unfold         65 102 pass             4.1s
+PASS h_scurl65       simple_vote           65 102 pass             0.6s
+PASS h_three_lobes   check_k10             65 100 pass             4.2s
+PASS h_three_lobes   check_k10             65 101 pass             4.4s
+PASS h_three_lobes   simple_unfold         65 100 pass             4.1s
+PASS h_three_lobes   check_k10             65 102 pass             4.2s
+PASS h_three_lobes   simple_vote           65 101 pass             0.6s
+PASS h_three_lobes   simple_vote           65 100 pass             0.6s
+PASS h_three_lobes   simple_vote           65 102 pass             0.6s
+PASS h_three_lobes   simple_unfold         65 101 pass             4.1s
+PASS h_three_lobes   simple_unfold         65 102 pass             4.0s
+PASS h_fan3          check_k10             65 100 pass             3.9s
+PASS h_fan3          check_k10             65 101 pass             3.9s
+PASS h_fan3          check_k10             65 102 pass             4.1s
+PASS h_fan3          simple_unfold         65 100 pass             3.9s
+PASS h_fan3          simple_vote           65 100 pass             0.6s
+PASS h_fan3          simple_unfold         65 101 pass             3.8s
+PASS h_fan3          simple_vote           65 101 pass             0.6s
+PASS h_fan3          simple_vote           65 102 pass             0.6s
+PASS h_fan3          simple_unfold         65 102 pass             3.9s
+PASS h_cone30        check_k10             65 100 pass             4.2s
+PASS h_cone30        check_k10             65 101 pass             4.2s
+PASS h_cone30        check_k10             65 102 pass             4.1s
+PASS h_cone30        simple_unfold         65 100 pass             4.0s
+PASS h_cone30        simple_vote           65 100 pass             0.6s
+PASS h_cone30        simple_vote           65 101 pass             0.6s
+PASS h_cone30        simple_vote           65 102 pass             0.6s
+PASS h_cone30        simple_unfold         65 102 pass             4.4s
+PASS h_cone30        simple_unfold         65 101 pass             4.5s
+PASS h_diag30        check_k10             65 100 pass             5.2s
+PASS h_diag30        check_k10             65 101 pass             5.1s
+PASS h_diag30        check_k10             65 102 pass             5.4s
+PASS h_diag30        simple_unfold         65 100 pass             5.4s
+PASS h_diag30        simple_vote           65 100 pass             0.7s
+PASS h_diag30        simple_vote           65 101 pass             0.7s
+PASS h_diag30        simple_unfold         65 101 pass             4.8s
+PASS h_diag30        simple_vote           65 102 pass             0.7s
+PASS h_diag30        simple_unfold         65 102 pass             4.5s
+PASS h_arc200        check_k10             65 100 pass             4.2s
+PASS h_arc200        check_k10             65 101 pass             4.0s
+PASS h_arc200        check_k10             65 102 pass             4.0s
+PASS h_arc200        simple_unfold         65 100 pass             4.0s
+PASS h_arc200        simple_vote           65 100 pass             0.6s
+PASS h_arc200        simple_vote           65 101 pass             0.6s
+PASS h_arc200        simple_vote           65 102 pass             0.6s
+PASS h_arc200        simple_unfold         65 101 pass             4.3s
+PASS h_arc200        simple_unfold         65 102 pass             4.1s
+PASS h_dents23       check_k10             65 100 pass             4.1s
+PASS h_dents23       check_k10             65 101 pass             4.1s
+PASS h_dents23       check_k10             65 102 pass             4.2s
+PASS h_dents23       simple_unfold         65 100 pass             4.1s
+FAIL h_dents23       simple_vote           65 100 folded 0%        0.7s
+PASS h_dents23       simple_vote           65 101 pass             0.7s
+PASS h_dents23       simple_unfold         65 101 pass             4.1s
+PASS h_dents23       simple_unfold         65 102 pass             4.1s
+FAIL h_dents23       simple_vote           65 102 folded 0%        0.7s
+FAIL h_crumple17     check_k10             65 101 folded 4%        4.2s
+FAIL h_crumple17     check_k10             65 100 folded 4%        4.3s
+FAIL h_crumple17     check_k10             65 102 folded 4%        4.2s
+FAIL h_crumple17     simple_unfold         65 100 folded 4%        4.3s
+FAIL h_crumple17     simple_vote           65 100 folded 9%        0.7s
+FAIL h_crumple17     simple_vote           65 101 folded 37%       0.6s
+FAIL h_crumple17     simple_vote           65 102 folded 37%       0.6s
+FAIL h_crumple17     simple_unfold         65 102 folded 4%        4.5s
+FAIL h_crumple17     simple_unfold         65 101 folded 4%        4.5s
+FAIL h_crumple29     check_k10             65 100 folded 14%       4.0s
+FAIL h_crumple29     check_k10             65 101 folded 10%       4.0s
+FAIL h_crumple29     check_k10             65 102 folded 13%       4.3s
+FAIL h_crumple29     simple_unfold         65 100 folded 23%       4.3s
+FAIL h_crumple29     simple_unfold         65 101 folded 20%       4.0s
+FAIL h_crumple29     simple_vote           65 101 folded 47%       1.3s
+FAIL h_crumple29     simple_vote           65 100 folded 40%       1.3s
+FAIL h_crumple29     simple_unfold         65 102 folded 22%       4.7s
+FAIL h_crumple29     simple_vote           65 102 folded 31%       1.3s
+FAIL patchy_scurl    check_k10             65 100 folded 36%       4.6s
+FAIL patchy_scurl    check_k10             65 101 folded 27%       4.7s
+FAIL patchy_scurl    check_k10             65 102 folded 28%       4.7s
+FAIL patchy_scurl    simple_unfold         65 100 folded 32%       5.0s
+FAIL patchy_scurl    simple_vote           65 100 folded 8%        0.7s
+FAIL patchy_scurl    simple_vote           65 101 folded 6%        0.7s
+FAIL patchy_scurl    simple_vote           65 102 folded 5%        0.6s
+FAIL patchy_scurl    simple_unfold         65 101 folded 27%       4.5s
+FAIL patchy_scurl    simple_unfold         65 102 folded 28%       4.4s
+FAIL patchy_roll     check_k10             65 100 torn             4.0s
+FAIL patchy_roll     check_k10             65 101 torn             4.0s
+FAIL patchy_roll     simple_unfold         65 100 torn             3.9s
+FAIL patchy_roll     check_k10             65 102 torn             4.1s
+PASS patchy_roll     simple_vote           65 100 pass             0.6s
+PASS patchy_roll     simple_vote           65 101 pass             0.6s
+FAIL patchy_roll     simple_unfold         65 101 torn             3.9s
+PASS patchy_roll     simple_vote           65 102 pass             0.6s
+FAIL patchy_roll     simple_unfold         65 102 torn             3.9s
+FAIL crescent_flat   check_k10             65 100 folded 10%       4.4s
+FAIL crescent_flat   check_k10             65 101 folded 11%       4.3s
+FAIL crescent_flat   check_k10             65 102 folded 10%       4.2s
+FAIL crescent_flat   simple_unfold         65 100 folded 10%       4.2s
+FAIL crescent_flat   simple_vote           65 100 folded 0%        0.6s
+FAIL crescent_flat   simple_vote           65 101 torn             0.6s
+FAIL crescent_flat   simple_vote           65 102 folded 0%        0.6s
+FAIL crescent_flat   simple_unfold         65 101 folded 11%       4.4s
+FAIL crescent_flat   simple_unfold         65 102 folded 10%       4.2s
+FAIL crescent_roll   check_k10             65 100 folded 9%        4.1s
+FAIL crescent_roll   check_k10             65 101 folded 11%       4.1s
+FAIL crescent_roll   simple_unfold         65 100 folded 9%        4.5s
+FAIL crescent_roll   check_k10             65 102 folded 10%       4.5s
+FAIL crescent_roll   simple_unfold         65 101 folded 11%       4.2s
+FAIL crescent_roll   simple_vote           65 100 folded 0%        0.6s
+FAIL crescent_roll   simple_vote           65 101 folded 0%        0.6s
+FAIL crescent_roll   simple_unfold         65 102 folded 10%       4.2s
+FAIL crescent_roll   simple_vote           65 102 folded 0%        0.6s
+FAIL strip_roll      check_k10             65 100 folded 0%        5.0s
+FAIL strip_roll      check_k10             65 101 folded 0%        5.0s
+FAIL strip_roll      check_k10             65 102 folded 0%        5.0s
+FAIL strip_roll      simple_unfold         65 100 folded 0%        5.5s
+FAIL strip_roll      simple_vote           65 100 torn             0.9s
+PASS strip_roll      simple_vote           65 101 pass             0.9s
+PASS strip_roll      simple_vote           65 102 pass             0.7s
+FAIL strip_roll      simple_unfold         65 101 folded 0%        4.6s
+FAIL strip_roll      simple_unfold         65 102 folded 0%        4.7s
+PASS hairpin_flap    check_k10             65 101 pass             4.2s
+PASS hairpin_flap    check_k10             65 100 pass             4.2s
+PASS hairpin_flap    check_k10             65 102 pass             4.2s
+PASS hairpin_flap    simple_unfold         65 100 pass             4.1s
+PASS hairpin_flap    simple_vote           65 101 pass             0.6s
+PASS hairpin_flap    simple_vote           65 100 pass             0.6s
+PASS hairpin_flap    simple_vote           65 102 pass             0.7s
+PASS hairpin_flap    simple_unfold         65 101 pass             4.0s
+PASS hairpin_flap    simple_unfold         65 102 pass             4.0s
+PASS roll_5d         check_k10             65 100 pass             4.1s
+PASS roll_5d         check_k10             65 102 pass             4.1s
+PASS roll_5d         check_k10             65 101 pass             4.2s
+PASS roll_5d         simple_unfold         65 100 pass             4.1s
+PASS roll_5d         simple_vote           65 101 pass             0.6s
+PASS roll_5d         simple_vote           65 100 pass             0.7s
+PASS roll_5d         simple_vote           65 102 pass             0.6s
+PASS roll_5d         simple_unfold         65 101 pass             4.1s
+PASS roll_5d         simple_unfold         65 102 pass             4.2s
+PASS bumps_8d        check_k10             65 100 pass             4.2s
+PASS bumps_8d        check_k10             65 101 pass             4.3s
+PASS bumps_8d        check_k10             65 102 pass             4.2s
+PASS bumps_8d        simple_unfold         65 100 pass             4.0s
+PASS bumps_8d        simple_vote           65 100 pass             0.7s
+PASS bumps_8d        simple_unfold         65 101 pass             4.0s
+PASS bumps_8d        simple_vote           65 101 pass             0.7s
+PASS bumps_8d        simple_vote           65 102 pass             0.7s
+PASS bumps_8d        simple_unfold         65 102 pass             3.9s
+PASS h_roll5         simple_vote          129 100 pass             2.5s
+PASS h_roll5         simple_vote          129 101 pass             2.5s
+PASS h_roll5         simple_unfold        129 100 pass             7.4s
+PASS h_roll5         simple_unfold        129 101 pass             7.4s
+PASS h_roll5         simple_unfold        129 102 pass             7.5s
+PASS h_roll5         simple_vote          129 102 pass             2.6s
+FAIL patchy_scurl    simple_vote          129 100 torn             3.1s
+FAIL patchy_scurl    simple_vote          129 101 torn             2.5s
+FAIL patchy_scurl    simple_unfold        129 100 torn             7.9s
+FAIL patchy_scurl    simple_unfold        129 101 torn             8.0s
+FAIL patchy_scurl    simple_unfold        129 102 torn             7.8s
+FAIL patchy_scurl    simple_vote          129 102 torn             2.4s
+PASS tight_roll      simple_vote          257 100 pass             8.8s
+PASS tight_roll      simple_unfold        257 100 pass             27.4s
+wrote /home/dmmsp/Projects/ReversingEmbeddings/unfolding_suite/runs/simple/noise.json
+ALLDONE

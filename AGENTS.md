@@ -332,7 +332,12 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   three mesh sizes, outline never crosses) and names failure causes. 14 design + 10 held-out
   sheets; runs live in `unfolding_suite/runs/` (`current` is the reference). Best simple
   methods (`link_check.py`) pass 11 of 14 design and 7 of 10 held-out sheets. `tight_roll`
-  needs more dots; twisted crumples stay unsolved.
+  needs more dots; twisted crumples stay unsolved. **Best simple method (2026-11-15): `simple.py`'s
+  `best_simple`** (closest dots -> tilt check -> carry two directions, every link votes): 25 of 30 sheets
+  with enough dots, beating the graphics recipe `mesh_full` (23) and 18x faster; both fail the stretched
+  crumples, where `mesh_full` gets much closer. Scope is 2-D paper in 3-D; the `audit` group (6 sheets in
+  `audit.py`) adds uneven dots, C-shaped outlines, a 4:1 strip and a flat hairpin. All 30 sheets are
+  solvable with perfect information (crumples only by a no-fold Tutte layout). Walking folds a flat C-shape.
   **Always judge a flattening with `unfolding_suite/verify.py`** (the double-layer check: dots
   plus flat result only, no truth; suite runs print it as `layers:`). It reads `stacked` when
   part of the sheet ended up on top of another part; `unfolding_suite/VERIFY.md` explains the
@@ -343,6 +348,16 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   2-15 numbers) on the 6,742 MNIST training 1s, with a generated-1s control. It finds only
   slant (|r| 0.98); every further number is a bent copy of it, and it loses to the best
   flat plane (PCA) at 5+ numbers. On the generated 1s it misses cy and height.
+
+- **Directions to reach every neighbour (flat-patch count):**
+  `analyze_mnist_one_flat_patch_directions.py` and
+  `figures/mnist_one_flat_patch_directions/README.md`. Count the fewest SVD directions
+  that bring every arrow to the nearest k neighbours within 10% of its length. Generated
+  1s with neighbours made within ~2% of the image size stay at exactly 5 for any k (12-knob
+  drawn 1s need ~0.6%); MNIST's nearest real neighbour is 23.6% away and the count tracks
+  k (one new direction per neighbour) to k~25, so no flat patch is reachable at MNIST's density.
+  Restricting to the most crowded 1% of starting 1s (`dense` part) only brings the
+  nearest neighbour to 16.6% and leaves the count unchanged (87 at k = 200).
 
 ### Geometry conventions
 

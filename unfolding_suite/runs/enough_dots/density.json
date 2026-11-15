@@ -454,5 +454,119 @@
    }
   },
   "enough_grid": null
+ },
+ "patchy_scurl": {
+  "family": "bent",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.4434778855806454,
+    "dots_too_close": 85
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 129
+ },
+ "patchy_roll": {
+  "family": "bent",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "crescent_flat": {
+  "family": "stretched",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 18
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 85
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 268
+   }
+  },
+  "enough_grid": null
+ },
+ "crescent_roll": {
+  "family": "stretched",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 18
+   },
+   "129": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 85
+   },
+   "257": {
+    "gap_spacings": 1.0,
+    "dots_too_close": 268
+   }
+  },
+  "enough_grid": null
+ },
+ "strip_roll": {
+  "family": "stretched",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
+ },
+ "hairpin_flap": {
+  "family": "bent",
+  "group": "audit",
+  "by_grid": {
+   "65": {
+    "gap_spacings": 2.801144036465552,
+    "dots_too_close": 0
+   },
+   "129": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   },
+   "257": {
+    "gap_spacings": null,
+    "dots_too_close": 0
+   }
+  },
+  "enough_grid": 65
  }
 }

@@ -20,20 +20,22 @@ class Sheet:
     family: str
     build: Callable[[np.ndarray], np.ndarray]
     note: str
-    group: str = "design"      # "design": used while developing methods; "holdout": kept for fair checks
+    group: str = "design"      # "design": used while developing methods; "holdout": kept for fair checks;
+                               # "audit": added 2026-11-15 to cover missing kinds of case, never tuned on
+    warp: Callable | None = None   # optional: moves the sampled paper positions (uneven dot density)
 
 
 SHEETS: dict[str, Sheet] = {}
 
 
-def sheet(name, family, note, group="design"):
+def sheet(name, family, note, group="design", warp=None):
     if family not in ("bent", "stretched"):
         raise ValueError(f"unknown family {family!r}")
-    if group not in ("design", "holdout"):
+    if group not in ("design", "holdout", "audit"):
         raise ValueError(f"unknown group {group!r}")
 
     def register(fn):
-        SHEETS[name] = Sheet(name, family, fn, note, group)
+        SHEETS[name] = Sheet(name, family, fn, note, group, warp)
         return fn
 
     return register
@@ -174,6 +176,7 @@ def hard_crumple(uv):
 
 
 from . import holdout  # noqa: E402,F401 - registers the held-out sheets
+from . import audit  # noqa: E402,F401 - registers the audit sheets
 
 
 # ------------------------------------------------------------- building a test instance
@@ -184,8 +187,8 @@ class Instance:
     sheet: Sheet
     grid: int              # nodes per side
     uv: np.ndarray         # (grid^2, 2) true paper positions, row-major on the grid
-    xyz: np.ndarray        # (grid^2, 3) true 3-D positions, same order, before hiding
-    points: np.ndarray     # (grid^2, 3) what the method sees: shuffled and rotated
+    xyz: np.ndarray        # (grid^2, D) true positions (D = 3 except some audit sheets), same order, before hiding
+    points: np.ndarray     # (grid^2, D) what the method sees: shuffled and rotated
     order: np.ndarray      # points[k] is grid node order[k]
 
 
@@ -207,9 +210,12 @@ def make_instance(s: Sheet, grid=65, seed=0, noise=0.0):
     du[:, [0, -1]] = 0
     dv[[0, -1], :] = 0
     uv = np.c_[(u + du).ravel(), (v + dv).ravel()]
+    if s.warp is not None:
+        uv = s.warp(uv)
     xyz = s.build(uv)
     hidden = xyz + rng.normal(0, noise * cell, xyz.shape) if noise else xyz
-    rotation = np.linalg.qr(rng.normal(size=(3, 3)))[0]
+    D = xyz.shape[1]
+    rotation = np.linalg.qr(rng.normal(size=(D, D)))[0]
     order = rng.permutation(len(uv))
-    points = (hidden @ rotation + rng.normal(0, 1, 3))[order]
+    points = (hidden @ rotation + rng.normal(0, 1, D))[order]
     return Instance(s, grid, uv, xyz, points, order)

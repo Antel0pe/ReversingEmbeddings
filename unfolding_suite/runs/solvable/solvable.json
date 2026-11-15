@@ -1,0 +1,2298 @@
+{
+ "rows": [
+  {
+   "sheet": "flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "gentle_arc",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "wave",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "wave",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "wave",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "wave",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "s_curl",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "tight_roll",
+   "seed": 100,
+   "grid": 257,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "diagonal_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "tight_roll",
+   "seed": 100,
+   "grid": 257,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "accordion",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "cone",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "cone",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "cone",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "cone",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "bowl",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "uneven_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "tight_roll",
+   "seed": 100,
+   "grid": 257,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "dents",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 12%"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 11%"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 14%"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 10%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 35%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 12%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 0%"
+  },
+  {
+   "sheet": "hard_crumple",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 0%"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 100,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 101,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 100,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 101,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 100,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 102,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 101,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 102,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_roll5",
+   "seed": 102,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_scurl65",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_three_lobes",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_fan3",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_cone30",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_diag30",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_arc200",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 0%"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_dents23",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 26%"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 21%"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 20%"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "h_crumple17",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 1%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 26%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 26%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": false,
+   "words": "folded 63%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 3%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 3%"
+  },
+  {
+   "sheet": "h_crumple29",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 3%"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 100,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 101,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 100,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 101,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 102,
+   "grid": 129,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 100,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 102,
+   "grid": 129,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 101,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_scurl",
+   "seed": 102,
+   "grid": 129,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "patchy_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "crescent_flat",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "crescent_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": false,
+   "words": "folded 2%"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "strip_roll",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 100,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 101,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 100,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 101,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 102,
+   "grid": 65,
+   "control": "vote_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 102,
+   "grid": 65,
+   "control": "walk_true",
+   "passed": true,
+   "words": "pass"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 100,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 101,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  },
+  {
+   "sheet": "hairpin_flap",
+   "seed": 102,
+   "grid": 65,
+   "control": "tutte_true",
+   "passed": false,
+   "words": "not square 3%"
+  }
+ ],
+ "by_sheet": {
+  "flat": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "gentle_arc": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "wave": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "s_curl": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "tight_roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "diagonal_roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "accordion": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "cone": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "bowl": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "uneven_roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "dents": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "crumple": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": false,
+   "tutte_true": true
+  },
+  "hard_crumple": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": false,
+   "tutte_true": true
+  },
+  "h_roll5": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_scurl65": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_three_lobes": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_fan3": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_cone30": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_diag30": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_arc200": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "h_dents23": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": false,
+   "tutte_true": true
+  },
+  "h_crumple17": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": false,
+   "tutte_true": true
+  },
+  "h_crumple29": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": false,
+   "tutte_true": true
+  },
+  "patchy_scurl": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "patchy_roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  },
+  "crescent_flat": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "crescent_roll": {
+   "solvable": true,
+   "walk_true": false,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "strip_roll": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": true
+  },
+  "hairpin_flap": {
+   "solvable": true,
+   "walk_true": true,
+   "vote_true": true,
+   "tutte_true": false
+  }
+ }
+}

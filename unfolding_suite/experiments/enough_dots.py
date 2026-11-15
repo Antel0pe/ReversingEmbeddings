@@ -85,4 +85,7 @@ if __name__ == "__main__":
         print(name, {g: (None if r["gap_spacings"] is None else round(r["gap_spacings"], 2), r["dots_too_close"])
                      for g, r in row.items()}, "->", need, flush=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "density.json").write_text(json.dumps(out, indent=1))
+    path = OUT / "density.json"
+    old = json.loads(path.read_text()) if path.exists() else {}
+    old.update(out)                                    # merge: running a few sheets keeps the others
+    path.write_text(json.dumps(old, indent=1))

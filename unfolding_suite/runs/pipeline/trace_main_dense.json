@@ -1,0 +1,501 @@
+{
+ "by_sheet": {
+  "accordion|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "accordion|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "bowl|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "bowl|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "cone|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "cone|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "crumple|65|edge": {
+   "naive": {
+    "crossing": 3
+   },
+   "guarded": {
+    "crossing": 3
+   }
+  },
+  "crumple|65|walk": {
+   "naive": {
+    "none fixes": 3
+   },
+   "guarded": {
+    "none fixes": 3
+   }
+  },
+  "crumple|129|edge": {
+   "naive": {
+    "crossing": 1
+   },
+   "guarded": {
+    "crossing": 1
+   }
+  },
+  "dents|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "dents|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "diagonal_roll|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "diagonal_roll|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "flat|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "flat|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "gentle_arc|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "gentle_arc|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_arc200|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_arc200|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_cone30|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_cone30|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_crumple17|65|edge": {
+   "naive": {
+    "crossing": 3
+   },
+   "guarded": {
+    "crossing": 3
+   }
+  },
+  "h_crumple17|65|walk": {
+   "naive": {
+    "none fixes": 3
+   },
+   "guarded": {
+    "none fixes": 3
+   }
+  },
+  "h_crumple17|129|edge": {
+   "naive": {
+    "crossing": 1
+   },
+   "guarded": {
+    "crossing": 1
+   }
+  },
+  "h_crumple29|65|edge": {
+   "naive": {
+    "none fixes": 3
+   },
+   "guarded": {
+    "none fixes": 3
+   }
+  },
+  "h_crumple29|65|walk": {
+   "naive": {
+    "none fixes": 3
+   },
+   "guarded": {
+    "none fixes": 3
+   }
+  },
+  "h_crumple29|129|edge": {
+   "naive": {
+    "neighbours": 1
+   },
+   "guarded": {
+    "neighbours": 1
+   }
+  },
+  "h_dents23|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_dents23|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_diag30|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_diag30|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_fan3|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_fan3|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_roll5|129|edge": {
+   "naive": {
+    "ok": 1
+   },
+   "guarded": {
+    "ok": 1
+   }
+  },
+  "h_roll5|129|walk": {
+   "naive": {
+    "ok": 1
+   },
+   "guarded": {
+    "ok": 1
+   }
+  },
+  "h_scurl65|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_scurl65|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_three_lobes|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "h_three_lobes|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "hard_crumple|65|edge": {
+   "naive": {
+    "neighbours": 2,
+    "edge": 1
+   },
+   "guarded": {
+    "neighbours": 2,
+    "edge": 1
+   }
+  },
+  "hard_crumple|65|walk": {
+   "naive": {
+    "none fixes": 3
+   },
+   "guarded": {
+    "none fixes": 3
+   }
+  },
+  "hard_crumple|129|edge": {
+   "naive": {
+    "neighbours": 1
+   },
+   "guarded": {
+    "neighbours": 1
+   }
+  },
+  "roll|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "roll|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "s_curl|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "s_curl|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "tight_roll|257|edge": {
+   "naive": {
+    "ok": 1
+   },
+   "guarded": {
+    "ok": 1
+   }
+  },
+  "uneven_roll|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "uneven_roll|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "wave|65|edge": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  },
+  "wave|65|walk": {
+   "naive": {
+    "ok": 3
+   },
+   "guarded": {
+    "ok": 3
+   }
+  }
+ },
+ "steps": {
+  "runs": 139,
+  "unfold folded or failed": 28,
+  "fold present, detector found no face-down patch": 18,
+  "flipped but still failing": 9
+ },
+ "examples": {
+  "missed": [
+   "crumple|65|edge|100",
+   "crumple|65|walk|100",
+   "crumple|65|walk|101",
+   "crumple|65|walk|102",
+   "hard_crumple|65|edge|100",
+   "hard_crumple|65|walk|100",
+   "hard_crumple|65|edge|101",
+   "hard_crumple|65|walk|101",
+   "hard_crumple|65|edge|102",
+   "hard_crumple|65|walk|102",
+   "h_crumple17|65|walk|100",
+   "h_crumple17|65|walk|101",
+   "h_crumple17|65|edge|102",
+   "h_crumple17|65|walk|102",
+   "h_crumple29|65|walk|101",
+   "h_crumple29|65|walk|102",
+   "h_crumple17|129|edge|100",
+   "h_crumple29|129|edge|100"
+  ],
+  "flip did not fix": [
+   [
+    "crumple|65|edge|101",
+    [
+     0.9883387337313069
+    ]
+   ],
+   [
+    "crumple|65|edge|102",
+    [
+     0.887134831741217
+    ]
+   ],
+   [
+    "h_crumple17|65|edge|100",
+    [
+     2.354654665005614
+    ]
+   ],
+   [
+    "h_crumple17|65|edge|101",
+    [
+     3.10440055217789
+    ]
+   ],
+   [
+    "h_crumple29|65|edge|100",
+    [
+     16.26412590805321,
+     0.7618058445825688
+    ]
+   ],
+   [
+    "h_crumple29|65|walk|100",
+    [
+     7.695676729355103
+    ]
+   ],
+   [
+    "h_crumple29|65|edge|101",
+    [
+     23.155379639478454,
+     0.7542915955165845
+    ]
+   ],
+   [
+    "h_crumple29|65|edge|102",
+    [
+     19.15587508970291,
+     0.6461677072987085
+    ]
+   ],
+   [
+    "crumple|129|edge|100",
+    [
+     1.9444498521860878
+    ]
+   ]
+  ]
+ }
+}
