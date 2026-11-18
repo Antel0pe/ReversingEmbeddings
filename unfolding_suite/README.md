@@ -422,6 +422,20 @@ held-out sheets are not a fair check for it.
   (`h_roll5` 290 to 0 jump links, `h_crumple17` 56 to 0-1). With plain nearest strings it
   makes things worse (`s_curl` 12 to 537), because staples press layers together.
 
+### Squash the thinnest direction instead of pushing outward (2026-11-17)
+
+Idea: hold each dot's distances to its nearest dots, and reward the extra (third) direction
+shrinking to zero, re-measured from the current shape every round. Code:
+`experiments/squash_thin_axis.py`; results `runs/squash_thin_axis/results.json` (seed 100 only).
+Same strings and solver as `pull.py`; only the reward differs.
+
+- The squash reward makes every sheet flat (thinnest share 3-8% -> 0.00-0.7%, strings within
+  0.1% median) but not unfolded: S-curl 92-100% stacked, roll 46-50%, hairpin 54-55% (already
+  flat, so nothing moves), hard crumple 14-16%. Only the gentle arc passes.
+- The push reward with the same strings passes S-curl (true strings), roll, hairpin and arc.
+- Why: "no thickness" is satisfied by paper pressed flat onto itself. Unfolding needs a reward
+  for far dots ending up far apart, which is what pushing outward is (maximum variance unfolding).
+
 ### Height split (2026-11-10)
 
 Idea: paper has no thickness. Fit a plane, or a bowl, to a dot's K nearest dots, measure

@@ -359,6 +359,14 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   Restricting to the most crowded 1% of starting 1s (`dense` part) only brings the
   nearest neighbour to 16.6% and leaves the count unchanged (87 at k = 200).
 
+- **Scrambled MNIST 1s (picture hidden, geometry kept):** `scrambled_ones.py`;
+  `load()` gives the 6,742 train 1s as (n, 784) float32 after a fixed pixel shuffle
+  plus a fixed random rotation (`level="shuffle"` for re-ordering only). Distances,
+  angles and neighbours are unchanged (to 5e-8). Cached in `data/scrambled_ones/`,
+  loads in under 0.1 s. `key()`/`unscramble()`/`original_index()` are for grading
+  only. Shuffle alone is reversible: a pixel's most-correlated partner is a touching
+  neighbour 98.7% of the time.
+
 ### Geometry conventions
 
 - Image distance is Euclidean over all 784 coverage values. A seed-to-neighbor
