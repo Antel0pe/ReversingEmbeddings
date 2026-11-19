@@ -228,3 +228,9 @@ viewer/synth3.npy
 
 # Local command runner troubleshooting notes
 /LOCAL_COMMAND_RUNNER_GUIDE.md
+
+# Experiment outputs: model weights, results, arrays, logs
+*.pt
+*.json
+*.npy
+*.txt

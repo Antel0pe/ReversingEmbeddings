@@ -367,6 +367,26 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   only. Shuffle alone is reversible: a pixel's most-correlated partner is a touching
   neighbour 98.7% of the time.
 
+- **Warp method on drawn 1s with KNOWN knobs (the calibration for MNIST's numbers):**
+  `analyze_drawn_one_warp_scorecard.py`, `analyze_drawn_one_ink_pieces.py` and
+  `figures/drawn_one_warp_scorecard/README.md`. Same 3,000/1,500 split and settings as MNIST.
+  A clean 12-knob drawn family leaves 30.9% at 5 warp numbers (35.9% with MNIST-sharp edges)
+  against MNIST's 27.2%, so MNIST's five-number leftover says nothing about whether it has few
+  knobs. The warp reads height and vertical position at 0.93-0.96 on drawn 1s; the earlier
+  "blind to cy" on MNIST was the moment yardstick (0.64 there). At 20 numbers MNIST keeps 15.6%
+  vs 9.9% (sharp 12 knobs); "ink pieces" (learned extra ink carried by the warp) remove 48-61%
+  of the drawn leftover but 25% of MNIST's. Edge-heavy leftover is just sharp ink; smooth
+  wobbles and row roughness were tested and do not match. MNIST's excess is a worst tenth that
+  fits twice as badly (31.4% vs 16.6%; curved centre lines, a few wide rows) plus ~3 points
+  over the rest. Sharp drawn families: `load("sharp12")` (softness 0.18 matches MNIST's grey-ink share).
+
+- **Simplest learned decoder (autoencoder) on MNIST 1s:** `analyze_mnist_one_autoencoder.py`,
+  `make_mnist_one_autoencoder_figure.py`, `figures/mnist_one_autoencoder/README.md`. Plain
+  784-256-k-256-784 autoencoder, k = 1..30, generated-1s control. Control stops at 5-6 numbers
+  (6.0% at 5, flat 4.4% after); MNIST never stops (24.2% at 5, 15.0% at 30), matching the warp
+  model. MNIST code direction #1 is slant (0.92) and #2 is slant SQUARED (0.84): a bent copy, as
+  LLE found. Height/up-down barely enter at k=5. Code midpoints beat pixel averages but smudge.
+
 ### Geometry conventions
 
 - Image distance is Euclidean over all 784 coverage values. A seed-to-neighbor
