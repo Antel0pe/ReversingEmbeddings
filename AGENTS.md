@@ -386,6 +386,10 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   (6.0% at 5, flat 4.4% after); MNIST never stops (24.2% at 5, 15.0% at 30), matching the warp
   model. MNIST code direction #1 is slant (0.92) and #2 is slant SQUARED (0.84): a bent copy, as
   LLE found. Height/up-down barely enter at k=5. Code midpoints beat pixel averages but smudge.
+  Reshaping first (`pre_transforms.py`, `analyze_mnist_one_pretransform.py`,
+  `figures/mnist_one_autoencoder/pretransform/README.md`): straightening (2 numbers set aside) buys
+  1-2 points from ~7 numbers up, net of a same-grid check; the curve still never stops. Resize/vertical
+  centring waste 3 numbers; distance map (21% round trip) and blur (34%) lose. Hurts generated 1s.
 
 ### Geometry conventions
 
