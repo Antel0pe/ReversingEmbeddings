@@ -234,3 +234,7 @@ viewer/synth3.npy
 *.json
 *.npy
 *.txt
+
+# earth surface simulation outputs
+earth_surface_sim/**/*.png
+earth_surface_sim/**/*.npz
