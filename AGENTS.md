@@ -391,6 +391,15 @@ img = generated_one(14.5, 14.5, 19.75, 3.2, 12.5)  # (28, 28), values in [0, 1]
   1-2 points from ~7 numbers up, net of a same-grid check; the curve still never stops. Resize/vertical
   centring waste 3 numbers; distance map (21% round trip) and blur (34%) lose. Hurts generated 1s.
 
+- **Curved components instead of straight ones (one-knob sweeps):** self-contained in
+  `curved_components/` (start with its `README.md`). A cx slide needs 21 PCA components for 1%,
+  but they pair into loops turning at ~1:2:3 speeds. Principal curves give ONE number (slide 5.3%,
+  lean 0.9%, knob order 1.000) but equal "join the dots" and fail past ~1 px spacing; principal
+  polynomial (bent PCA) saves only 1-4 components and cannot handle loops; vanishing equations
+  confirm "a curve" only inside a few PCA numbers; a curve-shape list (waves/powers/growth, told
+  the knob) saves nothing. Only a learned repeated rule (turn each frequency at a steady speed)
+  works on unseen positions: 18-20% vs PCA 50-111%, with a 28x28 grid floor of ~10%.
+
 ### Geometry conventions
 
 - Image distance is Euclidean over all 784 coverage values. A seed-to-neighbor
