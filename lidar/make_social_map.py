@@ -43,16 +43,16 @@ ax.imshow(shade, cmap=cmap, vmin=0.15, vmax=0.95, extent=(*X_RANGE, *Y_RANGE), i
 ORANGE = "#ff6a00"
 BOX = dict(boxstyle="round,pad=0.35", fc="white", ec="none", alpha=0.92)
 traces = json.load(open(traces_path))
-square = []
+square = {}
 for name, t in traces.items():
     if name.startswith("unstable") or not t["path"]:
         continue
     p = np.array(t["path"]) - [CX, CY]
     if name.startswith("square"):
-        square.append(p)
+        square[name] = p
         continue
     ax.plot(p[:, 0], p[:, 1], color=ORANGE, lw=2.4, alpha=0.9, solid_capstyle="round")
-# the four traced sides (north, east, south, west order in the file): fit a straight line to
+# the four traced sides, taken in order around the square: fit a straight line to
 # each, and use where neighbouring lines cross as the corners
 def fit(p):
     c = p.mean(axis=0)
@@ -66,7 +66,7 @@ def cross(a, b):
     return c1 + t[0] * d1
 
 
-sides = [fit(p) for p in square]
+sides = [fit(square[k]) for k in ("square_n", "square_e", "square_s", "square_w")]
 corners = [cross(sides[i], sides[(i + 1) % 4]) for i in range(4)]
 ring = np.vstack(corners + corners[:1])
 ax.plot(ring[:, 0], ring[:, 1], color=ORANGE, lw=3.0)
